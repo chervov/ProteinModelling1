@@ -1,0 +1,47 @@
+{
+  "timestamp": "20261013_124334",
+  "target": "JAK1",
+  "uniprot": "P23458",
+  "window_uniprot": [
+    569,
+    1154
+  ],
+  "sequence_length": 586,
+  "domain_mode": "JH2_JH1",
+  "domains_uniprot": {
+    "JH2": [
+      [
+        583,
+        855
+      ]
+    ],
+    "JH1": [
+      [
+        875,
+        1153
+      ]
+    ]
+  },
+  "domains_model": {
+    "JH2": [
+      [
+        15,
+        287
+      ]
+    ],
+    "JH1": [
+      [
+        307,
+        585
+      ]
+    ]
+  },
+  "config_preset": "model_1",
+  "random_seeds": "0,1",
+  "num_recycles": 20,
+  "violation_loss_weight": 0.1,
+  "stochastic_dropout": true,
+  "max_msa_clusters": 32,
+  "max_extra_msa": 64,
+  "inference_dir": "/content/protein_predictions/JAK1_cut569-end/inference_msa32-64"
+}
