@@ -6,3 +6,4 @@ Open = AlphaFold DB model, closed = Shan et al. 2014 (JH2–JH1). Distances: JH1
 |--|--:|--|--:|--:|--:|--|
 | JAK2_20261013_173657 | 20 | 0,1,2,3,4 | 25.3 | 82.8 | 5/5 | [link](https://github.com/chervov/ProteinModelling1/tree/main/JAK2/runs/JAK2_20261013_173657) |
 | JAK2_20261013_182632 | 20 | 0,1,2,3,4 | 39.9 | 66.3 | 5/5 | [link](https://github.com/chervov/ProteinModelling1/tree/main/JAK2/runs/JAK2_20261013_182632) |
+| JAK2_20261013_191807 | 30 | 0,1,2,3,4,5,6,7,8,9 | 48.5 | 87.5 | 10/10 | [link](https://github.com/chervov/ProteinModelling1/tree/main/JAK2/runs/JAK2_20261013_191807) |
