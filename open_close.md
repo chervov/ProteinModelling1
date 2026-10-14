@@ -40,3 +40,34 @@ roughly in order of usefulness.
 1. Add λ and Q_open/Q_closed to the comparison cell, and make the 2D map across all runs (template runs, MSA scan).
 2. Switch guided-recycling selection from the JH2–JH1 distance to FERM–JH1 or λ, so "selected open/closed" means something.
 3. Use `model_1_ptm` in a future run to get inter-domain PAE.
+
+## Reference values for the centroid criteria
+
+Domain-centroid distances (Cα centroids, Å) for all reference models. Domain boundaries from UniProt, as in the pipeline:
+JAK1 FERM 34–420, SH2 439–544, JH2 583–855, JH1 875–1153; JAK2 FERM 37–380, SH2 401–482, JH2 545–809, JH1 849–1124.
+
+| Target | Reference | State | JH2–JH1 | **FERM–JH1** | SH2–JH1 | FERM–JH2 | SH2–JH2 | FERM–SH2 |
+|---|---|---|---|---|---|---|---|---|
+| JAK1 | AF2 AF-P23458-F1 | open | 46.3 | **92.2** | 78.9 | 46.2 | 40.2 | 40.1 |
+| JAK1 | ma-a1sai (Orianne) | open | 46.0 | **92.5** | 77.7 | 46.6 | 40.2 | 40.4 |
+| JAK1 | ma-l9b1f (Orianne) | closed | 39.5 | **40.1** | 55.3 | 47.4 | 40.3 | 40.4 |
+| JAK1 | Shan 2014 (JH2–JH1 only) | closed | 38.0 | – | – | – | – | – |
+| JAK2 | AF2 AF-O60674-F1 | open | 45.9 | **93.8** | 78.3 | 48.1 | 39.7 | 35.9 |
+| JAK2 | Shan 2014 (JH2–JH1 only) | closed | 40.9 | – | – | – | – | – |
+| JAK2 | ma-l9b1f mapped to JAK2* | closed | 39.8 | **42.2** | 54.9 | 48.1 | 39.9 | 36.7 |
+
+\* The JAK1 closed model renumbered onto JAK2 through the sequence alignment (1087 of 1132 residues covered);
+the template of run JAK2_20261014_115511.
+
+**Which distances separate open from closed:**
+
+| Distance | Open | Closed | Difference | Usefulness |
+|---|---|---|---|---|
+| **FERM–JH1** | 92–94 | 40–42 | ~52 Å | best single criterion |
+| **SH2–JH1** | 78–79 | 55 | ~23 Å | good second criterion |
+| JH2–JH1 (current pipeline metric) | 46 | 38–41 | 5–8 Å | weak |
+| FERM–JH2, SH2–JH2, FERM–SH2 | 46–48 / 40 / 36–40 | about the same | ~0 | no signal: the FERM–SH2–JH2 block is the same in both states |
+
+Everything that changes involves JH1: open and closed differ by where JH1 sits, while the rest of the protein keeps
+its shape. A simple centroid rule: **FERM–JH1 > ~80 Å → open; < ~50 Å → closed; in between → intermediate.**
+The Shan models contain only JH2–JH1, so the FERM/SH2 criteria can't be applied to them.
