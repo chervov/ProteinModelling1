@@ -17,6 +17,19 @@ open (ma-a1sai) and closed (ma-l9b1f) models; FERM–JH1 centroid distance: open
 | 64 / 256 | 15 | [JAK1_20261015_095803](runs/JAK1_20261015_095803) | 5 × a third arrangement (JH1 off FERM, 47–52 Å from open) | 31.8 Å | 35.6 Å |
 | 32 / 64 | 30 | e.g. [JAK1_20261013_192228](runs/JAK1_20261013_192228) | compact, FERM-bound, low pLDDT, never open | – | ≥ 61.5 Å |
 
+## Closed JAK1 without a template — which runs, seeds and files
+Only at **MSA 128/512, no template, 15 recycles** (OpenFold model_1, guided recycling, full-length JAK1) did a seed stay in
+the closed arrangement of Orianne's ma-l9b1f. Distances: JH1 RMSD after superposing JH2 (open vs closed references: ~82 Å).
+
+| run | seed | best match to closed ma-l9b1f | stability | pLDDT | structure file |
+|---|---|---|---|---|---|
+| [JAK1_20261015_114024](runs/JAK1_20261015_114024) (seeds 5–14) | **7** | **1.2 Å** at recycle 11 (selected, recycle 2: 3.3 Å) | next to FERM (40–42 Å) all 15 recycles | ~84 | [recycle_11.pdb.gz](runs/JAK1_20261015_114024/all/seed_007/recycle_11.pdb.gz) |
+| [JAK1_20261015_082811](runs/JAK1_20261015_082811) (seeds 0–4) | **4** | **2.4 Å** at recycle 4 (selected, recycle 13: 4.5 Å) | 40–42 Å from recycle 2 to 15 | ~84 | [recycle_04.pdb.gz](runs/JAK1_20261015_082811/all/seed_004/recycle_04.pdb.gz) |
+| [JAK1_20261015_114024](runs/JAK1_20261015_114024) | 13, 14 | 12–16 Å (near, not a match) | next to FERM all 15 recycles | ~84.5 | `all/seed_013/`, `all/seed_014/` |
+
+Transient only: 96/384 ([JAK1_20261015_135849](runs/JAK1_20261015_135849)) seed 4 passed 3.8 Å at recycle 3, then moved
+to the third arrangement. No other depth gave a stable closed JAK1 (160/640 and deeper: all open; 96/384 and shallower: no match).
+
 ## Conclusions
 - **Deep MSA (≥ 256/1024) → open**, confidently and in every seed; the network settles by recycle 2.
 - **128/512 is the bistable depth:** the only template-free setting so far that produces the real closed JAK1
