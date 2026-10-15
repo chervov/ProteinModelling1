@@ -56,3 +56,12 @@ Template identity to JAK2: `{"PDB 4OLI chain A": {"observed_residues": 539, "ali
 
 pLDDT 83.9–86.3; JH2–JH1 39.5–40.1 Å; FERM–JH1 41.7–42.8 Å (open AF2 93.8 Å, closed ma-l9b1f mapped to JAK2 42.2 Å; FERM–JH1 > ~80 Å = open, < ~50 Å = closed).
 Nearest reference over all conformations: template ModelArchive ma-l9b1f 75.
+
+## Interpretation
+- **Closed in all seeds and recycles**, the most compact closed form so far: FERM–JH1 41.7–42.8 Å (closed reference
+  ma-l9b1f mapped to JAK2: 42.2 Å).
+- **With the shallower MSA (128/512) the templates dominate even more:** 1.7–1.8 Å from ma-l9b1f (default MSA in
+  experiment C: 2.5–2.7 Å) and slightly further from Shan's JAK2 (7.7–8.1 Å vs 6.8–7.3 Å). As expected: less MSA signal
+  → closer copy of the template, less JAK2-specific adjustment.
+- pLDDT 86.1–86.3 for the selected structures (slightly lower than experiment C, 86.7–86.9).
+- Run time 42 min (shallower MSA is faster).
