@@ -61,3 +61,8 @@ Nearest reference over all conformations: AF2 75.
 | 2 | 64 96 95 95 95 95 95 95 95 95 95 95 95 95 95 | open-like (> 80) |
 | 3 | 63 95 95 95 95 95 95 95 95 95 95 95 95 95 95 | open-like (> 80) |
 | 4 | 60 96 95 95 95 95 95 95 95 95 95 95 95 95 95 | open-like (> 80) |
+
+## Interpretation
+- **Open in all 5 seeds from recycle 2 on** (FERM–JH1 ~95 Å; selected structures 0.6–2.6 Å from the AF2 model),
+  pLDDT ~86.3. Recycle 1 is in between (FERM–JH1 60–80 Å), then every seed jumps to open.
+- Same behaviour as JAK1 at this MSA depth (JAK1 256/1024: all open from recycle 2). Run on Google Colab A100.
