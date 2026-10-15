@@ -81,3 +81,8 @@ Nearest reference over all conformations: AF2 164, Shan 2014 61.
 | 12 | 20 61 62 63 61 66 64 60 61 62 80 63 91 93 62 | in between |
 | 13 | 40 60 55 56 56 57 58 56 57 56 57 56 58 59 56 | in between |
 | 14 | 19 47 52 57 55 58 57 57 57 55 56 55 56 57 56 | in between |
+
+## Interpretation
+- **Mostly a detached-JH1 intermediate:** 10 of 15 seeds end with FERM–JH1 55–72 Å and JH2–JH1 48–57 Å, 64–100 Å from every reference (open AF2, closed JAK2, Shan, 7T6F); JH1 makes almost no contacts (0–7 pairs with JH2, none with FERM). Not the 7T6F-like arrangement seen for JAK1.
+- Seeds 0, 8, 1 are partially closed (21–42 Å from the closed references, 19–30 JH1–JH2 contacts); seed 6 is open (0.7 Å from AF2).
+- Details: [JAK2_intermediate.md](../../JAK2_intermediate.md).
