@@ -43,3 +43,21 @@ Part of the JAK1 MSA-depth scan. OpenFold model_1, guided recycling, 15 recycles
 
 pLDDT 82.0–85.8; JH2–JH1 46.4–53.5 Å; FERM–JH1 38.9–94.4 Å (open references ~92 Å, closed ma-l9b1f 40 Å).
 Nearest reference over all conformations: ma-a1sai 65, ma-l9b1f 5, AF2 5.
+
+## Per-seed trajectories (FERM–JH1 centroid distance, Å; open ~92, closed ~40)
+
+| seed | recycles 1–15 |
+|---|---|
+| 0 | 39 94 93 93 93 93 93 93 93 93 93 93 93 93 93 |
+| 1 | 42 94 94 93 93 93 93 93 94 93 93 93 93 93 93 |
+| 2 | 40 93 93 93 93 93 93 93 93 93 94 94 93 93 93 |
+| 3 | 42 93 94 93 93 93 93 93 93 93 93 93 94 93 93 |
+| 4 | 41 93 92 93 93 93 93 93 93 92 93 92 93 93 93 |
+
+## Interpretation
+- **Open in all seeds, from recycle 2 on.** Selected structures are 0.8–2.2 Å from Orianne's open ma-a1sai (closest
+  0.6 Å), pLDDT 85.5–85.8; 68 of 75 conformations are within 15 Å of the open references.
+- Recycle 1 is FERM-bound in every seed (FERM–JH1 39–42 Å) but not the closed state (≥ 19 Å from ma-l9b1f); the
+  network leaves it immediately at recycle 2.
+- So at 256/1024 the MSA already gives the open state as clearly as the whole MSA (512/8192). The bistable depth is
+  narrow, around 128/512 (see [JAK1/MSA_scan_summary.md](../../MSA_scan_summary.md)).
