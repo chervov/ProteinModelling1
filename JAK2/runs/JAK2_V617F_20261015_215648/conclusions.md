@@ -67,3 +67,8 @@ Nearest reference over all conformations: Shan 2014 63, AF2 57.
 | 5 | 23 95 95 95 95 95 95 95 95 95 95 95 95 95 95 | open-like (> 80) |
 | 6 | 64 84 96 95 96 96 96 96 96 96 96 96 95 95 95 | open-like (> 80) |
 | 7 | 45 48 48 47 49 49 47 47 48 47 46 48 48 48 48 | closed-like (< 50) |
+
+## Interpretation (vs wild type)
+- Final states (8 seeds): **4 open, 1 closed (6.6 Å from the closed JAK2), 3 next to FERM near the closed state (11.6–12.7 Å)**.
+- Wild type at the same depth (16 seeds, [JAK2_20261015_134817](../JAK2_20261015_134817) + [JAK2_20261015_201144](../JAK2_20261015_201144)): all open.
+- **Here V617F moves JAK2 towards the closed state** (closed or near-closed 0/16 → 4/8, Fisher p = 0.0066) — the opposite direction to 512/8192 (closed 7/16 → 0/16).
