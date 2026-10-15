@@ -1,4 +1,4 @@
-# JAK2 V617F vs wild type — no template, MSA 128/512
+# JAK2 V617F vs wild type — no template
 
 V617F (JH2, at the JH2–JH1 autoinhibitory interface) is the most common activating JAK2 mutation in myeloproliferative
 neoplasms. Both series: OpenFold model_1, guided recycling, no template, MSA 128/512, 15 recycles; wild type seeds 0–14
@@ -24,7 +24,18 @@ or 7T6F (JAK1 cryo-EM active dimer, mapped); otherwise 'next to FERM' (FERM–JH
 - Unlike JAK1 V658F, no JAK2 seed adopts the 7T6F-like (JAK1 active-dimer) arrangement at this depth.
 - More depths are running (V617F 64/256, 96/384 on molab; 512/8192 and 256/1024 on Colab; wild type extra seeds).
 
-## Per seed (final recycle; Å)
+## MSA 512/8192 (all sequences; 16 seeds each)
+
+| final state | wild type | **V617F** ([JAK2_V617F_20261015_161914](runs/JAK2_V617F_20261015_161914)) |
+|---|--:|--:|
+| open | 7 | **16** |
+| **closed** | **7** | **0** |
+| next to FERM | 2 | 0 |
+
+- **V617F abolishes the closed state** at the deepest MSA (7/16 → 0/16, p = 0.0068; closed + FERM-bound 9/16 → 0/16, p = 0.0008).
+- Wild type: [JAK2_20261015_134643](runs/JAK2_20261015_134643) (seeds 0–4) + [JAK2_20261015_161033](runs/JAK2_20261015_161033) (seeds 5–15).
+
+## Per seed at 128/512 (final recycle; Å)
 
 | seed | WT: FERM–JH1 / vs open / vs closed / contacts → class | V617F: FERM–JH1 / vs open / vs closed / contacts → class |
 |--:|---|---|
