@@ -33,3 +33,8 @@ Classification of the final recycle: ≤ 10 Å (JH1 RMSD after superposing JH2) 
 | 13 | 94.8 | 0.9 | 81.8 | 47.5 | 23 | open | 94 95 95 95 95 95 95 95 95 95 95 95 95 95 95 |
 | 14 | 95.0 | 2.0 | 81.3 | 48.1 | 25 | open | 95 95 95 95 95 95 95 95 95 95 95 95 95 95 95 |
 | 15 | 94.8 | 1.2 | 81.5 | 47.7 | 23 | open | 93 95 95 95 95 95 95 95 95 95 95 95 95 95 95 |
+
+## Interpretation (vs wild type)
+- **All 16 seeds open** (0.7–2.4 Å from AF2), from recycle 2 on; none closed or next to FERM.
+- Wild type at the same depth (16 seeds, [JAK2_20261015_134643](../JAK2_20261015_134643) + [JAK2_20261015_161033](../JAK2_20261015_161033)): 7 closed, 7 open, 2 next to FERM.
+- **V617F abolishes the closed state at deep MSA:** closed 7/16 → 0/16 (Fisher p = 0.0068); closed + next to FERM 9/16 → 0/16 (p = 0.0008).
