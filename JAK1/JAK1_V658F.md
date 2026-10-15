@@ -1,4 +1,4 @@
-# JAK1 V658F vs wild type — no template, MSA 128/512
+# JAK1 V658F vs wild type — no template
 
 V658F is the JAK1 equivalent of the activating JAK2 V617F mutation (in JH2, at the JH2–JH1 autoinhibitory interface); the
 cryo-EM structure of the active JAK1 dimer (PDB 7T6F) carries the mouse equivalent V657F. Both series: OpenFold model_1, guided
@@ -55,6 +55,18 @@ Runs: V658F [JAK1_V658F_20261015_160458](runs/JAK1_V658F_20261015_160458); wild 
 Most V658F seeds start next to FERM at recycles 1–2 (FERM–JH1 39–60 Å), as wild type does, but leave it: 9 go open by
 recycles 2–4, and 4 (seeds 10, 12, 13, 14) stay near FERM for 3–6 recycles and then move to the 7T6F-like arrangement
 (FERM–JH1 ~84 Å) and stay there. Per-seed tables: the run's conclusions.md.
+
+## MSA 96/384 (V658F 16 seeds, wild type 5 seeds)
+
+| final state | wild type ([JAK1_20261015_135849](runs/JAK1_20261015_135849)) | **V658F ([JAK1_V658F_20261015_175956](runs/JAK1_V658F_20261015_175956))** |
+|---|--:|--:|
+| **7T6F-like** (active dimer) | 2 | **16** (4.8–6.5 Å from 7T6F) |
+| next to FERM | 3 | 0 |
+| open / closed | 0 / 0 | 0 / 0 |
+
+- **At 96/384 the mutation drives every seed into the 7T6F-like arrangement** (16/16 vs 2/5, Fisher p = 0.0075).
+- Together with 128/512 (closed/FERM-bound 7/15 → 1/15; 7T6F-like 1 → 4–5), V658F consistently moves JAK1 away from the
+  autoinhibited (closed) arrangement and into the arrangement of the experimental active dimer, which carries the same mutation.
 
 ## Caveats
 - 15 seeds per condition; only the combined closed + FERM-bound difference is significant (p = 0.035).
