@@ -53,3 +53,10 @@ Nearest reference over all conformations: ma-a1sai 66, ma-l9b1f 5, AF2 4.
 | 2 | 40 94 93 93 93 93 93 93 93 93 93 93 93 93 93 | open-like (> 80) |
 | 3 | 37 94 93 93 93 93 93 93 92 93 93 93 93 93 93 | open-like (> 80) |
 | 4 | 41 94 92 93 93 93 93 93 93 93 93 93 92 93 93 | open-like (> 80) |
+
+## Interpretation
+- **Open in all 5 seeds from recycle 2 on**, like 256/1024: selected structures 0.8–1.9 Å from Orianne's open
+  ma-a1sai (closest 0.4 Å), pLDDT 85.4–85.8. Recycle 1 is next to FERM in every seed (37–42 Å) but leaves it at
+  recycle 2; only one conformation (seed 1, recycle 1) comes within 15 Å of the closed ma-l9b1f (10.4 Å).
+- **The bistable window is narrow:** 160/640 behaves like the deep MSA (all open), while 128/512 gives 6 of 15 seeds
+  next to FERM. A small reduction of the MSA (160 → 128 clusters, 640 → 512 extra) switches the behaviour.
