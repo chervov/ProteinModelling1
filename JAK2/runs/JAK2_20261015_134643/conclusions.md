@@ -71,3 +71,4 @@ Nearest reference over all conformations: Shan 2014 47, AF2 28.
   For JAK2 at 256/1024 all 5 seeds were open ([JAK2_20261015_134817](../JAK2_20261015_134817)), so the closed
   fraction is not monotonic in MSA depth at 5 seeds — more seeds are needed.
 - pLDDT is similar for closed (85.0–85.2) and open (86.3–86.4) seeds.
+- Structure comparison ([JAK2_intermediate.md](../../JAK2_intermediate.md)): seed 0 is 0.7 Å from the closed JAK2 of experiment A and 2.7 Å from ma-l9b1f (mapped) — the same closed state as with the template; seed 2 5.0 Å, seed 3 13 Å.
