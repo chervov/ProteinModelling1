@@ -83,3 +83,7 @@ Nearest reference over all conformations: Shan 2014 152, AF2 88.
 | 13 | 54 60 55 57 57 56 57 56 57 56 53 50 50 50 49 | closed-like (< 50) |
 | 14 | 50 60 57 51 52 53 53 53 54 54 55 54 54 56 56 | in between |
 | 15 | 41 67 62 62 62 62 58 59 61 65 96 94 95 95 95 | open-like (> 80) |
+
+## Interpretation (vs wild type, details: [JAK2_V617F.md](../../JAK2_V617F.md))
+- Final states (16 seeds): 6 open, 1 closed (8.9 Å), 3 next to FERM, 4 JH1 on JH2 in other positions, 2 detached JH1; none 7T6F-like.
+- Wild type at the same depth (15): 1 open, 10 detached JH1. **V617F largely removes the detached-JH1 intermediate (p = 0.003) and increases the open fraction (p = 0.083).**
