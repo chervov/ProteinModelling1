@@ -1,0 +1,102 @@
+{
+  "timestamp": "20261015_105858",
+  "target": "JAK2",
+  "uniprot": "O60674",
+  "window_uniprot": [
+    1,
+    1132
+  ],
+  "sequence_length": 1132,
+  "domain_mode": "JH2_JH1",
+  "domains_uniprot": {
+    "JH2": [
+      [
+        545,
+        809
+      ]
+    ],
+    "JH1": [
+      [
+        849,
+        1124
+      ]
+    ]
+  },
+  "domains_model": {
+    "JH2": [
+      [
+        545,
+        809
+      ]
+    ],
+    "JH1": [
+      [
+        849,
+        1124
+      ]
+    ]
+  },
+  "config_preset": "model_1",
+  "random_seeds": "0,1,2,3,4",
+  "num_recycles": 15,
+  "violation_loss_weight": 0.1,
+  "stochastic_dropout": true,
+  "max_msa_clusters": null,
+  "max_extra_msa": null,
+  "template_source": [
+    "pdb:4OLI:A",
+    "shan",
+    "pdb:6E2Q:A",
+    "ma-l9b1f"
+  ],
+  "template_cif": [
+    "/content/protein_predictions/templates/pdb_4OLI_A+shan+pdb_6E2Q_A+ma-l9b1f/4oli_A.cif",
+    "/content/protein_predictions/templates/pdb_4OLI_A+shan+pdb_6E2Q_A+ma-l9b1f/shan2014_jak2.cif",
+    "/content/protein_predictions/templates/pdb_4OLI_A+shan+pdb_6E2Q_A+ma-l9b1f/6e2q_A.cif",
+    "/content/protein_predictions/templates/pdb_4OLI_A+shan+pdb_6E2Q_A+ma-l9b1f/ma-l9b1f.cif"
+  ],
+  "template_identity": {
+    "PDB 4OLI chain A": {
+      "observed_residues": 539,
+      "aligned": 539,
+      "identical": 266,
+      "identity_aligned": 0.494,
+      "query_range": [
+        535,
+        1131
+      ]
+    },
+    "Shan 2014 JAK2 model (JH2\u2013JH1)": {
+      "observed_residues": 612,
+      "aligned": 612,
+      "identical": 612,
+      "identity_aligned": 1.0,
+      "query_range": [
+        520,
+        1131
+      ]
+    },
+    "PDB 6E2Q chain A": {
+      "observed_residues": 473,
+      "aligned": 473,
+      "identical": 471,
+      "identity_aligned": 0.996,
+      "query_range": [
+        35,
+        515
+      ]
+    },
+    "ModelArchive ma-l9b1f": {
+      "observed_residues": 1154,
+      "aligned": 1076,
+      "identical": 508,
+      "identity_aligned": 0.472,
+      "query_range": [
+        1,
+        1128
+      ]
+    }
+  },
+  "template_recycles": 0,
+  "inference_dir": "/content/protein_predictions/inference_tmpl4OLI+shan+6E2Q+ma-l9b1f_r15_seeds0-1-2-3-4"
+}
