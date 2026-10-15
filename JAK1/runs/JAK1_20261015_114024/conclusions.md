@@ -63,3 +63,25 @@ Nearest reference over all conformations: ma-l9b1f 76, ma-a1sai 59, AF2 15.
 | 12 | 41 92 94 94 94 94 94 93 93 94 93 93 94 94 93 | open-like (> 80) |
 | 13 | 42 42 41 41 42 41 41 42 41 42 41 41 41 41 42 | closed-like (< 50) |
 | 14 | 42 44 43 66 44 44 48 44 44 44 45 44 43 46 45 | closed-like (< 50) |
+
+## Interpretation
+- **The bistability at 128/512 is confirmed with 10 new seeds:** 5 seeds open (5, 6, 10, 11, 12; 1.9–2.3 Å from
+  ma-a1sai), 4 stay next to FERM for all 15 recycles (7, 9, 13, 14), 1 switches back and forth (8).
+- **Seed 7 is the best closed JAK1 so far:** FERM–JH1 40–42 Å for all 15 recycles, **1.2 Å** from Orianne's closed
+  ma-l9b1f at recycle 11 (selected structure 3.3 Å), pLDDT ~84. In total 48 of 150 conformations are within 15 Å of
+  ma-l9b1f.
+- Not every FERM-bound seed is the closed reference: seeds 13 and 14 are close (12–16 Å), seed 9 is FERM-bound in a
+  different orientation (24.5 Å).
+- **Pooled with seeds 0–4 ([JAK1_20261015_082811](../JAK1_20261015_082811)) — 15 seeds at 128/512, 15 recycles:**
+
+  | final state | seeds | fraction |
+  |---|---|--:|
+  | open (ma-a1sai-like, ~2 Å) | 0, 1, 5, 6, 10, 11, 12 | 7/15 |
+  | next to FERM for the whole run | 2, 4, 7, 9, 13, 14 | 6/15 |
+  | — of these matching closed ma-l9b1f (selected ≤ 5 Å) | 4, 7 | 2/15 |
+  | — near it (12–16 Å) | 13, 14 | 2/15 |
+  | switching / in between | 3, 8 | 2/15 |
+
+  So at this MSA depth JAK1 ends next to FERM in ~40% of seeds and in the closed reference arrangement in ~15–25%.
+- Open and closed seeds have nearly the same pLDDT (85.5–85.7 vs 84.2–84.7), so the confidence score does not tell
+  the two states apart.
