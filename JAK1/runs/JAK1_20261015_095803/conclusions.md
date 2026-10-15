@@ -43,3 +43,27 @@ Part of the JAK1 MSA-depth scan. OpenFold model_1, guided recycling, 15 recycles
 
 pLDDT 71.5–85.0; JH2–JH1 3.9–59.1 Å; FERM–JH1 37.6–92.2 Å (open references ~92 Å, closed ma-l9b1f 40 Å).
 Nearest reference over all conformations: ma-a1sai 62, ma-l9b1f 7, Shan 2014 6.
+
+## Per-seed trajectories (FERM–JH1 centroid distance, Å; open ~92, closed ~40)
+
+| seed | recycles 1–15 |
+|---|---|
+| 0 | 56 49 92 89 85 83 82 82 84 83 84 84 84 84 84 |
+| 1 | 50 43 84 89 85 84 84 84 84 84 84 84 84 84 85 |
+| 2 | 49 41 68 85 83 82 83 83 83 84 83 84 83 83 84 |
+| 3 | 51 38 50 86 88 84 85 83 83 83 83 84 83 83 84 |
+| 4 | 48 45 49 66 89 91 85 85 85 84 86 85 85 85 87 |
+
+## Interpretation
+- **All 5 seeds end in the same third arrangement, matching neither reference.** JH1 leaves FERM (FERM–JH1 ~83–87 Å,
+  like the open models) but sits in a different place relative to JH2: 47–52 Å from the open ma-a1sai and ~83 Å from
+  the closed ma-l9b1f (JH1 RMSD after superposing JH2). No conformation is within 15 Å of any reference.
+- **Early recycles are FERM-bound** (FERM–JH1 38–50 Å at recycles 1–2), but even then they are ≥ 31.8 Å from the
+  closed ma-l9b1f — compact, not the real closed state (as in the earlier 32/64 runs).
+- pLDDT 84.5–85.0 for the selected structures, but down to 71.5 in some early recycles; one conformation has a
+  JH2–JH1 centroid distance of only 3.9 Å (overlapping domains, a broken structure).
+- **Comparison along the MSA-depth scan (no template, 15 recycles):** 512/8192 → open (ma-a1sai-like) in all seeds;
+  **128/512 → bistable: 2/5 closed (best 2.4 Å from ma-l9b1f), 2 open, 1 switching**; 64/256 → a consistent
+  non-reference arrangement. So 128/512 is the depth where both real states appear; at 64/256 the MSA signal is
+  already too weak for either. (256/1024 is running next.)
+- Note: this run was interrupted by a kernel restart; the detached inference continued, and the notebook was rerun.
