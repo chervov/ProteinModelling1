@@ -53,3 +53,12 @@ Nearest reference over all conformations: ma-l9b1f 49, ma-a1sai 20, Shan 2014 5,
 | 2 | 24 42 43 52 54 58 85 86 83 84 84 84 84 84 84 | open-like (> 80) |
 | 3 | 49 47 48 47 47 46 47 47 47 46 47 48 45 50 48 | closed-like (< 50) |
 | 4 | 46 44 41 41 85 84 84 84 84 84 84 84 84 84 84 | open-like (> 80) |
+
+## Interpretation
+- **No seed goes open at this depth.** Seeds 0, 1, 3 stay next to FERM for all 15 recycles (FERM–JH1 ~45–48 Å),
+  12–19 Å from the closed ma-l9b1f (selected structures) — close to, but not quite, the closed reference arrangement.
+  Seeds 2 and 4 move to the **third arrangement** seen at 64/256 (FERM–JH1 ~84 Å, ~44 Å from the open ma-a1sai,
+  ~81 Å from the closed ma-l9b1f); seed 4 passes within 3.8 Å of ma-l9b1f at recycle 3 on the way.
+- 49 of 75 conformations are nearest to the closed ma-l9b1f, none is within 15 Å of an open reference.
+- **96/384 is between the bistable depth (128/512: open or closed) and 64/256 (third arrangement only):** the open
+  state disappears first when the MSA is reduced; the FERM-bound state and the third arrangement remain.
