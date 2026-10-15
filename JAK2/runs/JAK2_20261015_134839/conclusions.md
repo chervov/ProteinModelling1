@@ -61,3 +61,7 @@ Nearest reference over all conformations: AF2 70, Shan 2014 5.
 | 2 | 50 67 67 65 66 67 68 67 68 69 66 68 68 68 67 | in between |
 | 3 | 55 66 63 57 62 60 62 61 62 60 59 60 61 62 62 | in between |
 | 4 | 49 66 66 68 65 67 67 66 65 66 64 67 70 68 65 | in between |
+
+## Interpretation
+- **All 5 seeds in the detached-JH1 intermediate:** FERM–JH1 59–67 Å, JH2–JH1 54–60 Å, 77–97 Å from every reference (including 7T6F); JH1 nearly without contacts (0–10 pairs with JH2, 0–4 with FERM). Run on a Colab L4 (219 min).
+- Details: [JAK2_intermediate.md](../../JAK2_intermediate.md).
