@@ -56,3 +56,15 @@ Template identity to JAK2: `{"PDB 4OLI chain A": {"observed_residues": 539, "ali
 
 pLDDT 81.5–86.5; JH2–JH1 39.9–40.6 Å; FERM–JH1 41.1–42.0 Å (open AF2 93.8 Å, closed ma-l9b1f mapped to JAK2 42.2 Å; FERM–JH1 > ~80 Å = open, < ~50 Å = closed).
 Nearest reference over all conformations: template ModelArchive ma-l9b1f 75.
+
+## Interpretation
+- **Closed in all seeds and recycles even with the shallowest MSA (32/64):** FERM–JH1 41.1–42.0 Å throughout,
+  all 75 conformations nearest to the closed ma-l9b1f template (1.9–2.2 Å for the selected structures), 3.1–3.3 Å
+  from the experimental TYK2 interface 4OLI, 7.0–7.2 Å from Shan's JAK2 model.
+- **The templates compensate for the weak MSA:** pLDDT 86.0–86.5 for the selected structures, about the same as with
+  the default MSA (experiment C, 86.7–86.9). Without templates, MSA 32/64 gave compact low-confidence structures.
+  Confidence starts lower (recycle 1: 82.9) and rises over the recycles.
+- **Four-template series C → D → E (MSA default → 128/512 → 32/64):** always closed; distance to ma-l9b1f
+  2.5 → 1.7 → 2.0 Å and to Shan's JAK2 6.8–7.3 → 7.7–8.1 → 7.0–7.2 Å. The MSA depth hardly matters once the four
+  templates are given; the most JAK2-specific (closest to Shan) closed form came from template release with the
+  default/128-512 MSA (experiments A, B: ~6.0–6.5 Å).
