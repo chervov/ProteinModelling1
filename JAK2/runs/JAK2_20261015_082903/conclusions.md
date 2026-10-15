@@ -54,3 +54,24 @@ Template identity to JAK2: `{"aligned": 1087, "identical": 507, "identity_aligne
 
 pLDDT 84.9–86.3; JH2–JH1 39.0–40.0 Å; FERM–JH1 43.7–46.1 Å (open AF2 93.8 Å, closed ma-l9b1f mapped to JAK2 42.2 Å; FERM–JH1 > ~80 Å = open, < ~50 Å = closed).
 Nearest reference over all conformations: template ma-l9b1f 75.
+
+## Per-seed trajectories (FERM–JH1 centroid distance, Å; open ~94, closed ~42)
+
+| seed | recycles 1–3 (template) | recycles 4–15 (no template) |
+|---|---|---|
+| 0 | 45 45 45 | 45 45 45 45 45 45 45 46 46 45 45 45 |
+| 1 | 46 44 44 | 45 45 45 45 45 45 45 45 45 45 45 45 |
+| 2 | 45 44 44 | 44 45 45 45 45 45 45 45 45 45 44 44 |
+| 3 | 46 44 44 | 45 45 45 45 44 44 45 45 45 44 44 44 |
+| 4 | 45 44 44 | 45 45 45 45 45 45 45 45 45 45 45 45 |
+
+## Interpretation
+- **The closed JAK2 is stable once the template is switched off.** All 5 seeds stay closed for the 12 template-free
+  recycles: FERM–JH1 44–46 Å throughout (open would be ~94 Å), JH2–JH1 39.0–40.0 Å, and every one of the 75
+  conformations is nearest to the closed template; none comes within 80 Å of the open AF2 model.
+- **It is not a frozen copy:** without the template the structure stays 2.5–3.6 Å from ma-l9b1f and 6.0–6.9 Å from
+  Shan's JAK2 model — as close to Shan as the run with the template in all recycles (JAK2_20261014_115511: 6.6–6.8 Å).
+- **Confidence barely changes:** pLDDT ~85.7 without the template vs ~86.5 with it in all recycles.
+- So with the default MSA (512/5120) the closed JAK2 is a self-consistent state for the network: once reached, the JAK2
+  sequence and MSA keep it. (With no template at all the deep MSA gave open for JAK1, so the template is what brings it
+  there; this run shows it does not need the template to stay there.)
