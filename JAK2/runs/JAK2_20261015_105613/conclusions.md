@@ -54,3 +54,27 @@ Template identity to JAK2: `{"aligned": 1087, "identical": 507, "identity_aligne
 
 pLDDT 85.0–86.5; JH2–JH1 38.9–40.0 Å; FERM–JH1 43.5–46.0 Å (open AF2 93.8 Å, closed ma-l9b1f mapped to JAK2 42.2 Å; FERM–JH1 > ~80 Å = open, < ~50 Å = closed).
 Nearest reference over all conformations: template ma-l9b1f 75.
+
+## Per-seed trajectories (FERM–JH1 centroid distance, Å; open ~94, closed ~42)
+
+| seed | recycles 1–3 (template) | recycles 4–15 (no template) |
+|---|---|---|
+| 0 | 46 45 44 | 45 45 45 45 45 45 45 45 45 45 45 45 |
+| 1 | 46 44 44 | 44 45 45 45 45 45 45 45 45 45 45 45 |
+| 2 | 45 44 44 | 44 45 45 45 45 44 45 44 44 44 44 45 |
+| 3 | 46 45 44 | 44 45 45 45 45 45 45 45 45 45 46 45 |
+| 4 | 46 45 44 | 45 45 45 45 46 45 45 45 45 45 46 45 |
+
+## Interpretation
+- **Same answer as experiment A (default MSA): the closed JAK2 stays closed after the template is switched off, also
+  with the shallower MSA (128/512).** All 5 seeds keep FERM–JH1 at 44–46 Å for the 12 template-free recycles; all 75
+  conformations are nearest to the closed template, none within 80 Å of the open AF2 model.
+- **Without the template the structure moves from the JAK1 template towards Shan's JAK2 model:** mean distance to the
+  template grows from 1.7–2.0 Å (template recycles) to ~3.3 Å, while the distance to Shan's JAK2 drops from 7.4 to
+  ~6.1 Å (selected structures 5.9–6.5 Å). So the JAK2 sequence/MSA adjusts the JAK1-derived arrangement towards the
+  JAK2-specific one once the template no longer holds it.
+- pLDDT 85.4–85.7 (selected), essentially the same as with the default MSA (experiment A: ~85.7).
+- Contrast with JAK1 at the same MSA depth and no template at all (JAK1_20261015_082811): bistable, 2/5 seeds closed.
+  Here, once started closed, JAK2 never opens: the closed state is self-consistent for JAK2 at both MSA depths tested.
+- Note: this run was interrupted by a kernel restart; the detached inference finished, and the rerun of the notebook
+  repeated the inference (fixed since by a done-marker watcher in the sandbox).
