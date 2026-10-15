@@ -87,3 +87,7 @@ Nearest reference over all conformations: ma-a1sai 177, ma-l9b1f 57, Shan 2014 4
 | 13 | 43 41 41 42 85 84 84 84 84 84 84 84 84 84 84 | open-like (> 80) |
 | 14 | 44 48 87 85 85 84 84 84 84 84 84 84 84 84 84 | open-like (> 80) |
 | 15 | 36 49 47 46 84 46 51 86 83 83 84 84 84 84 83 | open-like (> 80) |
+
+## Interpretation (vs wild type, see [JAK1_V658F.md](../../JAK1_V658F.md))
+- **All 16 seeds end in the 7T6F-like active-dimer arrangement** (4.8–6.5 Å from the cryo-EM structure 7T6F; FERM–JH1 83.3–84.1 Å). No open, closed or FERM-bound seed.
+- Wild type at the same depth ([JAK1_20261015_135849](../JAK1_20261015_135849), 5 seeds): 2 7T6F-like, 3 next to FERM (12–19 Å from closed). Fisher exact p = 0.0075.
