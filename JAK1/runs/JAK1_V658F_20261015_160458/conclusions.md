@@ -85,3 +85,7 @@ Nearest reference over all conformations: ma-a1sai 166, ma-l9b1f 47, AF2 11, Sha
 | 12 | 50 47 92 89 86 87 86 84 84 85 84 88 84 84 84 | open-like (> 80) |
 | 13 | 47 39 49 45 46 86 84 84 84 84 84 84 84 84 84 | open-like (> 80) |
 | 14 | 47 41 47 46 46 49 86 84 84 84 84 84 84 84 84 | open-like (> 80) |
+
+## Interpretation (vs wild type, details: [JAK1_V658F.md](../../JAK1_V658F.md))
+- Final states (15 seeds): **9 open, 4 in the 7T6F-like active-dimer arrangement (5.3–6.6 Å from 7T6F; +1 part way), 1 next to FERM, 0 closed**.
+- Wild type at the same depth: 6 open, 3 closed, 4 next to FERM, 1 7T6F-like. The mutation removes the closed/FERM-bound arrangement (7 → 1 of 15, p = 0.035) and shifts seeds towards the 7T6F-like arrangement (1 → 4–5).
