@@ -56,3 +56,15 @@ Template identity to JAK2: `{"PDB 4OLI chain A": {"observed_residues": 539, "ali
 
 pLDDT 85.0–86.9; JH2–JH1 39.2–40.1 Å; FERM–JH1 43.2–44.8 Å (open AF2 93.8 Å, closed ma-l9b1f mapped to JAK2 42.2 Å; FERM–JH1 > ~80 Å = open, < ~50 Å = closed).
 Nearest reference over all conformations: template ModelArchive ma-l9b1f 75.
+
+## Interpretation
+- **Closed in all seeds and recycles**, very stable: FERM–JH1 43.2–44.8 Å throughout, all 75 conformations nearest to
+  the JAK1 closed template, none within 80 Å of the open AF2 model.
+- **Highest confidence so far for the closed JAK2:** pLDDT 86.7–86.9 for the selected structures (single ma-l9b1f
+  template: ~86.5; template switched off after recycle 3: ~85.7).
+- **The four templates are mutually consistent:** the structures are 2.5–2.7 Å from ma-l9b1f and 3.1–3.6 Å from the
+  experimental TYK2 JH2–JH1 crystal structure 4OLI (mapped to JAK2) — the modelled JAK1 closed arrangement and the
+  experimental autoinhibited TYK2 interface agree.
+- **But not closer to Shan's JAK2 model** (6.8–7.3 Å) than with ma-l9b1f alone (6.6–6.8 Å) or after template release
+  (6.0–6.9 Å), even though Shan's JAK2 model was one of the templates and has the identical sequence. The network follows
+  the full-length template (ma-l9b1f) and the experimental 4OLI interface rather than Shan's JH2–JH1 model.
