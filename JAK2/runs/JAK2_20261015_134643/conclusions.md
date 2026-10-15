@@ -61,3 +61,13 @@ Nearest reference over all conformations: Shan 2014 47, AF2 28.
 | 2 | 68 51 50 50 50 48 48 48 48 48 48 48 48 49 49 | closed-like (< 50) |
 | 3 | 57 50 51 51 50 50 50 50 50 49 49 49 49 49 49 | closed-like (< 50) |
 | 4 | 65 91 95 95 95 95 95 95 95 95 95 95 95 95 95 | open-like (> 80) |
+
+## Interpretation
+- **JAK2 closes without any template, even with the deepest MSA (all 7738 sequences).** 3 of 5 seeds end next to
+  FERM (FERM–JH1 45–50 Å from recycle 2–3 on) and stay there for all 15 recycles; **seed 0 is 6.9 Å from Shan's
+  closed JAK2 model** — as close as the template-based closed JAK2 runs (6.0–7.3 Å). Seeds 2 and 3 are closed-like
+  but further from Shan (15.6, 19.1 Å). Seeds 1 and 4 are open (1.2–2.1 Å from AF2).
+- **Unlike JAK1:** JAK1 was open in every seed at 512/8192, 256/1024 and 160/640 and closed only at 128/512.
+  For JAK2 at 256/1024 all 5 seeds were open ([JAK2_20261015_134817](../JAK2_20261015_134817)), so the closed
+  fraction is not monotonic in MSA depth at 5 seeds — more seeds are needed.
+- pLDDT is similar for closed (85.0–85.2) and open (86.3–86.4) seeds.
