@@ -43,3 +43,28 @@ Part of the JAK1 MSA-depth scan. OpenFold model_1, guided recycling, 15 recycles
 
 pLDDT 78.6–85.6; JH2–JH1 29.4–53.4 Å; FERM–JH1 40.2–95.7 Å (open references ~92 Å, closed ma-l9b1f 40 Å).
 Nearest reference over all conformations: ma-l9b1f 49, ma-a1sai 21, AF2 5.
+
+## Per-seed trajectories (FERM–JH1 centroid distance, Å; open ~92, closed ~40)
+
+| seed | recycles 1–15 | final state |
+|---|---|---|
+| 0 | 73 73 73 71 67 73 70 69 71 67 73 75 94 96 95 | in between → **open** at recycle 13 |
+| 1 | 69 72 68 94 67 92 95 94 95 95 95 95 94 93 93 | **open** from recycle 6 |
+| 2 | 56 50 46 49 45 46 46 45 45 44 44 45 46 46 44 | **closed** (FERM-bound) from recycle 3 |
+| 3 | 71 66 53 58 56 85 91 57 53 90 89 91 85 84 84 | switches several times, ends open-like |
+| 4 | 49 42 40 41 41 40 41 41 41 40 41 41 41 42 41 | **closed**, stable from recycle 2 |
+
+## Interpretation
+- **First template-free run that produces the closed JAK1.** Seed 4 stays closed for all 15 recycles and matches
+  Orianne's closed model ma-l9b1f to **2.4 Å** (recycle 4; selected structure recycle 13: 4.5 Å, FERM–JH1 40.8 Å,
+  pLDDT 83.9). 15 conformations are within 15 Å of ma-l9b1f, 11 within 15 Å of the open ma-a1sai.
+- **Both states from the same MSA depth.** At 128/512 the model is bistable: 2 seeds closed (2, 4), 2 open (0, 1),
+  1 switching (3). The deep MSA (512/8192) gave only open; the AF2 template gave only open.
+- **pLDDT does not separate the states** (closed seed 4: 83.9, open seed 1: 85.1), so the model is about equally
+  confident in both — consistent with two real conformations rather than a low-confidence artefact.
+- **15 recycles were needed:** seeds 0 and 3 only settle after recycle 12–13.
+- **Not reproducible run-to-run:** yesterday's 8-recycle run at the same depth and seeds (JAK1_20261014_135749) went open
+  in all seeds by recycle 4–8. Seeds alone do not fix the outcome (GPU non-determinism and the stochastic dropout amplify
+  small differences in this bistable regime), so the fraction of closed vs open seeds is the meaningful quantity, not which seed closes.
+- The selected structure of seed 2 (recycle 3) is FERM-bound but 25 Å from ma-l9b1f: JH1 binds FERM in a somewhat different
+  orientation; its later recycles stay FERM-bound.
