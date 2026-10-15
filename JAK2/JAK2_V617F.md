@@ -35,6 +35,23 @@ or 7T6F (JAK1 cryo-EM active dimer, mapped); otherwise 'next to FERM' (FERM–JH
 - **V617F abolishes the closed state** at the deepest MSA (7/16 → 0/16, p = 0.0068; closed + FERM-bound 9/16 → 0/16, p = 0.0008).
 - Wild type: [JAK2_20261015_134643](runs/JAK2_20261015_134643) (seeds 0–4) + [JAK2_20261015_161033](runs/JAK2_20261015_161033) (seeds 5–15).
 
+## MSA 256/1024 (wild type 16 seeds, V617F 8 seeds)
+
+| final state | wild type | **V617F** ([JAK2_V617F_20261015_215648](runs/JAK2_V617F_20261015_215648)) |
+|---|--:|--:|
+| open | 16 | 4 |
+| closed | 0 | 1 (6.6 Å) |
+| next to FERM, near closed (11.6–12.7 Å) | 0 | 3 |
+
+- **At this depth V617F moves JAK2 towards the closed state** (0/16 → 4/8, p = 0.0066), the opposite of 512/8192.
+
+## Overall (JAK2 V617F)
+- The effect of V617F on the JAK2 domain arrangement **depends on the MSA depth**: 512/8192 closed 7/16 → 0/16 (all open);
+  256/1024 open 16/16 → 4/8 open with 4 closed/near-closed; 128/512 detached JH1 10/15 → 2/16 (more open). There is no single
+  direction (unlike JAK1 V658F, which at 128/512 and 96/384 consistently moves JAK1 towards the 7T6F-like arrangement).
+  Wild type and mutant MSAs were computed separately (same ColabFold search); the depth dependence may partly reflect which
+  sequences enter the subsampled MSA.
+
 ## Per seed at 128/512 (final recycle; Å)
 
 | seed | WT: FERM–JH1 / vs open / vs closed / contacts → class | V617F: FERM–JH1 / vs open / vs closed / contacts → class |
