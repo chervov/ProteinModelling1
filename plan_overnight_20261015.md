@@ -22,3 +22,13 @@ molab sandboxes last ~7.5–8.5 h; runs not finished then continue on new notebo
 The JAK2 molab sandbox (sb-05b7…) was shut down at 21:19 (HTTP 410), ~3 h after it was created, during V617F 64/256.
 Done there: V617F 128/512 ([JAK2_V617F_20261015_162017](JAK2/runs/JAK2_V617F_20261015_162017)). The rest moved to Colab A100s,
 queued after the current A100 jobs: V617F 64/256 (0–15), V617F 96/384 (0–15), WT 64/256 (5–15), WT 96/384 (5–15).
+
+## Update 23:57 — JAK1 molab sandbox shut down; everything on Colab
+The JAK1 molab sandbox (sb-976a…) was shut down at ~22:18, right after V658F 96/384 had been pushed. All remaining runs are on
+Colab (max. 2 × A100 at once + L4):
+
+| Colab lane | queue |
+|---|---|
+| A100 (lane 1) | JAK2 WT 256/1024 seeds 5–15 (running) → **JAK1 V658F 512/8192 (0–9)** → JAK2 V617F 64/256 (0–15) → JAK2 WT 64/256 (5–15) |
+| A100 (lane 2) | JAK2 V617F 256/1024 (0–7, running) → JAK2 V617F 96/384 (0–15) → **JAK1 V658F 64/256 (0–15)** → JAK2 WT 96/384 (5–15) |
+| L4 | JAK1 V658F 32/64 (0–4) |
