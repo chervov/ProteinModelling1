@@ -395,3 +395,66 @@ binding to the pseudokinase domain** (Frontiers in Oncology, 2018). Our pipeline
 all. If a clinically activating JAK3 mutation turns out not to open the arrangement in these runs, that
 mechanism is the first explanation to consider — before concluding the mutation has no conformational
 effect.
+
+---
+
+## 11. First TYK2 run: the 4OLI template assay does not work (2026-10-16 18:36)
+
+`TYK2_20261016_130845` — TYK2 wild type, 4OLI as template in recycles 1–3 then switched off,
+MSA 128/512, 15 recycles, 16 seeds, 219 min on a Colab A100.
+Template identity to the query: **539 aligned residues, 99.6 % identical** (the two mismatches are the
+crystal's kinase-dead D1023N), confirming the template was fetched and mapped correctly.
+
+### Per-seed distance from the template arrangement (JH1 RMSD after superposing JH2, Å)
+
+Every seed, every recycle:
+
+| | recycle 1 | recycles 2–3 (template on) | recycles 4–15 (template OFF) | final |
+|---|--:|--:|--:|--:|
+| all 16 seeds | 1.5–3.4 | 1.0–1.5 | **1.1–2.2** | **1.4–1.9** |
+
+**No seed moves.** Releasing the template changes nothing: the structures stay 1.4–1.9 Å from 4OLI for
+all twelve template-free recycles. Overall JH2–JH1 distance spans 36.9–38.1 Å against the template's
+39.0 Å, and FERM–JH1 only 38.5–47.2 Å.
+
+### Why this kills the assay
+
+The design assumed wild type would mostly stay closed while a destabilising mutation escaped more often.
+With wild type at **16/16 seeds locked within 2 Å**, there is no dynamic range: the measurement cannot
+distinguish any mutant from wild type, whatever the mutation does. This was listed as the main risk of
+the design; it has happened.
+
+Two explanations are consistent with the data, and they are not separated yet:
+1. **The release worked, but the basin is deep.** 4OLI is a real crystal structure, and the MSA at this
+   depth may independently favour the compact state, so the model has no reason to leave.
+2. **The release did not take effect** — the `--template_recycles` patch may not be doing what it should.
+   The trajectories show no discontinuity at recycle 3→4, which is what a working release would most
+   likely produce.
+
+Distinguishing them needs the "4OLI in all recycles" control. That is now lower priority than the
+redesign below, because either way the assay is unusable as configured.
+
+### Redesign
+
+AF2 TYK2 sits at FERM–JH1 39.7 Å and JH2–JH1 37.2 Å; 4OLI sits at JH2–JH1 39.0 Å. **Both references are
+compact, and only ~2 Å apart.** So TYK2's default predicted state is already the closed one, and no
+template is needed to reach it — which makes the template a liability rather than a tool.
+
+The TYK2 queue has been rebuilt around free prediction, the same design that produced a significant
+result for JAK3 M592F (Mann-Whitney p = 0.011):
+
+| # | run | seeds |
+|--:|---|--:|
+| 1 | TYK2 wild type, no template, MSA 128/512 | 8 |
+| 2 | **TYK2 P982A**, no template, MSA 128/512, same seeds | 8 |
+| 3 | TYK2 wild type, no template, MSA 512/8192 | 8 |
+| 4 | TYK2 P982A, no template, MSA 512/8192 | 8 |
+
+The question becomes "does P982A open TYK2 relative to wild type", measured the same way as every other
+mutation in the project, rather than "does P982A escape a template we cannot escape from".
+
+### Also learned
+- **TYK2 exceeds a 40 GB A100 with a template.** The paired P982A run died of CUDA out-of-memory after
+  11 of 16 seeds and 2.5 h; memory accumulates across seeds. TYK2 work moves to molab.
+- Of 240 conformations, 211 were nearest the AF2 model and 29 nearest the mapped 4OLI template — the two
+  being so close together means "nearest reference" carries little information for TYK2.
