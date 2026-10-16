@@ -163,3 +163,106 @@ as changed individual structures. With 16 seeds a ~6-seed swing is needed for p 
 - [ ] ΔΔG on open and closed conformations, the approach used by Jeanpierre et al. (section 9)
 - [ ] In-silico alanine scan of all 36 TYK2 interface residues
 - [ ] Burial analysis in each protein's **own** closed structure, not only via the TYK2 mapping
+
+---
+
+## 7. Literature search (2026-10-16)
+
+Searched per variant. **None of the seven has a dedicated functional study.** What exists is context.
+
+### TYK2 V678
+- **V678F** (not our variant) is reported to **increase TYK2 kinase activity** — consistent with the
+  equivalent JAK2 V617F and JAK1 V658F. No data found on **V678M**.
+- This matters: the activating substitution at this position is the **aromatic** phenylalanine. Methionine
+  is what JAK3 carries natively at the equivalent position (M592), so V678M is not expected to act like V678F.
+
+### TYK2 P982
+- **No literature found for P982 in any substitution.** The residue appears in no variant report located.
+- Nearby context: a 2023 modelling study of deucravacitinib describes the JH1 β-stretch around M978 as
+  contacting JH2 in the autoinhibited state. P982 is immediately C-terminal to it.
+- **TYK2 P1104A** (rs34536443), the well-studied kinase-domain proline variant, is a **hypomorph**: catalytically
+  impaired but still signalling through IFN-α/β, IL-6 and IL-10 (Li et al., J Immunol 2013); reduced type I IFN
+  and IL-12/IL-23 responses; protective against several autoimmune diseases; associated with increased
+  tuberculosis risk. Molecular dynamics work attributes the reduced activity to **stabilisation of inactive
+  conformations**. A recent deep mutational scan reports reduced protein abundance and signalling.
+  *Relevance:* a different proline in the same domain, also implicated in conformational equilibrium — but
+  P1104A **stabilises** the inactive state, the opposite of what we predict for P982A.
+
+### JAK2 G571
+- **G571R not found.** The neighbouring **G571S** is reported in a patient with isolated erythrocytosis lacking
+  V617F and exon 12 mutations (Leukemia Research Reports, 2016), treated with phlebotomy over three years.
+  Its functional effect was **not established** — the authors propose only a putative role.
+- G571 lies in exon 13, within the pseudokinase domain. Germline JAK2 pseudokinase variants are a recognised
+  cause of hereditary erythrocytosis, distinct from polycythaemia vera in lacking clonal evolution.
+
+### JAK2 V1110, L805, V578
+- **No reports found for any of the three.** They appear in no clinical variant table located, and the
+  curated JAK2 pathogenic list (V617F, R683G, R683S) does not include them.
+
+### JAK3 Y581
+- **Y581C not found.** Context: roughly half of clinical JAK3 mutations cluster in the pseudokinase (JH2)
+  domain. Established activating JH2 alleles are **M511I, A572V, R657Q, V722I**, found in acute
+  megakaryoblastic leukaemia, T-ALL, NK/T-cell lymphoma and related malignancies; A572V, V722I and P132T
+  transform Ba/F3 cells to factor-independent growth (Walters et al., Cancer Cell 2006).
+- Mechanism: hyperactivity of oncogenic JAK3 mutants **depends on ATP binding to the pseudokinase domain**,
+  and the isolated JH2 is unstable and strongly stabilised by ATP (Frontiers in Oncology, 2018).
+
+**Summary:** all seven are effectively uncharacterised. That makes the modelling genuinely predictive rather
+than confirmatory, and it also means there is no functional ground truth to check against.
+
+---
+
+## 8. Sequence-based pathogenicity predictors
+
+Retrieved from dbNSFP via the MyVariant.info API, 2026-10-16. Two known variants are included as controls.
+
+| Variant | AlphaMissense | PolyPhen-2 | SIFT | CADD | REVEL | ESM1b | ClinVar |
+|---|---|---|---|--:|--:|--:|---|
+| **TYK2 V678M** | 0.30–0.42 amb. | 1.00 D | 0.001 D | 31.0 | 0.564 | −6.29 | Uncertain significance |
+| **TYK2 P982A** | 0.37–0.53 amb. | 1.00 D | 0.002 D | 27.9 | 0.702 | **−11.22** | – |
+| **JAK2 V1110E** | 0.29 B | **0.18 B** | 0.023 D | 23.0 | 0.477 | **−1.22** | – |
+| **JAK2 G571R** | 0.27–0.36 amb. | 1.00 D | 0.002 D | **33.0** | 0.874 | −9.50 | – |
+| **JAK2 V578I** | 0.24–0.34 B | 1.00 D | 0.000 D | 29.3 | 0.618 | −7.82 | – |
+| **JAK2 L805I** | **0.15 B** | 0.91 P | **0.317 T** | 25.6 | **0.439** | −7.67 | – |
+| **JAK3 Y581C** | **0.10–0.14 B** | 0.97 D | 0.001 D | **22.2** | **0.369** | −5.17 | – |
+| *control:* JAK2 V617F | 0.33–0.39 amb. | 1.00 D | 0.002 D | 33.0 | 0.881 | −10.29 | **Pathogenic** |
+| *control:* TYK2 P1104A | **0.82 P** | 1.00 D | 0.002 D | 26.1 | 0.586 | −9.86 | **Benign** |
+
+D = damaging, P = possibly damaging / pathogenic, B = benign, T = tolerated, amb. = ambiguous.
+
+### 8.1 The controls invalidate naive use of these scores here
+
+- **AlphaMissense scores JAK2 V617F at 0.33–0.39 — benign to ambiguous.** This is the most famous pathogenic
+  mutation in the family, ClinVar Pathogenic, the driver of polycythaemia vera.
+- **AlphaMissense scores TYK2 P1104A at 0.82 — pathogenic.** ClinVar calls it **Benign**; it is a common
+  protective variant.
+
+Both controls are wrong, and in opposite directions. The reason is structural: these predictors are trained
+largely on loss-of-function disease variants and on evolutionary conservation. A **gain-of-function** mutation
+that shifts a conformational equilibrium need not look unusual to them, and a tolerated hypomorph at a
+conserved site can look alarming. **For the question we are asking — which conformation does the protein
+prefer — these scores should not be treated as evidence.** They are reported for completeness.
+
+### 8.2 What the scores do suggest, read cautiously
+
+- **P982A has the most extreme ESM1b score of all seven (−11.22)** — more extreme than V617F (−10.29).
+  ESM1b is a protein language model, so this says the substitution is highly unexpected given evolutionary
+  context, consistent with the proline being conserved across all four JAKs. This is the one predictor
+  result that agrees with the structural analysis.
+- **L805I is the mildest by consensus** — AlphaMissense 0.15, SIFT *tolerated*, REVEL 0.44. This matches the
+  structural prediction (fully buried in the JH2 core, and it installs the residue JAK1 already has).
+- **Y581C is the mildest by AlphaMissense (0.10–0.14), CADD (22.2) and REVEL (0.37)**, agreeing with the
+  structural finding that it buries 0.0 Å² at the interface. Note PolyPhen-2 disagrees (0.97 D).
+- **V1110E is the one case where structure and sequence predictors conflict.** PolyPhen-2 calls it **benign**
+  (0.18) and ESM1b is nearly neutral (−1.22), while the structural reading was "buried charge, fold
+  destabilising". The TYK2 mapping put the equivalent residue at only 8 % exposure, but **this needs checking
+  in JAK2's own structure** rather than by homology — see section 6.
+- **G571R has the joint-highest CADD (33.0, equal to V617F)** and high REVEL (0.874), but sits in a poorly
+  ordered, exposed loop by the structural analysis. High conservation signal, low structural confidence.
+
+### 8.3 Disagreement as a signal
+
+Where PolyPhen-2 says "damaging" for six of seven variants while AlphaMissense says "benign" for four of them,
+the predictors are not adding independent information — PolyPhen-2 is close to saturated on this gene family.
+The useful discriminators here are **ESM1b** (continuous, and it ranks P982A first) and **the structural
+ΔSASA analysis**, which is the only method that distinguishes interface from core.
