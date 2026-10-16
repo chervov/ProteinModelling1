@@ -45,6 +45,9 @@ or 7T6F (JAK1 cryo-EM active dimer, mapped); otherwise 'next to FERM' (FERM–JH
 
 - **At this depth V617F moves JAK2 towards the closed state** (0/16 → 4/8, p = 0.0066), the opposite of 512/8192.
 
+## MSA 64/256 (wild type 5 seeds, V617F 16 seeds)
+- V617F ([JAK2_V617F_20261016_023713](runs/JAK2_V617F_20261016_023713)): 14 detached JH1, 2 other; wild type: 5/5 detached. No effect.
+
 ## Overall (JAK2 V617F)
 - The effect of V617F on the JAK2 domain arrangement **depends on the MSA depth**: 512/8192 closed 7/16 → 0/16 (all open);
   256/1024 open 16/16 → 4/8 open with 4 closed/near-closed; 128/512 detached JH1 10/15 → 2/16 (more open). There is no single
