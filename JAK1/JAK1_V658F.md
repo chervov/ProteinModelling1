@@ -81,8 +81,10 @@ recycles 2–4, and 4 (seeds 10, 12, 13, 14) stay near FERM for 3–6 recycles a
 | 512/8192 | 5/5 open | 10/10 open |
 | 128/512 | 6 open, 3 closed, 4 next to FERM, 1 7T6F-like (15) | 9 open, 0 closed, 1 next to FERM, 4 7T6F-like (+1 partial) (15) |
 | 96/384 | 3 next to FERM, 2 7T6F-like (5) | **16/16 7T6F-like** |
+| 64/256 | 4–5 7T6F-like/third (5) | 7 7T6F-like + 3 near, 5 open, 1 other (16) — [JAK1_V658F_20261016_024057](runs/JAK1_V658F_20261016_024057) |
 | 32/64 | compact, low confidence | compact, low confidence (5) |
 
+- At 64/256 the 7T6F-like arrangement dominates in both (V658F also gives 5/16 open; only 5 wild-type seeds).
 - Where the MSA leaves room for more than one arrangement (128/512, 96/384), V658F consistently removes the closed/FERM-bound
   arrangement and favours the 7T6F-like active-dimer arrangement; with the whole MSA (open only) or a very shallow MSA it has no effect.
 
