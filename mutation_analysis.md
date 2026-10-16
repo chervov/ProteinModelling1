@@ -519,3 +519,57 @@ JAK1 and JAK2 were classified on the arrangement metric throughout. JAK3 default
 the runs carried only the AlphaFold model as a reference, and "nearest reference" was therefore
 uninformative. **All JAK3 conclusions in this project should be read on the arrangement metric**, and the
 earlier JAK3 sections above are superseded on that point.
+
+---
+
+## 13. TYK2 free prediction: 128/512 is a ceiling (2026-10-16 21:10)
+
+`TYK2_20261016_175018` — TYK2 wild type, **no template**, MSA 128/512, 15 recycles, 8 seeds, 84 min on
+molab (RTX PRO 6000).
+
+| seed | pLDDT | JH2–JH1 | FERM–JH1 | JH1 vs AF2 (closed-like) |
+|--:|--:|--:|--:|--:|
+| 0–7 | 81.9–82.2 | 46.5–46.7 | **93.2–93.8** | **81.9–82.5** |
+
+**All 8 seeds are open, and essentially identical** — FERM–JH1 varies by 0.6 Å across the whole set.
+The AlphaFold TYK2 model sits at FERM–JH1 39.7 Å, so free prediction at this depth lands ~54 Å away
+from it and never visits the compact state.
+
+### Why this matters, and what it costs
+
+The TYK2 mutation pair was queued at 128/512 by analogy with JAK3, where that depth is bistable. For
+TYK2 it is **saturated open**. P982A is predicted to *destabilise* the closed state, i.e. to push
+further open — and there is nowhere further to go. A wild type/mutant comparison at this depth could
+only ever return "no difference", for a reason that has nothing to do with the mutation.
+
+The P982A run had been running 5 minutes when this was spotted; it was stopped.
+
+### The family now has an ordered depth requirement
+
+| protein | behaviour at 128/512 | depth where both states appear |
+|---|---|---|
+| JAK2 | mostly detached JH1 | 512/8192 (7 closed / 7 open) |
+| JAK1 | bistable | 128/512 |
+| JAK3 | **bistable** (7 of 16 seeds closed-like, 9 not) | 128/512 |
+| **TYK2** | **uniformly open** | **shallower than 128/512 — unknown** |
+
+TYK2 needs a **shallower** MSA than any other family member to access its closed state. That is a result
+in itself: by this measure TYK2's evolutionary signal favours the open arrangement more strongly than
+JAK1, JAK2 or JAK3.
+
+It also sits oddly beside two other facts — the AlphaFold TYK2 model is compact, and the 4OLI-templated
+run stayed locked in the closed state through twelve template-free recycles. The closed basin clearly
+exists and is stable once entered; free prediction at 128/512 simply never enters it.
+
+### Queue
+
+Depth scan, wild type only, 8 seeds each: **96/384 → 64/256 → 32/64**. The P982A pairing waits for a
+depth that shows both states. JAK1 reached the 7T6F-like arrangement at 64/256, and both JAK1 and JAK2
+went compact at 32/64, so the transition is likely in that range.
+
+### A caution about the uniformity
+
+Eight seeds spanning 0.6 Å is far tighter than anything seen for JAK1, JAK2 or JAK3, where seeds at the
+same depth differ by tens of Ångström. Either TYK2's landscape at this depth is genuinely a single deep
+funnel, or the seeds are not diversifying as intended for this target. The depth scan will distinguish
+these: a real funnel should break up as the MSA thins, whereas a seeding problem would persist.
