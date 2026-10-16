@@ -48,6 +48,9 @@ or 7T6F (JAK1 cryo-EM active dimer, mapped); otherwise 'next to FERM' (FERM–JH
 ## MSA 64/256 (16 seeds each)
 - V617F ([JAK2_V617F_20261016_023713](runs/JAK2_V617F_20261016_023713)): 14/16 detached JH1, 2 other; wild type 16 seeds ([JAK2_20261015_134839](runs/JAK2_20261015_134839) + [JAK2_20261016_053140](runs/JAK2_20261016_053140)): 10/16 detached, 4 other, 2 next to FERM. No meaningful effect.
 
+## MSA 96/384 (wild type 5 seeds, V617F 16 seeds)
+- V617F ([JAK2_V617F_20261016_055453](runs/JAK2_V617F_20261016_055453)): 12 detached JH1, 3 next to FERM, 1 closed (3.3 Å); wild type ([JAK2_20261015_172727](runs/JAK2_20261015_172727)): 4 next to FERM, 1 detached. V617F → more detached (p = 0.047).
+
 ## Overall (JAK2 V617F)
 - The effect of V617F on the JAK2 domain arrangement **depends on the MSA depth**: 512/8192 closed 7/16 → 0/16 (all open);
   256/1024 open 16/16 → 4/8 open with 4 closed/near-closed; 128/512 detached JH1 10/15 → 2/16 (more open). There is no single
