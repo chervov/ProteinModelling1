@@ -83,3 +83,7 @@ Nearest reference over all conformations: AF2 142, Shan 2014 98.
 | 13 | 47 39 55 52 50 54 50 50 52 51 51 52 50 51 51 | in between |
 | 14 | 45 59 62 63 64 65 63 63 62 62 63 66 64 62 64 | in between |
 | 15 | 52 60 56 56 57 57 55 56 56 56 57 57 56 57 58 | in between |
+
+## Interpretation (vs wild type)
+- Final states (16 seeds): **12 detached JH1, 3 next to FERM, 1 closed (3.3 Å)**.
+- Wild type at the same depth ([JAK2_20261015_172727](../JAK2_20261015_172727), 5 seeds): 4 next to FERM, 1 detached. Here V617F shifts JAK2 towards the detached-JH1 state (1/5 → 12/16, p = 0.047) — the opposite of 128/512.
