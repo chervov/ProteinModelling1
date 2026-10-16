@@ -573,3 +573,71 @@ Eight seeds spanning 0.6 Å is far tighter than anything seen for JAK1, JAK2 or 
 same depth differ by tens of Ångström. Either TYK2's landscape at this depth is genuinely a single deep
 funnel, or the seeds are not diversifying as intended for this target. The depth scan will distinguish
 these: a real funnel should break up as the MSA thins, whereas a seeding problem would persist.
+
+---
+
+## 14. A572V complete (16 seeds) — and a correction to section 12 (2026-10-16 21:20)
+
+Section 12 reported A572V at **p = 0.00094** from its first 8 seeds. With all 16 seeds that becomes
+**p = 0.035**. The first half was unusually uniform; the second half is not. **The earlier figure was
+over-confident and should not be quoted.**
+
+### All four JAK3 runs, 16 seeds each, MSA 128/512
+
+Per-seed JH1 RMSD vs the closed reference after superposing JH2 (Å):
+
+| | values | median |
+|---|---|--:|
+| **wild type** | 16 16 17 20 20 21 23 · 58 65 67 68 71 78 89 91 91 | 61.5 |
+| **M592F** | 23 · 43 48 55 57 58 61 61 67 67 69 83 84 84 91 92 | 64.0 |
+| **A573V** | 2 2 2 2 2 2 2 2 3 7 9 12 · 64 78 79 80 | 2.7 |
+| **A572V** | 18 · 34 48 50 58 61 79 80 88 89 90 91 91 92 92 93 | 84.3 |
+
+The distributions are **bimodal**, so the median is a poor summary and a rank test is not ideal either.
+Counting seeds that retain the closed arrangement (wild type's closed cluster is 16–23 Å, so < 25 Å):
+
+| | closed-like seeds | Fisher vs wild type | Mann-Whitney |
+|---|--:|--:|--:|
+| wild type | **7/16** | – | – |
+| **M592F** | **1/16** | **p = 0.037** | p = 0.29 |
+| **A572V** | **1/16** | **p = 0.037** | p = 0.035 |
+| **A573V** | **12/16** | p = 0.149 (ns) | **p = 0.0024** |
+
+### What each mutation actually does
+
+**M592F and A572V both abolish the closed arrangement** — 7/16 seeds down to 1/16, p = 0.037 each.
+They differ in what replaces it: M592F sends 5 seeds to the fully open state (FERM–JH1 94 Å, 3.3 Å from
+the JAK1 open model), while A572V produces splayed arrangements matching no reference.
+
+**A573V acts on the *quality* of the closed state, not its frequency.** The count barely moves (12/16
+versus 7/16, not significant), but its closed seeds sit at **2 Å** from both the AlphaFold model and the
+experimental TYK2 crystal, where wild type's only reach 16–23 Å. That is what the rank test detects
+(p = 0.0024) and the count test cannot. A573V does not make the closed state more common — it makes it
+much more canonical.
+
+So the two neighbouring alanines still differ, but less starkly than section 12 implied: **572 is
+required for the closed arrangement to form at all; 573 loosens its geometry without preventing it.**
+
+### A caveat that needs watching
+
+A572V's two 8-seed halves differ markedly despite identical settings, the same sandbox and the same MSA:
+
+- seeds 0–7: **88 89 90 91 91 92 92 93** — tightly clustered, all far from closed
+- seeds 8–15: **18 34 48 50 58 61 79 80** — spread across the whole range
+
+Wild type shows within-run bimodality too, so this may simply be seed variance at n = 8. But if outcomes
+cluster by *run* rather than by seed, the paired design is weaker than assumed and every 8-seed result
+in this campaign needs re-reading. **Two things to check:** whether the same split appears in M511I and
+R657Q, whose halves are running now, and whether the unusual 0.6 Å uniformity of the TYK2 128/512 run is
+the same phenomenon.
+
+### Methodological summary for the JAK3 set
+
+| metric | M592F | A572V | A573V |
+|---|---|---|---|
+| FERM–JH1 | **p = 0.012** | p = 0.13 | **p = 0.0010** |
+| arrangement, rank | p = 0.29 | **p = 0.035** | **p = 0.0024** |
+| arrangement, closed-count | **p = 0.037** | **p = 0.037** | p = 0.15 |
+
+No single row captures all three mutations. Reporting any one of them alone would misrepresent at least
+one variant — which is the central methodological lesson of today's JAK3 work.
