@@ -73,3 +73,7 @@ Nearest reference over all conformations: Shan 2014 133, AF2 32.
 | 13 | 20 48 54 60 60 61 60 58 57 59 59 59 57 58 60 | in between |
 | 14 | 22 49 53 53 50 52 51 51 50 50 50 48 49 50 49 | closed-like (< 50) |
 | 15 | 21 41 52 52 52 51 54 58 58 59 57 57 56 57 58 | in between |
+
+## Interpretation
+- Final states (seeds 5–15): 5 detached JH1, 4 other (JH1 on JH2 in a non-reference position), 2 next to FERM; none open, closed or 7T6F-like.
+- Pooled with seeds 0–4 ([JAK2_20261015_134839](../JAK2_20261015_134839)): **16 seeds — 10 detached JH1**, 4 other, 2 next to FERM. V617F at this depth ([JAK2_V617F_20261016_023713](../JAK2_V617F_20261016_023713)): 14/16 detached — no meaningful mutation effect at 64/256.
