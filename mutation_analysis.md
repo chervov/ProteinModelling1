@@ -458,3 +458,64 @@ mutation in the project, rather than "does P982A escape a template we cannot esc
   11 of 16 seeds and 2.5 h; memory accumulates across seeds. TYK2 work moves to molab.
 - Of 240 conformations, 211 were nearest the AF2 model and 29 nearest the mapped 4OLI template — the two
   being so close together means "nearest reference" carries little information for TYK2.
+
+---
+
+## 12. The metric was wrong: FERM–JH1 hides the autoinhibitory interface (2026-10-16 20:20)
+
+A572V finished its first 8 seeds and looked unremarkable on FERM–JH1 (median 54.5 vs wild type 50.5,
+p = 0.069). Classifying the structures against mapped references showed something FERM–JH1 could not see,
+so every JAK3 run was re-analysed **per seed** on the domain-arrangement metric — JH1 RMSD against the
+closed reference after superposing JH2, the measure used for JAK1 and JAK2 all along.
+
+### Per-seed JH1-vs-closed distance (Å), MSA 128/512
+
+| | n | values | median | vs wild type |
+|---|--:|---|--:|---|
+| **wild type** | 16 | 16 16 17 20 20 21 23 · 58 65 67 68 71 78 89 91 91 | 61.5 | – |
+| **A573V** | 16 | **2 2 2 2 2 2 2 2 3 7 9 12** · 64 78 79 80 | **2.7** | **p = 0.0024, closer to closed** |
+| **A572V** | 8 | **88 89 90 91 91 92 92 93** | **91.0** | **p = 0.00094, closed state abolished** |
+| M592F | 16 | 23 43 48 55 57 58 61 61 67 67 69 83 84 84 91 92 | 64.0 | p = 0.29, no change |
+
+### Three conclusions, two of which reverse what was written earlier
+
+**1. Wild-type JAK3 at 128/512 is bistable, not uniformly compact.** Seven of sixteen seeds sit 16–23 Å
+from the closed arrangement and nine sit 58–91 Å away. The earlier statement that wild type is
+"uniformly compact" came from FERM–JH1, where every seed fell in a narrow 42–56 Å band. **FERM–JH1 was
+masking a two-state distribution.** The project's top-level summaries need this correction.
+
+**2. A572V, the canonical activating allele, does show the activating phenotype.** All 8 seeds land
+88–93 Å from the closed arrangement: the autoinhibitory JH2–JH1 packing is **completely abolished**,
+p = 0.00094. On FERM–JH1 the same run looked like a non-result (p = 0.069), because JH1 swings away from
+JH2 without moving far from FERM. This is the clearest mutation effect measured in the project so far,
+and it was nearly missed.
+
+**3. A573V does the opposite, and does it hard.** Twelve of sixteen seeds sit within 12 Å of the closed
+arrangement, eight of them at **2 Å** — essentially identical to both the AlphaFold JAK3 model and the
+experimental TYK2 autoinhibited crystal 4OLI mapped onto JAK3 (2.3 and 2.4 Å for the representative
+structure). Wild type's own closed-like seeds only reach 16 Å. **A573V locks JAK3 into a more canonical
+autoinhibited geometry than wild type ever adopts.**
+
+So the two adjacent alanines have **opposite roles**: 572 maintains the autoinhibitory packing, 573
+loosens it. That was the specific prediction made when the A572V/A573V mix-up was found, and it holds.
+
+### 4. M592F changes a different thing
+
+M592F is significant on FERM–JH1 (p = 0.011, 5/16 seeds reaching the open state at 94 Å) but **not** on
+JH2–JH1 arrangement (p = 0.29). It moves the kinase domain away from FERM while leaving the pseudokinase
+packing much as wild type has it. A572V does the reverse. **These are two distinct structural effects,
+and a single metric cannot report both.**
+
+### Methodological consequence
+
+Both measures are needed, and they answer different questions:
+
+| metric | question | catches |
+|---|---|---|
+| FERM–JH1 centroid distance | how far is the kinase from FERM? | M592F |
+| JH1 RMSD vs closed ref after superposing JH2 | is the autoinhibitory packing intact? | A572V, A573V |
+
+JAK1 and JAK2 were classified on the arrangement metric throughout. JAK3 defaulted to FERM–JH1 because
+the runs carried only the AlphaFold model as a reference, and "nearest reference" was therefore
+uninformative. **All JAK3 conclusions in this project should be read on the arrangement metric**, and the
+earlier JAK3 sections above are superseded on that point.
