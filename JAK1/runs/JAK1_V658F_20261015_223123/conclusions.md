@@ -75,3 +75,7 @@ Nearest reference over all conformations: ma-a1sai 144, AF2 6.
 | 7 | 92 93 93 93 93 93 93 93 93 93 93 93 93 93 93 | open-like (> 80) |
 | 8 | 95 93 93 93 93 93 93 93 93 93 92 93 93 92 93 | open-like (> 80) |
 | 9 | 94 93 93 93 93 93 93 93 93 93 93 93 92 93 92 | open-like (> 80) |
+
+## Interpretation
+- **All 10 seeds open from recycle 1** (1.0–2.3 Å from ma-a1sai), pLDDT 83–86 — the same as wild type at this depth (all open, [JAK1_20261014_115803](../JAK1_20261014_115803)).
+- With the whole MSA the network is locked into the open state; the effect of V658F shows only at medium depth (128/512, 96/384; see [JAK1_V658F.md](../../JAK1_V658F.md)). Run on a Colab A100 (241 min).
