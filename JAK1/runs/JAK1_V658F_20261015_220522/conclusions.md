@@ -65,3 +65,7 @@ Nearest reference over all conformations: Shan 2014 75.
 | 2 | 48 54 58 53 50 49 50 52 52 51 15 44 48 57 52 | in between |
 | 3 | 48 33 42 48 46 46 46 43 45 48 45 53 58 57 57 | in between |
 | 4 | 50 54 57 55 50 47 50 50 50 49 50 51 47 46 47 | closed-like (< 50) |
+
+## Interpretation
+- **Compact, low-confidence structures, matching no reference:** 4 seeds next to FERM, 1 other; 34–63 Å from the closed ma-l9b1f, > 80 Å from open and 7T6F. pLDDT down to 56; some recycles collapse (FERM–JH1 down to 12 Å).
+- The same behaviour as wild type at this depth (earlier 32/64 campaign): at such a shallow MSA the mutation makes no visible difference. Run on a Colab L4 (224 min).
