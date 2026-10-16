@@ -83,3 +83,7 @@ Nearest reference over all conformations: AF2 211, Shan 2014 29.
 | 13 | 48 54 58 60 60 57 57 61 60 60 59 60 58 59 59 | in between |
 | 14 | 47 70 73 74 77 77 76 77 72 78 73 71 67 66 66 | in between |
 | 15 | 63 69 71 70 72 74 72 73 72 76 73 70 67 69 68 | in between |
+
+## Interpretation (vs wild type)
+- Final states (16 seeds): **14 detached JH1, 2 other** (JH1 on JH2 in a non-reference position); none open, closed or 7T6F-like.
+- Wild type at the same depth ([JAK2_20261015_134839](../JAK2_20261015_134839), 5 seeds): 5/5 detached JH1. **No effect of V617F at this shallow MSA.**
