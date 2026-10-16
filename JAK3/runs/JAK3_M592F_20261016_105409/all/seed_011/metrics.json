@@ -1,0 +1,19 @@
+{
+  "J_selected": 0.15654674172401428,
+  "between_angles_c_n_ca_loss_mean_selected": 0.0,
+  "between_angles_ca_c_n_loss_mean_selected": 4.870916382060386e-05,
+  "between_bonds_c_n_loss_mean_selected": 0.000442872173152864,
+  "between_clashes_mean_loss_selected": 6.619811756536365e-07,
+  "mean_plddt_selected_100": 84.40776824951172,
+  "model": "predictions",
+  "num_recycles": 15,
+  "plddt_norm_selected": 0.8440777063369751,
+  "seed": 11,
+  "selected_recycle_index": 5,
+  "structural_violation_loss_selected": 0.0062444619834423065,
+  "tag": "JAK3",
+  "violation_loss_weight": 0.10000000149011612,
+  "violations_between_residue_bond_selected": 0.03558718413114548,
+  "violations_between_residue_clash_selected": 0.024021349847316742,
+  "violations_within_residue_selected": 0.0
+}
