@@ -341,3 +341,57 @@ answer — only P982 at an interface — is reassuring but not independent confi
 | TYK2 V678M | little or none; allosteric at best | moderate | strengthened — 0.0 Å², 0 contacts |
 | JAK2 V578I | near-neutral | high | no |
 | JAK2 L805I | near-neutral | high | no |
+
+---
+
+## 10. JAK3 GPU results so far, and a numbering error worth recording (2026-10-16 18:15)
+
+Paired runs at MSA 128/512, 16 seeds, no template, 15 recycles. Wild type reference run
+`JAK3_20261016_125830`. Statistics by **Mann-Whitney** on the 16 final FERM–JH1 values — threshold-free,
+and therefore preferable to the Fisher test on an arbitrary cutoff reported earlier.
+
+| | median | mean | min | max | vs wild type |
+|---|--:|--:|--:|--:|---|
+| **wild type** | 50.5 | 48.9 | 42 | 56 | – |
+| **M592F** | 55.0 | 64.9 | 44 | **97** | **p = 0.011, more extended** |
+| **A573V** | **42.0** | 43.6 | 41 | 52 | **p = 0.0020, more compact** |
+
+Two mutations in the pseudokinase domain move JAK3 in **opposite directions**, both significantly.
+The Mann-Whitney p for M592F (0.011) is stronger than the Fisher value reported earlier (0.043) because
+the rank test uses the whole distribution rather than a cutoff.
+
+### 10.1 Error: A573V is not the reported allele
+
+JAK3 has **two adjacent alanines, A572 and A573** (sequence `...L570-E571-A572-A573-S574-L575...`).
+The activating mutation in the literature is **A572V** (Walters et al., Cancer Cell 2006 — identified in
+an acute megakaryoblastic leukaemia line, transforms Ba/F3 cells to factor-independent growth).
+**The run completed here used A573V, the neighbouring residue.**
+
+This came from a variant list compiled earlier in the project where A573V was recorded as a "known
+activating mutation". The residue identity was verified against the sequence — A is indeed at 573 — but
+the *position* was never checked against the primary literature, and the adjacent alanine made the error
+invisible to that check.
+
+**Consequences:**
+- The A573V result stands as an observation: a valine substitution at 573 makes JAK3 measurably **more
+  compact** (p = 0.0020). But it must **not** be described as "a known activating mutation failed to open
+  JAK3", because A573V is not that mutation.
+- **A572V has been added to the queue and is running** (started 18:10), paired with the same wild type.
+- M511I and R657Q were re-checked against the literature and **both are correct** as reported activating
+  JH2 alleles.
+
+### 10.2 What A573V may mean regardless
+
+A573V sits immediately next to the canonical site, and tightening rather than loosening the arrangement is
+a real, reproducible signal across 16 seeds. One reading is that the 572/573 region controls the
+compactness of the pseudokinase–kinase packing, and that substitutions there can push it either way.
+A572V will test that directly: if A572V opens JAK3 while A573V closes it, two neighbouring residues have
+opposite roles — which would be a specific, checkable claim.
+
+### 10.3 Caution carried forward
+
+A relevant literature note: the hyperactivity of oncogenic JAK3 mutants is reported to **depend on ATP
+binding to the pseudokinase domain** (Frontiers in Oncology, 2018). Our pipeline models no nucleotide at
+all. If a clinically activating JAK3 mutation turns out not to open the arrangement in these runs, that
+mechanism is the first explanation to consider — before concluding the mutation has no conformational
+effect.
