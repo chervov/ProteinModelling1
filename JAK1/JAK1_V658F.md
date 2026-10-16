@@ -68,6 +68,9 @@ recycles 2–4, and 4 (seeds 10, 12, 13, 14) stay near FERM for 3–6 recycles a
 - Together with 128/512 (closed/FERM-bound 7/15 → 1/15; 7T6F-like 1 → 4–5), V658F consistently moves JAK1 away from the
   autoinhibited (closed) arrangement and into the arrangement of the experimental active dimer, which carries the same mutation.
 
+## MSA 32/64 (V658F 5 seeds)
+- [JAK1_V658F_20261015_220522](runs/JAK1_V658F_20261015_220522): 4 next to FERM, 1 other, none matching a reference (34–63 Å from closed); low confidence (pLDDT down to 56) — like wild type at this depth. The MSA is too shallow for either state.
+
 ## Caveats
 - 15 seeds per condition; only the combined closed + FERM-bound difference is significant (p = 0.035).
 - MSAs were computed separately for the mutant and wild-type query (7576 vs 7390 sequences, same ColabFold search).
