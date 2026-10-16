@@ -71,6 +71,21 @@ recycles 2–4, and 4 (seeds 10, 12, 13, 14) stay near FERM for 3–6 recycles a
 ## MSA 32/64 (V658F 5 seeds)
 - [JAK1_V658F_20261015_220522](runs/JAK1_V658F_20261015_220522): 4 next to FERM, 1 other, none matching a reference (34–63 Å from closed); low confidence (pLDDT down to 56) — like wild type at this depth. The MSA is too shallow for either state.
 
+## MSA 512/8192 (V658F 10 seeds)
+- [JAK1_V658F_20261015_223123](runs/JAK1_V658F_20261015_223123): **all open** (1.0–2.3 Å from ma-a1sai), like wild type. No effect of the mutation with the whole MSA.
+
+## Overall (JAK1 V658F, no template)
+
+| MSA | wild type | V658F |
+|---|---|---|
+| 512/8192 | 5/5 open | 10/10 open |
+| 128/512 | 6 open, 3 closed, 4 next to FERM, 1 7T6F-like (15) | 9 open, 0 closed, 1 next to FERM, 4 7T6F-like (+1 partial) (15) |
+| 96/384 | 3 next to FERM, 2 7T6F-like (5) | **16/16 7T6F-like** |
+| 32/64 | compact, low confidence | compact, low confidence (5) |
+
+- Where the MSA leaves room for more than one arrangement (128/512, 96/384), V658F consistently removes the closed/FERM-bound
+  arrangement and favours the 7T6F-like active-dimer arrangement; with the whole MSA (open only) or a very shallow MSA it has no effect.
+
 ## Caveats
 - 15 seeds per condition; only the combined closed + FERM-bound difference is significant (p = 0.035).
 - MSAs were computed separately for the mutant and wild-type query (7576 vs 7390 sequences, same ColabFold search).
