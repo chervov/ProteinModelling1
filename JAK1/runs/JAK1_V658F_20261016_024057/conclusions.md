@@ -87,3 +87,8 @@ Nearest reference over all conformations: ma-a1sai 157, ma-l9b1f 57, AF2 14, Sha
 | 13 | 55 36 50 52 91 92 87 89 85 83 85 82 84 84 83 | open-like (> 80) |
 | 14 | 52 33 52 80 85 97 94 94 94 94 93 94 93 94 93 | open-like (> 80) |
 | 15 | 50 55 62 64 69 96 95 94 94 95 94 95 94 95 94 | open-like (> 80) |
+
+## Interpretation (vs wild type)
+- Final states (16 seeds): **7 in the 7T6F-like arrangement (5.5–6.5 Å) + 3 near it (12–26 Å), 5 open, 1 other**.
+- Wild type at the same depth ([JAK1_20261015_095803](../JAK1_20261015_095803), 5 seeds): all in the 7T6F-like/third arrangement (4 within 10 Å, 1 at ~18 Å).
+- At this depth the 7T6F-like arrangement dominates in both; V658F additionally gives some open seeds (5/16, none in the 5 wild-type seeds) — the opposite of the trend at 128/512 and 96/384, but with only 5 wild-type seeds this difference is weak.
