@@ -266,3 +266,78 @@ Where PolyPhen-2 says "damaging" for six of seven variants while AlphaMissense s
 the predictors are not adding independent information — PolyPhen-2 is close to saturated on this gene family.
 The useful discriminators here are **ESM1b** (continuous, and it ranks P982A first) and **the structural
 ΔSASA analysis**, which is the only method that distinguishes interface from core.
+
+---
+
+## 9. Burial analysis in each protein's own closed structure
+
+Section 3 mapped every variant onto TYK2/4OLI. That is sound for TYK2 but is homology for JAK2 and JAK3.
+Repeated here in each protein's own structure, keeping **only the JH2+JH1 pair** so the comparison matches
+4OLI (which contains no FERM-SH2):
+
+- **TYK2** — 4OLI, experimental
+- **JAK2** — our own closed prediction, `JAK2/runs/JAK2_20261015_082903/selected_closed.pdb`
+  (ma-l9b1f template, default MSA; this closed state persists after the template is switched off)
+- **JAK3** — our own closed prediction from today, `JAK3/runs/JAK3_20261016_125830/selected_closed.pdb`
+  (13.4 Å from the JAK1 closed model, 16.8 Å from 4OLI — see `JAK3/JAK3_M592F.md`)
+
+| Protein | JH2–JH1 interface | Variant | Exposed alone | **ΔSASA** | Contacts < 5 Å |
+|---|--:|---|--:|--:|--:|
+| **TYK2** | 1147 Å², 21 residues | **P982A** | 47 % | **59.8 Å²** | **28** |
+| | | V678M | 53 % | **0.0 Å²** | 0 |
+| **JAK2** | 1825 Å², 28 residues | V1110E | **30 %** | 0.0 Å² | 0 |
+| | | G571R | **51 %** | 0.0 Å² | 0 |
+| | | V578I | **0 %** | 0.0 Å² | 0 |
+| | | L805I | **1 %** | 0.0 Å² | 0 |
+| **JAK3** | 983 Å², 14 residues | Y581C | 20 % | 2.3 Å² | 0 |
+
+### 9.1 Correction to section 3
+
+Two numbers in section 3 need amending.
+
+1. **The TYK2 interface is 1147 Å² across 21 residues, not 2261 Å² across 36.** The earlier figure compared
+   each isolated domain against the *whole chain*, so burial caused by the inter-domain linker and flanking
+   residues was wrongly attributed to the JH2–JH1 interface. Restricting the comparison to the JH2+JH1 pair
+   gives the clean number. **P982's own ΔSASA is unchanged at 59.8 Å²**, and its rank and contact breakdown
+   stand; only the denominator changes — P982 contributes ~5 % of the interface, not 2.6 %.
+2. **V678's interface burial is 0.0 Å², not 17.2 Å².** By the clean measure it touches the interface not at all.
+   The conclusion is unchanged and in fact strengthened.
+
+### 9.2 Correction to a prediction: JAK2 V1110E
+
+In section 4 I predicted V1110E would destabilise the JH1 fold by burying a charge, based on the TYK2
+mapping putting the equivalent residue at 8 % exposure. **In JAK2's own structure V1110 is 30 % exposed** —
+partially solvent-facing, neither at the interface nor in the core.
+
+That removes the basis for the "buried charge" argument and resolves the conflict with the sequence
+predictors, which called it the mildest structural case (PolyPhen-2 **benign** at 0.18, ESM1b only −1.22).
+**Revised prediction: V1110E is unlikely to shift the conformational equilibrium, and unlikely to be strongly
+destabilising.** Homology mapping across 44–51 % identity was not reliable for solvent accessibility, even
+though it was reliable for identifying the interface.
+
+### 9.3 The consistent picture
+
+Across both analyses, **P982A is the only variant of the seven that touches a domain interface in any JAK.**
+The others separate into three classes:
+
+| Class | Variants | Expected effect |
+|---|---|---|
+| **Interface** | TYK2 P982A | shifts the open/closed equilibrium |
+| **Buried in the JH2 core** | JAK2 V578I (0 % exposed), L805I (1 %) | fold stability only; both substitutions are conservative, so minimal |
+| **Partially exposed, no interface** | JAK2 V1110E (30 %), G571R (51 %), JAK3 Y581C (20 %), TYK2 V678M (53 %) | local effects; any conformational effect must be allosteric |
+
+Note the JAK2 and JAK3 structures are **our own predictions**, not experimental, so their interfaces carry
+the model's uncertainty. The TYK2 numbers rest on a crystal structure. That the three give a consistent
+answer — only P982 at an interface — is reassuring but not independent confirmation.
+
+### 9.4 Revised prediction table
+
+| Variant | Predicted effect on the open/closed balance | Confidence | Changed from section 4? |
+|---|---|---|---|
+| **TYK2 P982A** | destabilises closed specifically | high (physics), moderate (detectability) | no |
+| JAK3 Y581C | local JH2 packing; little arrangement change | moderate | strengthened — 20 % exposed, 2.3 Å², no contacts |
+| JAK2 G571R | little; exposed surface loop | moderate | strengthened — 51 % exposed |
+| **JAK2 V1110E** | **little; partially exposed, not buried** | moderate | **reversed** — was "fold destabilising" |
+| TYK2 V678M | little or none; allosteric at best | moderate | strengthened — 0.0 Å², 0 contacts |
+| JAK2 V578I | near-neutral | high | no |
+| JAK2 L805I | near-neutral | high | no |
