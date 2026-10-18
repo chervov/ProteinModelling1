@@ -1,0 +1,28 @@
+{
+  "target": "TYK2",
+  "uniprot": "P29597",
+  "window_uniprot": [
+    1,
+    1187
+  ],
+  "mutations": [
+    "V678F"
+  ],
+  "max_msa_clusters": 32,
+  "max_extra_msa": 64,
+  "num_recycles": 15,
+  "config_preset": "model_1",
+  "random_seeds": "0,1,2,3,4,5,6,7",
+  "seeds_completed": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "template_source": null,
+  "note": "rebuilt from incremental backup; sandbox terminated before the notebook's selection/save steps"
+}
