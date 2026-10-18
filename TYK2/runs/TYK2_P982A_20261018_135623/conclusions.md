@@ -74,6 +74,8 @@ Runs: wild type TYK2_20261018_135623, P982A TYK2_P982A_20261018_135623. Selected
 
 Exact permutation test on medians (7 vs 7; SciPy unavailable after both sandboxes died): FERM–JH1 p = 0.77, JH2–JH1 p = 0.058.
 
+> **Update (2026-10-18):** with seeds 8–15 added (TYK2_20261018_153027 / TYK2_P982A_20261018_153019; 15 per arm) the JH2–JH1 difference is not significant (Mann-Whitney p = 0.097; first-half wild type was unusually low, 43.1 vs 51.6 Å in its second half). All 30 seeds are compact. See the combined section in TYK2_20261018_153027/conclusions.md.
+
 **Conclusion: at 32/64 TYK2 wild type is compact in every completed seed, and P982A does not open it.**
 
 - Both arms sit entirely in the compact FERM–JH1 basin (38–50 Å, close to the closed reference ~40 Å and to AF2 TYK2 39.7 Å).
