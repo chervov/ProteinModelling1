@@ -156,11 +156,45 @@ state count.
    floor, 128/512 a ceiling, 64/256 mixed but unstable. Depths between 32/64 and 64/256 are untested.
 2. **Use 16 seeds minimum, split into two batches that are checked against each other** before pooling.
 3. **Report state counts and medians together**, with effect sizes in Å.
-4. **For TYK2, add JH2–JH1 as a readout.** It is the only coordinate that has separated a known activating
-   TYK2 mutation (V678F) from wild type on a reproducible baseline — see
-   [TYK2_V678F_20261018_183849](TYK2/runs/TYK2_V678F_20261018_183849/conclusions.md).
+4. ~~For TYK2, add JH2–JH1 as a readout.~~ **Retracted — see §9.**
 5. **Explain the JAK2 wild-type 256/1024 anomaly (§3)** and reconcile the A572V discrepancy (§6) before
    building further on either. The V617F reversal itself is resolved.
+
+---
+
+## 9. Added after a power test: a coordinate is either saturated or irreproducible
+
+JH2–JH1 was proposed above as TYK2's usable readout, on the strength of V678F reaching p = 0.028 and P982A
+trending at p = 0.097 with 15 seeds. Sixteen further P982A seeds
+([TYK2_P982A_20261018_201530](TYK2/runs/TYK2_P982A_20261018_201530/conclusions.md)) destroy that:
+
+| JH2–JH1 at 32/64 | n | median | vs wild type |
+|---|--:|--:|---|
+| wild type | 15 | 49.3 | – |
+| P982A seeds 0–15 | 15 | 53.5 | p = 0.097 (looser) |
+| P982A seeds 16–31 | 16 | 45.0 | p = 0.093 (tighter) |
+| **P982A pooled** | **31** | **46.5** | **p = 0.96** |
+
+The two batches of the *same condition* differ at **p = 0.0005**, straddle wild type, and each trends to
+near-significance in the opposite direction. V678F's own halves differ by 4.3 Å on this coordinate
+(p = 0.066), so its p = 0.028 is inside the same noise and should be treated as unconfirmed.
+
+At 32/64 the two coordinates therefore fail in complementary ways:
+
+| coordinate | P982A batch 1 vs 2 | informative? |
+|---|---|---|
+| FERM–JH1 | 42.4 vs 42.9 Å, p = 0.57 — stable | no: 0/31 open, saturated at the floor |
+| JH2–JH1 | 53.5 vs 45.0 Å, p = 0.0005 — unstable | no: noise exceeds the effect |
+
+**A coordinate here is either saturated and reproducible, or responsive and irreproducible.** No depth
+tested so far escapes this, and it is the main obstacle to measuring TYK2 mutation effects.
+
+**Revised priority: measure the batch effect before running more comparisons.** Three or four wild-type
+batches of 8 seeds at one depth would give the between-batch variance directly, and every claimed effect in
+this repository could then be judged against it. The MSA is rebuilt per run, making MSA sampling the prime
+suspect; caching one MSA across batches would separate that from everything else.
+
+---
 
 Reproduction: the parser and analysis scripts used here are straightforward to regenerate — read each
 `conclusions.md`, pull the per-seed table and the matching `run_config.json`, and group by
