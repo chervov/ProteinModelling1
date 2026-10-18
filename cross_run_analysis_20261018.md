@@ -41,16 +41,32 @@ The one exception is JAK3 M592F, which escapes a floor (WT 0/16 → 5/16).
 **Consequence: the depth must be tuned per protein before screening mutations.** A null obtained at a
 saturated depth carries no information. Several nulls in this campaign were obtained at saturated depths.
 
-## 3. V617F gives opposite significant answers at adjacent depths
+## 3. The V617F "depth reversal" — resolved: the anomaly is in wild type
 
-| depth | wild type open | V617F open | Fisher p | direction |
+V617F first appeared to give opposite significant answers one depth apart: *closing* JAK2 at 256/1024
+(wild type 16/16 open → mutant 4/8, p = 0.0066) and *opening* it at 512/8192 (7/16 → 16/16, p = 0.0008).
+Seeds 8–15 of the 256/1024 arm were run to test whether the weaker (n = 8) side was batch variance
+([JAK2_V617F_20261018_201552](JAK2/runs/JAK2_V617F_20261018_201552/conclusions.md)).
+
+It was not: pooled V617F is **9/16 open** and the halves agree exactly (4/8 vs 5/8, Fisher p = 1.00).
+But the full depth scan shows where the problem actually lies:
+
+| open seeds (FERM–JH1 > 80 Å) | 64/256 | 128/512 | 256/1024 | 512/8192 |
 |---|---|---|---|---|
-| 256/1024 | 16/16 | 4/8 | **0.0066** | **closes** |
-| 512/8192 | 7/16 | 16/16 | **0.0008** | **opens** |
+| JAK2 wild type | 0/16 | 1/15 | **16/16** | 7/16 |
+| JAK2 V617F | 0/16 | 6/16 | 9/16 | 16/16 |
 
-The same mutation, one step apart in MSA depth, produces two significant results in opposite directions.
-Either depth interacts with the mutation in a real and interesting way, or the readout is not a stable
-property of the mutation. This should be resolved before any single-depth result is relied on.
+**V617F is monotonic (0 → 6 → 9 → 16 open with increasing depth). Wild type is not (0 → 1 → 16 → 7).**
+
+Wild type spikes to fully open at 256/1024 and drops back to 7/16 at 512/8192, while being nearly all
+compact at the two shallower depths. That one point is the sole depth at which V617F looks like it
+"closes" JAK2. Everywhere else the mutation is as open as, or more open than, wild type (128/512 p = 0.083;
+512/8192 p = 0.0008; 64/256 both at the floor).
+
+So the mutation behaves consistently and in the expected direction. **What needs explaining is JAK2 wild
+type at 256/1024** — reproducible across its own two runs (n5 + n11, p = 0.72) yet far off the trend of its
+neighbours. Until that is understood, 256/1024 should not be used as a comparison depth for JAK2, and the
+"V617F closes JAK2" reading should be retired.
 
 ## 4. The distributions are bimodal, so medians are the wrong summary
 
@@ -143,8 +159,8 @@ state count.
 4. **For TYK2, add JH2–JH1 as a readout.** It is the only coordinate that has separated a known activating
    TYK2 mutation (V678F) from wild type on a reproducible baseline — see
    [TYK2_V678F_20261018_183849](TYK2/runs/TYK2_V678F_20261018_183849/conclusions.md).
-5. **Resolve the V617F depth contradiction (§3)** and the A572V discrepancy (§6) before building further on
-   either.
+5. **Explain the JAK2 wild-type 256/1024 anomaly (§3)** and reconcile the A572V discrepancy (§6) before
+   building further on either. The V617F reversal itself is resolved.
 
 Reproduction: the parser and analysis scripts used here are straightforward to regenerate — read each
 `conclusions.md`, pull the per-seed table and the matching `run_config.json`, and group by
