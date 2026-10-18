@@ -1,0 +1,54 @@
+{
+  "timestamp": "20261018_201530",
+  "target": "TYK2",
+  "uniprot": "P29597",
+  "window_uniprot": [
+    1,
+    1187
+  ],
+  "sequence_length": 1187,
+  "domain_mode": "JH2_JH1",
+  "domains_uniprot": {
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ],
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ]
+  },
+  "domains_model": {
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ],
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ]
+  },
+  "config_preset": "model_1",
+  "random_seeds": "16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31",
+  "num_recycles": 15,
+  "violation_loss_weight": 0.1,
+  "stochastic_dropout": true,
+  "max_msa_clusters": 32,
+  "max_extra_msa": 64,
+  "mutations": [
+    "P982A"
+  ],
+  "template_source": null,
+  "template_cif": [],
+  "template_identity": {},
+  "template_recycles": 0,
+  "inference_dir": "/content/protein_predictions/inference_msa32-64_r15_seeds16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31_P982A"
+}
