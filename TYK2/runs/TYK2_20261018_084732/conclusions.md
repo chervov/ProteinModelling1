@@ -75,7 +75,11 @@ Nearest reference over all conformations: AF2 120.
 
 Mann-Whitney on the selected FERM–JH1 values: p = 0.19. Fisher's exact test on compact counts: p = 0.31.
 
-**Conclusion: 64/256 is the first depth at which TYK2 wild type is mostly compact, and P982A points towards the extended state, but 8 seeds per arm cannot confirm it.**
+> **Superseded (2026-10-18):** seeds 8–15 (TYK2_20261018_101316) were mostly extended (7/8), so wild type at 64/256 is
+> mixed (7/16 compact, 8/16 extended), not mostly compact. With 16 seeds per arm P982A shows no significant effect
+> (Mann-Whitney p = 0.27). See the combined section in TYK2_20261018_101316/conclusions.md.
+
+**Conclusion (seeds 0–7 only): 64/256 is the first depth at which TYK2 wild type is mostly compact, and P982A points towards the extended state, but 8 seeds per arm cannot confirm it.**
 
 - Wild type: 6/8 seeds compact (selected FERM–JH1 34–57 Å), 1/8 extended (87 Å), seed 3 at 77 Å and still rising. At 128/512 all 8 wild-type seeds were extended (~93 Å), so the MSA depth switch for TYK2 lies between 64/256 and 128/512, one step shallower than for JAK3 (between 128/512 and 256/1024).
 - P982A: 5/8 extended (85–94 Å), 3/8 compact (46–53 Å). Median FERM–JH1 85.6 vs 56.3 Å for wild type.
