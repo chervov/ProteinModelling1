@@ -1,0 +1,237 @@
+{
+  "candidates": [
+    {
+      "metrics": {
+        "J_selected": 0.19166380167007446,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 6.407760520232841e-05,
+        "between_bonds_c_n_loss_mean_selected": 0.0003753536147996783,
+        "between_clashes_mean_loss_selected": 5.729133079057647e-08,
+        "mean_plddt_selected_100": 80.84333801269531,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8084333539009094,
+        "seed": 8,
+        "selected_recycle_index": 5,
+        "structural_violation_loss_selected": 0.0009715541964396834,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.023588877171278,
+        "violations_between_residue_clash_selected": 0.009267059154808521,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 49.16304402953405,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_008/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 8
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19187621772289276,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 1.9208539015380666e-05,
+        "between_bonds_c_n_loss_mean_selected": 7.93390572653152e-05,
+        "between_clashes_mean_loss_selected": 2.8062954626761893e-08,
+        "mean_plddt_selected_100": 80.81597137451172,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8081597089767456,
+        "seed": 9,
+        "selected_recycle_index": 13,
+        "structural_violation_loss_selected": 0.00035919685615226626,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.01347935851663351,
+        "violations_between_residue_clash_selected": 0.006739679258316755,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 50.58947665805405,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_009/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 9
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19289851188659668,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 5.58561123398249e-06,
+        "between_bonds_c_n_loss_mean_selected": 4.1564904677215964e-05,
+        "between_clashes_mean_loss_selected": 0.0,
+        "mean_plddt_selected_100": 80.71061706542969,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8071061968803406,
+        "seed": 10,
+        "selected_recycle_index": 13,
+        "structural_violation_loss_selected": 4.71505154564511e-05,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.006739679258316755,
+        "violations_between_residue_clash_selected": 0.0,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 49.35654955848542,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_010/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 10
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19273756444454193,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 1.1827362868643831e-05,
+        "between_bonds_c_n_loss_mean_selected": 7.916745380498469e-05,
+        "between_clashes_mean_loss_selected": 2.86869301646675e-08,
+        "mean_plddt_selected_100": 80.72982025146484,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8072981834411621,
+        "seed": 11,
+        "selected_recycle_index": 8,
+        "structural_violation_loss_selected": 0.0003574395668692887,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.008424598723649979,
+        "violations_between_residue_clash_selected": 0.006739679258316755,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 51.53691191815722,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_011/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 11
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19133421778678894,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 7.065349109325325e-06,
+        "between_bonds_c_n_loss_mean_selected": 5.373922977014445e-05,
+        "between_clashes_mean_loss_selected": 2.620894434812726e-08,
+        "mean_plddt_selected_100": 80.86962127685547,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8086962103843689,
+        "seed": 12,
+        "selected_recycle_index": 12,
+        "structural_violation_loss_selected": 0.00030423374846577644,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.006739679258316755,
+        "violations_between_residue_clash_selected": 0.005054759327322245,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 47.6296930583495,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_012/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 12
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19312681257724762,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 0.0,
+        "between_bonds_c_n_loss_mean_selected": 0.00016017856250982732,
+        "between_clashes_mean_loss_selected": 5.091855825867242e-08,
+        "mean_plddt_selected_100": 80.69364929199219,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.806936502456665,
+        "seed": 13,
+        "selected_recycle_index": 4,
+        "structural_violation_loss_selected": 0.0006331111071631312,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.011794438585639,
+        "violations_between_residue_clash_selected": 0.006739679258316755,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 52.073304115563076,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_013/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 13
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19332587718963623,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 5.80256983084837e-06,
+        "between_bonds_c_n_loss_mean_selected": 3.282298712292686e-05,
+        "between_clashes_mean_loss_selected": 3.4222541245299e-08,
+        "mean_plddt_selected_100": 80.67097473144531,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8067097663879395,
+        "seed": 14,
+        "selected_recycle_index": 9,
+        "structural_violation_loss_selected": 0.000356485164957121,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.005054759327322245,
+        "violations_between_residue_clash_selected": 0.006739679258316755,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 49.44387640512959,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_014/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 14
+    },
+    {
+      "metrics": {
+        "J_selected": 0.19481180608272552,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 0.0001214464646182023,
+        "between_bonds_c_n_loss_mean_selected": 7.570101297460496e-05,
+        "between_clashes_mean_loss_selected": 8.84763995401272e-09,
+        "mean_plddt_selected_100": 80.52161407470703,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8052161335945129,
+        "seed": 15,
+        "selected_recycle_index": 11,
+        "structural_violation_loss_selected": 0.00027932453667744994,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.007582139223814011,
+        "violations_between_residue_clash_selected": 0.0033698396291583776,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 48.87407382203707,
+      "pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_015/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 15
+    }
+  ],
+  "chain_id": "A",
+  "domains": {
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ],
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ]
+  },
+  "openness_metric": {
+    "domain1": "JH2",
+    "domain2": "JH1",
+    "type": "centroid_distance"
+  },
+  "selected_closed": {
+    "model": "predictions",
+    "openness": 47.6296930583495,
+    "seed": 12,
+    "source_pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_012/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "selected_open": {
+    "model": "predictions",
+    "openness": 52.073304115563076,
+    "seed": 13,
+    "source_pdb": "/content/protein_predictions/inference_msa64-256_r15_seeds8-9-10-11-12-13-14-15_P982A/seed_013/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "tag": "TYK2"
+}
