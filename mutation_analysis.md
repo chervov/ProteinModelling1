@@ -889,3 +889,36 @@ Y581C's seed spread is **8.6 Å** against wild type's **75.3 Å**. A tightly clu
 a diverse wild type risks measuring collapse rather than state. The **count test is the robust one here**
 (0/16 versus 7/16, p = 0.0068) because it asks only how many seeds reach the closed basin, and that is
 the figure to quote.
+
+---
+
+## 19. TYK2 P982A — null at a fourth depth (2026-10-19)
+
+`TYK2_P982A_20261019_132520`, MSA 96/384, 8 seeds, paired with wild type `TYK2_20261019_101530`.
+
+| | n | median | range | seeds < 30 Å |
+|---|--:|--:|---|--:|
+| wild type | 8 | 82.5 | 81.8–90.6 | 0 |
+| P982A | 8 | 82.7 | 78.3–91.5 | 0 |
+
+**Mann-Whitney p = 0.79.** Neither reaches the closed arrangement.
+
+P982A has now been tested at **four MSA depths — 128/512, 96/384, 64/256 and 32/64 — with no significant
+effect at any of them** (p = 0.59, 0.79, 0.34, 0.14). Combined with section 18, the verdict on the
+structural prediction is clear:
+
+**The variant chosen because it was the only one of the seven at a genuine domain interface is the only
+one of the tested set that does nothing.** Meanwhile JAK3 Y581C (0.0 Å² burial) abolishes the closed
+state at p = 0.0068 and TYK2 V678F (0.0 Å² burial) at p = 0.00012.
+
+Two honest readings remain, and the data cannot yet separate them:
+
+1. **P982A genuinely has little effect on the conformational equilibrium** — the interface contact it
+   removes is not what holds the arrangement together.
+2. **The assay has a floor for this protein.** TYK2 never occupies the closed state by free prediction
+   at any depth, so a mutation that destabilises that state has nothing to remove. V678F can still
+   register because it suppresses wild type's *partial approaches*, which are visible; P982A would only
+   show if the closed state were populated.
+
+Reading 2 would be testable with a working template-release assay, but the 4OLI release has no dynamic
+range (section 11). Releasing at recycle 1 rather than 3 is the remaining idea, and it is unproven.
