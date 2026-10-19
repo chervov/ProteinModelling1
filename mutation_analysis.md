@@ -723,3 +723,108 @@ Of the three reported activating JAK3 alleles tested so far, **A572V removes the
 Completes an earlier 8-seed run at the depth where JAK2's behaviour was least resolved. Median 2.2 Å
 from the AF2 (open) reference — consistent with the established result that V617F drives JAK2 open at
 this depth. Full pairing with its wild-type counterpart is left for the JAK2 write-up.
+
+---
+
+## 16. The JAK3 allele set completed, and two classes of effect (2026-10-19)
+
+R657Q, the last of the three reported activating JAK3 alleles, has its first 8 seeds. All five mutations
+at MSA 128/512, measured as JH1 RMSD against the closed reference after superposing JH2:
+
+| variant | n | closed-like (< 25 Å) | median | Fisher | rank test |
+|---|--:|--:|--:|--:|--:|
+| wild type | 16 | 7/16 | 61.5 | – | – |
+| **M592F** | 16 | **1/16** | 64.0 | **0.037** | 0.29 |
+| **A572V** *(reported)* | 16 | **1/16** | 84.3 | **0.037** | **0.035** |
+| M511I *(reported)* | 16 | 7/16 | 84.8 | 1.00 | 0.82 |
+| A573V | 16 | 12/16 | 2.7 | 0.15 | **0.0024** |
+| **R657Q** *(reported)* | 8 | 4/8 | 43.1 | 1.00 | 0.60 |
+
+R657Q per seed: **2 2 3 4** · **83 89 91 91** — perfectly bimodal, with no intermediate.
+
+### Two classes, not one
+
+**Class 1 — the closed state is abolished.** M592F and A572V drop from 7/16 to 1/16 closed-like seeds
+(p = 0.037 each). What remains is open (M592F, reaching 3.3 Å from the JAK1 open model) or splayed
+(A572V).
+
+**Class 2 — the closed state is retained but becomes far more canonical.** M511I, A573V and R657Q keep
+a similar or larger number of closed seeds, but those seeds sit at **1–4 Å** from the reference where
+wild type's best reach only **16–23 Å**. They also sharpen the bimodality: R657Q has nothing between
+4 Å and 83 Å, whereas wild type is graded across the range.
+
+Of the **three reported activating alleles, one (A572V) abolishes the closed state and two (M511I,
+R657Q) tighten it.** They are not one phenotype.
+
+### How to read class 2
+
+Three possibilities, not yet separable:
+
+1. **The model misses their mechanism.** JAK3 oncogenic mutants' hyperactivity is reported to depend on
+   **ATP binding to the pseudokinase domain** (Frontiers in Oncology 2018). We model no nucleotide, so a
+   mutation acting through JH2 nucleotide binding would be invisible — and could even look stabilising.
+2. **Tighter is not the same as more populated.** These mutations do not make the closed state more
+   frequent; they make it more canonical when adopted, and polarise the ensemble toward extremes. A
+   deeper, more rigid autoinhibited well with a sharper barrier is not obviously a loss-of-function
+   signature.
+3. **The measurement captures packing, not activity.** The arrangement metric reports where JH1 sits
+   relative to JH2, not whether the kinase active site is competent. See the KinCoRe proposal below.
+
+### What would discriminate
+
+Labelling the **JH1 domain itself** with KinCoRe (DFG-in/out, αC-in/out, activation loop, spine) would
+say whether the kinase domain is in an active or inactive conformation — a question orthogonal to the
+interdomain arrangement, and one these runs already contain the coordinates to answer at no GPU cost.
+
+## 17. Two 2026 benchmarks that bear directly on this work
+
+**KinConfBench** — Sun & Head-Gordon, *npj Drug Discovery* **3**, 33 (2026).
+2225 human kinase chains; Boltz-2, Chai-1, Protenix and RFAA scored on recovering ligand-induced
+conformational states using KinCoRe labels. Four points apply here:
+
+1. *"Geometric success metrics of a ligand pose in the active site do not correlate strongly with the
+   correct kinase conformational state."* The same lesson as our FERM–JH1 versus arrangement finding.
+2. **Mode collapse is general.** Roughly two-thirds of systems give all-correct or all-wrong across 20
+   inferences, and diversity within correct ensembles is ~0.1 Å and < 5°, *"below even the fluctuation
+   range of a single stable conformational state."*
+3. **Their proposed remedy is our method** — *"MSA sub-sampling, supplying different structural
+   templates, or incorporation of dynamics data."*
+4. **They deliberately exclude pseudokinase domains**: *"for genes encoding both catalytically active and
+   pseudokinase domains, such as members of the Janus Kinase family... excluding pseudokinase domains."*
+   The JH2–JH1 interdomain question is therefore outside the best current kinase benchmark. They also
+   call for exactly this project's next step — testing whether models predict how *"drug-resistant
+   mutations alter the conformational ensemble."*
+   Data: figshare 10.6084/m9.figshare.31986663 · code: github.com/THGLab/KinConfBench
+
+**Our TYK2 data confirm point 2 directly.** Wild-type seed spread against the closed reference scales
+monotonically with MSA depth:
+
+| MSA | n | median | **spread** |
+|---|--:|--:|--:|
+| 128/512 | 8 | 82.1 | **0.6 Å** |
+| 96/384 | 8 | 82.5 | **8.8 Å** |
+| 64/256 | 16 | 84.5 | **50.8 Å** |
+| 32/64 | 15 | 46.4 | **57.4 Å** |
+
+So the 0.6 Å uniformity flagged in section 13 is **mode collapse that MSA subsampling breaks up**, not a
+seeding defect in this pipeline — and it confirms that the p = 0.011 "result" at 128/512 was significance
+manufactured from collapsed variance.
+
+**GPCR cofolding** — Zhang, Friesner, Miller & Rodrigues (Schrödinger), *npj Drug Discovery* **3**, 30 (2026).
+253 GPCRs from families unseen in training. Two points apply here:
+
+- **pLDDT barely predicts correctness** (R² = 0.046 against Cα RMSD), while ipTM does (R² = 0.49).
+  **This project should stop quoting pLDDT ranges as support for a result**; they are reported in every
+  run but carry almost no information about whether the conformational state is right.
+- *"Co-folding methods tend to predict inactive receptor structures"* — a conformational prior of the
+  same kind as the AF2 polarity documented in `reference_states.md` (AF2 is open for JAK1/JAK2, closed
+  for JAK3/TYK2).
+
+### A concrete experiment both papers point to
+
+TYK2 has an approved drug, **deucravacitinib**, that binds JH2 and is thought to *stabilise* the closed
+state. Our runs show TYK2 never reaches the closed arrangement unaided at any MSA depth. A co-folding
+run (Boltz-2 or Chai-1) of **TYK2 + deucravacitinib** therefore asks a sharp question on the one JAK with
+an experimental closed structure to check against: if the ligand pulls the model closed, it is doing
+genuine ligand-induced conformational reasoning; if it stays open, that is apo-drift in exactly the form
+KinConfBench describes.
