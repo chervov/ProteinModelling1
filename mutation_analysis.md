@@ -828,3 +828,64 @@ run (Boltz-2 or Chai-1) of **TYK2 + deucravacitinib** therefore asks a sharp que
 an experimental closed structure to check against: if the ligand pulls the model closed, it is doing
 genuine ligand-induced conformational reasoning; if it stays open, that is apo-drift in exactly the form
 KinConfBench describes.
+
+---
+
+## 18. Y581C abolishes the closed state — and the interface-burial logic fails (2026-10-19)
+
+JAK3 Y581C, MSA 128/512, 16 seeds, paired with wild type `JAK3_20261016_125830`.
+
+| | n | closed-like (< 25 Å) | median | spread |
+|---|--:|--:|--:|--:|
+| wild type | 16 | **7/16** | 61.5 | 75.3 Å |
+| **Y581C** | 16 | **0/16** | 88.4 | **8.6 Å** |
+
+Per seed: `88 88 88 88 88 89 89 89` · `84 87 88 88 92 92 92 92`
+
+**Fisher p = 0.0068 · Mann-Whitney p = 0.00049.** Both halves agree, so unlike A572V and R657Q this one
+strengthened on replication. **It is the strongest JAK3 mutation effect measured in the project** —
+A572V and M592F reached only p = 0.037 by the count test.
+
+### This contradicts the structural prediction
+
+Section 9 measured Y581C at **0.0 Å² of interface burial** in JAK3's own closed structure, with **no
+cross-domain contacts**, and section 4 predicted "local JH2 packing; little arrangement change" with
+moderate confidence. That prediction is wrong: Y581C removes the closed arrangement completely.
+
+### The pattern across the whole campaign
+
+| variant | interface burial | effect on the closed state |
+|---|--:|---|
+| **TYK2 V678F** | **0.0 Å²** | abolishes partial approaches, **p = 0.00012** |
+| **JAK3 Y581C** | **0.0 Å²** | abolishes it entirely, **p = 0.0068** |
+| JAK3 A572V | not at interface | abolishes it, p = 0.037 |
+| JAK3 M592F | 0.0 Å² (= V617 position) | abolishes it, p = 0.037 |
+| **TYK2 P982A** | **59.8 Å², 28 contacts** | **no effect at any depth** |
+
+**Every mutation with a measurable effect sits at a position that buries nothing at the interface, and
+the one genuine interface residue does nothing.** The two strongest results in the entire project —
+V678F and Y581C — both come from residues with zero cross-domain contact.
+
+### What this means
+
+1. **Interface burial does not predict which mutations shift the conformational equilibrium.** The
+   ranking of the seven variants in sections 4 and 9 was built on it and should not be used that way.
+   Burial identifies where the two domains touch; it does not identify what controls whether they touch.
+2. **The effective mechanism is allosteric.** These residues are buried inside their own domain
+   (Y581C 20 % exposed in JH2; V678 53 % exposed, 14 Å from JH1) and change the arrangement without
+   touching the partner — presumably by altering the packing or rigidity of the domain that presents the
+   interface, rather than the interface itself.
+3. **P982A's null result is less surprising.** It was predicted to matter *because* it is the only
+   interface residue; on the evidence here, that was the wrong criterion.
+4. **A better predictor is needed.** Candidates worth testing against the data we now have: burial
+   within the residue's own domain, proximity to the segment that positions the largest interface
+   residue (for TYK2, F672 is the top interface residue and sits six residues from V678), or ESM1b,
+   which ranked P982A most extreme and was the one sequence predictor that agreed with the old logic —
+   and therefore also needs re-checking against these outcomes.
+
+### One caveat
+
+Y581C's seed spread is **8.6 Å** against wild type's **75.3 Å**. A tightly clustered mutant compared with
+a diverse wild type risks measuring collapse rather than state. The **count test is the robust one here**
+(0/16 versus 7/16, p = 0.0068) because it asks only how many seeds reach the closed basin, and that is
+the figure to quote.
