@@ -220,11 +220,60 @@ ensemble."*
 co-folding methods carry a conformational prior (*"tend to predict inactive receptor structures"*), the
 same kind of bias as the AF2 polarity in section 1.
 
-### Next experiments these suggest
+---
 
-1. **KinCoRe labelling** of our JH1 domains (DFG-in/out, αC-in/out) — says whether the kinase domain
-   *itself* is active or inactive, orthogonal to the interdomain arrangement, and would discriminate the
-   three explanations for JAK3 class 2. Open code, no GPU.
+## 8. The catalytic domain conformation is constant — the signal is entirely interdomain
+
+Labels from **Kincore-standalone2** (Dunbrack lab, the same tool KinConfBench uses), run on every
+structure available. Kincore locates the catalytic (JH1) domain by HMM and assigns the DFG motif,
+X-DFG dihedral, αC-helix, salt bridge, activation loop termini and spine.
+
+| structure | Kincore label |
+|---|---|
+| AF2 JAK1 / JAK2 / JAK3 / TYK2 | `Inactive_DFGin_BLAminus_SBin_NTout_CTout` |
+| **4OLI** (experimental closed, TYK2) | `Inactive_DFGin_BLAminus_SBin_NTout_CTout` |
+| ma-l9b1f (closed) · ma-a1sai (open) | `Inactive_DFGin_BLAminus_SBin_NTout_CTout` |
+| JAK3 wild type · M592F · A572V · A573V | `Inactive_DFGin_BLAminus_SBin_NTout_CTout` |
+| TYK2 wild type · P982A · V678F | `Inactive_DFGin_BLAminus_SBin_NTout_CTout` |
+| **7T6F** (cryo-EM active dimer) | `Inactive_DFGin_None_SBout_NTout_CTout` |
+
+**All 23 structures give the identical label**, the single exception being the cryo-EM active dimer,
+which differs only by a broken salt bridge and an unassignable X-DFG dihedral — plausibly local
+resolution in that loop — and is *not* labelled Active either.
+
+### Three consequences
+
+1. **The measurement choice is validated.** Mutations change nothing in the catalytic domain's own
+   conformation — not the DFG motif, not the αC-helix, not the activation loop. Everything this project
+   detects lives in **where JH1 sits relative to JH2**, which is what the arrangement metric reports.
+   There was nothing to find in the kinase-domain state, and now that is measured rather than assumed.
+
+2. **One explanation for JAK3 class 2 is eliminated.** Section 4 listed three candidate reasons why
+   M511I, A573V and R657Q tighten the closed arrangement instead of opening it; one was *"the metric
+   reports packing rather than catalytic competence"*. Their kinase domains are in exactly the same
+   state as wild type's, so that is not the explanation. The remaining candidates are the **missing
+   nucleotide mechanism** (JAK3 oncogenic hyperactivity is reported to depend on ATP binding to JH2,
+   which we do not model) and **tighter is not more populated**.
+
+3. **It bounds what this pipeline can say.** Unphosphorylated, ligand-free JAK models sit in one
+   catalytic conformation regardless of sequence or MSA depth. Any question about active-site competence
+   requires phosphorylation or a bound nucleotide, neither of which is modelled here.
+
+Note that all four AF2 models carry this same inactive label while **AF2 JAK1/JAK2 are open and AF2
+JAK3/TYK2 are closed** (section 1) — independent confirmation that the catalytic-domain state and the
+interdomain arrangement are orthogonal descriptions.
+
+Tooling: `github.com/DunbrackLab/Kincore-standalone2`, requires HMMER. Runs on our existing PDB files in
+seconds, no GPU.
+
+---
+
+## 9. Next experiments
+
+
+
+1. ~~KinCoRe labelling of our JH1 domains~~ — **done, see section 8.** Result: the catalytic
+   conformation is identical across every structure, so all signal is interdomain.
 2. **Co-fold TYK2 + deucravacitinib.** The drug binds JH2 and is thought to stabilise the closed state,
    which TYK2 never reaches unaided. If the ligand pulls the model closed, it is doing genuine
    ligand-induced reasoning; if not, that is apo-drift — tested on the one JAK with an experimental
