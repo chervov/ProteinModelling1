@@ -1,0 +1,54 @@
+{
+  "timestamp": "20261019_124432",
+  "target": "JAK3",
+  "uniprot": "P52333",
+  "window_uniprot": [
+    1,
+    1124
+  ],
+  "sequence_length": 1124,
+  "domain_mode": "JH2_JH1",
+  "domains_uniprot": {
+    "JH2": [
+      [
+        521,
+        781
+      ]
+    ],
+    "JH1": [
+      [
+        822,
+        1111
+      ]
+    ]
+  },
+  "domains_model": {
+    "JH2": [
+      [
+        521,
+        781
+      ]
+    ],
+    "JH1": [
+      [
+        822,
+        1111
+      ]
+    ]
+  },
+  "config_preset": "model_1",
+  "random_seeds": "8,9,10,11,12,13,14,15",
+  "num_recycles": 15,
+  "violation_loss_weight": 0.1,
+  "stochastic_dropout": true,
+  "max_msa_clusters": 128,
+  "max_extra_msa": 512,
+  "mutations": [
+    "Y581C"
+  ],
+  "template_source": null,
+  "template_cif": [],
+  "template_identity": {},
+  "template_recycles": 0,
+  "inference_dir": "/content/protein_predictions/inference_msa128-512_r15_seeds8-9-10-11-12-13-14-15_Y581C"
+}
