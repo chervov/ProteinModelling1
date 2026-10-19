@@ -641,3 +641,85 @@ the same phenomenon.
 
 No single row captures all three mutations. Reporting any one of them alone would misrepresent at least
 one variant — which is the central methodological lesson of today's JAK3 work.
+
+---
+
+## 15. TYK2 depth scan and mutants — runs performed independently over the weekend (2026-10-19)
+
+Thirteen TYK2 runs, one JAK3 and one JAK2 run were carried out separately while this session was down.
+They complete the TYK2 depth scan and add **V678F**, the substitution the literature reports as
+activating. Analysed here on both metrics; `n` combines the 8-seed halves.
+
+### TYK2 free prediction, JH1 RMSD vs the AF2 closed-like reference (Å)
+
+| MSA | variant | n | median | min–max | seeds < 30 Å | p vs WT |
+|---|---|--:|--:|---|--:|--:|
+| 128/512 | WT | 8 | 82.1 | 81.9–82.5 | 0 | – |
+| 128/512 | P982A | 8 | 82.2 | 81.8–82.6 | 0 | 0.59 |
+| **64/256** | WT | 16 | 84.5 | 41.2–92.0 | 0 | – |
+| **64/256** | P982A | 16 | 88.8 | 36.7–95.8 | 0 | 0.34 |
+| **64/256** | **V678F** | 8 | **93.7** | 90.7–94.8 | 0 | **0.0008** |
+| 32/64 | WT | 15 | 46.4 | 28.2–85.6 | 1 | – |
+| 32/64 | P982A | 31 | 44.7 | 25.4–54.5 | 1 | 0.14 |
+| 32/64 | V678F | 16 | 51.6 | 27.5–68.0 | 1 | 0.33 |
+
+### Three results
+
+**1. TYK2 never reaches its closed state by free prediction, at any depth.** Across 32/64, 64/256,
+128/512 and the earlier default depth, the closest any seed comes is **25.4 Å**, and only three seeds in
+94 fall below 30 Å. At 32/64 the protein becomes compact (median FERM–JH1 45 Å) but the JH2–JH1
+arrangement still does not match the autoinhibited geometry. Combined with the 4OLI-templated run — where
+the closed state, once imposed, was perfectly stable through twelve template-free recycles — the picture
+is a **real but inaccessible basin**: the model will hold TYK2 closed but will not find it.
+
+This differs from JAK1, JAK2 and JAK3, all of which reach their closed state unaided at some depth, and
+it is the sharpest cross-family difference the project has produced.
+
+**2. V678F, the reported activating substitution, has a strong and specific effect (p = 0.0008).**
+At 64/256 wild type ranges widely (41.2–92.0 Å, sometimes approaching the closed arrangement) while
+V678F is confined to **90.7–94.8 Å** — it abolishes the partial approaches that wild type still makes.
+This mirrors JAK3 A572V and M592F, which likewise removed the closed state. **A known activating
+mutation produces the expected phenotype in TYK2**, which is meaningful validation on the one family
+member with an experimental closed structure.
+
+**3. P982A shows no significant effect at any depth** (p = 0.59, 0.34, 0.14). The structural prediction
+in sections 3–4 — that deleting 12 of 28 cross-domain contacts at the only interface residue among the
+seven variants would destabilise the closed state — **is not supported by these runs.**
+
+Two readings, and they are not yet separable:
+- The prediction is wrong, or the effect is too small for ~16–31 seeds.
+- **The assay has a floor.** If wild-type TYK2 essentially never occupies the closed state, a mutation
+  that destabilises it has nothing to remove. V678F could still register because it suppressed wild
+  type's *partial* approaches; P982A may simply act on a state that is already unpopulated.
+
+The second is more likely given result 1, and it means P982A is better tested another way — for example
+starting from 4OLI with the template released at recycle 1 rather than 3, provided the grip can be
+loosened enough to give the assay dynamic range.
+
+### A false positive worth recording
+
+At 128/512 the Mann-Whitney test returns **p = 0.011 on FERM–JH1** for P982A versus wild type — with
+medians of 93.1 and 93.6 Å. A 0.5 Å difference reaches significance only because both distributions are
+pathologically tight (spreads of 0.6 Å across 8 seeds). This is **not** a biological result, and it shows
+that at a depth where seeds fail to diversify, rank tests will manufacture significance from noise.
+Seed diversity is healthy at 64/256 (41–92 Å) and 32/64 (28–86 Å); the problem is specific to 128/512.
+
+### JAK3 M511I — no change in how often, a large change in how tightly
+
+| | n | closed-like seeds (< 25 Å) | arrangement median | p |
+|---|--:|--:|--:|--:|
+| wild type | 16 | 7/16 | 61.5 | – |
+| **M511I** | 16 | **7/16** | 84.8 | 0.82 |
+
+M511I is strongly bimodal: **1, 2, 2, 2, 15, 21, 22** then **84, 86, 88, 88, 89, 90, 90, 90, 92**. The
+count of closed seeds is identical to wild type, so by that measure it does nothing — but four of its
+closed seeds sit at **1–2 Å** from the reference where wild type's best reach 16 Å. That is the same
+signature as A573V: **unchanged frequency, far more canonical geometry.**
+
+Of the three reported activating JAK3 alleles tested so far, **A572V removes the closed state
+(p = 0.037) while M511I does not (p = 0.82)**. They are not interchangeable.
+
+### JAK2 V617F at 256/1024, seeds 8–15
+Completes an earlier 8-seed run at the depth where JAK2's behaviour was least resolved. Median 2.2 Å
+from the AF2 (open) reference — consistent with the established result that V617F drives JAK2 open at
+this depth. Full pairing with its wild-type counterpart is left for the JAK2 write-up.
