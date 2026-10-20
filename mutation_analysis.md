@@ -972,3 +972,127 @@ Same residue, same depth, same seeds, same n — one substitution moves everythi
 Worth stating plainly: of the seven, **only Y581C has produced a clear effect so far.** The strongest
 result in the project, TYK2 V678F, is a substitution added during this work rather than one from the
 original list — and its value comes largely from being paired with V678M as a control.
+
+---
+
+## 21. The depth ladder has only one informative rung for TYK2 (2026-10-20)
+
+V678F was rerun at **96/384 to n = 16** to replicate the 64/256 result at a second depth. It did not
+replicate — and the reason is a property of the assay, not of the mutation.
+
+| depth | WT compact | V678F compact | WT median FERM–JH1 | p(arr) | p(rank FERM) |
+|---|--:|--:|--:|--:|--:|
+| 128/512 free | 0/8 | — | 93.6 | — | — |
+| **96/384** | 0/8 | **0/16** | 93.5 | 0.0511 | 0.1460 |
+| **64/256** | **7/16** | **0/16** | 80.0 | **0.0001** | 0.0135 |
+| 32/64 | 0/15 | 0/16 | 45.2 | 0.3326 | 0.0631 |
+
+**At 96/384 and above, wild-type TYK2 is already 100 % open.** Median FERM–JH1 93.5 Å, seed spread
+4.0 Å at 96/384 and 0.6 Å at 128/512. There is no closed population left for a mutation to remove, so
+no variant can separate there in either direction. At the other end, 32/64 collapses *every* model
+compact (38–52 Å) regardless of genotype. **64/256 is the only TYK2 depth with dynamic range**
+(WT 7/16 compact, FERM spread 60.5 Å), and it is the only depth where V678F separates.
+
+The p(arr) = 0.051 at 96/384 should be ignored. It is computed on a distribution with almost no
+variance — the same artefact that produced a "significant" p = 0.011 for a 0.5 Å median difference at
+128/512. A rank test on a collapsed ensemble manufactures significance from nothing.
+
+**Consequence for experiment design.** The depth ladder is not a free axis to replicate across. A
+mutant run at 96/384 or 128/512 cannot produce a result either way, so those runs are not weak
+evidence — they are no evidence, at ~77 min of GPU time each. New TYK2 variants should go straight to
+64/256. This roughly doubles the information per GPU-hour and is why the queued V678M 96/384 pair was
+dropped in favour of deepening WT and V678F at 64/256 to n = 24.
+
+The same test should be applied to the other three JAKs before spending more depth-ladder time: for
+each, find the depth where wild type is most evenly split, and run mutants only there. For JAK2 that
+is 512/8192 (7 closed / 7 open / 2 FERM-bound of 16), which is where the current queue already sits.
+
+---
+
+## 22. What is actually known about TYK2 structure — a complete census (2026-10-20)
+
+Every PDB entity referencing UniProt **P29597** was retrieved: **52 entities, all X-ray, no cryo-EM,
+no full-length structure.**
+
+| Span (UniProt) | Module | n | Best res. | Notable |
+|---|---|--:|--:|---|
+| 23–583 | FERM-SH2 + IFNAR1 peptide | 1 | 1.99 Å | 4PO6 — the only N-terminal structure |
+| 541–873 | JH2 (pseudokinase) | ~19 | 1.71 Å | ligand series; **5C03 has ATP-γS**; 8S9A = TAK-279 |
+| **566–1187** | **JH2 + JH1** | **1** | **2.8 Å** | **4OLI** — the autoinhibited module, our template |
+| 884–1182 | JH1 (kinase) | ~28 | 1.65 Å | inhibitor series incl. peficitinib (6AAM) |
+| 1048–1062 | activation-loop peptide on PTP1B | 2 | 2.15 Å | 8EXN / 8EYC |
+
+### The gap that matters for this project
+
+4PO6 ends at residue 583; 4OLI begins at 566. They overlap by 17 residues, and **no structure has ever
+contained both the FERM domain and JH1.** For TYK2 the FERM–JH1 distance therefore has **no
+experimental value in any conformational state** — open or closed.
+
+This has a direct consequence we had not stated: **the 40–45 Å "closed" band for TYK2 comes from the
+AlphaFold model, not from 4OLI**, because 4OLI contains no FERM domain. 4OLI anchors only the
+*arrangement* metric (JH2→JH1 docking), which it does well — 2.8 Å, 99.6 % sequence identity to the
+query. So of our two metrics, for TYK2 exactly one is experimentally anchored, and it is not the
+distance one. This is a second reason to lead with the arrangement metric, which is also the metric
+carrying the V678F result.
+
+### Is there a described open form of TYK2?
+
+**No.** Not at any resolution. What exists:
+
+- The full-length "autoinhibited TYK2" models in the literature are **docked composites of 4PO6 +
+  4OLI** — the same two pieces, assembled by modelling. Same information content as our template run,
+  not independent evidence.
+- Everything about an extended TYK2 is **transferred from JAK1**: Lupardus et al., *Structure* 2011
+  (three-lobed full-length JAK1 by EM, "extensive inter-segmental flexibility") and Glassman et al.,
+  *Science* 2022 (JAK1 dimer, 7T6F, FERM–JH1 ≈ 84 Å).
+
+**Our 93 Å open state has no experimental counterpart in TYK2 or in the family.** Every experimental
+extended JAK structure is a **dimer** at ≈ 84 Å; our 93 Å state is a monomer, 9 Å longer. It is the
+AlphaFold-style fully-extended monomer, and its reproducibility across depths (0.6 Å spread at
+128/512) is better read as a signature of coevolutionary bias — strong intra-domain signal, almost no
+inter-domain signal, linkers extend — than as a sampled conformer.
+
+**This reframes how results should be stated.** The closed end of the axis is anchored by a 2.8 Å
+crystal structure; the open end is a default. So the correct claim is **"V678F abolishes any approach
+to the closed state"**, not "V678F drives the ensemble open". The former is what the arrangement
+metric measures and what survives scrutiny.
+
+### Biochemical facts worth having on record
+
+- **JH2 binds ATP but cannot phosphotransfer** (Min et al., *JBC* 2015; 5C03 with ATP-γS). Mutating
+  the JH2 ATP pocket *raises* basal TYK2 phosphorylation — JH2 nucleotide occupancy is itself
+  autoinhibitory. Our runs give JH2 no ligand at all, so this degree of freedom is absent from every
+  model we have made.
+- **V678F** is the designed JAK2-V617F mimic; the JAK1 analogue is **L653F**. A family-wide analogue
+  set is therefore available and cheap to run.
+- **P1104A** (rs34536443), the autoimmune-protective allele, sits in the **JAK-specific insertion of
+  JH1**, not in JH2 — catalytically impaired but signalling-competent.
+
+---
+
+## 23. An external benchmark exists for exactly our prediction task (2026-10-20)
+
+**Howard, Abell, … Dickel, "Deep mutational scanning reveals pharmacologically relevant insights into
+TYK2 signaling and disease."** bioRxiv 10.1101/2025.10.11.681520; eLife reviewed preprint 110149,
+version 1 dated **2026-03-04**.
+
+**> 23,000 amino-acid substitutions in TYK2**, with two readouts: **IFN-α signalling** and **protein
+abundance**. TYK2 is 1187 residues, so 1187 × 19 ≈ 22,550 — this is **saturation across essentially
+the whole protein**, and therefore contains measured values for **V678M, V678F, P982A and P1104A**.
+
+Why this matters more than anything else found today:
+
+1. It can **validate or falsify the headline claim** — V678F strongly disruptive, V678M null at the
+   same position. If the DMS reproduces that split, it is external confirmation of the method on a
+   result we derived blind. If it does not, we need to know now.
+2. It gives a **per-residue functional score across the whole JH2–JH1 interface**, which can be
+   correlated against our ΔSASA burial values — a direct test of the negative result that interface
+   burial fails as a predictor (TYK2 V678F and JAK3 Y581C both bury 0.0 Å² yet give the two strongest
+   effects; P982A buries 59.8 Å² and is null at four depths).
+3. The finding that **protective variants act by reducing protein abundance** is a caution: some
+   variant effects are stability or degradation phenomena, invisible to conformational prediction.
+   Worth knowing which of our seven fall in that class before claiming a conformational mechanism.
+
+**Status: abstract only.** The eLife page failed to render and the supplementary tables have not been
+retrieved. Pulling that data and cross-tabulating it against our variant list is the highest-value
+analysis currently available, and it needs no GPU.
