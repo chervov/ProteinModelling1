@@ -1096,3 +1096,226 @@ Why this matters more than anything else found today:
 **Status: abstract only.** The eLife page failed to render and the supplementary tables have not been
 retrieved. Pulling that data and cross-tabulating it against our variant list is the highest-value
 analysis currently available, and it needs no GPU.
+
+---
+
+## 24. RETRACTION: "the aromatic ring, not the position" is wrong (2026-10-20)
+
+Section 20 of this document claims, on the basis of our V678M null result, that at the position
+equivalent to JAK2 V617 **"the aromatic ring is the active ingredient, not the location"**, and that
+"methionine at this site is compatible with a functioning wild-type JAK". **Both statements are
+contradicted by experiment and are withdrawn.**
+
+The TYK2 deep mutational scan (section 23; MaveDB `urn:mavedb:00001270-a-*`) measures every
+substitution at position 678. At 1 U/mL IFN-alpha, relative to wild type:
+
+| aa | signalling | se | abundance |
+|---|--:|--:|--:|
+| **M** | **+0.561** | 0.252 | **+0.002** |
+| I | +0.520 | 0.193 | -0.088 |
+| **F** | **+0.390** | 0.080 | **-0.323** |
+| W | +0.227 | 0.240 | -0.361 |
+| L | +0.145 | 0.230 | -0.183 |
+| A | -0.228 | 0.232 | -0.139 |
+| G | -0.474 | 0.287 | -0.098 |
+| D | -0.479 | 0.280 | -0.201 |
+
+**V678M is activating, not null** - 97th percentile of 23,723 variants. Our control fails, and with
+it the inference it supported.
+
+### What the data say instead
+
+**Hydrophobic bulk at 678 activates.** Spearman correlation of side-chain volume with signalling at
+this position is **rho = +0.548, p = 0.015**, which ranks in the **99.1st percentile** of all 1186
+positions tested. But it is specifically *hydrophobic* bulk: lysine (-0.10), arginine (-0.04),
+glutamine (-0.21) and histidine (-0.21) are all larger than methionine and none of them activate.
+
+A caution on that trend: 29 of 1186 positions reach p < 0.05 for a positive volume correlation, and
+~30 is exactly the chance expectation. The trend is only admissible because **678 was chosen a
+priori** - from V617F homology and our own modelling - rather than found by scanning. On 19 points,
+p = 0.015 is modest support.
+
+### The abundance column, which we had not looked at
+
+**V678F destroys the protein**: abundance -0.323, the 10th percentile, against a nonsense-variant
+anchor of -0.352. It is 92 % of the way from wild type to no protein. **V678M leaves abundance
+untouched** (+0.002, 88th percentile).
+
+Two *separable* consequences of the same position:
+- **activation** tracks general hydrophobic bulk (M, I, F, W, L all positive)
+- **destabilisation** tracks the aromatic ring specifically (only F -0.323 and W -0.361; the bulky
+  aliphatics M +0.002 and I -0.088 are fine)
+
+Volume correlates with signalling (rho +0.548) but **not** with abundance (rho -0.158, p = 0.52),
+confirming the two effects are independent.
+
+**So the ring *is* doing something specific - it is the thing that wrecks the fold. It is not the
+thing that activates.** Our original sentence had the right noun and the wrong verb.
+
+### Consequence for the project's headline result
+
+**V678F is the confounded variant and V678M is the clean one - the reverse of how we used them.**
+Our models show V678F abolishing the closed state (p = 0.0014 at n = 24 vs 16, section 25). Part of
+that may be a protein that does not fold properly rather than a specific conformational switch.
+V678M activates at least as strongly with the fold intact, and our method called it null.
+
+This is a **false negative of our method**, and the first one we can demonstrate against experiment.
+
+### The experiment this calls for
+
+The full V678 substitution series at 64/256, now queued: **I, W, L** (measured activating) and
+**A, G, D** (measured loss-of-function). If our metrics reproduce the measured ordering - and in
+particular if A, G and D *tighten* the closed state, a direction no variant in this project has yet
+produced - that is a real validation on data nobody has analysed. If they do not, we have located
+the method's limit precisely.
+
+---
+
+## 25. Results, 2026-10-20
+
+### TYK2 wild type at 64/256 deepened to n = 24
+
+| variant | n | compact | median FERM-JH1 | p(cnt) | arr<25 | p(arr) |
+|---|--:|--:|--:|--:|--:|--:|
+| WT | **24** | 8/24 | 85.9 | - | 0/24 | - |
+| V678F | 16 | 0/16 | 92.6 | 0.0133 | 0/16 | **0.0014** |
+| V678M | 16 | 4/16 | 84.9 | 0.729 | 0/16 | 0.288 |
+
+**V678F survives at n = 24 vs 16, p = 0.0014.** It weakened from p = 0.00012, which is the honest
+direction of drift as the wild-type arm deepened, and is consistent with the pattern recorded in
+section 17: A572V 0.0009 -> 0.035, R657Q lost significance entirely.
+
+### JAK2 V1110E is null at n = 16
+
+| | n | compact | p(cnt) | p(rank) | p(arr) |
+|---|--:|--:|--:|--:|--:|
+| WT @ 512/8192 | 16 | 9/16 | - | - | - |
+| V1110E | **16** | 7/16 | **0.724** | 0.316 | 0.508 |
+
+At n = 8 it was trending (p = 0.079); the second half erased it. **This is the third variant in the
+campaign to lose an apparently promising n = 8 result** (A572V, R657Q, now V1110E), against one that
+strengthened (V678F). The rule should be explicit: **no n = 8 result is reportable.**
+
+### JAK2 V578I, first half only (n = 8 - pilot, not a finding)
+
+7/8 compact against wild type's 9/16, median FERM-JH1 47.0 vs 49.6, arrangement 10.7 vs 19.1,
+p(rank) = 0.061. The direction is **tighter to closed**, which would be notable - V578I was included
+as a near-neutral control. Given the paragraph above, this is recorded as a pilot and nothing more
+until seeds 8-15 land.
+
+### Seven-variant scoreboard
+
+| variant | n | verdict |
+|---|--:|---|
+| JAK3 **Y581C** | 16 | **abolishes the closed state**, p = 0.0068 - the only clear positive |
+| JAK2 **G571R** | 16 | arrangement p = 0.042, count p = 0.149 - weak, not established |
+| JAK2 **V1110E** | 16 | **null** |
+| TYK2 **V678M** | 16 | null in our assay - **false negative**, DMS says activating |
+| TYK2 **P982A** | 4 depths | null - DMS agrees (mildly loss-of-function) |
+| JAK2 **V578I** | 8 | pilot only, trending tighter |
+| JAK2 **L805I** | - | queued |
+
+---
+
+## 26. The 4OLI interface is validated - as a stability element, not a switch (2026-10-20)
+
+The JH2-JH1 interface was defined structurally from **4OLI** by Shrake-Rupley dSASA > 25 A^2, giving
+**26 residues**: 579, 580, 582, 610, 637, 663, 664, 666, 672, 674, 728, 743, 744, 756, 900, 901,
+921, 922, 923, 926, 980, 982, 983, 992, 993, 1033. Each residue was scored by the median of its ~19
+measured substitutions and compared against the other 505 residues in the structure.
+
+| assay | interface | non-interface | p |
+|---|--:|--:|--:|
+| **abundance** | **-0.302** | -0.121 | **5.5e-05** |
+| signalling 1 U | -0.033 | -0.082 | 0.011 |
+| signalling 100 U | -0.079 | -0.139 | 0.15 |
+
+On a scale where 0 = wild type and -0.352 = dead protein, the interface median is **86 % of the way
+to dead**, against 34 % for the rest of the structure.
+
+**It is not merely burial.** Interface residues are buried by construction, so the comparison was
+repeated within relative-solvent-accessibility strata:
+
+| burial (RSA) | interface | other | p |
+|---|--:|--:|--:|
+| 5-20 % | -0.315 (n=12) | -0.183 (n=131) | 0.036 |
+| **20-50 %** | **-0.296 (n=11)** | **-0.082 (n=165)** | **1.6e-05** |
+
+The effect survives and is **strongest among partially-exposed residues** - exactly where a real
+interface should show, since those are exposed in the isolated domain and covered when the domains
+dock. This is the first independent experimental confirmation that the contact surface our template
+encodes is real.
+
+### What this analysis cannot say
+
+The per-residue **median is direction-blind**. At position 678 the activating and inactivating
+substitutions cancel to a median of +0.030 - the site carrying our entire headline result is
+invisible to the statistic used here. The signalling column is also confounded by abundance, since
+interface residues destabilise heavily.
+
+**Therefore the signalling rows above do not support "the interface is not an allosteric switch".**
+That question is open; this test cannot answer it. To answer it properly: use the paper's
+signalling-only variant class (Table S1), or a direction-sensitive statistic such as the maximum
+positive score per residue.
+
+What does hold: **mutating the interface destabilises TYK2**, strongly and independently of burial.
+
+### V678 is not in the interface
+
+672 and 674 are; 678 is not - it buries **0.0 A^2** across the JH2-JH1 contact. The strongest
+functional site at this position makes no interface contact at all, so whatever it does works
+*through* JH2 rather than by direct contact. P982, which *is* in the interface, is null in our
+models and mildly loss-of-function in theirs.
+
+This independently corroborates the negative result recorded earlier: **interface burial predicts
+stability, not activation.** It was predicting the wrong quantity.
+
+---
+
+## 27. Standard variant-effect predictors are blind to this axis (2026-10-20)
+
+PolyPhen-2 (HDIV), SIFT, REVEL and AlphaMissense were retrieved for all TYK2 variants in dbNSFP via
+MyVariant.info - 9,205 variant rows over 1,188 positions.
+
+### They do not see the interface
+
+| predictor | interface | other | p |
+|---|--:|--:|--:|
+| PolyPhen-2 | 0.989 | 0.982 | 0.84 |
+| AlphaMissense | 0.267 | 0.335 | 0.84 |
+| REVEL | 0.488 | 0.518 | 0.58 |
+| SIFT | 0.009 | 0.004 | 0.33 |
+
+The interface that the DMS validates at p = 5.5e-05 is invisible to all four.
+
+### They cannot resolve position 678
+
+| sub | PolyPhen | AlphaMissense | REVEL | SIFT | measured signalling |
+|---|--:|--:|--:|--:|--:|
+| M | 1.000 | 0.302 | 0.564 | 0.001 | **+0.561** |
+| L | 0.999 | 0.357 | 0.563 | 0.002 | +0.145 |
+| A | 0.998 | 0.491 | 0.546 | 0.001 | -0.228 |
+| G | 1.000 | 0.453 | 0.702 | 0.001 | **-0.474** |
+
+PolyPhen calls every substitution damaging (0.998-1.000) while the measured effects span +0.561 to
+-0.474. It ranks the strongest activator and the strongest loss identically. Note also that **I, F,
+W and D have no entry at all** - they are not reachable by a single nucleotide change from GTG, so
+**V678F, our headline variant, is absent from every standard predictor.**
+
+### Across the whole protein they track abundance, not function
+
+| predictor | vs signalling 1 U | vs abundance |
+|---|--:|--:|
+| PolyPhen-2 | -0.126 | **-0.286** |
+| AlphaMissense | -0.148 | **-0.350** |
+| REVEL | -0.137 | **-0.370** |
+| SIFT | +0.130 | +0.266 |
+
+Every predictor correlates 2-3x more strongly with **protein abundance** than with signalling - the
+same split found for the structural interface. These tools predict whether a protein survives
+folding, not what it does.
+
+**Consequence:** the PolyPhen and ESM annotations carried in the original seven-variant table were
+answering a different question from the one we are asking, which is why they had no predictive value
+for our results. It also means our conformational method is not competing with them - it targets the
+axis they are blind to. The honest caveat is that rho ~ -0.35 is weak even on the axis they do best.
