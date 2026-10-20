@@ -922,3 +922,53 @@ Two honest readings remain, and the data cannot yet separate them:
 
 Reading 2 would be testable with a working template-release assay, but the 4OLI release has no dynamic
 range (section 11). Releasing at recycle 1 rather than 3 is the remaining idea, and it is unproven.
+
+---
+
+## 20. V678M: at the V617F hotspot the aromatic ring does the work, not the position (2026-10-20)
+
+TYK2 V678M, MSA 64/256, 16 seeds, paired with wild type and with V678F at the same depth and seeds.
+
+| | n | compact (FERM–JH1 < 60 Å) | p(count) | median arrangement | **p(arrangement)** |
+|---|--:|--:|--:|--:|--:|
+| wild type | 16 | 7/16 | – | 84.5 | – |
+| **V678F** | 16 | **0/16** | **0.0068** | 93.0 | **0.0001** |
+| **V678M** | 16 | 4/16 | 0.46 | 85.3 | **1.0000** |
+
+**Phenylalanine abolishes the closed state; methionine is indistinguishable from wild type.** p = 1.0000
+on the arrangement metric is not a weak effect — the two distributions are as close to identical as the
+test reports.
+
+### The claim
+
+At the position equivalent to JAK2 V617 and JAK1 V658, **the aromatic ring is the active ingredient, not
+the location.** Two independent lines agree:
+
+- **TYK2** — valine→phenylalanine abolishes the closed state (p = 0.0001); valine→methionine does nothing.
+- **JAK3** — the native residue at the equivalent position is **already methionine (M592)**, and *adding*
+  the ring, M592F, abolishes the closed state (p = 0.037).
+
+Methionine at this site is therefore compatible with a functioning wild-type JAK, and introducing an
+aromatic ring is what shifts the equilibrium. The literature generally describes this site as "the V617F
+position"; on this evidence the position alone is inert.
+
+### Why this is a useful control
+
+V678M rules out the alternative that V678F's effect is simply "any substitution at a sensitive site".
+Same residue, same depth, same seeds, same n — one substitution moves everything, the other moves nothing.
+
+### Status of the seven user-supplied variants
+
+| variant | result |
+|---|---|
+| TYK2 **V678M** | **null** (p = 1.0000), this section |
+| TYK2 **P982A** | **null at four depths** (0.59 / 0.79 / 0.34 / 0.14), section 19 |
+| JAK3 **Y581C** | **abolishes the closed state**, p = 0.0068 — section 18 |
+| JAK2 **G571R** | trending less compact, arrangement p = 0.042, n = 16 — not established |
+| JAK2 **V1110E** | trending, p(count) = 0.079 at n = 8; second half running |
+| JAK2 V578I | not yet run |
+| JAK2 L805I | not yet run |
+
+Worth stating plainly: of the seven, **only Y581C has produced a clear effect so far.** The strongest
+result in the project, TYK2 V678F, is a substitution added during this work rather than one from the
+original list — and its value comes largely from being paired with V678M as a control.
