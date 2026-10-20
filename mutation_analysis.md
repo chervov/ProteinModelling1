@@ -1319,3 +1319,91 @@ folding, not what it does.
 answering a different question from the one we are asking, which is why they had no predictive value
 for our results. It also means our conformational method is not competing with them - it targets the
 axis they are blind to. The honest caveat is that rho ~ -0.35 is weak even on the axis they do best.
+
+---
+
+## 28. Corrections to sections 26 and 27, from better statistics (2026-10-20, night)
+
+Three claims made earlier today were tested properly and two of them were wrong. Recorded here
+rather than edited in place, so the reasoning stays auditable.
+
+### 28.1 "The signalling column is confounded by abundance" - overstated
+
+Across all 22,513 variants measured on both assays, signalling regressed on abundance gives
+**slope +0.287, r = +0.105** (p = 2e-56). Abundance explains roughly **1 % of the variance** in
+signalling. The two readouts are very nearly independent, and the signalling scores were never
+badly contaminated. The caution in section 26 was more than the data warranted.
+
+### 28.2 "This test cannot say whether the interface is an allosteric switch" - too pessimistic
+
+Repeating the interface comparison with direction-sensitive statistics, and with the (small)
+abundance component regressed out:
+
+| statistic | interface | non-interface | p |
+|---|--:|--:|--:|
+| median, raw | -0.033 | -0.082 | 0.011 |
+| **median, abundance removed** | **+0.042** | **-0.019** | **0.00057** |
+| MAX (most activating substitution) | +0.473 | +0.463 | 0.71 |
+| MIN (most damaging substitution) | -0.575 | -0.620 | 0.33 |
+
+There **is** a real activating signal at the interface: mutating it shifts signalling up by about
+0.06 on average, p = 0.00057, which is the direction autoinhibition predicts - break the clamp,
+signal more.
+
+But the **MAX statistic shows nothing (p = 0.71)**. The interface is not where the strongest
+activators sit. The correct description is a **weak, diffuse activating surface rather than a switch
+with hotspots** - consistent with a clamp that is released by degrading the contact overall rather
+than by flipping one residue.
+
+Both earlier statements are therefore superseded: the interface is (a) strongly destabilising when
+mutated, p = 5.5e-05, and (b) mildly activating when mutated, p = 0.00057, with no hotspot structure.
+
+### 28.3 "Position 678 is the activating hotspot" - not supported as stated
+
+On the direction-sensitive MAX statistic, position 678 ranks **715th of 1187 positions, the 60th
+percentile**. Its single most-activating substitution (+0.561) is unremarkable; hundreds of
+positions have a stronger one.
+
+**678's distinction is the ordering, not the magnitude.** The volume-signalling correlation at this
+position (rho = +0.548) sits in the 99.1st percentile, but the effect sizes are ordinary. Calling it
+"the activating hotspot" overstates it; the accurate statement is that substituting 678 produces an
+unusually clean and physically interpretable gradient.
+
+This raises the bar for the experiment now running. V678I versus V678F is asking whether our models
+track a **subtle, graded** signal, not whether they detect an outlier. A null result there would be
+much less damning than it would have been under the earlier framing.
+
+---
+
+## 29. What V678 actually touches in 4OLI (2026-10-20, night)
+
+An earlier note speculated that bulk at 678 levers the 672-674 interface patch apart. That was
+inferred from the interface residue list and never measured. Measured now:
+
+| measurement | value |
+|---|--:|
+| 678 -> JH1, nearest heavy atom | **14.0 A** |
+| 678 -> nearest interface residue | 8.3 A |
+| 678 -> 672 | 15.5 A |
+| 678 -> 674 | 11.0 A |
+| 678 SASA in JH2 alone | 75.9 A^2 = **43.6 % exposed** |
+| 678 dSASA on JH1 docking | **0.0 A^2** |
+
+Heavy-atom neighbours within 5 A: C677, R679 (chain-adjacent), then **Y656, G680, E682, Q586, N683,
+V584, V676**.
+
+**The speculation was wrong in its specifics.** 678 is 11-15 A from 672/674 and makes no contact
+with them. It does contact **V584 and Q586** at ~4 A, and those sit immediately beside interface
+residues 579/580/582, so a second-shell path 678 -> 584/586 -> 579-582 -> JH1 is geometrically
+available. That is a corrected hypothesis, not a result; the identity of the 8.3 A interface
+neighbour has not been confirmed.
+
+**678 is a surface residue, 44 % solvent-exposed.** This undercuts a simple steric-displacement
+story - a bulky substitution has room there - and makes the measured abundance effect of F (-0.323)
+and W (-0.361) genuinely puzzling, since strong destabilisation at a near-half-exposed position is
+not what packing defects usually look like. An exposed aromatic creating an aggregation-prone or
+degron-like patch would explain it, but that is speculation and is flagged as such.
+
+**Current honest position on V678: the experimental behaviour is established (hydrophobic bulk
+activates, aromatics destabilise) and there is no structural mechanism for either.** The contact
+geometry rules out direct interface action and makes a simple packing explanation unlikely.
