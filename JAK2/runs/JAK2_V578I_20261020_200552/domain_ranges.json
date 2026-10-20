@@ -1,0 +1,22 @@
+{
+  "chain_id": "A",
+  "domains": {
+    "JH2": [
+      [
+        545,
+        809
+      ]
+    ],
+    "JH1": [
+      [
+        849,
+        1124
+      ]
+    ]
+  },
+  "openness_metric": {
+    "type": "centroid_distance",
+    "domain1": "JH2",
+    "domain2": "JH1"
+  }
+}
