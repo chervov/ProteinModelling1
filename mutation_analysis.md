@@ -1407,3 +1407,84 @@ degron-like patch would explain it, but that is speculation and is flagged as su
 **Current honest position on V678: the experimental behaviour is established (hydrophobic bulk
 activates, aromatics destabilise) and there is no structural mechanism for either.** The contact
 geometry rules out direct interface action and makes a simple packing explanation unlikely.
+
+---
+
+## 30. The V678 substitution series: our signal tracks abundance, not activation (2026-10-21)
+
+Four substitutions at position 678 have now been run at 64/256, the only TYK2 depth with dynamic
+range, and compared against the measured deep mutational scan values.
+
+| variant | our compact | fraction | measured signalling (1 U) | measured abundance |
+|---|--:|--:|--:|--:|
+| **F** | 0/24 | 0.000 | +0.390 | -0.323 |
+| **W** | 2/16 | 0.125 | +0.227 | **-0.361** |
+| M | 4/16 | 0.250 | +0.561 | +0.002 |
+| I | 5/16 | 0.312 | +0.520 | -0.088 |
+| WT | 8/24 | 0.333 | - | - |
+
+Rank correlation of our compact fraction against each measured axis:
+
+| axis | Spearman rho | p |
+|---|--:|--:|
+| **abundance** | **+0.600** | 0.285 |
+| signalling | -0.200 | 0.747 |
+
+**The two destabilising substitutions (F, W) sit at one end of our ordering and the two stable ones
+(M, I) sit with wild type at the other.** That is the abundance ordering. The signalling ordering is
+the opposite of what our models produce: M and I are the strongest activators measured and are the
+two our method calls closest to wild type.
+
+**Interpretation.** What this pipeline detects at position 678 is whether the substituted sequence
+still encodes a stable fold, not whether the variant activates the kinase. This is consistent with
+two other findings from the same day: standard predictors (PolyPhen, SIFT, REVEL, AlphaMissense)
+correlate 2-3x better with abundance than with signalling (section 27), and the 4OLI interface shows
+a strong abundance signal but only a weak diffuse activating one (sections 26, 28).
+
+**Consequence for the headline result.** The V678F finding (0/24 vs 8/24, p = 0.0003) stands as a
+measurement but its interpretation must change. "V678F abolishes TYK2's approaches to the closed
+arrangement" is defensible; "V678F is an activating mutation and our method detects that" is not
+supported, because the two substitutions that activate more strongly (M, I) are the two our method
+scores closest to wild type.
+
+### Caveats, stated plainly
+
+- rho = +0.600 on five points is **p = 0.285** - suggestive, not established.
+- Only **F** reaches significance individually (p = 0.0003). **W** is a trend (2/16 vs 8/24,
+  p = 0.14). M and I are flat.
+- Wild type is pinned at 0 on both measured axes by construction, which inflates any correlation
+  that includes it.
+- V678F remains confounded: it is both the most-studied substitution at this position (the JAK2
+  V617F analogue) and one of the two most destabilising. Those cannot be separated with the data in
+  hand.
+
+### The test still running
+
+A (-0.139), G (-0.098) and D (-0.201) are all **mildly** destabilising. Under the abundance account
+they should land **between W and M** - intermediate, not null. That is a graded prediction over three
+further points and is a sharper test than any single pairwise comparison. If instead they come back
+flat at wild-type levels, the abundance account weakens and the result reduces to "F and W are
+special", which would need a different explanation.
+
+---
+
+## 31. Two retractions from the same night (2026-10-21)
+
+Both were mine, both came from reading an n = 8 half as if it were a result, and both are recorded
+rather than quietly corrected.
+
+**31.1 "V678W refutes the foldability account."** At n = 8, V678W was 2/8 compact and I described it
+as "dead null" and wrote that the foldability hypothesis was refuted. At n = 16 it is **2/16**, the
+second-lowest of the series after F, and it **supports** the account rather than refuting it. The
+error was treating 2/8 as informative immediately after noting that four of five n = 8 results in
+this campaign had evaporated.
+
+**31.2 The memorisation hypothesis.** On the strength of that bad reading I proposed that our models
+might be *recognising* V678F because the JAK2 V617F analogue is among the most-studied kinase
+mutations in existence, and described it as "the hypothesis I would now put first". There is no
+evidence for it, and the abundance account explains the data more simply. **Withdrawn.** It remains
+a legitimate concern in principle - V678F is the only substitution at this position with a large
+literature footprint - but it was proposed on the basis of a result that was not real.
+
+**The standing rule, now violated twice in one night by its own author: no n = 8 half is
+interpretable in this assay.** Record it, do not reason from it.
