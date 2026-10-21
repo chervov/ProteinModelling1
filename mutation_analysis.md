@@ -2136,3 +2136,110 @@ four or five substitutions spanning the DMS range would tell us whether the open
 measuring something position-specific or nothing at all. H582W, already queued for the release assay,
 is the obvious candidate - measured IFN-alpha +1.339 (99.9th percentile) with abundance intact at
 -0.083, which is the opposite corner of the DMS plane from V678W.
+
+## 42. The whole TYK2 campaign at per-seed resolution, and a deduplication correction to section 41 (2026-10-22)
+
+The per-seed scoring of section 41 has been extended from the 64/256 runs to every TYK2 run: the
+final recycle of every seed of all 197 run folders, scored by the arrangement metric against 4OLI,
+AF2 TYK2, 8EWY, 7T6F and Jeanpierre open, assigned to the nearest within 15 A. **323 distinct
+structures.**
+
+### Correction to section 41 first
+
+Section 41's table counted V678I as 13/24 and V678G as 9/24. Both were inflated: one V678I run and
+one V678G run are byte-identical re-pushes of another run. Verified by fingerprinting the full
+`index.csv` - all 120 (seed, recycle) rows agree to three decimals on openness **and** to two
+decimals on mean pLDDT:
+
+- `TYK2_V678I_20261020_212231` == `TYK2_V678I_20261020_224133` (seeds 8-15)
+- `TYK2_V678G_20261021_045409` == `TYK2_V678G_20261021_073753` (seeds 8-15)
+- `TYK2_V678L_20261021_022531` == `TYK2_V678L_20261021_034851` (seeds 0-7)
+
+Worth separating from the opposite case: `TYK2_V678L_20261020_235544` also carries seeds 0-7 and is
+**not** identical to those two. Same seed numbers, different trajectories - exactly as expected,
+since inference runs with stochastic dropout and a seed number is not a reproducibility handle. Only
+byte-identical trajectory sets were dropped; same-seed independent draws were all kept.
+
+Corrected, with Holm over the same nine comparisons:
+
+| variant | open / n | fraction | Fisher p vs WT | Holm |
+|---|--:|--:|--:|--:|
+| WT | 2/24 | 0.083 | reference | - |
+| **V678F** | 18/24 | **0.750** | 4.6e-06 | **<0.0001** |
+| **V678A** | 10/16 | **0.625** | 4.2e-04 | **0.0033** |
+| **V678I** | 8/16 | **0.500** | 6.8e-03 | **0.0479** |
+| V678D | 7/16 | 0.438 | 0.018 | 0.105 |
+| V678G | 6/16 | 0.375 | 0.042 | 0.210 |
+| P982A | 5/16 | 0.312 | 0.094 | 0.377 |
+| V678M | 4/16 | 0.250 | 0.195 | 0.586 |
+| V678L | 3/24 | 0.125 | 1.000 | 1.000 |
+| V678W | 1/16 | 0.062 | 1.000 | 1.000 |
+
+The three significant variants survive, but **V678I is now marginal** (Holm 0.0479, against 0.0094 in
+section 41). Only V678F and V678A are comfortably significant. The headline of section 41 stands;
+its third entry should be reported as borderline.
+
+### The whole campaign
+
+| variant | MSA | mode | n | closed | open | dimer | unassigned | median FERM-JH1 |
+|---|---|---|--:|--:|--:|--:|--:|--:|
+| WT | 32/64 | free | 8 | 0 | 0 | 0 | **8** | 46.3 |
+| WT | 64/256 | free | 24 | 0 | 2 | 0 | **22** | 91.0 |
+| WT | 96/384 | free | 8 | 0 | **7** | 0 | 1 | 93.6 |
+| WT | 128/512 | free | 8 | 0 | **8** | 0 | 0 | 93.5 |
+| WT | 256/1024 | free | 2 | 0 | **2** | 0 | 0 | 93.6 |
+| WT | 512/8192 | free | 2 | 0 | **2** | 0 | 0 | 93.4 |
+| P982A | 32/64 | free | 24 | 0 | 0 | 0 | **24** | 40.6 |
+| P982A | 64/256 | free | 16 | 0 | 5 | 0 | 11 | 93.4 |
+| P982A | 96/384 | free | 8 | 0 | 2 | **2** | 4 | 91.0 |
+| P982A | 128/512 | free | 8 | 0 | **8** | 0 | 0 | 93.2 |
+| V678F | 32/64 | free | 8 | 0 | 0 | 0 | **8** | 49.8 |
+| V678F | 64/256 | free | 24 | 0 | **18** | 0 | 6 | 94.7 |
+| V678F | 96/384 | free | 16 | 0 | **16** | 0 | 0 | 93.4 |
+| WT | 128/512 | tmpl | 16 | **16** | 0 | 0 | 0 | 39.2 |
+| WT | 128/512 | rel3 | 8 | **8** | 0 | 0 | 0 | 39.0 |
+| V678F | 128/512 | rel3 | 13 | **13** | 0 | 0 | 0 | 39.1 |
+| V678M | 128/512 | rel3 | 8 | **8** | 0 | 0 | 0 | 38.7 |
+| V678I | 128/512 | rel3 | 2 | **2** | 0 | 0 | 0 | 39.7 |
+
+Totals: **template-free n = 276 - 2 closed, 109 open, 2 active-dimer, 163 unassigned. Release
+n = 31 - 31 closed. Template-throughout n = 16 - 16 closed.**
+
+**1. The wild-type depth ladder, by arrangement rather than by distance.** Fraction reaching
+canonical open: 32/64 **0.00**, 64/256 **0.08**, 96/384 **0.88**, 128/512 **1.00**, 256/1024 **1.00**,
+512/8192 **1.00**. The transition is a step between 64/256 and 96/384, not a gradient, and above it
+the model is completely locked. Tonight's two new depths were run to fill a gap in this ladder and
+they confirm saturation: nothing changes between 128/512 and 512/8192.
+
+**2. 32/64 produces no state at any variant.** 40 structures across WT, P982A and V678F: zero closed,
+zero open, all 40 unassigned, median FERM-JH1 40-50 A. The shallowest depth makes compact structures
+that are not the closed state - the point of sections 24 and 39, now with 40 samples instead of 8.
+
+**3. The only active-dimer structures in the entire TYK2 campaign are 2 of 8 P982A at 96/384.** Out
+of 323 structures. Given that 7T6F is a JAK1 structure (section 35) and n = 2, this is a curiosity to
+note, not a finding.
+
+**4. The release assay is unanimous at per-seed resolution: 31/31.** Plus 16/16 for the
+template-throughout runs. 47 structures, four sequences, every one closed, median FERM-JH1 38.7-39.7
+A. No V678 substitution releases the closed state - including V678F, which is the substitution with
+the largest template-free effect in the table above (0.75 open at 64/256). **A variant can open the
+model completely when prediction starts from sequence and hold the closed state completely when
+prediction starts from 4OLI.** That contrast, now measured at full power on both sides, is the
+cleanest statement the TYK2 work supports.
+
+### The compact-fraction correlation, deduplicated
+
+| score | rho vs IFN-alpha 1 U | p | rho vs abundance | p | rho vs IFN-alpha 100 U | p |
+|---|--:|--:|--:|--:|--:|--:|
+| canonical open (arrangement) | -0.017 | 0.966 | -0.083 | 0.831 | -0.017 | 0.966 |
+| compact fraction (< 60 A) | +0.205 | 0.596 | +0.556 | 0.120 | **+0.667** | **0.050** |
+
+Unchanged in substance from section 41, and the strongest relation remains the one section 30 never
+tested: compact fraction against signalling at **100 U**, rho = +0.667 at p = 0.050 on nine points.
+That is one uncorrected test selected from six, so it is a hypothesis and not a result - but it is
+the specific hypothesis worth testing next, and it points the opposite way from section 30's
+conclusion. Section 30 compared against signalling at 1 U, found rho = -0.200, and concluded the
+pipeline tracks abundance rather than activation. At 100 U the sign flips and the magnitude is the
+largest in the table. **Which dose the scan is read at decides whether the pipeline looks like an
+abundance sensor or an activation sensor**, and that should be settled on a second position before
+either claim is repeated.
