@@ -1488,3 +1488,71 @@ literature footprint - but it was proposed on the basis of a result that was not
 
 **The standing rule, now violated twice in one night by its own author: no n = 8 half is
 interpretable in this assay.** Record it, do not reason from it.
+
+---
+
+## 32. Duplicate run folders are replicate data, and three of four fail reproducibility (2026-10-21)
+
+Twelve duplicate run folders accumulated across the campaign, created when a supervisor relaunch
+replayed a queue from the top. The first instinct was to delete them. They should be **kept**: four
+of the nine duplicated groups are genuine recomputations - the same seeds and the same configuration
+re-run on a different sandbox - and they are the only replicate data the project has.
+
+Five groups are mere re-pushes of the same completed inference (identifiable in the logs by a run
+time of `in 2 min`) and carry no information. The other four do:
+
+| group | median abs delta FERM-JH1 | max |
+|---|--:|--:|
+| JAK2 WT, default MSA | **0.4 A** | 1.0 A |
+| JAK2 WT 32/64 | 6.8 A | 8.9 A |
+| **JAK1 WT 128/512** | **18.0 A** | **52.4 A** |
+| **TYK2 V678L 64/256** | **14.7 A** | **52.1 A** |
+
+### The same seed does not reproduce the same structure
+
+TYK2 V678L at 64/256, per seed, run A versus run B:
+
+| seed | run A | run B | delta |
+|--:|--:|--:|--:|
+| 0 | 82.0 | 92.0 | 10.0 |
+| 1 | **40.6** | **91.2** | **50.6** |
+| 2 | 80.9 | 91.6 | 10.7 |
+| 3 | 83.8 | 92.2 | 8.4 |
+| 4 | 60.0 | 87.5 | 27.5 |
+| 5 | **40.5** | **92.6** | **52.1** |
+| 6 | 77.9 | 94.3 | 16.4 |
+| 7 | 81.6 | 94.6 | 13.0 |
+
+Seeds 1 and 5 move between a **compact** state (~40 A) and a **fully open** one (~92 A) purely by
+re-running. Expressed as the statistic the project actually reports, those two runs give
+**~2-3 of 8 compact** versus **0 of 8**. JAK1 wild type at 128/512 behaves the same way: **0/5
+versus 2/5** compact across two runs with identical seeds and identical configuration.
+
+### Three consequences
+
+1. **Run-to-run variation is the same size as the effects being called significant.** A 2/8 shift
+   from re-running alone is the magnitude of most positive results in this campaign.
+2. **Reported numbers are partly arbitrary where duplicates exist.** `all_results.py` deduplicates
+   by seed number with later runs overwriting earlier ones, so it reports whichever copy was pushed
+   last. For V678L that choice alone moves the result between 0/8 and 2-3/8.
+3. **The headline comparison is not fully controlled.** V678F (0/24) and wild type (8/24) were run
+   at different times on different sandboxes. Some unknown fraction of that gap is run-to-run
+   variation rather than the mutation, and the present data cannot bound that fraction.
+
+Note the one group that *does* reproduce: JAK2 wild type at the default deep MSA, median delta
+**0.4 A**. That is the mode-collapsed regime, where every seed returns the same answer anyway. The
+irreproducibility appears exactly where the ensemble has dynamic range - which is the regime the
+whole campaign depends on.
+
+### Likely cause, untested
+
+The MSA is re-fetched from the ColabFold API on every run. If the returned alignment differs between
+fetches, the model input differs, and the random seed only controls sampling *given* an input - so
+"same seed, different run" is not a controlled comparison at all. This is testable by hashing the
+MSA across runs and has **not** been done.
+
+### The experiment this calls for, when it becomes a priority
+
+Run wild type at 64/256 three times with identical seeds and measure the spread of the compact
+count. That calibrates every p-value reported in this document. Until it is done, the p-values here
+should be read as upper bounds on confidence rather than as calibrated significance.
