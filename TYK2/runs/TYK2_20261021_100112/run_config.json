@@ -1,0 +1,67 @@
+{
+  "timestamp": "20261021_100112",
+  "target": "TYK2",
+  "uniprot": "P29597",
+  "window_uniprot": [
+    1,
+    1187
+  ],
+  "sequence_length": 1187,
+  "domain_mode": "JH2_JH1",
+  "domains_uniprot": {
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ],
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ]
+  },
+  "domains_model": {
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ],
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ]
+  },
+  "config_preset": "model_1",
+  "random_seeds": "2",
+  "num_recycles": 15,
+  "violation_loss_weight": 0.1,
+  "stochastic_dropout": true,
+  "max_msa_clusters": 128,
+  "max_extra_msa": 512,
+  "mutations": [],
+  "template_source": [
+    "pdb:4OLI:A"
+  ],
+  "template_cif": [
+    "/content/protein_predictions/templates/pdb_4OLI_A/4oli_A.cif"
+  ],
+  "template_identity": {
+    "PDB 4OLI chain A": {
+      "observed_residues": 539,
+      "aligned": 539,
+      "identical": 537,
+      "identity_aligned": 0.996,
+      "query_range": [
+        579,
+        1177
+      ]
+    }
+  },
+  "template_recycles": 3,
+  "inference_dir": "/content/protein_predictions/inference_msa128-512_tmpl4OLI_rel3_r15_seeds2"
+}
