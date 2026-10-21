@@ -1823,3 +1823,54 @@ robust to boundary error - which is reassuring for its use throughout this proje
 exactly why the error was invisible for so long. It will not announce itself; it has to be checked
 at the source. Both paralogue assignments in the reference set are now verified against UniProt
 sequences rather than taken from notes.
+
+## 38. JAK3 re-classified with corrected JAK1 boundaries, and its open state matches experiment too (2026-10-22)
+
+Section 34 classified all 28 JAK3 structures against six references, with 7T6F and 8EWY entered
+under JAK2 boundaries - the error of sections 35 and 37. The full run has been repeated with `JAK1`
+boundaries. Columns not involving those two entries are identical, as expected.
+
+| JAK3 run | pick | FERM-JH1 | AF2 JAK3 | Jeanpierre closed | Jeanpierre open | 7T6F active | 8EWY open | 4OLI closed |
+|---|---|--:|--:|--:|--:|--:|--:|--:|
+| WT 512/8192 | open | 94.4 | 82.3 | 81.6 | **1.6** | 46.0 | **5.8** | 80.2 |
+| WT 512/8192 | closed | 94.0 | 82.3 | 81.5 | **1.9** | 46.8 | **5.9** | 80.2 |
+| WT 256/1024 | open | 94.1 | 82.1 | 81.2 | **2.6** | 47.3 | **4.9** | 79.9 |
+| M592F 128/512 | closed | 94.2 | 83.1 | 82.3 | **3.5** | 47.6 | **7.6** | 81.0 |
+| Y581C 128/512 | closed | 95.3 | 83.9 | 83.2 | **2.8** | 46.9 | **7.6** | 81.9 |
+| M511I 128/512 | closed | 41.5 | **2.0** | 4.9 | 80.7 | 80.6 | 79.0 | **3.0** |
+| A573V 128/512 | closed | 41.6 | **2.3** | 5.3 | 80.7 | 80.5 | 78.9 | **3.1** |
+| R657Q 128/512 | closed | 42.4 | **3.0** | 5.6 | 80.2 | 80.1 | 78.4 | **3.2** |
+| WT 256/1024 | closed | 43.1 | 15.7 | 12.4 | 87.1 | 90.1 | 85.2 | 15.8 |
+| WT 128/512 | closed | 43.7 | 16.2 | 13.3 | 87.3 | 90.2 | 85.5 | 16.4 |
+| A572V 128/512 | closed | 44.6 | 17.8 | 14.5 | 87.9 | 91.5 | 85.9 | 18.0 |
+| M511I 128/512 | closed | 44.8 | 22.0 | 18.5 | 89.5 | 93.8 | 87.5 | 21.8 |
+| A572V 128/512 | open | 47.8 | 47.7 | 44.5 | 92.0 | 101.1 | 91.0 | 47.1 |
+| 14 further structures | - | 46.9-56.8 | 66.6-92.4 | 64.4-93.6 | 91.5-106.2 | 80.0-101.3 | 94.9-109.4 | 65.9-92.8 |
+
+**1. The JAK3 extended state matches an experimental structure, not only a model.** Section 34
+established the match to Jeanpierre's open JAK1 model (1.6-3.5 A, unchanged). With the boundaries
+fixed, the same five structures sit **4.9-7.6 A from 8EWY**, the cryo-EM open JAK1 dimer. Section 34
+had this as 4.7-5.5 A from a wrongly-windowed reference; the corrected range is wider but the
+conclusion is stronger than stated at the time, because a match to a measured structure carries
+weight that a match to another prediction does not. Together with section 36, **both TYK2 and JAK3
+reproduce the experimental open JAK1 arrangement to within 5-8 A at deep MSA**, from sequence alone,
+with no template.
+
+**2. JAK3 still never reaches the active dimer.** The closest approach over all 28 structures is
+**46.0 A** (was 46.3 A), against a ~10 A match threshold. Claim 2 of section 34 stands, with the
+caveat added in section 35: 7T6F is a JAK1 structure, so "JAK1 reaches it and JAK3 does not" is a
+paralogue matching its own experimental reference, not evidence that JAK1 is conformationally
+special.
+
+**3. The closed bin splits three ways, which section 34 understated.** Three structures (M511I,
+A573V, R657Q closed picks, all 41.5-42.4 A) match AF2 JAK3 to **2.0-3.0 A** and 4OLI to 3.0-3.2 A -
+genuinely closed. Four more (WT 128/512 and 256/1024, A572V, M511I, 43.1-44.8 A) sit at **15.7-22.0
+A** from AF2: the same bin, the same FERM-JH1 range, but a measurably different arrangement, and
+outside the project's own 15 A match threshold. Section 34 reported the closed range as "2.0-5.6 A",
+which described only the first group. Fourteen structures at 46.9-56.8 A match nothing at all, as
+reported.
+
+So the compact end of the JAK3 distribution contains three populations, not one: canonically closed
+(3), a near-closed arrangement 16-22 A away (4), and unassigned (14). The "closed state abolished"
+versus "tightened" variant classes of the earlier work were drawn across this structure without
+resolving it.
