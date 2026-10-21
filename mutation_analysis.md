@@ -1668,3 +1668,51 @@ The JAK3 variant classes reported earlier - "closed state abolished" (M592F, A57
 what a JAK3 variant moves *away from* is the canonical closed arrangement, and what it moves
 *towards* is either the canonical open state or the unassigned intermediate - **never the active
 dimer**. Any mechanistic reading of those classes should say so explicitly.
+
+## 35. Correction to section 34: 7T6F and 8EWY are mouse JAK1, not mouse JAK2 (2026-10-22)
+
+Section 34 labels the two EM dimer references as "7T6F (active dimer, mouse JAK2)" and "8EWY (open
+dimer, mouse JAK2)". **Both are mouse JAK1.** The earlier text of this document (section 18) had it
+right - "JAK1 dimer, 7T6F" - and the relabelling introduced in section 34 was the error.
+
+### How it was settled
+
+Neither entry carries a UniProt cross-reference in the PDB, which is how the mistake survived. The
+kinase chain of each was therefore aligned against four reference sequences with BLOSUM62 global
+alignment:
+
+| reference | identity to 7T6F chain A | identity to 8EWY chain A |
+|---|--:|--:|
+| **JAK1_MOUSE (P52332)** | **98.0 %** | **98.0 %** |
+| JAK1_HUMAN (P23458) | 93.3 % | 93.3 % |
+| JAK2_MOUSE (Q62120) | 43.1 % | 43.1 % |
+| JAK2_HUMAN (O60674) | 43.1 % | 43.1 % |
+
+Both chains are 1173 residues and give identical numbers, so the two entries are the same construct
+in two arrangements. 98 % versus 43 % is not a close call. The accession quoted in session notes as
+"mouse JAK2, P52332" was itself self-contradictory: P52332 *is* JAK1_MOUSE.
+
+Entry metadata, for the record: 7T6F, "Structure of active Janus Kinase (JAK) dimer complexed with
+cytokine receptor intracellular domain", cryo-EM, released 2022-03-16, Glassman et al., *Science*
+2022. 8EWY, "Structure of Janus Kinase (JAK) dimer complexed with cytokine receptor intracellular
+domain", cryo-EM, released 2023-03-08, *Cell Reports* 2023. Both *Mus musculus*; 7T6F's second
+entity is interferon lambda receptor 1, consistent with a JAK1-bearing complex.
+
+### What this changes
+
+The numbers in section 34 are unaffected - the coordinates were right, only the label was wrong -
+but two readings of them improve:
+
+1. **Section 34 point 2 is less surprising than it was written.** "JAK1 enters the 7T6F arrangement
+   readily, JAK3 does not at any depth" is a comparison of JAK1 against *its own* experimental
+   structure, not against a JAK2 one. A paralogue matching its own EM dimer to 4.9 A while a
+   different paralogue stays 46.3 A away is the expected ordering, so the claim that the third
+   arrangement is "specific to JAK1 in this pipeline" is now partly circular: it may be specific to
+   *having an experimental reference*. It still stands as an observation about JAK3 - JAK3 never
+   reaches that arrangement - but it is no longer evidence that JAK1 is special among paralogues.
+2. **Every experimental multi-domain JAK reference in this project is JAK1.** 7T6F and 8EWY were the
+   only two entries in the family found to contain FERM and JH1 together (section 24). With both
+   being mouse JAK1, there is **no experimental multi-domain structure for JAK2, JAK3 or TYK2 at
+   all** - the family's entire measured arrangement evidence rests on one paralogue in one organism.
+   Every closed-state TYK2 number in this document is a comparison against either a predicted model
+   or a cross-paralogue JAK1 structure.
