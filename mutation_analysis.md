@@ -2045,3 +2045,94 @@ it costs one extra column in the results JSON and no storage, and it would have 
 24, 34, 36 and 39 be read off the existing table instead of requiring 394 downloads. **This is the
 single highest-value change to the pipeline identified so far**, and it needs no GPU time to
 implement, only a notebook edit applied on the next run.
+
+## 41. Retraction of section 40, and the TYK2 variant effect measured at full power (2026-10-22)
+
+### Retraction first
+
+Section 40 stated that "the per-seed structures needed to measure it were never pushed" and queued a
+pipeline change to start pushing them. **That is wrong.** Every run folder already contains
+`all/index.csv` plus `all/seed_NNN/recycle_NN.pdb.gz` for all 15 recycles of all 8 seeds - 120
+structures per run - and `all/seed_NNN/metrics.json` and `recycle_metrics.jsonl` besides. The data
+has been in the repository all along. The claim was made after listing a run folder's top level and
+not opening the `all/` directory. The queued pipeline change in section 40 is withdrawn: nothing
+needs to be pushed that is not already there.
+
+Section 39's claim 4 ("no variant differs from wild type at 64/256") is likewise withdrawn. It was
+computed on 4-6 run representatives, and with the per-seed data the opposite is true.
+
+### The measurement
+
+The final recycle of every seed of all 26 template-free 64/256 runs was scored by the arrangement
+metric against five references - 4OLI, AF2 TYK2, 8EWY, 7T6F, Jeanpierre open - and assigned to the
+nearest within 15 A. 208 structures, 16-32 per variant, the same power as the master results table.
+
+| variant | n | canonical open | fraction | closed | unassigned | Fisher p vs WT | Holm |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| WT | 24 | 2 | 0.083 | 0 | 22 | reference | - |
+| **V678F** | 24 | **18** | **0.750** | 0 | 6 | 4.6e-06 | **<0.0001** |
+| **V678A** | 16 | **10** | **0.625** | 0 | 6 | 4.2e-04 | **0.0033** |
+| **V678I** | 24 | **13** | **0.542** | 0 | 11 | 1.4e-03 | **0.0094** |
+| V678D | 16 | 7 | 0.438 | 0 | 9 | 0.018 | 0.105 |
+| V678G | 24 | 9 | 0.375 | 0 | 15 | 0.036 | 0.182 |
+| P982A | 16 | 5 | 0.312 | 0 | 11 | 0.094 | 0.377 |
+| V678M | 16 | 4 | 0.250 | 0 | 12 | 0.195 | 0.586 |
+| V678L | 32 | 6 | 0.188 | 2 | 24 | 0.444 | 0.888 |
+| V678W | 16 | 1 | 0.062 | 0 | 15 | 1.000 | 1.000 |
+
+**1. Three variants open the structure, and the effect is large and survives correction for nine
+comparisons.** V678F takes wild type from 8 % to 75 % canonical open; V678A to 63 %, V678I to 54 %.
+These are not threshold artefacts - "canonical open" here means within 15 A of the cryo-EM open JAK1
+dimer or of Jeanpierre's open model, by superposition. This is the first well-powered,
+multiple-testing-corrected, experimentally-referenced variant effect in the project.
+
+**2. The closed state is confirmed absent.** 2 of 208 structures (both V678L) are within 15 A of a
+closed reference. Section 39's claim 1 holds at per-seed resolution: template-free TYK2 prediction
+does not reach the closed arrangement at 64/256, for wild type or for any variant.
+
+### The correlation with the deep mutational scan collapses
+
+Both scores were computed on the same 208 structures and correlated against the measured data over
+the nine V678 points with wild type pinned at zero:
+
+| score | rho vs IFN-alpha 1 U | p | rho vs abundance | p | rho vs IFN-alpha 100 U | p |
+|---|--:|--:|--:|--:|--:|--:|
+| **canonical open (arrangement)** | -0.017 | 0.966 | **-0.083** | 0.831 | -0.017 | 0.966 |
+| compact fraction (< 60 A) | +0.213 | 0.582 | **+0.528** | 0.144 | +0.630 | 0.069 |
+
+The two scores order the variants almost oppositely. By compact fraction, V678F and V678G are at the
+bottom (0.00) - they *leave* the compact bin. By open fraction, V678F is at the top (0.75) - it
+*arrives* at the open state. Compact fraction is a measure of failing to stay put; open fraction is a
+measure of reaching a specific destination. They are not two views of one axis.
+
+**Section 30's finding is reproduced and localised, not overturned.** Its rho = +0.600 against
+abundance reappears here as +0.528 on the same score with more seeds, and the stronger relation is
+actually with signalling at 100 U (+0.630, p = 0.069) - which section 30 did not test. But that
+correlation belongs to the *compact fraction* specifically. The arrangement-based score, which is the
+one tied to experimental references and the one that yields the significant variant effects above,
+correlates with **neither** measured axis (|rho| < 0.09).
+
+So the pipeline's two scores answer different questions and only one of them has external support:
+- **compact fraction** correlates weakly with the measured data (abundance, and signalling at high
+  dose) but counts structures that are not a state, and has no significant per-variant effects after
+  correction;
+- **canonical open fraction** gives large, corrected, experimentally-anchored variant effects but is
+  uncorrelated with anything measured about those variants.
+
+The straightforward reading is that V678F, V678A and V678I genuinely destabilise whatever holds the
+model's compact arrangement together, that the model then relaxes into the canonical open state, and
+that **this has no detectable relationship to either the abundance or the activity of the real
+protein.** The earlier framing - "our signal tracks abundance, not activation" (section 30) - should
+now be stated as: one of our two scores tracks abundance weakly and non-significantly; the score with
+the real statistical power tracks nothing measured at all.
+
+### What would settle it
+
+The nine V678 substitutions span the measured abundance range from +0.002 (M) to -0.361 (W) and the
+measured signalling range from -0.479 (D) to +0.561 (M), so the DMS axes are well sampled and the
+null results are not a range problem. What is not sampled is **position**: all nine are at 678.
+P982A is the only other site, and it sits mid-table at 0.312 (Holm 0.377). A second position with
+four or five substitutions spanning the DMS range would tell us whether the open-fraction score is
+measuring something position-specific or nothing at all. H582W, already queued for the release assay,
+is the obvious candidate - measured IFN-alpha +1.339 (99.9th percentile) with abundance intact at
+-0.083, which is the opposite corner of the DMS plane from V678W.
