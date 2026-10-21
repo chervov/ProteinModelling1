@@ -2243,3 +2243,69 @@ pipeline tracks abundance rather than activation. At 100 U the sign flips and th
 largest in the table. **Which dose the scan is read at decides whether the pipeline looks like an
 abundance sensor or an activation sensor**, and that should be settled on a second position before
 either claim is repeated.
+
+## 43. pLDDT cannot see the arrangement, and the guided-recycling objective is built on it (2026-10-22)
+
+With 323 per-seed structures each carrying both a mean pLDDT and a measured distance to the nearest
+reference arrangement, the question the project has never tested directly can now be asked: **does
+the model's own confidence know which arrangement it produced?**
+
+| state | n | median pLDDT | IQR | median FERM-JH1 |
+|---|--:|--:|---|--:|
+| closed (within 15 A of 4OLI / AF2) | 49 | 80.2 | 80.0-80.4 | 39.0 |
+| canonical open (within 15 A of 8EWY / Jeanpierre) | 109 | 80.4 | 80.1-81.1 | 93.7 |
+| active-dimer-like | 2 | 81.1 | 81.0-81.2 | 85.7 |
+| **unassigned (> 15 A from everything)** | **163** | **80.1** | **79.2-80.5** | 82.3 |
+
+Across all 323 structures pLDDT runs from 69.7 to 82.5 with an interquartile width of **0.7 points**,
+while FERM-JH1 runs from 39 to 95 A. The four classes are indistinguishable: a structure that
+reproduces a cryo-EM arrangement to within 15 A and a structure that is 40 A from every known
+arrangement are assigned the same confidence to within a fraction of a point. The unassigned class is
+not model failure - half of its members are **more than 40 A from every reference** (median 39.2 A,
+maximum 75.7 A) and they are as confident as everything else.
+
+### The apparent correlation is a depth confound
+
+Pooled over all template-free structures, pLDDT does appear to track arrangement quality: Spearman
+rho = **-0.468** (p = 2e-16) against distance to the nearest reference, i.e. higher confidence, closer
+to a known state. That is Simpson's paradox. Split by MSA depth:
+
+| depth | n | pLDDT range | median | rho(pLDDT, distance) | p |
+|---|--:|---|--:|--:|--:|
+| 32/64 | 40 | 69.7-79.2 | 77.2 | +0.018 | 0.914 |
+| 64/256 | 184 | 78.7-81.2 | 80.2 | +0.138 | 0.061 |
+| 96/384 | 32 | 80.3-81.4 | 81.0 | -0.277 | 0.125 |
+| 128/512 | 16 | 81.4-82.0 | 81.6 | +0.057 | 0.833 |
+
+**Within every depth the correlation is absent and not significant, and the signs disagree.** The
+pooled relation is entirely the fact that shallow MSA lowers pLDDT *and* separately produces
+arrangements far from any reference. Depth drives both; neither drives the other.
+
+### Why this matters for the method
+
+The pipeline selects structures by minimising **J = (1 - pLDDT_norm) + 0.1 x violation_loss**, across
+recycles and across seeds **at a fixed MSA depth**. That is precisely the regime the table above
+covers, and in that regime pLDDT carries no information about which arrangement was produced. So the
+guided-recycling objective is not selecting for a conformational state, and the `selected_open.pdb` /
+`selected_closed.pdb` picks are made on a signal blind to the thing they are named for. (The picks
+are still *useful* - section 40 verified the closed pick is the better closed match in 192 of 197
+runs - but that is because the notebook's selection also consults a reference distance, not because J
+does.)
+
+This also closes a loop with the AlphaFold confidence findings already in this document. Every
+AlphaFold JAK model has FERM-JH1 PAE of 18.5-25.8 A against a ceiling of about 31 A (sections 24, 34)
+- the network openly reports that it does not know the inter-domain arrangement. pLDDT is a
+**per-residue** confidence and is near-blind to global arrangement by construction; it is high
+whenever each domain is individually well-folded, which it always is here. The two measures agree:
+**nothing in the model's confidence output constrains the arrangement**, and no amount of recycling
+guided by pLDDT will change that.
+
+### Consequence
+
+The conformational results in this document rest on *where the structures actually land*, measured
+against external references - not on the model preferring them. Stated plainly: the MSA depth is the
+only control variable that works, the arrangement metric against experimental structures is the only
+readout that works, and the pLDDT-based objective at the heart of the pipeline contributes nothing to
+either. Any future selection among seeds should use the reference distance directly, and the honest
+description of the method is "MSA subsampling plus external-reference classification", not "guided
+recycling".
