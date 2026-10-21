@@ -1612,3 +1612,59 @@ urgent.
 
 The one thing section 32 got right: **do not delete the duplicate folders.** They are the only
 replicate data the project has, and they are what made this test possible.
+
+---
+
+## 34. What the extended state of JAK3 actually is (2026-10-21)
+
+`conclusions_20261016_150500.md` recorded an open question: every JAK3 run carried only one
+reference (AF2 JAK3, itself compact at 41.5 A), so every structure was "nearest AF2" by default and
+**the extended state was never identified** - open, 7T6F-like, or other. That classification was
+listed as needing no GPU. It has now been done.
+
+### Method
+
+All 14 JAK3 runs push `selected_open.pdb` and `selected_closed.pdb`, so coordinates were available
+without re-running anything. Each of the 28 structures was compared against six references mapped
+onto JAK3 numbering by global pairwise sequence alignment: AF2 JAK3, Jeanpierre closed JAK1,
+Jeanpierre open JAK1, 7T6F (active dimer, mouse JAK2), 8EWY (open dimer, mouse JAK2) and 4OLI
+(closed TYK2). Metric as used throughout: superpose JH2 onto the reference's JH2, then measure the
+JH1 Calpha RMSD without further movement.
+
+### Result
+
+| JAK3 state | FERM-JH1 | best-matching reference | RMSD |
+|---|--:|---|--:|
+| extended | ~94 A | **Jeanpierre open JAK1** | **1.6-3.5 A** |
+| compact | ~41-44 A | **AF2 JAK3 / Jeanpierre closed JAK1** | **2.0-5.6 A** |
+| intermediate | ~47-57 A | **none** | >= 44 A to all six |
+
+**1. The extended state of JAK3 is the canonical open state.** It matches Jeanpierre's open JAK1
+model to **1.6 A** - a near-perfect cross-paralogue match. The question is answered, and the answer
+is ordinary: nothing novel is going on at the open end.
+
+**2. JAK3 never reaches the 7T6F active-dimer arrangement.** Across all 28 structures the closest
+approach is **46.3 A**, against a ~10 A match threshold. JAK1 enters that arrangement readily - it
+is the "third arrangement" of section 3, matched to 4.9 A, and JAK1 V658F drives 16/16 seeds into
+it at 96/384. **JAK3 does not, at any depth or in any variant.** The third arrangement is therefore
+not a general JAK behaviour but something specific to JAK1 in this pipeline.
+
+**3. A large class of JAK3 structures matches nothing at all.** Many sit at FERM-JH1 47-57 A -
+inside the "compact" bin as the project defines it (< 60 A) - yet lie 86-120 A from every reference
+including the closed ones. The compact bin has been pooling genuinely closed structures with these
+unassigned ones. This is the same compact-is-not-closed problem documented for TYK2 (where 15/15
+seeds at 32/64 were compact and 0/15 closed), now quantified for JAK3.
+
+**4. A side-result worth keeping.** The JAK3 closed arrangement agrees with Jeanpierre's
+independently built closed JAK1 model to ~5 A, and AF2 JAK3 has the **lowest inter-domain PAE of
+the four paralogues** (18.5 A FERM-JH1, against 21.0 JAK2, 23.1 TYK2, 25.8 JAK1). Two independent
+models converging is weak corroboration that the JAK3 closed arrangement is real. That is more than
+can be said for TYK2, whose AF2 closed state has PAE 23.1 and no independent model to check against.
+
+### Consequence
+
+The JAK3 variant classes reported earlier - "closed state abolished" (M592F, A572V, Y581C) versus
+"tightened" (M511I, A573V, R657Q) - were derived against AF2 alone. The reference set now shows that
+what a JAK3 variant moves *away from* is the canonical closed arrangement, and what it moves
+*towards* is either the canonical open state or the unassigned intermediate - **never the active
+dimer**. Any mechanistic reading of those classes should say so explicitly.
