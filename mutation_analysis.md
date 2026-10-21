@@ -2309,3 +2309,114 @@ readout that works, and the pLDDT-based objective at the heart of the pipeline c
 either. Any future selection among seeds should use the reference distance directly, and the honest
 description of the method is "MSA subsampling plus external-reference classification", not "guided
 recycling".
+
+## 44. The whole family at per-seed resolution, and what the reference set actually is (2026-10-22)
+
+The per-seed arrangement scoring was extended from TYK2 to JAK1, JAK2 and JAK3: the final recycle of
+every seed of all 65 run folders in those three campaigns, added to TYK2's 323. **860 structures**,
+scored against 4OLI, the two cryo-EM JAK1 dimers, both Jeanpierre models and the AlphaFold model of
+each paralogue.
+
+### First: the reference set is not what its labels say
+
+Before any comparison, every reference was measured rather than assumed. FERM-JH1 centroid distance:
+
+| reference | FERM-JH1 | by distance |
+|---|--:|---|
+| **4OLI (X-ray, TYK2)** | **no FERM in the structure** | JH2-JH1 only |
+| AF2 TYK2 (P29597) | 39.7 | compact |
+| Jeanpierre closed JAK1 | 40.0 | compact |
+| AF2 JAK3 (P52333) | 41.5 | compact |
+| 7T6F (cryo-EM, JAK1) | 84.1 | extended |
+| **AF2 JAK1 (P23458)** | **92.3** | **extended** |
+| Jeanpierre open JAK1 | 92.6 | extended |
+| **AF2 JAK2 (O60674)** | **93.8** | **extended** |
+| 8EWY (cryo-EM, JAK1) | 94.2 | extended |
+
+Two things here have been assumed wrongly throughout this project.
+
+**1. AlphaFold does not predict a compact JAK.** It predicts TYK2 and JAK3 compact (39.7, 41.5 A) and
+JAK1 and JAK2 **extended** (92.3, 93.8 A). "The AlphaFold model is compact" is true for two
+paralogues and false for the other two. Every cross-paralogue argument built on an AF2 closed state
+needs checking against this. It also reframes the PAE observation: AlphaFold reports FERM-JH1 PAE of
+18.5-25.8 A for all four (sections 24, 34) - it is not confident about any of them - and when it is
+not confident it does not even pick the same answer twice across paralogues.
+
+**2. 4OLI contains no FERM domain.** It is the TYK2 JH2-JH1 crystal structure. So "FERM-JH1 distance
+in the closed state, 40-45 A" was never measured from 4OLI; it comes from AF2 TYK2 and from
+Jeanpierre's closed JAK1 model, both predictions. Matching 4OLI constrains only how the kinase domain
+sits on the pseudokinase. Every statement of the form "closed, like 4OLI, with FERM at 40 A" is two
+claims, one measured and one extrapolated.
+
+### The two readouts are formally independent and empirically never disagree
+
+The project has two metrics and they measure different things. FERM-JH1 centroid distance says where
+FERM sits. The arrangement metric superposes JH2 and measures JH1 displacement, and **never looks at
+FERM at all** - so in principle a structure could match a compact reference's JH2-JH1 arrangement
+while placing FERM anywhere. Checked across all 860 structures, in every case where both axes are
+defined:
+
+| matched reference is... | and the structure's FERM axis is compact | intermediate | extended |
+|---|--:|--:|--:|
+| a compact reference | **138** | 0 | 0 |
+| an extended reference | 0 | 0 | **325** |
+| 4OLI (no FERM) | **25** | 0 | 0 |
+
+**488 of 488 agree; zero disagreements.** In this family the JH2-JH1 arrangement and the FERM
+placement are tightly coupled, so either metric predicts the other. That is a useful validation of
+both - and it is the reason the project's conclusions have survived being recomputed several times
+tonight. It also means 4OLI-matching structures are compact in FERM (25/25) even though 4OLI itself
+cannot say so.
+
+### Paralogue behaviour, template-free
+
+| paralogue | n | compact-ref | 4OLI | open model/dimer | active dimer | unmatched |
+|---|--:|--:|--:|--:|--:|--:|
+| JAK1 | 129 | 3 | 2 | 55 | **35** | 34 |
+| JAK2 | 237 | 42 | 0 | 96 | 0 | 99 |
+| JAK3 | 136 | 34 | 0 | 28 | 0 | 74 |
+| TYK2 | 276 | 2 | 0 | 109 | 2 | 163 |
+
+**1. The active-dimer arrangement is reached by JAK1 and essentially nothing else.** 35 of 129 JAK1
+structures, against 0 of 237 JAK2, 0 of 136 JAK3 and 2 of 276 TYK2. **JAK1 V658F at 96/384 is 16/16
+active-dimer** (median FERM-JH1 83.8 A against 7T6F's 84.1 A), and JAK1 wild type reaches it 4/5 at
+64/256. This confirms section 3 at per-seed resolution - and with the correction of section 35 it
+carries its proper caveat: 7T6F is a mouse **JAK1** structure, so this is a paralogue reproducing its
+own experimental reference. It is a positive control that the pipeline can hit a measured
+arrangement, not evidence that JAK1 is conformationally special.
+
+**2. JAK2 never reaches the open or active arrangements at all** - 0 of 237 - yet 96 of its structures
+match extended AF2 JAK2. JAK2 goes extended without going to either experimentally characterised
+extended state. Its compact structures (42) all match Jeanpierre's closed model.
+
+**3. TYK2 is the opposite of JAK2.** 109 open-model matches, 2 compact. Together with section 42's
+finding that TYK2 reaches a compact JH2-JH1 arrangement only with a template, the paralogues split
+cleanly: **JAK2 and JAK3 access the compact arrangement from sequence alone; JAK1 and TYK2 do not.**
+JAK1 manages 3 of 129 and TYK2 2 of 276, against JAK2 42 of 237 and JAK3 34 of 136.
+
+**4. Unmatched structures are 40 % of the family** (370 of 860, counting all modes). Every paralogue
+produces them, at every depth below its transition. This is the largest single class in the data and
+nothing is known about it beyond "more than 15 A from all nine references".
+
+### Methodological note worth keeping
+
+Two bugs were found and fixed in the course of this, both in code written tonight, both of the same
+kind: **a cached intermediate reused across inputs it was not valid for.**
+
+- The residue-alignment map was cached keyed on the reference alone. JAK1's runs mix a full-length
+  1154-residue target with an early 586-residue JH2-JH1 construct renumbered from 1, so the truncated
+  construct's map was reused for every full-length model. It turned a genuine 6.1 A match into a
+  reported 79.5 A non-match and would have produced a spurious retraction of section 3. The key now
+  includes the model construct.
+- Domain windows were selected using the *model's* residue numbers, which returns zero pairs on any
+  renumbered construct. Membership is now decided from the residue number in the reference via the
+  alignment. Verified not to change full-length results before switching: 50.95 vs 50.95, 48.41 vs
+  48.41, 79.85 vs 79.95, 89.39 vs 90.33 A - worst case 0.94 A, from a few residues at a window edge.
+
+Checked and clear: TYK2 is a single uniform construct across the whole campaign (1187 residues,
+numbered 1-1187, N-terminus MPLRHWGM, verified on five runs spanning every phase), as are JAK2 (1132)
+and JAK3 (1124). The cache was only unsafe for JAK1. Sections 36-43 are unaffected.
+
+**Three of the four 32/64 JAK1 runs are also not full-length JAK1** - they are that 586-residue
+JH2-JH1 construct. Any JAK1 depth-ladder figure that pools them with the rest is comparing two
+different targets, and no FERM-JH1 number can be quoted for them at all.
