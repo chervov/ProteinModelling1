@@ -1775,3 +1775,51 @@ structure" cannot be asserted from them, because at 64/256 the extended structur
 the open state. The claim that survives is the weaker one: the variant moves the structure *out of
 the closed arrangement*. Re-scoring the variant series with the superposition metric is the next
 analysis-only task, and it needs no GPU time.
+
+## 37. Consequence of the section 35 correction: the 7T6F and 8EWY numbers themselves were wrong (2026-10-22)
+
+The mislabelling corrected in section 35 was not only a label. The arrangement metric maps residues
+between two structures by sequence alignment and then selects the JH2 and JH1 windows **using each
+protein's own domain boundaries**, looked up by paralogue name. With 7T6F and 8EWY entered as JAK2,
+every comparison against them used the JAK2 windows - JH2 536-827, JH1 849-1124 - on what is
+actually a JAK1 chain, whose windows are JH2 583-855 and JH1 875-1154. The selected residues were
+offset by roughly 30-50 positions at each boundary. Four analysis scripts shared the error.
+
+All affected comparisons have been recomputed with `JAK1` boundaries. The corrected version of the
+section 36 table:
+
+| our structure | FERM-JH1 | 8EWY open (exp, JAK1) | 7T6F active (exp, JAK1) | AF2 TYK2 closed | Jeanpierre open | Jeanpierre closed |
+|---|--:|--:|--:|--:|--:|--:|
+| 128/512 run, open pick | 93.5 | **5.8** | 46.8 | 82.5 | **2.8** | 81.4 |
+| 128/512 run, closed pick | 93.4 | **5.8** | 47.2 | 82.0 | **3.6** | 80.9 |
+| 96/384 run, closed pick | 93.8 | **6.8** | 47.7 | 82.5 | **4.4** | 81.3 |
+| 96/384 run, open pick | 89.8 | 42.3 | 63.0 | 90.6 | 39.3 | 88.6 |
+| 64/256 run, closed pick | 87.4 | 46.1 | 64.6 | 89.3 | 43.2 | 87.4 |
+| 64/256 run, open pick | 89.7 | 47.1 | 69.2 | 91.0 | 44.6 | 88.4 |
+| 64/256 run, closed pick | 84.4 | 52.8 | 66.5 | 88.8 | 49.7 | 87.1 |
+| 64/256 run, open pick | 84.0 | 61.4 | 65.6 | 95.6 | 57.4 | 94.8 |
+
+### What moved, and what did not
+
+The 8EWY column for the three canonical-open structures moves from 5.0-6.0 A to **5.8-6.8 A**, and
+for the five unassigned extended ones from 40-59 A to **42-61 A**. The 7T6F column moves by about
+0.5-2 A. Columns that never involved the two EM entries - AF2 TYK2, both Jeanpierre models, and the
+two SWISS-MODEL TYK2 templates - are untouched, which is the expected signature of this specific bug
+and is how the size of the effect was checked.
+
+**Every conclusion in section 36 survives.** The three deep-MSA structures still match the
+experimental open arrangement within the metric's resolution; the five shallow-MSA ones are still
+40-60 A from everything; the split by MSA depth is unchanged; and "FERM-JH1 > 80 A" still fails as an
+open criterion in 5 of 8 cases. The correction shifts digits, not findings. It is recorded because
+the shift is large enough (up to 1.8 A on the headline match) that the published numbers would not
+have reproduced.
+
+### Note on the method
+
+The useful detail is *why* a ~40-residue window offset produced only a ~1 A change: the metric
+superposes on JH2 and then measures JH1 displacement, and both domains are globular and internally
+rigid, so dropping or adding a turn at each end barely moves either centre of mass. The metric is
+robust to boundary error - which is reassuring for its use throughout this project, and is also
+exactly why the error was invisible for so long. It will not announce itself; it has to be checked
+at the source. Both paralogue assignments in the reference set are now verified against UniProt
+sequences rather than taken from notes.
