@@ -1874,3 +1874,110 @@ So the compact end of the JAK3 distribution contains three populations, not one:
 (3), a near-closed arrangement 16-22 A away (4), and unassigned (14). The "closed state abolished"
 versus "tightened" variant classes of the earlier work were drawn across this structure without
 resolving it.
+
+## 39. The whole TYK2 campaign re-scored by arrangement, not by FERM-JH1 bins (2026-10-22)
+
+Section 36 ended by naming the next task: every TYK2 variant comparison was scored with the
+centroid-distance bins ("compact < 60 A", "open > 80 A"), and both bins had just been shown not to
+be states. All 200 TYK2 run folders were therefore pulled and every `selected_open.pdb` and
+`selected_closed.pdb` re-scored against five references by the arrangement metric, with assignment
+to a reference when within the project's own 15 A match threshold.
+
+### A data-integrity finding first
+
+The 200 folders hold **394 structures but only 138 distinct computations.** Two depths account for
+almost all of the inflation: 65 folders labelled 256/1024 and 41 labelled 512/8192, every one of them
+timestamped between 19:30 and 22:56 on 2026-10-21, every one carrying the same config and
+`random_seeds: "0"`. They are the repeated notebook reruns caused by the controller bug fixed earlier
+tonight: each rerun minted a fresh `RUN_DIR` and re-pushed the *same* inference output. Structures
+were deduplicated by geometric identity - identical FERM-JH1 and identical distances to all five
+references to 0.01 A means the same computation under a new name, not a new sample.
+
+Checked and clear: `all_results.py` keys seeds on `(seed, value)`, so identical values collapse and
+the master table was never inflated by this. Any count taken directly from the folder listing would
+have been.
+
+### The result
+
+| variant | MSA | mode | n | closed | open | active dimer | unassigned | old bins: < 60 A | > 80 A |
+|---|---|---|--:|--:|--:|--:|--:|--:|--:|
+| WT | 512/8192 | free | 4 | 0 | **4** | 0 | 0 | 0 | 4 |
+| WT | 256/1024 | free | 4 | 0 | **4** | 0 | 0 | 0 | 4 |
+| WT | 128/512 | free | 2 | 0 | **2** | 0 | 0 | 0 | 2 |
+| WT | 96/384 | free | 2 | 0 | 1 | 0 | 1 | 0 | 2 |
+| WT | 64/256 | free | 6 | 0 | 0 | 0 | **6** | 2 | 4 |
+| WT | 32/64 | free | 2 | 0 | 0 | 0 | **2** | 2 | 0 |
+| WT | 128/512 | rel3 | 16 | **16** | 0 | 0 | 0 | 16 | 0 |
+| WT | 128/512 | tmpl | 2 | **2** | 0 | 0 | 0 | 2 | 0 |
+| V678F | 128/512 | rel3 | 26 | **26** | 0 | 0 | 0 | 26 | 0 |
+| V678M | 128/512 | rel3 | 16 | **16** | 0 | 0 | 0 | 16 | 0 |
+| V678I | 128/512 | rel3 | 4 | **4** | 0 | 0 | 0 | 4 | 0 |
+| V678F | 96/384 | free | 4 | 0 | **4** | 0 | 0 | 0 | 4 |
+| P982A | 96/384 | free | 2 | 0 | 0 | 0 | 2 | 0 | 2 |
+| P982A | 128/512 | free | 2 | 0 | **2** | 0 | 0 | 0 | 2 |
+| V678A | 64/256 | free | 4 | 0 | 2 | 0 | 2 | 0 | 4 |
+| V678G | 64/256 | free | 4 | 0 | 2 | 0 | 2 | 0 | 4 |
+| V678F | 64/256 | free | 6 | 0 | 2 | 0 | 4 | 0 | 6 |
+| V678D | 64/256 | free | 4 | 0 | 1 | 0 | 3 | 2 | 2 |
+| V678M | 64/256 | free | 4 | 0 | 1 | 0 | 3 | 0 | 3 |
+| V678L | 64/256 | free | 6 | **1** | 0 | 0 | 5 | 2 | 3 |
+| V678I | 64/256 | free | 4 | 0 | 0 | 0 | 4 | 3 | 1 |
+| V678W | 64/256 | free | 4 | 0 | 0 | 0 | 4 | 1 | 2 |
+| P982A | 64/256 | free | 4 | 0 | 0 | 0 | 4 | 1 | 3 |
+| P982A, V678F, WT | 32/64 | free | 8 | 0 | 0 | 0 | **8** | 8 | 0 |
+
+Totals by mode: **free n = 74 - 1 closed, 25 open, 0 active dimer, 48 unassigned.
+rel3 n = 62 - 62 closed. tmpl n = 2 - 2 closed.**
+
+**1. Template-free TYK2 prediction essentially never produces the closed state.** One structure out
+of 74 (a V678L pick at 64/256) lands within 15 A of 4OLI or AF2. Every other closed structure in the
+entire campaign - 64 of them - came from a run that was given 4OLI, either throughout or for the
+first three recycles. This is the single most consequential re-reading: the closed basin in this
+pipeline is **template-induced, not predicted.** Section 18's caution ("the closed basin exists and
+is stable once entered; free prediction at 128/512 simply never enters it") turns out to hold at
+*every* depth tried, not just 128/512.
+
+**2. The compact bin contains no closed structures at all.** Of 14 free-run structures with FERM-JH1
+< 60 A, **zero** are the closed arrangement. The "WT 7/16 compact at 64/256" figure that made 64/256
+the project's one informative depth was never counting closed structures. It was counting
+unassigned compact ones.
+
+**3. The depth ladder is cleaner by arrangement than by distance.** Wild type is canonically open at
+every depth from 96/384 up (11 of 12 structures) and never open below it (0 of 8). The transition is
+between 96/384 and 64/256, and below it the model does not produce a state at all - it produces
+arrangements that match nothing. "Shallow MSA opens the closed state" is wrong in both halves:
+shallow MSA does not reach the closed state, and it does not reach the open one either.
+
+**4. No variant differs from wild type at 64/256.** Testing the fraction reaching canonical open:
+
+| variant | open / n | Fisher p vs WT |
+|---|--:|--:|
+| WT | 0/6 | reference |
+| V678A | 2/4 | 0.133 |
+| V678G | 2/4 | 0.133 |
+| V678F | 2/6 | 0.455 |
+| V678D | 1/4 | 0.400 |
+| V678M | 1/4 | 0.400 |
+| V678I, V678L, V678W, P982A | 0/4-0/6 | 1.000 |
+| **all variants pooled** | **8/40** | **0.571** |
+
+Nothing is significant, and the pooled test is not even in a suggestive direction. The ordering is
+mildly interesting - the small residues A and G reach open most often, W and I never - but at n = 4-6
+per variant it is noise.
+
+**5. The release assay is confirmed by a second, independent metric.** 62 of 62 release structures
+across WT, V678F, V678M and V678I are within 15 A of the closed reference. No substitution at 678
+releases the closed state. This was already the conclusion from FERM-JH1 and the arrangement RMSD
+separately; it now also holds under threshold-based assignment, and it is the one TYK2 result in this
+document that has never wobbled.
+
+### What this retracts
+
+The variant contrasts of sections 25-31, where they rested on compact-versus-open counts at 64/256 or
+96/384, do not survive. They were comparisons between two populations neither of which is a state:
+"compact" structures that are not closed, and "open" structures that at 64/256 are mostly not open.
+The honest summary of the TYK2 mutation work is now: **the release assay shows no V678 substitution
+destabilises the closed state (n = 62, unanimous), and the template-free runs have no measured
+variant effect on arrangement at any depth.** The abundance correlation of section 30 (rho = +0.62
+over the V678 series) was computed on the compact fraction and inherits the same problem; it needs
+recomputing on arrangement assignments before it can be quoted again.
