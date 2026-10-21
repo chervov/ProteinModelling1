@@ -1716,3 +1716,62 @@ but two readings of them improve:
    all** - the family's entire measured arrangement evidence rests on one paralogue in one organism.
    Every closed-state TYK2 number in this document is a comparison against either a predicted model
    or a cross-paralogue JAK1 structure.
+
+## 36. Is our 93 A open state really open? Answered against experiment (2026-10-22)
+
+Section 18 recorded the open question: our template-free TYK2 runs produce a 93 A FERM-JH1 state,
+every experimental extended JAK structure sits at ~84 A, and FERM-JH1 centroid distance alone cannot
+tell "canonically open" from "merely far apart". The eight template-free TYK2 structures with
+FERM-JH1 > 80 A were therefore superposed on six references by the project's standard arrangement
+metric - superpose JH2, then measure JH1 Calpha RMSD with no further movement.
+
+| our structure | FERM-JH1 | 8EWY open (exp, JAK1) | 7T6F active (exp, JAK1) | AF2 TYK2 closed | Jeanpierre open | Jeanpierre closed |
+|---|--:|--:|--:|--:|--:|--:|
+| 128/512 run, open pick | 93.5 | **5.1** | 47.1 | 82.5 | **2.8** | 81.4 |
+| 128/512 run, closed pick | 93.4 | **5.0** | 47.5 | 82.0 | **3.6** | 80.9 |
+| 96/384 run, closed pick | 93.8 | **6.0** | 48.0 | 82.5 | **4.4** | 81.3 |
+| 96/384 run, open pick | 89.8 | 40.3 | 61.7 | 90.6 | 39.3 | 88.6 |
+| 64/256 run, closed pick | 87.4 | 43.8 | 63.2 | 89.3 | 43.2 | 87.4 |
+| 64/256 run, open pick | 89.7 | 45.0 | 67.9 | 91.0 | 44.6 | 88.4 |
+| 64/256 run, closed pick | 84.4 | 50.4 | 64.8 | 88.8 | 49.7 | 87.1 |
+| 64/256 run, open pick | 84.0 | 59.1 | 63.4 | 95.6 | 57.4 | 94.8 |
+
+("open pick" and "closed pick" are the per-run selection labels the pipeline writes; they are
+*within-run* extremes, which is why a run's "closed" pick can still be 93 A. They are not state
+assignments and should not be read as such.)
+
+### Answer: yes for three of eight, and no for the other five
+
+**1. The 93 A state is the canonical open state.** The three structures at 93.4-93.8 A match the
+experimental open dimer 8EWY to **5.0-6.0 A** and Jeanpierre's independently built open model to
+**2.8-4.4 A**. A 2.8 A cross-paralogue arrangement match is as good as this metric gets. The
+reservation recorded in section 18 - "our 93 A state has no experimental counterpart" - was too
+strong: it has no *TYK2* counterpart, but it reproduces the arrangement of the one experimentally
+determined extended JAK to within the metric's resolution. That is a real result and it is the first
+time anything in this project has been validated against a measured multi-domain arrangement.
+
+**2. Open by distance is not open by arrangement.** The five structures at 84.0-89.8 A are **40-59 A
+from 8EWY** and equally far from every other reference. They are extended, they are not the open
+state, and they are not the active dimer either (63-68 A from 7T6F). FERM-JH1 > 80 A has been used
+throughout this document as the open criterion; on this evidence it is wrong in 5 of 8 cases. This is
+the same failure already documented at the other end - "compact < 60 A" pooling genuine closed
+structures with unassigned ones (sections 24, 34) - and it now closes the loop: **neither bin of the
+centroid-distance classifier is a state.** Only the superposition metric assigns states.
+
+**3. The split is by depth, and it is the inverse of the usual story.** All three canonical-open
+structures come from the two *deeper* MSA settings (128/512, 96/384); all five unassigned extended
+ones come from 64/256 and one 96/384 run. Deeper MSA gives the clean, reproducible, experimentally
+matching open state; shallower MSA gives extended structures that match nothing. 64/256 has been
+treated as the one informative TYK2 depth because it is the only one with dynamic range (WT 7/16
+compact). Its range is now partly an artefact: it is producing a population of arrangements that are
+not states, and any mutation effect measured there is measured against that background.
+
+### Consequence for the mutation results
+
+Every TYK2 variant comparison in sections 25-31 was scored at 64/256 or 96/384 with the FERM-JH1
+threshold. Those comparisons are internally consistent - the same classifier was applied to variant
+and wild type alike - so the reported contrasts do not become wrong. But "the variant opens the
+structure" cannot be asserted from them, because at 64/256 the extended structures are mostly not
+the open state. The claim that survives is the weaker one: the variant moves the structure *out of
+the closed arrangement*. Re-scoring the variant series with the superposition metric is the next
+analysis-only task, and it needs no GPU time.
