@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "metrics": {
+        "J_selected": 0.19846947491168976,
+        "between_angles_c_n_ca_loss_mean_selected": 0.0,
+        "between_angles_ca_c_n_loss_mean_selected": 1.906237957882695e-05,
+        "between_bonds_c_n_loss_mean_selected": 6.0970753111178055e-05,
+        "between_clashes_mean_loss_selected": 7.852688810316977e-08,
+        "mean_plddt_selected_100": 80.16114807128906,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8016114830970764,
+        "seed": 0,
+        "selected_recycle_index": 4,
+        "structural_violation_loss_selected": 0.0008096136734820902,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.008424598723649979,
+        "violations_between_residue_clash_selected": 0.012636898085474968,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 36.96099832325141,
+      "pdb": "/content/protein_predictions/inference_msa128-512_tmpl4OLI_rel3_r15_seeds0_V678I/seed_000/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 0
+    }
+  ],
+  "chain_id": "A",
+  "domains": {
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ],
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ]
+  },
+  "openness_metric": {
+    "domain1": "JH2",
+    "domain2": "JH1",
+    "type": "centroid_distance"
+  },
+  "selected_closed": {
+    "model": "predictions",
+    "openness": 36.96099832325141,
+    "seed": 0,
+    "source_pdb": "/content/protein_predictions/inference_msa128-512_tmpl4OLI_rel3_r15_seeds0_V678I/seed_000/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "selected_open": {
+    "model": "predictions",
+    "openness": 36.96099832325141,
+    "seed": 0,
+    "source_pdb": "/content/protein_predictions/inference_msa128-512_tmpl4OLI_rel3_r15_seeds0_V678I/seed_000/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "tag": "TYK2"
+}
