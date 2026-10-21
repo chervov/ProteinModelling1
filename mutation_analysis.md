@@ -1556,3 +1556,59 @@ MSA across runs and has **not** been done.
 Run wild type at 64/256 three times with identical seeds and measure the spread of the compact
 count. That calibrates every p-value reported in this document. Until it is done, the p-values here
 should be read as upper bounds on confidence rather than as calibrated significance.
+
+---
+
+## 33. Correction to section 32: the duplicate runs are sampling noise, not a broken assay (2026-10-21)
+
+Section 32 reported that re-running identical seeds moved TYK2 V678L from ~3/8 compact to 0/8 and
+concluded that **"run-to-run variation is the same size as the effects being called significant"**
+and that **"the headline comparison is not fully controlled"**. Both statements are **withdrawn**.
+
+### What was actually tested
+
+Fisher exact on the compact counts of every genuinely recomputed duplicate pair:
+
+| group | run A | run B | Fisher p |
+|---|--:|--:|--:|
+| TYK2 V678L 64/256 seeds 0-7 | 2/8 | 0/8 | 0.467 |
+| JAK1 WT 128/512 seeds 0-4 | 0/5 | 2/5 | 0.444 |
+| JAK2 WT 32/64 seeds 0-4 | 5/5 | 5/5 | 1.000 |
+| JAK2 WT default MSA seeds 0-4 | 5/5 | 5/5 | 1.000 |
+
+**Every pair is compatible with independent sampling.** None shows batch-level variation beyond
+what binomial noise produces. The error in section 32 was treating a per-seed disagreement as
+evidence of an uncontrolled experiment without testing whether the *counts* disagreed.
+
+### Why per-seed results do not reproduce, and why that is fine
+
+Inference runs with `--stochastic_dropout`, which is what generates seed-to-seed diversity in the
+first place; dropout is normally disabled at inference. The random seed therefore labels a draw
+rather than identifying a reproducible computation. **Exact reproducibility is not required - only
+statistical reproducibility is**, and each seed remains an independent sample from the variant's
+distribution, which is precisely what the pooled comparison assumes.
+
+Two supporting checks confirm the input was held constant:
+
+- **MSA is deterministic.** Across 50 run logs and 16 variants, every variant recorded the same MSA
+  depth on every run (e.g. V678F 7529 across 6 runs, V678M 7519 across 5). Zero variation. The
+  earlier speculation that a re-fetched alignment explained the divergence is refuted.
+- **Hardware and software were constant.** All 204 GPU records across every run log are
+  `NVIDIA RTX PRO 6000 Blackwell Server Edition`, with torch `2.11.0+cu130` throughout, including
+  both members of the diverging V678L pair.
+
+### Consequence
+
+**The reported p-values stand as computed.** V678F at 0/24 against wild type's 8/24, p = 0.0003,
+compares independent draws and requires no deflation. The same applies to every other comparison in
+this document.
+
+### The limit that does remain
+
+Four pairs of 5-8 seeds have **low power** to detect a moderate batch effect, so this is "no
+evidence of excess run-to-run variation", not "proven none". Duplicates are worth keeping and
+accumulating opportunistically, but a dedicated replicate-calibration experiment is no longer
+urgent.
+
+The one thing section 32 got right: **do not delete the duplicate folders.** They are the only
+replicate data the project has, and they are what made this test possible.
