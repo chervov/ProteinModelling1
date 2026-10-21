@@ -1981,3 +1981,67 @@ destabilises the closed state (n = 62, unanimous), and the template-free runs ha
 variant effect on arrangement at any depth.** The abundance correlation of section 30 (rho = +0.62
 over the V678 series) was computed on the compact fraction and inherits the same problem; it needs
 recomputing on arrangement assignments before it can be quoted again.
+
+## 40. Coverage limit of section 39, and what it does and does not let us say (2026-10-22)
+
+Section 39 re-scored "all 200 TYK2 run folders". It is worth being exact about what that covers,
+because it changes how two of its five claims should be read.
+
+Each run pushes exactly **two** structures to the repository - `selected_open.pdb` and
+`selected_closed.pdb` - not one per seed and certainly not one per recycle. A 64/256 run with 8 seeds
+contributes 8 x 15 = 120 structures to the master results table and **2** to the repository. So the
+138 distinct computations of section 39 are 138 *run representatives*, and the per-variant n of 4-6
+is a count of representatives, not of samples. Section 30's counts (0/24, 2/16, 4/16, 5/16, 8/24) are
+per-seed and come from the master table, which is why they are larger.
+
+### Claim 1 survives, and the reason is worth recording
+
+"Template-free prediction essentially never reaches the closed state (1 of 74)" is **not** weakened
+by sampling only representatives, because `selected_closed.pdb` is the run's own best closed
+candidate. Checked explicitly: it is the better match to a closed reference than the open pick in
+**192 of 197** runs. If a run's best closed candidate is more than 15 A from both 4OLI and AF2, no
+structure in that run is within 15 A. Sampling the extreme is the right sampling for an existence
+claim, so claim 1 is if anything conservative. The same argument carries claims 2, 3 and 5.
+
+### Claim 4 is underpowered, not negative
+
+"No variant differs from wild type at 64/256" was computed on 4-6 representatives per variant. The
+correct reading is **not established** rather than **no effect**: a representative is an extreme, so
+the fraction of representatives reaching canonical open is not an unbiased estimate of the fraction
+of seeds that do. The Fisher tests in section 39 should be treated as uninformative about variant
+effects, and the sentence in that section's retraction - "the template-free runs have no measured
+variant effect on arrangement at any depth" - is too strong. It should read: **no variant effect on
+arrangement has been measured, because the per-seed structures needed to measure it were never
+pushed.**
+
+### The DMS correlation cannot be settled from the repository
+
+Section 39 said the rho = +0.600 abundance correlation of section 30 "needs recomputing on
+arrangement assignments". Recomputed on the representatives, over the same nine points:
+
+| score used | rho vs IFN-alpha 1 U | p | rho vs abundance | p |
+|---|--:|--:|--:|--:|
+| compact fraction (< 60 A) | -0.070 | 0.858 | **+0.000** | 1.000 |
+| open by distance (> 80 A) | -0.190 | 0.625 | +0.069 | 0.860 |
+| canonical open (arrangement) | -0.369 | 0.329 | -0.026 | 0.946 |
+
+All three are null. But the first row is the *same score* section 30 used, and on representatives it
+gives 0.000 where the per-seed data gave +0.600. **So this table does not refute section 30 - it
+shows that representatives cannot reproduce it either way.** The change from +0.600 to 0.000 is
+attributable to the sampling, not to the metric, and nothing can be concluded about whether
+arrangement-based scoring would preserve or destroy the abundance correlation.
+
+Section 30's rho = +0.600 therefore stands exactly as it was already qualified there: p = 0.285 on
+five points, with wild type pinned at zero on both axes by construction. It is neither strengthened
+nor weakened by tonight's work.
+
+### What this queues
+
+To score arrangement per seed rather than per run, the pipeline has to push per-seed structures. Two
+options, both cheap: push `seed_NNN/.../recycle15_unrelaxed.pdb` for every seed alongside the two
+selected files, or compute the arrangement metric inside the notebook - where every recycle of every
+seed is already in memory - and push the numbers rather than the coordinates. The second is better:
+it costs one extra column in the results JSON and no storage, and it would have let all of sections
+24, 34, 36 and 39 be read off the existing table instead of requiring 394 downloads. **This is the
+single highest-value change to the pipeline identified so far**, and it needs no GPU time to
+implement, only a notebook edit applied on the next run.
