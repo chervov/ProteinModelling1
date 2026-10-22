@@ -1,0 +1,110 @@
+[
+ {
+  "feature": "ClinPred",
+  "n": 6873,
+  "coverage_pct": 31.3,
+  "auc": 0.9456,
+  "p": 0.0,
+  "median_C1": 0.419,
+  "median_C2": 0.983
+ },
+ {
+  "feature": "PolyPhen-2",
+  "n": 6873,
+  "coverage_pct": 31.3,
+  "auc": 0.9425,
+  "p": 0.0,
+  "median_C1": 0.153,
+  "median_C2": 0.999
+ },
+ {
+  "feature": "REVEL",
+  "n": 6873,
+  "coverage_pct": 31.3,
+  "auc": 0.9005,
+  "p": 0.0,
+  "median_C1": 0.154,
+  "median_C2": 0.612
+ },
+ {
+  "feature": "ESM-1b",
+  "n": 21926,
+  "coverage_pct": 100.0,
+  "auc": 0.8922,
+  "p": 0.0,
+  "median_C1": -4.796,
+  "median_C2": -10.601
+ },
+ {
+  "feature": "AlphaMissense (source, NEW)",
+  "n": 21926,
+  "coverage_pct": 100.0,
+  "auc": 0.8858,
+  "p": 0.0,
+  "median_C1": 0.199,
+  "median_C2": 0.919
+ },
+ {
+  "feature": "SIFT",
+  "n": 6873,
+  "coverage_pct": 31.3,
+  "auc": 0.8582,
+  "p": 0.0,
+  "median_C1": 0.199,
+  "median_C2": 0.002
+ },
+ {
+  "feature": "ddG_closed (PyRosetta)",
+  "n": 500,
+  "coverage_pct": 2.3,
+  "auc": 0.7703,
+  "p": 6.289983149691251e-26,
+  "median_C1": -1.637,
+  "median_C2": -6.337
+ },
+ {
+  "feature": "ddG_open (PyRosetta)",
+  "n": 500,
+  "coverage_pct": 2.3,
+  "auc": 0.7671,
+  "p": 2.34617217225013e-25,
+  "median_C1": -1.823,
+  "median_C2": -6.601
+ },
+ {
+  "feature": "BLOSUM62",
+  "n": 21926,
+  "coverage_pct": 100.0,
+  "auc": 0.6317,
+  "p": 5.730385618669006e-236,
+  "median_C1": -1.0,
+  "median_C2": -2.0
+ },
+ {
+  "feature": "side-chain volume change",
+  "n": 21926,
+  "coverage_pct": 100.0,
+  "auc": 0.5162,
+  "p": 8.117313361561002e-05,
+  "median_C1": 0.0,
+  "median_C2": 2.0
+ },
+ {
+  "feature": "**ddG_open - ddG_closed**",
+  "n": 500,
+  "coverage_pct": 2.3,
+  "auc": 0.5035,
+  "p": 0.8906896092081018,
+  "median_C1": 0.0,
+  "median_C2": 0.0
+ },
+ {
+  "feature": "hydrophobicity change",
+  "n": 21926,
+  "coverage_pct": 100.0,
+  "auc": 0.4331,
+  "p": 9.071208770725926e-60,
+  "median_C1": 0.4,
+  "median_C2": -0.3
+ }
+]
