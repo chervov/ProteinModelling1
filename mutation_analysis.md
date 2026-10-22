@@ -3312,10 +3312,17 @@ The matched pair is the better-conditioned input by every measure. It does not h
 | ddG_closed | -0.025 | +0.052 | +0.119 | 0.520 |
 | ddG_open | -0.025 | +0.070 | +0.150 | 0.523 |
 | **ddG_open - ddG_closed** | **-0.027** | **+0.016** | **+0.019** | **0.476** |
-| AlphaMissense (reference, section 57) | -0.418 | -0.169 | -0.341 | 0.607 |
+| AlphaMissense (reference, same 469) | -0.453 | -0.053 | -0.164 | 0.544 |
+| ESM-1b (reference, same 469) | +0.292 | +0.061 | +0.095 | 0.548 |
 
 AUC 0.476 is below chance in the paper's orientation and 0.524 in the reverse one - which is the
 signature of a feature carrying no information, not of a sign error.
+
+The two reference rows are computed on the **same 469 interface variants**, not on the whole
+table, so the comparison is like-for-like. Both sequence predictors are also weak on this subset
+at 1 U/mL - the interface is where activating variants concentrate, which is exactly the regime
+section 52 showed they cannot see. Across all 22,516 variants AlphaMissense reaches 0.607 at this
+dose and 0.879 at 100 U/mL (section 57).
 
 ### Test 3 - the same feature against our own openness measure
 
@@ -3438,11 +3445,12 @@ Target is the bottom decile of each assay; AUC oriented so that higher = more da
 |---|--:|--:|--:|--:|--:|--:|--:|
 | **AlphaMissense** | **22,516** | -0.418 | **0.859** | -0.169 | **0.607** | -0.341 | **0.879** |
 | ESM-1b | 22,516 | +0.362 | 0.796 | +0.144 | 0.589 | +0.291 | 0.823 |
-| REVEL | 6,954 | -0.394 | 0.847 | -0.147 | 0.581 | -0.251 | 0.782 |
-| SIFT | 6,954 | +0.295 | 0.751 | +0.141 | 0.574 | +0.247 | 0.769 |
-| PolyPhen-2 | 6,867 | -0.306 | 0.742 | -0.137 | 0.578 | -0.225 | 0.739 |
+| REVEL | 6,954 | -0.394 | 0.856 | -0.147 | 0.587 | -0.251 | 0.805 |
+| SIFT | 6,954 | +0.295 | 0.760 | +0.141 | 0.579 | +0.247 | 0.787 |
+| PolyPhen-2 | 6,867 | -0.306 | 0.748 | -0.137 | 0.583 | -0.225 | 0.759 |
 | BLOSUM62 | 22,516 | +0.154 | 0.616 | +0.066 | 0.546 | +0.133 | 0.642 |
 | *ddG_open - ddG_closed (section 56)* | *469* | *-0.027* | *-* | *+0.016* | *0.476* | *+0.019* | *-* |
+| **combined, 5-fold CV grouped by position** | 22,516 | - | **0.859** | - | **0.605** | - | **0.877** |
 
 **AlphaMissense is now the best single feature in the panel** - and at full coverage rather than a
 third of it, which also makes it the only predictor besides ESM-1b and BLOSUM62 that scores every
@@ -3465,3 +3473,11 @@ strongest activator in the DMS. AlphaMissense calls both of this project's confo
 interesting variants benign while reaching 0.879 against loss of function overall, which is the
 cleanest single illustration in this document of what these tools do and do not measure. The one
 variant it scores above 0.5 is P982A - the only one of the five that is loss-of-function.
+
+One further consequence: **the combined cross-validated model no longer beats AlphaMissense alone**
+(0.859 vs 0.859 on abundance, 0.605 vs 0.607 at 1 U/mL, 0.877 vs 0.879 at 100 U/mL). Before this
+correction the panel added a little over its best member; with AlphaMissense at full coverage it
+adds nothing measurable. The five other features are, for this purpose, redundant with it.
+`auc.json` has been regenerated on the corrected table and every figure above recomputed - the small
+gains in the REVEL, SIFT and PolyPhen rows relative to the earlier version are the blanked
+impossible rows no longer contributing.
