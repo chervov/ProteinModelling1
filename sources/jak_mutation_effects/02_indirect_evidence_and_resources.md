@@ -41,7 +41,7 @@
 | [Cancer Genome Interpreter](https://www.cancergenomeinterpreter.org/) | Driver/passenger and biomarker interpretation; track release/version. |
 | [DepMap](https://depmap.org/portal/) | Dependency and cell-line genomic context; useful for hypothesis generation around JAK addiction. |
 | [CCLE](https://sites.broadinstitute.org/ccle/) | Cell-line mutation/expression context and model selection. |
-| [MaveDB](https://mavedb.org/) | Search for multiplexed assays of variant effect. Check whether the TYK2 DMS data were deposited and cite the dataset version. |
+| [MaveDB](https://mavedb.org/) | Search for multiplexed assays of variant effect. The Howard et al. TYK2 preprint is deposited as experiment `urn:mavedb:00001270-a` (10 IFN-alpha score sets) and `urn:mavedb:00001271-a` (one VAMP-seq abundance score set); cite the exact score-set URN/version. |
 
 ## Assay and literature discovery resources
 

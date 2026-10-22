@@ -66,7 +66,7 @@ Included here are primary papers in which a JAK1, JAK2, JAK3, or TYK2 allele (pa
 | 2021 | [Novel TYK2 mutations lead to divergent clinical phenotypes](https://pubmed.ncbi.nlm.nih.gov/34569645/) | Patient alleles | Clinical and functional disease expansion; extract each allele separately. |
 | 2022 | [IL-23-dependent IFN-gamma defect in inherited TYK2 deficiency](https://pubmed.ncbi.nlm.nih.gov/36094518/) | R864C, G996R, G634E, G1010D, A928V/P1104A | Six-patient study clarifying a common pathway to mycobacterial disease. |
 | 2023 | [Complete TYK2 deficiency with viral infection, lymphoma and encephalitis](https://pubmed.ncbi.nlm.nih.gov/37695435/) | Novel homozygous loss | Immunoblot, cytokine-response and receptor-scaffolding assays. |
-| 2026 | [Deep mutational scanning reveals pharmacologically relevant TYK2 insights](https://pubmed.ncbi.nlm.nih.gov/42268925/) | Large variant library | Best high-throughput functional map: IFN-alpha signalling, abundance, disease associations and inhibitor interactions. Check the supplement/data repository for per-variant scores. |
+| 2025 preprint | [Howard et al., Deep mutational scanning reveals pharmacologically relevant TYK2 insights](https://doi.org/10.1101/2025.10.11.681520) | Large variant library | **bioRxiv preprint; not peer-reviewed.** Best high-throughput TYK2 map presently available: 10 IFN-alpha score sets across doses/inhibitors/duplicates plus one VAMP-seq abundance score set. Use the MaveDB score sets, not a single aggregate label; see `07_tyk2_mavedb_score_sets.md`. |
 
 ## Critical omissions to resolve before calling this complete
 
