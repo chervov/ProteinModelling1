@@ -1,6 +1,6 @@
 # Variant clustering: reproducing the Jeanpierre/Debeaupuis pipeline across the JAK family
 
-Regenerated 2026-10-22 18:25. Source data under `/Users/chervov/orianne_tyk2`; generator is
+Regenerated 2026-10-22 19:40. Source data under `/Users/chervov/orianne_tyk2`; generator is
 `analysis/make_clustering_report.py`. Companion detail lives in `mutation_analysis.md` sections 51-52.
 
 ## The method being reproduced
@@ -25,10 +25,10 @@ seeded with 10 labelled variants; Gower is used because it handles missing featu
 | feature | missing (paper, JAK1) | available to us |
 |---|--:|---|
 | ESM-1b | 0% | **100%** - files supplied, verified against UniProt |
-| ddG closed (PyRosetta) | 0% | in progress |
-| ddG open (PyRosetta) | 0% | in progress |
-| **ddG open - closed** | 0% | **in progress - the key feature** |
-| AlphaMissense | 70.3% | 33% (dbNSFP) |
+| ddG closed (PyRosetta) | 0% | **done** - reproduces their medians, AUC 0.770 on their clusters |
+| ddG open (PyRosetta) | 0% | **done** - AUC 0.767 |
+| **ddG open - closed** | 0% | **done - and it carries no signal: AUC 0.504, p=0.89** |
+| AlphaMissense | 70.3% | **100%** - source release, keyed on UniProt (section 57) |
 | SIFT | 43.7% | 33% |
 | PolyPhen-2 | 43.7% | 32% |
 | BLOSUM62 | 43.7% | **100%** - computed locally |
@@ -36,10 +36,19 @@ seeded with 10 labelled variants; Gower is used because it handles missing featu
 | CADD | - | **0% - licence-restricted in dbNSFP** |
 | MutFunc | 92.1% | not attempted |
 
-**Why coverage caps at ~33%**: dbNSFP is keyed on *genomic* variants, so it holds only
+**Why dbNSFP coverage caps at ~33%**: it is keyed on *genomic* variants, so it holds only
 substitutions reachable by a single nucleotide change. This is why **V678F - this project's
-headline TYK2 variant - has no PolyPhen, SIFT, REVEL or AlphaMissense score at all**. ESM-1b
-scores protein sequence directly and has no such limit.
+headline TYK2 variant - has no PolyPhen, SIFT or REVEL score**. ESM-1b and BLOSUM62 score
+protein sequence directly and have no such limit.
+
+**AlphaMissense is no longer in that group.** Its scores are now taken from the source release
+(`AlphaMissense_aa_substitutions.tsv.gz`), which is keyed on UniProt accession and protein-level
+substitution, giving **100% coverage for all four JAKs** - including V678F (0.254) and H582W
+(0.345), both of which it calls benign. The paper's reported 70.3% missingness is an artefact of
+joining through genomic coordinates, not a property of AlphaMissense. The cross-check against our
+earlier dbNSFP extraction also exposed a defect in that extraction - 290-531 values per column
+carried on substitutions needing two or three nucleotide changes, which cannot have a dbNSFP row -
+now blanked. See `mutation_analysis.md` section 57.
 
 ## Data: what it is, how it was obtained, how complete it is
 
@@ -159,13 +168,13 @@ with folds grouped by residue position so substitutions at one site cannot leak 
 
 | predictor | abundance | IFN-a 1 U/mL | IFN-a 100 U/mL | either dose | both doses |
 |---|--:|--:|--:|--:|--:|
-| ESM-1b | 0.796 | 0.589 | 0.823 | 0.708 | 0.765 |
-| AlphaMissense | 0.848 | 0.579 | 0.834 | 0.699 | 0.787 |
-| REVEL | 0.840 | 0.572 | 0.777 | 0.670 | 0.736 |
-| SIFT | 0.739 | 0.579 | 0.765 | 0.670 | 0.724 |
-| PolyPhen-2 | 0.732 | 0.573 | 0.746 | 0.654 | 0.727 |
+| AlphaMissense | 0.859 | 0.607 | 0.879 | 0.745 | 0.815 |
+| ESM-1b | 0.796 | 0.589 | 0.823 | 0.708 | 0.766 |
+| REVEL | 0.856 | 0.587 | 0.805 | 0.693 | 0.762 |
+| SIFT | 0.760 | 0.579 | 0.787 | 0.681 | 0.743 |
+| PolyPhen-2 | 0.748 | 0.583 | 0.759 | 0.667 | 0.741 |
 | BLOSUM62 | 0.616 | 0.546 | 0.642 | 0.595 | 0.618 |
-| **combined (CV)** | **0.876** | **0.593** | **0.872** | **0.726** | **0.836** |
+| **combined (CV)** | **0.859** | **0.605** | **0.877** | **0.742** | **0.812** |
 
 **The dose matters more than the predictor.** At 100 U/mL the panel reaches 0.87, matching its
 performance on abundance. At 1 U/mL it collapses to 0.60. The two doses correlate at only
@@ -180,10 +189,68 @@ signals **more** than wild type.
 against 0.87 where it is not, is the quantitative reason a pathogenicity panel is the wrong
 instrument for that question - and why the structural dual-state component is needed at all.
 
-## Dual-state ddG
+## Dual-state ddG: the key feature, tested and negative
 
-469 variants computed, both states, 3 repacks each.
+The distinctive component of the pipeline is **ddG_open - ddG_closed**, a conformational-
+preference estimate rather than a stability estimate. It has now been computed two independent
+ways. The protocol was first verified against PyRosetta's own published ddG tutorial (PagP set):
+Pearson **0.3590** against their 0.3590768, and **0.6712** against their 0.6720891 excluding
+proline - agreement to four decimals, so what follows is a result about the feature.
 
-- ddG_open - ddG_closed: median +1.13, range -691.84 to +1135.97
-- repack SD (precision of a single ddG): median 0.00 kcal/mol
+### Test 1 - JAK1, their models, their clusters
+
+500 variants from Dataset EV1, 250 from each cluster, scored on the
+**Jeanpierre open and closed models themselves**. Their structures, their variants, their
+labels - no confound left. Values clipped to [-10, 10] as the paper does.
+
+| feature | median their C1 | median their C2 | AUC vs their labels | p |
+|---|--:|--:|--:|--:|
+| ddG_closed | -1.64 | -6.34 | 0.770 | 6.29e-26 |
+| ddG_open | -1.82 | -6.60 | 0.767 | 2.35e-25 |
+| **ddG_open - ddG_closed** | +0.00 | +0.00 | **0.504** | 0.891 |
+| *paper's reported medians* | *-2.05* | *-6.36* | *-* | *-* |
+
+ddG_closed reproduces their published medians to within 0.4 kcal/mol and separates their
+clusters well. Their headline feature does not separate them at all. The reason is visible in
+one number: **closed and open correlate at r = 0.822**, so the subtraction cancels the
+signal and leaves repack residual.
+
+### Test 2 - TYK2, a matched pair of AlphaFold 3 models
+
+The objection to test 1 is that the two JAK1 reference models were not built the same way, so
+a real difference could be swamped by model-to-model inconsistency. Two TYK2 structures were
+generated on the AF3 server as a **matched pair** and the 4OLI interface variants rescored.
+
+- baseline score gap between states: **271 REU** (old mismatched pair 1048, Jeanpierre JAK1 181)
+- Pearson r, ddG_closed vs ddG_open: **0.526**
+- within +/-10 in both states: **67%**
+
+Better-conditioned by every measure, and it does not help:
+
+| feature | rho abundance | rho IFN-a 1 U | rho IFN-a 100 U | AUC vs IFN-a 1 U |
+|---|--:|--:|--:|--:|
+| ddG_closed | -0.025 | +0.052 | +0.119 | 0.520 |
+| ddG_open | -0.025 | +0.070 | +0.150 | 0.523 |
+| **ddG_open - ddG_closed** | -0.027 | +0.016 | +0.019 | 0.476 |
+| AlphaMissense (reference) | -0.453 | -0.053 | -0.164 | 0.544 |
+
+Here the two states correlate only weakly, so the difference keeps its magnitude - but the
+decorrelation comes from the models differing in ways unrelated to the substitution, so what
+it keeps is noise. **The feature fails at both ends of the same axis**: too correlated and the
+subtraction cancels the signal, too decorrelated and it measures model discrepancy. No
+intermediate regime escapes this.
+
+### What this says about the paper
+
+Not that their clusters are wrong - something narrower. Their clustering is recovered by the
+**stability** term, which we reproduce closely; the **conformational** term they built the
+pipeline around contributes nothing to it, and neither term predicts measured phenotype in the
+TYK2 DMS. Their clusters also track the consensus of four sequence predictors (ClinPred 0.946,
+PolyPhen 0.943, REVEL 0.901, ESM-1b 0.892) - but all four were **inputs** to the clustering, so
+those figures measure feature weight, not external validation. Silhouette is **0.098** and our
+reproduction agrees with their labels on **65.3%** of variants, *below* the **65.5%** a
+majority-class classifier achieves (ARI 0.087).
+
+Full detail, including the protocol verification and a correction to an earlier wrong diagnosis,
+is in `mutation_analysis.md` sections 56-57.
 
