@@ -2670,3 +2670,63 @@ Whether cluster 1 is biologically meaningful or a systematic artefact of the pip
 settled from this data. The test is cheap and obvious: it should appear in the JAK1, JAK2 and JAK3
 unassigned sets too if it is a pipeline artefact, and its absence there would make it TYK2-specific.
 That comparison needs no GPU time and is the next thing to run.
+
+## 48. The displaced-open arrangement is TYK2-specific, not a pipeline artefact (2026-10-22)
+
+Section 47 ended by naming the test that would decide whether cluster 1 - the 54-structure displaced
+open arrangement - is something the pipeline does to any sequence, or something about TYK2. The test
+is free and has now been run.
+
+The cluster-1 **medoid** was identified (`TYK2_V678D_20261021_074240` seed 8: a mean of 6.1 A from the
+other 53 members, and 21.0 A from Jeanpierre's open model) and used as an extra reference. Every
+unassigned template-free structure of the other three paralogues was scored against it by the same
+alignment-based arrangement metric used for every cross-paralogue comparison in this document.
+
+| set | n | within 15 A of the medoid | closest approach |
+|---|--:|--:|--:|
+| **TYK2 unassigned** | 118 | **54 (46 %)** | 0 (the medoid itself) |
+| JAK1 unassigned | 34 | 1 (3 %) | 12.4 A |
+| JAK2 unassigned | 99 | **0** | 60.2 A |
+| JAK3 unassigned | 74 | **0** | 41.8 A |
+| all other paralogues | 207 | **1 (0.5 %)** | 12.4 A |
+
+**Fisher exact, TYK2 against the rest of the family: p = 3.8e-27.**
+
+### It is not an artefact
+
+If this arrangement were something the pipeline produces regardless of sequence - a systematic
+failure mode of OpenFold, of guided recycling, or of shallow MSA - it would appear in all four
+campaigns. It appears in **46 % of unassigned TYK2 structures and 0.5 % of everything else**. JAK2
+and JAK3 never come within 40 A of it across 173 structures.
+
+The comparison is fair in both directions, which matters here. Cross-paralogue arrangement distances
+in this project *can* be small when the arrangement is shared: JAK3's extended state matches
+Jeanpierre's open JAK1 model at 1.6 A (section 38), and TYK2's open state matches cryo-EM JAK1 8EWY
+at 5.8 A (section 37). The metric is not blind across paralogues; these structures genuinely are not
+in this arrangement. The single JAK1 structure at 12.4 A is wild type at 128/512 - one structure out
+of 34, which is what a 15 A threshold on a smooth distribution (section 47) will pick up by chance.
+
+### What it is and is not evidence for
+
+**Established:** at 64/256, TYK2 template-free prediction produces a reproducible arrangement that is
+extended (FERM-JH1 94.6 A, range 91.3-96.1), tightly defined (members a median 7.5 A from each
+other), about 23 A from the canonical open state, present in all ten variants across 20 independent
+runs, and **absent from the other three JAK paralogues**. It is the most populated single
+arrangement in the TYK2 unassigned class.
+
+**Not established:** that it corresponds to anything the protein does. It is a prediction, produced
+at the one MSA depth where TYK2 reaches neither the closed nor reliably the open state, with pLDDT
+indistinguishable from everything else (80.3) - and section 43 showed pLDDT carries no information
+about arrangement anyway. TYK2 has **no experimental multi-domain structure at all** (section 35), so
+there is nothing to check it against. It could equally be TYK2-specific coevolutionary signal or a
+TYK2-specific failure.
+
+**What would distinguish those:** the arrangement is 23 A from the open state in a specific
+direction, so it predicts a specific set of inter-domain contacts. Those can be listed from the
+medoid and compared against the FERM-JH1 contacts of the canonical open state - analysis-only, no GPU.
+If the displaced state makes contacts that the open state does not, and those contacts involve
+residues the deep mutational scan scores as functionally important, that is a testable claim. If its
+contacts are nothing in particular, it is most likely a local minimum.
+
+This is the first structural feature the project has found that is specific to TYK2 rather than
+shared with the family, which is reason to look at it carefully rather than to believe it.
