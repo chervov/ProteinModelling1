@@ -3546,3 +3546,94 @@ clustering results published earlier in this document are unaffected.
 
 Data: `data/orianne/jak1_features.json` (the full 21,926-row feature table) and
 `data/orianne/jak1_cluster_auc.json` (this table).
+
+## 59. Feature correlations for JAK1: the panel is one feature wearing six hats (2026-10-22)
+
+Section 58 ranked the features by AUC against the paper's clusters. The correlations explain why
+that ranking means less than it looks like it does. All features are oriented so that **higher =
+more damaging**, so every correlation below should be positive if the features agree.
+
+### The six pathogenicity predictors
+
+Spearman rho; upper triangle is rho, lower is the pairwise-complete n.
+
+| | AlphaMiss | ESM-1b | ClinPred | REVEL | PolyPhen | SIFT | BLOSUM62 |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| **AlphaMissense** | - | **+0.801** | **+0.817** | +0.755 | +0.727 | +0.712 | +0.339 |
+| **ESM-1b** | 21,926 | - | **+0.804** | +0.729 | +0.672 | +0.732 | +0.318 |
+| **ClinPred** | 6,873 | 6,873 | - | **+0.818** | **+0.826** | **+0.824** | +0.393 |
+| **REVEL** | 6,873 | 6,873 | 6,873 | - | +0.762 | +0.697 | +0.334 |
+| **PolyPhen-2** | 6,873 | 6,873 | 6,873 | 6,873 | - | +0.644 | +0.276 |
+| **SIFT** | 6,873 | 6,873 | 6,873 | 6,873 | 6,873 | - | +0.354 |
+| **BLOSUM62** | 21,926 | 21,926 | 6,873 | 6,873 | 6,873 | 6,873 | - |
+
+Every predictor-predictor correlation is **+0.64 to +0.83**. A principal-components analysis on the
+six rank-transformed predictors (n = 6,873 complete cases) gives eigenvalues
+**4.76, 0.39, 0.29, 0.24, 0.22, 0.11**: **PC1 alone accounts for 79.3% of the variance**, PC1+PC2
+for 85.9%.
+
+**The panel has roughly one degree of freedom.** This is the quantitative statement behind
+section 56's remark that the clustering is a consensus of sequence predictors: six of the eleven
+features are near-interchangeable measurements of a single latent "how conserved is this position"
+axis. It is also why the combined cross-validated model reaches only 0.921 against ClinPred's 0.946
+alone (section 58) - there is almost nothing for the other features to add.
+
+BLOSUM62 is the partial exception at +0.28 to +0.39. It is genuinely different information, and
+correspondingly weak on its own (AUC 0.632).
+
+### The structural features - the only ones that are not in PC1
+
+On the 500-variant subset (rho, same orientation):
+
+| feature | vs ddG_closed | vs ddG_open | vs **ddG_open - ddG_closed** | n |
+|---|--:|--:|--:|--:|
+| AlphaMissense | **+0.499** | **+0.516** | +0.045 | 500 |
+| ESM-1b | +0.477 | +0.509 | +0.069 | 500 |
+| ClinPred | +0.357 | +0.388 | +0.112 | 177 |
+| PolyPhen-2 | +0.363 | +0.344 | +0.036 | 177 |
+| SIFT | +0.318 | +0.324 | +0.118 | 177 |
+| REVEL | +0.253 | +0.280 | +0.114 | 177 |
+| BLOSUM62 | +0.262 | +0.297 | +0.055 | 500 |
+| volume change | +0.125 | +0.131 | +0.041 | 500 |
+| hydrophobicity change | -0.121 | -0.126 | -0.019 | 500 |
+
+**ddG_closed is the most valuable feature in the panel on these grounds, and it is not the one the
+paper is about.** It correlates ~0.5 with the sequence predictors - substantial agreement, so it is
+measuring something real, but far enough from 0.8 that it is not a seventh copy of PC1. A feature
+with AUC 0.770 and rho 0.50 against the consensus is exactly what a panel dominated by one axis
+needs. The paper was right to put physics in the pipeline.
+
+**The difference correlates with nothing: +0.02 to +0.12 against all nine.** This is the finding
+that settles section 56's question of whether it is signal or noise. An independent *biological*
+signal would correlate with something - with the predictors, with volume change, or (per section 56)
+with the DMS. Correlating with nothing at all, while separating the paper's own clusters at
+AUC 0.504, leaves only one reading.
+
+And it is not a small residual that could be dismissed as rounding:
+
+| | SD (kcal/mol) |
+|---|--:|
+| ddG_closed | 4.26 |
+| ddG_open | 4.30 |
+| **ddG_open - ddG_closed** | **2.55** |
+
+The difference carries **60% of the spread of either term alone** - so it has real amplitude and no
+information. Large-amplitude noise is worse than a small residual would have been: it enters the
+Gower distance with a weight comparable to the features that work, and moves variants between
+clusters for no reason. Internal consistency: ddG_closed vs ddG_open is +0.855 (Spearman), while
+each term's correlation with the difference is only -0.200 and +0.215 respectively - the difference
+is near-orthogonal to both of its own inputs, which is what subtracting two highly correlated
+quantities produces.
+
+### Summary
+
+| | correlation with the predictor consensus | AUC vs their clusters | verdict |
+|---|--:|--:|---|
+| the six sequence predictors | +0.64 to +0.83 (PC1 = 79%) | 0.858-0.946 | one feature, six copies |
+| BLOSUM62 | +0.28 to +0.39 | 0.632 | independent but weak |
+| **ddG_closed / ddG_open** | **~+0.50** | **0.770** | **independent and informative** |
+| **ddG_open - ddG_closed** | **+0.02 to +0.12** | **0.504** | **independent and uninformative** |
+
+The pipeline's most defensible component turns out to be plain single-state ddG, which the paper
+treats as an intermediate on the way to the difference. Data:
+`data/orianne/jak1_feature_correlations.json`.
