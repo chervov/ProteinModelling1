@@ -3246,3 +3246,222 @@ gain-of-function and did nothing, and both occasionally produce compact structur
 
 The dual-state ddG run now covering all 26 interface residues (section 51) is the test that bears
 directly on this.
+
+## 56. Dual-state ddG: the paper's key feature does not predict anything measurable (2026-10-22)
+
+The distinctive component of the Jeanpierre/Debeaupuis pipeline is not ddG but **ddG_open minus
+ddG_closed** - a conformational-preference estimate built from two stability calculations
+(Appendix S3; sign convention ddG = dG_WT - dG_mut, so negative is destabilizing). Section 51 named
+this the one feature in their panel that could not be replaced by a sequence predictor, and the
+reason the pipeline was worth reproducing at all.
+
+It has now been tested three independent ways. **It fails all three, and the mechanism of failure is
+the same arithmetic in each.**
+
+### Step 0: the protocol was verified against an official benchmark first
+
+The v1 run (section 54) produced numbers so large they could not be ddG, so before trusting v2 the
+protocol was checked against PyRosetta's own published ddG tutorial (the PagP point-mutant set,
+which ships with correlation values in the notebook):
+
+| | reproduced here | notebook's value |
+|---|--:|--:|
+| Pearson R, all variants | **0.3590** | 0.3590768 |
+| Pearson R, excluding proline | **0.6712** | 0.6720891 |
+
+Agreement to four decimal places. A second assumption was also checked rather than asserted:
+`toolbox.mutate_residue` and `predict_ddG.mutate_residue` differ by at most **0.003 kcal/mol** on
+this set, so the choice between them is immaterial. The ddG machinery used below is therefore
+sound; what follows is a result about the feature, not about the implementation.
+
+### Test 1 - JAK1, the paper's own models, the paper's own clusters (the decisive test)
+
+500 JAK1 variants were drawn from Dataset EV1, 250 from each of the paper's two clusters, and
+scored on the **Jeanpierre open and closed models themselves**. This removes every confound: their
+structures, their variants, their labels. Values clipped to [-10, 10] as the paper does.
+
+| feature | median, their Cluster 1 | median, their Cluster 2 | AUC vs their labels | p |
+|---|--:|--:|--:|--:|
+| ddG_closed | -1.64 | -6.34 | **0.770** | 6e-26 |
+| ddG_open | -1.82 | -6.60 | 0.767 | 2e-25 |
+| **ddG_open - ddG_closed** | **+0.00** | **+0.00** | **0.504** | **0.891** |
+
+*(the paper's own reported cluster medians: -2.05 and -6.36)*
+
+So **ddG_closed reproduces their published values closely and separates their clusters well, while
+their headline feature separates them not at all.** Their clustering is recovered by the stability
+term; the conformational term contributes nothing to it.
+
+### Test 2 - TYK2, a matched pair of AF3 models
+
+The obvious objection to test 1 is that the two JAK1 reference models were not built by the same
+method, so a real open-closed difference could be swamped by model-to-model inconsistency. Two
+TYK2 structures were therefore generated on the AlphaFold 3 server as a **matched pair** and the
+469 interface variants (26 residues of the 4OLI JH2-JH1 interface) rescored on them.
+
+| | old mismatched pair | **matched AF3 pair** | Jeanpierre JAK1 models |
+|---|--:|--:|--:|
+| baseline score gap between states | 1048 REU | **271 REU** | 181 REU |
+| Pearson r, ddG_closed vs ddG_open | 0.447 | **0.526** | 0.822 |
+| within +/-10 in both states | 63% | **67%** | 71% |
+
+The matched pair is the better-conditioned input by every measure. It does not help:
+
+| feature | rho abundance | rho IFN-a 1 U | rho IFN-a 100 U | AUC vs IFN-a 1 U |
+|---|--:|--:|--:|--:|
+| ddG_closed | -0.025 | +0.052 | +0.119 | 0.520 |
+| ddG_open | -0.025 | +0.070 | +0.150 | 0.523 |
+| **ddG_open - ddG_closed** | **-0.027** | **+0.016** | **+0.019** | **0.476** |
+| AlphaMissense (reference, section 57) | -0.418 | -0.169 | -0.341 | 0.607 |
+
+AUC 0.476 is below chance in the paper's orientation and 0.524 in the reverse one - which is the
+signature of a feature carrying no information, not of a sign error.
+
+### Test 3 - the same feature against our own openness measure
+
+The two estimates of conformational preference available in this project - physics (ddG_open -
+ddG_closed) and sampling (open fraction under MSA subsampling) - **agree with each other no better
+than either agrees with the DMS.** Section 55 already established that the sampling route does not
+track activation: the two cleanest activators, H582W (+1.339) and V678M (+0.561), both score 0.25,
+while V678F (+0.390, abundance -0.323) scores 0.75. Neither route survives.
+
+### Why it fails - and why no choice of models would fix it
+
+The failure is arithmetic, and the two tests fail at **opposite ends of the same axis**:
+
+- On the Jeanpierre JAK1 models, ddG_closed and ddG_open correlate at **r = 0.822**. Subtracting two
+  quantities that agree that closely **cancels the signal and leaves the residual** - which is
+  dominated by repack noise. Hence AUC 0.504 where each term alone gives 0.770.
+- On the TYK2 AF3 pair they correlate at only **r = 0.526**, so the difference retains magnitude -
+  but the decorrelation comes from the two models differing in ways unrelated to the substitution,
+  so what it retains is noise, not preference. Hence AUC 0.476.
+
+There is no intermediate correlation that escapes this. Too correlated and the subtraction cancels;
+too decorrelated and it measures model discrepancy. A conformational-preference signal would have to
+be larger than both failure modes, and across 969 variants on three structure pairs it is not.
+
+### What this does and does not say about the paper
+
+It does **not** say their clusters are wrong. It says something narrower and testable:
+
+| claim | status |
+|---|---|
+| ddG_closed separates their clusters | **reproduced**, AUC 0.770, medians within 0.4 kcal/mol of theirs |
+| ddG_open - ddG_closed separates their clusters | **fails**, AUC 0.504, p = 0.89 |
+| ddG_closed predicts measured phenotype (TYK2 DMS) | **fails**, AUC 0.520 |
+| their clusters track sequence-predictor consensus | **yes** - ClinPred 0.946, PolyPhen 0.943, REVEL 0.901, ESM-1b 0.892 |
+
+The last row needs its own caveat, stated here because it was previously quoted without one: those
+four predictors were **inputs** to their clustering, so those AUCs measure feature weight within
+the model, not external validation. The clusters are also not well separated - silhouette **0.098**,
+complete overlap in ESM-1b range - and our reproduction's agreement with their labels, **65.3%**,
+is *below* the **65.5%** a majority-class classifier achieves (ARI 0.087). Any earlier statement in
+this document that 65.3% constituted agreement is withdrawn.
+
+### Correction to section 54
+
+Section 54 attributed the v1 failure to unrelaxed inputs and called that "a foreseeable error". The
+diagnosis was wrong. Running a **single variant** - P982A, as suggested at the time - on the
+*unrelaxed* structures returned **-3.49 kcal/mol with SD 0.00**: a perfectly ordinary ddG. Unrelaxed
+inputs do not produce +1136 kcal/mol. The actual cause is **mutation-induced clashes from bulky
+substitutions at buried positions**, which is precisely why the paper clips to [-10, 10] - clipping
+is not cosmetic, it is load-bearing. Relaxation (v2) was worth doing and improved conditioning, but
+it was not the fix, and section 54's confident causal claim should be read as superseded by this
+one. Clipping, not relaxation, is what makes the numbers usable: 67-71% of variants fall inside the
+window and the rest are genuine clashes, not arithmetic failures.
+
+**Net position.** The reproduction succeeded as a reproduction - the protocol validates against an
+official benchmark, and the stability term recovers the paper's published numbers. The feature the
+reproduction was undertaken for does not work, on their data or ours, and the reason is structural
+rather than incidental. This is a complete negative result, which is worth more than a sixth
+confirmatory section would have been.
+
+## 57. AlphaMissense at full coverage - and a join defect in our own dbNSFP table (2026-10-22)
+
+AlphaMissense was the largest gap in the feature panel: dbNSFP supplied it for only **33%** of TYK2
+variants, and the project's headline variant V678F had no score at all. The scores were therefore
+taken from the **AlphaMissense source release** (`AlphaMissense_aa_substitutions.tsv.gz`, keyed on
+UniProt accession and protein-level substitution rather than on genomic coordinates) and streamed
+per gene off a CPU sandbox.
+
+| gene | UniProt | variants with a score | coverage of our table |
+|---|---|--:|--:|
+| TYK2 | P29597 | 22,553 | **100%** |
+| JAK1 | P23458 | 21,926 | **100%** |
+| JAK2 | O60674 | 21,508 | **100%** |
+| JAK3 | P52333 | 21,356 | **100%** |
+
+The JAK1 count, 21,926, is exactly the variant count the paper reports - the same consistency check
+that earlier authenticated the ESM-1b files. **The paper reports 70.3% missingness on AlphaMissense;
+at protein level there is none.** That missingness is an artefact of joining through genomic
+coordinates, not a property of AlphaMissense.
+
+### A defect in our dbNSFP extraction, found by the cross-check
+
+Comparing the two sources where both had a value (n = 7,508) gave Spearman 0.890, not ~1.0. The
+disagreement is not diffuse - it is sharply structured:
+
+| minimum nucleotide changes needed | n | disagree by > 0.05 |
+|---|--:|--:|
+| 1 | 6,977 | 202 (2.9%) |
+| 2 | 505 | **433 (85.7%)** |
+| 3 | 26 | **26 (100%)** |
+
+dbNSFP is keyed on single-nucleotide variants, so a substitution requiring two or three nucleotide
+changes **cannot have a dbNSFP row at all**. Our extraction nonetheless carried values for 531 such
+rows, and they are wrong - typically ~0.07 where the true score is ~0.99. At G906, for instance,
+every single-nucleotide substitution agreed to within 0.002 while G906E/H/K/L/P/R - all
+two-nucleotide - read 0.07-0.13 against a true 0.995-0.999. The values had been mis-assigned across
+alternate alleles at the same protein position.
+
+**The same defect affects every dbNSFP-derived column**, in proportion to how reachable each
+substitution set is:
+
+| column | rows scored | impossible rows (> 1 nt) |
+|---|--:|--:|
+| PolyPhen-2 | 7,162 | 290 (4.0%) |
+| SIFT | 7,429 | 470 (6.3%) |
+| REVEL | 7,429 | 470 (6.3%) |
+| AlphaMissense (dbNSFP) | 7,508 | 531 (7.1%) |
+
+`tyk2_variants.csv` has been rebuilt: impossible rows blanked in all four columns, AlphaMissense
+replaced wholesale by the source release, and two columns added - `nt_changes` (the minimum
+nucleotide distance, so this class of error cannot recur silently) and `alphamissense_dbnsfp`
+(the old values, retained for audit). The previous file is kept as `tyk2_variants.csv.prefix`.
+This is a correction to our own data, not to the paper's.
+
+### The feature table, recomputed on corrected data
+
+Target is the bottom decile of each assay; AUC oriented so that higher = more damaging.
+
+| feature | n | rho abund | AUC abund | rho IFN 1 U | **AUC IFN 1 U** | rho IFN 100 U | AUC IFN 100 U |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| **AlphaMissense** | **22,516** | -0.418 | **0.859** | -0.169 | **0.607** | -0.341 | **0.879** |
+| ESM-1b | 22,516 | +0.362 | 0.796 | +0.144 | 0.589 | +0.291 | 0.823 |
+| REVEL | 6,954 | -0.394 | 0.847 | -0.147 | 0.581 | -0.251 | 0.782 |
+| SIFT | 6,954 | +0.295 | 0.751 | +0.141 | 0.574 | +0.247 | 0.769 |
+| PolyPhen-2 | 6,867 | -0.306 | 0.742 | -0.137 | 0.578 | -0.225 | 0.739 |
+| BLOSUM62 | 22,516 | +0.154 | 0.616 | +0.066 | 0.546 | +0.133 | 0.642 |
+| *ddG_open - ddG_closed (section 56)* | *469* | *-0.027* | *-* | *+0.016* | *0.476* | *+0.019* | *-* |
+
+**AlphaMissense is now the best single feature in the panel** - and at full coverage rather than a
+third of it, which also makes it the only predictor besides ESM-1b and BLOSUM62 that scores every
+variant this project cares about. It does not change the conclusion of section 52: it reaches 0.879
+at saturating ligand and 0.859 on abundance, and still collapses to **0.607** at 1 U/mL. The dose,
+not the predictor, remains the dominant term, and gain of function remains invisible to all of them.
+
+### The five variants this project has tested
+
+| variant | AlphaMissense | ESM-1b | DMS IFN-a 1 U | DMS abundance | our result |
+|---|--:|--:|--:|--:|---|
+| H582W | 0.345 | -15.52 | **+1.339** | -0.083 | null, both depths (section 55) |
+| V678M | 0.305 | -6.29 | +0.561 | +0.002 | 0.25 open |
+| V678I | 0.116 | -6.22 | +0.520 | -0.088 | - |
+| V678F | **0.254** | -11.38 | +0.390 | -0.323 | 0.75 open (section 41) |
+| P982A | 0.526 | -11.22 | -0.321 | -0.230 | closes, p = 0.0018 (section 53) |
+
+V678F finally has an AlphaMissense score: **0.254, benign**. So does H582W (0.345, benign) - the
+strongest activator in the DMS. AlphaMissense calls both of this project's conformationally
+interesting variants benign while reaching 0.879 against loss of function overall, which is the
+cleanest single illustration in this document of what these tools do and do not measure. The one
+variant it scores above 0.5 is P982A - the only one of the five that is loss-of-function.
