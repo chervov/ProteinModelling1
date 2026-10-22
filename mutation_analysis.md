@@ -2588,3 +2588,85 @@ The section 45 claims that stand are unaffected by this: `openness_A` is the JH2
 sensitive than either centroid distance (computed on final-recycle structures), and the JH2-JH1
 construct experiment is still the cheapest decisive one available. Only the recycle-cut proposal is
 withdrawn.
+
+## 47. The unassigned class is not noise: it contains reproducible arrangements (2026-10-22)
+
+Sections 42 and 44 left 40 % of the family - 370 of 860 structures - classified only as "more than
+15 A from all nine references". That is a statement about what they are not. The 118 unassigned
+structures at 64/256 template-free (the depth every mutation conclusion rests on) were therefore
+compared against **each other** by the same arrangement metric used against the references, and the
+6903-pair distance matrix was clustered by average linkage.
+
+### They cluster
+
+26 % of all pairs are within 15 A of each other, and at a 15 A cut there are only **5 singletons
+among 118 structures**. This is not a diffuse cloud.
+
+| cluster | n | internal RMSD median (max) | median FERM-JH1 | 4OLI | AF2 | 8EWY | 7T6F | JPopen |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|
+| **1** | **54** | **7.5 (19.5)** | **94.6** | 89.4 | 90.5 | 26.6 | 51.9 | **22.7** |
+| 3 | 11 | 6.2 (13.9) | 89.5 | 90.1 | 91.5 | 41.9 | 59.7 | 38.3 |
+| 4 | 11 | 8.5 (14.2) | 82.3 | 86.1 | 87.5 | 51.2 | 64.1 | 47.9 |
+| 13 | 10 | 8.3 (19.7) | 51.3 | 47.6 | 49.6 | 87.1 | 99.6 | 88.7 |
+| 12 | 9 | 7.8 (17.1) | 58.2 | 56.6 | 58.5 | 83.7 | 98.7 | 85.0 |
+| 10 | 5 | 6.8 (11.8) | 43.8 | **33.1** | 35.1 | 88.1 | 97.3 | 90.2 |
+
+**The dominant cluster is a displaced open state.** Cluster 1 holds 54 structures - 46 % of the
+unassigned set - with FERM-JH1 of 94.6 A (range 91.3-96.1), identical extension to the canonical open
+class. Its nearest reference is Jeanpierre's open model for **all 54**, at a median of 22.7 A. But
+its members are a median of **7.5 A from each other** - three times closer to one another than to the
+reference they are nearest. They are not a diffuse shell around the open state; they are a distinct
+recurring arrangement displaced from it. It appears in **all ten variants** (V678W 10, WT 8, V678G 7,
+V678L 7, V678F 6, P982A 5, V678D 4, V678M 3, V678A 2, V678I 2) across **20 distinct runs**, with
+pLDDT 80.3 - indistinguishable from everything else, as section 43 would predict.
+
+**Three compact clusters are not the closed state either.** Clusters 13, 12 and 10 sit at FERM-JH1
+43.8-58.2 A - inside the project's "compact < 60 A" bin - yet 33-57 A from 4OLI and AF2 TYK2, with
+internal spreads of 6.8-8.3 A. These are the structures that made section 39's claim 2 ("the compact
+bin contains no closed structures") true, and they are now resolved into three reproducible
+arrangements rather than one undifferentiated bin.
+
+### The 15 A threshold cuts through a continuum
+
+Distance to the nearest reference, all 184 structures at 64/256:
+
+| 0-5 | 5-10 | 10-15 | 15-20 | 20-25 | 25-30 | 30-35 | 35-40 | 40+ |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| 25 | 20 | 21 | 20 | 15 | 15 | 9 | 11 | 48 |
+
+**There is no gap at 15 A.** 21 structures fall in 10-15 A and 20 in 15-20 A. The threshold was
+inherited from the project's own "conformations within 15 A" column and it separates two halves of a
+smooth distribution, not two modes. Every *categorical* statement in sections 41, 42 and 46 -
+"V678F is 0.75 canonical open" - therefore depends on where that line is drawn, and should be quoted
+with the threshold attached.
+
+### But the comparative result does not depend on the threshold
+
+| cut | WT open | V678F open | Fisher p |
+|---|--:|--:|--:|
+| 8 A | 1/24 | 12/24 | 7.0e-04 |
+| 10 A | 1/24 | 14/24 | 8.9e-05 |
+| 12 A | 2/24 | 16/24 | 5.8e-05 |
+| **15 A** | **2/24** | **18/24** | **4.6e-06** |
+| 18 A | 5/24 | 19/24 | 1.2e-04 |
+| 20 A | 6/24 | 20/24 | 1.1e-04 |
+| 25 A | 8/24 | 23/24 | 8.5e-06 |
+| 30 A | 10/24 | 24/24 | 8.1e-06 |
+
+V678F separates from wild type at **every cut from 8 to 30 A**, p = 7e-4 to 5e-6 across a near
+four-fold range. The headline finding of sections 41 and 42 is robust; only the absolute fractions
+move. Stated threshold-free: **V678F moves the structure substantially closer to the experimentally
+determined open arrangement than wild type does, at every distance scale tested.**
+
+### What this changes
+
+"Unassigned" should stop being used as a residual category. At 64/256 it resolves into one large
+displaced-open arrangement (46 %), three compact arrangements that are not the closed state, and a
+remainder. The honest description of what shallow MSA does to TYK2 is not "produces nothing" but
+**"produces several reproducible arrangements, none of which is a known state"** - and the largest of
+them is a near-miss of the open state, 23 A away, found in every variant.
+
+Whether cluster 1 is biologically meaningful or a systematic artefact of the pipeline cannot be
+settled from this data. The test is cheap and obvious: it should appear in the JAK1, JAK2 and JAK3
+unassigned sets too if it is a pipeline artefact, and its absence there would make it TYK2-specific.
+That comparison needs no GPU time and is the next thing to run.
