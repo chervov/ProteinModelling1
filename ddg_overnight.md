@@ -1,6 +1,6 @@
 # Overnight dual-state ddG: TYK2 and JAK1 at scale
 
-Auto-generated 2026-10-22 23:28 by `analyse_ddg.py`; regenerated every 30 min
+Auto-generated 2026-10-22 23:59 by `analyse_ddg.py`; regenerated every 30 min
 as results arrive. **This supersedes the 469-variant and 500-variant pilots of sections 56-59**,
 which were too small and, for TYK2, confined to the 4OLI interface.
 
@@ -61,35 +61,35 @@ Silhouette **0.258** (the paper's JAK1 clusters: 0.098).
 
 ## JAK1 - Jeanpierre's own open and closed models
 
-**190 variants** at 10 positions (0.9% of the 21,926 possible).
+**12,000 variants** at 633 positions (54.7% of the 21,926 possible).
 
 | | ddG_closed | ddG_open | ddG_open - ddG_closed |
 |---|--:|--:|--:|
-| median | -2.55 | -3.46 | +0.00 |
-| SD | 4.24 | 3.89 | 2.24 |
-| fraction inside [-10,10] | 0.779 | 0.747 | - |
+| median | -3.69 | -3.82 | +0.00 |
+| SD | 4.36 | 4.23 | 2.26 |
+| fraction inside [-10,10] | 0.728 | 0.732 | - |
 
-- Pearson r(closed, open) = **+0.852**, Spearman **+0.820**
-- the difference's SD is **53%** of ddG_closed's
+- Pearson r(closed, open) = **+0.862**, Spearman **+0.873**
+- the difference's SD is **52%** of ddG_closed's
 
 ### Against the paper's own cluster labels
 
 | feature | AUC vs their labels | p | median C1 | median C2 |
 |---|--:|--:|--:|--:|
-| ddG_closed | 0.577 | 0.07 | -1.04 | -2.97 |
-| ddG_open | 0.602 | 0.016 | -2.80 | -4.02 |
-| **ddG_open - ddG_closed** | 0.570 | 0.1 | +0.00 | +0.00 |
+| ddG_closed | 0.740 | 0 | -1.65 | -5.97 |
+| ddG_open | 0.741 | 0 | -1.76 | -5.91 |
+| **ddG_open - ddG_closed** | 0.493 | 0.19 | +0.00 | +0.00 |
 | *paper's reported medians (ddG_closed)* | - | - | *-2.05* | *-6.36* |
 
 ### Correlation with the sequence predictors
 
 | predictor | vs ddG_closed | vs ddG_open | vs the difference | n |
 |---|--:|--:|--:|--:|
-| AlphaMissense | +0.090 | +0.131 | -0.050 | 190 |
-| ESM-1b | -0.036 | +0.092 | +0.263 | 190 |
-| ClinPred | +0.287 | +0.373 | +0.164 | 62 |
-| REVEL | +0.024 | +0.192 | +0.256 | 62 |
-| SIFT | +0.311 | +0.300 | +0.205 | 62 |
-| PolyPhen-2 | +0.077 | +0.375 | +0.419 | 62 |
-| BLOSUM62 | +0.284 | +0.290 | +0.020 | 190 |
+| AlphaMissense | +0.450 | +0.460 | -0.012 | 12,000 |
+| ESM-1b | +0.450 | +0.452 | -0.009 | 12,000 |
+| ClinPred | +0.439 | +0.449 | -0.004 | 3,760 |
+| REVEL | +0.381 | +0.400 | +0.013 | 3,760 |
+| SIFT | +0.406 | +0.415 | -0.009 | 3,760 |
+| PolyPhen-2 | +0.367 | +0.389 | +0.008 | 3,760 |
+| BLOSUM62 | +0.248 | +0.252 | -0.000 | 12,000 |
 
