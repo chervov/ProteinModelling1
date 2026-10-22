@@ -2523,3 +2523,68 @@ JH2-JH1 arrangement it would otherwise get right?** If the answer is yes, every 
 in this document is a statement about FERM placement failing, not about the kinase-pseudokinase
 interface - and the interface work (sections 26, 28, 29) is on firmer ground than the arrangement
 work.
+
+## 46. Retraction: the recycle-cut proposal of section 45 is wrong (2026-10-22)
+
+Section 45 proposed cutting inference from 15 recycles to 6, on the grounds that 89 % of seeds stop
+moving by recycle 5, and claimed this would save about 60 % of GPU time while changing the outcome
+for roughly one seed in nine. **That is wrong.** It was tested before being acted on, which is the
+only good thing to say about it.
+
+Every recycle of every seed is already in the repository, so the test was free: re-score recycles 6,
+10 and 12 of all 184 seeds at 64/256 template-free by the arrangement metric and compare the state
+assignment against recycle 15.
+
+| compared against recycle 15 | recycle 6 | recycle 10 | recycle 12 |
+|---|--:|--:|--:|
+| same state assignment | **77.7 %** | 84.2 % | 86.4 % |
+| unassigned -> open | 39 | 23 | 14 |
+| open -> unassigned | 2 | 6 | 11 |
+
+And the effect sizes the whole variant result rests on:
+
+| open fraction | recycle 6 | recycle 10 | recycle 12 | recycle 15 |
+|---|--:|--:|--:|--:|
+| wild type | 0.00 | 0.08 | 0.08 | 0.08 |
+| **V678F** | **0.33** | 0.50 | 0.54 | **0.75** |
+| V678A | 0.38 | 0.50 | 0.56 | 0.62 |
+| V678I | 0.12 | 0.31 | 0.38 | 0.50 |
+
+At recycle 6 the significant set after Holm correction is **V678A, V678F, V678D** - a *different*
+three from recycle 15's **V678F, V678A, V678I**. The ranking is not stable, so 6 recycles is not even
+adequate for ordering the variants, let alone for quoting fractions.
+
+### Why the commitment analysis was misleading
+
+The 39 seeds that become open between recycle 6 and 15 are not borderline cases drifting across a
+threshold. At recycle 6 they sit a median of **39.8 A** from the nearest reference; at recycle 15,
+**8.4 A**. Recycles 7-15 move them most of the way to the open arrangement.
+
+The JH2-JH1 centroid distance, meanwhile, barely changes over that span - which is exactly what the
+commitment analysis measured, and why it reported everything settled by recycle 5. **The domains stay
+the same distance apart while the kinase keeps rotating into place.** Section 45 demonstrated, two
+paragraphs before making this proposal, that centroid distance and superposition differ by four
+orders of magnitude in sensitivity and that distance says nothing about orientation - and then used
+the distance to draw a conclusion about the state assignment. The error was using the coarse proxy to
+reason about the sensitive readout, immediately after documenting that they disagree.
+
+### What the data does support
+
+The direction of the disagreements is the informative part. At recycle 6 they are **39 up against 2
+down** - systematic, one-way convergence, with structures still travelling towards the open
+arrangement. By recycle 12 they are **14 up against 11 down** - balanced, which is what threshold
+noise looks like once refinement has finished. So:
+
+- **Refinement continues to about recycle 12.** The 15-recycle setting is justified by the data and
+  should not be reduced. There is no cheap compute saving here.
+- **Recycles 13-15 are the only plausibly spare ones**, worth at most a 20 % saving, and the 13.6 %
+  residual disagreement at recycle 12 is seeds sitting near the 15 A cut, not structures still
+  moving. Shaving them would trade a real risk of reclassification for very little.
+- **Seeds remain the right place to spend compute**, but the saving has to come from somewhere other
+  than recycles.
+
+The section 45 claims that stand are unaffected by this: `openness_A` is the JH2-JH1 distance
+(verified against a run's own RESULT payload), superposition is four orders of magnitude more
+sensitive than either centroid distance (computed on final-recycle structures), and the JH2-JH1
+construct experiment is still the cheapest decisive one available. Only the recycle-cut proposal is
+withdrawn.
