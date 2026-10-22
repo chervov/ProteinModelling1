@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "metrics": {
+        "J_selected": 0.1938220113515854,
+        "between_angles_c_n_ca_loss_mean_selected": 3.443047717155423e-06,
+        "between_angles_ca_c_n_loss_mean_selected": 1.1054827155021485e-05,
+        "between_bonds_c_n_loss_mean_selected": 0.0002350938884774223,
+        "between_clashes_mean_loss_selected": 5.5888556005356804e-08,
+        "mean_plddt_selected_100": 80.62548828125,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.8062548637390137,
+        "seed": 10,
+        "selected_recycle_index": 4,
+        "structural_violation_loss_selected": 0.0007688152836635709,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.01347935851663351,
+        "violations_between_residue_clash_selected": 0.008424598723649979,
+        "violations_within_residue_selected": 0.0008424599072895944
+      },
+      "model": "predictions",
+      "openness": 52.14458421722692,
+      "pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds10/seed_010/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 10
+    }
+  ],
+  "chain_id": "A",
+  "domains": {
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ],
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ]
+  },
+  "openness_metric": {
+    "domain1": "JH2",
+    "domain2": "JH1",
+    "type": "centroid_distance"
+  },
+  "selected_closed": {
+    "model": "predictions",
+    "openness": 52.14458421722692,
+    "seed": 10,
+    "source_pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds10/seed_010/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "selected_open": {
+    "model": "predictions",
+    "openness": 52.14458421722692,
+    "seed": 10,
+    "source_pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds10/seed_010/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "tag": "TYK2"
+}
