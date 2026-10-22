@@ -3166,3 +3166,83 @@ failed attempt is small.
 **The test is unchanged**: does ddG_open - ddG_closed beat AUC 0.60 against IFN-alpha at 1 U/mL,
 the axis where every sequence predictor fails (section 52)? Nothing about v1 bears on that question
 - it did not measure ddG.
+
+## 55. H582W tested template-free at last: null at both depths (2026-10-22)
+
+H582W was the only variant in this campaign ever run **solely** in the template-release assay, which
+section 49 showed returns "closed" for every sequence and has no dynamic range. It was therefore
+effectively untested - while being the strongest candidate in the entire deep mutational scan:
+
+| | value | percentile |
+|---|--:|--:|
+| IFN-alpha 1 U/mL | **+1.339** | **99.92nd** - only 18 of 22,536 variants beat it |
+| IFN-alpha 100 U/mL | **+0.968** | 99.54th - activating at **both** doses |
+| abundance | -0.083 | 47.8th - **intact**, so no stability confound |
+
+It also sits on the 4OLI JH2-JH1 interface (section 26), and H582T is the single largest activating
+substitution anywhere on that surface (+1.46).
+
+**The prediction was written into the run description before any data existed:** if the arrangement
+score tracks activation, H582W should open like V678F (0.75); if it tracks stability, it should look
+like wild type (0.08), because its abundance is normal.
+
+### Result, 8 seeds per depth, template-free
+
+| depth | H582W | wild type | Fisher p |
+|---|--:|--:|--:|
+| 64/256 | 2/8 = **0.25** | 2/24 = 0.08 | 0.254 |
+| 96/384 | 6/8 = **0.75** | 23/24 = 0.96 | 0.147 |
+
+**Null at both, and the two depths point in opposite directions.** 64/256 was chosen because wild
+type sits at a floor there, leaving room to detect an increase; 96/384 because wild type is at a
+ceiling, leaving room to detect a decrease. Neither showed anything.
+
+### Why this is the decisive test, and what it decides
+
+Every previous variant confounded activation with stability. V678F - the campaign's headline effect
+at 0.75 - is simultaneously the 3rd-strongest activator at its position **and** the 2nd-worst for
+abundance (-0.323, near the nonsense anchor), so "it opens the model" could mean either. H582W
+separates them: 99.92nd-percentile activation, 48th-percentile abundance.
+
+It scored 0.25.
+
+Lining up the panel by measured activation against our score:
+
+| variant | IFN-alpha 1 U | abundance | our open fraction |
+|---|--:|--:|--:|
+| **H582W** | **+1.339** (99.9th) | **-0.083** (intact) | **0.25** |
+| V678M | +0.561 (97th) | +0.002 (intact) | 0.25 |
+| V678I | +0.520 | -0.088 | 0.50 |
+| V678F | +0.390 | **-0.323** | **0.75** |
+| V678A | **-0.228** (LOF) | -0.139 | **0.62** |
+
+**The two cleanest activators in the panel - the only two with intact abundance - both score 0.25.
+The two highest scores belong to a variant with wrecked abundance and a variant that is
+loss-of-function.** This is section 41's conclusion with the confound finally removed: the
+arrangement score does not track activation.
+
+### Two structures that only interface variants produce
+
+| | FERM-JH1 | nearest reference |
+|---|--:|---|
+| H582W 64/256 seed 1 | **40.6 A** | AF2 @ 5.6 A |
+| H582W 96/384 seed 5 | **40.3 A** | 4OLI @ 14.5 A |
+
+Genuinely compact structures, template-free, at depths where wild type reaches compact in 0 of 24
+and 0 of 24 respectively. P982A did the same thing (section 53, seed 21 at 1.6 A from 4OLI).
+
+**Both are 4OLI interface residues. V678 is not** - it buries 0.0 A across the contact (section 29).
+So 2 of 2 interface variants produce occasional compact structures and 0 of 8 V678 variants do. With
+n = 2 that is an observation rather than a result, but it is consistent, and it is the first sign
+that *interface position* changes what the model does independently of functional direction.
+
+### Consequence
+
+The campaign has now tested the best available candidate under the best available conditions and
+found nothing. Combined with section 53 (P982A reduces openness, Holm 0.0324) the pattern across the
+only two interface residues tested is that they **perturb the arrangement without respect to
+functional direction** - P982A is loss-of-function and reduced openness, H582W is strongly
+gain-of-function and did nothing, and both occasionally produce compact structures nothing else does.
+
+The dual-state ddG run now covering all 26 interface residues (section 51) is the test that bears
+directly on this.
