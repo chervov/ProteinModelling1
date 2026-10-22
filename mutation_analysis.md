@@ -3481,3 +3481,68 @@ adds nothing measurable. The five other features are, for this purpose, redundan
 `auc.json` has been regenerated on the corrected table and every figure above recomputed - the small
 gains in the REVEL, SIFT and PolyPhen rows relative to the earlier version are the blanked
 impossible rows no longer contributing.
+
+## 58. Every feature's AUC against the paper's own JAK1 clusters, with AlphaMissense (2026-10-22)
+
+With AlphaMissense now at 100% coverage (section 57), the whole feature panel can be scored against
+the paper's published cluster assignments. The labels are Dataset EV1 in full: **21,926 variants,
+7,559 in Cluster 1 and 14,367 in Cluster 2 - exactly the counts the paper reports**, and mean ESM-1b
+of -5.15 and -10.75 against their -4.47 and -10.75. The label set is theirs, not a reconstruction.
+
+Target is Cluster 2 (damaging). AUC is oriented so higher = more damaging.
+
+| feature | n | coverage | AUC | p | median C1 | median C2 |
+|---|--:|--:|--:|--:|--:|--:|
+| ClinPred | 6,873 | 31% | **0.946** | <1e-300 | +0.42 | +0.98 |
+| PolyPhen-2 | 6,873 | 31% | **0.943** | <1e-300 | +0.15 | +1.00 |
+| REVEL | 6,873 | 31% | 0.901 | <1e-300 | +0.15 | +0.61 |
+| ESM-1b | 21,926 | **100%** | 0.892 | <1e-300 | -4.80 | -10.60 |
+| **AlphaMissense** | **21,926** | **100%** | **0.886** | <1e-300 | +0.20 | +0.92 |
+| SIFT | 6,873 | 31% | 0.858 | <1e-300 | +0.20 | +0.00 |
+| ddG_closed (PyRosetta) | 500 | 2% | 0.770 | 6e-26 | -1.64 | -6.34 |
+| ddG_open (PyRosetta) | 500 | 2% | 0.767 | 2e-25 | -1.82 | -6.60 |
+| BLOSUM62 | 21,926 | **100%** | 0.632 | 6e-236 | -1.00 | -2.00 |
+| side-chain volume change | 21,926 | **100%** | 0.516 | 8e-05 | +0.00 | +2.00 |
+| **ddG_open - ddG_closed** | 500 | 2% | **0.504** | **0.89** | +0.00 | +0.00 |
+| hydrophobicity change | 21,926 | **100%** | 0.433 | 9e-60 | +0.40 | -0.30 |
+| *combined 9 features, 5-fold CV grouped by position* | *21,926* | *-* | *0.921* | *-* | *-* | *-* |
+| *AlphaMissense + ESM-1b + BLOSUM62 only* | *21,926* | *-* | *0.912* | *-* | *-* | *-* |
+
+Three things to read off it.
+
+**1. The ranking is a ranking of feature weight, not of accuracy.** ClinPred, PolyPhen-2, REVEL,
+SIFT and ESM-1b were all **inputs** to the clustering, so their high AUCs say the clustering weighted
+them heavily - which is true by construction. The caveat applies to the top six rows. The baseline to
+keep in mind is that 65.5% of variants are in Cluster 2, so a majority-class classifier gets 65.5%
+accuracy on this label set.
+
+**2. AlphaMissense is the one near-independent check available, and it broadly agrees.** The paper
+reports **70.3% missingness** on AlphaMissense, so for most variants it was *not* an input. Splitting
+on whether the paper had its genomic-join features at all:
+
+| subset | n | fraction in C2 | AlphaMissense AUC | ESM-1b AUC |
+|---|--:|--:|--:|--:|
+| all variants | 21,926 | 0.655 | 0.886 | 0.892 |
+| paper **had** genomic features | 6,873 | 0.589 | **0.947** | 0.896 |
+| paper did **not** - out of sample | 15,053 | 0.685 | **0.855** | 0.888 |
+
+On the 69% of variants where AlphaMissense could not have contributed, it still reaches **0.855**.
+That is the closest thing to external validation in this document: their clustering, on the variants
+where it was driven almost entirely by ESM-1b, BLOSUM62 and ddG, agrees with a predictor it never
+saw. The drop from 0.947 to 0.855 is the part that was circular. Note also that variants with
+missing features fall in Cluster 2 more often (68.5% vs 58.9%) - Gower distance tolerates
+missingness, but it does not make it neutral.
+
+**3. The ddG rows confirm section 56 from a third angle.** ddG_closed sits mid-table at 0.770 -
+real signal, weaker than any sequence predictor. The paper's distinctive feature, ddG_open -
+ddG_closed, sits at **0.504 with p = 0.89**, below side-chain volume change and barely above a coin
+flip, with identical medians in both clusters. Of the two structural features, only the one that is
+*not* the paper's contribution carries information.
+
+**One incidental negative result.** JAK1's dbNSFP extraction was checked for the mis-assignment
+defect found in TYK2 (section 57) and has **zero** values on substitutions needing more than one
+nucleotide change. The defect was specific to the TYK2 extraction; the JAK1 and family-level
+clustering results published earlier in this document are unaffected.
+
+Data: `data/orianne/jak1_features.json` (the full 21,926-row feature table) and
+`data/orianne/jak1_cluster_auc.json` (this table).
