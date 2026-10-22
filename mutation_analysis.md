@@ -2871,3 +2871,124 @@ interface substitution, which is not true of any other effect in this campaign.
 **Honest statement:** P982A reduces TYK2's predicted open fraction at 96/384 from 0.94 to 0.50,
 raw p = 0.0155, not significant after correction for the 20 comparisons made. It is the best
 candidate for a second genuine effect in TYK2 and one more 16-seed pair would settle it.
+
+## 51. Reproducing the Jeanpierre/Debeaupuis pipeline on TYK2, with a deep mutational scan as ground truth (2026-10-22)
+
+Jeanpierre, Debeaupuis et al., *EMBO Molecular Medicine* 2025, 17:3275-3299 - the source of the
+"Jeanpierre open/closed JAK1" models used as references throughout this document - built an in-silico
+pathogenicity pipeline and applied it to 21,926 JAK1 variants. Their method, quoted from the paper:
+
+> "Using PyRosetta, we estimated the conformational destabilization (ddG) caused by each variant in
+> both open and closed states. This parameter was combined with sequence-based pathogenicity score
+> (CADD, AlphaMissense), evolutionary score (ESMb-1), and functional prediction scores (Polyphen2,
+> SIFT, MutFunc)."
+
+Variants were then grouped by unsupervised clustering into Cluster 1 (7559, benign-enriched) and
+Cluster 2 (14,367, pathogenic-enriched), validated against gnomAD frequency and 13 patient variants.
+
+**TYK2 can do something JAK1 cannot: every variant has a measured phenotype.** The DMS covers 22,536
+variants on IFN-alpha signalling at two doses and 22,516 on abundance. So the pipeline can be scored
+directly rather than against a handful of known cases.
+
+### Component availability, measured
+
+| component | source | TYK2 coverage |
+|---|---|--:|
+| **ESM-1b** | already downloaded, one file per JAK | **22,553 / 22,553 (100 %)** |
+| BLOSUM62, volume, hydrophobicity | local, instant | **100 %** |
+| AlphaMissense | dbNSFP via MyVariant.info | 7,508 (33 %) |
+| SIFT, REVEL | dbNSFP | 7,429 (33 %) |
+| PolyPhen-2 | dbNSFP | 7,162 (32 %) |
+| CADD, ClinPred | dbNSFP | ~33 % (same limit) |
+| **ddG PyRosetta, 2 states** | licence + cluster | **0 %** |
+| MutFunc | web | not attempted |
+
+**The 33 % ceiling is structural, not a download problem.** dbNSFP is keyed on genomic variants, so
+it only contains substitutions reachable by a *single* nucleotide change. Two-nucleotide
+substitutions do not exist in it at all - which is why **V678F, this project's headline variant, has
+no PolyPhen, SIFT, REVEL or AlphaMissense score** (section 27). ESM-1b has no such limit because it
+scores protein sequence directly.
+
+The ESM-1b files are almost certainly the paper's own input: the JAK1 file holds 23,080 rows over
+1154 positions, and 1154 x 19 = **21,926**, exactly the variant count the paper reports.
+
+### The clustering reproduces
+
+| | Cluster 1 | Cluster 2 |
+|---|--:|--:|
+| **TYK2, this work** (n = 7151) | 3099 | 4052 |
+| mean ESM-1b | **-6.12** | **-11.02** |
+| mean PolyPhen-2 | 0.164 | 0.923 |
+| mean AlphaMissense | 0.121 | 0.507 |
+| *JAK1, the paper* (n = 21,926) | *7559* | *14,367* |
+| *mean ESM-1b* | *-4.47* | *-10.75* |
+
+The pathogenic cluster's ESM-1b mean is -11.02 against the paper's -10.75 - the same separation in a
+different kinase.
+
+### What the clusters predict, measured
+
+| | Cluster 1 | Cluster 2 | p |
+|---|--:|--:|--:|
+| abundance (median) | -0.040 | **-0.104** | 6.7e-130 |
+| IFN-alpha 1 U | -0.008 | -0.076 | 4.0e-22 |
+| IFN-alpha 100 U | -0.030 | -0.169 | 6.7e-69 |
+
+Real separation on all three, but note the scale: the nonsense anchor is **-0.352**, so Cluster 2's
+median variant is 30 % of the way to a dead protein and Cluster 1's is 11 %. These are population
+shifts, not a diagnostic split.
+
+### The decisive test: AUC against measured phenotype
+
+Ground truth = bottom decile of each DMS assay. Cross-validated, **grouped by residue position** so
+that substitutions at the same residue cannot leak between folds.
+
+| feature set | n | AUC abundance | AUC **function** |
+|---|--:|--:|--:|
+| ESM-1b alone | 22,513 | 0.795 | 0.589 |
+| BLOSUM + volume + hydrophobicity | 22,513 | 0.645 | 0.554 |
+| full dbNSFP panel | 7,150 | 0.849 | 0.580 |
+| **everything available combined** | 7,150 | **0.876** | **0.600** |
+
+Per predictor, uncorrected: AlphaMissense 0.848 / 0.579, REVEL 0.840 / 0.573, ESM-1b 0.796 / 0.589,
+SIFT 0.739 / 0.580, PolyPhen-2 0.732 / 0.574.
+
+**Every component is strong on abundance and barely better than chance on function.** The best
+possible combination of the pipeline's entire sequence half reaches **AUC 0.876 for "does this
+protein fold" and 0.600 for "what does it do"**. Adding predictors improves abundance (0.795 ->
+0.876) and leaves function essentially flat (0.589 -> 0.600).
+
+### What this means for the pipeline - and for ours
+
+The paper's framework separates variants by **pathogenicity**, and for a loss-of-function disease
+gene that is largely a stability question, where these scores genuinely work. But the JAK1 variants
+of clinical interest are **gain-of-function**, and gain of function is the axis on which the whole
+panel is at AUC 0.60.
+
+This is the same conclusion section 27 reached qualitatively for the four dbNSFP tools, now
+quantified on 22,513 variants with ESM-1b included, and it is the same split found for our own
+structural work: section 30 showed the compact-fraction score correlates with abundance (rho +0.53)
+and not with signalling; section 41 showed the arrangement score correlates with neither.
+
+**The one component we could not obtain is the one that might differ.** Dual-state ddG is not a
+stability score - it is the *difference* between destabilisation of the open and closed states, which
+is a conformational-preference measure. That is conceptually what this project measures by MSA
+subsampling. Worth stating plainly: **our pipeline and the paper's structural step are two routes to
+the same quantity**, and ours does not predict function (section 41). That is a reason to expect
+dual-state ddG to behave similarly, and a reason to test it rather than assume.
+
+### Cost of the missing piece
+
+PyRosetta is not on public PyPI; it needs a free academic licence via `pyrosetta-installer`. The
+compute is the real barrier: 22,553 variants x 2 conformations x a 1187-residue protein. At a fast
+pack-and-score protocol (~30 s per variant) that is **~375 core-hours**; at full cartesian ddG it is
+months of single-core time. The paper had cluster access. The web servers they also used (SDM, mCSM,
+DUET, DDMut, DynaMut2) are per-variant submissions and were used for a handful of variants, not at
+scale.
+
+**Practical recommendation:** restrict ddG to a defined subset - the 26 4OLI interface residues
+(section 26) at all 19 substitutions is **494 variants**, about 8 core-hours, and directly tests the
+autoinhibitory clamp where it should matter most.
+
+Data: `/Users/chervov/orianne_tyk2/tyk2_variants.csv`, 22,553 rows, all components plus all three
+DMS readouts.
