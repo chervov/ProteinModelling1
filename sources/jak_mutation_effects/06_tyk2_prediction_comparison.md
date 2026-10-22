@@ -33,7 +33,7 @@ Input variants are in `tyk2_predictors/variants.tsv`; the captured output is in 
 
 - [Two rare disease-associated TYK2 variants are catalytically impaired but signalling competent](https://pubmed.ncbi.nlm.nih.gov/23359498/) tests P1104A and I684S directly.
 - [Inherited TYK2 deficiency study](https://pubmed.ncbi.nlm.nih.gov/36094518/) tests R864C, G634E, G996R, G1010D and A928V in addition to P1104A controls.
-- [TYK2 deep-mutational scan](https://pubmed.ncbi.nlm.nih.gov/42268925/) provides IFN-alpha signalling and protein-abundance measurements across a large variant library; retrieve the per-variant supplement/dataset rather than inferring its numerical score from prose.
+- [Howard et al. TYK2 deep-mutational scan](https://doi.org/10.1101/2025.10.11.681520) is a **2025 bioRxiv preprint, not peer-reviewed**. It provides 10 condition-specific IFN-alpha score sets and one VAMP-seq abundance score set in MaveDB; retrieve the exact score-set data rather than inferring a numerical score from prose.
 
 ## What this comparison demonstrates—and does not
 
