@@ -1,6 +1,6 @@
 # Variant clustering: reproducing the Jeanpierre/Debeaupuis pipeline across the JAK family
 
-Regenerated 2026-10-22 15:05. Source data under `/Users/chervov/orianne_tyk2`; generator is
+Regenerated 2026-10-22 18:25. Source data under `/Users/chervov/orianne_tyk2`; generator is
 `analysis/make_clustering_report.py`. Companion detail lives in `mutation_analysis.md` sections 51-52.
 
 ## The method being reproduced
@@ -182,27 +182,8 @@ instrument for that question - and why the structural dual-state component is ne
 
 ## Dual-state ddG
 
-**In progress.** PyRosetta installing on three workers: a molab CPU sandbox (20 cores,
-160 GB), the local machine (8 cores) and Colab (~2 cores). First target is the 26 residues of
-the 4OLI JH2-JH1 interface at all 19 substitutions = 494 variants, both states.
+469 variants computed, both states, 3 repacks each.
 
-Two deliberate departures from the paper's protocol:
-
-1. **3 independent repacks per variant per state**, so the difference carries an error bar. The
-   paper reports none, and ddG_open - ddG_closed is a difference of two noisy quantities of
-   similar magnitude, which is exactly where unreported variance misleads.
-2. **Equal treatment of wild type and mutant** - the same repack shell is applied to both - so
-   the difference is not biased by one side being optimised more than the other.
-
-**The test that matters**: does ddG_open - ddG_closed beat AUC 0.60 against IFN-a at 1 U/mL?
-That is the one axis where every sequence predictor fails. If the structural feature clears it,
-the paper's innovation is validated on data they never had. If it does not, it is measuring
-stability like everything else.
-
-There is a second opportunity specific to this project: **ddG_open - ddG_closed and our
-MSA-subsampling open fraction are two independent estimates of the same quantity** - one
-physics-based, one sampling-based - with the DMS as arbiter. Our route gives V678F 0.75 open
-against wild type 0.08 and correlates with nothing measured (mutation_analysis.md section 41).
-Whether the physics route agrees with ours, with the DMS, or with neither is directly
-informative about which is tracking real conformational preference.
+- ddG_open - ddG_closed: median +1.13, range -691.84 to +1135.97
+- repack SD (precision of a single ddG): median 0.00 kcal/mol
 
