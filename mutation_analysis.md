@@ -2992,3 +2992,61 @@ autoinhibitory clamp where it should matter most.
 
 Data: `/Users/chervov/orianne_tyk2/tyk2_variants.csv`, 22,553 rows, all components plus all three
 DMS readouts.
+
+## 52. Correction to section 51: "blind to function" was one dose, not function (2026-10-22)
+
+Section 51 reported a single "AUC function" column and concluded that every component of the
+Jeanpierre/Debeaupuis panel is "barely better than chance on function". That column was **IFN-alpha
+at 1 U/mL only**, and the label was ambiguous. Computing both doses separately changes the
+conclusion.
+
+| predictor | abundance | **IFN-a 1 U** | **IFN-a 100 U** | either dose | both doses |
+|---|--:|--:|--:|--:|--:|
+| AlphaMissense | 0.848 | 0.579 | **0.834** | 0.699 | 0.787 |
+| ESM-1b | 0.796 | 0.589 | **0.823** | 0.708 | 0.765 |
+| REVEL | 0.840 | 0.572 | 0.777 | 0.670 | 0.736 |
+| SIFT | 0.739 | 0.579 | 0.765 | 0.670 | 0.724 |
+| PolyPhen-2 | 0.732 | 0.573 | 0.746 | 0.654 | 0.727 |
+| BLOSUM62 | 0.616 | 0.546 | 0.642 | 0.595 | 0.618 |
+| **combined, cross-validated** | **0.876** | **0.599** | **0.870** | 0.726 | 0.831 |
+
+n = 22,513 for the full-coverage predictors, 7,150 for the combined model; targets are the bottom
+decile of each assay; cross-validation grouped by residue position.
+
+**At 100 U/mL the panel works.** The combined model reaches 0.870, statistically indistinguishable
+from its 0.876 on abundance. The claim in section 51 that these scores cannot predict function is
+withdrawn.
+
+### The two doses are not the same measurement
+
+They correlate at only **rho = +0.523**. The interpretation that fits:
+
+- **At 100 U/mL** the receptor is saturated, so the readout is dominated by variants that simply
+  broke the protein. That is the same axis as abundance, and the predictors capture it.
+- **At 1 U/mL** the assay is sensitised, and this is where *activating* variants appear - V678M
+  +0.561, V678I +0.520, H582W +1.339. Predictors trained to separate "damaging" from "tolerated"
+  have no representation for gain of function, so they collapse to 0.58.
+
+The "either dose" column (0.726) and "both doses" column (0.831) behave as this predicts: requiring
+damage at both doses selects hard loss-of-function variants, which the panel finds easily;
+the union includes the low-dose-only effects, which it does not.
+
+### The corrected statement
+
+**These predictors detect loss of function well and gain of function not at all.** Section 27's
+framing - "they predict whether a protein survives folding, not what it does" - was half right: what
+they actually predict is whether the protein is broken, and a protein broken badly enough fails at
+any dose. What they miss is the subtler, low-dose-sensitised regime where a variant signals *more*
+than wild type.
+
+**This matters directly for the paper's application.** The JAK1 variants it set out to identify are
+**gain-of-function** - that is the entire clinical premise. AUC 0.60 on the dose where gain of
+function is visible, against 0.87 on the dose where it is not, is the quantitative statement of why
+a pathogenicity panel is the wrong instrument for that question, and why the paper needed its
+structural dual-state component at all.
+
+It also sharpens what this project should be measuring. Every TYK2 variant comparison here has been
+scored against conformational state, and section 30 found our compact-fraction score tracks
+abundance. The right benchmark for a conformational method is **IFN-alpha at 1 U/mL**, where the
+sequence panel reaches only 0.60 - not abundance, where it is already at 0.88 and nothing structural
+is needed.
