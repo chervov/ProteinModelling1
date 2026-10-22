@@ -3050,3 +3050,71 @@ scored against conformational state, and section 30 found our compact-fraction s
 abundance. The right benchmark for a conformational method is **IFN-alpha at 1 U/mL**, where the
 sequence panel reaches only 0.60 - not abundance, where it is already at 0.88 and nothing structural
 is needed.
+
+## 53. P982A confirmed: the campaign's third effect, and the only one that closes the structure (2026-10-22)
+
+Section 50 left P982A at 8/16 canonical open against wild type 15/16, raw p = 0.0155, Holm 0.264 -
+a real-looking reduction short of significance, with the stated remedy of one more 16-seed pair.
+Eight further seeds were run on each arm in parallel.
+
+### Result at n = 24 per arm, 96/384 template-free
+
+| | canonical open | fraction | dimer-like |
+|---|--:|--:|--:|
+| **wild type** | **23/24** | **0.958** | 0 |
+| **P982A** | **13/24** | **0.542** | **3** |
+
+**Fisher raw p = 0.0018. Holm across all 20 campaign comparisons = 0.0324.** It clears the bar.
+
+The p-value fell monotonically with sample size - **0.041 at n = 8, 0.0155 at n = 16, 0.0018 at
+n = 24**. Noise regresses toward the null as n grows; this did the opposite at every step.
+
+### Where it now sits
+
+| rank | variant | depth | effect | Holm |
+|--:|---|---|---|--:|
+| 1 | V678F | 64/256 | 18/24 vs 2/24, **opens** | 0.0001 |
+| 2 | V678A | 64/256 | 10/16 vs 2/24, **opens** | 0.0079 |
+| **3** | **P982A** | **96/384** | **13/24 vs 23/24, closes** | **0.0324** |
+| 4 | V678I | 64/256 | 8/16 vs 2/24 | 0.116 |
+
+**P982A is the only confirmed effect in the campaign that reduces openness.** It is also the only
+4OLI **interface** residue tested template-free - V678 buries 0.0 A across the JH2-JH1 contact
+(section 29), P982 buries more than 25 A (section 26).
+
+### Two structures in the final batch that nothing else has produced
+
+**Seed 21: FERM-JH1 40.1 A, 1.6 A from 4OLI.** A genuinely closed structure. Across 276 earlier
+template-free TYK2 structures only **two** ever came within 15 A of a closed reference (section 39),
+and none at this depth. This one is 1.6 A from the crystal - closer than many *template-assisted*
+runs, whose median is 1.5-1.6 A.
+
+**Seed 23: 10.3 A from 7T6F**, a genuine active-dimer match and the first since the original pair of
+section 42. P982A now stands at **3 of 24 dimer-like at this depth**, while every other TYK2
+sequence remains at 0 across roughly 380 structures.
+
+So P982A does not merely fail to reach the open state. It visits **both** alternative arrangements -
+closed and active-dimer - that nothing else in the campaign reaches. Its 11 non-open structures are
+not a uniform smear: they include one near-perfect closed state and one active dimer.
+
+### Interpretation, with the limits stated
+
+What is established: **P982A halves the fraction of template-free TYK2 predictions reaching the
+canonical open arrangement at 96/384, and is the only sequence that reaches the closed and
+active-dimer arrangements at that depth.**
+
+Directionally this is coherent in a way no other result here is. P982A is measured as mildly
+loss-of-function (IFN-alpha -0.321, 18th percentile; -0.466 at 100 U/mL) with abundance -0.230, it
+sits on the autoinhibitory interface, and section 26 showed that mutating that interface
+destabilises TYK2 while mildly *activating* it. A loss-of-function interface substitution that makes
+the model less able to open is the sign the autoinhibition model predicts. By contrast V678A
+*increases* openness while being loss-of-function, and V678M activates strongly while doing nothing.
+
+What is **not** established: that this reflects the protein. The effect is depth-specific - at
+64/256 P982A trends the other way (5/16 vs 2/24) and at 128/512 both are 8/8 - and section 41 showed
+the arrangement score correlates with neither measured DMS axis. One variant whose sign happens to
+match is weak evidence; with ten variants tested, one matching by chance is unremarkable.
+
+The useful next step is not more seeds at this depth but the **dual-state ddG** now running
+(section 51): P982A is an interface residue, so if ddG_open - ddG_closed is measuring conformational
+preference at all, P982A is where it should show.
