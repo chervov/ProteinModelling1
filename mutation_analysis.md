@@ -2420,3 +2420,106 @@ and JAK3 (1124). The cache was only unsafe for JAK1. Sections 36-43 are unaffect
 **Three of the four 32/64 JAK1 runs are also not full-length JAK1** - they are that 586-residue
 JH2-JH1 construct. Any JAK1 depth-ladder figure that pools them with the rest is comparing two
 different targets, and no FERM-JH1 number can be quoted for them at all.
+
+## 45. What `openness_A` actually measures, when runs commit, and the cheapest experiment available (2026-10-22)
+
+Every run folder carries `all/index.csv` with one row per (seed, recycle) - 120 rows for an 8-seed
+run - holding `openness_A`, `mean_plddt`, `J`, `violation_loss` and `selected`. None of tonight's
+analysis had used it. It answers three questions without downloading a single structure.
+
+### Correction: `openness_A` is the JH2-JH1 distance, not FERM-JH1
+
+For run `TYK2_20261021_225030` seed 0, `index.csv` gives `openness_A = 46.585`. That run's own RESULT
+payload reports **JH2-JH1 = 46.582** and **FERM-JH1 = 93.1**. The column is the JH2-JH1 centroid
+distance.
+
+This matters because the thresholds quoted throughout this document - "closed 40-45 A, open 90+" -
+are **FERM-JH1** figures. A reader taking `openness_A` for the project's openness metric would see
+46-50 A and conclude every TYK2 run is closed, when the same structures have FERM-JH1 of 90-95 A and
+are extended. The per-seed trajectory tables in each run's `conclusions.md` are *not* affected: they
+are built from the FERM-JH1 column and are labelled correctly. Only `index.csv` is ambiguous, and it
+is the file an outside reader would reach for first.
+
+### Runs commit early: 15 recycles is mostly wasted compute
+
+For each of the 184 seed trajectories at 64/256 template-free, the commitment recycle is the first
+recycle after which `openness_A` never again moves by more than 5 A:
+
+| commitment recycle | 1 | 2 | 3 | 4 | 5 | 6 | 8+ |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| seeds | 32 | 35 | 49 | 32 | 16 | 12 | 8 |
+
+**Median 3. 63 % of seeds are committed by recycle 3, 89 % by recycle 5.** Recycles 6-15 change the
+arrangement in 11 % of seeds and are pure cost in the other 89 %. Inference is run at 15 recycles
+throughout the project.
+
+Cutting to 6 recycles would save roughly **60 % of GPU time per run** while changing the outcome for
+about one seed in nine - and those seeds could be recovered by spending the savings on more seeds,
+which is the axis that actually carries the statistics. At the current rate (13 min per seed at
+256/1024, 19 min at 512/8192) that is the difference between 8 seeds and 20 seeds per hour. This is
+the single cheapest improvement available and it needs one config change, no new code. It should be
+validated first by re-scoring recycle 6 against recycle 15 for seeds already in the repository -
+also free, since every recycle of every seed is already pushed.
+
+### The arrangement metric is far more sensitive than either centroid distance
+
+The same 184 structures, wild type against V678F, by three readouts:
+
+| readout | test | p |
+|---|---|--:|
+| FERM-JH1 centroid distance | Mann-Whitney | 0.012 |
+| JH2-JH1 centroid distance | Mann-Whitney | 0.001 |
+| canonical-open fraction (superposition) | Fisher | **4.6e-06** |
+
+Four orders of magnitude between the best centroid distance and the superposition metric, on
+identical data. The reason is visible in the per-variant medians:
+
+| variant | median FERM-JH1 | median JH2-JH1 | open fraction |
+|---|--:|--:|--:|
+| V678F | 94.6 | 48.6 | **0.75** |
+| V678A | 93.3 | 48.2 | 0.62 |
+| V678I | 93.9 | 49.0 | 0.50 |
+| V678D | 93.6 | 48.4 | 0.44 |
+| V678G | 94.6 | 49.6 | 0.38 |
+| P982A | 93.3 | 49.0 | 0.31 |
+| V678M | 89.7 | 48.6 | 0.25 |
+| V678L | 89.8 | 49.4 | 0.12 |
+| WT | 90.5 | 50.0 | 0.08 |
+| V678W | **93.6** | 50.2 | **0.06** |
+
+**V678W and V678F have almost the same FERM-JH1 (93.6 vs 94.6) and opposite open fractions (0.06 vs
+0.75).** A distance of 93.6 A is reached both by structures that reproduce the cryo-EM open
+arrangement and by structures 40-60 A away from it, because the distance says nothing about
+orientation. Across the ten variants, median FERM-JH1 predicts the open fraction only weakly
+(rho = +0.62, p = 0.054) while median JH2-JH1 does better (rho = -0.81, p = 0.005) - but both are
+variant-level aggregates, and neither separates individual structures the way superposition does.
+
+Taken with section 43 - pLDDT is blind to arrangement within a depth - the readout hierarchy for this
+project is now settled: **superposition against an experimental reference is the only metric that
+resolves anything; the centroid distances are coarse proxies; pLDDT is noise.**
+
+### The cheapest experiment: delete FERM from the input
+
+Three of the earliest JAK1 runs used a 586-residue **JH2-JH1 construct** rather than full-length JAK1
+(section 44). That accident is the most interesting unreplicated result in the repository. At 32/64,
+the two seeds available give:
+
+| construct | depth | 4OLI | Jeanpierre closed | pLDDT |
+|---|---|--:|--:|--:|
+| JH2-JH1 only, seed 0 | 32/64 | **7.3** | **6.8** | 88.1 |
+| JH2-JH1 only, seed 1 | 32/64 | 17.5 | 14.4 | 87.9 |
+| full-length JAK1, 20 seeds | 32/64 | 36.9-61.4 | 36.8-43.4 | 69.7-79.2 |
+
+With FERM removed from the input, the model places the kinase domain on the pseudokinase as the
+crystal structure does - **7 A on one seed, 17 A on the other** - and its confidence rises by about
+10 pLDDT points. With FERM present, at the same depth, it is never closer than 37 A. 4OLI is itself a
+JH2-JH1 crystal, so this is the positive control the project has never had: the pipeline **can**
+reproduce a measured arrangement when asked only for the part that was measured.
+
+n = 2, so this is a hint, not a result. But it is the cheapest decisive experiment on the list - one
+8-seed run of a JH2-JH1 construct, for TYK2 as well as JAK1 - and it tests the question the whole
+campaign is really about: **is FERM what the model cannot place, and does its presence degrade the
+JH2-JH1 arrangement it would otherwise get right?** If the answer is yes, every closed-state result
+in this document is a statement about FERM placement failing, not about the kinase-pseudokinase
+interface - and the interface work (sections 26, 28, 29) is on firmer ground than the arrangement
+work.
