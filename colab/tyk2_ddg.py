@@ -23,9 +23,17 @@ def grab(url, path):
     return path
 
 RAW = "https://raw.githubusercontent.com/chervov/ProteinModelling1/main/"
+def af_url(acc="P29597"):
+    """AlphaFold bumps its model version (v4 -> v6 ...) and old URLs start returning 403,
+    so resolve the current one from the API rather than hardcoding it."""
+    import json
+    req = urllib.request.Request(f"https://alphafold.ebi.ac.uk/api/prediction/{acc}",
+                                 headers={"User-Agent": "Mozilla/5.0"})
+    return json.load(urllib.request.urlopen(req, timeout=120))[0]["pdbUrl"]
+
 STRUCTS = {
     # closed/compact: the AlphaFold TYK2 model, FERM-JH1 39.7 A
-    "closed": ("https://alphafold.ebi.ac.uk/files/AF-P29597-F1-model_v4.pdb", "tyk2_closed.pdb"),
+    "closed": (af_url(), "tyk2_closed.pdb"),
     # open: a wild-type template-free prediction at 512/8192, FERM-JH1 93.4 A, 4.8 A from
     # Jeanpierre's open JAK1 model - the TYK2 equivalent of their open state
     "open":   (RAW + "TYK2/runs/TYK2_20261022_010154/selected_open.pdb", "tyk2_open.pdb"),
