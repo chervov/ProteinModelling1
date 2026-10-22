@@ -1,0 +1,62 @@
+{
+  "candidates": [
+    {
+      "metrics": {
+        "J_selected": 0.18613329529762268,
+        "between_angles_c_n_ca_loss_mean_selected": 1.335191791440593e-05,
+        "between_angles_ca_c_n_loss_mean_selected": 0.0,
+        "between_bonds_c_n_loss_mean_selected": 1.4617649867432192e-05,
+        "between_clashes_mean_loss_selected": 4.076202486658076e-09,
+        "mean_plddt_selected_100": 81.3873291015625,
+        "model": "predictions",
+        "num_recycles": 15,
+        "plddt_norm_selected": 0.813873291015625,
+        "seed": 1,
+        "selected_recycle_index": 13,
+        "structural_violation_loss_selected": 6.585324445040897e-05,
+        "tag": "TYK2",
+        "violation_loss_weight": 0.10000000149011612,
+        "violations_between_residue_bond_selected": 0.0033698396291583776,
+        "violations_between_residue_clash_selected": 0.005054759327322245,
+        "violations_within_residue_selected": 0.0
+      },
+      "model": "predictions",
+      "openness": 46.68524302989423,
+      "pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds1_H582W/seed_001/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb",
+      "seed": 1
+    }
+  ],
+  "chain_id": "A",
+  "domains": {
+    "JH1": [
+      [
+        897,
+        1176
+      ]
+    ],
+    "JH2": [
+      [
+        589,
+        875
+      ]
+    ]
+  },
+  "openness_metric": {
+    "domain1": "JH2",
+    "domain2": "JH1",
+    "type": "centroid_distance"
+  },
+  "selected_closed": {
+    "model": "predictions",
+    "openness": 46.68524302989423,
+    "seed": 1,
+    "source_pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds1_H582W/seed_001/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "selected_open": {
+    "model": "predictions",
+    "openness": 46.68524302989423,
+    "seed": 1,
+    "source_pdb": "/content/protein_predictions/inference_msa96-384_r15_seeds1_H582W/seed_001/predictions/TYK2_model_1/TYK2_model_1_unrelaxed.pdb"
+  },
+  "tag": "TYK2"
+}
