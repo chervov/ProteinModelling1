@@ -7,6 +7,8 @@ Prepared 2026-10-22. This is an annotated, auditable **starting inventory**, not
 - `01_direct_experimental_papers.md` — primary studies that test a mutation/variant or use informative engineered mutations.
 - `02_indirect_evidence_and_resources.md` — structural, disease, review, and database resources that can help interpret an untested variant.
 - `03_search_protocol_and_gaps.md` — exact scope, reproducible searches, exclusions, and questions that could uncover missing work.
+- `09_variant_effect_evidence.tsv` — normalized, row-per-variant direct experimental evidence with assay context and PMID provenance.
+- `10_tyk2_mavedb_ifna_scores_selected.tsv` — exact raw TYK2 DMS scores across ten IFN-alpha/inhibitor conditions plus abundance scores for selected literature-supported alleles.
 
 ## Bottom line
 
@@ -37,3 +39,7 @@ The evidence is not interchangeable across paralogues or contexts.
 ## Citation convention
 
 Each paper has a stable PMID link when available. Where a DOI is known, it is supplied. Verify bibliographic fields through PubMed/Crossref before importing to a manuscript manager.
+
+## Current extraction boundary
+
+The source inventory contains 43 direct-study records. The normalized evidence table currently contains only alleles with an explicit, auditable effect statement extracted from primary text; it is not yet a claim that all supplementary-table alleles from all 43 articles have been captured. This prevents a paper-level result from being falsely assigned to every variant mentioned in that paper.
