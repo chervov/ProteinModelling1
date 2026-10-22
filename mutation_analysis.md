@@ -2730,3 +2730,72 @@ contacts are nothing in particular, it is most likely a local minimum.
 
 This is the first structural feature the project has found that is specific to TYK2 rather than
 shared with the family, which is reason to look at it carefully rather than to believe it.
+
+## 49. H582W does not release the closed state, and the release assay has no dynamic range (2026-10-22)
+
+Section 41 named the experiment the project needed. Every well-sampled substitution was at position
+678, so nothing in the data could distinguish a position-specific effect from no effect at all, and
+H582W was chosen as the test: an interface residue in 4OLI, the **most activating substitution at any
+interface position** in the deep mutational scan (IFN-alpha +1.339, 99.9th percentile of 23,723
+variants, activating at both 1 U/mL and 100 U/mL unlike most gain-of-function variants), with protein
+abundance **intact** at -0.083 (48th percentile) so it is not confounded the way V678F is (-0.323,
+near the nonsense anchor). It was run overnight at 8 seeds, 4OLI imposed for recycles 1-3 then
+released for 12.
+
+### Result
+
+| variant | n | closed | open | unassigned | median FERM-JH1 | median RMSD to closed reference |
+|---|--:|--:|--:|--:|--:|--:|
+| WT | 8 | **8** | 0 | 0 | 38.9 | 1.5 |
+| **H582W** | **8** | **8** | **0** | **0** | **39.2** | **1.5** |
+| P982A | 8 | **8** | 0 | 0 | 39.3 | 1.6 |
+| V678F | 13 | **13** | 0 | 0 | 39.1 | 1.6 |
+| V678M | 8 | **8** | 0 | 0 | 38.7 | 1.6 |
+| V678W | 8 | **8** | 0 | 0 | 38.9 | 1.6 |
+| V678I | 4 | **4** | 0 | 0 | 39.3 | 1.5 |
+
+**57 of 57 hold the closed state.** H582W is indistinguishable from wild type on both readouts:
+39.2 A against 38.9 A on FERM-JH1, and 1.5 A against 1.5 A on arrangement RMSD to the closed
+reference. Not a weakened hold, not a partial release - the same number.
+
+### The assay is dead
+
+The experiment was stated in advance in the controller's own queue text: *"If this does not release
+the closed state, the assay cannot detect destabilisation at all."* That condition is met.
+
+The release assay has now been run on **seven sequences spanning the full measured range** of both
+DMS axes - activation from -0.479 (V678D) to +1.339 (H582W), abundance from -0.361 (V678W, near the
+nonsense anchor) to +0.002 (V678M) - and returns the identical answer for every one of them, with a
+spread of 0.6 A in FERM-JH1 across all 57 structures. **It has no dynamic range.** A measurement that
+returns the same value for every input is not measuring the input.
+
+This is not a result about TYK2. Once 4OLI has been imposed for three recycles the model stays in
+that basin for the remaining twelve regardless of sequence, and the assay reports the template, not
+the protein. Section 42 already showed the other half of this: V678F opens the model 75 % of the time
+from sequence alone at 64/256 while holding the template 13/13. The same substitution gives opposite
+answers depending on whether a template was supplied, and the template answer is constant.
+
+### What this retracts and what survives
+
+- **Retracted:** "no V678 substitution destabilises the closed state" (sections 42, 44, and the
+  overnight summary) stated a negative result from this assay. It cannot support a negative result,
+  because it cannot support a positive one either. The correct statement is that **the assay is
+  uninformative about destabilisation**, for V678 and for everything else.
+- **Survives:** the template-free results are untouched. V678F, V678A and V678I significantly
+  increase the fraction reaching the canonical open arrangement at 64/256 (Holm-corrected, down to
+  p = 4.6e-06, section 42), and that contrast is robust across thresholds from 8 to 30 A (section 47).
+  Those come from runs with no template at all.
+
+### Consequence for the method
+
+Three of the project's four readouts have now been shown not to measure what they were used for:
+pLDDT is blind to arrangement within a depth (section 43), the FERM-JH1 and JH2-JH1 centroid
+distances cannot separate variants that the superposition metric separates at p = 5e-06 (section 45),
+and the release assay returns a constant (this section). What is left standing is **MSA depth as the
+control variable and superposition against an experimental reference as the readout** - which is
+exactly the combination that produced the only significant variant effects in the campaign.
+
+The release assay should be retired rather than extended. If template-induced metastability is worth
+studying, the experiment is to vary the number of imposed recycles - 1, 2, 3, 6 - and find where the
+basin stops capturing the model, because at 3 it captures everything. That is a different experiment
+from the one that has been run seven times.
