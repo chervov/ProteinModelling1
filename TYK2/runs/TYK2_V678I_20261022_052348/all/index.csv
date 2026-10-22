@@ -1,0 +1,16 @@
+seed,recycle,selected,openness_A,mean_plddt,J,violation_loss,file
+2,1,False,37.47,77.21,0.2282,0.0037,all/seed_002/recycle_01.pdb
+2,2,False,37.112,80.94,0.1907,0.001,all/seed_002/recycle_02.pdb
+2,3,False,37.235,81.16,0.1885,0.0007,all/seed_002/recycle_03.pdb
+2,4,False,37.23,80.24,0.1977,0.0005,all/seed_002/recycle_04.pdb
+2,5,True,37.502,80.25,0.1976,0.0005,all/seed_002/recycle_05.pdb
+2,6,False,37.756,80.23,0.1978,0.0009,all/seed_002/recycle_06.pdb
+2,7,False,37.419,80.0,0.2001,0.0009,all/seed_002/recycle_07.pdb
+2,8,False,37.408,79.89,0.2012,0.0011,all/seed_002/recycle_08.pdb
+2,9,False,37.56,80.15,0.1986,0.0011,all/seed_002/recycle_09.pdb
+2,10,False,37.671,80.07,0.1994,0.0004,all/seed_002/recycle_10.pdb
+2,11,False,37.765,79.96,0.2005,0.001,all/seed_002/recycle_11.pdb
+2,12,False,37.416,79.81,0.2019,0.0004,all/seed_002/recycle_12.pdb
+2,13,False,37.453,80.15,0.1986,0.0005,all/seed_002/recycle_13.pdb
+2,14,False,37.626,79.88,0.2014,0.0023,all/seed_002/recycle_14.pdb
+2,15,False,37.388,80.08,0.1993,0.0004,all/seed_002/recycle_15.pdb
