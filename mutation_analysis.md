@@ -3118,3 +3118,51 @@ match is weak evidence; with ten variants tested, one matching by chance is unre
 The useful next step is not more seeds at this depth but the **dual-state ddG** now running
 (section 51): P982A is an interface residue, so if ddG_open - ddG_closed is measuring conformational
 preference at all, P982A is where it should show.
+
+## 54. The first dual-state ddG run failed, and why (2026-10-22)
+
+The ddG half of the Jeanpierre/Debeaupuis pipeline (section 51) was run on 494 variants - the 26
+4OLI interface residues x 19 substitutions - against the AlphaFold TYK2 closed model and one of our
+own template-free open structures. **The output is unusable and is recorded here rather than
+quietly rerun.**
+
+| | |
+|---|--:|
+| ddG range obtained | **-691.8 to +1136.0 kcal/mol** |
+| the paper's clipping range | -10 to +10 |
+| repack SD, max | **11.4 kcal/mol** - larger than any real ddG |
+| repack SD nonzero | 316 of 938 state-variant pairs |
+| rho vs abundance / IFN-a 1 U / 100 U | -0.074 / +0.064 / +0.062 |
+| AUC vs IFN-a 1 U | 0.508 |
+
+Correlations of ~0 with every measured axis, and an AUC indistinguishable from a coin flip. This is
+what noise looks like.
+
+### Cause: the inputs were never relaxed into the scorefunction
+
+AlphaFold and OpenFold outputs carry small steric clashes that ref2015 scores enormously. Repacking
+an 8 A shell either resolves or creates them, so the score moves by hundreds of kcal/mol for reasons
+that have nothing to do with the substitution. The mutant-minus-wild-type difference does not cancel
+this out, because the two repacks resolve different clashes.
+
+This was a foreseeable error: section 51 listed "the two states must be comparably relaxed, or the
+difference is an artefact of the input models" as one of three improvements the paper's protocol
+needed - and then the run was launched without it.
+
+A second claim made from this data was also wrong. The first records inspected had `sd = 0.0`,
+prompting the statement that the three repacks were deterministic and the intended error bar had
+not materialised. Checking all 938 shows 316 with nonzero SD up to 11.4 kcal/mol. The repacks are
+stochastic; the variance was simply dominated by clash noise. **Reading two records and
+generalising to 938 was the error.**
+
+### v2
+
+`colab/tyk2_ddg_v2.py`: FastRelax on both structures with coordinate constraints before any
+mutation, the same protocol for both states so the open-closed difference cannot come from one
+being better optimised, and the relaxed baseline scores recorded so the two states can be checked
+for comparability. The 494-variant run takes a few minutes on a 20-core box, so the cost of the
+failed attempt is small.
+
+**The test is unchanged**: does ddG_open - ddG_closed beat AUC 0.60 against IFN-alpha at 1 U/mL,
+the axis where every sequence predictor fails (section 52)? Nothing about v1 bears on that question
+- it did not measure ddG.
