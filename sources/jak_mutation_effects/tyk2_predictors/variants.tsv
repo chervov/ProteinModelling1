@@ -1,0 +1,5 @@
+gene	uniprot	variant	position	wild_type	mutant	alpha_missense_score	alpha_missense_source	esm1b_score	esm1b_source	experimental_context
+TYK2	P29597	P1104A	1104	P	A	0.8292	Wang 2024 thesis, Table 6-5	-9.860	Wang 2024 thesis, Table 6-5	Catalytically impaired; signalling can be retained; DMS interpretation is assay-specific
+TYK2	P29597	I684S	684	I	S	0.9672	Wang 2024 thesis, Table 6-5	-13.622	Wang 2024 thesis, Table 6-5	Catalytically impaired but signalling competent; DMS: reduced abundance, no significant IFN-alpha signalling effect
+TYK2	P29597	A928V	928	A	V	0.9509	Wang 2024 thesis, Table 6-5	-8.338	Wang 2024 thesis, Table 6-5	Partial inherited TYK2 deficiency in compound-genotype context
+TYK2	P29597	V362F	362	V	F	0.7239	Wang 2024 thesis, Table 6-5	-5.632	Wang 2024 thesis, Table 6-5	Common association/splice-dose context; included as a quality-control discrepancy
