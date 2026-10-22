@@ -1,0 +1,105 @@
+{
+ "matrix": {
+  "alphamissense|esm1b": 0.8014,
+  "alphamissense|clinpred": 0.8174,
+  "alphamissense|revel": 0.7545,
+  "alphamissense|polyphen": 0.7272,
+  "alphamissense|sift": 0.7125,
+  "alphamissense|blosum62": 0.3393,
+  "esm1b|clinpred": 0.8038,
+  "esm1b|revel": 0.7291,
+  "esm1b|polyphen": 0.6721,
+  "esm1b|sift": 0.732,
+  "esm1b|blosum62": 0.318,
+  "clinpred|revel": 0.8183,
+  "clinpred|polyphen": 0.8262,
+  "clinpred|sift": 0.8238,
+  "clinpred|blosum62": 0.3935,
+  "revel|polyphen": 0.7622,
+  "revel|sift": 0.697,
+  "revel|blosum62": 0.3345,
+  "polyphen|sift": 0.6441,
+  "polyphen|blosum62": 0.2758,
+  "sift|blosum62": 0.3542
+ },
+ "n": {
+  "alphamissense|esm1b": 21926,
+  "alphamissense|clinpred": 6873,
+  "alphamissense|revel": 6873,
+  "alphamissense|polyphen": 6873,
+  "alphamissense|sift": 6873,
+  "alphamissense|blosum62": 21926,
+  "esm1b|clinpred": 6873,
+  "esm1b|revel": 6873,
+  "esm1b|polyphen": 6873,
+  "esm1b|sift": 6873,
+  "esm1b|blosum62": 21926,
+  "clinpred|revel": 6873,
+  "clinpred|polyphen": 6873,
+  "clinpred|sift": 6873,
+  "clinpred|blosum62": 6873,
+  "revel|polyphen": 6873,
+  "revel|sift": 6873,
+  "revel|blosum62": 6873,
+  "polyphen|sift": 6873,
+  "polyphen|blosum62": 6873,
+  "sift|blosum62": 6873
+ },
+ "pca_eigenvalues": [
+  4.7605,
+  0.3914,
+  0.2911,
+  0.2355,
+  0.2162,
+  0.1052
+ ],
+ "pca_pc1_pct": 79.34,
+ "ddg": {
+  "closed_vs_open_spearman": 0.8549,
+  "sd_closed": 4.257,
+  "sd_open": 4.302,
+  "sd_difference": 2.554,
+  "alphamissense": {
+   "ddg_closed": 0.4985,
+   "ddg_open": 0.5159,
+   "difference": 0.045,
+   "n": 500
+  },
+  "esm1b": {
+   "ddg_closed": 0.4766,
+   "ddg_open": 0.5088,
+   "difference": 0.0693,
+   "n": 500
+  },
+  "clinpred": {
+   "ddg_closed": 0.3566,
+   "ddg_open": 0.3883,
+   "difference": 0.1121,
+   "n": 177
+  },
+  "revel": {
+   "ddg_closed": 0.2527,
+   "ddg_open": 0.2798,
+   "difference": 0.1138,
+   "n": 177
+  },
+  "polyphen": {
+   "ddg_closed": 0.3626,
+   "ddg_open": 0.3437,
+   "difference": 0.0356,
+   "n": 177
+  },
+  "sift": {
+   "ddg_closed": 0.3177,
+   "ddg_open": 0.3236,
+   "difference": 0.1178,
+   "n": 177
+  },
+  "blosum62": {
+   "ddg_closed": 0.2618,
+   "ddg_open": 0.2965,
+   "difference": 0.0545,
+   "n": 500
+  }
+ }
+}
