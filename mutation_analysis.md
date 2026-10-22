@@ -2799,3 +2799,75 @@ The release assay should be retired rather than extended. If template-induced me
 studying, the experiment is to vary the number of imposed recycles - 1, 2, 3, 6 - and find where the
 basin stops capturing the model, because at 3 it captures everything. That is a different experiment
 from the one that has been run seven times.
+
+## 50. P982A at 96/384 tested to n = 16: a real-looking reduction that still does not survive correction (2026-10-22)
+
+Section 42 flagged P982A at 96/384 as the one place in the campaign where a variant appeared to do
+something *other* than open the structure: 2/8 canonical open against wild type's 7/8, raw p = 0.041,
+Holm 0.57. Eight more seeds were run on each arm to settle it - P982A on one slot, wild type on the
+other, in parallel.
+
+**The prediction was stated in advance**, in the run description pushed before any result existed:
+*"if the reduction is real, P982A lands near 4/16 open against WT near 14/16; if it is noise, both sit
+near 14/16."*
+
+### Result
+
+| | open | fraction | unassigned | dimer-like |
+|---|--:|--:|--:|--:|
+| **wild type** | **15/16** | **0.94** | 1 | 0 |
+| **P982A** | **8/16** | **0.50** | 6 | 2 |
+
+**Fisher exact raw p = 0.0155. Holm across all 20 campaign comparisons: 0.264.**
+
+Wild type hit its predicted mark almost exactly (15/16 against ~14/16). P982A landed between the two
+predictions - a clear reduction, but half the magnitude of the "real" scenario.
+
+The per-seed detail, which matters for how this was misread midway (below):
+
+| new seed | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|---|---|---|---|---|---|---|---|---|
+| WT | open | open | open | open | open | open | open | open |
+| P982A | open | open | open | open | **unassigned** | **unassigned** | open | open |
+
+### Doubling n strengthened the effect
+
+Raw p moved from **0.050 at n = 8 to 0.0155 at n = 16**. An effect that is noise regresses toward the
+null as n grows; this did the opposite. That is evidence the reduction is real in the model's
+behaviour - but Holm over the campaign's 20 comparisons still rejects it at 0.264, and that is the
+bar this project has adopted. Reaching Holm < 0.05 from here would need roughly **n = 32 per arm**.
+
+### The active-dimer propensity did not reproduce
+
+Section 42 noted that the only two structures in the entire TYK2 campaign near the 7T6F active-dimer
+arrangement were P982A at this depth (11.9 and 12.7 A). **Zero of the eight new seeds reached it.**
+The closest was seed 13 at **31.6 A** - well outside the 15 A threshold, though it is the only new
+structure whose nearest reference was 7T6F rather than the open model.
+
+That now stands at **2 of 24** P982A structures at 96/384, both from the original batch. On this
+evidence the pair looks like a fluke rather than a propensity, and the section 48 framing - that it
+might be a TYK2-specific approach to the JAK1 third form - is not supported.
+
+### A methodological note on reading a test while it runs
+
+At the 30-minute checkpoint the first three P982A seeds had all come back open, and that was reported
+as pointing toward the noise outcome. It was not: the final four seeds included both unassigned ones
+and the arm closed at 8/16. **Reading 3 against 3 is exactly the inference this test existed to
+replace**, and it produced the wrong call from data that was in the end sound. Interim tallies on a
+running experiment should be reported as counts without a direction, or not at all.
+
+### Where P982A now sits
+
+It is the **fourth-ranked effect in the campaign and the only one that points downward** - V678F
+(Holm 0.0001) and V678A (Holm 0.0079) both *increase* openness, and V678I sits between at Holm 0.123.
+
+P982A is also the only **4OLI interface residue** tested in a template-free comparison (section 26:
+it buries > 25 A^2 across the JH2-JH1 contact, unlike V678 which buries 0.0). Section 26 found
+interface mutations destabilise rather than activate, and the measured data agrees - P982A is mildly
+loss-of-function (IFN-alpha -0.321, 18th percentile) with abundance -0.230. A variant that *reduces*
+the model's approach to the open state is at least directionally consistent with a loss-of-function
+interface substitution, which is not true of any other effect in this campaign.
+
+**Honest statement:** P982A reduces TYK2's predicted open fraction at 96/384 from 0.94 to 0.50,
+raw p = 0.0155, not significant after correction for the 20 comparisons made. It is the best
+candidate for a second genuine effect in TYK2 and one more 16-seed pair would settle it.
