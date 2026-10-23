@@ -1,0 +1,46 @@
+[
+ {
+  "gene": "JAK1",
+  "uniprot": "P23458",
+  "n": 1154,
+  "mean_plddt": 85.6,
+  "plddt_JH2_JH1": 89.5,
+  "ferm_jh1": 92.3,
+  "rmsd_JPclosed": 81.1,
+  "rmsd_JPopen": 3.4,
+  "call": "OPEN"
+ },
+ {
+  "gene": "JAK2",
+  "uniprot": "O60674",
+  "n": 1132,
+  "mean_plddt": 86.9,
+  "plddt_JH2_JH1": 90.7,
+  "ferm_jh1": 93.8,
+  "rmsd_JPclosed": 81.5,
+  "rmsd_JPopen": 1.8,
+  "call": "OPEN"
+ },
+ {
+  "gene": "JAK3",
+  "uniprot": "P52333",
+  "n": 1124,
+  "mean_plddt": 85.7,
+  "plddt_JH2_JH1": 90.6,
+  "ferm_jh1": 41.5,
+  "rmsd_JPclosed": 3.7,
+  "rmsd_JPopen": 80.9,
+  "call": "CLOSED"
+ },
+ {
+  "gene": "TYK2",
+  "uniprot": "P29597",
+  "n": 1187,
+  "mean_plddt": 81.8,
+  "plddt_JH2_JH1": 86.4,
+  "ferm_jh1": 39.7,
+  "rmsd_JPclosed": 6.1,
+  "rmsd_JPopen": 80.8,
+  "call": "CLOSED"
+ }
+]
