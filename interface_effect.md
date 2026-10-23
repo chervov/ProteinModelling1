@@ -7,6 +7,44 @@
 
 ---
 
+## 0. Source of the data
+
+All phenotype measurements analysed here come from a single published deep mutational scan:
+
+> **Deep mutational scanning reveals pharmacologically relevant insights into TYK2 signaling and
+> disease**
+>
+> Conor J Howard; Nathan S Abell; Robert R Warneford-Thomson; Eden Mahdavi; Alan L Su;
+> Carmen Resnick; Nabil Mohammed; Erin M Thompson; Emily R Holzinger; Katrina Catalano;
+> Abhay Hukku; Gabriel A Mintier; Morgan MacKenzie; Bryan L Jiang; Dora Barbosa Rabago;
+> Angela Chan; Carolindah Ntimi; Kaitlyn N Weiler; Stephen C Wilson; Joseph C Maranville;
+> Payal R Sheth; Robert M Plenge; Sriram Kosuri; Diane E Dickel
+>
+> *eLife*, published **10 June 2026**. DOI **[10.7554/eLife.110149.2](https://doi.org/10.7554/eLife.110149.2)**
+> Corresponding author: Diane E. Dickel (Octant, Inc.)
+>
+> Preprint: *bioRxiv*, posted **12 October 2025** (v2, **23 December 2025**),
+> DOI **[10.1101/2025.10.11.681520](https://doi.org/10.1101/2025.10.11.681520)**
+>
+> Scores obtained from **MaveDB**: `urn:mavedb:00001270-a-*` (IFN-α signalling) and
+> `urn:mavedb:00001271-a-1` (VAMP-seq protein abundance).
+
+**This document contributes no new measurements.** It is a reanalysis of their data, combined with
+structural data (PDB **4OLI**; AlphaFold 3 models generated in this project) and PyRosetta ΔΔG
+computed here. Every phenotype number below is theirs.
+
+**Relation to their own conclusions.** Howard et al. report that human variants protective against
+autoimmune phenotypes act by *reducing TYK2 protein abundance*, and propose TYK2 degradation as a
+therapeutic strategy. The interface effect described here is a distinct and partly opposing
+observation: a set of variants that reduce abundance just as severely **yet do not reduce
+signalling**, because the surviving protein appears to be de-repressed. If that holds, reduced
+abundance is not by itself sufficient for the protective phenotype — *where* in the protein the
+abundance is lost matters. Their paper also reports novel allosteric sites; the analysis here was
+carried out independently, from a crystal-structure interface definition, and the two should be
+cross-checked.
+
+---
+
 ## 1. Summary
 
 Mutations at the 26-residue JH2–JH1 interface of TYK2 do something that no other region of the
@@ -52,7 +90,7 @@ JH1 is released.
 
 | | |
 |---|---|
-| source | Howard et al. 2025, bioRxiv `10.1101/2025.10.11.681520`; MaveDB `urn:mavedb:00001270-a-*` (signalling), `00001271-a-1` (abundance) |
+| source | Howard et al., *eLife* 2026 (see section 0) |
 | system | HEK293T with endogenous TYK2 knocked out, STAT2 + IRF9 restored |
 | signalling | barcoded luciferase on an 8× ISRE promoter, doxycycline-inducible TYK2, IFN-α2a at 1 or 100 U/mL |
 | abundance | VAMP-seq — N-terminal GFP with a co-transcriptional BFP control, FACS-sorted on the GFP:BFP ratio |
