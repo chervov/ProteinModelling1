@@ -1,0 +1,51 @@
+gene,group,n,n_active,n_inactive,n_states,n_spatial,dfgin,dfgout,dfginter,top_states
+CDK2,CMGC,1332,424,902,7,2,1202,2,0,DFGin-BLAminus 676; DFGin-BLBtrans 258; DFGin-BLBminus 190; DFGin-BLBplus 38
+EGFR,TYR,1050,200,750,10,3,998,34,18,DFGin-BLAminus 414; DFGin-BLBplus 332; DFGin-BLBtrans 184; DFGin-None 26
+CSNK2A1,CMGC,906,546,360,2,1,906,0,0,DFGin-BLAminus 904; DFGin-None 2
+IRAK4,TKL,588,142,432,6,2,576,8,0,DFGin-BLAminus 562; DFGout-None 8; DFGin-None 6; DFGin-BLBminus 4
+MAPK14,CMGC,576,6,570,8,3,356,154,24,DFGin-BLBplus 162; DFGin-None 96; DFGout-BBAminus 94; DFGin-BLBminus 72
+AURKA,CAMK,474,14,460,9,3,288,16,134,DFGin-BLAminus 208; DFGinter-None 134; DFGin-None 38; DFGin-ABAminus 36
+DYRK1A,CMGC,466,290,172,3,1,466,0,0,DFGin-BLAminus 450; DFGin-None 12; DFGin-ABAminus 4
+BRAF,TKL,436,8,426,8,2,252,160,0,DFGout-BBAminus 146; DFGin-BLAplus 82; DFGin-BLAminus 78; DFGin-BLBplus 40
+PIM1,CAMK,398,346,52,4,1,398,0,0,DFGin-BLAminus 382; DFGin-ABAminus 10; DFGin-None 4; DFGin-BLBminus 2
+GSK3B,CMGC,376,306,68,3,1,376,0,0,DFGin-BLAminus 370; DFGin-ABAminus 4; DFGin-None 2
+MAPK1,CMGC,356,22,306,3,1,356,0,0,DFGin-BLAminus 348; DFGin-ABAminus 6; DFGin-BLAplus 2
+JAK2-2,TYR,352,74,272,4,2,346,6,0,DFGin-ABAminus 256; DFGin-BLAminus 86; DFGout-BBAminus 6; DFGin-None 4
+ACVR1,TKL,326,4,320,3,1,326,0,0,DFGin-BLAminus 312; DFGin-ABAminus 12; DFGin-None 2
+FGFR1,TYR,298,6,292,7,2,290,8,0,DFGin-BLAplus 236; DFGin-BLBplus 22; DFGin-BLAminus 20; DFGin-None 10
+BTK,TYR,294,4,290,6,2,282,0,10,DFGin-BLBplus 266; DFGin-BLAplus 8; DFGinter-BABtrans 8; DFGin-BLAminus 4
+MET,TYR,270,4,266,8,2,174,88,0,DFGin-BLBplus 156; DFGout-BBAminus 74; DFGout-None 14; DFGin-ABAminus 6
+MAP2K1,STE,244,12,232,6,3,228,4,2,DFGin-BLBplus 202; DFGin-BLAminus 12; DFGin-None 10; DFGin-BLBminus 4
+MAPKAPK2,CAMK,238,4,110,2,1,238,0,0,DFGin-BLAminus 214; DFGin-ABAminus 24
+CDK12,CMGC,218,20,198,3,1,218,0,0,DFGin-BLAminus 106; DFGin-None 60; DFGin-ABAminus 52
+FGFR2,TYR,210,10,200,4,1,210,0,0,DFGin-BLAminus 184; DFGin-BLAplus 18; DFGin-None 6; DFGin-BLBminus 2
+MAP4K1,STE,208,4,202,6,3,150,42,8,DFGin-BLAminus 114; DFGin-None 32; DFGout-BBAminus 26; DFGout-None 16
+SYK,TYR,206,36,140,4,2,202,4,0,DFGin-BLAminus 196; DFGin-BLBplus 6; DFGout-BBAminus 2; DFGout-None 2
+ABL1,TYR,192,20,172,6,3,44,88,58,DFGout-BBAminus 58; DFGinter-None 52; DFGin-BLAminus 32; DFGout-None 30
+ROCK2,AGC,174,8,144,5,2,158,16,0,DFGin-BLAminus 108; DFGin-ABAminus 48; DFGout-BBAminus 12; DFGout-None 4
+PDPK1,AGC,164,54,104,3,2,158,6,0,DFGin-BLAminus 158; DFGout-BBAminus 4; DFGout-None 2
+PRKACA,AGC,164,96,68,2,1,164,0,0,DFGin-BLAminus 144; DFGin-ABAminus 20
+DAPK1,CAMK,164,20,138,3,1,160,0,0,DFGin-BLAminus 152; DFGin-ABAminus 6; DFGin-BLBminus 2
+JAK1-2,TYR,164,6,158,2,1,164,0,0,DFGin-ABAminus 154; DFGin-BLAminus 10
+EPHA2,TYR,162,4,146,6,2,108,54,0,DFGin-BLBminus 56; DFGout-BBAminus 46; DFGin-BLAminus 30; DFGin-ABAminus 16
+ROCK1,AGC,156,42,110,6,3,144,6,4,DFGin-BLAminus 96; DFGin-ABAminus 44; DFGout-None 6; DFGinter-None 4
+MAPK10,CMGC,154,4,150,4,1,154,0,0,DFGin-ABAminus 134; DFGin-None 8; DFGin-BLAminus 6; DFGin-BLBplus 6
+IGF1R,TYR,148,4,142,7,3,118,20,8,DFGin-None 60; DFGin-ABAminus 48; DFGout-None 14; DFGin-BLAminus 8
+JAK3-2,TYR,148,30,56,2,1,148,0,0,DFGin-BLAminus 144; DFGin-ABAminus 4
+CSNK2A2,CMGC,142,50,92,2,1,142,0,0,DFGin-BLAminus 140; DFGin-None 2
+PAK1,STE,138,18,116,9,3,112,18,2,DFGin-BLAminus 74; DFGout-BBAminus 16; DFGin-BLBplus 14; DFGin-None 10
+ALK,TYR,136,4,132,5,2,130,6,0,DFGin-ABAminus 116; DFGin-None 10; DFGin-BLAminus 4; DFGout-BBAminus 4
+KIT,TYR,136,36,94,3,2,52,82,0,DFGout-BBAminus 76; DFGin-BLAminus 52; DFGout-None 6
+CDK7,CMGC,134,32,102,5,1,130,0,0,DFGin-BLAminus 84; DFGin-None 32; DFGin-ABAminus 10; DFGin-BLAplus 2
+MERTK,TYR,134,4,130,7,2,104,26,0,DFGin-None 44; DFGin-BLBplus 36; DFGout-None 14; DFGin-BLAminus 12
+RIPK1,TKL,128,4,124,2,2,4,124,0,DFGout-BBAminus 124; DFGin-BLAminus 4
+NTRK1,TYR,128,4,124,5,2,34,88,0,DFGout-None 54; DFGout-BBAminus 34; DFGin-None 18; DFGin-ABAminus 12
+MAPK8,CMGC,124,32,92,3,1,124,0,0,DFGin-ABAminus 76; DFGin-BLAminus 42; DFGin-None 6
+CLK1,CMGC,122,78,40,3,1,122,0,0,DFGin-BLAminus 118; DFGin-ABAminus 2; DFGin-None 2
+MAP3K5,STE,120,14,94,4,3,114,2,4,DFGin-BLAminus 110; DFGin-None 4; DFGinter-BABtrans 4; DFGout-None 2
+ITK,TYR,118,4,112,4,1,118,0,0,DFGin-BLAplus 50; DFGin-BLBplus 42; DFGin-None 20; DFGin-BLAminus 6
+FGFR4,TYR,112,4,108,6,2,100,10,0,DFGin-BLAplus 84; DFGin-None 8; DFGout-BBAminus 8; DFGin-BLAminus 4
+PAK4,STE,108,26,82,3,1,108,0,0,DFGin-BLAminus 104; DFGin-ABAminus 2; DFGin-None 2
+KDR,TYR,108,4,104,7,3,16,82,4,DFGout-BBAminus 64; DFGout-None 18; DFGin-BLAminus 6; DFGin-BLBplus 6
+MELK,CAMK,106,4,64,7,3,92,2,6,DFGin-BLAminus 82; DFGin-ABAminus 4; DFGin-None 4; DFGinter-None 4
+PTK2,TYR,106,4,100,7,3,88,10,2,DFGin-None 54; DFGin-BLAminus 18; DFGin-ABAminus 14; DFGout-None 6
