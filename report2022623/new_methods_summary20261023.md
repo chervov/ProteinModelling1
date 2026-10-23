@@ -15,7 +15,7 @@ prediction **one way**: deep MSA, no template. We added two controls — **use a
 | **TYK2** | **open only — 26 / 26 runs** | **closed: 24 / 24** | open appears only at 96+ | **1 → 2** |
 | **JAK3** | one state per depth | not tested | **closed** at 128 (7/16), **open** at 256 (15/16), **new form** (9/16) | **1 → 3** |
 | **JAK1** | open 23, closed 6 (of 35) | not tested | **active-dimer** only at 64 (4/5) — invisible at deep MSA | **2 → 3** |
-| **JAK2** | closed 33 / 47 | **closed** with a *specified* template (35/35); **open** with AF3 *auto* template (5/5) | never opens — 0 / 128 runs | **1 → 2** |
+| **JAK2** | closed 33 / 47 | closed (confirms) — 35/35 | never opens — 0 / 128 runs | **1 → 1** *(AF3 reaches open; our pipeline does not)* |
 
 ### Conclusions
 
@@ -30,10 +30,10 @@ prediction **one way**: deep MSA, no template. We added two controls — **use a
 > **3. Varying depth reveals forms no single setting shows — including a candidate new JAK3 form.**
 > JAK3 yields closed (128), open (256) and an **unmatched conformation in 9 of 16 runs at 128**.
 
-> **4. The template *source* is a third control, and it decides the outcome.**
-> A **specified closed** template (4OLI) pins the model closed — 35/35 on JAK2, 24/24 on TYK2.
-> Letting AlphaFold 3 **choose its own** templates opened JAK2 in **5 of 5** models (2.7 Å from the
-> Jeanpierre open reference). Templates do not force the closed state; *closed* templates do.
+> **4. JAK2's open state exists — our pipeline just cannot reach it.**
+> AlphaFold 3 returns **open JAK2 in 5/5 models with templates and 5/5 without** (2.3–7.2 Å from the
+> Jeanpierre open reference). Our pipeline returns **0 open in 128 template-free runs** and 0 in 35
+> template runs. The template is not the discriminating variable — the **model** is.
 
 > **Honest limit: MSA depth alone never opened JAK2** — 0 of 128 template-free runs. It took the
 > third control to get there, and TYK2's closed state still needs a specified template.
@@ -47,10 +47,10 @@ denied one. The published pipeline does not vary this. We ran both, and a third 
 ("template + release") in which template recycles are followed by unrestrained recycles, to test
 whether the model would leave the template basin.
 
-**Template *source* turned out to be a separate control.** Our campaign always *specified* the
-template (`pdb:4OLI:A`, the closed TYK2 crystal). AlphaFold 3's server instead offers
-`useStructureTemplate: True`, which lets the model **search the PDB itself**. These are not the
-same experiment, and they give opposite answers on JAK2 (section 4).
+**Template *source* is worth distinguishing but is not what decides JAK2.** Our campaign always
+*specified* the template (`pdb:4OLI:A`, the closed TYK2 crystal); AlphaFold 3's server offers
+`useStructureTemplate: True`, which searches the PDB itself. On JAK2 both AF3 modes — template and
+no-template — return open, so the template is not the operative difference (section 4).
 
 **MSA depth control.** AlphaFold's input is a multiple sequence alignment of evolutionary
 relatives. Depth is written here as `clusters/extra_sequences`, from 32/64 up to 512/8192. The
@@ -122,31 +122,40 @@ single deep-MSA setting would never show it.
 set, because it occurs at *moderate* depth where the model is otherwise confident (pLDDT 84),
 rather than at shallow depth where non-convergence explains everything.
 
-**JAK2 — open only via automatic template search.** No template-free setting opens it: 0 open in
-128 runs, closed or unmatched throughout. A *specified closed* template (4OLI) also keeps it closed,
-35/35. But AlphaFold 3 run with **`useStructureTemplate: True`** — automatic template search rather
-than a template we chose — produced **open JAK2 in 5 of 5 models**:
+**JAK2 — our pipeline cannot reach its open state; AlphaFold 3 reaches it trivially.** No setting
+of ours opens JAK2: 0 open in 128 template-free runs, 0 in 35 template runs. AlphaFold 3 opens it
+in every model, with or without templates:
 
-| | |
-|---|--:|
-| JH1 Cα RMSD to the Jeanpierre **open** reference, after JH2 superposition | **2.7 Å** |
-| JH1 Cα RMSD to the Jeanpierre **closed** reference | 82.8 Å |
-| FERM–JH1 centroid distance, all 5 models | 94.4–94.9 Å (extended) |
-| agreement among the 5 models | 0.9–3.4 Å |
-| pTM / fraction disordered | 0.76 / 0.05 |
+| AF3 run | templates | models open | JH1 RMSD to JP-open | to JP-closed | FERM–JH1 |
+|---|---|--:|--:|--:|--:|
+| `JAK2/af3_template/` | `useStructureTemplate: True` | **5 / 5** | 2.7 Å | 82.8 Å | 94.4–94.9 Å |
+| `JAK2/af3_notemplate/` | **False** | **5 / 5** | 2.3–7.2 Å | 82.4–84.7 Å | 93.8–94.6 Å |
 
-2.7 Å is far inside the 15 Å assignment threshold, and the five models form a consistent ensemble
-rather than scattered noise. This is a genuine open JAK2 on the **arrangement** axis, checked
-explicitly because JAK2 elsewhere sits *closed by arrangement yet extended by distance* — the exact
-trap that makes compactness an unsafe proxy.
+All well inside the 15 Å assignment threshold, verified on the **arrangement** axis specifically —
+JAK2 elsewhere sits closed-by-arrangement yet extended-by-distance, the exact trap that makes
+compactness an unsafe proxy.
 
-**This corrects an earlier claim in this document.** An earlier version said templates give closed
-in 59/59 runs and that JAK2 "never opens — 0/128". The first was true only of *specified closed*
-templates; the second was true only of *template-free* runs. Structures:
-`JAK2/af3_template/`. Confidence is modest (pTM 0.76), so this is a solid lead rather than a
-settled result, and an independent method or an experimental structure would be needed to confirm.
+**The 2×2 isolates the cause:**
 
----
+| | our pipeline (OpenFold / AF2-based) | AlphaFold 3 |
+|---|--:|--:|
+| no template | **0 / 128 open** | **5 / 5 open** |
+| with template | 0 / 35 open (closed 4OLI supplied) | 5 / 5 open (auto) |
+
+Templates change nothing *within* either tool. The difference is the **model version**. A closed
+template explains why our template runs stay closed, but not why 128 template-free runs never
+opened — AF3 opens JAK2 from no template at all.
+
+**This corrects two earlier claims in this document.** An earlier version said templates give closed
+in 59/59 runs and JAK2 "never opens". The first holds only for *specified closed* templates. The
+second is true of our pipeline but false of JAK2 as a protein. A further intermediate version
+attributed the difference to template *source*; the no-template AF3 run rules that out.
+
+**What it means for the method.** This is a limitation of our pipeline, not a discovery about JAK2 —
+and it bounds the claim in section 1: MSA-depth subsampling is a real conformational control, but
+it cannot manufacture a state the underlying model will not produce. Confidence on the AF3 models
+is modest (pTM 0.76), so an experimental structure or a third method would be needed to decide
+which tool is right.
 
 ## 5. How to read "unmatched"
 
