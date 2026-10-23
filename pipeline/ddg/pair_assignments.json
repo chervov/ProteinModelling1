@@ -1,0 +1,18 @@
+{
+ "ros4": {
+  "pair": "T_within96",
+  "note": "within-run pair at 96/384, the one depth where TYK2 is genuinely bi-stable (JH1 RMSD 36.5 A)"
+ },
+ "ros3": {
+  "pair": "T_crossmax",
+  "note": "cross-run: template-pinned closed (FJ 39) x deep-MSA open (FJ 94) - maximal separation"
+ },
+ "ros2": {
+  "pair": "T_af3xcamp",
+  "note": "AF3 closed x our own deep-MSA open - cross-method pair"
+ },
+ "ros1": {
+  "pair": "J_afdb",
+  "note": "AlphaFold DB model (v6) as closed x Jeanpierre open - cross-source"
+ }
+}
