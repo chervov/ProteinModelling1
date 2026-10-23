@@ -1,6 +1,6 @@
 # Overnight dual-state ddG: TYK2 and JAK1 at scale
 
-Auto-generated 2026-10-23 16:26 by `analyse_ddg.py`; regenerated every 30 min
+Auto-generated 2026-10-23 17:22 by `analyse_ddg.py`; regenerated every 30 min
 as results arrive. **This supersedes the 469-variant and 500-variant pilots of sections 56-59**,
 which were too small and, for TYK2, confined to the 4OLI interface.
 
