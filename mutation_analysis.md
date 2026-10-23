@@ -3637,3 +3637,130 @@ quantities produces.
 The pipeline's most defensible component turns out to be plain single-state ddG, which the paper
 treats as an intermediate on the way to the difference. Data:
 `data/orianne/jak1_feature_correlations.json`.
+
+## 60. The dual-state ddG question settled at scale: 32,897 variants overnight (2026-10-23)
+
+Four molab CPU boxes ran dual-state ddG overnight on disjoint shards. All four expired at ~23:58
+(molab's ~4 h ceiling), about 2.5 h in, but because positions were processed in **shuffled** order
+and results were pulled back and pushed every 30 minutes, what survives is an unbiased random
+sample rather than a biased prefix, and nothing was lost to the expiries.
+
+| | variants | coverage | positions |
+|---|--:|--:|--:|
+| **TYK2**, matched AF3 pair | **20,897** | **92.7%** of 22,536 | 1,101 |
+| **JAK1**, Jeanpierre's own models | **12,000** | 54.7% of 21,926 | 633 |
+
+This is 45x the TYK2 pilot and 24x the JAK1 pilot of sections 56-59. Data:
+`data/ddg/ddg_TYK2_all.json`, `data/ddg/ddg_JAK1_all.json`; run-book in `data/ddg/RUNBOOK.md`.
+
+### The protocol reproduces itself
+
+One change was made for throughput: the WT repack is computed once per position and reused across
+that position's 19 substitutions (exact - the 8 A shell is identical - and ~19x cheaper). Both
+structures were also re-relaxed from scratch by an independent FastRelax run. On the **380 variants
+present in both the pilot and the new run**, ddG_closed agrees at **Pearson 0.971, Spearman 0.972,
+median absolute difference 0.10 kcal/mol**. The optimisation and the re-relax changed nothing, so
+the pilot and the new numbers are directly comparable.
+
+### ddG_open - ddG_closed is dead, and now definitively
+
+| | TYK2 (n=20,897) | JAK1 (n=12,000) |
+|---|--:|--:|
+| AUC vs LOF, IFN-a 1 U/mL | **0.500** | - |
+| AUC vs LOF, IFN-a 100 U/mL | **0.514** | - |
+| AUC vs GOF, IFN-a 1 U/mL | **0.499** | - |
+| AUC vs the paper's cluster labels | - | **0.493** (p=0.19) |
+| rho vs IFN-a 1 U/mL | **-0.001** | - |
+| rho vs AlphaMissense | +0.016 | -0.012 |
+| rho vs ESM-1b | +0.029 | -0.009 |
+
+At n = 20,897 an AUC of 0.500 is not an underpowered null; it is a measured zero. Across two
+proteins, three structure pairs and 32,897 variants, the paper's distinctive feature has no
+association with any measured phenotype, any sequence predictor, or the paper's own cluster labels.
+Its SD is 63% (TYK2) and 52% (JAK1) of ddG_closed's, so this is **large-amplitude noise**, not a
+small residual. Sections 56 and 59 can now be read as confirmed rather than provisional.
+
+The mechanism is unchanged and now measured on far more data: ddG_closed and ddG_open correlate at
+**r = 0.809** (TYK2) and **r = 0.862** (JAK1). Subtracting two quantities that agree that closely
+removes the signal and keeps the repack residual.
+
+### Single-state ddG does predict measured phenotype - correcting sections 56 and 59
+
+This is the result that changes. The pilot reported ddG_closed at AUC 0.520 against the DMS and I
+wrote that it "predicts no measured phenotype". At full coverage:
+
+| feature | LOF, IFN-a 1 U/mL | **LOF, IFN-a 100 U/mL** | GOF, IFN-a 1 U/mL | rho vs IFN 1 U |
+|---|--:|--:|--:|--:|
+| **ddG_closed** | 0.568 | **0.729** | 0.453 | -0.110 |
+| ddG_open | 0.565 | 0.723 | 0.450 | -0.110 |
+| **ddG_open - ddG_closed** | 0.500 | 0.514 | 0.499 | -0.001 |
+| AlphaMissense (reference) | 0.611 | 0.878 | 0.436 | -0.173 |
+| ESM-1b (reference) | 0.592 | 0.825 | 0.445 | -0.147 |
+
+**ddG_closed reaches AUC 0.729 against measured loss of function** - real signal from physics
+alone, below AlphaMissense's 0.878 but far above chance.
+
+The correction needs to be stated precisely, because it is a narrowing rather than a reversal. The
+pilot's 0.520 was computed **only at 1 U/mL** and **only on the 469 interface variants**; the AUC at
+100 U/mL was never computed. Splitting the new data the same way isolates both effects:
+
+| subset of the new TYK2 data | n | AUC LOF 1 U/mL | AUC LOF 100 U/mL |
+|---|--:|--:|--:|
+| 4OLI interface positions only | 399 | 0.525 | 0.617 |
+| non-interface positions | 20,498 | 0.568 | **0.731** |
+| all positions | 20,897 | 0.568 | 0.729 |
+
+The interface subset reproduces the pilot's 0.525 at 1 U/mL, so the pilot was not mistaken about
+what it measured - it was unrepresentative twice over. **What section 56 should have said**: single-
+state ddG predicts loss of function at saturating ligand (0.729) and fails at limiting ligand
+(0.568), which is the same dose-dependence every sequence predictor shows (section 52), not a
+failure specific to ddG. The sentence "neither term predicts measured phenotype" in section 56, and
+its restatement in section 59's summary table, are wrong and are superseded here.
+
+ddG_closed also remains **genuinely independent** of the sequence panel - rho +0.47 against
+AlphaMissense on TYK2, +0.45 on JAK1, against the +0.64 to +0.83 that the predictors show among
+themselves (section 59). The conclusion of section 59 therefore strengthens: single-state ddG is the
+most valuable non-redundant feature in the panel, and it is not the feature the paper is about.
+
+### JAK1: the paper's clusters, at 24x the pilot
+
+| feature | AUC vs their labels | p | median C1 | median C2 |
+|---|--:|--:|--:|--:|
+| ddG_closed | **0.740** | <1e-300 | -1.65 | -5.97 |
+| ddG_open | 0.741 | <1e-300 | -1.76 | -5.91 |
+| **ddG_open - ddG_closed** | **0.493** | **0.19** | +0.00 | +0.00 |
+| *paper's reported medians* | - | - | *-2.05* | *-6.36* |
+
+The pilot's 0.770 becomes 0.740 at 24x the sample, and the medians stay within 0.4 kcal/mol of the
+paper's published values. The reproduction holds.
+
+### Clustering with ddG included, scored against measured phenotype
+
+| cluster | n | median IFN 1U | median IFN 100U | % LOF 1U | % LOF 100U | % GOF |
+|---|--:|--:|--:|--:|--:|--:|
+| 1 | 11,928 | -0.005 | -0.033 | 7.4 | 1.6 | **11.5** |
+| 2 | 8,969 | -0.106 | -0.285 | 13.5 | **21.5** | 7.7 |
+
+Adding ddG raises the silhouette to **0.258**, against **0.098** for the paper's JAK1 clusters -
+better-separated clusters than the published pipeline produces. But separation is not accuracy:
+cluster-2 membership gives AUC **0.766** against LOF at 100 U/mL, which is *worse than
+AlphaMissense alone* (0.878). The clustering step loses information relative to its best input.
+
+And the direction that matters is still inverted: cluster 2 is **depleted** of gain-of-function
+variants (7.7% vs 11.5%), AUC **0.448**, p = 8e-20. A pipeline built to find gain-of-function
+variants puts them preferentially in the benign cluster - significantly so, on 20,897 variants.
+
+### Where this leaves the project
+
+| question | answer | evidence |
+|---|---|---|
+| Does ddG_open - ddG_closed work? | **No** | AUC 0.500 at n=20,897; 0.493 vs the paper's own labels |
+| Does single-state ddG work? | **Yes, for loss of function** | AUC 0.729 at 100 U/mL |
+| Is ddG redundant with sequence predictors? | **No** | rho +0.45 to +0.47 vs +0.64 to +0.83 among predictors |
+| Does the pipeline reproduce? | **Yes** | cluster AUC 0.740, medians within 0.4 kcal/mol |
+| Does anything predict gain of function? | **No** | every feature AUC < 0.5; nothing within the benign stratum (section 57) |
+
+The last row is the one that matters for this project's original question, and it is now supported
+by every method tried: MSA-subsampling openness (section 55), six sequence predictors (section 57),
+dual-state ddG (here), and the full clustering pipeline. **Gain of function in the JAK family is not
+visible to any of them.**
