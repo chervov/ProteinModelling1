@@ -1,6 +1,6 @@
 # Overnight dual-state ddG: TYK2 and JAK1 at scale
 
-Auto-generated 2026-10-23 13:27 by `analyse_ddg.py`; regenerated every 30 min
+Auto-generated 2026-10-23 14:28 by `analyse_ddg.py`; regenerated every 30 min
 as results arrive. **This supersedes the 469-variant and 500-variant pilots of sections 56-59**,
 which were too small and, for TYK2, confined to the 4OLI interface.
 
@@ -13,16 +13,16 @@ exact (the shell is identical) and ~19x cheaper.
 
 ## TYK2 - the matched AlphaFold 3 pair
 
-**20,897 variants** at 1,101 positions (92.7% of the 22,536 possible).
+**22,536 variants** at 1,187 positions (100.0% of the 22,536 possible).
 
 | | ddG_closed | ddG_open | ddG_open - ddG_closed |
 |---|--:|--:|--:|
-| median | -3.96 | -3.71 | +0.00 |
-| SD | 4.31 | 4.42 | 2.70 |
-| fraction inside [-10,10] | 0.723 | 0.727 | - |
+| median | -3.95 | -3.69 | +0.00 |
+| SD | 4.30 | 4.42 | 2.74 |
+| fraction inside [-10,10] | 0.724 | 0.727 | - |
 
-- Pearson r(closed, open) = **+0.809**, Spearman **+0.824**
-- the difference's SD is **63%** of ddG_closed's
+- Pearson r(closed, open) = **+0.804**, Spearman **+0.823**
+- the difference's SD is **64%** of ddG_closed's
 
 ### Against measured phenotype (the test the paper could not run)
 
@@ -30,34 +30,34 @@ AUC oriented so **higher = more damaging**; targets are the global DMS deciles.
 
 | feature | LOF, IFN-a 1 U/mL | LOF, IFN-a 100 U/mL | GOF, IFN-a 1 U/mL | rho vs IFN 1 U |
 |---|--:|--:|--:|--:|
-| ddG_closed | 0.568 | 0.729 | 0.453 | -0.110 |
-| ddG_open | 0.565 | 0.723 | 0.450 | -0.110 |
-| **ddG_open - ddG_closed** | 0.500 | 0.514 | 0.499 | -0.001 |
-| AlphaMissense (ref) | 0.611 | 0.878 | 0.436 | -0.173 |
-| ESM-1b (ref) | 0.592 | 0.825 | 0.445 | -0.147 |
+| ddG_closed | 0.565 | 0.733 | 0.453 | -0.108 |
+| ddG_open | 0.563 | 0.728 | 0.448 | -0.109 |
+| **ddG_open - ddG_closed** | 0.499 | 0.516 | 0.498 | -0.002 |
+| AlphaMissense (ref) | 0.607 | 0.879 | 0.436 | -0.169 |
+| ESM-1b (ref) | 0.589 | 0.823 | 0.445 | -0.144 |
 
 ### Correlation with the sequence predictors
 
 | predictor | vs ddG_closed | vs ddG_open | vs the difference | n |
 |---|--:|--:|--:|--:|
-| AlphaMissense | +0.470 | +0.460 | +0.016 | 20,897 |
-| ESM-1b | +0.440 | +0.435 | +0.029 | 20,897 |
-| REVEL | +0.380 | +0.373 | +0.015 | 6,458 |
-| SIFT | +0.378 | +0.380 | +0.025 | 6,458 |
-| PolyPhen-2 | +0.402 | +0.404 | +0.021 | 6,378 |
-| BLOSUM62 | +0.227 | +0.222 | +0.018 | 20,897 |
+| AlphaMissense | +0.475 | +0.466 | +0.018 | 22,536 |
+| ESM-1b | +0.444 | +0.438 | +0.028 | 22,536 |
+| REVEL | +0.383 | +0.375 | +0.013 | 6,954 |
+| SIFT | +0.372 | +0.372 | +0.022 | 6,954 |
+| PolyPhen-2 | +0.404 | +0.407 | +0.025 | 6,867 |
+| BLOSUM62 | +0.227 | +0.221 | +0.016 | 22,536 |
 
 ### Clustering with ddG included, scored against the DMS
 
 | cluster | n | median IFN 1U | median IFN 100U | % LOF 1U | % LOF 100U | % GOF |
 |---|--:|--:|--:|--:|--:|--:|
-| 1 | 11,928 | -0.005 | -0.033 | 7.4 | 1.6 | 11.5 |
-| 2 | 8,969 | -0.106 | -0.285 | 13.5 | 21.5 | 7.7 |
+| 1 | 12,874 | -0.005 | -0.033 | 7.4 | 1.6 | 11.7 |
+| 2 | 9,662 | -0.105 | -0.283 | 13.5 | 21.2 | 7.8 |
 
-Silhouette **0.258** (the paper's JAK1 clusters: 0.098).
-- cluster-2 membership vs LOF, IFN-a 1 U/mL: AUC **0.584** (p=3.4e-49)
-- cluster-2 membership vs LOF, IFN-a 100 U/mL: AUC **0.766** (p=0)
-- cluster-2 membership vs GOF, IFN-a 1 U/mL: AUC **0.448** (p=7.9e-20)
+Silhouette **0.255** (the paper's JAK1 clusters: 0.098).
+- cluster-2 membership vs LOF, IFN-a 1 U/mL: AUC **0.582** (p=1.2e-50)
+- cluster-2 membership vs LOF, IFN-a 100 U/mL: AUC **0.767** (p=0)
+- cluster-2 membership vs GOF, IFN-a 1 U/mL: AUC **0.448** (p=1.6e-21)
 
 ## JAK1 - Jeanpierre's own open and closed models
 
