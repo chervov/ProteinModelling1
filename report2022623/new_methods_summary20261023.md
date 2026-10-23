@@ -15,13 +15,13 @@ prediction **one way**: deep MSA, no template. We added two controls — **use a
 | **TYK2** | **open only — 26 / 26 runs** | **closed: 24 / 24** | open appears only at 96+ | **1 → 2** |
 | **JAK3** | one state per depth | not tested | **closed** at 128 (7/16), **open** at 256 (15/16), **new form** (9/16) | **1 → 3** |
 | **JAK1** | open 23, closed 6 (of 35) | not tested | **active-dimer** only at 64 (4/5) — invisible at deep MSA | **2 → 3** |
-| **JAK2** | closed 33 / 47 | closed (confirms) | never opens — 0 / 128 runs | **1 → 1** |
+| **JAK2** | closed 33 / 47 | **closed** with a *specified* template (35/35); **open** with AF3 *auto* template (5/5) | never opens — 0 / 128 runs | **1 → 2** |
 
 ### Conclusions
 
 > **1. The closed form of TYK2 is unreachable without a template.**
-> **0 of 89** template-free runs produced it, at any MSA depth. **24 of 24** template runs did.
-> The autoinhibited state — the drug target — is invisible to the standard method.
+> **0 of 89** template-free runs produced it, at any MSA depth. **24 of 24** runs given the closed
+> 4OLI template did. The autoinhibited state — the drug target — is invisible to the standard method.
 
 > **2. MSA depth is a conformational dial, and the switch is sharp.**
 > TYK2 goes from **8% open at 64 sequences to 96% open at 96 sequences**. States live in narrow
@@ -30,8 +30,13 @@ prediction **one way**: deep MSA, no template. We added two controls — **use a
 > **3. Varying depth reveals forms no single setting shows — including a candidate new JAK3 form.**
 > JAK3 yields closed (128), open (256) and an **unmatched conformation in 9 of 16 runs at 128**.
 
-> **Honest limit: JAK2 did not open in any of 128 runs.** Neither control unlocked it.
-> The approach works for 3 of 4 proteins, not universally.
+> **4. The template *source* is a third control, and it decides the outcome.**
+> A **specified closed** template (4OLI) pins the model closed — 35/35 on JAK2, 24/24 on TYK2.
+> Letting AlphaFold 3 **choose its own** templates opened JAK2 in **5 of 5** models (2.7 Å from the
+> Jeanpierre open reference). Templates do not force the closed state; *closed* templates do.
+
+> **Honest limit: MSA depth alone never opened JAK2** — 0 of 128 template-free runs. It took the
+> third control to get there, and TYK2's closed state still needs a specified template.
 
 ---
 
@@ -41,6 +46,11 @@ prediction **one way**: deep MSA, no template. We added two controls — **use a
 denied one. The published pipeline does not vary this. We ran both, and a third mode
 ("template + release") in which template recycles are followed by unrestrained recycles, to test
 whether the model would leave the template basin.
+
+**Template *source* turned out to be a separate control.** Our campaign always *specified* the
+template (`pdb:4OLI:A`, the closed TYK2 crystal). AlphaFold 3's server instead offers
+`useStructureTemplate: True`, which lets the model **search the PDB itself**. These are not the
+same experiment, and they give opposite answers on JAK2 (section 4).
 
 **MSA depth control.** AlphaFold's input is a multiple sequence alignment of evolutionary
 relatives. Depth is written here as `clusters/extra_sequences`, from 32/64 up to 512/8192. The
@@ -112,9 +122,29 @@ single deep-MSA setting would never show it.
 set, because it occurs at *moderate* depth where the model is otherwise confident (pLDDT 84),
 rather than at shallow depth where non-convergence explains everything.
 
-**JAK2 — the negative.** 0 open in 128 runs across every setting. JAK2 goes closed or unmatched
-and nothing moves it. Reported because a method summary that only lists successes is not a method
-summary.
+**JAK2 — open only via automatic template search.** No template-free setting opens it: 0 open in
+128 runs, closed or unmatched throughout. A *specified closed* template (4OLI) also keeps it closed,
+35/35. But AlphaFold 3 run with **`useStructureTemplate: True`** — automatic template search rather
+than a template we chose — produced **open JAK2 in 5 of 5 models**:
+
+| | |
+|---|--:|
+| JH1 Cα RMSD to the Jeanpierre **open** reference, after JH2 superposition | **2.7 Å** |
+| JH1 Cα RMSD to the Jeanpierre **closed** reference | 82.8 Å |
+| FERM–JH1 centroid distance, all 5 models | 94.4–94.9 Å (extended) |
+| agreement among the 5 models | 0.9–3.4 Å |
+| pTM / fraction disordered | 0.76 / 0.05 |
+
+2.7 Å is far inside the 15 Å assignment threshold, and the five models form a consistent ensemble
+rather than scattered noise. This is a genuine open JAK2 on the **arrangement** axis, checked
+explicitly because JAK2 elsewhere sits *closed by arrangement yet extended by distance* — the exact
+trap that makes compactness an unsafe proxy.
+
+**This corrects an earlier claim in this document.** An earlier version said templates give closed
+in 59/59 runs and that JAK2 "never opens — 0/128". The first was true only of *specified closed*
+templates; the second was true only of *template-free* runs. Structures:
+`JAK2/af3_template/`. Confidence is modest (pTM 0.76), so this is a solid lead rather than a
+settled result, and an independent method or an experimental structure would be needed to confirm.
 
 ---
 
