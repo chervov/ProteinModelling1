@@ -16,6 +16,7 @@ protein does: they **destroy protein abundance while leaving interferon signalli
 |---|--:|--:|
 | variants in the bottom abundance quartile | **68.8%** | 37.7% |
 | variants that are loss-of-function at IFN-α 100 U/mL | **4.9%** | 15.3% |
+| variants that are loss-of-function at IFN-α 1 U/mL | **8.1%** | 11.4% |
 
 That is a three-fold *enrichment* for low abundance alongside a three-fold *depletion* for loss of
 function. Both effects are large, both are highly significant, and they point in opposite
@@ -155,6 +156,80 @@ Fitting signalling on abundance in the control set and taking interface residual
 | IFN-α 1 U/mL, domain-matched control | +0.073 | −0.003 | 1.6e−08 | 0.575 |
 | IFN-α 100 U/mL, domain-matched control | **+0.438** | +0.117 | 2.0e−38 | 0.673 |
 | IFN-α 100 U/mL, **burial-matched** control | **+0.364** | +0.130 | 3.9e−25 | 0.641 |
+
+---
+
+### The same analysis at 1 U/mL
+
+The effect is **present at 1 U/mL but about half the size**, and the reason is partly the assay and
+partly real.
+
+| test | **1 U/mL** | 100 U/mL |
+|---|--:|--:|
+| median interface vs control | −0.026 vs −0.075 | −0.088 vs −0.154 |
+| Mann–Whitney p | 1.7e−04 | 2.1e−04 |
+| **AUC** | **0.550** | **0.549** |
+| LOF rate, interface vs control | 8.1% vs 11.4% | 4.9% vs 15.3% |
+| odds ratio | **0.69** | **0.28** |
+| Fisher p | 0.028 | 1.1e−12 |
+| GOF rate, interface vs control | 9.6% vs 9.2% | 8.4% vs 9.9% |
+| Fisher p | 0.75 | 0.28 |
+| abundance-adjusted residual, domain-matched | **+0.073** vs −0.003 | **+0.438** vs +0.117 |
+| p / AUC | 2e−08 / 0.575 | 2e−38 / 0.673 |
+| **effect in SD units of that assay** | **0.23** | **0.51** |
+| abundance-adjusted residual, burial-matched | +0.061 vs −0.003 | +0.364 vs +0.130 |
+| p / AUC | 2e−06 / 0.565 | 4e−25 / 0.641 |
+| **effect in SD units** | **0.20** | **0.37** |
+
+Three things to read off this.
+
+**1. The whole-distribution shift is identical at both doses.** AUC 0.550 at 1 U/mL against 0.549
+at 100 U/mL. As a rank statistic over all interface variants, the effect does not depend on dose at
+all.
+
+**2. The LOF depletion is much weaker at 1 U/mL** — OR 0.69 (p = 0.028) against OR 0.28
+(p = 1e−12) — and this part is largely an assay-range artefact. The 1 U/mL readout is **compressed
+on the loss side**:
+
+| | 1 U/mL | 100 U/mL |
+|---|--:|--:|
+| 1st percentile | **−0.857** | **−2.419** |
+| 10th percentile | −0.447 | −0.999 |
+| SD | 0.328 | 0.631 |
+| nonsense median | −0.352 | −0.352 |
+
+At 1 U/mL a dead protein scores −0.86 at worst; at 100 U/mL it falls to −2.42. With less room
+between "working" and "dead", there is correspondingly less room for the interface to be *protected
+from* falling. Note the nonsense anchor is −0.352 at both doses, so at 1 U/mL the bottom decile
+(−0.447) already sits **below** the dead-protein anchor — the low-dose assay spends much of its
+range on noise rather than on resolving degrees of failure.
+
+**3. After normalising for that, roughly half the difference is real.** In SD units of each assay
+the abundance-adjusted effect is **0.23 at 1 U/mL versus 0.51 at 100 U/mL** (0.20 vs 0.37 against
+the burial-matched control). So compression explains part of the gap but not all of it.
+
+The same holds in the lowest-abundance quintile, which is where the mechanism shows:
+
+| dose | n iface | n control | med interface | med control | gap | **gap / SD** | p |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| **1 U/mL** | 210 | 2,064 | **+0.015** | −0.172 | +0.187 | **0.57** | 5.2e−17 |
+| **100 U/mL** | 210 | 2,064 | −0.071 | −0.792 | +0.722 | **1.14** | 1.1e−44 |
+
+At 1 U/mL, interface mutants with near-dead protein levels still signal at **+0.015 — above wild
+type** — while matched controls sit at −0.172. The effect is unambiguous (p = 5e−17); it is simply
+half as large in normalised terms.
+
+**Why the low dose should show it *less*, biologically.** At limiting ligand, signalling is
+receptor- and ligand-limited rather than TYK2-limited, so having more active kinase per molecule
+buys less. At saturating ligand the kinase step is closer to rate-limiting, so de-repression
+translates more directly into output. That the effect is *larger* at saturating ligand is therefore
+consistent with the specific-activity model rather than an embarrassment for it.
+
+**The practical consequence is the opposite of section 52's.** For *predictors*, 1 U/mL is the
+informative dose, because that is where activating variants appear and where every sequence tool
+collapses to AUC ~0.60. For *this* effect, 100 U/mL is the informative dose, because it has the
+dynamic range to show protection from loss. The two doses are not interchangeable and the better
+one depends on the question.
 
 ---
 
