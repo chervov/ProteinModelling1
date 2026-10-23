@@ -2,12 +2,41 @@
 
 **A dissociation between protein abundance and signalling, measured on deep mutational scanning data**
 
+**Data from *Deep mutational scanning reveals pharmacologically relevant insights into TYK2
+signaling and disease*** (Howard et al., *eLife* 2026) — full citation in section 2.
+
 *Generated 2026-10-23. Data, methods and every number below are reproducible from
 `data/orianne/tyk2_variants.csv`, `data/ddg/ddg_TYK2_all.json` and `data/orianne/iface_*.json`.*
 
 ---
 
-## 0. Source of the data
+## 1. Summary
+
+Mutations at the 26-residue JH2–JH1 interface of TYK2 do something that no other region of the
+protein does: they **destroy protein abundance while leaving interferon signalling intact**.
+
+| | interface | rest of JH2+JH1 |
+|---|--:|--:|
+| variants in the bottom abundance quartile | **68.8%** | 37.7% |
+| variants that are loss-of-function at IFN-α 100 U/mL | **4.9%** | 15.3% |
+| variants that are loss-of-function at IFN-α 1 U/mL | **8.1%** | 11.4% |
+
+That is a three-fold *enrichment* for low abundance alongside a three-fold *depletion* for loss of
+function. Both effects are large, both are highly significant, and they point in opposite
+directions. Normally the two track each other closely — a protein that is not there cannot signal.
+
+The interpretation that fits every test below is that **interface mutations produce a
+de-repressed enzyme**: each surviving molecule signals harder, which compensates for there being
+far fewer of them. The effect appears exactly where that compensation would be visible — at the
+lowest abundances — and disappears where protein is plentiful.
+
+**This is not classical gain of function.** Interface variants are *not* enriched among the top
+decile of absolute signal (9.6% vs 8.9%, p = 0.81). The gain is in **specific activity**: signal
+per unit protein. A screen that ranks variants by raw signalling output cannot see it.
+
+---
+
+## 2. Source of the data
 
 All phenotype measurements analysed here come from a single published deep mutational scan:
 
@@ -41,33 +70,7 @@ cross-checked.
 
 ---
 
-## 1. Summary
-
-Mutations at the 26-residue JH2–JH1 interface of TYK2 do something that no other region of the
-protein does: they **destroy protein abundance while leaving interferon signalling intact**.
-
-| | interface | rest of JH2+JH1 |
-|---|--:|--:|
-| variants in the bottom abundance quartile | **68.8%** | 37.7% |
-| variants that are loss-of-function at IFN-α 100 U/mL | **4.9%** | 15.3% |
-| variants that are loss-of-function at IFN-α 1 U/mL | **8.1%** | 11.4% |
-
-That is a three-fold *enrichment* for low abundance alongside a three-fold *depletion* for loss of
-function. Both effects are large, both are highly significant, and they point in opposite
-directions. Normally the two track each other closely — a protein that is not there cannot signal.
-
-The interpretation that fits every test below is that **interface mutations produce a
-de-repressed enzyme**: each surviving molecule signals harder, which compensates for there being
-far fewer of them. The effect appears exactly where that compensation would be visible — at the
-lowest abundances — and disappears where protein is plentiful.
-
-**This is not classical gain of function.** Interface variants are *not* enriched among the top
-decile of absolute signal (9.6% vs 8.9%, p = 0.81). The gain is in **specific activity**: signal
-per unit protein. A screen that ranks variants by raw signalling output cannot see it.
-
----
-
-## 2. What "the interface" means here
+## 3. What "the interface" means here
 
 The 26 residues with ΔSASA > 25 Å² at the JH2–JH1 interface of the TYK2 crystal structure **4OLI**:
 
@@ -86,7 +89,7 @@ JH1 is released.
 
 | | |
 |---|---|
-| source | Howard et al., *eLife* 2026 (see section 0) |
+| source | Howard et al., *eLife* 2026 (see section 2) |
 | system | HEK293T with endogenous TYK2 knocked out, STAT2 + IRF9 restored |
 | signalling | barcoded luciferase on an 8× ISRE promoter, doxycycline-inducible TYK2, IFN-α2a at 1 or 100 U/mL |
 | abundance | VAMP-seq — N-terminal GFP with a co-transcriptional BFP control, FACS-sorted on the GFP:BFP ratio |
@@ -95,7 +98,7 @@ JH1 is released.
 
 ---
 
-## 3. The primary observation
+## 4. The primary observation
 
 Thresholds are the global DMS deciles across all 22,536 variants.
 
@@ -131,7 +134,7 @@ flatly null. The headline is the **sign conflict** between rows 3 and 5.
 
 ---
 
-## 4. The effect is not explained by burial
+## 5. The effect is not explained by burial
 
 Interface residues are buried, and buried residues are destabilizing, so the obvious objection is
 that "interface" is just a proxy for "buried". It is not.
@@ -159,7 +162,7 @@ beyond what their burial predicts**, and protected from signalling loss at the s
 
 ---
 
-## 5. The mechanism: signalling is preserved only where protein is scarce
+## 6. The mechanism: signalling is preserved only where protein is scarce
 
 If interface mutants compensate for low abundance with higher activity per molecule, the advantage
 should appear at low abundance and vanish at normal abundance. Splitting by abundance quintile
@@ -267,7 +270,7 @@ one depends on the question.
 
 ---
 
-## 6. Per-residue breakdown
+## 7. Per-residue breakdown
 
 All 26 residues. `RSA` is relative solvent accessibility in the AF3 closed model, `ΔRSA` the gain
 on opening, `residual` the abundance-adjusted IFN-α 100 U/mL signal. p-values are Holm-corrected
@@ -319,7 +322,7 @@ the interface assignment credible.
 
 ---
 
-## 7. What the physics says — and a negative result
+## 8. What the physics says — and a negative result
 
 If the abundance loss were ordinary thermodynamic destabilization, computed ΔΔG should predict it.
 Using the 20,897-variant overnight ΔΔG set on the matched AF3 pair (sign convention
@@ -355,7 +358,7 @@ predictive signal anywhere (AUC 0.500 at n = 20,897).
 
 ---
 
-## 8. Why this matters
+## 9. Why this matters
 
 **For reading pathogenicity predictors.** Every sequence-based predictor scores these variants as
 damaging, because they are destabilizing and sit at conserved buried positions — and on signalling,
@@ -379,7 +382,7 @@ abundance.
 
 ---
 
-## 9. Limitations, stated plainly
+## 10. Limitations, stated plainly
 
 1. **VAMP-seq uses an N-terminal GFP tag** while the interface is C-terminal. If breaking the
    interface changes GFP maturation or accessibility rather than true protein level, the abundance
@@ -402,7 +405,7 @@ abundance.
 
 ---
 
-## 10. Reproducing this
+## 11. Reproducing this
 
 | file | contents |
 |---|---|
