@@ -112,7 +112,9 @@ That is the loss of the compact, autoinhibited arrangement the Shaw model predic
 
 **Two caveats, both important.** First, this is on the **compactness** axis only: by the arrangement
 metric, V617F is 0/80 open — identical to wild type — so the effect is a FERM–JH1 displacement, not
-a JH2→JH1 release. Second, at 256/1024 the direction **reverses** (7/16 compact vs 0/16 for wild
+a JH2→JH1 release. (Wild-type JAK2 *can* reach the open arrangement, but only through AlphaFold 3's
+automatic template search, not through any setting used in this mutation scan — see
+`new_methods_summary20261023.md` section 4. Re-running V617F in that regime is the obvious follow-up.) Second, at 256/1024 the direction **reverses** (7/16 compact vs 0/16 for wild
 type, Holm 0.054). A single consistent direction across depths would be much stronger evidence;
 this is one significant cell with an inconsistent neighbour, and should be presented as suggestive
 rather than settled.
