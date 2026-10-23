@@ -1,0 +1,1163 @@
+[
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "SRC",
+  "n": 96,
+  "active": 10,
+  "inactive": 78,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "LCK",
+  "n": 78,
+  "active": 48,
+  "inactive": 30,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "HCK",
+  "n": 92,
+  "active": 6,
+  "inactive": 86,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "LYN",
+  "n": 8,
+  "active": 4,
+  "inactive": 4,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "FYN",
+  "n": 6,
+  "active": 6,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "YES1",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "BLK",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "FGR",
+  "n": 10,
+  "active": 4,
+  "inactive": 6,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "SRC-family SH3-SH2 clamp",
+  "gene": "FRK",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "ABL myristoyl + SH3-SH2",
+  "gene": "ABL1",
+  "n": 192,
+  "active": 20,
+  "inactive": 172,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "ABL myristoyl + SH3-SH2",
+  "gene": "ABL2",
+  "n": 14,
+  "active": 4,
+  "inactive": 10,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "TEC-family PH-TH-SH3-SH2",
+  "gene": "BTK",
+  "n": 294,
+  "active": 4,
+  "inactive": 290,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "TEC-family PH-TH-SH3-SH2",
+  "gene": "ITK",
+  "n": 118,
+  "active": 4,
+  "inactive": 112,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "TEC-family PH-TH-SH3-SH2",
+  "gene": "TEC",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "TEC-family PH-TH-SH3-SH2",
+  "gene": "BMX",
+  "n": 16,
+  "active": 4,
+  "inactive": 12,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "TEC-family PH-TH-SH3-SH2",
+  "gene": "TXK",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "tandem-SH2 (ITAM-released)",
+  "gene": "SYK",
+  "n": 206,
+  "active": 36,
+  "inactive": 140,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "tandem-SH2 (ITAM-released)",
+  "gene": "ZAP70",
+  "n": 10,
+  "active": 6,
+  "inactive": 4,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "PH-domain clamp",
+  "gene": "AKT1",
+  "n": 80,
+  "active": 14,
+  "inactive": 66,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "PH-domain clamp",
+  "gene": "AKT2",
+  "n": 48,
+  "active": 26,
+  "inactive": 22,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "PH-domain clamp",
+  "gene": "AKT3",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "KIT",
+  "n": 136,
+  "active": 36,
+  "inactive": 94,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FLT3",
+  "n": 20,
+  "active": 4,
+  "inactive": 16,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "CSF1R",
+  "n": 48,
+  "active": 6,
+  "inactive": 42,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "PDGFRA",
+  "n": 30,
+  "active": 8,
+  "inactive": 22,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "PDGFRB",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "MET",
+  "n": 270,
+  "active": 4,
+  "inactive": 266,
+  "pseudo": 0,
+  "states": 8
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "EPHA2",
+  "n": 162,
+  "active": 4,
+  "inactive": 146,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "EPHA3",
+  "n": 58,
+  "active": 4,
+  "inactive": 36,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "EPHB2",
+  "n": 6,
+  "active": 4,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "INSR",
+  "n": 52,
+  "active": 14,
+  "inactive": 38,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "IGF1R",
+  "n": 148,
+  "active": 4,
+  "inactive": 142,
+  "pseudo": 0,
+  "states": 7
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FGFR1",
+  "n": 298,
+  "active": 6,
+  "inactive": 292,
+  "pseudo": 0,
+  "states": 7
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FGFR2",
+  "n": 210,
+  "active": 10,
+  "inactive": 200,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FGFR3",
+  "n": 56,
+  "active": 12,
+  "inactive": 44,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FGFR4",
+  "n": 112,
+  "active": 4,
+  "inactive": 108,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "NTRK1",
+  "n": 128,
+  "active": 4,
+  "inactive": 124,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "KDR",
+  "n": 108,
+  "active": 4,
+  "inactive": 104,
+  "pseudo": 0,
+  "states": 7
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "FLT1",
+  "n": 6,
+  "active": 4,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "TEK",
+  "n": 26,
+  "active": 4,
+  "inactive": 22,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "RET",
+  "n": 76,
+  "active": 4,
+  "inactive": 72,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "ALK",
+  "n": 136,
+  "active": 4,
+  "inactive": 132,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "MERTK",
+  "n": 134,
+  "active": 4,
+  "inactive": 130,
+  "pseudo": 0,
+  "states": 7
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "AXL",
+  "n": 12,
+  "active": 6,
+  "inactive": 6,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "MUSK",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "juxtamembrane autoinhibition (RTK)",
+  "gene": "DDR1",
+  "n": 86,
+  "active": 4,
+  "inactive": 82,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "RAF CRD/14-3-3 autoinhibition",
+  "gene": "BRAF",
+  "n": 436,
+  "active": 8,
+  "inactive": 426,
+  "pseudo": 0,
+  "states": 8
+ },
+ {
+  "mechanism": "RAF CRD/14-3-3 autoinhibition",
+  "gene": "RAF1",
+  "n": 64,
+  "active": 4,
+  "inactive": 60,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "RAF CRD/14-3-3 autoinhibition",
+  "gene": "ARAF",
+  "n": 8,
+  "active": 4,
+  "inactive": 4,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "ACVR1",
+  "n": 326,
+  "active": 4,
+  "inactive": 320,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "ACVR1B",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "TGFBR1",
+  "n": 118,
+  "active": 64,
+  "inactive": 50,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "BMPR1A",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "BMPR1B",
+  "n": 8,
+  "active": 8,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "ACVR2A",
+  "n": 16,
+  "active": 10,
+  "inactive": 6,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "GS-domain (TGF-beta/BMP receptor)",
+  "gene": "ACVR2B",
+  "n": 6,
+  "active": 6,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK2A",
+  "n": 54,
+  "active": 30,
+  "inactive": 24,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK2B",
+  "n": 12,
+  "active": 6,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK2D",
+  "n": 28,
+  "active": 22,
+  "inactive": 6,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK2G",
+  "n": 6,
+  "active": 6,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK1",
+  "n": 16,
+  "active": 4,
+  "inactive": 10,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CAMK4",
+  "n": 6,
+  "active": 4,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "DAPK1",
+  "n": 164,
+  "active": 20,
+  "inactive": 138,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "DAPK3",
+  "n": 32,
+  "active": 16,
+  "inactive": 16,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "MYLK",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "PHKG1",
+  "n": 40,
+  "active": 4,
+  "inactive": 36,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "PHKG2",
+  "n": 12,
+  "active": 4,
+  "inactive": 8,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "CaM / regulatory-segment autoinhibition",
+  "gene": "CASK",
+  "n": 64,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 64,
+  "states": 1
+ },
+ {
+  "mechanism": "PAK autoinhibitory domain (AID)",
+  "gene": "PAK1",
+  "n": 138,
+  "active": 18,
+  "inactive": 116,
+  "pseudo": 0,
+  "states": 9
+ },
+ {
+  "mechanism": "PAK autoinhibitory domain (AID)",
+  "gene": "PAK2",
+  "n": 20,
+  "active": 4,
+  "inactive": 16,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "PAK autoinhibitory domain (AID)",
+  "gene": "PAK3",
+  "n": 6,
+  "active": 6,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "PAK autoinhibitory domain (AID)",
+  "gene": "PAK4",
+  "n": 108,
+  "active": 26,
+  "inactive": 82,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "PAK autoinhibitory domain (AID)",
+  "gene": "PAK6",
+  "n": 10,
+  "active": 2,
+  "inactive": 8,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "MARK1",
+  "n": 24,
+  "active": 4,
+  "inactive": 20,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "MARK2",
+  "n": 28,
+  "active": 4,
+  "inactive": 24,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "MARK3",
+  "n": 50,
+  "active": 4,
+  "inactive": 46,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "MARK4",
+  "n": 10,
+  "active": 4,
+  "inactive": 6,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "BRSK1",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "BRSK2",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "SIK1",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "SIK2",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "SIK3",
+  "n": 46,
+  "active": 4,
+  "inactive": 42,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "NUAK1",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "UBA / KA1 domain",
+  "gene": "MELK",
+  "n": 106,
+  "active": 4,
+  "inactive": 64,
+  "pseudo": 0,
+  "states": 7
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "EIF2AK1",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "EIF2AK2",
+  "n": 24,
+  "active": 4,
+  "inactive": 20,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "EIF2AK3",
+  "n": 30,
+  "active": 4,
+  "inactive": 26,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "EIF2AK4",
+  "n": 36,
+  "active": 4,
+  "inactive": 32,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "ERN1",
+  "n": 100,
+  "active": 16,
+  "inactive": 78,
+  "pseudo": 0,
+  "states": 5
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "RNASEL",
+  "n": 6,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 6,
+  "states": 1
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "STRADA",
+  "n": 8,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 8,
+  "states": 2
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "KSR1",
+  "n": 16,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 16,
+  "states": 1
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "KSR2",
+  "n": 18,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 18,
+  "states": 1
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "ILK",
+  "n": 20,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 20,
+  "states": 1
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "TRIB1",
+  "n": 8,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 8,
+  "states": 2
+ },
+ {
+  "mechanism": "pseudokinase/kinase tandem (non-JAK)",
+  "gene": "MLKL",
+  "n": 30,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 30,
+  "states": 4
+ },
+ {
+  "mechanism": "ROC-COR multidomain",
+  "gene": "LRRK2",
+  "n": 84,
+  "active": 14,
+  "inactive": 70,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "ROC-COR multidomain",
+  "gene": "LRRK1",
+  "n": 14,
+  "active": 4,
+  "inactive": 10,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKACA",
+  "n": 164,
+  "active": 96,
+  "inactive": 68,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKACB",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKG1",
+  "n": 38,
+  "active": 16,
+  "inactive": 20,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKG2",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCA",
+  "n": 16,
+  "active": 14,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCB",
+  "n": 24,
+  "active": 12,
+  "inactive": 12,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCD",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCE",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCH",
+  "n": 10,
+  "active": 8,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCQ",
+  "n": 22,
+  "active": 14,
+  "inactive": 8,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "regulatory subunit (PKA/PKG/PKC)",
+  "gene": "PRKCZ",
+  "n": 4,
+  "active": 4,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "MAP3K5",
+  "n": 120,
+  "active": 14,
+  "inactive": 94,
+  "pseudo": 0,
+  "states": 4
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "MAP4K1",
+  "n": 208,
+  "active": 4,
+  "inactive": 202,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "RIPK1",
+  "n": 128,
+  "active": 4,
+  "inactive": 124,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "RIPK2",
+  "n": 144,
+  "active": 2,
+  "inactive": 142,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "RIPK3",
+  "n": 18,
+  "active": 4,
+  "inactive": 8,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "ULK1",
+  "n": 60,
+  "active": 32,
+  "inactive": 28,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "ULK2",
+  "n": 34,
+  "active": 4,
+  "inactive": 28,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "AURKA",
+  "n": 474,
+  "active": 14,
+  "inactive": 460,
+  "pseudo": 0,
+  "states": 9
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "PDPK1",
+  "n": 164,
+  "active": 54,
+  "inactive": 104,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "CHEK1",
+  "n": 342,
+  "active": 298,
+  "inactive": 44,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "CHEK2",
+  "n": 92,
+  "active": 4,
+  "inactive": 88,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "WNK1",
+  "n": 18,
+  "active": 4,
+  "inactive": 12,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "OBSCN",
+  "n": 8,
+  "active": 6,
+  "inactive": 2,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "SPEG",
+  "n": 8,
+  "active": 8,
+  "inactive": 0,
+  "pseudo": 0,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "TTN",
+  "n": 12,
+  "active": 0,
+  "inactive": 0,
+  "pseudo": 12,
+  "states": 1
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "DCLK1",
+  "n": 36,
+  "active": 22,
+  "inactive": 14,
+  "pseudo": 0,
+  "states": 2
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "STK10",
+  "n": 54,
+  "active": 6,
+  "inactive": 48,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "SLK",
+  "n": 26,
+  "active": 4,
+  "inactive": 22,
+  "pseudo": 0,
+  "states": 3
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "MAP2K1",
+  "n": 244,
+  "active": 12,
+  "inactive": 232,
+  "pseudo": 0,
+  "states": 6
+ },
+ {
+  "mechanism": "SAM / other docking",
+  "gene": "MAP2K2",
+  "n": 8,
+  "active": 4,
+  "inactive": 4,
+  "pseudo": 0,
+  "states": 2
+ }
+]
