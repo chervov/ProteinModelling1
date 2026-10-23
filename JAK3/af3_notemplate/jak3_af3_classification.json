@@ -1,0 +1,52 @@
+[
+ {
+  "model": "0",
+  "plddt": 86.2,
+  "plddt_kinase": 90.5,
+  "ferm_jh1": 40.7,
+  "rmsd_JPclosed": 4.1,
+  "rmsd_JPopen": 81.0,
+  "rmsd_AFDB_JAK3": 0.8,
+  "call": "CLOSED"
+ },
+ {
+  "model": "1",
+  "plddt": 85.8,
+  "plddt_kinase": 90.3,
+  "ferm_jh1": 41.2,
+  "rmsd_JPclosed": 4.8,
+  "rmsd_JPopen": 80.9,
+  "rmsd_AFDB_JAK3": 1.3,
+  "call": "CLOSED"
+ },
+ {
+  "model": "2",
+  "plddt": 85.9,
+  "plddt_kinase": 90.2,
+  "ferm_jh1": 40.9,
+  "rmsd_JPclosed": 5.5,
+  "rmsd_JPopen": 81.0,
+  "rmsd_AFDB_JAK3": 2.0,
+  "call": "CLOSED"
+ },
+ {
+  "model": "3",
+  "plddt": 85.9,
+  "plddt_kinase": 90.3,
+  "ferm_jh1": 41.0,
+  "rmsd_JPclosed": 5.2,
+  "rmsd_JPopen": 81.0,
+  "rmsd_AFDB_JAK3": 1.9,
+  "call": "CLOSED"
+ },
+ {
+  "model": "4",
+  "plddt": 86.0,
+  "plddt_kinase": 90.3,
+  "ferm_jh1": 40.7,
+  "rmsd_JPclosed": 5.6,
+  "rmsd_JPopen": 81.1,
+  "rmsd_AFDB_JAK3": 2.5,
+  "call": "CLOSED"
+ }
+]
