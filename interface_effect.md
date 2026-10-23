@@ -14,11 +14,7 @@ All phenotype measurements analysed here come from a single published deep mutat
 > **Deep mutational scanning reveals pharmacologically relevant insights into TYK2 signaling and
 > disease**
 >
-> Conor J Howard; Nathan S Abell; Robert R Warneford-Thomson; Eden Mahdavi; Alan L Su;
-> Carmen Resnick; Nabil Mohammed; Erin M Thompson; Emily R Holzinger; Katrina Catalano;
-> Abhay Hukku; Gabriel A Mintier; Morgan MacKenzie; Bryan L Jiang; Dora Barbosa Rabago;
-> Angela Chan; Carolindah Ntimi; Kaitlyn N Weiler; Stephen C Wilson; Joseph C Maranville;
-> Payal R Sheth; Robert M Plenge; Sriram Kosuri; Diane E Dickel
+> Conor J. Howard, Nathan S. Abell, … Sriram Kosuri, **Diane E. Dickel** (24 authors)
 >
 > *eLife*, published **10 June 2026**. DOI **[10.7554/eLife.110149.2](https://doi.org/10.7554/eLife.110149.2)**
 > Corresponding author: Diane E. Dickel (Octant, Inc.)
