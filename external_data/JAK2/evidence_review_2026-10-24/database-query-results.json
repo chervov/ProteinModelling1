@@ -1,0 +1,103 @@
+{
+  "cosmic": {
+    "V1110E": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20V1110E&grchv=38&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+      "response": [
+        0,
+        [],
+        {},
+        []
+      ]
+    },
+    "G571R": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20G571R&grchv=38&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+      "response": [
+        1,
+        [
+          "146182184"
+        ],
+        {
+          "PubmedPMID": [
+            "19074595"
+          ],
+          "LegacyMutationID": [
+            "COSM29109"
+          ],
+          "GenomicMutationID": [
+            "COSV67665667"
+          ],
+          "PrimarySite": [
+            "haematopoietic_and_lymphoid_tissue"
+          ],
+          "PrimaryHistology": [
+            "haematopoietic_neoplasm"
+          ]
+        },
+        [
+          [
+            "146182184",
+            "JAK2",
+            "c.1711G>C",
+            "p.G571R"
+          ]
+        ]
+      ]
+    },
+    "V578I": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20V578I&grchv=38&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+      "response": [
+        0,
+        [],
+        {},
+        []
+      ]
+    },
+    "L805I": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20L805I&grchv=38&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+      "response": [
+        0,
+        [],
+        {},
+        []
+      ]
+    }
+  },
+  "variants": {
+    "Val1110Glu": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20Val1110Glu&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+      "response": [
+        0,
+        [],
+        null,
+        []
+      ]
+    },
+    "Gly571Arg": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20Gly571Arg&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+      "response": [
+        0,
+        [],
+        null,
+        []
+      ]
+    },
+    "Val578Ile": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20Val578Ile&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+      "response": [
+        0,
+        [],
+        null,
+        []
+      ]
+    },
+    "Leu805Ile": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20Leu805Ile&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+      "response": [
+        0,
+        [],
+        null,
+        []
+      ]
+    }
+  }
+}
