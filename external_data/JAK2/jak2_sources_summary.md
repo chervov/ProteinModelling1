@@ -21,7 +21,7 @@ JAK2 is the main kinase downstream of EPO, TPO and GM-CSF receptors. Germline an
 | 1 | ClinVar | Clinical variant classifications | 828 records = 361 protein changes; 319 of uncertain significance; pathogenic or likely pathogenic: 7 (0 truncating or indel; missense: K539L, K607N, V617F, V617I, R867Q, R938Q, P1095L) | 7 ClinVar columns; one row per protein change |
 | 2 | gnomAD v4 | Population frequencies (~800,000 people) | 6809 variants, 2197 protein-changing; pLI 0.00, LOEUF 0.74, missense Z -0.7 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 26 variants) |
 | 3 | cBioPortal | Tumour sequencing studies | 6189 calls from 331 studies, about 3223 patient-mutation pairs, 1346 protein changes | 3 columns, 134 rows filled |
-| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | Not retrieved for this gene (login session expired) | Not included in the public CSVs (COSMIC licence) |
+| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 55799 records from 54775 tumour samples, 831 protein changes; top missense: V617F (49426), R683G (115), V617I (89); 107 table rows matched | Not included in the public CSVs (COSMIC licence) |
 | 5 | OncoKB | Expert cancer annotation | 38 curated alterations (19 gain-of-function); highest therapeutic level 4 (JAK2 fusions / PCM1-JAK2: ruxolitinib, fedratinib); 14 alterations annotated as JAK-inhibitor resistance | Not included in the public CSVs (OncoKB terms) |
 | 6 | CIViC | Variant-drug evidence | 12 evidence items on 7 variants | `CIViC evidence` column |
 | 7 | LOVD (shared) | Diagnostic-lab variant database | 88 entries | 2 columns, 24 rows filled |
