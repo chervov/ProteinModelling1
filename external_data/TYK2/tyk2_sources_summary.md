@@ -16,13 +16,13 @@ TYK2 transduces type I interferon, IL-12 and IL-23 signalling. Biallelic loss of
 
 | # | Source | What it is | What we got | In the tables |
 |---|---|---|---|---|
-| 1 | ClinVar | Clinical variant classifications | 1183 records = 529 protein changes; 449 of uncertain significance; pathogenic or likely pathogenic: 32 (30 truncating or indel; missense: L757V, L1014P) | 7 ClinVar columns; one row per protein change |
-| 2 | gnomAD v4 | Population frequencies (~800,000 people) | 7371 variants, 2103 protein-changing; pLI 0.00, LOEUF 0.61, missense Z 2.5 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 44 variants) |
-| 3 | cBioPortal | Tumour sequencing studies | 1959 calls from 224 studies, about 1288 patient-mutation pairs, 768 protein changes | 3 columns, 168 rows filled |
-| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 3682 records from 3341 tumour samples, 467 protein changes; top missense: V362F (32), P553H (6), A928V (6); 106 table rows matched | Not included in the public CSVs (COSMIC licence) |
+| 1 | ClinVar | Clinical variant classifications | 1183 records = 529 protein changes; 449 of uncertain significance; pathogenic or likely pathogenic: 32 (30 truncating or indel; missense: L757V, L1014P) | 7 ClinVar columns |
+| 2 | gnomAD v4 | Population frequencies (~800,000 people) | 7371 variants, 2103 protein-changing; pLI 0.00, LOEUF 0.61, missense Z 2.5 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 50 variants); 2029 rows |
+| 3 | cBioPortal | Tumour sequencing studies | 1959 calls from 224 studies, about 1288 patient-mutation pairs, 768 protein changes | 3 columns, 731 rows filled |
+| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 3682 records from 3341 tumour samples, 467 protein changes; top missense: V362F (32), P553H (6), A928V (6); 467 table rows matched | Not included in the public CSVs (COSMIC licence) |
 | 5 | OncoKB | Expert cancer annotation | 7 curated alterations (6 gain-of-function); diagnostic level only (TYK2 fusions in BCR-ABL1-like B-ALL); no therapeutic level | Not included in the public CSVs (OncoKB terms) |
 | 6 | CIViC | Variant-drug evidence | 2 evidence items on 2 variants | `CIViC evidence` column |
-| 7 | LOVD (shared) | Diagnostic-lab variant database | 116 entries | 2 columns, 32 rows filled |
+| 7 | LOVD (shared) | Diagnostic-lab variant database | 116 entries | 2 columns, 42 rows filled |
 | 8 | DECIPHER | Patients with developmental disorders | No open-access sequence variants (20 copy-number variants); GenCC strong, autosomal recessive | Gene-level only |
 | 9 | AlphaMissense (AlphaFold DB) | Predicted pathogenicity, all 19 substitutions per position | 22553 substitutions | `AlphaMissense`, `AlphaMissense class` |
 | 10 | dbNSFP (via myvariant.info) | Dozens of predictors per single-nucleotide change | 7190 protein changes reachable by one DNA change | 6 core scores (predict file), ~60 more (ext file) |
@@ -36,7 +36,7 @@ TYK2 transduces type I interferon, IL-12 and IL-23 signalling. Biallelic loss of
 
 1. **Experimental data exist for almost every substitution.** The DMS signalling and abundance columns give measured effects (negative = loss of function), which outrank the computational predictors.
 2. **TYK2 is not a cancer driver** (IntOGen) and has few curated cancer variants; the main clinical relevance is recessive immunodeficiency and common partial loss-of-function alleles in autoimmunity.
-3. **Most frequent changes in tumours (cBioPortal patients):** V362F (8), R224W (8), R233H (7), E315K (7), R503* (6), G271S (6).
+3. **Most frequent changes in tumours (cBioPortal patients):** T1106Hfs*5 (20), T1106Rfs*7 (18), R1027H (11), R224W (8), V362F (8), G422S (8).
 4. **Common in the population (gnomAD AF >= 1E-04 or homozygotes):** V362F (2.76E-001), I684S (7.97E-002), G363S (7.03E-002), P1104A (3.71E-002), A53T (9.29E-003), A928V (6.35E-003), E1163G (3.88E-003), R703W (2.98E-003). Such variants are unlikely to cause a fully penetrant dominant disease.
 
 ## 4. Columns
@@ -53,7 +53,9 @@ TYK2 transduces type I interferon, IL-12 and IL-23 signalling. Biallelic loss of
 | cBioPortal | cBioPortal patients, cBioPortal studies, cBioPortal top cancer types |
 | LOVD / DECIPHER | LOVD entries, LOVD reported effect, DECIPHER |
 
-Rows are grouped by `SECTION:` header rows: priority variants, then ClinVar protein changes (sorted by position), then CIViC-only entries.
+| Provenance | Seen in (which public sources report the variant) |
+
+Rows (2510 variants in the public files) are grouped by `SECTION:` header rows: priority variants, then ClinVar protein changes, then all other protein changes observed in gnomAD, cBioPortal, LOVD, CIViC or DECIPHER (both sorted by position). Variants known only from COSMIC or OncoKB are kept in the local tables but left out of the public files.
 
 ## 5. Methods notes
 
