@@ -18,13 +18,13 @@ JAK2 is the main kinase downstream of EPO, TPO and GM-CSF receptors. Germline an
 
 | # | Source | What it is | What we got | In the tables |
 |---|---|---|---|---|
-| 1 | ClinVar | Clinical variant classifications | 828 records = 361 protein changes; 319 of uncertain significance; pathogenic or likely pathogenic: 7 (0 truncating or indel; missense: K539L, K607N, V617F, V617I, R867Q, R938Q, P1095L) | 7 ClinVar columns; one row per protein change |
-| 2 | gnomAD v4 | Population frequencies (~800,000 people) | 6809 variants, 2197 protein-changing; pLI 0.00, LOEUF 0.74, missense Z -0.7 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 26 variants) |
-| 3 | cBioPortal | Tumour sequencing studies | 6189 calls from 331 studies, about 3223 patient-mutation pairs, 1346 protein changes | 3 columns, 134 rows filled |
-| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 55799 records from 54775 tumour samples, 831 protein changes; top missense: V617F (49426), R683G (115), V617I (89); 107 table rows matched | Not included in the public CSVs (COSMIC licence) |
+| 1 | ClinVar | Clinical variant classifications | 828 records = 361 protein changes; 319 of uncertain significance; pathogenic or likely pathogenic: 7 (0 truncating or indel; missense: K539L, K607N, V617F, V617I, R867Q, R938Q, P1095L) | 7 ClinVar columns |
+| 2 | gnomAD v4 | Population frequencies (~800,000 people) | 6809 variants, 2197 protein-changing; pLI 0.00, LOEUF 0.74, missense Z -0.7 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 29 variants); 2106 rows |
+| 3 | cBioPortal | Tumour sequencing studies | 6189 calls from 331 studies, about 3223 patient-mutation pairs, 1346 protein changes | 3 columns, 1306 rows filled |
+| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 55799 records from 54775 tumour samples, 831 protein changes; top missense: V617F (49426), R683G (115), V617I (89); 831 table rows matched | Not included in the public CSVs (COSMIC licence) |
 | 5 | OncoKB | Expert cancer annotation | 38 curated alterations (19 gain-of-function); highest therapeutic level 4 (JAK2 fusions / PCM1-JAK2: ruxolitinib, fedratinib); 14 alterations annotated as JAK-inhibitor resistance | Not included in the public CSVs (OncoKB terms) |
 | 6 | CIViC | Variant-drug evidence | 12 evidence items on 7 variants | `CIViC evidence` column |
-| 7 | LOVD (shared) | Diagnostic-lab variant database | 88 entries | 2 columns, 24 rows filled |
+| 7 | LOVD (shared) | Diagnostic-lab variant database | 88 entries | 2 columns, 37 rows filled |
 | 8 | DECIPHER | Patients with developmental disorders | No open-access sequence variants (256 copy-number variants); GenCC strong/moderate, autosomal dominant; pGOF 0.63 | Gene-level only |
 | 9 | AlphaMissense (AlphaFold DB) | Predicted pathogenicity, all 19 substitutions per position | 21508 substitutions | `AlphaMissense`, `AlphaMissense class` |
 | 10 | dbNSFP (via myvariant.info) | Dozens of predictors per single-nucleotide change | 7114 protein changes reachable by one DNA change | 6 core scores (predict file), ~60 more (ext file) |
@@ -38,7 +38,7 @@ JAK2 is the main kinase downstream of EPO, TPO and GM-CSF receptors. Germline an
 
 1. **Gain-of-function is the key mechanism.** OncoKB annotates 26 oncogenic alterations (V617F, exon 12 changes, R683 substitutions, fusions, amplification).
 2. **JAK2 tolerates loss of function in the population** (pLI 0.00, LOEUF 0.74; missense Z -0.7), consistent with disease by gain rather than loss of function.
-3. **Most frequent changes in tumours (cBioPortal patients):** V617F (880), R683G (20), R1113H (18), R564Q (15), R234H (13), R683S (11).
+3. **Most frequent changes in tumours (cBioPortal patients):** V617F (880), R683G (20), R1113H (18), N457Kfs*2 (15), R564Q (15), R426* (14).
 4. **Common in the population (gnomAD AF >= 1E-04 or homozygotes):** L393V (6.47E-003), R1063H (5.39E-003), N1108S (3.28E-003), L113V (9.38E-004), E846D (8.55E-004), D1096E (6.69E-004), G127D (5.17E-004), G571S (3.55E-004). Such variants are unlikely to cause a fully penetrant dominant disease.
 
 ## 4. Columns
@@ -54,7 +54,9 @@ JAK2 is the main kinase downstream of EPO, TPO and GM-CSF receptors. Germline an
 | cBioPortal | cBioPortal patients, cBioPortal studies, cBioPortal top cancer types |
 | LOVD / DECIPHER | LOVD entries, LOVD reported effect, DECIPHER |
 
-Rows are grouped by `SECTION:` header rows: priority variants, then ClinVar protein changes (sorted by position), then CIViC-only entries.
+| Provenance | Seen in (which public sources report the variant) |
+
+Rows (2985 variants in the public files) are grouped by `SECTION:` header rows: priority variants, then ClinVar protein changes, then all other protein changes observed in gnomAD, cBioPortal, LOVD, CIViC or DECIPHER (both sorted by position). Variants known only from COSMIC or OncoKB are kept in the local tables but left out of the public files.
 
 ## 5. Methods notes
 
