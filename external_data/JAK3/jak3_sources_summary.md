@@ -18,7 +18,7 @@ JAK3 pairs with the common gamma chain (IL-2, IL-4, IL-7, IL-9, IL-15, IL-21 rec
 | 1 | ClinVar | Clinical variant classifications | 1439 records = 479 protein changes; 325 of uncertain significance; pathogenic or likely pathogenic: 103 (81 truncating or indel; missense: Y100C, R101G, R103C, R103H, R142C, D144V, C193Y, R350W, L369P, G397V, R402H, R403H, I430T, G528D, R582W, G589S, R651W, T714M, R775H, D784N, L875H, E1019K) | 7 ClinVar columns; one row per protein change |
 | 2 | gnomAD v4 | Population frequencies (~800,000 people) | 7302 variants, 2282 protein-changing; pLI 0.00, LOEUF 0.87, missense Z 2.7 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 29 variants) |
 | 3 | cBioPortal | Tumour sequencing studies | 5924 calls from 340 studies, about 2691 patient-mutation pairs, 1482 protein changes | 3 columns, 201 rows filled |
-| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | Not retrieved for this gene (login session expired) | Not included in the public CSVs (COSMIC licence) |
+| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 2355 records from 1973 tumour samples, 847 protein changes; top missense: M511I (102), V722I (67), R657Q (59); 149 table rows matched | Not included in the public CSVs (COSMIC licence) |
 | 5 | OncoKB | Expert cancer annotation | 12 curated alterations (8 gain-of-function); diagnostic level only (early T-cell precursor ALL); no therapeutic level | Not included in the public CSVs (OncoKB terms) |
 | 6 | CIViC | Variant-drug evidence | 3 evidence items on 3 variants | `CIViC evidence` column |
 | 7 | LOVD (shared) | Diagnostic-lab variant database | 163 entries | 2 columns, 43 rows filled |
