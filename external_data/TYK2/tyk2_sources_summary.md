@@ -19,7 +19,7 @@ TYK2 transduces type I interferon, IL-12 and IL-23 signalling. Biallelic loss of
 | 1 | ClinVar | Clinical variant classifications | 1183 records = 529 protein changes; 449 of uncertain significance; pathogenic or likely pathogenic: 32 (30 truncating or indel; missense: L757V, L1014P) | 7 ClinVar columns; one row per protein change |
 | 2 | gnomAD v4 | Population frequencies (~800,000 people) | 7371 variants, 2103 protein-changing; pLI 0.00, LOEUF 0.61, missense Z 2.5 | 3 frequency columns plus `gnomAD` call (1 = probably benign: 44 variants) |
 | 3 | cBioPortal | Tumour sequencing studies | 1959 calls from 224 studies, about 1288 patient-mutation pairs, 768 protein changes | 3 columns, 168 rows filled |
-| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | Not retrieved for this gene (login session expired) | Not included in the public CSVs (COSMIC licence) |
+| 4 | COSMIC v104 | Catalogue of somatic mutations in cancer | 3682 records from 3341 tumour samples, 467 protein changes; top missense: V362F (32), P553H (6), A928V (6); 106 table rows matched | Not included in the public CSVs (COSMIC licence) |
 | 5 | OncoKB | Expert cancer annotation | 7 curated alterations (6 gain-of-function); diagnostic level only (TYK2 fusions in BCR-ABL1-like B-ALL); no therapeutic level | Not included in the public CSVs (OncoKB terms) |
 | 6 | CIViC | Variant-drug evidence | 2 evidence items on 2 variants | `CIViC evidence` column |
 | 7 | LOVD (shared) | Diagnostic-lab variant database | 116 entries | 2 columns, 32 rows filled |
