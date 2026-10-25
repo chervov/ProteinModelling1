@@ -1,5 +1,54 @@
 # JAK3 Y581C: homologous positions and functional evidence
 
+**Aligned human positions: JAK3 Y581 ↔ JAK1 H647 ↔ JAK2 H606 ↔ TYK2 H667.**
+
+| JAK family member | Residue aligned to JAK3 Y581 | Cysteine substitution compared below |
+|---|---|---|
+| JAK3 | Y581 (tyrosine) | Y581C |
+| JAK1 | H647 (histidine) | H647C |
+| JAK2 | H606 (histidine) | H606C |
+| TYK2 | H667 (histidine) | H667C |
+
+These correspondences were obtained from canonical human sequences; full-length and JH2-only alignments agree. The comparator mutations are **H→C**, not Y→C, because the reference residues differ. The scores below describe substitutions, not an intrinsic score assigned to the position. The JAK1/JAK2/TYK2 cysteine substitutions are hypothetical comparisons here, not claims that they were observed in patients.
+
+## Predictor comparison at the aligned positions
+
+Retrieved 25 October 2026. AlphaMissense is from the canonical UniProt protein's all-amino-acid-substitution file at EMBL-EBI; SIFT and PolyPhen-2 are from the Ensembl-canonical transcript returned by VEP. No averaging across transcripts was performed.
+
+| Substitution | AlphaMissense score / model class | SIFT score / prediction | PolyPhen-2 score / prediction |
+|---|---|---|---|
+| **JAK3 Y581C** | **0.0993 — likely benign** | **0.00 — deleterious** | **0.820 — possibly damaging** |
+| **JAK1 H647C** | **0.6183 — likely pathogenic** | **0.01 — deleterious** | **0.999 — probably damaging** |
+| **JAK2 H606C** | **0.1584 — likely benign** | **0.00 — deleterious** | **0.786 — possibly damaging** |
+| **TYK2 H667C** | **0.4041 — ambiguous** | **0.01 — deleterious** | **0.999 — probably damaging** |
+
+Interpretation: AlphaMissense suggests greater intolerance of the cysteine replacement in JAK1 than in JAK2/JAK3, with TYK2 intermediate. SIFT flags all four, and PolyPhen-2 also predicts possible or probable damage. This disagreement is part of the result; it is not resolved by majority vote. **None of these scores determines GOF versus LOF, drug sensitivity, or a clinical diagnosis.** AlphaMissense's likely-benign/likely-pathogenic labels here are model outputs, not clinical variant classifications.
+
+Score directions: higher AlphaMissense and PolyPhen-2 scores indicate greater predicted pathogenicity/damage; lower SIFT scores indicate greater predicted impact (≤0.05 is commonly called deleterious). AlphaMissense uses <0.34 for likely benign and >0.564 for likely pathogenic, with the intervening range ambiguous. See [EMBL-EBI AlphaMissense interpretation](https://www.ebi.ac.uk/training/online/courses/alphafold/classifying-the-effects-of-missense-variants-using-alphamissense/understanding-pathogenicity-scores-from-alphamissense/) and [Ensembl predictor documentation](https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html). Scores are not percentages of kinase activity.
+
+| Additional predictor | JAK3 Y581C | JAK1 H647C | JAK2 H606C | TYK2 H667C |
+|---|---|---|---|---|
+| REVEL | 0.369 | Not retrieved* | Not retrieved* | Not retrieved* |
+| CADD PHRED | 22.2 | Not retrieved* | Not retrieved* | Not retrieved* |
+| PROVEAN | -5.09 to -5.22 across returned entries | Not retrieved* | Not retrieved* | Not retrieved* |
+
+*The reference codon is CAC at all three histidine positions, and conversion to cysteine TGC requires a two-nucleotide change, CA→TG. JAK3 TAC→TGC requires only one. Standard [dbNSFP](https://www.dbnsfp.org/) lookup tables focus on nonsynonymous single-nucleotide variants, so their missing entries cannot be read as benign scores. No separate CADD/PROVEAN computation for the double substitutions was run; these tools' potential capabilities should not be confused with the coverage of the retrieved precomputed tables. The combined substitution must not be scored by adding or averaging its component SNV scores. The three shared predictors above do provide exact amino-acid-substitution scores for all four proteins.
+
+### Exact score provenance and identity checks
+
+| Gene | VEP query, coding HGVS | Ensembl-canonical transcript | Confirmed protein change |
+|---|---|---|---|
+| JAK3 | NM_000215.4:c.1742A>G | ENST00000458235 | ENSP00000391676.1:p.Tyr581Cys |
+| JAK1 | NM_002227.4:c.1939_1940delinsTG | ENST00000342505 | ENSP00000343204.4:p.His647Cys |
+| JAK2 | NM_004972.4:c.1816_1817delinsTG | ENST00000381652 | ENSP00000371067.4:p.His606Cys |
+| TYK2 | NM_003331.5:c.1999_2000delinsTG | ENST00000525621 | ENSP00000431885.1:p.His667Cys |
+
+VEP normalizes the two-base CA→TG changes as `inv` in some transcript HGVS outputs; these encode the same queried double substitution. Returned codons and protein identities were checked. Other transcripts can have different residue numbering or predictor values and are retained in the raw JSON, not mixed into the table.
+
+AlphaMissense source files: [JAK3 P52333](https://alphafold.ebi.ac.uk/files/AF-P52333-F1-aa-substitutions.csv), [JAK1 P23458](https://alphafold.ebi.ac.uk/files/AF-P23458-F1-aa-substitutions.csv), [JAK2 O60674](https://alphafold.ebi.ac.uk/files/AF-O60674-F1-aa-substitutions.csv), [TYK2 P29597](https://alphafold.ebi.ac.uk/files/AF-P29597-F1-aa-substitutions.csv). These contain protein substitution scores, distinct from AlphaFold structure-confidence scores. JAK3's canonical AlphaMissense value 0.0993 is one of the values previously returned through dbNSFP; its earlier multi-transcript range is retained later for provenance.
+
+The accompanying [JAK-family-cysteine-predictor-results.json](JAK-family-cysteine-predictor-results.json) preserves full VEP responses and query URLs, exact selected scores, and all 19 AlphaMissense substitutions at each of the four aligned positions. Additional JAK3 metrics come from the [exact MyVariant.info allele record](https://myvariant.info/v1/variant/chr19:g.17947982T%3EC), with raw provenance preserved in the original database-results file.
+
 Research date: 25 October 2026. Evidence review, not a clinical classification.
 
 **Main finding: human JAK3 Y581 aligns to JAK1 H647, JAK2 H606 and TYK2 H667. JAK2 H606Q provides a relevant structural-modelling precedent, and JAK1 H647Q has a COSMIC observation. Neither establishes gain or loss of function for JAK3 Y581C.**
