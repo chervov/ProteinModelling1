@@ -226,5 +226,103 @@ measurements that are 75% the same.
 
 ---
 
+---
+
+## 8. Published context: are the ΔΔG artefacts known?
+
+*Added 25 October 2026. A new measurement on the same data (§8.1) prompted a literature check:
+is the magnitude behaviour of these ΔΔG values a known problem? It is — every oddity here is
+documented. None of it rescues the difference feature.*
+
+### 8.1 A new measurement: the magnitude is dominated by the destination residue
+
+Pooling all 22,536 TYK2 substitutions by the residue they mutate **to** (so position and native
+residue are averaged out), the mean ΔΔG_closed varies ~50-fold by destination residue alone:
+
+| mutated to | mean ΔΔG_closed | mean DMS abundance | n |
+|---|--:|--:|--:|
+| P | −177.6 | −0.15 | 1105 |
+| W | −172.4 | −0.14 | 1163 |
+| Y | −158.9 | −0.12 | 1152 |
+| F | −124.4 | −0.12 | 1140 |
+| … | … | … | … |
+| C | −8.9 | −0.10 | 1155 |
+| G | −3.8 | −0.11 | 1096 |
+| S | −3.7 | −0.10 | 1110 |
+| A | −3.3 | −0.10 | 1104 |
+
+Mean ΔΔG_closed per destination residue against residue volume: **Pearson r = −0.62** over all 20
+types, **−0.84 excluding proline** (proline is small but scores worst — a backbone effect rather
+than a bulk one). Measured abundance, by contrast, barely moves across destination residues
+(−0.10 to −0.15). The cells say the destination residue alone matters little; ΔΔG says it dominates.
+
+Independent correlations on the same join (n = 22,536), consistent with the AUCs in §5:
+ΔΔG_closed vs signalling Spearman **+0.23**, vs abundance **+0.26**, vs AlphaMissense Pearson
+**−0.22** (negative = destabilising, so the sign is as expected); ΔΔG_open − ΔΔG_closed vs
+signalling **+0.006**, vs abundance **−0.010**, vs AlphaMissense **+0.004**.
+
+### 8.2 What the literature says
+
+**Units.** Rosetta's Cartesian ΔΔG output is in Rosetta energy units; the documentation specifies
+a **scaling factor of 2.94** to convert to kcal/mol (Park et al., supporting information). This
+explains part of the inflation, not values near −3,000.
+[cartesian_ddG docs](https://docs.rosettacommons.org/docs/latest/cartesian-ddG)
+
+**Bulky mutations and side-chain-only repacking — the direct match for §8.1.** The Flex ddG paper
+states that "mutations to larger side chains might require some degree of backbone rearrangement to
+accommodate the change", which a repack-only protocol does not provide. `ddg_monomer` mitigates
+this by **down-weighting the repulsive van der Waals term** across its minimisation rounds (10%,
+then 33%, then full strength); a protocol without that ramp retains the clash energy.
+`cartesian_ddG` was designed partly for this reason — it "allows small local backbone movement" and
+exposes `-bbnbr` to flex residues i−1, i, i+1. The docs also recommend `-fa_max_dis 9.0`
+(default 6) for stability prediction.
+[Flex ddG](https://www.biorxiv.org/content/10.1101/221689.full.pdf) ·
+[ddg_monomer docs](https://docs.rosettacommons.org/docs/latest/application_documentation/analysis/ddg-monomer)
+
+**Extreme values usually trace to the input structure.** A RosettaCommons thread describes exactly
+this symptom — particular residues giving extreme values across all mutations — and attributes it
+to an input that was not pre-optimised: "If you don't, then you'll see variations in your results
+where mutations get anomalously high/low values." The ProQ3 authors met the same problem and
+resolved it with constrained minimisation (`-ddg:min_cst`).
+[forum thread](https://forum.rosettacommons.org/node/5031) · [ProQ3](https://arxiv.org/pdf/1602.05832)
+
+**A protocol choice worth revisiting.** The Cartesian ΔΔG docs state the input should be relaxed
+with **unrestrained** backbone and side chains, because "unrestrained relax has been found to
+produce fewer errors in classification" (citing Frenz et al.). Our run used FastRelax with
+coordinate constraints — the opposite choice — which is a plausible route by which clashes survive
+into the ΔΔG.
+
+**The abundance/function inversion is anomalous.** Gerasimavicius, Livesey & Marsh
+(*Protein Science* 2023) benchmarked nine stability tools against 49 deep mutational scans: FoldX
+and Rosetta correlated best among stability methods, and correlations were **highest for
+abundance-based readouts**, as theory predicts. §5 found the reverse here (abundance 0.704 <
+signalling 0.733). Combined with §8.1, the most economical explanation is that the clash term
+corrupts the stability axis specifically.
+[PMC10273344](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10273344/)
+
+**General predictor biases.** Most ΔΔG predictors violate anti-symmetry, ΔΔG(A→B) = −ΔΔG(B→A),
+because training sets are dominated by destabilising variants (Pucci et al. 2018; Usmanova et al.
+2018; review: Montanucci et al. 2019). The validation ceiling is itself limited: the Tsuboyama
+mega-scale dataset correlates 0.75–0.96 with classical measurements and its assay saturates near
+5 kcal/mol. The Rosetta docs now note that **ThermoMPNN "may perform better than cartesian ddG in
+some situations"**.
+[Montanucci et al.](https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-019-2923-1.pdf) ·
+[mega-scale benchmark](https://pmc.ncbi.nlm.nih.gov/articles/PMC13228446/)
+
+### 8.3 What this changes, and what it does not
+
+**Could change:** the *absolute* ΔΔG numbers. A Cartesian protocol with unrestrained pre-relax,
+backbone-neighbour flexibility and the 2.94 conversion would compress the −3,000 tail, likely move
+the abundance AUC toward the published pattern, and make the values physically quotable. §4 already
+shows the outliers carry ordering information, so a rank transform remains the right treatment
+either way.
+
+**Does not change:** the finding of this document. The difference feature fails because
+ΔΔG_closed and ΔΔG_open correlate at **0.86** (§3); a better protocol improves both terms together
+and leaves the difference just as uninformative. No reported artefact acts on one state and not the
+other. AUC 0.499 is arithmetic, not a protocol bug.
+
+---
+
 *Data: `data/ddg/ddg_TYK2_all.json`, `data/ddg/ddg_JAK1_all.json` (44,462 variants, both states).
 Run-book: `data/ddg/RUNBOOK.md`. Context: `mutation_analysis.md` §56–60.*
