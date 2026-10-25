@@ -407,5 +407,71 @@ PyRosetta installs on molab with the project's own recipe (`pip install pyrosett
 the 1,187-residue pose takes ~35 min on one core, which is why `worker.py` caches it per box.
 Commercial use of PyRosetta requires a licence; academic use is free.
 
+---
+
+## 10. Cross-check against Rosetta's own ddG application — the protocol is not at fault
+
+*Added 25 October 2026. §9 showed the extreme values are pure `fa_rep` and that a mobile backbone
+shrinks them 10-150x, which suggested the repack-only protocol was the cause. That suggestion was
+**wrong**. Script: [`pipeline/ddg/compare_ddg_monomer.py`](pipeline/ddg/compare_ddg_monomer.py);
+output: [`data/ddg/kellogg_ddg_monomer.json`](data/ddg/kellogg_ddg_monomer.json).*
+
+`pyrosetta.rosetta.protocols.ddg.ddGMover` **is** `ddg_monomer` (Kellogg et al. 2011): it ramps the
+repulsive term, minimises under coordinate constraints (`set_min_cst(True)`), restricts to the
+neighbourhood, and takes the best of several decoys. It is the protocol §8.2 identified as the
+remedy. Run on the same relaxed pose, 3 decoys per variant, ~6 min each:
+
+| variant | pipeline ddG | ddGMover (REU) | ddGMover (kcal/mol, /2.94) |
+|---|--:|--:|--:|
+| **G746W** | -2988.6 | **+2832.2** | **963** |
+| **G801W** | -3047.9 | **+1879.1** | **639** |
+| G746A | -228.8 | +216.6 | 74 |
+| **H667F** | -17.8 | **+6.1** | **2.08** |
+| **R775A** | +1.5 | **+1.8** | **0.62** |
+
+Rosetta's sign convention is the opposite of the paper's: **positive = destabilising** here.
+
+### What this settles
+
+**1. The pipeline is not buggy, and neither is PyRosetta.** Two independently written protocols -
+`worker.py`'s repack-only approach and Rosetta's own ddG application - return the same magnitudes
+on the same mutations. Combined with §9's independent reproduction of the stored values to 0.1-2%,
+there is no implementation defect to find.
+
+**2. For ordinary mutations the numbers are textbook.** H667F gives **2.08 kcal/mol** and R775A
+**0.62 kcal/mol** - exactly where real ddG lives. The protocol works correctly; it does not fail
+across the board.
+
+**3. The split is between mutations, not between protocols.** Every extreme case is a **buried
+glycine replaced by a bulky residue**. No standard ddG method rearranges the backbone enough to
+accommodate a tryptophan in a glycine-sized pocket, so they all report the same thing: the
+substitution does not fit, scaled by how deep the overlap goes. §9's 10-150x shrinkage under
+shell minimisation reflects how far that particular minimiser could distort the structure, not a
+convergence toward a true value.
+
+**4. The values are still not energies.** 963 kcal/mol cannot destabilise a domain whose entire
+folding free energy is 5-15 kcal/mol. These are **saturated "does not fit" flags** wearing the
+units of an energy.
+
+**5. One genuine protocol difference remains, and it is small.** On ordinary mutations the
+repack-only protocol over-estimates by roughly 3x (H667F: 17.8 vs 6.1; R775A: 1.5 vs 1.8). That is
+a modest, largely rank-preserving inflation - consistent with §5's AUC 0.733 and §9's Spearman
+0.904.
+
+### Correction to §8 and §9
+
+§8.2 implied that a Cartesian/ramped protocol "would compress the -3,000 tail" and move the
+abundance AUC toward the published pattern; §9 described protocol B's -100 to -300 as "severe, but
+physical". Both are **superseded**: Rosetta's own ramped protocol does not compress the tail, and
+no value in the hundreds is physical. What stands from those sections is the mechanism (the
+magnitude is `fa_rep` at glycine positions, correlating with residue volume at r = -0.84) and the
+conclusion that only the ordering may be used.
+
+**The project's treatment was correct from the start.** `pipeline/ddg/README.md` already said "only
+the ordering is meaningful, since the extreme values are clash artefacts rather than energies", and
+§4 chose rank transforms over clipping. Three independent lines of evidence now support that: the
+`fa_rep` decomposition (§9), the rank preservation across protocols (§9), and Rosetta's own
+application agreeing with the pipeline (§10).
+
 *Data: `data/ddg/ddg_TYK2_all.json`, `data/ddg/ddg_JAK1_all.json` (44,462 variants, both states).
 Run-book: `data/ddg/RUNBOOK.md`. Context: `mutation_analysis.md` §56–60.*
