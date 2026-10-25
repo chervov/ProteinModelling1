@@ -21,7 +21,7 @@ Alignment: pairwise global alignment of UniProt canonical sequences (Gotoh, BLOS
 
 **Location.** JH2 N-lobe, variable loop immediately after **Y570**, the inhibitory JAK2 autophosphorylation site (phospho-Y570 down-regulates JAK2 activity). The loop is not conserved: Y570 has no counterpart in JAK1 (T611), JAK3 (gap) or TYK2 (R633), and the JAK1 match for G571 (S612) is uncertain because of an insertion. Gly is kept in JAK3 (G546) and TYK2 (G634).
 
-**Literature.** **G571S** (same residue) is the best-studied variant here: proposed to disturb Y570 phosphorylation, but classical assays did not show STAT5 activation; found in 3 of ~20,000 suspected-MPN samples; in a family it was carried by relatives with normal blood counts and judged a likely non-functional polymorphism (OncoKB: likely neutral; ClinVar: conflicting; gnomAD 571 alleles). Nothing published on G571R.
+**Literature.** **G571S** (same residue) is the best-studied variant here: proposed to disturb Y570 phosphorylation, but classical assays did not show STAT5 activation; found in 3 of ~20,000 suspected-MPN samples; in a family it was carried by relatives with normal blood counts and judged a likely non-functional polymorphism (ClinVar: conflicting; gnomAD 571 alleles). Nothing published on G571R.
 
 ### Alignment and variants reported at the equivalent positions
 
