@@ -1,0 +1,50 @@
+[
+  {
+    "gene": "JAK1",
+    "mode": "domain",
+    "residue": "H",
+    "position": 647,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAG-DSTM",
+    "other_window": "RDISLAFFEAASMMRQVSHKHIVYLYGVCVRDVENIM"
+  },
+  {
+    "gene": "JAK1",
+    "mode": "full",
+    "residue": "H",
+    "position": 647,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAG-DSTM",
+    "other_window": "RDISLAFFEAASMMRQVSHKHIVYLYGVCVRDVENIM"
+  },
+  {
+    "gene": "JAK2",
+    "mode": "domain",
+    "residue": "H",
+    "position": 606,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAGD-STM",
+    "other_window": "RNYSESFFEAASMMSKLSHKHLVLNYGVCVCGDENIL"
+  },
+  {
+    "gene": "JAK2",
+    "mode": "full",
+    "residue": "H",
+    "position": 606,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAGD-STM",
+    "other_window": "RNYSESFFEAASMMSKLSHKHLVLNYGVCVCGDENIL"
+  },
+  {
+    "gene": "TYK2",
+    "mode": "domain",
+    "residue": "H",
+    "position": 667,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAG-DSTM",
+    "other_window": "HDIALAFYETASLMSQVSHTHLAFVHGVCVRGPENIM"
+  },
+  {
+    "gene": "TYK2",
+    "mode": "full",
+    "residue": "H",
+    "position": 667,
+    "jak3_window": "KNCMESFLEAASLMSQVSYRHLVLLHGVCMAG-DSTM",
+    "other_window": "HDIALAFYETASLMSQVSHTHLAFVHGVCVRGPENIM"
+  }
+]
