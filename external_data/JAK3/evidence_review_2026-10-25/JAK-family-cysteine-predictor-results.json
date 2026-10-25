@@ -1,0 +1,3563 @@
+{
+  "retrieved": "2026-10-25",
+  "scope": "Cysteine substitution at each aligned position; hypothetical comparator substitutions in JAK1/JAK2/TYK2, not assertions of observed variants",
+  "variants": [
+    {
+      "gene": "JAK1",
+      "uniprot": "P23458",
+      "variant": "H647C",
+      "query_hgvs": "NM_002227.4:c.1939_1940delinsTG",
+      "canonical_transcript": "ENST00000342505",
+      "hgvsp": "ENSP00000343204.4:p.His647Cys",
+      "codons": "CAc/TGc",
+      "sift": {
+        "score": 0.01,
+        "prediction": "deleterious"
+      },
+      "polyphen2": {
+        "score": 0.999,
+        "prediction": "probably_damaging"
+      },
+      "alphamissense": {
+        "protein_variant": "H647C",
+        "am_pathogenicity": 0.6183,
+        "am_class": "LPath",
+        "url": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-aa-substitutions.csv"
+      },
+      "all_alphamissense_substitutions_at_position": [
+        {
+          "protein_variant": "H647A",
+          "am_pathogenicity": 0.9752,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647C",
+          "am_pathogenicity": 0.6183,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647D",
+          "am_pathogenicity": 0.9554,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647E",
+          "am_pathogenicity": 0.9773,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647F",
+          "am_pathogenicity": 0.8776,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647G",
+          "am_pathogenicity": 0.9771,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647I",
+          "am_pathogenicity": 0.9904,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647K",
+          "am_pathogenicity": 0.9824,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647L",
+          "am_pathogenicity": 0.8926,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647M",
+          "am_pathogenicity": 0.9814,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647N",
+          "am_pathogenicity": 0.6754,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647P",
+          "am_pathogenicity": 0.8839,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647Q",
+          "am_pathogenicity": 0.9543,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647R",
+          "am_pathogenicity": 0.9424,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647S",
+          "am_pathogenicity": 0.8716,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647T",
+          "am_pathogenicity": 0.9803,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647V",
+          "am_pathogenicity": 0.9815,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647W",
+          "am_pathogenicity": 0.8487,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H647Y",
+          "am_pathogenicity": 0.5206,
+          "am_class": "Amb"
+        }
+      ],
+      "vep": {
+        "url": "https://rest.ensembl.org/vep/human/hgvs/NM_002227.4%3Ac.1939_1940delinsTG?content-type=application/json&canonical=1&hgvs=1",
+        "status": 200,
+        "data": [
+          {
+            "end": 64846697,
+            "assembly_name": "GRCh38",
+            "seq_region_name": "1",
+            "strand": -1,
+            "id": "NM_002227.4:c.1939_1940delinsTG",
+            "input": "NM_002227.4:c.1939_1940delinsTG",
+            "most_severe_consequence": "missense_variant",
+            "start": 64846696,
+            "transcript_consequences": [
+              {
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "protein_start": 647,
+                "canonical": 1,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000342505.5:c.1939_1940inv",
+                "hgvsp": "ENSP00000343204.4:p.His647Cys",
+                "codons": "CAc/TGc",
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000342505",
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2233,
+                "cdna_end": 2234
+              },
+              {
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "impact": "MODIFIER",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000465376.7:n.279_280inv",
+                "gene_symbol_source": "HGNC",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000465376",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 280,
+                "biotype": "protein_coding_CDS_not_defined",
+                "cdna_start": 279
+              },
+              {
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000471473",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 213,
+                "biotype": "retained_intron",
+                "cdna_end": 214,
+                "gene_symbol": "JAK1",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "strand": -1,
+                "hgvsc": "ENST00000471473.1:n.213_214inv",
+                "variant_allele": "TG",
+                "impact": "MODIFIER"
+              },
+              {
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00000671746.2:c.*1847_*1848inv",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2406,
+                "cdna_start": 2405,
+                "biotype": "nonsense_mediated_decay",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000671746",
+                "gene_symbol_source": "HGNC",
+                "hgnc_id": "HGNC:6190"
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_start": 1939,
+                "protein_end": 647,
+                "transcript_id": "ENST00000671929",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2337,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2336,
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000500485.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000671929.3:c.1939_1940inv"
+              },
+              {
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000671954.3:c.1939_1940inv",
+                "hgvsp": "ENSP00000500841.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "cdna_start": 2270,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_end": 2271,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000671954"
+              },
+              {
+                "cds_start": 1939,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "hgvsc": "ENST00000672179.3:c.1939_1940inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000500296.1:p.His647Cys",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2072,
+                "cdna_end": 2073,
+                "hgnc_id": "HGNC:6190",
+                "transcript_id": "ENST00000672179",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 647
+              },
+              {
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_start": 1939,
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_end": 2360,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2359,
+                "protein_end": 647,
+                "transcript_id": "ENST00000672247",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "hgvsp": "ENSP00000499884.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000672247.3:c.1939_1940inv",
+                "strand": -1,
+                "gene_symbol": "JAK1"
+              },
+              {
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_start": 1939,
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000499900.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000672434.3:c.1939_1940inv",
+                "protein_end": 647,
+                "transcript_id": "ENST00000672434",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2427,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2426
+              },
+              {
+                "hgvsp": "ENSP00000500714.2:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000672574.3:c.1939_1940inv",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2276,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2275,
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000672574",
+                "hgnc_id": "HGNC:6190",
+                "impact": "MODERATE",
+                "polyphen_score": 0.995,
+                "cds_start": 1939,
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647
+              },
+              {
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "cds_start": 1939,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "hgvsc": "ENST00000672751.3:c.1939_1940inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000500745.2:p.His647Cys",
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000672751",
+                "protein_end": 647,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2167,
+                "cdna_end": 2168
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "cds_start": 1939,
+                "transcript_id": "ENST00000673046",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 647,
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2276,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2275,
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000500878.1:p.His647Cys",
+                "hgvsc": "ENST00000673046.2:c.1939_1940inv",
+                "variant_allele": "TG"
+              },
+              {
+                "hgnc_id": "HGNC:6190",
+                "gene_symbol_source": "HGNC",
+                "transcript_id": "ENST00000673220",
+                "gene_id": "ENSG00000162434",
+                "cdna_start": 5186,
+                "biotype": "nonsense_mediated_decay",
+                "cdna_end": 5187,
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000673220.1:c.*4499_*4500inv",
+                "impact": "MODIFIER"
+              },
+              {
+                "cds_start": 1810,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_end": 1811,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 604,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000673246.3:c.1810_1811inv",
+                "hgvsp": "ENSP00000499942.2:p.His604Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2146,
+                "cdna_end": 2147,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 604,
+                "transcript_id": "ENST00000673246",
+                "gene_id": "ENSG00000162434"
+              },
+              {
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2143,
+                "cdna_end": 2144,
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000673254",
+                "protein_end": 603,
+                "hgvsc": "ENST00000673254.2:c.1807_1808inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000500476.1:p.His603Cys",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "protein_start": 603,
+                "gene_symbol_source": "HGNC",
+                "cds_start": 1807,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1808
+              },
+              {
+                "hgnc_id": "HGNC:6190",
+                "gene_symbol_source": "HGNC",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000673314",
+                "cdna_start": 2230,
+                "biotype": "retained_intron",
+                "cdna_end": 2231,
+                "gene_symbol": "JAK1",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "strand": -1,
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000673314.2:n.2230_2231inv",
+                "impact": "MODIFIER"
+              },
+              {
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000673502.2:n.2390_2391inv",
+                "impact": "MODIFIER",
+                "gene_symbol": "JAK1",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "strand": -1,
+                "biotype": "retained_intron",
+                "cdna_start": 2390,
+                "cdna_end": 2391,
+                "hgnc_id": "HGNC:6190",
+                "gene_symbol_source": "HGNC",
+                "transcript_id": "ENST00000673502",
+                "gene_id": "ENSG00000162434"
+              },
+              {
+                "hgvsc": "ENST00000699259.2:c.1936_1937inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000514240.1:p.His646Cys",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2356,
+                "cdna_end": 2357,
+                "hgnc_id": "HGNC:6190",
+                "transcript_id": "ENST00000699259",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 646,
+                "cds_start": 1936,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1937,
+                "sift_prediction": "deleterious",
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "protein_start": 646,
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1937,
+                "sift_prediction": "deleterious",
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "cds_start": 1936,
+                "gene_symbol_source": "HGNC",
+                "protein_start": 646,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000514241.1:p.His646Cys",
+                "hgvsc": "ENST00000699260.2:c.1936_1937inv",
+                "variant_allele": "TG",
+                "transcript_id": "ENST00000699260",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 646,
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2273,
+                "cdna_start": 2272,
+                "polyphen_prediction": "probably_damaging"
+              },
+              {
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000514242.1:p.His646Cys",
+                "hgvsc": "ENST00000699261.1:c.1936_1937inv",
+                "variant_allele": "TG",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2246,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2245,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000699261",
+                "protein_end": 646,
+                "hgnc_id": "HGNC:6190",
+                "polyphen_score": 0.997,
+                "impact": "MODERATE",
+                "cds_start": 1936,
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cds_end": 1937,
+                "sift_prediction": "deleterious",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "nonsense_mediated_decay",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 646
+              },
+              {
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000699262.2:c.1939_1940inv",
+                "hgvsp": "ENSP00000514243.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2156,
+                "cdna_end": 2157,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000699262",
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "sift_prediction": "deleterious",
+                "cds_end": 1940,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "cds_start": 1933,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "sift_prediction": "deleterious",
+                "cds_end": 1934,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 645,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000699310.2:c.1933_1934inv",
+                "hgvsp": "ENSP00000514289.1:p.His645Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2269,
+                "cdna_end": 2270,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 645,
+                "transcript_id": "ENST00000699310",
+                "gene_id": "ENSG00000162434"
+              },
+              {
+                "hgvsc": "ENST00000699311.1:c.*599_*600inv",
+                "variant_allele": "TG",
+                "impact": "MODIFIER",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "biotype": "nonsense_mediated_decay",
+                "cdna_start": 2243,
+                "cdna_end": 2244,
+                "hgnc_id": "HGNC:6190",
+                "transcript_id": "ENST00000699311",
+                "gene_id": "ENSG00000162434",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "hgvsc": "ENST00000699312.2:c.1939_1940inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000514291.1:p.His647Cys",
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000699312",
+                "protein_end": 647,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2342,
+                "cdna_end": 2343,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "cds_start": 1939,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C"
+              },
+              {
+                "impact": "MODIFIER",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000699313.1:c.*599_*600inv",
+                "strand": -1,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_symbol": "JAK1",
+                "cdna_end": 2244,
+                "biotype": "nonsense_mediated_decay",
+                "cdna_start": 2243,
+                "gene_symbol_source": "HGNC",
+                "transcript_id": "ENST00000699313",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190"
+              },
+              {
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000563498.1:p.His603Cys",
+                "hgvsc": "ENST00000893439.2:c.1807_1808inv",
+                "variant_allele": "TG",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2164,
+                "cdna_start": 2163,
+                "polyphen_prediction": "probably_damaging",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000893439",
+                "protein_end": 603,
+                "hgnc_id": "HGNC:6190",
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "cds_start": 1807,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1808,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 603
+              },
+              {
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "cds_start": 1939,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "hgvsc": "ENST00000893440.2:c.1939_1940inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000563499.1:p.His647Cys",
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000893440",
+                "protein_end": 647,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2295,
+                "cdna_end": 2296
+              },
+              {
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000563500.1:p.His647Cys",
+                "hgvsc": "ENST00000893441.2:c.1939_1940inv",
+                "variant_allele": "TG",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2276,
+                "cdna_start": 2275,
+                "transcript_id": "ENST00000893441",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 647,
+                "hgnc_id": "HGNC:6190",
+                "impact": "MODERATE",
+                "cds_start": 1939,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1940,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647
+              },
+              {
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_start": 1939,
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000563501.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000893442.2:c.1939_1940inv",
+                "protein_end": 647,
+                "transcript_id": "ENST00000893442",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2325,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2324
+              },
+              {
+                "cdna_start": 2257,
+                "cdna_end": 2258,
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000893443",
+                "protein_end": 641,
+                "hgvsc": "ENST00000893443.2:c.1921_1922inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000563502.1:p.His641Cys",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "protein_start": 641,
+                "gene_symbol_source": "HGNC",
+                "cds_start": 1921,
+                "impact": "MODERATE",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_end": 1922,
+                "sift_prediction": "deleterious"
+              },
+              {
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 603,
+                "gene_symbol_source": "HGNC",
+                "cds_start": 1807,
+                "impact": "MODERATE",
+                "cds_end": 1808,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_start": 2143,
+                "cdna_end": 2144,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 603,
+                "transcript_id": "ENST00000893444",
+                "gene_id": "ENSG00000162434",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000893444.2:c.1807_1808inv",
+                "hgvsp": "ENSP00000563503.1:p.His603Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1
+              },
+              {
+                "cds_start": 1936,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1937,
+                "biotype": "protein_coding",
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "protein_start": 646,
+                "gene_symbol_source": "HGNC",
+                "hgvsc": "ENST00000893445.2:c.1936_1937inv",
+                "variant_allele": "TG",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000563504.1:p.His646Cys",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2321,
+                "cdna_end": 2322,
+                "hgnc_id": "HGNC:6190",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000893445",
+                "protein_end": 646
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "protein_start": 602,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "sift_prediction": "deleterious",
+                "cds_end": 1805,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "cds_start": 1804,
+                "protein_end": 602,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000930718",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2141,
+                "cdna_start": 2140,
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000600777.1:p.His602Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000930718.2:c.1804_1805inv"
+              },
+              {
+                "cds_end": 1895,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "cds_start": 1894,
+                "gene_symbol_source": "HGNC",
+                "protein_start": 632,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000600780.1:p.His632Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000930721.2:c.1894_1895inv",
+                "protein_end": 632,
+                "transcript_id": "ENST00000930721",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2231,
+                "cdna_start": 2230
+              },
+              {
+                "protein_start": 646,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "sift_prediction": "deleterious",
+                "cds_end": 1937,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_start": 1936,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 646,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000970943",
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2164,
+                "cdna_end": 2165,
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000970943.2:c.1936_1937inv",
+                "hgvsp": "ENSP00000641002.1:p.His646Cys",
+                "codons": "CAc/TGc"
+              },
+              {
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000970944",
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2398,
+                "cdna_end": 2399,
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000970944.2:c.1939_1940inv",
+                "hgvsp": "ENSP00000641003.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999
+              },
+              {
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000641004.1:p.His641Cys",
+                "hgvsc": "ENST00000970945.2:c.1921_1922inv",
+                "variant_allele": "TG",
+                "transcript_id": "ENST00000970945",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 641,
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2342,
+                "cdna_start": 2341,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1922,
+                "impact": "MODERATE",
+                "cds_start": 1921,
+                "gene_symbol_source": "HGNC",
+                "protein_start": 641,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding"
+              },
+              {
+                "transcript_id": "ENST00000970946",
+                "gene_id": "ENSG00000162434",
+                "protein_end": 647,
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2301,
+                "cdna_start": 2300,
+                "polyphen_prediction": "probably_damaging",
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000641005.1:p.His647Cys",
+                "hgvsc": "ENST00000970946.2:c.1939_1940inv",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "sift_score": 0.01,
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_prediction": "deleterious",
+                "cds_end": 1940,
+                "polyphen_score": 0.999,
+                "impact": "MODERATE",
+                "cds_start": 1939
+              },
+              {
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "sift_prediction": "deleterious",
+                "cds_end": 1940,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00000970947.2:c.1939_1940inv",
+                "hgvsp": "ENSP00000641006.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2069,
+                "cdna_end": 2070,
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00000970947"
+              },
+              {
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00001009382.1:c.*1611_*1612inv",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "cdna_end": 2041,
+                "cdna_start": 2040,
+                "biotype": "nonsense_mediated_decay",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00001009382",
+                "gene_symbol_source": "HGNC",
+                "hgnc_id": "HGNC:6190"
+              },
+              {
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cds_start": 1939,
+                "impact": "MODERATE",
+                "protein_start": 647,
+                "gene_symbol_source": "HGNC",
+                "biotype": "nonsense_mediated_decay",
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "gene_symbol": "JAK1",
+                "strand": -1,
+                "variant_allele": "TG",
+                "hgvsc": "ENST00001009387.1:c.1939_1940inv",
+                "hgvsp": "ENSP00000679204.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "hgnc_id": "HGNC:6190",
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00001009387",
+                "cdna_start": 2214,
+                "cdna_end": 2215
+              },
+              {
+                "strand": -1,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_symbol": "JAK1",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00001009388.1:c.*1437_*1438inv",
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00001009388",
+                "gene_symbol_source": "HGNC",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2065,
+                "biotype": "nonsense_mediated_decay",
+                "cdna_start": 2064
+              },
+              {
+                "cdna_end": 2353,
+                "cdna_start": 2352,
+                "biotype": "nonsense_mediated_decay",
+                "gene_symbol_source": "HGNC",
+                "transcript_id": "ENST00001084664",
+                "gene_id": "ENSG00000162434",
+                "hgnc_id": "HGNC:6190",
+                "impact": "MODIFIER",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00001084664.1:c.*1537_*1538inv",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "gene_symbol": "JAK1"
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "protein_start": 647,
+                "amino_acids": "H/C",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "cds_end": 1940,
+                "sift_prediction": "deleterious",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "impact": "MODERATE",
+                "polyphen_score": 0.999,
+                "cds_start": 1939,
+                "protein_end": 647,
+                "gene_id": "ENSG00000162434",
+                "transcript_id": "ENST00001145893",
+                "hgnc_id": "HGNC:6190",
+                "cdna_end": 2276,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_start": 2275,
+                "strand": -1,
+                "gene_symbol": "JAK1",
+                "hgvsp": "ENSP00000808050.1:p.His647Cys",
+                "codons": "CAc/TGc",
+                "variant_allele": "TG",
+                "hgvsc": "ENST00001145893.1:c.1939_1940inv"
+              }
+            ],
+            "allele_string": "CA/TG"
+          }
+        ]
+      }
+    },
+    {
+      "gene": "JAK2",
+      "uniprot": "O60674",
+      "variant": "H606C",
+      "query_hgvs": "NM_004972.4:c.1816_1817delinsTG",
+      "canonical_transcript": "ENST00000381652",
+      "hgvsp": "ENSP00000371067.4:p.His606Cys",
+      "codons": "CAc/TGc",
+      "sift": {
+        "score": 0,
+        "prediction": "deleterious_low_confidence"
+      },
+      "polyphen2": {
+        "score": 0.786,
+        "prediction": "possibly_damaging"
+      },
+      "alphamissense": {
+        "protein_variant": "H606C",
+        "am_pathogenicity": 0.1584,
+        "am_class": "LBen",
+        "url": "https://alphafold.ebi.ac.uk/files/AF-O60674-F1-aa-substitutions.csv"
+      },
+      "all_alphamissense_substitutions_at_position": [
+        {
+          "protein_variant": "H606A",
+          "am_pathogenicity": 0.623,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606C",
+          "am_pathogenicity": 0.1584,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "H606D",
+          "am_pathogenicity": 0.4612,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606E",
+          "am_pathogenicity": 0.639,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606F",
+          "am_pathogenicity": 0.3038,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "H606G",
+          "am_pathogenicity": 0.6043,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606I",
+          "am_pathogenicity": 0.7209,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606K",
+          "am_pathogenicity": 0.7046,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606L",
+          "am_pathogenicity": 0.3516,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606M",
+          "am_pathogenicity": 0.7491,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606N",
+          "am_pathogenicity": 0.1923,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "H606P",
+          "am_pathogenicity": 0.4652,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606Q",
+          "am_pathogenicity": 0.4945,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606R",
+          "am_pathogenicity": 0.4301,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606S",
+          "am_pathogenicity": 0.3528,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606T",
+          "am_pathogenicity": 0.6093,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606V",
+          "am_pathogenicity": 0.6342,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H606W",
+          "am_pathogenicity": 0.3853,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H606Y",
+          "am_pathogenicity": 0.0761,
+          "am_class": "LBen"
+        }
+      ],
+      "vep": {
+        "url": "https://rest.ensembl.org/vep/human/hgvs/NM_004972.4%3Ac.1816_1817delinsTG?content-type=application/json&canonical=1&hgvs=1",
+        "status": 200,
+        "data": [
+          {
+            "end": 5073738,
+            "strand": 1,
+            "start": 5073737,
+            "assembly_name": "GRCh38",
+            "most_severe_consequence": "missense_variant",
+            "id": "NM_004972.4:c.1816_1817delinsTG",
+            "input": "NM_004972.4:c.1816_1817delinsTG",
+            "seq_region_name": "9",
+            "allele_string": "CA/TG",
+            "transcript_consequences": [
+              {
+                "impact": "MODERATE",
+                "polyphen_prediction": "possibly_damaging",
+                "strand": 1,
+                "gene_symbol": "JAK2",
+                "protein_start": 606,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "cdna_end": 2284,
+                "hgnc_id": "HGNC:6192",
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2283,
+                "codons": "CAc/TGc",
+                "canonical": 1,
+                "hgvsp": "ENSP00000371067.4:p.His606Cys",
+                "protein_end": 606,
+                "cds_end": 1817,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000381652",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsc": "ENST00000381652.4:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "gene_id": "ENSG00000096968"
+              },
+              {
+                "gene_id": "ENSG00000096968",
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00000636127.1:c.1816_1817inv",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000636127",
+                "cds_end": 1817,
+                "protein_end": 606,
+                "hgvsp": "ENSP00000489812.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "cdna_start": 2300,
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "flags": [
+                  "cds_end_NF"
+                ],
+                "cdna_end": 2301,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "gene_symbol": "JAK2",
+                "polyphen_prediction": "possibly_damaging",
+                "strand": 1,
+                "impact": "MODERATE"
+              },
+              {
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "gene_symbol": "JAK2",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "impact": "MODERATE",
+                "cdna_start": 2569,
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_end": 2570,
+                "cds_end": 1817,
+                "protein_end": 606,
+                "hgvsp": "ENSP00000540379.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "gene_id": "ENSG00000096968",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00000870320.2:c.1816_1817inv",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000870320"
+              },
+              {
+                "cds_end": 1817,
+                "protein_end": 606,
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000540380.1:p.His606Cys",
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00000870321.2:c.1816_1817inv",
+                "gene_id": "ENSG00000096968",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000870321",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "impact": "MODERATE",
+                "gene_symbol": "JAK2",
+                "hgnc_id": "HGNC:6192",
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2555,
+                "cdna_end": 2556
+              },
+              {
+                "protein_end": 606,
+                "cds_end": 1817,
+                "hgvsp": "ENSP00000540381.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000870322.2:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000870322",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "protein_start": 606,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "gene_symbol": "JAK2",
+                "impact": "MODERATE",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "hgnc_id": "HGNC:6192",
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2542,
+                "cdna_end": 2543
+              },
+              {
+                "hgvsp": "ENSP00000540382.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "protein_end": 606,
+                "cds_end": 1817,
+                "transcript_id": "ENST00000870323",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000870323.2:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "gene_symbol": "JAK2",
+                "impact": "MODERATE",
+                "polyphen_prediction": "possibly_damaging",
+                "strand": 1,
+                "protein_start": 606,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "cdna_end": 2069,
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2068
+              },
+              {
+                "gene_id": "ENSG00000096968",
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00000870324.2:c.1816_1817inv",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "transcript_id": "ENST00000870324",
+                "biotype": "protein_coding",
+                "cds_end": 1817,
+                "protein_end": 606,
+                "hgvsp": "ENSP00000540383.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2648,
+                "hgnc_id": "HGNC:6192",
+                "cdna_end": 2649,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "gene_symbol": "JAK2",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "impact": "MODERATE"
+              },
+              {
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000870325",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000870325.2:c.1816_1817inv",
+                "hgvsp": "ENSP00000540384.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "protein_end": 606,
+                "cds_end": 1817,
+                "cdna_end": 2626,
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2625,
+                "gene_symbol": "JAK2",
+                "impact": "MODERATE",
+                "strand": 1,
+                "protein_start": 606,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "protein_end": 606,
+                "cds_end": 1817,
+                "codons": "CAc/TGc",
+                "hgvsp": "ENSP00000633996.1:p.His606Cys",
+                "hgvsc": "ENST00000963937.2:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "gene_id": "ENSG00000096968",
+                "transcript_id": "ENST00000963937",
+                "biotype": "protein_coding",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "protein_start": 606,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "impact": "MODERATE",
+                "polyphen_prediction": "possibly_damaging",
+                "strand": 1,
+                "gene_symbol": "JAK2",
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2472,
+                "cdna_end": 2473
+              },
+              {
+                "cdna_end": 2162,
+                "cdna_start": 2161,
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "gene_symbol": "JAK2",
+                "impact": "MODERATE",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "protein_start": 606,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000963938",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "amino_acids": "H/C",
+                "cds_start": 1816,
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000963938.2:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "hgvsp": "ENSP00000633997.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "protein_end": 606,
+                "cds_end": 1817
+              },
+              {
+                "hgvsp": "ENSP00000633998.1:p.His597Cys",
+                "codons": "CAc/TGc",
+                "cds_end": 1790,
+                "protein_end": 597,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "transcript_id": "ENST00000963939",
+                "biotype": "protein_coding",
+                "gene_id": "ENSG00000096968",
+                "amino_acids": "H/C",
+                "cds_start": 1789,
+                "hgvsc": "ENST00000963939.2:c.1789_1790inv",
+                "gene_symbol": "JAK2",
+                "strand": 1,
+                "impact": "MODERATE",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "protein_start": 597,
+                "cdna_end": 2599,
+                "hgnc_id": "HGNC:6192",
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2598
+              },
+              {
+                "cdna_end": 2719,
+                "sift_prediction": "deleterious_low_confidence",
+                "cdna_start": 2718,
+                "hgnc_id": "HGNC:6192",
+                "gene_symbol": "JAK2",
+                "polyphen_prediction": "possibly_damaging",
+                "strand": 1,
+                "impact": "MODERATE",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000963940",
+                "gene_id": "ENSG00000096968",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00000963940.2:c.1816_1817inv",
+                "hgvsp": "ENSP00000633999.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "cds_end": 1817,
+                "protein_end": 606
+              },
+              {
+                "protein_end": 606,
+                "cds_end": 1817,
+                "hgvsp": "ENSP00000634000.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000963941.2:c.1816_1817inv",
+                "polyphen_score": 0.786,
+                "transcript_id": "ENST00000963941",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0,
+                "protein_start": 606,
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "gene_symbol": "JAK2",
+                "impact": "MODERATE",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 1958,
+                "cdna_end": 1959
+              },
+              {
+                "transcript_id": "ENST00000990662",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "intron_variant"
+                ],
+                "hgnc_id": "HGNC:6089",
+                "gene_id": "ENSG00000120210",
+                "hgvsc": "ENST00000990662.1:c.*10+59687_*10+59688inv",
+                "gene_symbol": "INSL6",
+                "impact": "MODIFIER",
+                "strand": -1,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "JAK2",
+                "impact": "MODIFIER",
+                "strand": 1,
+                "cdna_start": 2596,
+                "hgnc_id": "HGNC:6192",
+                "gene_id": "ENSG00000096968",
+                "hgvsc": "ENST00000990745.1:c.*851_*852inv",
+                "transcript_id": "ENST00000990745",
+                "biotype": "nonsense_mediated_decay",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_end": 2597
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "strand": 1,
+                "impact": "MODIFIER",
+                "gene_symbol": "JAK2",
+                "hgvsc": "ENST00001048954.1:c.*851_*852inv",
+                "gene_id": "ENSG00000096968",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2564,
+                "cdna_end": 2565,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00001048954"
+              },
+              {
+                "impact": "MODIFIER",
+                "strand": -1,
+                "gene_symbol": "INSL6",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00001107592",
+                "consequence_terms": [
+                  "intron_variant"
+                ],
+                "hgvsc": "ENST00001107592.1:c.377-81305_377-81304inv",
+                "hgnc_id": "HGNC:6089",
+                "gene_id": "ENSG00000120210"
+              },
+              {
+                "impact": "MODIFIER",
+                "strand": 1,
+                "gene_symbol": "JAK2",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "cdna_end": 2202,
+                "transcript_id": "ENST00001115377",
+                "biotype": "nonsense_mediated_decay",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "hgvsc": "ENST00001115377.1:c.*851_*852inv",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2201,
+                "gene_id": "ENSG00000096968"
+              },
+              {
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "protein_start": 606,
+                "gene_symbol": "JAK2",
+                "strand": 1,
+                "polyphen_prediction": "possibly_damaging",
+                "impact": "MODERATE",
+                "sift_prediction": "deleterious_low_confidence",
+                "hgnc_id": "HGNC:6192",
+                "cdna_start": 2625,
+                "cdna_end": 2626,
+                "cds_end": 1817,
+                "protein_end": 606,
+                "hgvsp": "ENSP00000811258.1:p.His606Cys",
+                "codons": "CAc/TGc",
+                "gene_id": "ENSG00000096968",
+                "cds_start": 1816,
+                "amino_acids": "H/C",
+                "polyphen_score": 0.786,
+                "hgvsc": "ENST00001133712.1:c.1816_1817inv",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00001133712"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "gene": "JAK3",
+      "uniprot": "P52333",
+      "variant": "Y581C",
+      "query_hgvs": "NM_000215.4:c.1742A>G",
+      "canonical_transcript": "ENST00000458235",
+      "hgvsp": "ENSP00000391676.1:p.Tyr581Cys",
+      "codons": "tAc/tGc",
+      "sift": {
+        "score": 0,
+        "prediction": "deleterious"
+      },
+      "polyphen2": {
+        "score": 0.82,
+        "prediction": "possibly_damaging"
+      },
+      "alphamissense": {
+        "protein_variant": "Y581C",
+        "am_pathogenicity": 0.0993,
+        "am_class": "LBen",
+        "url": "https://alphafold.ebi.ac.uk/files/AF-P52333-F1-aa-substitutions.csv"
+      },
+      "all_alphamissense_substitutions_at_position": [
+        {
+          "protein_variant": "Y581A",
+          "am_pathogenicity": 0.4986,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "Y581C",
+          "am_pathogenicity": 0.0993,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581D",
+          "am_pathogenicity": 0.3334,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581E",
+          "am_pathogenicity": 0.682,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581F",
+          "am_pathogenicity": 0.1001,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581G",
+          "am_pathogenicity": 0.4766,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "Y581H",
+          "am_pathogenicity": 0.0849,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581I",
+          "am_pathogenicity": 0.735,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581K",
+          "am_pathogenicity": 0.8306,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581L",
+          "am_pathogenicity": 0.5913,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581M",
+          "am_pathogenicity": 0.7636,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581N",
+          "am_pathogenicity": 0.176,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581P",
+          "am_pathogenicity": 0.7635,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581Q",
+          "am_pathogenicity": 0.5636,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "Y581R",
+          "am_pathogenicity": 0.6299,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581S",
+          "am_pathogenicity": 0.1616,
+          "am_class": "LBen"
+        },
+        {
+          "protein_variant": "Y581T",
+          "am_pathogenicity": 0.523,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "Y581V",
+          "am_pathogenicity": 0.6032,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "Y581W",
+          "am_pathogenicity": 0.2818,
+          "am_class": "LBen"
+        }
+      ],
+      "vep": {
+        "url": "https://rest.ensembl.org/vep/human/hgvs/NM_000215.4%3Ac.1742A%3EG?content-type=application/json&canonical=1&hgvs=1",
+        "status": 200,
+        "data": [
+          {
+            "strand": -1,
+            "id": "NM_000215.4:c.1742A>G",
+            "most_severe_consequence": "missense_variant",
+            "end": 17837173,
+            "start": 17837173,
+            "input": "NM_000215.4:c.1742A>G",
+            "assembly_name": "GRCh38",
+            "transcript_consequences": [
+              {
+                "sift_score": 0,
+                "gene_id": "ENSG00000105639",
+                "transcript_id": "ENST00000458235",
+                "codons": "tAc/tGc",
+                "biotype": "protein_coding",
+                "variant_allele": "G",
+                "strand": -1,
+                "cds_end": 1742,
+                "amino_acids": "Y/C",
+                "hgnc_id": "HGNC:6193",
+                "cds_start": 1742,
+                "impact": "MODERATE",
+                "protein_start": 581,
+                "canonical": 1,
+                "gene_symbol": "JAK3",
+                "sift_prediction": "deleterious",
+                "hgvsp": "ENSP00000391676.1:p.Tyr581Cys",
+                "hgvsc": "ENST00000458235.7:c.1742A>G",
+                "gene_symbol_source": "HGNC",
+                "polyphen_prediction": "possibly_damaging",
+                "polyphen_score": 0.82,
+                "cdna_end": 1792,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_start": 1792,
+                "protein_end": 581
+              },
+              {
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_end": 1956,
+                "cdna_start": 1956,
+                "hgvsc": "ENST00000526008.6:c.*299A>G",
+                "gene_symbol": "JAK3",
+                "variant_allele": "G",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00000526008",
+                "gene_id": "ENSG00000105639",
+                "strand": -1,
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "cdna_end": 1832,
+                "cdna_start": 1832,
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "gene_id": "ENSG00000105639",
+                "transcript_id": "ENST00000527031",
+                "variant_allele": "G",
+                "gene_symbol": "JAK3",
+                "biotype": "retained_intron",
+                "hgvsc": "ENST00000527031.5:n.1832A>G"
+              },
+              {
+                "protein_start": 581,
+                "amino_acids": "Y/C",
+                "cds_start": 1742,
+                "impact": "MODERATE",
+                "hgnc_id": "HGNC:6193",
+                "cds_end": 1742,
+                "strand": -1,
+                "transcript_id": "ENST00000527670",
+                "codons": "tAc/tGc",
+                "gene_id": "ENSG00000105639",
+                "sift_score": 0,
+                "variant_allele": "G",
+                "biotype": "protein_coding",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_end": 1772,
+                "cdna_start": 1772,
+                "protein_end": 581,
+                "polyphen_prediction": "possibly_damaging",
+                "polyphen_score": 0.82,
+                "gene_symbol_source": "HGNC",
+                "hgvsp": "ENSP00000432511.1:p.Tyr581Cys",
+                "sift_prediction": "deleterious",
+                "hgvsc": "ENST00000527670.6:c.1742A>G",
+                "gene_symbol": "JAK3"
+              },
+              {
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "consequence_terms": [
+                  "downstream_gene_variant"
+                ],
+                "gene_symbol": "JAK3",
+                "variant_allele": "G",
+                "biotype": "retained_intron",
+                "gene_id": "ENSG00000105639",
+                "transcript_id": "ENST00000528705",
+                "strand": -1,
+                "distance": 2251,
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "strand": -1,
+                "cds_end": 1742,
+                "gene_id": "ENSG00000105639",
+                "sift_score": 0,
+                "transcript_id": "ENST00000534444",
+                "codons": "tAc/tGc",
+                "biotype": "protein_coding",
+                "variant_allele": "G",
+                "protein_start": 581,
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODERATE",
+                "amino_acids": "Y/C",
+                "cds_start": 1742,
+                "gene_symbol_source": "HGNC",
+                "polyphen_score": 0.92,
+                "polyphen_prediction": "probably_damaging",
+                "gene_symbol": "JAK3",
+                "hgvsp": "ENSP00000436421.1:p.Tyr581Cys",
+                "sift_prediction": "deleterious",
+                "hgvsc": "ENST00000534444.1:c.1742A>G",
+                "protein_end": 581,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_end": 1827,
+                "cdna_start": 1827
+              },
+              {
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "cdna_end": 919,
+                "cdna_start": 919,
+                "hgvsc": "ENST00000696967.1:n.919A>G",
+                "variant_allele": "G",
+                "biotype": "protein_coding_CDS_not_defined",
+                "gene_symbol": "JAK3",
+                "transcript_id": "ENST00000696967",
+                "gene_id": "ENSG00000105639",
+                "strand": -1,
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "consequence_terms": [
+                  "upstream_gene_variant"
+                ],
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "distance": 3657,
+                "gene_id": "ENSG00000105639",
+                "transcript_id": "ENST00000696969",
+                "gene_symbol": "JAK3",
+                "variant_allele": "G",
+                "biotype": "retained_intron"
+              },
+              {
+                "strand": -1,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "JAK3",
+                "variant_allele": "G",
+                "biotype": "retained_intron",
+                "hgvsc": "ENST00000696970.1:n.397A>G",
+                "gene_id": "ENSG00000105639",
+                "transcript_id": "ENST00000696970",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "cdna_end": 397,
+                "cdna_start": 397,
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER"
+              },
+              {
+                "transcript_id": "ENST00001115373",
+                "gene_id": "ENSG00000105639",
+                "variant_allele": "G",
+                "gene_symbol": "JAK3",
+                "biotype": "protein_coding",
+                "gene_symbol_source": "HGNC",
+                "distance": 1561,
+                "strand": -1,
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODIFIER",
+                "consequence_terms": [
+                  "downstream_gene_variant"
+                ]
+              },
+              {
+                "hgnc_id": "HGNC:6193",
+                "impact": "MODERATE",
+                "cds_start": 1742,
+                "amino_acids": "Y/C",
+                "protein_start": 581,
+                "biotype": "protein_coding",
+                "variant_allele": "G",
+                "codons": "tAc/tGc",
+                "transcript_id": "ENST00001135290",
+                "sift_score": 0,
+                "gene_id": "ENSG00000105639",
+                "cds_end": 1742,
+                "strand": -1,
+                "cdna_end": 1827,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "protein_end": 581,
+                "cdna_start": 1827,
+                "hgvsc": "ENST00001135290.1:c.1742A>G",
+                "sift_prediction": "deleterious",
+                "hgvsp": "ENSP00000812583.1:p.Tyr581Cys",
+                "gene_symbol": "JAK3",
+                "polyphen_score": 0.82,
+                "polyphen_prediction": "possibly_damaging",
+                "gene_symbol_source": "HGNC"
+              }
+            ],
+            "seq_region_name": "19",
+            "allele_string": "A/G"
+          }
+        ]
+      }
+    },
+    {
+      "gene": "TYK2",
+      "uniprot": "P29597",
+      "variant": "H667C",
+      "query_hgvs": "NM_003331.5:c.1999_2000delinsTG",
+      "canonical_transcript": "ENST00000525621",
+      "hgvsp": "ENSP00000431885.1:p.His667Cys",
+      "codons": "CAc/TGc",
+      "sift": {
+        "score": 0.01,
+        "prediction": "deleterious"
+      },
+      "polyphen2": {
+        "score": 0.999,
+        "prediction": "probably_damaging"
+      },
+      "alphamissense": {
+        "protein_variant": "H667C",
+        "am_pathogenicity": 0.4041,
+        "am_class": "Amb",
+        "url": "https://alphafold.ebi.ac.uk/files/AF-P29597-F1-aa-substitutions.csv"
+      },
+      "all_alphamissense_substitutions_at_position": [
+        {
+          "protein_variant": "H667A",
+          "am_pathogenicity": 0.893,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667C",
+          "am_pathogenicity": 0.4041,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H667D",
+          "am_pathogenicity": 0.7874,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667E",
+          "am_pathogenicity": 0.9171,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667F",
+          "am_pathogenicity": 0.7095,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667G",
+          "am_pathogenicity": 0.9009,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667I",
+          "am_pathogenicity": 0.9507,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667K",
+          "am_pathogenicity": 0.9499,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667L",
+          "am_pathogenicity": 0.6434,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667M",
+          "am_pathogenicity": 0.9478,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667N",
+          "am_pathogenicity": 0.3697,
+          "am_class": "Amb"
+        },
+        {
+          "protein_variant": "H667P",
+          "am_pathogenicity": 0.6805,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667Q",
+          "am_pathogenicity": 0.8539,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667R",
+          "am_pathogenicity": 0.7758,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667S",
+          "am_pathogenicity": 0.6793,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667T",
+          "am_pathogenicity": 0.9124,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667V",
+          "am_pathogenicity": 0.9126,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667W",
+          "am_pathogenicity": 0.7587,
+          "am_class": "LPath"
+        },
+        {
+          "protein_variant": "H667Y",
+          "am_pathogenicity": 0.2517,
+          "am_class": "LBen"
+        }
+      ],
+      "vep": {
+        "url": "https://rest.ensembl.org/vep/human/hgvs/NM_003331.5%3Ac.1999_2000delinsTG?content-type=application/json&canonical=1&hgvs=1",
+        "status": 200,
+        "data": [
+          {
+            "most_severe_consequence": "missense_variant",
+            "start": 10361558,
+            "id": "NM_003331.5:c.1999_2000delinsTG",
+            "transcript_consequences": [
+              {
+                "sift_prediction": "deleterious",
+                "protein_end": 482,
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00000524462",
+                "biotype": "protein_coding",
+                "variant_allele": "TG",
+                "cds_end": 1445,
+                "cdna_start": 1590,
+                "codons": "CAc/TGc",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "protein_start": 482,
+                "cds_start": 1444,
+                "hgnc_id": "HGNC:12440",
+                "hgvsc": "ENST00000524462.6:c.1444_1445inv",
+                "cdna_end": 1591,
+                "polyphen_prediction": "probably_damaging",
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "polyphen_score": 0.999,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsp": "ENSP00000433203.1:p.His482Cys",
+                "strand": -1
+              },
+              {
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 2237,
+                "strand": -1,
+                "hgnc_id": "HGNC:12440",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00000524470",
+                "impact": "MODIFIER",
+                "cdna_end": 2238,
+                "hgvsc": "ENST00000524470.2:c.*348_*349inv"
+              },
+              {
+                "consequence_terms": [
+                  "downstream_gene_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "hgnc_id": "HGNC:12440",
+                "flags": [
+                  "cds_start_NF",
+                  "cds_end_NF"
+                ],
+                "distance": 1021,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000525220",
+                "impact": "MODIFIER"
+              },
+              {
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00000525621",
+                "biotype": "protein_coding",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "cdna_start": 2377,
+                "codons": "CAc/TGc",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "canonical": 1,
+                "hgvsc": "ENST00000525621.6:c.1999_2000inv",
+                "cdna_end": 2378,
+                "polyphen_prediction": "probably_damaging",
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "hgvsp": "ENSP00000431885.1:p.His667Cys",
+                "strand": -1,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "polyphen_score": 0.999,
+                "consequence_terms": [
+                  "missense_variant"
+                ]
+              },
+              {
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "transcript_id": "ENST00000525976",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "biotype": "protein_coding",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "hgvsp": "ENSP00000434831.2:p.His667Cys",
+                "strand": -1,
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "polyphen_score": 0.997,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsc": "ENST00000525976.7:c.1999_2000inv",
+                "cdna_end": 2414,
+                "polyphen_prediction": "probably_damaging",
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999
+              },
+              {
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "biotype": "nonsense_mediated_decay",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00000527481",
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "polyphen_score": 0.647,
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "hgvsp": "ENSP00000466340.2:p.His667Cys",
+                "strand": -1,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "protein_start": 667,
+                "polyphen_prediction": "possibly_damaging",
+                "hgvsc": "ENST00000527481.3:c.1999_2000inv",
+                "cdna_end": 2414
+              },
+              {
+                "biotype": "retained_intron",
+                "transcript_id": "ENST00000529370",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00000529370.6:n.2330_2331inv",
+                "cdna_end": 2331,
+                "hgnc_id": "HGNC:12440",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "cdna_start": 2330,
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "transcript_id": "ENST00000529739",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00000529739.2:n.2413_2414inv",
+                "cdna_end": 2414,
+                "biotype": "retained_intron",
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "strand": -1,
+                "cdna_start": 2413,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "flags": [
+                  "cds_start_NF"
+                ],
+                "distance": 4945,
+                "biotype": "protein_coding",
+                "impact": "MODIFIER",
+                "transcript_id": "ENST00000530560",
+                "consequence_terms": [
+                  "upstream_gene_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "strand": -1
+              },
+              {
+                "cdna_start": 2436,
+                "strand": -1,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "transcript_id": "ENST00000530829",
+                "hgvsc": "ENST00000530829.2:c.*1550_*1551inv",
+                "impact": "MODIFIER",
+                "cdna_end": 2437,
+                "biotype": "nonsense_mediated_decay",
+                "hgnc_id": "HGNC:12440"
+              },
+              {
+                "biotype": "retained_intron",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00000531620.1:n.332_333inv",
+                "cdna_end": 333,
+                "transcript_id": "ENST00000531620",
+                "hgnc_id": "HGNC:12440",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "strand": -1,
+                "cdna_start": 332,
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397"
+              },
+              {
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "polyphen_score": 0.999,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsp": "ENSP00000436175.2:p.His667Cys",
+                "strand": -1,
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "cdna_end": 2324,
+                "hgvsc": "ENST00000531836.8:c.1999_2000inv",
+                "polyphen_prediction": "probably_damaging",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2323,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "transcript_id": "ENST00000531836",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "biotype": "protein_coding"
+              },
+              {
+                "sift_score": 0,
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "polyphen_score": 1,
+                "hgvsp": "ENSP00000432320.2:p.His667Cys",
+                "strand": -1,
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000533334.2:c.1999_2000inv",
+                "polyphen_prediction": "probably_damaging",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00000533334",
+                "biotype": "nonsense_mediated_decay"
+              },
+              {
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "cdna_start": 2413,
+                "hgnc_id": "HGNC:12440",
+                "biotype": "retained_intron",
+                "transcript_id": "ENST00000534228",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00000534228.2:n.2413_2414inv",
+                "cdna_end": 2414
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "strand": -1,
+                "consequence_terms": [
+                  "upstream_gene_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "biotype": "protein_coding_CDS_not_defined",
+                "impact": "MODIFIER",
+                "transcript_id": "ENST00000699354",
+                "hgnc_id": "HGNC:12440",
+                "distance": 2948
+              },
+              {
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "cdna_start": 2278,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00000699355",
+                "hgvsc": "ENST00000699355.1:c.*59_*60inv",
+                "impact": "MODIFIER",
+                "cdna_end": 2279,
+                "hgnc_id": "HGNC:12440"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "transcript_id": "ENST00000699356",
+                "hgvsc": "ENST00000699356.1:n.2413_2414inv",
+                "cdna_end": 2414,
+                "impact": "MODIFIER",
+                "biotype": "retained_intron",
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "cdna_start": 2413,
+                "strand": -1,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "transcript_id": "ENST00000699357",
+                "hgvsc": "ENST00000699357.1:n.2413_2414inv",
+                "cdna_end": 2414,
+                "impact": "MODIFIER",
+                "biotype": "retained_intron",
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "non_coding_transcript_exon_variant"
+                ],
+                "cdna_start": 2413,
+                "strand": -1,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "transcript_id": "ENST00000699358",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "biotype": "nonsense_mediated_decay",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "strand": -1,
+                "hgvsp": "ENSP00000514329.1:p.His667Cys",
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "polyphen_score": 0.999,
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000699358.1:c.1999_2000inv",
+                "polyphen_prediction": "probably_damaging",
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "protein_start": 667,
+                "polyphen_prediction": "probably_damaging",
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000699360.2:c.1999_2000inv",
+                "polyphen_score": 0.997,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "hgvsp": "ENSP00000514331.1:p.His667Cys",
+                "strand": -1,
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00000699360",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 2413,
+                "codons": "CAc/TGc"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "distance": 2587,
+                "biotype": "retained_intron",
+                "impact": "MODIFIER",
+                "transcript_id": "ENST00000699369",
+                "consequence_terms": [
+                  "downstream_gene_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "strand": -1
+              },
+              {
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "consequence_terms": [
+                  "downstream_gene_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "biotype": "retained_intron",
+                "transcript_id": "ENST00000699370",
+                "impact": "MODIFIER",
+                "hgnc_id": "HGNC:12440",
+                "distance": 2959
+              },
+              {
+                "protein_end": 625,
+                "sift_prediction": "deleterious",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00000907161",
+                "biotype": "protein_coding",
+                "variant_allele": "TG",
+                "cds_end": 1874,
+                "cdna_start": 2287,
+                "codons": "CAc/TGc",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "protein_start": 625,
+                "cds_start": 1873,
+                "hgnc_id": "HGNC:12440",
+                "hgvsc": "ENST00000907161.2:c.1873_1874inv",
+                "cdna_end": 2288,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "strand": -1,
+                "hgvsp": "ENSP00000577220.1:p.His625Cys"
+              },
+              {
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsp": "ENSP00000577221.1:p.His667Cys",
+                "strand": -1,
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "hgvsc": "ENST00000907162.2:c.1999_2000inv",
+                "cdna_end": 2414,
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "transcript_id": "ENST00000907162",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "biotype": "protein_coding"
+              },
+              {
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00000907163",
+                "biotype": "protein_coding",
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "hgvsp": "ENSP00000577222.1:p.His667Cys",
+                "strand": -1,
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000907163.2:c.1999_2000inv"
+              },
+              {
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00000913938",
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "protein_start": 667,
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000913938.2:c.1999_2000inv",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "strand": -1,
+                "hgvsp": "ENSP00000583997.1:p.His667Cys"
+              },
+              {
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "transcript_id": "ENST00000955973",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "biotype": "protein_coding",
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "strand": -1,
+                "hgvsp": "ENSP00000626032.1:p.His667Cys",
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "hgvsc": "ENST00000955973.2:c.1999_2000inv",
+                "cdna_end": 2414
+              },
+              {
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "polyphen_score": 0.999,
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "hgvsp": "ENSP00000626033.1:p.His667Cys",
+                "strand": -1,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "protein_start": 667,
+                "polyphen_prediction": "probably_damaging",
+                "hgvsc": "ENST00000955974.2:c.1999_2000inv",
+                "cdna_end": 2183,
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "cdna_start": 2182,
+                "codons": "CAc/TGc",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00000955974"
+              },
+              {
+                "hgvsc": "ENST00000955975.2:c.1999_2000inv",
+                "cdna_end": 2414,
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "strand": -1,
+                "hgvsp": "ENSP00000626034.1:p.His667Cys",
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "transcript_id": "ENST00000955975",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "biotype": "protein_coding",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "cds_end": 2000
+              },
+              {
+                "polyphen_prediction": "probably_damaging",
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000955976.2:c.1999_2000inv",
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "protein_start": 667,
+                "strand": -1,
+                "hgvsp": "ENSP00000626035.1:p.His667Cys",
+                "polyphen_score": 0.987,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "biotype": "protein_coding",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00000955976",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "cds_end": 2000,
+                "variant_allele": "TG"
+              },
+              {
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000955977.2:c.1999_2000inv",
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "strand": -1,
+                "hgvsp": "ENSP00000626036.1:p.His667Cys",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "transcript_id": "ENST00000955977",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "hgvsp": "ENSP00000626037.1:p.His667Cys",
+                "strand": -1,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "cdna_end": 2414,
+                "hgvsc": "ENST00000955978.2:c.1999_2000inv",
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "transcript_id": "ENST00000955978",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "protein_end": 667,
+                "sift_prediction": "deleterious"
+              },
+              {
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "cdna_start": 2501,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "hgnc_id": "HGNC:12440",
+                "cdna_end": 2502,
+                "hgvsc": "ENST00000973704.1:c.*1550_*1551inv",
+                "impact": "MODIFIER",
+                "transcript_id": "ENST00000973704",
+                "biotype": "nonsense_mediated_decay"
+              },
+              {
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "hgvsc": "ENST00000973705.1:c.1999_2000inv",
+                "cdna_end": 2374,
+                "polyphen_prediction": "probably_damaging",
+                "sift_score": 0,
+                "gene_id": "ENSG00000105397",
+                "polyphen_score": 1,
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "hgvsp": "ENSP00000643522.1:p.His667Cys",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "transcript_id": "ENST00000973705",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "biotype": "nonsense_mediated_decay",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2373,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_start": 2211,
+                "strand": -1,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "hgnc_id": "HGNC:12440",
+                "hgvsc": "ENST00000973706.1:c.*59_*60inv",
+                "cdna_end": 2212,
+                "impact": "MODIFIER",
+                "transcript_id": "ENST00000973706",
+                "biotype": "nonsense_mediated_decay"
+              },
+              {
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "biotype": "protein_coding",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00001029329",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "strand": -1,
+                "hgvsp": "ENSP00000699146.1:p.His667Cys",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "polyphen_score": 0.987,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "polyphen_prediction": "probably_damaging",
+                "hgvsc": "ENST00001029329.1:c.1999_2000inv",
+                "cdna_end": 2414,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "protein_start": 667
+              },
+              {
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00001029330.1:c.*59_*60inv",
+                "cdna_end": 2285,
+                "transcript_id": "ENST00001029330",
+                "biotype": "nonsense_mediated_decay",
+                "hgnc_id": "HGNC:12440",
+                "strand": -1,
+                "cdna_start": 2284,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ]
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1261,
+                "protein_start": 421,
+                "hgvsc": "ENST00001029331.1:c.1261_1262inv",
+                "cdna_end": 1676,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.02,
+                "hgvsp": "ENSP00000699148.1:p.His421Cys",
+                "strand": -1,
+                "sift_prediction": "deleterious",
+                "protein_end": 421,
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00001029331",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "cds_end": 1262,
+                "variant_allele": "TG",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 1675,
+                "codons": "CAc/TGc"
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00001029332",
+                "impact": "MODIFIER",
+                "hgvsc": "ENST00001029332.1:c.*1907_*1908inv",
+                "cdna_end": 2631,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 2630,
+                "strand": -1
+              },
+              {
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00001029333",
+                "hgvsc": "ENST00001029333.1:c.*1907_*1908inv",
+                "cdna_end": 2624,
+                "impact": "MODIFIER",
+                "hgnc_id": "HGNC:12440",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "cdna_start": 2623,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG"
+              },
+              {
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "cds_end": 2000,
+                "variant_allele": "TG",
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00001029334",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "hgvsp": "ENSP00000699151.1:p.His667Cys",
+                "strand": -1,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0,
+                "hgvsc": "ENST00001029334.1:c.1999_2000inv",
+                "cdna_end": 2414,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "protein_start": 667
+              },
+              {
+                "biotype": "protein_coding",
+                "transcript_id": "ENST00001029335",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "protein_end": 661,
+                "sift_prediction": "deleterious",
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 2395,
+                "codons": "CAc/TGc",
+                "cds_end": 1982,
+                "variant_allele": "TG",
+                "polyphen_prediction": "probably_damaging",
+                "cdna_end": 2396,
+                "hgvsc": "ENST00001029335.1:c.1981_1982inv",
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1981,
+                "protein_start": 661,
+                "strand": -1,
+                "hgvsp": "ENSP00000699152.1:p.His661Cys",
+                "polyphen_score": 0.992,
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397"
+              },
+              {
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_start": 2498,
+                "strand": -1,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "hgnc_id": "HGNC:12440",
+                "transcript_id": "ENST00001029336",
+                "cdna_end": 2499,
+                "hgvsc": "ENST00001029336.1:c.*1550_*1551inv",
+                "impact": "MODIFIER",
+                "biotype": "nonsense_mediated_decay"
+              },
+              {
+                "hgvsc": "ENST00001029337.1:c.1999_2000inv",
+                "cdna_end": 2373,
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "hgvsp": "ENSP00000699154.1:p.His667Cys",
+                "strand": -1,
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00001029337",
+                "biotype": "nonsense_mediated_decay",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "cdna_start": 2372,
+                "codons": "CAc/TGc",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "variant_allele": "TG",
+                "cds_end": 2000
+              },
+              {
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "strand": -1,
+                "cdna_start": 2292,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00001029339",
+                "impact": "MODIFIER",
+                "cdna_end": 2293,
+                "hgvsc": "ENST00001029339.1:c.*1550_*1551inv",
+                "hgnc_id": "HGNC:12440"
+              },
+              {
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC",
+                "cdna_start": 2127,
+                "strand": -1,
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "gene_id": "ENSG00000105397",
+                "variant_allele": "TG",
+                "biotype": "nonsense_mediated_decay",
+                "transcript_id": "ENST00001029340",
+                "hgvsc": "ENST00001029340.1:c.*12_*13inv",
+                "cdna_end": 2128,
+                "impact": "MODIFIER",
+                "hgnc_id": "HGNC:12440"
+              },
+              {
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "transcript_id": "ENST00001029341",
+                "biotype": "protein_coding",
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "cdna_start": 2413,
+                "codons": "CAc/TGc",
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "cdna_end": 2414,
+                "hgvsc": "ENST00001029341.1:c.1999_2000inv",
+                "polyphen_prediction": "probably_damaging",
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "hgvsp": "ENSP00000699158.1:p.His667Cys",
+                "strand": -1,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0,
+                "polyphen_score": 1,
+                "consequence_terms": [
+                  "missense_variant"
+                ]
+              },
+              {
+                "hgnc_id": "HGNC:12440",
+                "transcript_id": "ENST00001071933",
+                "impact": "MODIFIER",
+                "cdna_end": 2634,
+                "hgvsc": "ENST00001071933.1:c.*1907_*1908inv",
+                "biotype": "nonsense_mediated_decay",
+                "variant_allele": "TG",
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "3_prime_UTR_variant",
+                  "NMD_transcript_variant"
+                ],
+                "cdna_start": 2633,
+                "strand": -1,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              },
+              {
+                "protein_end": 667,
+                "sift_prediction": "deleterious",
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00001071934",
+                "biotype": "nonsense_mediated_decay",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2383,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "hgvsc": "ENST00001071934.1:c.1999_2000inv",
+                "cdna_end": 2384,
+                "gene_id": "ENSG00000105397",
+                "sift_score": 0.01,
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "hgvsp": "ENSP00000741740.1:p.His667Cys",
+                "strand": -1
+              },
+              {
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "missense_variant",
+                  "NMD_transcript_variant"
+                ],
+                "strand": -1,
+                "hgvsp": "ENSP00000741741.1:p.His667Cys",
+                "protein_start": 667,
+                "cds_start": 1999,
+                "hgnc_id": "HGNC:12440",
+                "cdna_end": 2315,
+                "hgvsc": "ENST00001071935.1:c.1999_2000inv",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2314,
+                "gene_symbol_source": "HGNC",
+                "gene_symbol": "TYK2",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "amino_acids": "H/C",
+                "impact": "MODERATE",
+                "transcript_id": "ENST00001071935",
+                "biotype": "nonsense_mediated_decay"
+              },
+              {
+                "protein_start": 667,
+                "hgnc_id": "HGNC:12440",
+                "cds_start": 1999,
+                "hgvsc": "ENST00001135476.1:c.1999_2000inv",
+                "cdna_end": 2414,
+                "polyphen_prediction": "probably_damaging",
+                "sift_score": 0.01,
+                "gene_id": "ENSG00000105397",
+                "consequence_terms": [
+                  "missense_variant"
+                ],
+                "polyphen_score": 0.999,
+                "strand": -1,
+                "hgvsp": "ENSP00000813737.1:p.His667Cys",
+                "sift_prediction": "deleterious",
+                "protein_end": 667,
+                "transcript_id": "ENST00001135476",
+                "impact": "MODERATE",
+                "amino_acids": "H/C",
+                "biotype": "protein_coding",
+                "variant_allele": "TG",
+                "cds_end": 2000,
+                "codons": "CAc/TGc",
+                "cdna_start": 2413,
+                "gene_symbol": "TYK2",
+                "gene_symbol_source": "HGNC"
+              }
+            ],
+            "strand": -1,
+            "allele_string": "CA/TG",
+            "end": 10361559,
+            "input": "NM_003331.5:c.1999_2000delinsTG",
+            "assembly_name": "GRCh38",
+            "seq_region_name": "19"
+          }
+        ]
+      }
+    }
+  ],
+  "jak3_additional": {
+    "source": "https://myvariant.info/v1/variant/chr19:g.17947982T%3EC",
+    "revel": {
+      "rankscore": 0.68844,
+      "score": [
+        0.369,
+        0.369,
+        0.369
+      ]
+    },
+    "provean": {
+      "converted_rankscore": 0.8383,
+      "pred": [
+        "D",
+        "D",
+        "D"
+      ],
+      "score": [
+        -5.09,
+        -5.09,
+        -5.22
+      ]
+    },
+    "cadd_phred": 22.2
+  }
+}
