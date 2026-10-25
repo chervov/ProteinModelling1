@@ -1,0 +1,322 @@
+[
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK1",
+    "mode": "full",
+    "reference": "P",
+    "position": 1136,
+    "comparison_variant": "P1136E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "QLMRKCWEFQPSNRTSFQNLI"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK1",
+    "mode": "extended_domain",
+    "reference": "P",
+    "position": 1136,
+    "comparison_variant": "P1136E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "QLMRKCWEFQPSNRTSFQNLI"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK2",
+    "mode": "full",
+    "reference": "V",
+    "position": 1110,
+    "comparison_variant": "V1110E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "MIMTECWNNNVNQRPSFRDLA"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK2",
+    "mode": "extended_domain",
+    "reference": "V",
+    "position": 1110,
+    "comparison_variant": "V1110E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "MIMTECWNNNVNQRPSFRDLA"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK3",
+    "mode": "full",
+    "reference": "P",
+    "position": 1082,
+    "comparison_variant": "P1082E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "ELMKLCWAPSPQDRPSFSALG"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "JAK3",
+    "mode": "extended_domain",
+    "reference": "P",
+    "position": 1082,
+    "comparison_variant": "P1082E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "ELMKLCWAPSPQDRPSFSALG"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "TYK2",
+    "mode": "full",
+    "reference": "A",
+    "position": 1156,
+    "comparison_variant": "A1156E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "HLMKNCWETEASFRPTFENLI"
+  },
+  {
+    "jak2_variant": "V1110E",
+    "gene": "TYK2",
+    "mode": "extended_domain",
+    "reference": "A",
+    "position": 1156,
+    "comparison_variant": "A1156E",
+    "jak2_window": "MIMTECWNNNVNQRPSFRDLA",
+    "other_window": "HLMKNCWETEASFRPTFENLI"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK1",
+    "mode": "full",
+    "reference": "G",
+    "position": 610,
+    "comparison_variant": "G610R",
+    "jak2_window": "GVRREV-GDYGQLHE--TEVL",
+    "other_window": "GTLMDYKDDEGTSEEKKIKVI"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK1",
+    "mode": "extended_domain",
+    "reference": "G",
+    "position": 610,
+    "comparison_variant": "G610R",
+    "jak2_window": "GVRREV-GDYGQLHE--TEVL",
+    "other_window": "GTLMDYKDDEGTSEEKKIKVI"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK2",
+    "mode": "full",
+    "reference": "G",
+    "position": 571,
+    "comparison_variant": "G571R",
+    "jak2_window": "KGVRREVGDYGQLHETEVLLK",
+    "other_window": "KGVRREVGDYGQLHETEVLLK"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK2",
+    "mode": "extended_domain",
+    "reference": "G",
+    "position": 571,
+    "comparison_variant": "G571R",
+    "jak2_window": "KGVRREVGDYGQLHETEVLLK",
+    "other_window": "KGVRREVGDYGQLHETEVLLK"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK3",
+    "mode": "full",
+    "reference": "G",
+    "position": 546,
+    "comparison_variant": "G546R",
+    "jak2_window": "KGVRREVGDYGQLHETEVLLK",
+    "other_window": "RGCRHEVVD-GEARKTEVLLK"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "JAK3",
+    "mode": "extended_domain",
+    "reference": "G",
+    "position": 546,
+    "comparison_variant": "G546R",
+    "jak2_window": "KGVRREVGDYGQLHETEVLLK",
+    "other_window": "RGCRHEVVD-GEARKTEVLLK"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "TYK2",
+    "mode": "full",
+    "reference": "G",
+    "position": 634,
+    "comparison_variant": "G634R",
+    "jak2_window": "--------DYGQLHETEVLLK",
+    "other_window": "EDPLVPGRDRGQ--ELRVVLK"
+  },
+  {
+    "jak2_variant": "G571R",
+    "gene": "TYK2",
+    "mode": "extended_domain",
+    "reference": "G",
+    "position": 634,
+    "comparison_variant": "G634R",
+    "jak2_window": "--------DYGQLHETEVLLK",
+    "other_window": "EDPLVPGRDRGQ--ELRVVLK"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK1",
+    "mode": "full",
+    "reference": "V",
+    "position": 619,
+    "comparison_variant": "V619I",
+    "jak2_window": "YGQLHE--TEVLLKVLDKAHR",
+    "other_window": "EGTSEEKKIKVILKVLDPSHR"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK1",
+    "mode": "extended_domain",
+    "reference": "V",
+    "position": 619,
+    "comparison_variant": "V619I",
+    "jak2_window": "YGQLHE--TEVLLKVLDKAHR",
+    "other_window": "EGTSEEKKIKVILKVLDPSHR"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK2",
+    "mode": "full",
+    "reference": "V",
+    "position": 578,
+    "comparison_variant": "V578I",
+    "jak2_window": "GDYGQLHETEVLLKVLDKAHR",
+    "other_window": "GDYGQLHETEVLLKVLDKAHR"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK2",
+    "mode": "extended_domain",
+    "reference": "V",
+    "position": 578,
+    "comparison_variant": "V578I",
+    "jak2_window": "GDYGQLHETEVLLKVLDKAHR",
+    "other_window": "GDYGQLHETEVLLKVLDKAHR"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK3",
+    "mode": "full",
+    "reference": "V",
+    "position": 553,
+    "comparison_variant": "V553I",
+    "jak2_window": "GDYGQLHETEVLLKVLDKAHR",
+    "other_window": "VD-GEARKTEVLLKVMDAKHK"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "JAK3",
+    "mode": "extended_domain",
+    "reference": "V",
+    "position": 553,
+    "comparison_variant": "V553I",
+    "jak2_window": "GDYGQLHETEVLLKVLDKAHR",
+    "other_window": "VD-GEARKTEVLLKVMDAKHK"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "TYK2",
+    "mode": "full",
+    "reference": "V",
+    "position": 639,
+    "comparison_variant": "V639I",
+    "jak2_window": "-DYGQLHETEVLLKVLDKAHR",
+    "other_window": "RDRGQ--ELRVVLKVLDPSHH"
+  },
+  {
+    "jak2_variant": "V578I",
+    "gene": "TYK2",
+    "mode": "extended_domain",
+    "reference": "V",
+    "position": 639,
+    "comparison_variant": "V639I",
+    "jak2_window": "-DYGQLHETEVLLKVLDKAHR",
+    "other_window": "RDRGQ--ELRVVLKVLDPSHH"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK1",
+    "mode": "full",
+    "reference": "I",
+    "position": 845,
+    "comparison_variant": "I845I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPFFRAIMRDINKLEEQNPDI"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK1",
+    "mode": "extended_domain",
+    "reference": "I",
+    "position": 845,
+    "comparison_variant": "I845I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPFFRAIMRDINKLEEQNPDI"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK2",
+    "mode": "full",
+    "reference": "L",
+    "position": 805,
+    "comparison_variant": "L805I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPSFRAIIRDLNSLFTPDYEL"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK2",
+    "mode": "extended_domain",
+    "reference": "L",
+    "position": 805,
+    "comparison_variant": "L805I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPSFRAIIRDLNSLFTPDYEL"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK3",
+    "mode": "full",
+    "reference": "L",
+    "position": 777,
+    "comparison_variant": "L777I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPSFRAVIRDLNSLISSDYEL"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "JAK3",
+    "mode": "extended_domain",
+    "reference": "L",
+    "position": 777,
+    "comparison_variant": "L777I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDYEL",
+    "other_window": "RPSFRAVIRDLNSLISSDYEL"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "TYK2",
+    "mode": "full",
+    "reference": "L",
+    "position": 866,
+    "comparison_variant": "L866I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDY-E",
+    "other_window": "RPSFRTILRDLTRLQPHNLAD"
+  },
+  {
+    "jak2_variant": "L805I",
+    "gene": "TYK2",
+    "mode": "extended_domain",
+    "reference": "L",
+    "position": 866,
+    "comparison_variant": "L866I",
+    "jak2_window": "RPSFRAIIRDLNSLFTPDY-E",
+    "other_window": "RPSFRTILRDLTRLQPHNLAD"
+  }
+]
