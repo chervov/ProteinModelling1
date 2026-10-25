@@ -1,0 +1,106 @@
+[
+  {
+    "gene": "CISH",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=1154&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "CISH",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "SOCS2",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=8835&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "SOCS2",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "SOCS3",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=9021&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "SOCS3",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "PIM1",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=5292&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "PIM1",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "CCND1",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=595&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "CCND1",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "BCL2L1",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=598&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "BCL2L1",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "BIRC5",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=332&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "BIRC5",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "IRF1",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=3659&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "IRF1",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "CXCL9",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=4283&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "CXCL9",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "CXCL10",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=3627&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "CXCL10",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "TAP1",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=6890&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "TAP1",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "B2M",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=567&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "B2M",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  },
+  {
+    "gene": "CD274",
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_rna_seq_mrna/molecular-data?sampleListId=ccle_broad_2019_all&entrezGeneId=29126&projection=DETAILED",
+    "status": 200,
+    "returnedSymbol": "CD274",
+    "numberOfSamples": 1156,
+    "targetRows": []
+  }
+]
