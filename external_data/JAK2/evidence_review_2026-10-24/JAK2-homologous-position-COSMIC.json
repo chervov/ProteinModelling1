@@ -1,0 +1,629 @@
+[
+  {
+    "gene": "JAK1",
+    "position": 1136,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20P1136&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      2,
+      [
+        "127365092",
+        "190755107"
+      ],
+      {
+        "PubmedPMID": [
+          "28467829",
+          "37910143"
+        ],
+        "LegacyMutationID": [
+          "COSM9369612",
+          "COSM10793378"
+        ],
+        "PrimarySite": [
+          "skin",
+          "haematopoietic_and_lymphoid_tissue"
+        ],
+        "PrimaryHistology": [
+          "malignant_melanoma",
+          "lymphoid_neoplasm"
+        ]
+      },
+      [
+        [
+          "127365092",
+          "JAK1",
+          "c.3407C>T",
+          "p.P1136L"
+        ],
+        [
+          "190755107",
+          "JAK3",
+          "c.1136C>A",
+          "p.P379H"
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "JAK2",
+    "position": 1110,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20V1110&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      2,
+      [
+        "146137821",
+        "146110217"
+      ],
+      {
+        "PubmedPMID": [
+          "",
+          "27175599"
+        ],
+        "LegacyMutationID": [
+          "COSM1636193",
+          "COSM7453586"
+        ],
+        "PrimarySite": [
+          "liver",
+          "stomach"
+        ],
+        "PrimaryHistology": [
+          "carcinoma",
+          "adenoma"
+        ]
+      },
+      [
+        [
+          "146137821",
+          "JAK2",
+          "c.3328G>C",
+          "p.V1110L"
+        ],
+        [
+          "146110217",
+          "JAK2",
+          "c.3328G>A",
+          "p.V1110I"
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "JAK3",
+    "position": 1082,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20P1082&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      6,
+      [
+        "146140254",
+        "166478935",
+        "146137699",
+        "187918197",
+        "187910698",
+        "166488254"
+      ],
+      {
+        "PubmedPMID": [
+          "32398863",
+          "26950094",
+          "22197931",
+          "28467829",
+          "26950094",
+          "28467829"
+        ],
+        "LegacyMutationID": [
+          "COSN38201626",
+          "COSM9796684",
+          "COSM232563",
+          "COSM9485286",
+          "COSM9796684",
+          "COSM9485286"
+        ],
+        "PrimarySite": [
+          "oesophagus",
+          "skin",
+          "skin",
+          "skin",
+          "skin",
+          "skin"
+        ],
+        "PrimaryHistology": [
+          "carcinoma",
+          "carcinoma",
+          "malignant_melanoma",
+          "malignant_melanoma",
+          "carcinoma",
+          "malignant_melanoma"
+        ]
+      },
+      [
+        [
+          "146140254",
+          "JAK2",
+          "c.*1082G>C",
+          "p.?"
+        ],
+        [
+          "166478935",
+          "JAK3",
+          "c.3245C>T",
+          "p.P1082L"
+        ],
+        [
+          "146137699",
+          "JAK2",
+          "c.3245T>C",
+          "p.L1082S"
+        ],
+        [
+          "187918197",
+          "JAK3",
+          "c.3244C>T",
+          "p.P1082S"
+        ],
+        [
+          "187910698",
+          "JAK3",
+          "c.3245C>T",
+          "p.P1082L"
+        ],
+        [
+          "166488254",
+          "JAK3",
+          "c.3244C>T",
+          "p.P1082S"
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "TYK2",
+    "position": 1156,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=TYK2%20A1156&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      4,
+      [
+        "122300913",
+        "189586237",
+        "122300876",
+        "189586172"
+      ],
+      {
+        "PubmedPMID": [
+          "30038269",
+          "30038269",
+          "25344691; 27149842",
+          "25344691; 27149842"
+        ],
+        "LegacyMutationID": [
+          "COSM9856241",
+          "COSM9856241",
+          "COSM4738519",
+          "COSM4738519"
+        ],
+        "PrimarySite": [
+          "large_intestine",
+          "large_intestine",
+          "large_intestine",
+          "large_intestine"
+        ],
+        "PrimaryHistology": [
+          "carcinoma",
+          "carcinoma",
+          "carcinoma",
+          "carcinoma"
+        ]
+      },
+      [
+        [
+          "122300913",
+          "TYK2",
+          "c.3468G>A",
+          "p.A1156="
+        ],
+        [
+          "189586237",
+          "TYK2",
+          "c.3468G>A",
+          "p.A1156="
+        ],
+        [
+          "122300876",
+          "TYK2",
+          "c.3467C>T",
+          "p.A1156V"
+        ],
+        [
+          "189586172",
+          "TYK2",
+          "c.3467C>T",
+          "p.A1156V"
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "JAK1",
+    "position": 610,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20G610&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK2",
+    "position": 571,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20G571&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      11,
+      [
+        "224203422",
+        "224203422",
+        "224203422",
+        "146193898",
+        "146070268",
+        "146182184",
+        "146118394",
+        "146118394",
+        "146118394",
+        "146206817",
+        "146118394"
+      ],
+      {
+        "PubmedPMID": [
+          "21326037",
+          "27924280",
+          "31694833",
+          "",
+          "24434212",
+          "19074595",
+          "24345752",
+          "34070172",
+          "28581676; 25589003",
+          "27149842",
+          "19074595"
+        ],
+        "LegacyMutationID": [
+          "COSM142855",
+          "COSM142855",
+          "COSM142855",
+          "COSN4889625",
+          "COSN33307028",
+          "COSM29109",
+          "COSM29107",
+          "COSM29107",
+          "COSM29107",
+          "COSM6689304",
+          "COSM29107"
+        ],
+        "PrimarySite": [
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "lung",
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "upper_aerodigestive_tract; soft_tissue",
+          "large_intestine",
+          "haematopoietic_and_lymphoid_tissue"
+        ],
+        "PrimaryHistology": [
+          "haematopoietic_neoplasm",
+          "other",
+          "carcinoma",
+          "lymphoid_neoplasm",
+          "lymphoid_neoplasm",
+          "haematopoietic_neoplasm",
+          "lymphoid_neoplasm",
+          "haematopoietic_neoplasm",
+          "carcinoma; haemangioblastoma",
+          "carcinoma",
+          "haematopoietic_neoplasm"
+        ]
+      },
+      [
+        [
+          "224203422",
+          "JAK2",
+          "c.?",
+          "p.G571S"
+        ],
+        [
+          "224203422",
+          "JAK2",
+          "c.?",
+          "p.G571S"
+        ],
+        [
+          "224203422",
+          "JAK2",
+          "c.?",
+          "p.G571S"
+        ],
+        [
+          "146193898",
+          "JAK2",
+          "c.1215-571G>A",
+          "p.?"
+        ],
+        [
+          "146070268",
+          "JAK2",
+          "c.3177+571G>T",
+          "p.?"
+        ],
+        [
+          "146182184",
+          "JAK2",
+          "c.1711G>C",
+          "p.G571R"
+        ],
+        [
+          "146118394",
+          "JAK2",
+          "c.1711G>A",
+          "p.G571S"
+        ],
+        [
+          "146118394",
+          "JAK2",
+          "c.1711G>A",
+          "p.G571S"
+        ],
+        [
+          "146118394",
+          "JAK2",
+          "c.1711G>A",
+          "p.G571S"
+        ],
+        [
+          "146206817",
+          "JAK2",
+          "c.1712G>A",
+          "p.G571D"
+        ],
+        [
+          "146118394",
+          "JAK2",
+          "c.1711G>A",
+          "p.G571S"
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "JAK3",
+    "position": 546,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20G546&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "TYK2",
+    "position": 634,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=TYK2%20G634&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK1",
+    "position": 619,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20V619&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK2",
+    "position": 578,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20V578&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK3",
+    "position": 553,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20V553&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "TYK2",
+    "position": 639,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=TYK2%20V639&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK1",
+    "position": 845,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20I845&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  {
+    "gene": "JAK2",
+    "position": 805,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20L805&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      1,
+      [
+        "146092033"
+      ],
+      {
+        "PubmedPMID": [
+          "23770606"
+        ],
+        "LegacyMutationID": [
+          "COSM1636822"
+        ],
+        "PrimarySite": [
+          "bone"
+        ],
+        "PrimaryHistology": [
+          "chondrosarcoma"
+        ]
+      },
+      [
+        [
+          "146092033",
+          "JAK2",
+          "c.2415T>G",
+          "p.L805="
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "JAK3",
+    "position": 777,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20L777&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      3,
+      [
+        "166465753",
+        "190744441",
+        "187898915"
+      ],
+      {
+        "PubmedPMID": [
+          "",
+          "",
+          ""
+        ],
+        "LegacyMutationID": [
+          "COSM7144817",
+          "COSM7144817",
+          "COSM7144817"
+        ],
+        "PrimarySite": [
+          "urinary_tract",
+          "urinary_tract",
+          "urinary_tract"
+        ],
+        "PrimaryHistology": [
+          "carcinoma",
+          "carcinoma",
+          "carcinoma"
+        ]
+      },
+      [
+        [
+          "166465753",
+          "JAK3",
+          "c.2331C>G",
+          "p.L777="
+        ],
+        [
+          "190744441",
+          "JAK3",
+          "c.2331C>G",
+          "p.L777="
+        ],
+        [
+          "187898915",
+          "JAK3",
+          "c.2331C>G",
+          "p.L777="
+        ]
+      ]
+    ]
+  },
+  {
+    "gene": "TYK2",
+    "position": 866,
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=TYK2%20L866&maxList=100&grchv=38&ef=PubmedPMID,LegacyMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      4,
+      [
+        "189591734",
+        "122306361",
+        "122305394",
+        "189589510"
+      ],
+      {
+        "PubmedPMID": [
+          "34778799",
+          "34778799",
+          "",
+          ""
+        ],
+        "LegacyMutationID": [
+          "COSM10880278",
+          "COSM10880278",
+          "COSM6229424",
+          "COSM6229424"
+        ],
+        "PrimarySite": [
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "large_intestine",
+          "large_intestine"
+        ],
+        "PrimaryHistology": [
+          "haematopoietic_neoplasm",
+          "haematopoietic_neoplasm",
+          "carcinoma",
+          "carcinoma"
+        ]
+      },
+      [
+        [
+          "189591734",
+          "TYK2",
+          "c.2597T>A",
+          "p.L866H"
+        ],
+        [
+          "122306361",
+          "TYK2",
+          "c.2597T>A",
+          "p.L866H"
+        ],
+        [
+          "122305394",
+          "TYK2",
+          "c.2596C>A",
+          "p.L866I"
+        ],
+        [
+          "189589510",
+          "TYK2",
+          "c.2596C>A",
+          "p.L866I"
+        ]
+      ]
+    ]
+  }
+]
