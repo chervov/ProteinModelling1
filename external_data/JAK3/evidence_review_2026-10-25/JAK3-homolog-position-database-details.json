@@ -1,0 +1,138 @@
+[
+  {
+    "db": "cosmic",
+    "term": "JAK1 H647Q",
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20H647Q&maxList=100&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      1,
+      [
+        "33977229"
+      ],
+      {
+        "PubmedPMID": [
+          "32217638"
+        ],
+        "LegacyMutationID": [
+          "COSM11054440"
+        ],
+        "GenomicMutationID": [
+          "COSV109689950"
+        ],
+        "PrimarySite": [
+          "large_intestine"
+        ],
+        "PrimaryHistology": [
+          "carcinoma"
+        ]
+      },
+      [
+        [
+          "33977229",
+          "JAK1",
+          "c.1941C>A",
+          "p.H647Q"
+        ]
+      ]
+    ]
+  },
+  {
+    "db": "cosmic",
+    "term": "JAK2 H606Q",
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20H606Q&maxList=100&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+    "data": [
+      3,
+      [
+        "224189493",
+        "50361444",
+        "100623018"
+      ],
+      {
+        "PubmedPMID": [
+          "21326037",
+          "19074595",
+          "19074595"
+        ],
+        "LegacyMutationID": [
+          "COSM142902",
+          "COSM29116",
+          "COSM29116"
+        ],
+        "GenomicMutationID": [
+          "",
+          "COSV67610086",
+          "COSV67610086"
+        ],
+        "PrimarySite": [
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue",
+          "haematopoietic_and_lymphoid_tissue"
+        ],
+        "PrimaryHistology": [
+          "haematopoietic_neoplasm",
+          "haematopoietic_neoplasm",
+          "haematopoietic_neoplasm"
+        ]
+      },
+      [
+        [
+          "224189493",
+          "JAK2",
+          "c.?",
+          "p.H606Q"
+        ],
+        [
+          "50361444",
+          "JAK2",
+          "c.1818C>A",
+          "p.H606Q"
+        ],
+        [
+          "100623018",
+          "JAK2",
+          "c.1818C>A",
+          "p.H606Q"
+        ]
+      ]
+    ]
+  },
+  {
+    "db": "variants",
+    "term": "JAK1 His647",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK1%20His647&maxList=100",
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  {
+    "db": "variants",
+    "term": "TYK2 His667",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=TYK2%20His667&maxList=100",
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  {
+    "db": "variants",
+    "term": "JAK2 His606",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20His606&maxList=100",
+    "data": [
+      1,
+      [
+        "1906053"
+      ],
+      null,
+      [
+        [
+          "1906053",
+          "NM_004972.4(JAK2):c.1818C>A (p.His606Gln)"
+        ]
+      ]
+    ]
+  }
+]
