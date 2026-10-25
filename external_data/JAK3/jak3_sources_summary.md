@@ -28,6 +28,7 @@ JAK3 pairs with the common gamma chain (IL-2, IL-4, IL-7, IL-9, IL-15, IL-21 rec
 | 11 | ProteinGym | Variant-effect benchmark | Clinical set: 28 variants (14 pathogenic, 14 benign); no deep mutational scan | Not added |
 | 12 | IntOGen | Cancer driver genes | Driver in 1 cancer type (acute lymphoblastic leukaemia) | Gene-level only |
 | 13 | MaveDB | Deep mutational scan data | No JAK3 deep mutational scan | Not available |
+| 14 | OMIM (MIM 600173) | Curated, literature-backed disease variants | 7 allelic variants (5 with a simple protein change) | `OMIM allelic variant` column |
 | - | Dataset EV1 (Jeanpierre 2025) | Structural clusters | JAK1 only | `Cluster` left blank |
 | - | HGMD | Literature disease variants | Not accessed (licence required) | - |
 
