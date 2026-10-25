@@ -1,0 +1,372 @@
+{
+  "TYK2": {
+    "primaryAccession": "P29597",
+    "sequence": {
+      "value": "MPLRHWGMARGSKPVGDGAQPMAAMGGLKVLLHWAGPGGGEPWVTFSESSLTAEEVCIHIAHKVGITPPCFNLFALFDAQAQVWLPPNHILEIPRDASLMLYFRIRFYFRNWHGMNPREPAVYRCGPPGTEASSDQTAQGMQLLDPASFEYLFEQGKHEFVNDVASLWELSTEEEIHHFKNESLGMAFLHLCHLALRHGIPLEEVAKKTSFKDCIPRSFRRHIRQHSALTRLRLRNVFRRFLRDFQPGRLSQQMVMVKYLATLERLAPRFGTERVPVCHLRLLAQAEGEPCYIRDSGVAPTDPGPESAAGPPTHEVLVTGTGGIQWWPVEEEVNKEEGSSGSSGRNPQASLFGKKAKAHKAVGQPADRPREPLWAYFCDFRDITHVVLKEHCVSIHRQDNKCLELSLPSRAAALSFVSLVDGYFRLTADSSHYLCHEVAPPRLVMSIRDGIHGPLLEPFVQAKLRPEDGLYLIHWSTSHPYRLILTVAQRSQAPDGMQSLRLRKFPIEQQDGAFVLEGWGRSFPSVRELGAALQGCLLRAGDDCFSLRRCCLPQPGETSNLIIMRGARASPRTLNLSQLSFHRVDQKEITQLSHLGQGTRTNVYEGRLRVEGSGDPEEGKMDDEDPLVPGRDRGQELRVVLKVLDPSHHDIALAFYETASLMSQVSHTHLAFVHGVCVRGPENIMVTEYVEHGPLDVWLRRERGHVPMAWKMVVAQQLASALSYLENKNLVHGNVCGRNILLARLGLAEGTSPFIKLSDPGVGLGALSREERVERIPWLAPECLPGGANSLSTAMDKWGFGATLLEICFDGEAPLQSRSPSEKEHFYQRQHRLPEPSCPQLATLTSQCLTYEPTQRPSFRTILRDLTRLQPHNLADVLTVNPDSPASDPTVFHKRYLKKIRDLGEGHFGKVSLYCYDPTNDGTGEMVAVKALKADCGPQHRSGWKQEIDILRTLYHEHIIKYKGCCEDQGEKSLQLVMEYVPLGSLRDYLPRHSIGLAQLLLFAQQICEGMAYLHAQHYIHRDLAARNVLLDNDRLVKIGDFGLAKAVPEGHEYYRVREDGDSPVFWYAPECLKEYKFYYASDVWSFGVTLYELLTHCDSSQSPPTKFLELIGIAQGQMTVLRLTELLERGERLPRPDKCPCEVYHLMKNCWETEASFRPTFENLIPILKTVHEKYQGQAPSVFSVC",
+      "length": 1187,
+      "molWeight": 133650,
+      "crc64": "F76C25D6A919EDBC",
+      "md5": "281176F6331D962DC37690A120E0ACD1"
+    },
+    "features": [
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 26,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 431,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "FERM",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00084"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 450,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 529,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "SH2; atypical"
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 589,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 875,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 897,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 1176,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      }
+    ]
+  },
+  "JAK3": {
+    "primaryAccession": "P52333",
+    "sequence": {
+      "value": "MAPPSEETPLIPQRSCSLLSTEAGALHVLLPARGPGPPQRLSFSFGDHLAEDLCVQAAKASGILPVYHSLFALATEDLSCWFPPSHIFSVEDASTQVLLYRIRFYFPNWFGLEKCHRFGLRKDLASAILDLPVLEHLFAQHRSDLVSGRLPVGLSLKEQGECLSLAVLDLARMAREQAQRPGELLKTVSYKACLPPSLRDLIQGLSFVTRRRIRRTVRRALRRVAACQADRHSLMAKYIMDLERLDPAGAAETFHVGLPGALGGHDGLGLLRVAGDGGIAWTQGEQEVLQPFCDFPEIVDISIKQAPRVGPAGEHRLVTVTRTDNQILEAEFPGLPEALSFVALVDGYFRLTTDSQHFFCKEVAPPRLLEEVAEQCHGPITLDFAINKLKTGGSRPGSYVLRRSPQDFDSFLLTVCVQNPLGPDYKGCLIRRSPTGTFLLVGLSRPHSSLRELLATCWDGGLHVDGVAVTLTSCCIPRPKEKSNLIVVQRGHSPPTSSLVQPQSQYQLSQMTFHKIPADSLEWHENLGHGSFTKIYRGCRHEVVDGEARKTEVLLKVMDAKHKNCMESFLEAASLMSQVSYRHLVLLHGVCMAGDSTMVQEFVHLGAIDMYLRKRGHLVPASWKLQVVKQLAYALNYLEDKGLPHGNVSARKVLLAREGADGSPPFIKLSDPGVSPAVLSLEMLTDRIPWVAPECLREAQTLSLEADKWGFGATVWEVFSGVTMPISALDPAKKLQFYEDRQQLPAPKWTELALLIQQCMAYEPVQRPSFRAVIRDLNSLISSDYELLSDPTPGALAPRDGLWNGAQLYACQDPTIFEERHLKYISQLGKGNFGSVELCRYDPLGDNTGALVAVKQLQHSGPDQQRDFQREIQILKALHSDFIVKYRGVSYGPGRQSLRLVMEYLPSGCLRDFLQRHRARLDASRLLLYSSQICKGMEYLGSRRCVHRDLAARNILVESEAHVKIADFGLAKLLPLDKDYYVVREPGQSPIFWYAPESLSDNIFSRQSDVWSFGVVLYELFTYCDKSCSPSAEFLRMMGCERDVPALCRLLELLEEGQRLPAPPACPAEVHELMKLCWAPSPQDRPSFSALGPQLDMLWSGSRGCETHAFTAHPEGKHHSLSFS",
+      "length": 1124,
+      "molWeight": 125099,
+      "crc64": "895D8563439B2B7C",
+      "md5": "298EB2B0A64CE9A00143DB9FA208DB71"
+    },
+    "features": [
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 24,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 356,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "FERM",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00084"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 375,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 475,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "SH2; atypical"
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 521,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 781,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 822,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 1111,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      }
+    ]
+  },
+  "JAK2": {
+    "primaryAccession": "O60674",
+    "sequence": {
+      "value": "MGMACLTMTEMEGTSTSSIYQNGDISGNANSMKQIDPVLQVYLYHSLGKSEADYLTFPSGEYVAEEICIAASKACGITPVYHNMFALMSETERIWYPPNHVFHIDESTRHNVLYRIRFYFPRWYCSGSNRAYRHGISRGAEAPLLDDFVMSYLFAQWRHDFVHGWIKVPVTHETQEECLGMAVLDMMRIAKENDQTPLAIYNSISYKTFLPKCIRAKIQDYHILTRKRIRYRFRRFIQQFSQCKATARNLKLKYLINLETLQSAFYTEKFEVKEPGSGPSGEEIFATIIITGNGGIQWSRGKHKESETLTEQDLQLYCDFPNIIDVSIKQANQEGSNESRVVTIHKQDGKNLEIELSSLREALSFVSLIDGYYRLTADAHHYLCKEVAPPAVLENIQSNCHGPISMDFAISKLKKAGNQTGLYVLRCSPKDFNKYFLTFAVERENVIEYKHCLITKNENEEYNLSGTKKNFSSLKDLLNCYQMETVRSDNIIFQFTKCCPPKPKDKSNLLVFRTNGVSDVPTSPTLQRPTHMNQMVFHKIRNEDLIFNESLGQGTFTKIFKGVRREVGDYGQLHETEVLLKVLDKAHRNYSESFFEAASMMSKLSHKHLVLNYGVCVCGDENILVQEFVKFGSLDTYLKKNKNCINILWKLEVAKQLAWAMHFLEENTLIHGNVCAKNILLIREEDRKTGNPPFIKLSDPGISITVLPKDILQERIPWVPPECIENPKNLNLATDKWSFGTTLWEICSGGDKPLSALDSQRKLQFYEDRHQLPAPKWAELANLINNCMDYEPDFRPSFRAIIRDLNSLFTPDYELLTENDMLPNMRIGALGFSGAFEDRDPTQFEERHLKFLQQLGKGNFGSVEMCRYDPLQDNTGEVVAVKKLQHSTEEHLRDFEREIEILKSLQHDNIVKYKGVCYSAGRRNLKLIMEYLPYGSLRDYLQKHKERIDHIKLLQYTSQICKGMEYLGTKRYIHRDLATRNILVENENRVKIGDFGLTKVLPQDKEYYKVKEPGESPIFWYAPESLTESKFSVASDVWSFGVVLYELFTYIEKSKSPPAEFMRMIGNDKQGQMIVFHLIELLKNNGRLPRPDGCPDEIYMIMTECWNNNVNQRPSFRDLALRVDQIRDNMAG",
+      "length": 1132,
+      "molWeight": 130674,
+      "crc64": "C30669EF1A7DA80C",
+      "md5": "06A47FFCC300B3340AE364CBDAF040BE"
+    },
+    "features": [
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 37,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 380,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "FERM",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00084"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 401,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 482,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "SH2; atypical",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00191"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 545,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 809,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 849,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 1124,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      }
+    ]
+  },
+  "JAK1": {
+    "primaryAccession": "P23458",
+    "sequence": {
+      "value": "MQYLNIKEDCNAMAFCAKMRSSKKTEVNLEAPEPGVEVIFYLSDREPLRLGSGEYTAEELCIRAAQACRISPLCHNLFALYDENTKLWYAPNRTITVDDKMSLRLHYRMRFYFTNWHGTNDNEQSVWRHSPKKQKNGYEKKKIPDATPLLDASSLEYLFAQGQYDLVKCLAPIRDPKTEQDGHDIENECLGMAVLAISHYAMMKKMQLPELPKDISYKRYIPETLNKSIRQRNLLTRMRINNVFKDFLKEFNNKTICDSSVSTHDLKVKYLATLETLTKHYGAEIFETSMLLISSENEMNWFHSNDGGNVLYYEVMVTGNLGIQWRHKPNVVSVEKEKNKLKRKKLENKHKKDEEKNKIREEWNNFSYFPEITHIVIKESVVSINKQDNKKMELKLSSHEEALSFVSLVDGYFRLTADAHHYLCTDVAPPLIVHNIQNGCHGPICTEYAINKLRQEGSEEGMYVLRWSCTDFDNILMTVTCFEKSEQVQGAQKQFKNFQIEVQKGRYSLHGSDRSFPSLGDLMSHLKKQILRTDNISFMLKRCCQPKPREISNLLVATKKAQEWQPVYPMSQLSFDRILKKDLVQGEHLGRGTRTHIYSGTLMDYKDDEGTSEEKKIKVILKVLDPSHRDISLAFFEAASMMRQVSHKHIVYLYGVCVRDVENIMVEEFVEGGPLDLFMHRKSDVLTTPWKFKVAKQLASALSYLEDKDLVHGNVCTKNLLLAREGIDSECGPFIKLSDPGIPITVLSRQECIERIPWIAPECVEDSKNLSVAADKWSFGTTLWEICYNGEIPLKDKTLIEKERFYESRCRPVTPSCKELADLMTRCMNYDPNQRPFFRAIMRDINKLEEQNPDIVSEKKPATEVDPTHFEKRFLKRIRDLGEGHFGKVELCRYDPEGDNTGEQVAVKSLKPESGGNHIADLKKEIEILRNLYHENIVKYKGICTEDGGNGIKLIMEFLPSGSLKEYLPKNKNKINLKQQLKYAVQICKGMDYLGSRQYVHRDLAARNVLVESEHQVKIGDFGLTKAIETDKEYYTVKDDRDSPVFWYAPECLMQSKFYIASDVWSFGVTLHELLTYCDSDSSPMALFLKMIGPTHGQMTVTRLVNTLKEGKRLPCPPNCPDEVYQLMRKCWEFQPSNRTSFQNLIEGFEALLK",
+      "length": 1154,
+      "molWeight": 133277,
+      "crc64": "A2C4BE27851ACABB",
+      "md5": "933420E3EAC5BE8B1760CDE731133E4A"
+    },
+    "features": [
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 34,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 420,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "FERM",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00084"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 439,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 544,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "SH2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00191"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 583,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 855,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      },
+      {
+        "type": "Domain",
+        "location": {
+          "start": {
+            "value": 875,
+            "modifier": "EXACT"
+          },
+          "end": {
+            "value": 1153,
+            "modifier": "EXACT"
+          }
+        },
+        "description": "Protein kinase 2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "PROSITE-ProRule",
+            "id": "PRU00159"
+          }
+        ]
+      }
+    ]
+  }
+}
