@@ -198,3 +198,25 @@ TYK2  NCWETEASFRPTF  (centre = 1156)
 - Variant counts come from ClinVar, gnomAD v4 (AC = allele count) and cBioPortal; licensed tumour-database counts are not shown.
 
 Sources: [Hammaren et al. 2015, ATP binding to the JAK2 pseudokinase domain (PNAS)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4403165); [Exon 13 G571S in MPN (Leukemia Research Reports 2016)](https://doaj.org/article/d6ee03ab66df44e5b4d23408576c5020); [Role of exon 13 G571S in MPN](https://agris.fao.org/search/en/records/65deba4e7c7033e84beb9c59); [Familial G571S not linked with ET](https://repository.ukim.mk/entities/publication/f8297d64-4f10-4f9b-a09b-a3a141b24616); [JAK2 G571S review (PMC5128013)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5128013); [Structural effects of JAK2 exon 13-15 mutations (BMC Struct Biol 2009)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2749040/); [JAK2 domain table (PMC4943318)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4943318/table/T1); MaveDB TYK2 DMS; AlphaFold DB (AlphaMissense); dbNSFP via myvariant.info; ClinVar; gnomAD v4; cBioPortal; UniProt.
+
+## CCLE expression check for L805I (negative result)
+
+JAK2 L805I occurs in one Cancer Cell Line Encyclopedia line, **SARC9371_BONE** (osteosarcoma, DepMap ACH-002396; GRCh37 chr9:5080662 C>A, NM_004972.3), confirmed through the cBioPortal mutation API. We asked whether its transcriptome shows a JAK/STAT effect. It cannot be answered with this line, for two reasons.
+
+**1. The line has no expression data.** In CCLE (Broad, 2019) only 1,156 of 1,739 lines carry RNA-seq, and SARC9371_BONE is not among them (it is the study's only `SARC*` line, mutation data only). It is also absent from the CCLE 2025 release.
+
+**2. Baseline expression of a single line cannot detect a JAK2 gain of function anyway.** Calibration on lines carrying the strongest known JAK2 gain-of-function variant, V617F, scoring the STAT5 target set (CISH, SOCS1, SOCS2, SOCS3, PIM1, BCL2L1, MYC, ID1, OSM) as the mean z-score against 188 haematopoietic CCLE lines:
+
+| Line | JAK2 status | STAT5 target signature (mean z) | Rank among 188 haematopoietic lines |
+|---|---|---|---|
+| HEL | V617F, amplified | +0.78 | 18 (top 10%) |
+| SET-2 | V617F | +0.14 | 51 (top 27%) |
+| CMK | control | +0.14 | - |
+
+SET-2 is indistinguishable from the control, the highest-scoring lines (LAMA-84 +2.08, DND-41 +2.04) carry no JAK2 mutation, and in HEL only PIM1, BCL2L1 and ID1 are raised while CISH and the SOCS genes are flat. Steady-state expression of an established line reflects lineage, medium and feedback adaptation, which swamps the contribution of one pathway variant.
+
+**3. In this line L805I is most likely a passenger.** SARC9371_BONE carries 2,481 mutations (TMB 82.8/Mb, hypermutated), so a single JAK2 missense change there is weak evidence of function.
+
+**What would answer the question.** An isogenic comparison - the same cells with and without L805I (Ba/F3-EPOR, or JAK2-knockout HEL reconstituted with WT, L805I and V617F) - read as phospho-STAT5 and then CISH / SOCS2 / PIM1 by qPCR, **with and without cytokine**: induction without cytokine indicates gain of function, failure to induce with cytokine indicates loss of function. Expected transcriptional directions: gain of function raises STAT5 targets (CISH, SOCS1-3, PIM1, BCL2L1, MYC, CCND1, ID1, OSM) and, in an erythroid/megakaryocytic background, GATA1/KLF1/NFE2; loss of function abolishes their induction after EPO/TPO/GM-CSF and flattens the interferon-gamma response (GBP1, CXCL9/10/11, IRF1, STAT1, B2M, TAP1, HLA-DRA).
+
+Data: cBioPortal API (study `ccle_broad_2019`, profiles `..._mutations` and `..._rna_seq_mrna`), retrieved 25 Oct 2026.
