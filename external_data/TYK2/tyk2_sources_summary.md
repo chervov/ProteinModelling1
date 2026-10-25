@@ -30,6 +30,7 @@ TYK2 transduces type I interferon, IL-12 and IL-23 signalling. Biallelic loss of
 | 12 | IntOGen | Cancer driver genes | Not detected as a cancer driver | Gene-level only |
 | 13 | MaveDB | Deep mutational scan data | **Deep mutational scan available** (Deep mutational scanning reveals pharmacologically relevant insights into TYK2 signaling and disease, bioRxiv 2025, doi:10.1101/2025.10.11.681520): IFN-alpha signalling (~23,700 variants; also with allosteric inhibitors BMS-986202 and NDI-034858) and VAMP-seq abundance | 2 DMS columns |
 | 14 | OMIM (MIM 176941) | Curated, literature-backed disease variants | 12 allelic variants (7 with a simple protein change) | `OMIM allelic variant` column |
+| 15 | Repo ddG run (`data/ddg/`) | Two-state ddG for every substitution (PyRosetta; sign convention: **negative = destabilising**) | 22,536 substitutions, 1,187 positions | `ddG closed`, `ddG open`, `ddG open-closed` (predict and ext files) |
 | - | Dataset EV1 (Jeanpierre 2025) | Structural clusters | JAK1 only | `Cluster` left blank |
 | - | HGMD | Literature disease variants | Not accessed (licence required) | - |
 
