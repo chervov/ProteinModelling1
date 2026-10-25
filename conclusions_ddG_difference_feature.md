@@ -324,5 +324,88 @@ other. AUC 0.499 is arithmetic, not a protocol bug.
 
 ---
 
+---
+
+## 9. Measured: the extreme values are 100% steric repulsion
+
+*Added 25 October 2026. §8 inferred the clash explanation from residue-volume statistics and the
+literature. This section measures it directly: PyRosetta 2026.39 installed on a fresh molab box,
+same structure (`TYK2/af3/tyk2_af3_closed.pdb`), same protocol as `pipeline/ddg/worker.py`.
+Script: [`pipeline/ddg/diagnose_clash.py`](pipeline/ddg/diagnose_clash.py); raw output:
+[`data/ddg/clash_diagnosis.json`](data/ddg/clash_diagnosis.json).*
+
+Three protocols on the same relaxed pose:
+
+- **A** — the pipeline exactly: `mutate_residue(pack_radius=8.0)`, ΔΔG = E(WT repacked) − E(mut).
+- **fa_rep** — the change in the weighted Lennard-Jones repulsive term alone, as a fraction of ΔΔG.
+- **B** — A plus `MinMover` over backbone *and* side chains of the 8 Å shell, i.e. the backbone
+  movement a repack-only protocol cannot provide.
+
+Test set: the three most extreme positions in the merged results (746, 964, 801) and two ordinary
+ones (667, 775).
+
+| variant | pipeline | A (reproduction) | B (flexible bb) | ΔΔG that is `fa_rep` |
+|---|--:|--:|--:|--:|
+| G746W | −2988.6 | −3030.7 | **−106.2** | **100%** |
+| G746F | −2901.6 | −2922.4 | −313.1 | 100% |
+| G746A | −228.8 | −231.4 | −13.8 | 96% |
+| G964W | −2724.0 | −2742.0 | **−47.6** | 100% |
+| G964F | −2486.0 | −2487.8 | −107.0 | 100% |
+| G964A | −148.9 | −149.7 | −7.7 | 98% |
+| G801W | −3047.9 | −3059.6 | **−152.7** | 101% |
+| G801F | −2204.1 | −2209.5 | −112.9 | 101% |
+| G801A | −60.7 | −59.5 | −0.5 | 111% |
+| H667F | −17.8 | −12.5 | −7.8 | 104% |
+| H667A | −3.9 | −4.5 | −4.1 | — |
+| R775W | +2.70 | +1.5 | +1.9 | — |
+| R775A | +1.54 | +1.3 | −0.3 | — |
+
+### What it shows
+
+**1. The pipeline reproduces.** Pearson 0.947, Spearman **0.998** against the stored values; the
+large magnitudes match to **0.1–2%**. The calculation does what the code says, on an independently
+relaxed pose.
+
+**2. The extreme values are entirely clash.** `fa_rep` accounts for ~100% of every large ΔΔG. They
+are not energies with a large error — they are the repulsive term and nothing else. §4's reading
+("a meaningless energy but a reliable statement that the substitution does not physically fit") is
+confirmed as literally true.
+
+**3. All three extreme positions are glycine**, and the damage scales with what replaces it:
+G→W/F ≈ −2,200 to −3,060, G→A ≈ −60 to −230, a 10–50× difference at the same position. This is
+the mechanism behind the r = −0.84 volume correlation in §8.1: mutating away from glycine in a
+fixed backbone is the textbook case Flex ddG says requires backbone movement.
+
+**4. Backbone flexibility removes 20–60× of it.** −3031 → −106, −2742 → −48, −3060 → −153.
+With the documented ×2.94 REU→kcal/mol factor those land near −36 kcal/mol: severe, but physical.
+
+**5. The ordering survives — which is why nothing in §1–§7 changes.** A vs B Spearman **0.904**.
+The pipeline's design decision ("only the ordering is meaningful", README) is vindicated: the
+amplitude is wrong, the rank is approximately right, and every result in this document is
+rank-based.
+
+**6. The extreme tail is also *noisy*, not merely inflated.** H667W scored −2246 here against
+−435 in the stored run — a 5× spread from identical code, because repacking is stochastic and a
+clashed rotamer is an unstable optimum. Ordinary positions reproduce within 1–2%. Error bars on
+the tail are therefore large and position-dependent, another reason to rank rather than clip.
+
+**7. The relaxed input still carries strain.** After the coordinate-constrained FastRelax,
+residues 344–351 sit at 11–25 REU each. That is the "pre-optimise the input" failure mode from the
+RosettaCommons thread in §8.2, localised to one loop.
+
+### The gap, in one line
+
+G746W scores **−2,989**. In the TYK2 DMS, position 746 has mean abundance **−0.31** and mean
+signalling **−0.05** — the cells barely register it. A three-thousand-unit "energy" for a
+substitution with no measured phenotype is the quantitative reason ΔΔG reaches AUC 0.704 on
+abundance where AlphaMissense reaches 0.859 (§5).
+
+### Reproducing
+
+PyRosetta installs on molab with the project's own recipe (`pip install pyrosetta-installer`, then
+`install_pyrosetta()`); the 2026.39 cp313 Ubuntu wheel works on the standard image. FastRelax of
+the 1,187-residue pose takes ~35 min on one core, which is why `worker.py` caches it per box.
+Commercial use of PyRosetta requires a licence; academic use is free.
+
 *Data: `data/ddg/ddg_TYK2_all.json`, `data/ddg/ddg_JAK1_all.json` (44,462 variants, both states).
 Run-book: `data/ddg/RUNBOOK.md`. Context: `mutation_analysis.md` §56–60.*
