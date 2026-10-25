@@ -1,0 +1,1145 @@
+{
+  "date": "2026-10-25",
+  "variant": "JAK3 Y581C",
+  "cosmic37": {
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20Y581C&grchv=37&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  "cosmic38": {
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20Y581C&grchv=38&ef=PubmedPMID,LegacyMutationID,GenomicMutationID,PrimarySite,PrimaryHistology",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      {},
+      []
+    ]
+  },
+  "clinvar": {
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK3%20Tyr581Cys&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  "ccle": {
+    "url": "https://www.cbioportal.org/api/molecular-profiles/ccle_broad_2019_mutations/mutations?sampleListId=ccle_broad_2019_all&entrezGeneId=3718&projection=DETAILED&pageSize=10000",
+    "status": 200,
+    "totalJAK3Records": 82,
+    "matches": []
+  },
+  "uniprot": {
+    "url": "https://rest.uniprot.org/uniprotkb/P52333.json",
+    "aa581": "Y",
+    "local571to591": "EAASLMSQVSYRHLVLLHGVC"
+  },
+  "myvariant": {
+    "_id": "chr19:g.17947982T>C",
+    "_version": 1,
+    "cadd": {
+      "_license": "http://bit.ly/2TIuab9",
+      "alt": "C",
+      "anc": "T",
+      "annotype": "CodingTranscript",
+      "bstatistic": 964,
+      "chmm": {
+        "bivflnk": 0,
+        "enh": 0,
+        "enhbiv": 0,
+        "het": 0,
+        "quies": 0.087,
+        "reprpc": 0.031,
+        "reprpcwk": 0.433,
+        "tssa": 0,
+        "tssaflnk": 0,
+        "tssbiv": 0,
+        "tx": 0.276,
+        "txflnk": 0,
+        "txwk": 0.165,
+        "znfrpts": 0
+      },
+      "chrom": 19,
+      "consdetail": "missense",
+      "consequence": "NON_SYNONYMOUS",
+      "consscore": 7,
+      "cpg": 0.09,
+      "dna": {
+        "helt": -3.86,
+        "mgw": 0.02,
+        "prot": 3.87,
+        "roll": 0.43
+      },
+      "encode": {
+        "exp": 101.7,
+        "h3k27ac": 2.76,
+        "h3k4me1": 3,
+        "h3k4me3": 1,
+        "nucleo": 1,
+        "occ": 2,
+        "p_val": {
+          "comb": 0.97,
+          "ctcf": 0,
+          "dnas": 1.65,
+          "faire": 0,
+          "mycp": 0,
+          "polii": 0
+        },
+        "sig": {
+          "ctcf": 0.02,
+          "dnase": 0.04,
+          "faire": 0,
+          "myc": 0,
+          "polii": 0
+        }
+      },
+      "exon": "13/24",
+      "fitcons": 0.671935,
+      "gc": 0.64,
+      "gene": {
+        "ccds_id": "CCDS12366.1",
+        "cds": {
+          "cdna_pos": 1842,
+          "cds_pos": 1742,
+          "rel_cdna_pos": 0.34,
+          "rel_cds_pos": 0.52
+        },
+        "feature_id": "ENST00000458235",
+        "gene_id": "ENSG00000105639",
+        "genename": "JAK3",
+        "prot": {
+          "domain": "ndomain",
+          "protpos": 581,
+          "rel_prot_pos": 0.52
+        }
+      },
+      "gerp": {
+        "n": 4.17,
+        "rs": 188.8,
+        "rs_pval": 7.12807e-30,
+        "s": 3.11
+      },
+      "grantham": 194,
+      "isderived": "TRUE",
+      "isknownvariant": "FALSE",
+      "istv": "FALSE",
+      "length": 0,
+      "mapability": {
+        "20bp": 1,
+        "35bp": 1
+      },
+      "min_dist_tse": 7385,
+      "min_dist_tss": 7275,
+      "mutindex": -34,
+      "naa": "C",
+      "oaa": "Y",
+      "phast_cons": {
+        "mammalian": 0.179,
+        "primate": 0.915,
+        "vertebrate": 0.992
+      },
+      "phred": 22.2,
+      "phylop": {
+        "mammalian": 0.701,
+        "primate": 0.393,
+        "vertebrate": 2.301
+      },
+      "polyphen": {
+        "cat": "benign",
+        "val": 0.082
+      },
+      "pos": 17947982,
+      "rawscore": 2.981388,
+      "ref": "T",
+      "segway": "TF0",
+      "sift": {
+        "cat": "deleterious",
+        "val": 0
+      },
+      "type": "SNV"
+    },
+    "chrom": "19",
+    "dbnsfp": {
+      "_license": "http://bit.ly/2VLnQBz",
+      "aa": {
+        "alt": "C",
+        "codon_degeneracy": [
+          0,
+          0,
+          0
+        ],
+        "codonpos": [
+          2,
+          2,
+          2
+        ],
+        "pos": [
+          581,
+          581,
+          581
+        ],
+        "ref": "Y",
+        "refcodon": [
+          "TAC",
+          "TAC",
+          "TAC"
+        ]
+      },
+      "alphamissense": {
+        "pred": [
+          "B",
+          "B",
+          "B"
+        ],
+        "rankscore": 0.3092,
+        "score": [
+          0.0972,
+          0.0993,
+          0.1409
+        ]
+      },
+      "alt": "C",
+      "altai_neandertal": [
+        "T",
+        "T"
+      ],
+      "ancestral_allele": "T",
+      "appris": [
+        "principal2",
+        "principal2",
+        "alternative2"
+      ],
+      "bayesdel": {
+        "add_af": {
+          "pred": "T",
+          "rankscore": 0.53829,
+          "score": 0.0159224
+        },
+        "no_af": {
+          "pred": "T",
+          "rankscore": 0.53225,
+          "score": -0.214905
+        }
+      },
+      "bstatistic": {
+        "converted_rankscore": 0.0917,
+        "score": 958
+      },
+      "chagyrskaya_neandertal": [
+        "T",
+        "T"
+      ],
+      "chrom": "19",
+      "clinpred": {
+        "pred": "D",
+        "rankscore": 0.73001,
+        "score": 0.979767560958862
+      },
+      "dann": {
+        "rankscore": 0.75473,
+        "score": 0.9962148104599508
+      },
+      "denisova": [
+        "T",
+        "T"
+      ],
+      "deogen2": {
+        "pred": [
+          "D",
+          "D"
+        ],
+        "rankscore": 0.93948,
+        "score": [
+          0.773263,
+          0.773263
+        ]
+      },
+      "eigen": {
+        "phred_coding": 2.92189,
+        "raw_coding": 0.108996877727883,
+        "raw_coding_rankscore": 0.46882
+      },
+      "eigen-pc": {
+        "phred_coding": 2.513331,
+        "raw_coding": 0.043269708572019,
+        "raw_coding_rankscore": 0.41747
+      },
+      "ensembl": {
+        "geneid": [
+          "ENSG00000105639",
+          "ENSG00000105639",
+          "ENSG00000105639"
+        ],
+        "proteinid": [
+          "ENSP00000391676",
+          "ENSP00000432511",
+          "ENSP00000436421"
+        ],
+        "transcriptid": [
+          "ENST00000458235",
+          "ENST00000527670",
+          "ENST00000534444"
+        ]
+      },
+      "esm1b": {
+        "pred": [
+          "T",
+          "T",
+          "T"
+        ],
+        "rankscore": 0.38687,
+        "score": [
+          -5.173,
+          -5.173,
+          -5.175
+        ]
+      },
+      "eve": {
+        "class10_pred": [
+          "U",
+          "U"
+        ],
+        "class20_pred": [
+          "B",
+          "B"
+        ],
+        "class25_pred": [
+          "B",
+          "B"
+        ],
+        "class30_pred": [
+          "B",
+          "B"
+        ],
+        "class40_pred": [
+          "B",
+          "B"
+        ],
+        "class50_pred": [
+          "B",
+          "B"
+        ],
+        "class60_pred": [
+          "B",
+          "B"
+        ],
+        "class70_pred": [
+          "B",
+          "B"
+        ],
+        "class75_pred": [
+          "B",
+          "B"
+        ],
+        "class80_pred": [
+          "B",
+          "B"
+        ],
+        "class90_pred": [
+          "B",
+          "B"
+        ],
+        "rankscore": 0.11038,
+        "score": [
+          0.1189902079970632,
+          0.1189902079970632
+        ]
+      },
+      "fathmm": {
+        "converted_rankscore": 0.61559,
+        "pred": [
+          "T",
+          "T",
+          "T"
+        ],
+        "score": [
+          0.08,
+          0.08,
+          0.08
+        ]
+      },
+      "fathmm-mkl": {
+        "coding_group": "AEFBI",
+        "coding_pred": "D",
+        "coding_rankscore": 0.61676,
+        "coding_score": 0.94594
+      },
+      "fathmm-xf": {
+        "coding_pred": "D",
+        "coding_rankscore": 0.57237,
+        "coding_score": 0.566344
+      },
+      "fitcons": {
+        "gm12878": {
+          "confidence_value": 0,
+          "rankscore": 0.74545,
+          "score": 0.702456
+        },
+        "h1-hesc": {
+          "confidence_value": 0,
+          "rankscore": 0.34648,
+          "score": 0.602189
+        },
+        "huvec": {
+          "confidence_value": 0,
+          "rankscore": 0.33627,
+          "score": 0.567892
+        },
+        "integrated": {
+          "confidence_value": 0,
+          "rankscore": 0.52595,
+          "score": 0.67177
+        }
+      },
+      "gencode_basic": [
+        "Y",
+        "Y",
+        "Y"
+      ],
+      "genename": [
+        "JAK3",
+        "JAK3",
+        "JAK3"
+      ],
+      "genocanyon": {
+        "rankscore": 0.11951,
+        "score": 0.0100111272335018
+      },
+      "gerp": {
+        "91_mammals": {
+          "rankscore": 0.34311,
+          "score": 1.52
+        }
+      },
+      "gerp++": {
+        "nr": 4.17,
+        "rs": 3.11,
+        "rs_rankscore": 0.34883
+      },
+      "gmvp": {
+        "rankscore": 0.69781,
+        "score": 0.6984073082549392
+      },
+      "hg18": {
+        "end": 17808982,
+        "start": 17808982
+      },
+      "hg19": {
+        "end": 17947982,
+        "start": 17947982
+      },
+      "hg38": {
+        "end": 17837173,
+        "start": 17837173
+      },
+      "hgvsc": "c.1742A>G",
+      "hgvsp": [
+        "p.Tyr581Cys",
+        "p.Y581C"
+      ],
+      "interpro": {
+        "domain": [
+          "Serine-threonine/tyrosine-protein kinase, catalytic domain|Protein kinase domain|Tyrosine-protein kinase, catalytic domain",
+          "Serine-threonine/tyrosine-protein kinase, catalytic domain|Protein kinase domain|Tyrosine-protein kinase, catalytic domain"
+        ]
+      },
+      "list-s2": {
+        "pred": [
+          "D",
+          "D"
+        ],
+        "rankscore": 0.61581,
+        "score": [
+          0.872813,
+          0.887611
+        ]
+      },
+      "lrt": {
+        "converted_rankscore": 0.34318,
+        "omega": 0.281784,
+        "pred": "N",
+        "score": 0.003934
+      },
+      "m-cap": {
+        "pred": "D",
+        "rankscore": 0.77548,
+        "score": 0.102164
+      },
+      "metalr": {
+        "pred": "T",
+        "rankscore": 0.54782,
+        "score": 0.1942
+      },
+      "metarnn": {
+        "pred": [
+          "D",
+          "D",
+          "D"
+        ],
+        "rankscore": 0.77336,
+        "score": [
+          0.77435684,
+          0.77435684,
+          0.77435684
+        ]
+      },
+      "metasvm": {
+        "pred": "T",
+        "rankscore": 0.58524,
+        "score": -0.7386
+      },
+      "mpc": {
+        "rankscore": 0.59438,
+        "score": 0.670945208319
+      },
+      "mutationassessor": {
+        "pred": [
+          "N",
+          "N",
+          "N"
+        ],
+        "rankscore": 0.18768,
+        "score": [
+          0.725,
+          0.725,
+          0.725
+        ]
+      },
+      "mutationtaster": {
+        "aae": [
+          "Y581C",
+          "Y581C",
+          "Y581C"
+        ],
+        "converted_rankscore": 0.38252,
+        "model": [
+          "simple_aae",
+          "simple_aae",
+          "simple_aae"
+        ],
+        "pred": [
+          "D",
+          "D",
+          "D"
+        ],
+        "score": [
+          0.961744,
+          0.961744,
+          0.961744
+        ]
+      },
+      "mutformer": {
+        "rankscore": 0.90945,
+        "score": 0.89128596
+      },
+      "mutpred": {
+        "aa_change": [
+          "Y581C",
+          "Y581C",
+          "Y581C"
+        ],
+        "accession": [
+          "P52333",
+          "P52333",
+          "P52333"
+        ],
+        "pred": [
+          {
+            "mechanism": "Loss of sheet",
+            "p_val": 0.0817
+          },
+          {
+            "mechanism": "Loss of sheet",
+            "p_val": 0.0817
+          },
+          {
+            "mechanism": "Loss of sheet",
+            "p_val": 0.0817
+          }
+        ],
+        "rankscore": 0.90844,
+        "score": [
+          0.785,
+          0.785,
+          0.785
+        ]
+      },
+      "mvp": {
+        "rankscore": 0.60568,
+        "score": [
+          0.608819557231,
+          0.608819557231,
+          0.608819557231
+        ]
+      },
+      "phactboost": {
+        "rankscore": 0.89087,
+        "score": [
+          0.991617693047564,
+          0.991617693047564
+        ]
+      },
+      "phastcons": {
+        "100way_vertebrate": {
+          "rankscore": 0.71638,
+          "score": 1
+        },
+        "17way_primate": {
+          "rankscore": 0.25863,
+          "score": 0.359
+        },
+        "470way_mammalian": {
+          "rankscore": 0.68203,
+          "score": 1
+        }
+      },
+      "phylop": {
+        "100way_vertebrate": {
+          "rankscore": 0.60301,
+          "score": 4.529
+        },
+        "17way_primate": {
+          "rankscore": 0.47794,
+          "score": 0.609
+        },
+        "470way_mammalian": {
+          "rankscore": 0.37181,
+          "score": 3.274
+        }
+      },
+      "polyphen2": {
+        "hdiv": {
+          "pred": [
+            "D",
+            "D",
+            "D"
+          ],
+          "rankscore": 0.7322,
+          "score": [
+            0.973,
+            0.973,
+            0.998
+          ]
+        },
+        "hvar": {
+          "pred": [
+            "P",
+            "P",
+            "D"
+          ],
+          "rankscore": 0.65306,
+          "score": [
+            0.814,
+            0.814,
+            0.917
+          ]
+        }
+      },
+      "primateai": {
+        "pred": "T",
+        "rankscore": 0.35139,
+        "score": 0.473330318928
+      },
+      "provean": {
+        "converted_rankscore": 0.8383,
+        "pred": [
+          "D",
+          "D",
+          "D"
+        ],
+        "score": [
+          -5.09,
+          -5.09,
+          -5.22
+        ]
+      },
+      "ref": "T",
+      "reliability_index": 10,
+      "revel": {
+        "rankscore": 0.68844,
+        "score": [
+          0.369,
+          0.369,
+          0.369
+        ]
+      },
+      "sift": {
+        "converted_rankscore": 0.7849,
+        "pred": [
+          "D",
+          "D",
+          "D"
+        ],
+        "score": [
+          0.001,
+          0.001,
+          0.001
+        ]
+      },
+      "sift4g": {
+        "converted_rankscore": 0.79402,
+        "pred": [
+          "D",
+          "D",
+          "D"
+        ],
+        "score": [
+          0.002,
+          0.002,
+          0.002
+        ]
+      },
+      "siphy_29way": {
+        "logodds_rankscore": 0.30061,
+        "logodds_score": 8.1084,
+        "pi": {
+          "a": 0.1809,
+          "c": 0,
+          "g": 0,
+          "t": 0.8191
+        }
+      },
+      "tsl": [
+        5,
+        1,
+        1
+      ],
+      "uniprot": [
+        {
+          "acc": "P52333",
+          "entry": "JAK3_HUMAN"
+        },
+        {
+          "acc": "P52333",
+          "entry": "JAK3_HUMAN"
+        },
+        {
+          "acc": "P52333-2",
+          "entry": "JAK3_HUMAN"
+        }
+      ],
+      "varity": {
+        "er": {
+          "rankscore": 0.63393,
+          "score": [
+            0.38455954,
+            0.38455954
+          ]
+        },
+        "er_loo": {
+          "rankscore": 0.63393,
+          "score": [
+            0.38455954,
+            0.38455954
+          ]
+        },
+        "r": {
+          "rankscore": 0.65133,
+          "score": [
+            0.46743995,
+            0.46743995
+          ]
+        },
+        "r_loo": {
+          "rankscore": 0.65134,
+          "score": [
+            0.46743995,
+            0.46743995
+          ]
+        }
+      },
+      "vep_canonical": "YES",
+      "vest4": {
+        "rankscore": 0.42737,
+        "score": [
+          0.379,
+          0.38,
+          0.386
+        ]
+      },
+      "vindijia_neandertal": [
+        "T",
+        "T"
+      ]
+    },
+    "hg19": {
+      "end": 17947982,
+      "start": 17947982
+    },
+    "snpeff": {
+      "_license": "http://bit.ly/2suyRKt",
+      "ann": {
+        "cdna": {
+          "length": "5434",
+          "position": "1842"
+        },
+        "cds": {
+          "length": "3375",
+          "position": "1742"
+        },
+        "effect": "missense_variant",
+        "feature_id": "NM_000215.3",
+        "feature_type": "transcript",
+        "gene_id": "JAK3",
+        "genename": "JAK3",
+        "hgvs_c": "c.1742A>G",
+        "hgvs_p": "p.Tyr581Cys",
+        "protein": {
+          "length": "1124",
+          "position": "581"
+        },
+        "putative_impact": "MODERATE",
+        "rank": "13",
+        "total": "24",
+        "transcript_biotype": "protein_coding"
+      }
+    },
+    "vcf": {
+      "alt": "C",
+      "position": "17947982",
+      "ref": "T"
+    }
+  },
+  "vep": [
+    {
+      "id": "NM_000215.4:c.1742A>G",
+      "input": "NM_000215.4:c.1742A>G",
+      "most_severe_consequence": "missense_variant",
+      "transcript_consequences": [
+        {
+          "cdna_end": 1792,
+          "sift_prediction": "deleterious",
+          "hgnc_id": "HGNC:6193",
+          "cdna_start": 1792,
+          "gene_symbol": "JAK3",
+          "impact": "MODERATE",
+          "strand": -1,
+          "polyphen_prediction": "possibly_damaging",
+          "protein_start": 581,
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000458235",
+          "biotype": "protein_coding",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cds_start": 1742,
+          "amino_acids": "Y/C",
+          "gene_id": "ENSG00000105639",
+          "polyphen_score": 0.82,
+          "codons": "tAc/tGc",
+          "protein_end": 581,
+          "cds_end": 1742
+        },
+        {
+          "strand": -1,
+          "impact": "MODIFIER",
+          "gene_symbol": "JAK3",
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "cdna_end": 1956,
+          "consequence_terms": [
+            "3_prime_UTR_variant",
+            "NMD_transcript_variant"
+          ],
+          "biotype": "nonsense_mediated_decay",
+          "transcript_id": "ENST00000526008",
+          "gene_id": "ENSG00000105639",
+          "cdna_start": 1956,
+          "hgnc_id": "HGNC:6193"
+        },
+        {
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "biotype": "retained_intron",
+          "transcript_id": "ENST00000527031",
+          "cdna_end": 1832,
+          "gene_id": "ENSG00000105639",
+          "hgnc_id": "HGNC:6193",
+          "cdna_start": 1832,
+          "gene_symbol": "JAK3",
+          "strand": -1,
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "G",
+          "protein_start": 581,
+          "polyphen_prediction": "possibly_damaging",
+          "strand": -1,
+          "impact": "MODERATE",
+          "gene_symbol": "JAK3",
+          "hgnc_id": "HGNC:6193",
+          "sift_prediction": "deleterious",
+          "cdna_start": 1772,
+          "cdna_end": 1772,
+          "cds_end": 1742,
+          "protein_end": 581,
+          "codons": "tAc/tGc",
+          "polyphen_score": 0.82,
+          "gene_id": "ENSG00000105639",
+          "cds_start": 1742,
+          "amino_acids": "Y/C",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "transcript_id": "ENST00000527670",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "JAK3",
+          "impact": "MODIFIER",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "biotype": "retained_intron",
+          "transcript_id": "ENST00000528705",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "distance": 2251,
+          "hgnc_id": "HGNC:6193",
+          "gene_id": "ENSG00000105639"
+        },
+        {
+          "codons": "tAc/tGc",
+          "protein_end": 581,
+          "cds_end": 1742,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000534444",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "amino_acids": "Y/C",
+          "cds_start": 1742,
+          "gene_id": "ENSG00000105639",
+          "polyphen_score": 0.92,
+          "gene_symbol": "JAK3",
+          "impact": "MODERATE",
+          "strand": -1,
+          "polyphen_prediction": "probably_damaging",
+          "protein_start": 581,
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "cdna_end": 1827,
+          "hgnc_id": "HGNC:6193",
+          "sift_prediction": "deleterious",
+          "cdna_start": 1827
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "transcript_id": "ENST00000696967",
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "cdna_end": 919,
+          "cdna_start": 919,
+          "hgnc_id": "HGNC:6193",
+          "gene_id": "ENSG00000105639",
+          "gene_symbol": "JAK3",
+          "impact": "MODIFIER",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "G"
+        },
+        {
+          "impact": "MODIFIER",
+          "strand": -1,
+          "gene_symbol": "JAK3",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "G",
+          "distance": 3657,
+          "biotype": "retained_intron",
+          "transcript_id": "ENST00000696969",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "hgnc_id": "HGNC:6193",
+          "gene_id": "ENSG00000105639"
+        },
+        {
+          "cdna_end": 397,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "transcript_id": "ENST00000696970",
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000105639",
+          "hgnc_id": "HGNC:6193",
+          "cdna_start": 397,
+          "strand": -1,
+          "impact": "MODIFIER",
+          "gene_symbol": "JAK3",
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_symbol": "JAK3",
+          "impact": "MODIFIER",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00001115373",
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "distance": 1561,
+          "hgnc_id": "HGNC:6193",
+          "gene_id": "ENSG00000105639"
+        },
+        {
+          "polyphen_score": 0.82,
+          "amino_acids": "Y/C",
+          "cds_start": 1742,
+          "gene_id": "ENSG00000105639",
+          "transcript_id": "ENST00001135290",
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "protein_end": 581,
+          "cds_end": 1742,
+          "codons": "tAc/tGc",
+          "cdna_start": 1827,
+          "sift_prediction": "deleterious",
+          "hgnc_id": "HGNC:6193",
+          "cdna_end": 1827,
+          "protein_start": 581,
+          "variant_allele": "G",
+          "gene_symbol_source": "HGNC",
+          "impact": "MODERATE",
+          "polyphen_prediction": "possibly_damaging",
+          "strand": -1,
+          "gene_symbol": "JAK3"
+        }
+      ],
+      "allele_string": "A/G",
+      "seq_region_name": "19",
+      "strand": -1,
+      "start": 17837173,
+      "end": 17837173,
+      "assembly_name": "GRCh38"
+    }
+  ],
+  "gnomad": {
+    "data": {
+      "variant": {
+        "variant_id": "19-17837173-T-C",
+        "exome": {
+          "ac": 0,
+          "an": 1420402,
+          "af": 0
+        },
+        "genome": null
+      }
+    }
+  },
+  "controls": {
+    "pubmed": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=JAK3%20AND%20(Y581C%20OR%20Tyr581Cys%20OR%20%221742A%3EG%22)&format=json",
+      "data": {
+        "version": "6.9",
+        "hitCount": 1,
+        "request": {
+          "queryString": "JAK3 AND (Y581C OR Tyr581Cys OR \"1742A>G\")",
+          "resultType": "lite",
+          "cursorMark": "*",
+          "pageSize": 25,
+          "sort": "",
+          "synonym": false
+        },
+        "resultList": {
+          "result": [
+            {
+              "id": "24446311",
+              "source": "MED",
+              "pmid": "24446311",
+              "pmcid": "PMC4207363",
+              "fullTextIdList": {
+                "fullTextId": [
+                  "PMC4207363"
+                ]
+              },
+              "doi": "10.1002/ajh.23652",
+              "title": "BRAF kinase domain mutations are present in a subset of chronic myelomonocytic leukemia with wild-type RAS.",
+              "authorString": "Zhang L, Singh RR, Patel KP, Stingo F, Routbort M, You MJ, Miranda RN, Garcia-Manero G, Kantarjian HM, Medeiros LJ, Luthra R, Khoury JD.",
+              "journalTitle": "Am J Hematol",
+              "issue": "5",
+              "journalVolume": "89",
+              "pubYear": "2014",
+              "journalIssn": "0361-8609; 1096-8652; ",
+              "pageInfo": "499-504",
+              "pubType": "research-article; journal article; research support, n.i.h., extramural",
+              "isOpenAccess": "N",
+              "inEPMC": "Y",
+              "inPMC": "Y",
+              "citedByCount": 34,
+              "hasReferences": "Y",
+              "hasTextMinedTerms": "Y",
+              "hasDbCrossReferences": "N",
+              "hasPDF": "Y",
+              "hasBook": "N",
+              "hasSuppl": "N",
+              "hasLabsLinks": "N",
+              "hasTMAccessionNumbers": "N",
+              "firstPublicationDate": "2014-02-10",
+              "firstIndexDate": "2014-01-23"
+            }
+          ]
+        }
+      }
+    },
+    "control": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK3%20A572V&grchv=38&maxList=1",
+      "data": [
+        9,
+        [
+          "224206262"
+        ],
+        null,
+        [
+          [
+            "224206262",
+            "JAK3",
+            "c.?",
+            "p.A572V"
+          ]
+        ]
+      ]
+    },
+    "clincontrol": {
+      "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK3%20Tyr100Cys&df=VariationID,GeneSymbol,HGVS_c,AminoAcidChange",
+      "data": [
+        1,
+        [
+          "9360"
+        ],
+        null,
+        [
+          [
+            "9360",
+            "JAK3",
+            "NM_000215.4:c.299A>G",
+            "p.Tyr100Cys"
+          ]
+        ]
+      ]
+    }
+  }
+}
