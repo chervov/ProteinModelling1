@@ -1,0 +1,37 @@
+[
+ {
+  "variant": "G746W",
+  "pipeline_ddg": -2988.6,
+  "kellogg_REU": 2832.2,
+  "kellogg_kcal": 963.33,
+  "seconds": 453
+ },
+ {
+  "variant": "G746A",
+  "pipeline_ddg": -228.8,
+  "kellogg_REU": 216.58,
+  "kellogg_kcal": 73.67,
+  "seconds": 338
+ },
+ {
+  "variant": "G801W",
+  "pipeline_ddg": -3047.9,
+  "kellogg_REU": 1879.06,
+  "kellogg_kcal": 639.14,
+  "seconds": 418
+ },
+ {
+  "variant": "H667F",
+  "pipeline_ddg": -17.8,
+  "kellogg_REU": 6.11,
+  "kellogg_kcal": 2.08,
+  "seconds": 342
+ },
+ {
+  "variant": "R775A",
+  "pipeline_ddg": 1.5,
+  "kellogg_REU": 1.83,
+  "kellogg_kcal": 0.62,
+  "seconds": 339
+ }
+]
