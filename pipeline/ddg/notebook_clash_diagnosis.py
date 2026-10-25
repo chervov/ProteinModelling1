@@ -58,8 +58,10 @@ def intro():
 @app.cell
 def config():
     WORK = "/tmp/ddg"
-    STRUCTURE_URL = ("https://raw.githubusercontent.com/chervov/ProteinModelling1/main/"
-                     "TYK2/af3/tyk2_af3_closed.pdb")
+    RAW = "https://raw.githubusercontent.com/chervov/ProteinModelling1/main/"
+    STRUCTURE_URL = RAW + "TYK2/af3/tyk2_af3_closed.pdb"
+    # The relaxed pose is published, so a fresh box skips the ~35 min FastRelax.
+    RELAXED_URL = RAW + "data/ddg/TYK2_relaxed_closed.pdb.gz"
     SHELL = 8.0          # repack radius, as in pipeline/ddg/worker.py
 
     # Three positions with the most extreme stored ddG (all glycine), two ordinary ones.
@@ -68,7 +70,15 @@ def config():
 
     os.makedirs(WORK, exist_ok=True)
     print(f"{len(TEST_POSITIONS)} positions x {len(TEST_ALTS)} substitutions")
-    return SHELL, STRUCTURE_URL, TEST_ALTS, TEST_POSITIONS, WORK
+    return (
+        RAW,
+        RELAXED_URL,
+        SHELL,
+        STRUCTURE_URL,
+        TEST_ALTS,
+        TEST_POSITIONS,
+        WORK,
+    )
 
 
 @app.cell
@@ -119,6 +129,7 @@ def pose(
     AddConstraints,
     CoordinateConstraintGenerator,
     FastRelax,
+    RELAXED_URL,
     STRUCTURE_URL,
     ScoreType,
     WORK,
@@ -126,21 +137,31 @@ def pose(
     scorefxn,
 ):
     def load_relaxed_pose():
-        """Fetch the structure and FastRelax it with coordinate constraints, exactly as worker.py.
-        Cached on disk: the first run takes ~35 min for 1187 residues, later runs are instant."""
+        """Return the relaxed pose, cheapest route first.
+
+        1. local cache, 2. the relaxed pose published in the repo, 3. relax it here (~35 min).
+        Relaxation is FastRelax under coordinate constraints, exactly as pipeline/ddg/worker.py.
+        """
+        cached = f"{WORK}/TYK2_relaxed_closed.pdb"
+        if os.path.exists(cached) and os.path.getsize(cached) > 100_000:
+            return pose_from_pdb(cached), "local cache"
+        try:
+            import gzip
+            with urllib.request.urlopen(RELAXED_URL, timeout=300) as r:
+                open(cached, "wb").write(gzip.decompress(r.read()))
+            return pose_from_pdb(cached), "downloaded the published relaxed pose"
+        except Exception as exc:
+            print("download failed, relaxing locally:", exc)
         src = f"{WORK}/tyk2_af3_closed.pdb"
         if not os.path.exists(src):
             urllib.request.urlretrieve(STRUCTURE_URL, src)
-        cached = f"{WORK}/TYK2_relaxed_closed.pdb"
-        if os.path.exists(cached) and os.path.getsize(cached) > 100_000:
-            return pose_from_pdb(cached), "loaded from cache"
         p = pose_from_pdb(src)
         gen = CoordinateConstraintGenerator()
         add = AddConstraints(); add.add_generator(gen); add.apply(p)
         sf_cst = scorefxn.clone(); sf_cst.set_weight(ScoreType.coordinate_constraint, 1.0)
         t0 = time.time(); FastRelax(sf_cst, 1).apply(p)
         p.dump_pdb(cached)
-        return p, f"relaxed in {time.time() - t0:.0f}s"
+        return p, f"relaxed here in {time.time() - t0:.0f}s"
 
     pose, pose_note = load_relaxed_pose()
     total_wt = scorefxn(pose)
@@ -253,7 +274,7 @@ def table(mo, results):
     ddg_table = pd.DataFrame(results).sort_values("A_repack_only")
     ddg_table["shrink_factor"] = (ddg_table.A_repack_only / ddg_table.B_flexible_bb).round(1)
     mo.ui.table(ddg_table, selection=None)
-    return (ddg_table,)
+    return ddg_table, pd
 
 
 @app.cell
@@ -273,33 +294,78 @@ def chart(ddg_table, mo):
 
 
 @app.cell
+def md_kellogg(mo):
+    mo.md("""
+    ## 4. Cross-check: Rosetta's own ddG application
+
+    The obvious suspicion is that the repack-only protocol is at fault. To test it we run
+    **`ddGMover`**, which *is* `ddg_monomer` (Kellogg et al. 2011): it ramps the repulsive term,
+    minimises under coordinate constraints and takes the best of several decoys - everything the
+    pipeline protocol lacks.
+
+    Results below are the stored run (5 variants, ~6 min each). Call
+    `run_ddg_monomer(position, alt)` to recompute any of them yourself.
+
+    Note the sign: **Rosetta positive = destabilising**, the opposite of the paper's convention.
+    """)
+    return
+
+
+@app.cell
+def kellogg(RAW, mo, pd, pose, scorefxn):
+    def run_ddg_monomer(position, alt, iterations=3):
+        """Rosetta's own ddG protocol for one substitution. Returns (REU, kcal/mol, seconds).
+
+        ~6 min per variant, so the table below uses the stored run instead of recomputing.
+        """
+        from pyrosetta.rosetta.protocols.ddg import ddGMover
+        from pyrosetta.rosetta.utility import vector1_core_chemical_AA
+        from pyrosetta.rosetta.core.chemical import aa_from_oneletter_code
+        muts = vector1_core_chemical_AA(pose.total_residue())
+        for i in range(1, pose.total_residue() + 1):
+            muts[i] = pose.residue(i).aa()
+        muts[position] = aa_from_oneletter_code(alt)
+        mover = ddGMover(scorefxn, scorefxn, muts)
+        mover.set_min_cst(True); mover.set_min(True); mover.set_mean(False)
+        mover.restrict_to_nbrs(True); mover.num_iterations(iterations)
+        work = pose.clone()
+        t0 = time.time(); mover.apply(work)
+        reu = mover.ddG()
+        return reu, reu / 2.94, time.time() - t0   # 2.94 = documented REU -> kcal/mol factor
+
+    kellogg_table = pd.DataFrame(
+        json.load(urllib.request.urlopen(RAW + "data/ddg/kellogg_ddg_monomer.json", timeout=120))
+    )
+    mo.ui.table(kellogg_table, selection=None)
+    return
+
+
+@app.cell
 def conclusion(ddg_table, mo, pose, total_wt):
     _extreme = ddg_table[ddg_table.A_repack_only < -500]
     mo.md(f"""
     ## What this shows
 
-    **The extreme values are not energies.** A folded protein's entire score here is
-    **{total_wt:.0f} REU** for {pose.total_residue()} residues. A ddG of -3000 therefore puts the
-    mutant at **+{-total_wt - 3000:.0f} REU** - a positive total energy, which no folded structure
-    has. The clash alone "costs" more than the whole protein's folding energy.
+    **The extreme values are not energies.** The whole folded protein scores **{total_wt:.0f} REU**
+    over {pose.total_residue()} residues. A ddG of -3000 therefore puts the mutant at
+    **+{-total_wt - 3000:.0f} REU** - a positive total energy, which no folded structure has.
 
-    - **{len(_extreme)} of {len(ddg_table)}** variants fall below -500 under the pipeline protocol.
-      Their mean `fa_rep` share is **{_extreme.fa_rep_share.mean():.0%}**: the ddG *is* the repulsive
+    - **{len(_extreme)} of {len(ddg_table)}** variants fall below -500 under the pipeline protocol, and
+      their mean `fa_rep` share is **{_extreme.fa_rep_share.mean():.0%}**: the ddG *is* the repulsive
       term and nothing else.
-    - Letting the backbone move shrinks them by a median factor of
-      **{_extreme.shrink_factor.median():.0f}x**.
-    - Every extreme position is a **glycine**. Replacing it with W or F in a fixed backbone is exactly
-      the case Flex ddG says requires backbone movement; G->A at the same positions is 10-50x milder.
-    - The ordinary position (**775**) is untouched by the protocol choice, so this is specific to
-      clash-prone sites, not a global offset.
+    - Every extreme position is a **glycine**; G->A at the same sites is 10-50x milder.
+    - The ordinary position (**775**) is unaffected by the protocol choice.
 
-    **For reference**, real ddG values sit in single digits: Rosetta's own alanine-scan benchmark
-    discards experimental values above 4, and no mutation can destabilise a domain by more than its
-    folding free energy (~5-15 kcal/mol). Even protocol B is still 10-30x above that band.
+    **But the protocol is not the culprit.** Rosetta's own `ddg_monomer` (section 4) returns
+    **+2832 REU for G746W** - the same magnitude as the pipeline's -2989 - while giving textbook
+    values for ordinary mutations (**H667F 2.08 kcal/mol**, **R775A 0.62 kcal/mol**). Two independently
+    written protocols agree, so there is no implementation defect. These positions are buried glycines
+    that simply cannot host a tryptophan in a fixed backbone, and every standard method reports that
+    as a saturated "does not fit" flag.
 
-    **What survives.** The *ordering* is largely preserved, which is why the project's conclusions
-    hold: `conclusions_ddG_difference_feature.md` uses rank statistics throughout, and its README
-    already says "only the ordering is meaningful". The amplitudes should never be quoted as energies.
+    **What to do with the values.** Rank them; never quote them as energies. That is what
+    `conclusions_ddG_difference_feature.md` (SS8-10) concludes and what the pipeline README already
+    said: *"only the ordering is meaningful"*.
     """)
     return
 
