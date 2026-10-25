@@ -31,6 +31,7 @@ JAK2 is the main kinase downstream of EPO, TPO and GM-CSF receptors. Germline an
 | 11 | ProteinGym | Variant-effect benchmark | Clinical set: 14 variants (2 pathogenic, 12 benign); no deep mutational scan | Not added |
 | 12 | IntOGen | Cancer driver genes | Driver in 5 cancer types (breast, non-small-cell lung, AML, ALL, bladder) | Gene-level only |
 | 13 | MaveDB | Deep mutational scan data | No JAK2 deep mutational scan | Not available |
+| 14 | OMIM (MIM 147796) | Curated, literature-backed disease variants | 5 allelic variants (V617F, K607N, K539L, V617I, R715T) | `OMIM allelic variant` column |
 | - | Dataset EV1 (Jeanpierre 2025) | Structural clusters | JAK1 only | `Cluster` left blank |
 | - | HGMD | Literature disease variants | Not accessed (licence required) | - |
 
