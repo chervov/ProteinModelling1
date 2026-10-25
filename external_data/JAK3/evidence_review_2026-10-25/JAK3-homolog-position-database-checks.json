@@ -1,0 +1,106 @@
+[
+  {
+    "term": "JAK1 H647",
+    "db": "cosmic",
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK1%20H647&maxList=100",
+    "status": 200,
+    "data": [
+      1,
+      [
+        "33977229"
+      ],
+      null,
+      [
+        [
+          "33977229",
+          "JAK1",
+          "c.1941C>A",
+          "p.H647Q"
+        ]
+      ]
+    ]
+  },
+  {
+    "term": "JAK1 H647",
+    "db": "variants",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK1%20H647&maxList=100",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  {
+    "term": "JAK2 H606",
+    "db": "cosmic",
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=JAK2%20H606&maxList=100",
+    "status": 200,
+    "data": [
+      3,
+      [
+        "224189493",
+        "50361444",
+        "100623018"
+      ],
+      null,
+      [
+        [
+          "224189493",
+          "JAK2",
+          "c.?",
+          "p.H606Q"
+        ],
+        [
+          "50361444",
+          "JAK2",
+          "c.1818C>A",
+          "p.H606Q"
+        ],
+        [
+          "100623018",
+          "JAK2",
+          "c.1818C>A",
+          "p.H606Q"
+        ]
+      ]
+    ]
+  },
+  {
+    "term": "JAK2 H606",
+    "db": "variants",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=JAK2%20H606&maxList=100",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  {
+    "term": "TYK2 H667",
+    "db": "cosmic",
+    "url": "https://clinicaltables.nlm.nih.gov/api/cosmic/v4/search?terms=TYK2%20H667&maxList=100",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  },
+  {
+    "term": "TYK2 H667",
+    "db": "variants",
+    "url": "https://clinicaltables.nlm.nih.gov/api/variants/v4/search?terms=TYK2%20H667&maxList=100",
+    "status": 200,
+    "data": [
+      0,
+      [],
+      null,
+      []
+    ]
+  }
+]
