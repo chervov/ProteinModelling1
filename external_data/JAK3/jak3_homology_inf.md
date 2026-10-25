@@ -38,6 +38,44 @@ JAK3 is the only family member with Tyr here; JAK1, JAK2 and TYK2 all have His. 
 | JAK1 | H647 | H647C (0.62) | 0.89 | **H647Y** - JAK1 His mutated to JAK3's Tyr - is listed among JH2 mutations associated with acute leukaemias, next to A634D, V658F and R724H (review table, PMC7813639) |
 | TYK2 | H667 | H667C (0.40) | 0.75 | **Deep mutational scan:** every substitution lowers IFN-alpha signalling (-1.74 to -0.13; position among the ~10% least tolerant in TYK2, rank 118/1187). H667C is the mildest (-0.13 +- 0.28, not different from WT); most changes also lower abundance (H667C -0.21) |
 
+## Predictor scores for the homologous variants
+
+### Same substitution (to Cys) at each equivalent residue
+
+| Gene | Variant | AlphaMissense | REVEL | CADD | SIFT | PolyPhen-2 | MetaRNN | ESM1b | EVE | TYK2 DMS signalling |
+|---|---|---|---|---|---|---|---|---|---|---|
+| JAK3 | Y581C | 0.10 (LB) | 0.37 | 22.2 | 0.001 | 0.917 | 0.77 | -5.2 | 0.12 | - |
+| JAK2 | H606C | 0.16 (LB) | - | - | - | - | - | - | - | - |
+| JAK1 | H647C | 0.62 (LP) | - | - | - | - | - | - | - | - |
+| TYK2 | H667C | 0.40 (amb) | - | - | - | - | - | - | - | -0.13 +- 0.28 |
+
+dbNSFP scores (REVEL, CADD, SIFT, PolyPhen-2, MetaRNN, ESM1b, EVE) exist only for changes reachable by one DNA letter; His to Cys needs two, so only AlphaMissense (all 19 substitutions) and the TYK2 deep mutational scan cover them. AlphaMissense classes: LP likely pathogenic (> 0.564), amb ambiguous, LB likely benign (< 0.34).
+
+### Variants reported at the equivalent positions (ClinVar, gnomAD, cBioPortal, literature)
+
+| Gene | Variant | AlphaMissense | REVEL | CADD | SIFT | PolyPhen-2 | MetaRNN | ESM1b | EVE | TYK2 DMS signalling |
+|---|---|---|---|---|---|---|---|---|---|---|
+| JAK3 | Y581H | 0.08 (LB) | 0.10 | 6.6 | 1.000 | 0.008 | 0.05 | -0.6 | 0.03 | - |
+| JAK3 | Y581S | 0.16 (LB) | 0.31 | 23.2 | 0.001 | 0.617 | 0.70 | -5.6 | 0.10 | - |
+| JAK2 | H606Q | 0.49 (amb) | 0.34 | 26.9 | 0.001 | 0.541 | 0.94 | -7.2 | 0.72 | - |
+| JAK2 | H606D | 0.46 (amb) | 0.37 | 27.4 | 0.002 | 0.541 | 0.95 | -7.0 | 0.54 | - |
+| JAK2 | H606L | 0.35 (amb) | 0.59 | 24.1 | 0.001 | 0.160 | 0.95 | -10.9 | 0.76 | - |
+| JAK2 | H606Y | 0.08 (LB) | 0.24 | 18.7 | 0.291 | 0.003 | 0.72 | -5.6 | 0.18 | - |
+| JAK1 | H647Y | 0.52 (amb) | 0.51 | 25.5 | 0.059 | 0.996 | 0.92 | -6.5 | - | - |
+| JAK1 | H647N | 0.68 (LP) | 0.47 | 29.8 | 0.001 | 0.995 | 0.98 | -6.4 | - | - |
+| JAK1 | H647P | 0.88 (LP) | 0.68 | 27.9 | 0.001 | 0.999 | 0.98 | -10.9 | - | - |
+| TYK2 | H667Q | 0.85 (LP) | 0.47 | 23.8 | 0.001 | 0.996 | 0.97 | -6.3 | - | -0.36 +- 0.26 |
+| TYK2 | H667N | 0.37 (amb) | 0.70 | 28.5 | 0.002 | 0.994 | 0.98 | -9.7 | - | -0.31 +- 0.21 |
+| TYK2 | H667Y | 0.25 (LB) | 0.70 | 25.0 | 0.067 | 0.997 | 0.97 | -5.6 | - | -1.44 +- 0.24 |
+
+Thresholds (damaging): AlphaMissense > 0.564, REVEL >= 0.644, CADD >= 25, SIFT <= 0.05, PolyPhen-2 > 0.909, MetaRNN > 0.5, ESM1b < -7.5, EVE > 0.5; TYK2 DMS negative = loss of signalling. See [`scores_interpretation.md`](../scores_interpretation.md).
+
+**What the table shows**
+
+- **His to Tyr (JAK3's native residue) at the paralog positions:** JAK2 H606Y and TYK2 H667Y are called *likely benign* by AlphaMissense, yet **TYK2 H667Y is a strong loss of function in the deep mutational scan (-1.44 +- 0.24)**; JAK1 H647Y (ambiguous, 0.52) is reported in acute leukaemia. Predictors therefore miss the measured effects at this position in both directions.
+- **The scan and the predictors disagree for TYK2 in general:** H667Q is LP by AlphaMissense and mildly reduced in the scan (-0.36), H667N is ambiguous by AlphaMissense and similarly reduced (-0.31).
+- **JAK3 Y581C is predicted mild by AlphaMissense, EVE and ESM1b** but damaging by SIFT, PolyPhen-2 and MetaRNN; the most conservative-looking change at this site (Y581H, back to the family consensus) is predicted benign by all tools.
+- **AlphaMissense scores the His to Cys change higher in JAK1 (0.62) and TYK2 (0.40) than in JAK3 (0.10),** in line with JAK3 already deviating from the family consensus here.
 ## Interpretation
 
 1. **No direct evidence on Y581C.** It is not in ClinVar, cancer databases or the literature, and has no carriers in gnomAD.
