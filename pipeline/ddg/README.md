@@ -17,6 +17,8 @@ a detached OS process. Saving notebook copies would preserve nothing, so the cod
 | `watch_ddg2.sh` | the supervisor: polls every 2 min until workers launch, then 30-min cycles |
 | `analyse_ddg.py` | regenerates `ddg_overnight.md` from the merged full-coverage results |
 | `analyse_pairs.py` | compares ddG across structure pairs: correlations, ensembles, incremental value |
+| `diagnose_clash.py` | **why the magnitudes are not energies.** Reproduces the protocol on selected variants, decomposes the score into terms, and re-runs with a mobile backbone. Output: `data/ddg/clash_diagnosis.json` |
+| `notebook_clash_diagnosis.py` | the same diagnosis as a **marimo notebook**: open it on a molab box and run all. Installs PyRosetta if absent, caches the relax, renders a table and chart. See `conclusions_ddG_difference_feature.md` section 9 |
 | `sample_TYK2.json`, `sample_JAK1.json` | the fixed 5,000-variant samples (seed 99) shared by every structure pair, so results are directly comparable and can be averaged per variant |
 | `pair_assignments.json` | which structure pair ran where, and why |
 
@@ -31,6 +33,10 @@ against their 0.3590768, and **0.6712** against their 0.6720891 excluding prolin
 - sign convention ΔΔG = ΔG_WT − ΔG_mut, so **negative = destabilizing** (inverted from Rosetta)
 - the WT repack is computed **once per position** and reused across that position's 19
   substitutions — exact, since the 8 Å shell is identical, and ~19× cheaper
+
+The amplitudes are **not energies**: `diagnose_clash.py` measures the extreme values as ~100%
+`fa_rep` (steric overlap), and a mobile backbone shrinks them 10-150x. A ddG of -3000 implies a
+mutant scoring +311 REU, which no folded protein does. Rank the values; never quote them as kcal/mol.
 
 ## Running it
 
