@@ -5,6 +5,17 @@ Everything needed to recompute the dual-state PyRosetta ddG results in this repo
 **The molab notebooks are not the artifact.** Each sandbox's `notebook.py` is an empty 81-byte
 marimo shell — the computation is `worker.py`, injected into the sandbox at deploy time and run as
 a detached OS process. Saving notebook copies would preserve nothing, so the code is saved instead.
+The one exception is `notebook_clash_diagnosis.py`, which *is* meant to be opened and run.
+
+## Run the clash diagnosis without a sandbox
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chervov/ProteinModelling1/blob/main/colab/tyk2_ddg_clash_diagnosis.ipynb)
+[`colab/tyk2_ddg_clash_diagnosis.ipynb`](../../colab/tyk2_ddg_clash_diagnosis.ipynb) is the same
+diagnosis as a Colab notebook: Run all, nothing to configure. `notebook_clash_diagnosis.py` is the
+marimo version for a molab box. Both download the already-relaxed pose from
+[`data/ddg/TYK2_relaxed_closed.pdb.gz`](../../data/ddg/TYK2_relaxed_closed.pdb.gz) instead of
+spending ~35 min on FastRelax, so the first ddG appears within a minute or two of the PyRosetta
+install.
 
 ## Files
 
@@ -18,7 +29,8 @@ a detached OS process. Saving notebook copies would preserve nothing, so the cod
 | `analyse_ddg.py` | regenerates `ddg_overnight.md` from the merged full-coverage results |
 | `analyse_pairs.py` | compares ddG across structure pairs: correlations, ensembles, incremental value |
 | `diagnose_clash.py` | **why the magnitudes are not energies.** Reproduces the protocol on selected variants, decomposes the score into terms, and re-runs with a mobile backbone. Output: `data/ddg/clash_diagnosis.json` |
-| `notebook_clash_diagnosis.py` | the same diagnosis as a **marimo notebook**: open it on a molab box and run all. Installs PyRosetta if absent, caches the relax, renders a table and chart. See `conclusions_ddG_difference_feature.md` section 9 |
+| `compare_ddg_monomer.py` | **why the protocol is not to blame.** Runs Rosetta's own `ddGMover` (`ddg_monomer`, Kellogg 2011) on the same variants. Output: `data/ddg/kellogg_ddg_monomer.json` |
+| `notebook_clash_diagnosis.py` | the whole diagnosis as a **marimo notebook**: open it on a molab box and run all. Installs PyRosetta if absent, reuses the published relaxed pose, renders a table and chart, and includes the `ddGMover` cross-check. See `conclusions_ddG_difference_feature.md` sections 9-10 |
 | `sample_TYK2.json`, `sample_JAK1.json` | the fixed 5,000-variant samples (seed 99) shared by every structure pair, so results are directly comparable and can be averaged per variant |
 | `pair_assignments.json` | which structure pair ran where, and why |
 
@@ -37,6 +49,12 @@ against their 0.3590768, and **0.6712** against their 0.6720891 excluding prolin
 The amplitudes are **not energies**: `diagnose_clash.py` measures the extreme values as ~100%
 `fa_rep` (steric overlap), and a mobile backbone shrinks them 10-150x. A ddG of -3000 implies a
 mutant scoring +311 REU, which no folded protein does. Rank the values; never quote them as kcal/mol.
+
+This is a property of the mutations, not of the protocol. `compare_ddg_monomer.py` shows that
+Rosetta's own ddG application — repulsive ramp, constrained minimisation, several decoys — returns
+**+2832 REU for G746W**, matching the pipeline's −2989, while giving textbook values for ordinary
+substitutions (H667F 2.08 kcal/mol, R775A 0.62 kcal/mol). Every extreme position is a buried
+glycine that cannot host a bulky residue in any fixed-backbone treatment.
 
 ## Running it
 
