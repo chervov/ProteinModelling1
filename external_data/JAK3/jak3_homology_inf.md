@@ -76,6 +76,36 @@ Thresholds (damaging): AlphaMissense > 0.564, REVEL >= 0.644, CADD >= 25, SIFT <
 - **The scan and the predictors disagree for TYK2 in general:** H667Q is LP by AlphaMissense and mildly reduced in the scan (-0.36), H667N is ambiguous by AlphaMissense and similarly reduced (-0.31).
 - **JAK3 Y581C is predicted mild by AlphaMissense, EVE and ESM1b** but damaging by SIFT, PolyPhen-2 and MetaRNN; the most conservative-looking change at this site (Y581H, back to the family consensus) is predicted benign by all tools.
 - **AlphaMissense scores the His to Cys change higher in JAK1 (0.62) and TYK2 (0.40) than in JAK3 (0.10),** in line with JAK3 already deviating from the family consensus here.
+## Neighbourhood of JAK3 Y581 (sequence and 3D)
+
+Structure: AlphaFold model AF-P52333-F1 (v6, full-length JAK3). Y581 pLDDT 94. Neighbours = residues with any heavy atom within 8 A of Y581. Predicted aligned error (PAE) between Y581 and its FERM/JH1 neighbours is 2.5-3.5 A, i.e. the model is confident about these inter-domain contacts. Paralog equivalents from the JAK family alignment ([`jak_alignment_position_map.csv`](../jak_alignment_position_map.csv)).
+
+**Y581 sits at a three-way contact point between the JH2 pseudokinase, the FERM domain and the JH1 kinase domain**, i.e. in the region that holds JAK3 in its autoinhibited state.
+
+| JAK3 residue | Distance (A) | Domain | JAK3 data | Equivalent in JAK1 / JAK2 / TYK2 and known variants there |
+|---|---|---|---|---|
+| S580 | 1.3 (adjacent) | JH2 | - | **JAK1 S646F - activating/transforming (Mullighan 2009; Gordon 2010)** / JAK2 S605 / TYK2 S666 |
+| R582 | 1.3 (adjacent) | JH2 | **R582W likely pathogenic - T-B+ SCID (loss of function)** | **JAK1 K648N - reported activating cancer variant** / **JAK2 K607N - activating, AML (ClinVar pathogenic)** / TYK2 T668 |
+| H583, L584 | 3.0-3.1 | JH2 | - | JAK2 H608, L609 (the 604-609 loop) |
+| V585 | 5.3 | JH2 | - | JAK1 V651 (V651M, predicted GOF; common in gnomAD) |
+| L586 | 6.2 | JH2 | - | **JAK1 Y652H - reported activating cancer variant** / **JAK2 L611V - reported activating cancer variant** |
+| Y633 | 3.5 | JH2 | Y633* pathogenic (SCID) | **JAK1 S700N - GOF with expression-dependent penetrance** / JAK2 W659 |
+| A634, L635 | 3.7-5.9 | JH2 | - | JAK2 A660, M661 |
+| N636 | 5.9 | JH2 | - | **JAK1 S703I - strong GOF (Gruber 2020; autoinflammation)** / JAK2 H662 |
+| Y637 | 3.3 | JH2 | - | JAK1 Y704 (Y704C predicted GOF) |
+| T321-Q326, V299 | 2.8-7.5 | **FERM** | D324fs pathogenic (SCID) | JAK1 N385-K390 / JAK2 H345-K350 / TYK2 H396-K401 |
+| R840 | 6.9 | **JH1** | R840_Y841ins* pathogenic (SCID); R840C gnomAD 2E-04 | **JAK2 R867Q - activating cancer variant; ClinVar likely pathogenic** |
+| T848 | 7.6 | **JH1** | - | **JAK2 T875N - activating cancer variant** |
+| G849, A850, L851 | 5.5-7.0 | **JH1** | L851fs pathogenic (SCID) | JAK2 G876, E877, V878 |
+| Y904 | 7.1 | **JH1** | Y904* pathogenic (SCID) | **JAK1 F958C/S/V - activating, JAK-inhibitor resistance** / **JAK2 Y931C - activating cancer variant** |
+| P906 | 7.1 | **JH1** | - | **JAK1 P960S/T - activating, reduced inhibitor sensitivity** / JAK2 P933 |
+
+Distances to JAK3's own known gain-of-function sites are larger: A572/A573 12.4-12.7 A, R657 12.9 A, M511 18.3 A, V674 19.1 A, L857 25.2 A. Pathogenic truncating JAK3 variants in the table (Y633*, D324fs, L851fs, Y904*) cause SCID by loss of the whole protein and say nothing about the residue itself.
+
+**Reading.** In the other JAKs, the residues surrounding the Y581 position - immediately adjacent in sequence (JAK1 S646, K648; JAK2 K607) and across the JH2-FERM-JH1 contact (JAK1 S700, S703, F958, P960; JAK2 T875, R867, Y931) - are recurrent **activating** mutation sites. Y581 is therefore in a regulatory hotspot rather than a passive surface. In JAK3 itself the adjacent R582W causes SCID, so changes here can also abolish function. A tyrosine-to-cysteine change removes a large aromatic side chain packing against FERM and JH1; whether this loosens autoinhibition (gain) or destabilises the assembly (loss) cannot be predicted from these data and needs a functional test (IL-2/STAT5 with and without cytokine; controls WT, R582W, A572V).
+
+Caveat: contacts come from a predicted monomer model; no experimental structure of full-length JAK3 is available. PAE values support the arrangement but do not prove it.
+
 ## Interpretation
 
 1. **No direct evidence on Y581C.** It is not in ClinVar, cancer databases or the literature, and has no carriers in gnomAD.
