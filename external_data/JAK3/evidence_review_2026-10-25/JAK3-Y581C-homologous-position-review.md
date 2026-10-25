@@ -19,10 +19,10 @@ Retrieved 25 October 2026. AlphaMissense is from the canonical UniProt protein's
 |---|---|---|---|
 | **JAK3 Y581C** | **0.0993 — likely benign** | **0.00 — deleterious** | **0.820 — possibly damaging** |
 | **JAK1 H647C** | **0.6183 — likely pathogenic** | **0.01 — deleterious** | **0.999 — probably damaging** |
-| **JAK2 H606C** | **0.1584 — likely benign** | **0.00 — deleterious** | **0.786 — possibly damaging** |
+| **JAK2 H606C** | **0.1584 — likely benign** | **0.00 — deleterious, low confidence** | **0.786 — possibly damaging** |
 | **TYK2 H667C** | **0.4041 — ambiguous** | **0.01 — deleterious** | **0.999 — probably damaging** |
 
-Interpretation: AlphaMissense suggests greater intolerance of the cysteine replacement in JAK1 than in JAK2/JAK3, with TYK2 intermediate. SIFT flags all four, and PolyPhen-2 also predicts possible or probable damage. This disagreement is part of the result; it is not resolved by majority vote. **None of these scores determines GOF versus LOF, drug sensitivity, or a clinical diagnosis.** AlphaMissense's likely-benign/likely-pathogenic labels here are model outputs, not clinical variant classifications.
+Interpretation: AlphaMissense suggests greater intolerance of the cysteine replacement in JAK1 than in JAK2/JAK3, with TYK2 intermediate. SIFT flags all four, with an explicit low-confidence flag for JAK2 H606C, and PolyPhen-2 also predicts possible or probable damage. This disagreement is part of the result; it is not resolved by majority vote. **None of these scores determines GOF versus LOF, drug sensitivity, or a clinical diagnosis.** AlphaMissense's likely-benign/likely-pathogenic labels here are model outputs, not clinical variant classifications.
 
 Score directions: higher AlphaMissense and PolyPhen-2 scores indicate greater predicted pathogenicity/damage; lower SIFT scores indicate greater predicted impact (≤0.05 is commonly called deleterious). AlphaMissense uses <0.34 for likely benign and >0.564 for likely pathogenic, with the intervening range ambiguous. See [EMBL-EBI AlphaMissense interpretation](https://www.ebi.ac.uk/training/online/courses/alphafold/classifying-the-effects-of-missense-variants-using-alphamissense/understanding-pathogenicity-scores-from-alphamissense/) and [Ensembl predictor documentation](https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html). Scores are not percentages of kinase activity.
 
