@@ -1,0 +1,290 @@
+[
+  {
+    "gene": "JAK1",
+    "jak2_position": 571,
+    "other_position": 610,
+    "other_residue": "G",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 578,
+    "other_position": 619,
+    "other_residue": "V",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 805,
+    "other_position": 845,
+    "other_residue": "I",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 571,
+    "other_position": 612,
+    "other_residue": "S",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 578,
+    "other_position": 619,
+    "other_residue": "V",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 805,
+    "other_position": 845,
+    "other_residue": "I",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 571,
+    "other_position": 610,
+    "other_residue": "G",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 578,
+    "other_position": 619,
+    "other_residue": "V",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 805,
+    "other_position": 845,
+    "other_residue": "I",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 1110,
+    "other_position": 1136,
+    "other_residue": "P",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 1110,
+    "other_position": 1136,
+    "other_residue": "P",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK1",
+    "jak2_position": 1110,
+    "other_position": 1136,
+    "other_residue": "P",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 571,
+    "other_position": 546,
+    "other_residue": "G",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 578,
+    "other_position": 553,
+    "other_residue": "V",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 805,
+    "other_position": 777,
+    "other_residue": "L",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 571,
+    "other_position": 546,
+    "other_residue": "G",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 578,
+    "other_position": 553,
+    "other_residue": "V",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 805,
+    "other_position": 777,
+    "other_residue": "L",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 571,
+    "other_position": 546,
+    "other_residue": "G",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 578,
+    "other_position": 553,
+    "other_residue": "V",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 805,
+    "other_position": 777,
+    "other_residue": "L",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 1110,
+    "other_position": 1082,
+    "other_residue": "P",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 1110,
+    "other_position": 1082,
+    "other_residue": "P",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "JAK3",
+    "jak2_position": 1110,
+    "other_position": 1082,
+    "other_residue": "P",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 571,
+    "other_position": 634,
+    "other_residue": "G",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 578,
+    "other_position": 639,
+    "other_residue": "V",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 805,
+    "other_position": 866,
+    "other_residue": "L",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 571,
+    "other_position": 634,
+    "other_residue": "G",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 578,
+    "other_position": 639,
+    "other_residue": "V",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 805,
+    "other_position": 866,
+    "other_residue": "L",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 571,
+    "other_position": 634,
+    "other_residue": "G",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 578,
+    "other_position": 639,
+    "other_residue": "V",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 805,
+    "other_position": 866,
+    "other_residue": "L",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 1110,
+    "other_position": 1156,
+    "other_residue": "A",
+    "gap_open": 8,
+    "gap_extension": 0.5
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 1110,
+    "other_position": 1156,
+    "other_residue": "A",
+    "gap_open": 12,
+    "gap_extension": 1
+  },
+  {
+    "gene": "TYK2",
+    "jak2_position": 1110,
+    "other_position": 1156,
+    "other_residue": "A",
+    "gap_open": 10,
+    "gap_extension": 0.5
+  }
+]
