@@ -1,0 +1,30 @@
+Gene,MIM,AV,OMIM name,Variant,Phenotype
+JAK1,147795,147795.0001,"JAK1, ALA634ASP",A634D,"Autoinflammation, immune dysregulation and eosinophilia"
+JAK1,147795,147795.0002,"JAK1, SER703ILE",S703I,"Autoinflammation, immune dysregulation and eosinophilia"
+JAK1,147795,147795.0003,"JAK1, HIS596ASP",H596D,"Autoinflammation, immune dysregulation and eosinophilia"
+JAK1,147795,147795.0004,"JAK1, PRO733LEU AND PRO832SER",P733L,Variant of unknown significance (in cis with P832S)
+JAK1,147795,147795.0004,"JAK1, PRO733LEU AND PRO832SER",P832S,Variant of unknown significance (in cis with P733L)
+JAK2,147796,147796.0001,"JAK2, VAL617PHE",V617F,"Polycythemia vera, somatic; thrombocythemia 3; myelofibrosis; erythrocytosis; AML; Budd-Chiari syndrome (all somatic)"
+JAK2,147796,147796.0002,"JAK2, LYS607ASN",K607N,"Leukemia, acute myelogenous, somatic"
+JAK2,147796,147796.0003,"JAK2, LYS539LEU",K539L,"Erythrocytosis, JAK2-related, somatic (exon 12)"
+JAK2,147796,147796.0004,"JAK2, VAL617ILE",V617I,Thrombocythemia 3
+JAK2,147796,147796.0005,"JAK2, ARG715THR",R715T,"Variant of unknown significance; germline PV-like erythrocytosis in 3 generations (Song et al. 2024)"
+JAK3,600173,600173.0001,"JAK3, TYR100CYS",Y100C,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0002,"JAK3, 151-BP DEL",,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0003,"JAK3, 1-BP INS, 1172G",,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0004,"JAK3, CYS565TER",C565*,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0005,"JAK3, ARG445TER",R445*,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0006,"JAK3, ASP169GLU",D169E,T-B+NK- severe combined immunodeficiency
+JAK3,600173,600173.0007,"JAK3, ALA58DEL",A58del,T-B+NK- severe combined immunodeficiency
+TYK2,176941,176941.0001,"TYK2, 4-BP DEL, 550GCTT",,Immunodeficiency 35
+TYK2,176941,176941.0002,"TYK2, 9-BP DEL, NT2303",,Immunodeficiency 35
+TYK2,176941,176941.0003,"TYK2, 1-BP INS, 3318C",,Immunodeficiency 35
+TYK2,176941,176941.0004,"TYK2, GLU154TER",E154*,Immunodeficiency 35
+TYK2,176941,176941.0005,"TYK2, 1-BP DEL, 149C",,Immunodeficiency 35
+TYK2,176941,176941.0006,"TYK2, ARG638TER",R638*,Immunodeficiency 35
+TYK2,176941,176941.0007,"TYK2, PRO1104ALA",P1104A,Immunodeficiency 35 (common hypomorphic allele rs34536443)
+TYK2,176941,176941.0008,"TYK2, LEU757VAL",L757V,Immunodeficiency 35
+TYK2,176941,176941.0009,"TYK2, LEU1014PRO",L1014P,Immunodeficiency 35
+TYK2,176941,176941.0010,"TYK2, SER418TER",S418*,Immunodeficiency 35
+TYK2,176941,176941.0011,"TYK2, GLY799ARG",G799R,Immunodeficiency 35
+TYK2,176941,176941.0012,"TYK2, 1-BP DEL, 647C",,Immunodeficiency 35
