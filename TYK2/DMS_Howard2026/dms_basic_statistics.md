@@ -64,6 +64,49 @@ which are non-functional by construction and define what "completely broken" sco
 
 ---
 
+
+### Why abundance was measured only once — and what that costs
+
+Abundance is not a *treatment* of the signalling experiment; it is a **separate assay with a
+separate library**. VAMP-seq requires TYK2 fused to GFP with a BFP normalisation control, then FACS
+sorting into quartile bins — the paper reports *"Three assay replicates were seeded and
+independently sorted via FACS on 3 different days."* Signalling is a pooled luciferase readout where
+barcodes are simply sequenced. Running the sorted assay across ten conditions would have multiplied
+the work by an order of magnitude.
+
+There is also an a-priori argument for a single measurement: abundance reflects folding and
+degradation — how much protein exists — and interferon stimulates signalling *downstream* of a
+protein that is already present. On that reasoning, IFN dose is irrelevant to abundance.
+
+**That reasoning does not extend to the drugs.** Ligand binding commonly stabilises proteins; it is
+the basis of thermal-shift assays. BMS-986202 and NDI-034858 bind the JH2 domain, so they could
+plausibly raise TYK2 abundance, and differentially across variants. **An abundance arm with drug
+would be the most informative missing experiment in this dataset** — and it bears directly on the
+interface question (`interface_effect.md`): if interface variants lose abundance by loosening the
+JH2–JH1 contact, a drug that tightens that contact might partially rescue them.
+
+**The cost to us is that abundance reproducibility cannot be assessed at all.** For signalling,
+two arms are repeats, so ρ = 0.45 and a 20% gain-of-function replication rate are measurable (§2).
+Abundance was deposited as a single score set, so there is no equivalent number.
+
+This matters because abundance is the arm carrying the most weight in this project:
+
+| | |
+|---|---|
+| best correlation with every predictor | **+0.42** (AlphaMissense), against +0.34 at 100 U/mL (§8) |
+| tightest distribution | SD **0.120**, median SE **0.077** (§3) |
+| nonsense anchor spread | SD **0.088** — the tightest of any arm (§4) |
+| underpins | the entire interface finding — 69% bottom-quartile vs 38% |
+
+The low standard errors and the very tight nonsense anchor indicate good internal consistency
+across the three sorted replicates. **That is not the same as an independent repeat.** The
+signalling arms demonstrated that internal triplicates can look well-behaved while agreement
+*between* independently run arms is poor. Abundance-based conclusions should be read with that
+possibility open, and would be worth confirming against an orthogonal measurement (western blot or
+mass spectrometry) on a small set of variants.
+
+---
+
 ## 2. Warning: repeated experiments disagree badly
 
 **Two of the eleven arms are repeats of a condition measured elsewhere in the dataset.** They are
