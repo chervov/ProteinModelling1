@@ -6,12 +6,30 @@ predictors, three PyRosetta ΔΔG terms, and the two experimental DMS readouts.*
 Source: `external_data/TYK2/tyk2_variants_inf_predict_ext.csv`.
 **n = 2,247 variants with a parseable identifier; 2,188 complete across all twelve.**
 
-> **Caveat on the sample.** These are *curated* variants — ClinVar entries, gnomAD observations,
-> cBioPortal records and priority variants — **not a random sample of the 22,536 possible
-> substitutions**. They are enriched for observed and clinically flagged variants. Where a
-> genome-wide comparison is possible the structure is similar but not identical (AlphaMissense ↔
-> ESM1b is +0.80 genome-wide against +0.75 here). **CADD and MetaRNN are not available genome-wide
-> for TYK2**, which is why this analysis uses the curated set.
+> **Why this sample, and what it costs.** CADD and MetaRNN exist **only** in this curated file —
+> nobody extracted them genome-wide. That is an artefact of how the data was assembled, not a real
+> limit: both are available in dbNSFP for the ~31% of substitutions reachable by a single
+> nucleotide change, the same coverage as REVEL, SIFT and PolyPhen-2. Pulling them for all of those
+> would roughly triple the sample and remove the bias described next.
+>
+> **The curated set is not representative.** It is dominated by gnomAD observations — variants seen
+> in healthy people — and is therefore **enriched for benign variants**: median AlphaMissense
+> **0.170 here against 0.376 genome-wide**. The consequence is restriction of range, and it is
+> directional:
+>
+> | pair | curated (n≈2,200) | genome-wide | difference |
+> |---|--:|--:|--:|
+> | AlphaMissense vs ESM1b | +0.751 | +0.786 | −0.035 |
+> | AlphaMissense vs REVEL | +0.761 | +0.724 | +0.037 |
+> | AlphaMissense vs ΔΔG_closed | +0.484 | +0.481 | +0.003 |
+> | **AlphaMissense vs DMS abundance** | **+0.360** | **+0.418** | **−0.059** |
+> | **AlphaMissense vs DMS signalling** | **+0.264** | **+0.341** | **−0.077** |
+> | **DMS signalling vs abundance** | **+0.137** | **+0.204** | **−0.067** |
+>
+> **Predictor-to-predictor and predictor-to-ΔΔG correlations are unaffected** (±0.04), so sections
+> 3.1, 3.2 and 3.4 stand as written. **Predictor-to-phenotype correlations in this table are
+> understated by 0.06–0.08** — selecting benign variants compresses the damaging end where the
+> signal lives. Genome-wide values should be preferred wherever both exist.
 
 ---
 
@@ -88,14 +106,16 @@ an artefact of the curated sample.
 
 ### 3.3 The measured phenotypes agree with nothing — including each other
 
-| | best correlation with a predictor |
-|---|--:|
-| DMS abundance | +0.40 (REVEL, MetaRNN) |
-| DMS signalling | +0.27 (MetaRNN) |
-| **DMS signalling ↔ DMS abundance** | **+0.14** |
+| | curated (this table) | genome-wide |
+|---|--:|--:|
+| DMS abundance, best predictor | +0.40 (REVEL, MetaRNN) | **+0.42** (AlphaMissense) |
+| DMS signalling, best predictor | +0.27 (MetaRNN) | **+0.34** (AlphaMissense) |
+| **DMS signalling ↔ DMS abundance** | **+0.14** | **+0.20** |
 
-**The two experimental readouts correlate with each other (+0.14) less than any predictor
-correlates with either of them.** Losing protein does not reliably predict losing signal. The
+**The two experimental readouts correlate with each other less than any predictor correlates with
+either of them** — +0.14 in this sample, **+0.20 genome-wide**, against +0.34 and +0.42 for
+AlphaMissense. The qualitative claim survives the bias correction; the exact figure is the
+genome-wide one. Losing protein does not reliably predict losing signal. The
 predictors cluster tightly around a single axis that is not what the cells measure — and the cells'
 own two measurements are not one axis either.
 
@@ -123,8 +143,18 @@ the two most widely used predictors not previously tested against it.
 | 7 sequence predictors (PC1 = 79.3%) | +0.63 to +0.85 | +0.21 to +0.40 |
 | ΔΔG_closed / ΔΔG_open | +0.84 with each other, +0.41–0.49 with predictors | +0.16 to +0.24 |
 | **ΔΔG_open − ΔΔG_closed** | **−0.16 / +0.21 with its own inputs** | **−0.01 / −0.03** |
-| DMS signalling ↔ DMS abundance | — | **+0.14** |
+| DMS signalling ↔ DMS abundance | — | **+0.14** (curated) / **+0.20** (genome-wide) |
 
 *Data: `external_data/TYK2/tyk2_variants_inf_predict_ext.csv`. Related:
 `ddg_by_target_aa.md`, `conclusions_ddG_difference_feature.md`,
 `TYK2/DMS_Howard2026/dms_basic_statistics.md`.*
+
+---
+
+## 5. What would improve this
+
+**Extract CADD and MetaRNN genome-wide.** Both are in dbNSFP for the ~6,900 single-nucleotide-
+reachable TYK2 substitutions — three times this sample, with no benign enrichment. That would let
+the full twelve-feature matrix be computed on an unbiased set, and is the single change that would
+most strengthen this analysis. The only features that would remain restricted are those already
+limited to that 31% (REVEL, SIFT, PolyPhen-2).
