@@ -10,7 +10,70 @@ scan, before any biological analysis. Source table: `TYK2_DMS_Howard2026_all_arm
 
 ---
 
-## 1. Descriptive statistics — missense (n = 22,545)
+## 1. Warning: repeated experiments disagree badly
+
+**Two of the eleven arms are repeats of a condition measured elsewhere in the dataset.** They are
+the only direct measure of reproducibility available, and they fail it.
+
+| comparison | Spearman | Pearson | n |
+|---|--:|--:|--:|
+| **IFN-α 100 U/mL vs its own repeat** | **+0.448** | +0.700 | 22,530 |
+| **BMS-986202 20 nM vs its own repeat** | **+0.527** | +0.607 | 22,526 |
+| *different drug, same batch* (BMS 20 nM′ / NDI 7 nM) | *+0.752* | *+0.824* | *22,533* |
+| *10× dose difference, same batch* (IFN 10 U / 100 U) | *+0.723* | *+0.795* | *22,536* |
+| *different condition, same batch* (IFN 100′ / NDI 7 nM) | *+0.716* | *+0.814* | *22,533* |
+
+**Repeating the identical experiment gives worse agreement (ρ = 0.45) than changing the dose
+tenfold (ρ = 0.72) or changing the drug entirely (ρ = 0.75).** Whatever separates the two IFN
+100 U/mL measurements is larger than the biology being measured.
+
+### How large is the disagreement in practice?
+
+For IFN-α 100 U/mL against its repeat:
+
+| | |
+|---|--:|
+| median absolute difference between the two measurements | **0.295** |
+| median absolute score itself | **0.278** |
+| 75th percentile of the difference | 0.520 |
+| 90th percentile | 0.767 |
+
+**The typical disagreement between two measurements of the same variant is slightly larger than the
+typical score.** A variant's measured effect and the error on that measurement are the same size.
+
+### The consequence for variant calls
+
+Taking the bottom and top deciles of each measurement independently:
+
+| call | n per replicate | agreed by both | **replication rate** |
+|---|--:|--:|--:|
+| **loss of function** (bottom decile) | 2,253 | 1,757 | **78%** |
+| **gain of function** (top decile) | 2,253 | 459 | **20%** |
+
+**Only 20% of gain-of-function calls replicate.** Four out of five variants in the top decile of one
+measurement are not in the top decile of the repeat. Loss-of-function calls hold up far better
+(78%), because loss is a large, directional effect while gain is a small one near the noise.
+
+Even **nonsense variants** — which have a large, consistent, unambiguous effect — reproduce at only
+**ρ = 0.518** between the two arms.
+
+### What follows from this
+
+1. **Single-variant claims from one arm are unreliable**, particularly gain-of-function claims. Any
+   individual variant of interest should be checked against both IFN 100 U/mL arms before being
+   relied on.
+2. **Group-level comparisons remain valid.** Averaging thousands of variants averages this error
+   down; that is why the domain- and region-level results elsewhere in this project are stable
+   across arms while individual positions move.
+3. **The batch structure in §5 is the likely cause**, not an additional problem: the two repeats sit
+   in different batches, and batch dominates condition throughout this dataset.
+4. **The publication reports none of this.** It describes biological triplicates *within* each score
+   set but gives no agreement statistics *between* score sets, and the term "duplicate assay" is
+   MaveDB's, not the paper's.
+
+---
+
+## 2. Descriptive statistics — missense (n = 22,545)
 
 | column | count | mean | std | min | 25% | 50% | 75% | max | NA |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -26,7 +89,7 @@ scan, before any biological analysis. Source table: `TYK2_DMS_Howard2026_all_arm
 | ndi034858_1uM | 22,533 | +0.017 | 0.350 | −3.863 | −0.190 | +0.009 | +0.213 | +4.097 | 12 |
 | **abundance** | 22,516 | −0.116 | **0.120** | −0.412 | −0.195 | −0.076 | −0.021 | +0.111 | 29 |
 
-## 2. Descriptive statistics — nonsense (n = 1,187): the dead-protein anchor
+## 3. Descriptive statistics — nonsense (n = 1,187): the dead-protein anchor
 
 | column | count | mean | std | min | 25% | **50%** | 75% | max |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -64,7 +127,7 @@ A clean internal validation that the scores mean what they claim — and the rea
 
 ---
 
-## 3. Assay quality per arm
+## 4. Assay quality per arm
 
 **Separation** = (missense median − nonsense median) / pooled SD, i.e. how many SD separate a
 typical variant from a dead protein.
@@ -96,7 +159,7 @@ typical variant from a dead protein.
 
 ---
 
-## 4. Correlation between arms
+## 5. Correlation between arms
 
 Spearman, missense only (n up to 22,533):
 
@@ -137,7 +200,7 @@ two noise distributions, not biology.)
 
 ---
 
-## 5. Abundance versus signalling
+## 6. Abundance versus signalling
 
 | signalling arm | Spearman with abundance | median signalling, bottom-quartile abundance | rest |
 |---|--:|--:|--:|
@@ -153,7 +216,7 @@ IFN 100 U/mL, so abundance and signalling magnitudes must never be compared dire
 
 ---
 
-## 6. How each arm relates to the sequence predictors
+## 7. How each arm relates to the sequence predictors
 
 *Added after the genome-wide dbNSFP extraction (`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`,
 7,195 variants including CADD and MetaRNN). Both sides oriented so that higher = more damaging.*
@@ -183,7 +246,7 @@ protein level is the more direct readout of that. It is also what the stability 
 
 **2. `ifn_1U` is the hardest arm for every predictor, by a factor of two.** AlphaMissense drops from
 +0.367 at 10 U/mL to **+0.169** at 1 U/mL. Not a property of any particular tool — all ten halve.
-The arm's separation is 0.56 and its SD/SE is 1.06 (§3), so most of this is the assay, not the
+The arm's separation is 0.56 and its SD/SE is 1.06 (§4), so most of this is the assay, not the
 predictors. Any conclusion drawn from `ifn_1U` inherits that.
 
 **3. Adding IFN *raises* correlations up to 10 U/mL, then flattens.** 1 U → 10 U → 100 U gives
@@ -204,7 +267,7 @@ smaller set.
 
 ---
 
-## 7. Practical summary
+## 8. Practical summary
 
 | | |
 |---|---|
@@ -213,6 +276,7 @@ smaller set.
 | weakest usable arm | **`ifn_1U`** — separation 0.56, SD/SE 1.06 |
 | unusable | `bms986202_1uM`, `bms986202_10uM`, `ndi034858_1uM` |
 | mandatory constraint | pair arms **within batch** for any subtraction |
+| **reproducibility** | **ρ = 0.45 between repeats of the same condition; GOF calls replicate at 20%** |
 | per-arm dead anchor | use the arm's own nonsense median, not −0.352 |
 | best arm for predictor benchmarking | **`abundance`** (ρ up to +0.42), then **`ifn_10U`** (+0.37) |
 | worst arm for predictor benchmarking | **`ifn_1U`** (+0.17) — half of every other signalling arm |
