@@ -58,3 +58,46 @@ given so the clipping is visible rather than silent.
 | **S** | Ser | 1,081 | -3.5 | -1.91 | -359 | 3% | -2.38 | 3.69 | -2.49 | -0.116 | 89 | -0.8 |
 | **A** | Ala | 1,104 | -2.9 | -1.83 | -245 | 3% | -2.18 | 3.61 | -2.26 | -0.080 | 89 | +1.8 |
 
+---
+
+## The 20 target residues fall into two groups
+
+Sorting the raw means reveals a single dominant break, and it is the same in both proteins:
+
+| protein | largest gap in the sorted means | next largest | k-means on the 20 means |
+|---|---|---|---|
+| TYK2 | **65.9** between F (−124.4) and R (−58.5) | 34.6 (Y–F) | **FPWY** \| rest |
+| JAK1 | **66.4** between F (−126.6) and R (−60.3) | 37.0 (Y–F) | **FPWY** \| rest |
+
+The gap after phenylalanine is roughly twice the next largest, and k-means on the 20 means recovers
+the same four residues without being told where to cut. Two different proteins, scored on unrelated
+structure pairs (AF3 for TYK2, Jeanpierre's models for JAK1), give the identical partition.
+
+| group | residues | mean ddG_closed, TYK2 | volume range |
+|---|---|--:|--:|
+| **High** | **P, W, Y, F** | −124 to −178 | 113–228 Å³ |
+| Low | A C D E G H I K L M N Q R S T V | −3 to −59 | 60–174 Å³ |
+
+### It is one group formed by two different mechanisms
+
+Three of the four are the largest aromatics — Trp 228 Å³, Tyr 194, Phe 190 — which is the steric
+story: a bulky side chain cannot be accommodated in a fixed backbone, so `fa_rep` dominates
+(measured directly in `conclusions_ddG_difference_feature.md` §9, where the extreme values are
+~100% repulsive term).
+
+**Proline is only 113 Å³** — smaller than arginine (173) or leucine (167), both of which sit
+comfortably in the low group. It reaches the high group by a different route: it has no backbone
+N–H to donate a hydrogen bond, and its ring locks φ near −60°, so it is incompatible with regular
+secondary structure wherever it lands. That is why the volume correlation is **r = −0.62** across
+all 20 residues but **−0.84 once proline is excluded** (§8.1 of the conclusions document).
+
+The DMS agrees that proline is the worst destination residue experimentally — rank 1 of 20 on
+abundance, on signalling, and on fraction loss-of-function — and the computed penalty tracks burial
+as the mechanism predicts (median −221 buried, −47 very exposed, against −4.9 and −1.2 for alanine).
+
+### Caveat: the split is a property of the raw values
+
+On clipped values the boundary softens and the two proteins stop agreeing: k-means gives **FIPRVWY**
+for TYK2 and **FIPWY** for JAK1. The clean partition describes **how often a substitution clashes
+catastrophically**, not how bad a typical substitution is. Use it to reason about the clash tail,
+not as a general damage classification.
