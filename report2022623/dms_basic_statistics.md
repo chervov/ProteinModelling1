@@ -29,7 +29,7 @@ variant by variant.
 | `bms986202_10uM` | IFN-α 100 U/mL + BMS-986202 10 µM | ISRE-luciferase reporter |
 | `ndi034858_7nM` | IFN-α 100 U/mL **+ NDI-034858 7 nM** | ISRE-luciferase reporter |
 | `ndi034858_1uM` | IFN-α 100 U/mL + NDI-034858 1 µM | ISRE-luciferase reporter |
-| **`abundance`** | nothing — steady-state protein level | VAMP-seq (GFP:BFP ratio, FACS) |
+| **`abundance`** | nothing — steady-state protein level | VAMP-seq (GFP:BFP ratio, FACS) — **a different scale, see below** |
 
 ### The three things that vary
 
@@ -56,11 +56,33 @@ zero — a **nonsense variant scores +0.034**, i.e. a truncated protein looks no
 measure conditions already measured elsewhere in the dataset. The label "duplicate assay" is
 MaveDB's; the publication does not describe them as such or report their agreement.
 
-### How to read a score
+### How to read a score — the two readouts use different scales
 
-Log₂ fold change versus wild-type TYK2. **0 = wild type**, −1 = half the signal, +1 = double. No
-absolute units. Each arm carries its own internal floor: the **nonsense** (premature-stop) variants,
-which are non-functional by construction and define what "completely broken" scores in that arm.
+**Signalling (ten arms): log₂ fold change versus wild-type TYK2.** 0 = wild type, −1 = half the
+signal, +1 = double. No absolute units.
+
+**Abundance: a difference of sorting midpoints, not a fold change.** MaveDB's own method text:
+*"we applied a weighted Bayesian model to identify an abundance **midpoint (on the 0–1 scale)** per
+variant, and **contrasted the computed midpoint with the WT sequence midpoint**."* Cells are sorted
+into four GFP:BFP bins; each variant's score is its position on that 0–1 axis minus wild type's.
+
+**The two are therefore not in comparable units**, and the difference is structural rather than a
+matter of magnitude:
+
+| | abundance | signalling |
+|---|---|---|
+| scale | difference of 0–1 midpoints | log₂ fold change |
+| observed range | **−0.412 to +0.111** (bounded) | −4.3 to +2.6 |
+| SD | 0.120 | 0.631 |
+| nonsense median | −0.352 | −1.645 |
+
+The hard floor near **−0.41** is the sorting axis bottoming out, not a measured quantity: a variant
+cannot be placed below the lowest bin. This compresses the low end of abundance, and is one reason
+the slope of signalling on abundance is so steep in the bottom decile (§8.1).
+
+Each arm still carries its own internal floor — the **nonsense** (premature-stop) variants, which
+are non-functional by construction and define what "completely broken" scores in that arm. Those
+floors (−0.352 abundance, −1.645 at 100 U/mL) are both "dead" expressed in unrelated units.
 
 ---
 
@@ -385,6 +407,11 @@ A single linear fit averages across that threshold and describes neither regime.
 **Abundance explains only 9% of signalling variance.** The naive fit gives slope 1.603, intercept
 −0.053, Pearson r = **+0.305**, R² = **0.093**. Most of what varies in signalling has nothing to do
 with protein level.
+
+Note the slope has **no interpretation as proportionality**: it converts a midpoint difference into
+a log₂ fold change, two unrelated units (§1). A slope of 1 would not mean "signal proportional to
+protein". The conclusions in this section concern the *shape* of the relationship and the
+reliability of the inputs, which are unaffected by units.
 
 **Regression dilution.** Abundance has estimated reliability ≈ **0.545** (§2), so the attenuation-
 corrected slope is 1.603 / 0.545 = **2.94**. A residual computed with the naive slope therefore
