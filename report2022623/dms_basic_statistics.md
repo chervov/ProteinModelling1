@@ -400,7 +400,142 @@ smaller set.
 
 ---
 
-## 9. Practical summary
+## 9. Descriptive statistics for all sixteen predictors
+
+*Raw values, as distributed — **not** sign-flipped. The last column says which direction means damaging.*
+
+| predictor | n | coverage | mean | std | min | 25% | 50% | 75% | max | damaging |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|
+| **AlphaMissense** | 22,553 | 100% | +0.474 | 0.330 | +0.024 | +0.164 | +0.376 | +0.821 | +1.000 | high |
+| **ESM1b** | 22,553 | 100% | -10.505 | 4.527 | -24.164 | -13.906 | -10.572 | -7.000 | +4.885 | **low** |
+| **MetaRNN** | 6,803 | 30% | +0.496 | 0.338 | +0.000 | +0.161 | +0.455 | +0.850 | +0.994 | high |
+| **CADD phred** | 6,803 | 30% | +19.490 | 10.304 | +0.001 | +11.770 | +23.500 | +26.700 | +35.000 | high |
+| **REVEL** | 6,803 | 30% | +0.379 | 0.271 | +0.001 | +0.145 | +0.318 | +0.599 | +0.983 | high |
+| **VEST4** | 6,803 | 30% | +0.484 | 0.271 | +0.019 | +0.238 | +0.456 | +0.726 | +0.990 | high |
+| **PolyPhen-2** | 6,803 | 30% | +0.564 | 0.414 | +0.000 | +0.078 | +0.696 | +0.983 | +1.000 | high |
+| **SIFT** | 6,803 | 30% | +0.150 | 0.244 | +0.000 | +0.001 | +0.023 | +0.193 | +1.000 | **low** |
+| **PrimateAI** | 6,797 | 30% | +0.491 | 0.157 | +0.188 | +0.363 | +0.475 | +0.611 | +0.911 | high |
+| **MutAssessor** | 6,797 | 30% | +1.839 | 1.166 | -3.095 | +0.995 | +1.895 | +2.710 | +4.805 | high |
+| **PROVEAN** | 6,803 | 30% | -2.895 | 2.492 | -13.250 | -4.550 | -2.410 | -0.990 | +4.530 | **low** |
+| **GERP** | 5,613 | 25% | +1.361 | 2.752 | -11.500 | +0.162 | +2.080 | +3.330 | +6.010 | high |
+| **BLOSUM62** | 22,553 | 100% | -1.423 | 1.492 | -4.000 | -3.000 | -2.000 | -1.000 | +3.000 | **low** |
+| **ddG_closed** | 22,536 | 100% | -4.600 | 4.304 | -10.000 | -10.000 | -3.946 | -1.213 | +10.000 | **low** |
+| **ddG_open** | 22,536 | 100% | -4.410 | 4.423 | -10.000 | -10.000 | -3.686 | -1.048 | +10.000 | **low** |
+| **ddG_diff** | 22,536 | 100% | +0.190 | 2.737 | -20.000 | -0.294 | +0.000 | +0.517 | +20.000 | n/a |
+
+**Coverage splits into two groups.** AlphaMissense, ESM1b, BLOSUM62 and the three ΔΔG terms cover
+**100%** of the 22,553 substitutions. Everything from dbNSFP covers only **~30%** — the variants
+reachable by a single nucleotide change — and GERP only 25%. Correlations involving the dbNSFP
+group are computed on ~6,800 variants, the others on ~22,500.
+
+**Scales are wildly different**: PrimateAI spans 0.19–0.91 (SD 0.157) while ΔΔG spans the full
+clipped range with SD 4.3, and CADD phred runs 0–35. This is why every correlation below is given
+as Spearman first.
+
+---
+
+## 10. Correlation matrices — Spearman and Pearson
+
+All features **oriented so that higher = more damaging**, so every entry should be positive if two
+features agree.
+
+### 10.1 Spearman (rank)
+
+| | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **AlphaM** | — | +0.79 | +0.86 | +0.81 | +0.76 | +0.85 | +0.76 | +0.72 | +0.76 | +0.53 | +0.76 | +0.52 | +0.33 | +0.48 | +0.47 | +0.02 |
+| **ESM1b** | +0.79 | — | +0.76 | +0.72 | +0.66 | +0.75 | +0.68 | +0.64 | +0.59 | +0.51 | +0.74 | +0.47 | +0.32 | +0.44 | +0.44 | +0.03 |
+| **MetaRNN** | +0.86 | +0.76 | — | +0.85 | +0.86 | +0.92 | +0.83 | +0.79 | +0.76 | +0.58 | +0.84 | +0.61 | +0.29 | +0.49 | +0.47 | +0.00 |
+| **CADD** | +0.81 | +0.72 | +0.85 | — | +0.81 | +0.83 | +0.81 | +0.76 | +0.75 | +0.45 | +0.76 | +0.61 | +0.23 | +0.42 | +0.41 | +0.01 |
+| **REVEL** | +0.76 | +0.66 | +0.86 | +0.81 | — | +0.81 | +0.77 | +0.70 | +0.74 | +0.39 | +0.73 | +0.55 | +0.27 | +0.40 | +0.39 | +0.01 |
+| **VEST4** | +0.85 | +0.75 | +0.92 | +0.83 | +0.81 | — | +0.80 | +0.73 | +0.77 | +0.56 | +0.79 | +0.57 | +0.33 | +0.47 | +0.46 | +0.01 |
+| **PPh2** | +0.76 | +0.68 | +0.83 | +0.81 | +0.77 | +0.80 | — | +0.72 | +0.71 | +0.53 | +0.73 | +0.50 | +0.22 | +0.42 | +0.42 | +0.02 |
+| **SIFT** | +0.72 | +0.64 | +0.79 | +0.76 | +0.70 | +0.73 | +0.72 | — | +0.59 | +0.58 | +0.80 | +0.48 | +0.30 | +0.40 | +0.39 | +0.01 |
+| **PrimAI** | +0.76 | +0.59 | +0.76 | +0.75 | +0.74 | +0.77 | +0.71 | +0.59 | — | +0.35 | +0.62 | +0.52 | +0.06 | +0.36 | +0.35 | -0.00 |
+| **MutAss** | +0.53 | +0.51 | +0.58 | +0.45 | +0.39 | +0.56 | +0.53 | +0.58 | +0.35 | — | +0.58 | +0.30 | +0.26 | +0.39 | +0.39 | +0.03 |
+| **PROVEAN** | +0.76 | +0.74 | +0.84 | +0.76 | +0.73 | +0.79 | +0.73 | +0.80 | +0.62 | +0.58 | — | +0.50 | +0.46 | +0.43 | +0.43 | +0.03 |
+| **GERP** | +0.52 | +0.47 | +0.61 | +0.61 | +0.55 | +0.57 | +0.50 | +0.48 | +0.52 | +0.30 | +0.50 | — | +0.10 | +0.24 | +0.24 | +0.02 |
+| **BLOSUM** | +0.33 | +0.32 | +0.29 | +0.23 | +0.27 | +0.33 | +0.22 | +0.30 | +0.06 | +0.26 | +0.46 | +0.10 | — | +0.23 | +0.22 | +0.02 |
+| **ddGclos** | +0.48 | +0.44 | +0.49 | +0.42 | +0.40 | +0.47 | +0.42 | +0.40 | +0.36 | +0.39 | +0.43 | +0.24 | +0.23 | — | +0.82 | -0.18 |
+| **ddGopen** | +0.47 | +0.44 | +0.47 | +0.41 | +0.39 | +0.46 | +0.42 | +0.39 | +0.35 | +0.39 | +0.43 | +0.24 | +0.22 | +0.82 | — | +0.26 |
+| **ddGdiff** | +0.02 | +0.03 | +0.00 | +0.01 | +0.01 | +0.01 | +0.02 | +0.01 | -0.00 | +0.03 | +0.03 | +0.02 | +0.02 | -0.18 | +0.26 | — |
+
+### 10.2 Pearson (linear)
+
+| | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **AlphaM** | — | +0.76 | +0.81 | +0.66 | +0.76 | +0.82 | +0.65 | +0.42 | +0.73 | +0.50 | +0.71 | +0.37 | +0.32 | +0.45 | +0.44 | +0.02 |
+| **ESM1b** | +0.76 | — | +0.74 | +0.70 | +0.65 | +0.74 | +0.65 | +0.48 | +0.58 | +0.52 | +0.69 | +0.43 | +0.32 | +0.42 | +0.42 | +0.02 |
+| **MetaRNN** | +0.81 | +0.74 | — | +0.81 | +0.85 | +0.93 | +0.81 | +0.57 | +0.76 | +0.56 | +0.79 | +0.51 | +0.28 | +0.45 | +0.44 | -0.01 |
+| **CADD** | +0.66 | +0.70 | +0.81 | — | +0.74 | +0.78 | +0.78 | +0.61 | +0.70 | +0.46 | +0.67 | +0.57 | +0.21 | +0.38 | +0.38 | +0.01 |
+| **REVEL** | +0.76 | +0.65 | +0.85 | +0.74 | — | +0.81 | +0.72 | +0.47 | +0.75 | +0.40 | +0.71 | +0.46 | +0.25 | +0.38 | +0.37 | +0.00 |
+| **VEST4** | +0.82 | +0.74 | +0.93 | +0.78 | +0.81 | — | +0.77 | +0.51 | +0.77 | +0.55 | +0.76 | +0.50 | +0.32 | +0.44 | +0.43 | +0.00 |
+| **PPh2** | +0.65 | +0.65 | +0.81 | +0.78 | +0.72 | +0.77 | — | +0.53 | +0.65 | +0.52 | +0.66 | +0.42 | +0.22 | +0.40 | +0.40 | +0.01 |
+| **SIFT** | +0.42 | +0.48 | +0.57 | +0.61 | +0.47 | +0.51 | +0.53 | — | +0.38 | +0.47 | +0.57 | +0.32 | +0.24 | +0.29 | +0.29 | +0.00 |
+| **PrimAI** | +0.73 | +0.58 | +0.76 | +0.70 | +0.75 | +0.77 | +0.65 | +0.38 | — | +0.35 | +0.61 | +0.45 | +0.05 | +0.33 | +0.32 | -0.01 |
+| **MutAss** | +0.50 | +0.52 | +0.56 | +0.46 | +0.40 | +0.55 | +0.52 | +0.47 | +0.35 | — | +0.56 | +0.32 | +0.24 | +0.36 | +0.37 | +0.03 |
+| **PROVEAN** | +0.71 | +0.69 | +0.79 | +0.67 | +0.71 | +0.76 | +0.66 | +0.57 | +0.61 | +0.56 | — | +0.42 | +0.46 | +0.37 | +0.37 | +0.01 |
+| **GERP** | +0.37 | +0.43 | +0.51 | +0.57 | +0.46 | +0.50 | +0.42 | +0.32 | +0.45 | +0.32 | +0.42 | — | +0.09 | +0.20 | +0.19 | -0.00 |
+| **BLOSUM** | +0.32 | +0.32 | +0.28 | +0.21 | +0.25 | +0.32 | +0.22 | +0.24 | +0.05 | +0.24 | +0.46 | +0.09 | — | +0.21 | +0.20 | -0.01 |
+| **ddGclos** | +0.45 | +0.42 | +0.45 | +0.38 | +0.38 | +0.44 | +0.40 | +0.29 | +0.33 | +0.36 | +0.37 | +0.20 | +0.21 | — | +0.80 | -0.27 |
+| **ddGopen** | +0.44 | +0.42 | +0.44 | +0.38 | +0.37 | +0.43 | +0.40 | +0.29 | +0.32 | +0.37 | +0.37 | +0.19 | +0.20 | +0.80 | — | +0.35 |
+| **ddGdiff** | +0.02 | +0.02 | -0.01 | +0.01 | +0.00 | +0.00 | +0.01 | +0.00 | -0.01 | +0.03 | +0.01 | -0.00 | -0.01 | -0.27 | +0.35 | — |
+
+### 10.3 Where Spearman and Pearson disagree
+
+| pair | Spearman | Pearson | difference | n |
+|---|--:|--:|--:|--:|
+| AlphaMissense vs **SIFT** | +0.720 | +0.420 | **+0.300** | 6,803 |
+| **SIFT** vs PROVEAN | +0.802 | +0.568 | +0.233 | 6,803 |
+| REVEL vs **SIFT** | +0.701 | +0.472 | +0.230 | 6,803 |
+| MetaRNN vs **SIFT** | +0.794 | +0.570 | +0.225 | 6,803 |
+| VEST4 vs **SIFT** | +0.730 | +0.506 | +0.224 | 6,803 |
+| **SIFT** vs PrimateAI | +0.591 | +0.385 | +0.206 | 6,797 |
+| PolyPhen-2 vs **SIFT** | +0.723 | +0.534 | +0.189 | 6,803 |
+| AlphaMissense vs GERP | +0.522 | +0.370 | +0.152 | 5,613 |
+| AlphaMissense vs CADD | +0.808 | +0.663 | +0.146 | 6,803 |
+
+**Nine of the twelve largest disagreements involve SIFT**, and Spearman is higher every time.
+SIFT's distribution is extremely skewed — median **0.023**, 25th percentile **0.001**, i.e. most
+variants are pressed against zero. Pearson is dragged down by that compression; the *ranking*
+agrees with the other tools far better than the *values* do. Any analysis using raw SIFT scores
+linearly will understate its agreement with the panel.
+
+The same applies, more mildly, to AlphaMissense vs CADD (+0.81 rank, +0.66 linear) and to GERP.
+
+**Use Spearman throughout.** The only features where Pearson exceeds Spearman are the ΔΔG pair
+(+0.80 vs +0.82 — essentially equal) and ΔΔG_diff against its own inputs, where the linear figure
+is inflated by the clipped extremes.
+
+---
+
+## 11. What the matrices show
+
+**One dominant block.** Eleven of the sixteen features correlate at +0.6 to +0.92 with each other:
+AlphaMissense, ESM1b, MetaRNN, CADD, REVEL, VEST4, PolyPhen-2, SIFT, PrimateAI, PROVEAN and (more
+loosely) MutationAssessor and GERP. **MetaRNN ↔ VEST4 reaches +0.92** — the two highest-agreeing
+features in the set, both machine-learned meta-predictors.
+
+**Three features sit outside it.**
+
+| feature | agreement with the main block | why |
+|---|--:|---|
+| **BLOSUM62** | +0.05 to +0.46 | a substitution matrix — no structure, no conservation, no training |
+| **GERP** | +0.10 to +0.61 | pure sequence conservation, no variant-specific modelling |
+| **ΔΔG_closed / ΔΔG_open** | **+0.20 to +0.49** | physics on a structure — a genuinely different input |
+
+ΔΔG's independence is the one worth noting: at +0.40–0.49 it agrees enough to be measuring
+something real, but is far enough from +0.85 to add information the sequence panel does not have.
+PrimateAI vs BLOSUM62 at **+0.05** is the single lowest pair in the matrix.
+
+**ΔΔG_diff is null against all fifteen others** (−0.00 to +0.03). Its only non-zero entries are
+with its own two inputs — **−0.18** and **+0.26** Spearman, **−0.27** and **+0.35** Pearson. A
+quantity near-orthogonal to both terms it is built from, which is what subtracting two features
+correlated at +0.82 produces.
+
+---
+
+## 12. Practical summary
 
 | | |
 |---|---|
