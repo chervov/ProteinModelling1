@@ -25,14 +25,26 @@ That is a three-fold *enrichment* for low abundance alongside a three-fold *depl
 function. Both effects are large, both are highly significant, and they point in opposite
 directions. Normally the two track each other closely — a protein that is not there cannot signal.
 
-The interpretation that fits every test below is that **interface mutations produce a
-de-repressed enzyme**: each surviving molecule signals harder, which compensates for there being
-far fewer of them. The effect appears exactly where that compensation would be visible — at the
-lowest abundances — and disappears where protein is plentiful.
+What this is, stated without interpretation: interface variants fall in the **clean
+abundance-defect quadrant** — severely reduced protein, signalling preserved. That classification
+holds under any model of how signal depends on protein level, which is why it is the form the claim
+takes here (see `dms_basic_statistics.md` §8).
+
+A mechanism that would explain it is **de-repression**: interface mutations release JH2's hold on
+JH1, so the surviving protein is more active. The effect appears where that compensation would be
+visible — at the lowest abundances — and disappears where protein is plentiful. That mechanism is
+**not established**; sections 10 and 11 set out what was tested and what the data cannot support.
 
 **This is not classical gain of function.** Interface variants are *not* enriched among the top
-decile of absolute signal (9.6% vs 8.9%, p = 0.81). The gain is in **specific activity**: signal
-per unit protein. A screen that ranks variants by raw signalling output cannot see it.
+decile of absolute signal (9.6% vs 8.9%, p = 0.81). Whatever is happening shows only when
+signalling is read against protein level, so a screen ranking variants by raw signalling output
+cannot see it.
+
+**A quantitative "specific activity" cannot be estimated from these data.** Doing so requires the
+slope of signalling on abundance, and that slope is unusable here: the relationship has two regimes
+(steep below ≈ −0.30 abundance, flat to negative above ≈ −0.16), abundance explains only 9% of
+signalling variance, and abundance's measurement reliability of ≈ 0.545 leaves ~45% of its effect
+in any residual. Full analysis in `dms_basic_statistics.md` §8.
 
 **The decisive test was run and is inconclusive** (section 10, added 26 October, revised the same
 day). Interface variants were tested for altered sensitivity to the allosteric TYK2 inhibitors that
@@ -69,7 +81,7 @@ computed here. Every phenotype number below is theirs.
 autoimmune phenotypes act by *reducing TYK2 protein abundance*, and propose TYK2 degradation as a
 therapeutic strategy. The interface effect described here is a distinct and partly opposing
 observation: a set of variants that reduce abundance just as severely **yet do not reduce
-signalling**, because the surviving protein appears to be de-repressed. If that holds, reduced
+signalling**. If that holds, reduced
 abundance is not by itself sufficient for the protective phenotype — *where* in the protein the
 abundance is lost matters. Their paper also reports novel allosteric sites; the analysis here was
 carried out independently, from a crystal-structure interface definition, and the two should be
@@ -189,7 +201,10 @@ interface mutants at the *same* abundance signal near wild type (**−0.071**). 
 units**, more than twice the entire distance from wild type to the nonsense anchor, at p = 1e−44.
 
 Above Q1 the effect collapses to nothing. The advantage exists only when protein is limiting,
-which is what a specific-activity gain predicts and what a measurement artefact does not.
+which is what de-repression predicts and what a measurement artefact does not. Note the threshold
+is the same one visible protein-wide: below ≈ −0.30 abundance, protein is limiting and signal
+depends steeply on it; above ≈ −0.16 the pathway saturates (`dms_basic_statistics.md` §8.1). The
+interface effect is a departure *within* the limiting regime, not evidence of a different regime.
 
 ### Abundance-adjusted signalling
 
@@ -267,7 +282,7 @@ half as large in normalised terms.
 receptor- and ligand-limited rather than TYK2-limited, so having more active kinase per molecule
 buys less. At saturating ligand the kinase step is closer to rate-limiting, so de-repression
 translates more directly into output. That the effect is *larger* at saturating ligand is therefore
-consistent with the specific-activity model rather than an embarrassment for it.
+consistent with the de-repression model rather than an embarrassment for it.
 
 **The practical consequence is the opposite of section 52's.** For *predictors*, 1 U/mL is the
 informative dose, because that is where activating variants appear and where every sequence tool
@@ -377,8 +392,8 @@ either alone gives the opposite answer about this interface. The dissociation is
 both are measured on the same variants.
 
 **For the autoinhibition model.** The pseudokinase domain JH2 holds JH1 inactive; breaking the
-interface should release it. The DMS shows the predicted release — but as *specific activity*, not
-as raw output, and only once abundance is accounted for. The interface is simultaneously
+interface should release it. The DMS shows signalling preserved despite severe protein loss — but
+only once abundance is accounted for, never as raw output. The interface is simultaneously
 destabilizing and activating, and those two effects cancel in the raw signalling readout.
 
 **For gain-of-function discovery.** This is the one place in TYK2 where the data show a coherent
@@ -508,9 +523,12 @@ is in fact stronger against the correct anchor of −0.228.
 2. **The signalling assay is doxycycline-induced**, i.e. overexpression. Reserve capacity may mask
    abundance loss in a way that physiological expression would not, which would inflate the Q1
    effect.
-3. **The specific-activity interpretation is inferred, not measured.** No per-molecule activity was
-   determined; it is the hypothesis that fits the abundance-conditioned pattern. A direct kinase
-   assay on purified interface mutants would test it.
+3. **The de-repression interpretation is inferred, not measured**, and cannot be quantified. No
+   per-molecule activity was determined, and the slope needed to estimate one is unusable here —
+   two regimes, 9% variance explained, and ~45% of the abundance effect surviving any residual
+   (`dms_basic_statistics.md` §8). The claim this document supports is the **classification**
+   (low protein, preserved signal), not a figure for activity per molecule. A direct kinase assay
+   on purified interface mutants would settle it.
 4. **n = 494** interface variants versus 10,325 controls. Group-level effects are very well
    powered, but only 10 of 26 individual residues reach significance.
 5. **Interface membership is from one crystal structure** (4OLI) at a ΔSASA > 25 Å² cut-off. A
