@@ -34,6 +34,11 @@ lowest abundances — and disappears where protein is plentiful.
 decile of absolute signal (9.6% vs 8.9%, p = 0.81). The gain is in **specific activity**: signal
 per unit protein. A screen that ranks variants by raw signalling output cannot see it.
 
+**The specific-activity mechanism failed its decisive test** (section 10, added 26 October).
+Interface variants show no change in sensitivity to the allosteric TYK2 inhibitors that act on the
+JH2-JH1 equilibrium, on an assay that detects drug-pocket effects at p = 1e-16. The measured
+dissociation below is unaffected; the conformational *explanation* for it is not supported.
+
 ---
 
 ## 2. Source of the data
@@ -382,7 +387,91 @@ abundance.
 
 ---
 
-## 10. Limitations, stated plainly
+## 10. The decisive test, run — and the conformational interpretation fails it
+
+*Added 26 October 2026, after extracting all 11 arms of the Howard et al. DMS
+(`TYK2/DMS_Howard2026/`). Section 9 named this the single most valuable follow-up. It was run; the
+result goes against the mechanism proposed above, and is reported here rather than set aside.*
+
+### The prediction
+
+**BMS-986202** and **NDI-034858** are allosteric TYK2 inhibitors that bind the **JH2 pseudokinase
+domain**, not the ATP site. They act by *stabilising* the autoinhibited state — holding JH2 docked
+onto JH1 — which is the same axis, in the opposite direction, as the interface mutations studied
+here. (BMS-986202 is from the deucravacitinib series; NDI-034858 is zasocitinib.)
+
+If interface mutations work by shifting the closed↔open equilibrium, they should shift sensitivity
+to a drug that acts on that equilibrium. Each inhibitor arm is IFN-α 100 U/mL **plus** drug, so
+
+> **drug effect = (signal with inhibitor) − (signal at 100 U/mL, no drug)**
+
+More negative = more suppressed by the drug. Only the sub-saturating arms carry information: at
+1 µM and 10 µM the nonsense median is ≈ 0, i.e. the drug flattens every variant.
+
+### The measure works — positive controls
+
+| check | result |
+|---|--:|
+| BMS 20 nM vs its duplicate assay | Pearson **+0.590** |
+| BMS vs NDI — **different drugs** | Pearson **+0.543** |
+| mean \|drug effect\|, JH2 (drug-binding domain) | **0.415** |
+| mean \|drug effect\|, JH1 | 0.361 |
+| JH2 vs JH1 | **p = 1.4e−16**, AUC 0.546 |
+
+The top resistant positions are almost all in JH2 — 596, 671, 741, 640, 758, 759, 595, 796, 687 —
+as are the most sensitive (599, 600, 700, 711, 811). The assay localises drug effects to the domain
+the drugs bind.
+
+### The interface shows nothing
+
+Against the burial-matched control of section 5:
+
+| comparison | interface | burial-matched control | p | AUC |
+|---|--:|--:|--:|--:|
+| BMS-986202 20 nM | +0.010 | +0.017 | 0.63 | 0.494 |
+| BMS-986202 20 nM (duplicate) | +0.015 | −0.003 | 0.31 | 0.514 |
+| NDI-034858 7 nM | −0.021 | −0.031 | 0.70 | 0.495 |
+| mean \|drug effect\|, interface vs rest of JH2+JH1 | 0.361 | 0.358 | 0.11 | 0.479 |
+
+Null in both drugs, in both replicates, by both tests.
+
+**This is a clean negative, not an underpowered one.** The same measure, on the same variants,
+detects JH2 drug-pocket effects at p = 1e−16 and detects nothing at the JH2–JH1 interface.
+
+### What survives and what does not
+
+**Survives.** The abundance/signalling dissociation itself is unaffected — it rests on the DMS
+measurements of sections 3–6 and is independent of this test. Interface variants still lose
+abundance severely (69% bottom-quartile vs 38%) while being depleted for loss of function (4.9% vs
+15.3%), and still signal at −0.071 against −0.792 for matched controls in the lowest abundance
+quintile (p = 1e−44).
+
+**Does not survive.** The *interpretation* that this reflects a shifted closed↔open equilibrium.
+That inference predicted a shift in allosteric-drug sensitivity, and the prediction failed.
+
+Readings still compatible with all the data:
+
+1. the interface effect is about **stability and degradation**, not conformational equilibrium —
+   consistent with section 7, where computed ΔΔG fails to explain the abundance loss and the
+   stability–abundance coupling breaks down inside the interface;
+2. the equilibrium shift is real but **too small to change drug sensitivity** at 20 nM / 7 nM;
+3. the drugs occupy a JH2 pocket whose binding is **largely independent of the JH2–JH1 docking
+   state**, so the assay cannot see the equilibrium at all.
+
+Distinguishing (1) from (2) and (3) needs direct measurement — a kinase assay on purified interface
+mutants, or inhibitor dose–response on a handful of them — not more reanalysis of this dataset.
+
+### A correction carried from this extraction
+
+Each arm has its own nonsense anchor. **−0.352 is the abundance value**; the signalling anchors run
+from −0.228 (1 U/mL) to −1.66 (100 U/mL). Section 2 and the dose discussion quote −0.352 as a
+general "dead protein" line, which is right for abundance and wrong for the signalling arms. The
+statement that the 1 U/mL bottom decile (−0.447) sits below the dead-protein line still holds, and
+is in fact stronger against the correct anchor of −0.228.
+
+---
+
+## 11. Limitations, stated plainly
 
 1. **VAMP-seq uses an N-terminal GFP tag** while the interface is C-terminal. If breaking the
    interface changes GFP maturation or accessibility rather than true protein level, the abundance
@@ -402,10 +491,14 @@ abundance.
    suggests the definition is robust.
 6. **Causality is not established.** This is an association across 494 variants, consistent with
    the autoinhibition model but not a proof of it.
+7. **The conformational interpretation failed its sharpest test** (section 10). Interface variants
+   show no shift in allosteric-inhibitor sensitivity, in either drug, in either replicate, on an
+   assay that detects JH2 drug-pocket effects at p = 1e-16. The measured dissociation stands; the
+   equilibrium explanation for it does not.
 
 ---
 
-## 11. Reproducing this
+## 12. Reproducing this
 
 | file | contents |
 |---|---|
