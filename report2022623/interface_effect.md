@@ -34,10 +34,12 @@ lowest abundances — and disappears where protein is plentiful.
 decile of absolute signal (9.6% vs 8.9%, p = 0.81). The gain is in **specific activity**: signal
 per unit protein. A screen that ranks variants by raw signalling output cannot see it.
 
-**The specific-activity mechanism failed its decisive test** (section 10, added 26 October).
-Interface variants show no change in sensitivity to the allosteric TYK2 inhibitors that act on the
-JH2-JH1 equilibrium, on an assay that detects drug-pocket effects at p = 1e-16. The measured
-dissociation below is unaffected; the conformational *explanation* for it is not supported.
+**The decisive test was run and is inconclusive** (section 10, added 26 October, revised the same
+day). Interface variants were tested for altered sensitivity to the allosteric TYK2 inhibitors that
+act on the JH2-JH1 equilibrium. Two replicates of the *same drug at the same concentration* give
+p = 0.63 and p = 6.8e-05, a disagreement larger than the effect being measured. The measured
+dissociation below is unaffected either way; the conformational *explanation* for it is neither
+supported nor excluded by these data.
 
 ---
 
@@ -422,44 +424,69 @@ The top resistant positions are almost all in JH2 — 596, 671, 741, 640, 758, 7
 as are the most sensitive (599, 600, 700, 711, 811). The assay localises drug effects to the domain
 the drugs bind.
 
-### The interface shows nothing
+### A batch structure in the data, which decides the answer
 
-Against the burial-matched control of section 5:
+Before the result: the eleven arms do not group by experimental condition. Spearman between arms,
+missense only:
+
+| | IFN100 | IFN100' | BMS20n | BMS20n' | NDI7n |
+|---|--:|--:|--:|--:|--:|
+| **IFN100** | - | **+0.45** | +0.42 | +0.44 | +0.46 |
+| **IFN100'** | **+0.45** | - | +0.43 | **+0.68** | **+0.72** |
+| **BMS20n'** | +0.44 | +0.68 | +0.53 | - | **+0.75** |
+
+`ifn_100U` and `ifn_100U_dup` are **the same experimental condition** and agree at **+0.45**, while
+`ifn_100U_dup` agrees with `ndi034858_7nM` at **+0.72** and with `bms986202_20nM_dup` at **+0.68**.
+Hierarchical clustering splits the arms into {IFN 1U, 10U, 100U} and {IFN 100U', BMS 20nM,
+BMS 20nM', NDI 7nM}: arms in one group agree at 0.68-0.75 *regardless of drug*, across groups at
+0.42-0.48 *regardless of condition*. **Assay batch is a stronger signal than the experiment.**
+
+The paper does not mention batch effects, batch correction, or replicate agreement anywhere. Each
+score set aggregates three biological replicates and replicate handling *within* a score set is
+described carefully; what is undocumented is agreement *between* score sets. The term "duplicate
+assay" is MaveDB's, not the paper's. Their stated normalisation - *"drug-treatment conditions were
+normalized to the cytokine-stimulated condition"* - is the subtraction used here, but with batch
+structure present, **which** cytokine arm is used changes the result.
+
+### The result, with batch-matched baselines
 
 | comparison | interface | burial-matched control | p | AUC |
 |---|--:|--:|--:|--:|
-| BMS-986202 20 nM | +0.010 | +0.017 | 0.63 | 0.494 |
-| BMS-986202 20 nM (duplicate) | +0.015 | −0.003 | 0.31 | 0.514 |
-| NDI-034858 7 nM | −0.021 | −0.031 | 0.70 | 0.495 |
-| mean \|drug effect\|, interface vs rest of JH2+JH1 | 0.361 | 0.358 | 0.11 | 0.479 |
+| BMS 20 nM - IFN100 (same batch) | +0.010 | +0.017 | 0.63 | 0.494 |
+| **BMS 20 nM' - IFN100' (same batch)** | **+0.077** | **-0.016** | **6.8e-05** | **0.554** |
+| NDI 7 nM - IFN100' (same batch) | +0.019 | -0.029 | 0.11 | 0.522 |
+| *BMS 20 nM' - IFN100 (cross batch)* | *+0.015* | *-0.003* | *0.31* | *0.514* |
+| *NDI 7 nM - IFN100 (cross batch)* | *-0.021* | *-0.031* | *0.70* | *0.495* |
 
-Null in both drugs, in both replicates, by both tests.
+**Inconclusive.** Of the three batch-matched tests, one is significant, one trends the same way, and
+one is flat. The two non-null results both point the direction the conformational model predicts -
+interface variants slightly *more resistant* to a drug whose mechanism is tightening the interface.
 
-**This is a clean negative, not an underpowered one.** The same measure, on the same variants,
-detects JH2 drug-pocket effects at p = 1e−16 and detects nothing at the JH2–JH1 interface.
+But the two BMS replicates are **the same drug at the same concentration on the same readout**, and
+they give p = 0.63 and p = 6.8e-05. That disagreement exceeds the effect. AUC 0.554 is marginal, and
+with a replicate ceiling near rho = 0.5 an effect this small is not resolvable here.
 
-### What survives and what does not
+**An earlier version of this section reported a "clean negative".** That was wrong twice over: it
+used `ifn_100U` as the baseline for all three drug arms, two of which are in the other batch, and it
+treated agreement between three cross-batch nulls as replication. Corrected, the honest verdict is
+that these data cannot decide the question.
 
-**Survives.** The abundance/signalling dissociation itself is unaffected — it rests on the DMS
-measurements of sections 3–6 and is independent of this test. Interface variants still lose
-abundance severely (69% bottom-quartile vs 38%) while being depleted for loss of function (4.9% vs
-15.3%), and still signal at −0.071 against −0.792 for matched controls in the lowest abundance
-quintile (p = 1e−44).
+### What this does and does not change
 
-**Does not survive.** The *interpretation* that this reflects a shifted closed↔open equilibrium.
-That inference predicted a shift in allosteric-drug sensitivity, and the prediction failed.
+**Unchanged.** The measured dissociation of sections 3-7 rests on single-arm comparisons within the
+abundance and IFN-alpha datasets and is not affected by cross-arm normalisation. Interface variants
+still lose abundance severely (69% bottom-quartile vs 38%), are still depleted for loss of function
+(4.9% vs 15.3%), and still signal at -0.071 against -0.792 for matched controls in the lowest
+abundance quintile (p = 1e-44).
 
-Readings still compatible with all the data:
+**Still open.** Whether that dissociation reflects a shifted closed-open equilibrium. The test
+designed to settle it is not precise enough on these data. Settling it needs direct measurement -
+inhibitor dose-response on a handful of interface mutants, or a kinase assay on purified protein -
+not further reanalysis.
 
-1. the interface effect is about **stability and degradation**, not conformational equilibrium —
-   consistent with section 7, where computed ΔΔG fails to explain the abundance loss and the
-   stability–abundance coupling breaks down inside the interface;
-2. the equilibrium shift is real but **too small to change drug sensitivity** at 20 nM / 7 nM;
-3. the drugs occupy a JH2 pocket whose binding is **largely independent of the JH2–JH1 docking
-   state**, so the assay cannot see the equilibrium at all.
-
-Distinguishing (1) from (2) and (3) needs direct measurement — a kinase assay on purified interface
-mutants, or inhibitor dose–response on a handful of them — not more reanalysis of this dataset.
+**A caveat for any cross-arm analysis of this dataset**, including ours elsewhere and potentially
+others': results can depend on which no-drug baseline is chosen, and the batch structure is not
+documented in the publication.
 
 ### A correction carried from this extraction
 
@@ -491,10 +518,11 @@ is in fact stronger against the correct anchor of −0.228.
    suggests the definition is robust.
 6. **Causality is not established.** This is an association across 494 variants, consistent with
    the autoinhibition model but not a proof of it.
-7. **The conformational interpretation failed its sharpest test** (section 10). Interface variants
-   show no shift in allosteric-inhibitor sensitivity, in either drug, in either replicate, on an
-   assay that detects JH2 drug-pocket effects at p = 1e-16. The measured dissociation stands; the
-   equilibrium explanation for it does not.
+7. **The conformational interpretation remains untested** (section 10). The allosteric-inhibitor
+   test is inconclusive: two replicates of the same drug at the same concentration give p = 0.63 and
+   p = 6.8e-05, and the dataset carries an undocumented batch structure in which same-condition arms
+   agree less well (rho 0.45) than different-condition arms from the same batch (rho 0.68-0.75). The
+   measured dissociation stands; its mechanism is not established either way.
 
 ---
 
