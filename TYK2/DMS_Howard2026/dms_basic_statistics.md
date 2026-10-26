@@ -10,7 +10,61 @@ scan, before any biological analysis. Source table: `TYK2_DMS_Howard2026_all_arm
 
 ---
 
-## 1. Warning: repeated experiments disagree badly
+## 1. What the eleven "arms" are
+
+An **arm** is one experimental condition, scored across the whole variant library. The dataset has
+eleven: ten measuring **interferon signalling** under different treatments, and one measuring
+**protein abundance**. Every arm scores the same ~22,500 missense variants, so they can be compared
+variant by variant.
+
+| arm | what was done to the cells | measured by |
+|---|---|---|
+| `ifn_1U` | IFN-α 1 U/mL | ISRE-luciferase reporter |
+| `ifn_10U` | IFN-α 10 U/mL | ISRE-luciferase reporter |
+| `ifn_100U` | IFN-α 100 U/mL | ISRE-luciferase reporter |
+| `ifn_100U_dup` | IFN-α 100 U/mL — **a repeat of the row above** | ISRE-luciferase reporter |
+| `bms986202_20nM` | IFN-α 100 U/mL **+ BMS-986202 20 nM** | ISRE-luciferase reporter |
+| `bms986202_20nM_dup` | same — **a repeat** | ISRE-luciferase reporter |
+| `bms986202_1uM` | IFN-α 100 U/mL + BMS-986202 1 µM | ISRE-luciferase reporter |
+| `bms986202_10uM` | IFN-α 100 U/mL + BMS-986202 10 µM | ISRE-luciferase reporter |
+| `ndi034858_7nM` | IFN-α 100 U/mL **+ NDI-034858 7 nM** | ISRE-luciferase reporter |
+| `ndi034858_1uM` | IFN-α 100 U/mL + NDI-034858 1 µM | ISRE-luciferase reporter |
+| **`abundance`** | nothing — steady-state protein level | VAMP-seq (GFP:BFP ratio, FACS) |
+
+### The three things that vary
+
+**Interferon dose (1, 10, 100 U/mL).** The stimulus TYK2 transduces. More IFN means more signal and
+more room to see a variant break it — but also less room to see a variant *improve* on wild type.
+
+**Drug, and its concentration.** **BMS-986202** and **NDI-034858** (zasocitinib) are **allosteric
+TYK2 inhibitors**: they bind the **JH2 pseudokinase domain**, not the ATP site, and work by holding
+JH2 docked onto JH1 — stabilising the autoinhibited state. BMS-986202 is from the same series as
+deucravacitinib (Sotyktu). Both were given at a **sub-saturating** dose (20 nM / 7 nM) and a
+**saturating** one (1–10 µM).
+
+**Readout.** Ten arms report *signalling*; one reports *how much protein is present*. These are
+different questions and, as §7 shows, they correlate only weakly.
+
+### Two things to know before using any arm
+
+**Saturating drug arms carry no information.** At 1 µM and 10 µM the drug shuts down signalling in
+every variant including wild type. Since scores are relative to wild type, everything returns to
+zero — a **nonsense variant scores +0.034**, i.e. a truncated protein looks normal. Use only
+`bms986202_20nM`, `bms986202_20nM_dup` and `ndi034858_7nM`.
+
+**Two arms are repeats, and the repeats disagree** (§2). `ifn_100U_dup` and `bms986202_20nM_dup`
+measure conditions already measured elsewhere in the dataset. The label "duplicate assay" is
+MaveDB's; the publication does not describe them as such or report their agreement.
+
+### How to read a score
+
+Log₂ fold change versus wild-type TYK2. **0 = wild type**, −1 = half the signal, +1 = double. No
+absolute units. Each arm carries its own internal floor: the **nonsense** (premature-stop) variants,
+which are non-functional by construction and define what "completely broken" scores in that arm.
+
+---
+
+## 2. Warning: repeated experiments disagree badly
 
 **Two of the eleven arms are repeats of a condition measured elsewhere in the dataset.** They are
 the only direct measure of reproducibility available, and they fail it.
@@ -65,7 +119,7 @@ Even **nonsense variants** — which have a large, consistent, unambiguous effec
 2. **Group-level comparisons remain valid.** Averaging thousands of variants averages this error
    down; that is why the domain- and region-level results elsewhere in this project are stable
    across arms while individual positions move.
-3. **The batch structure in §5 is the likely cause**, not an additional problem: the two repeats sit
+3. **The batch structure in §6 is the likely cause**, not an additional problem: the two repeats sit
    in different batches, and batch dominates condition throughout this dataset.
 4. **The publication reports none of this.** It describes biological triplicates *within* each score
    set but gives no agreement statistics *between* score sets, and the term "duplicate assay" is
@@ -73,7 +127,7 @@ Even **nonsense variants** — which have a large, consistent, unambiguous effec
 
 ---
 
-## 2. Descriptive statistics — missense (n = 22,545)
+## 3. Descriptive statistics — missense (n = 22,545)
 
 | column | count | mean | std | min | 25% | 50% | 75% | max | NA |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -89,7 +143,7 @@ Even **nonsense variants** — which have a large, consistent, unambiguous effec
 | ndi034858_1uM | 22,533 | +0.017 | 0.350 | −3.863 | −0.190 | +0.009 | +0.213 | +4.097 | 12 |
 | **abundance** | 22,516 | −0.116 | **0.120** | −0.412 | −0.195 | −0.076 | −0.021 | +0.111 | 29 |
 
-## 3. Descriptive statistics — nonsense (n = 1,187): the dead-protein anchor
+## 4. Descriptive statistics — nonsense (n = 1,187): the dead-protein anchor
 
 | column | count | mean | std | min | 25% | **50%** | 75% | max |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -127,7 +181,7 @@ A clean internal validation that the scores mean what they claim — and the rea
 
 ---
 
-## 4. Assay quality per arm
+## 5. Assay quality per arm
 
 **Separation** = (missense median − nonsense median) / pooled SD, i.e. how many SD separate a
 typical variant from a dead protein.
@@ -159,7 +213,7 @@ typical variant from a dead protein.
 
 ---
 
-## 5. Correlation between arms
+## 6. Correlation between arms
 
 Spearman, missense only (n up to 22,533):
 
@@ -200,7 +254,7 @@ two noise distributions, not biology.)
 
 ---
 
-## 6. Abundance versus signalling
+## 7. Abundance versus signalling
 
 | signalling arm | Spearman with abundance | median signalling, bottom-quartile abundance | rest |
 |---|--:|--:|--:|
@@ -216,7 +270,7 @@ IFN 100 U/mL, so abundance and signalling magnitudes must never be compared dire
 
 ---
 
-## 7. How each arm relates to the sequence predictors
+## 8. How each arm relates to the sequence predictors
 
 *Added after the genome-wide dbNSFP extraction (`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`,
 7,195 variants including CADD and MetaRNN). Both sides oriented so that higher = more damaging.*
@@ -246,7 +300,7 @@ protein level is the more direct readout of that. It is also what the stability 
 
 **2. `ifn_1U` is the hardest arm for every predictor, by a factor of two.** AlphaMissense drops from
 +0.367 at 10 U/mL to **+0.169** at 1 U/mL. Not a property of any particular tool — all ten halve.
-The arm's separation is 0.56 and its SD/SE is 1.06 (§4), so most of this is the assay, not the
+The arm's separation is 0.56 and its SD/SE is 1.06 (§5), so most of this is the assay, not the
 predictors. Any conclusion drawn from `ifn_1U` inherits that.
 
 **3. Adding IFN *raises* correlations up to 10 U/mL, then flattens.** 1 U → 10 U → 100 U gives
@@ -267,7 +321,7 @@ smaller set.
 
 ---
 
-## 8. Practical summary
+## 9. Practical summary
 
 | | |
 |---|---|
