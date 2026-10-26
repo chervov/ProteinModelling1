@@ -101,3 +101,51 @@ On clipped values the boundary softens and the two proteins stop agreeing: k-mea
 for TYK2 and **FIPWY** for JAK1. The clean partition describes **how often a substitution clashes
 catastrophically**, not how bad a typical substitution is. Use it to reason about the clash tail,
 not as a general damage classification.
+
+---
+
+## Does the split mean anything biologically? Tested against the TYK2 DMS
+
+The two groups were defined purely from computed ddG. Scoring them against the 22,553-variant deep
+mutational scan — 4,565 variants in the HIGH group, 17,988 in the LOW group:
+
+| measure | HIGH (P,W,Y,F) | LOW (16 others) | difference | p |
+|---|--:|--:|--:|--:|
+| **median raw ddG_closed** | **−14.5** | **−3.4** | **−11.2** | ~0 |
+| median abundance | −0.099 | −0.070 | **−0.029** | 9e−36 |
+| median IFN-α 1 U/mL | −0.061 | −0.044 | **−0.017** | 0.002 |
+| median IFN-α 100 U/mL | −0.137 | −0.114 | **−0.023** | 6e−07 |
+| median AlphaMissense | +0.520 | +0.341 | +0.179 | 3e−74 |
+
+| rate | HIGH | LOW | odds ratio | p |
+|---|--:|--:|--:|--:|
+| % bottom-quartile abundance | 29.5% | 23.9% | **1.34** | 9e−15 |
+| % LOF at 100 U/mL | 12.5% | 9.4% | 1.39 | 6e−10 |
+| **% LOF at 1 U/mL** | **10.1%** | **10.0%** | **1.02** | **0.74** |
+| % GOF at 1 U/mL | 9.9% | 10.0% | 0.98 | 0.76 |
+
+### The split is computational, not biological
+
+**At 1 U/mL the two groups are indistinguishable — 10.1% versus 10.0% loss-of-function, p = 0.74.**
+A group that ddG scores as 4-fold worse by median (and ~50-fold by raw mean) breaks the protein's
+function at exactly the background rate, at the dose where function is most sensitively measured.
+
+Where a real effect exists it is modest and on the expected axis: abundance shifts by 0.029 units
+and the bottom-quartile rate by OR 1.34. Bulky substitutions do destabilise protein somewhat. But a
+34% relative enrichment is not a 50-fold computed difference. The p-values are small only because
+n = 22,553; the effect sizes are not.
+
+**AlphaMissense separates the groups far more sharply than the experiment does** (0.520 vs 0.341,
+p = 3e−74). So two computational methods agree with each other about which substitutions *look*
+dangerous — bulky and conserved — and both overstate it relative to what the cells report. Agreement
+between predictors is not evidence here; they share the bias.
+
+### Consequence
+
+The split is a reproducible property of the force field and a useful diagnostic of where the clash
+tail lives. It is **not** a damage classification. Writing "P/W/Y/F are the damaging substitutions"
+would be wrong.
+
+It also explains the AUC gap in `conclusions_ddG_difference_feature.md` §5 (ddG 0.704 on abundance
+against AlphaMissense 0.859): most of ddG's dynamic range is spent separating a four-residue group
+that the cells barely react to.
