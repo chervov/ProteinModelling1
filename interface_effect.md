@@ -112,7 +112,7 @@ JH1 is released.
 | system | HEK293T with endogenous TYK2 knocked out, STAT2 + IRF9 restored |
 | signalling | barcoded luciferase on an 8× ISRE promoter, doxycycline-inducible TYK2, IFN-α2a at 1 or 100 U/mL |
 | abundance | VAMP-seq — N-terminal GFP with a co-transcriptional BFP control, FACS-sorted on the GFP:BFP ratio |
-| scale | 0 = wild type, **−0.352 = the nonsense median** (dead protein) |
+| scale | 0 = wild type, **−0.352 = the nonsense median** (dead protein). Signalling is log₂ fold change; **abundance is a difference of 0–1 sorting midpoints**, not a fold change, and bounded below near −0.41 |
 | coverage used | 22,536 variants at 1 U/mL and 100 U/mL, 22,516 on abundance |
 
 ---
