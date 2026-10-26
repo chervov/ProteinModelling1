@@ -85,25 +85,61 @@ would be the most informative missing experiment in this dataset** — and it be
 interface question (`interface_effect.md`): if interface variants lose abundance by loosening the
 JH2–JH1 contact, a drug that tightens that contact might partially rescue them.
 
-**The cost to us is that abundance reproducibility cannot be assessed at all.** For signalling,
-two arms are repeats, so ρ = 0.45 and a 20% gain-of-function replication rate are measurable (§2).
-Abundance was deposited as a single score set, so there is no equivalent number.
+**Abundance reproducibility cannot be measured directly — but it can be estimated, and the estimate
+is poor.** Two signalling arms are repeats, so their reliability is observable (§2). Abundance was
+deposited as a single score set, so there is no equivalent. The reported per-variant standard errors
+provide a route around this.
 
-This matters because abundance is the arm carrying the most weight in this project:
+### Estimating reliability from the reported standard errors
 
-| | |
-|---|---|
-| best correlation with every predictor | **+0.42** (AlphaMissense), against +0.34 at 100 U/mL (§8) |
-| tightest distribution | SD **0.120**, median SE **0.077** (§3) |
-| nonsense anchor spread | SD **0.088** — the tightest of any arm (§4) |
-| underpins | the entire interface finding — 69% bottom-quartile vs 38% |
+If `var(observed) = var(true) + var(error)`, the expected correlation between two independent
+repeats is `var(true) / var(observed)`. Where real repeats exist the prediction can be checked:
 
-The low standard errors and the very tight nonsense anchor indicate good internal consistency
-across the three sorted replicates. **That is not the same as an independent repeat.** The
-signalling arms demonstrated that internal triplicates can look well-behaved while agreement
-*between* independently run arms is poor. Abundance-based conclusions should be read with that
-possibility open, and would be worth confirming against an orthogonal measurement (western blot or
-mass spectrometry) on a small set of variants.
+| pair | predicted | **observed** | ratio |
+|---|--:|--:|--:|
+| ifn_100U / ifn_100U_dup | 0.662 | **0.700** | 1.06 |
+| bms986202_20nM / bms986202_20nM_dup | 0.553 | **0.607** | 1.10 |
+
+Accurate to within 10% on both, so the method can be applied where no repeat exists.
+
+| arm | SD | median SE | error share of variance | **estimated replicate r** |
+|---|--:|--:|--:|--:|
+| ifn_100U | 0.631 | 0.313 | 31% | **0.689** *(observed 0.700)* |
+| ndi034858_7nM | 0.615 | 0.339 | 34% | 0.657 |
+| ifn_100U_dup | 0.603 | 0.341 | 36% | 0.635 |
+| bms986202_20nM_dup | 0.574 | 0.337 | 39% | 0.610 |
+| ifn_10U | 0.551 | 0.317 | 41% | 0.585 |
+| **abundance** | **0.120** | **0.077** | **49%** | **0.506 → 0.545 corrected** |
+| bms986202_20nM | 0.553 | 0.350 | 50% | 0.501 |
+| **ifn_1U** | 0.328 | 0.311 | **112%** | **0.000** |
+
+**Abundance is estimated at r ≈ 0.55 — among the least reliable arms, not the most.** Nearly half
+its observed variance is measurement error.
+
+Two independent checks agree. The **nonsense variants** are all equally dead by construction, so
+their spread is pure noise: the ratio of that spread to the reported SE is **1.69** for IFN 100 U/mL
+and **1.81** for abundance — the true error is about 1.8× the reported SE in both, slightly worse
+for abundance. And **`ifn_1U` returns 0.000**: its reported errors account for its entire variance,
+so that arm may carry no recoverable signal at all — consistent with its separation of 0.56 (§5).
+
+### A correction
+
+An earlier version of this section described abundance's low standard errors as *"reassuring about
+internal consistency"*. **That was wrong.** What matters is the SE *relative to* the spread being
+measured. Abundance has a tight distribution (SD 0.120), so its small SE (0.077) is proportionally
+large — 49% of variance, against 31% for IFN 100 U/mL.
+
+### What still holds
+
+Abundance remains the arm carrying the most weight here: best correlation with every predictor
+(+0.42), and the interface finding rests on it. Those are **group-level** comparisons over hundreds
+of variants, where an r ≈ 0.55 per-variant error averages down heavily — the 69% vs 38% contrast
+involves 494 variants and is not threatened by this.
+
+**Individual abundance scores are another matter.** At r ≈ 0.55 a single variant's value carries
+substantial error, so single-variant abundance claims should not be made from this dataset alone.
+An orthogonal measurement — western blot or mass spectrometry on a small set — would settle both
+this and the drug-stabilisation question above.
 
 ---
 
