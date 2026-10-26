@@ -347,9 +347,94 @@ predict losing signal — which is the general form of the dissociation analysed
 IFN 100 U/mL, so abundance and signalling magnitudes must never be compared directly.
 
 
+
 ---
 
-## 8. How each arm relates to the sequence predictors
+## 8. Separating a signalling defect from an abundance defect
+
+A variant can lose signal for two different reasons: there is **less protein**, or the protein
+**does not work**. The dataset measures both, so in principle the two can be told apart. In practice
+they can be separated cleanly for about **9% of variants** and not at all for the rest. This section
+sets out why, because the problem applies to any analysis combining the two readouts.
+
+### 8.1 The relationship has two regimes, not one
+
+Signalling (IFN-α 100 U/mL) against abundance, in abundance deciles:
+
+| abundance bin | n | median signal | local slope |
+|---|--:|--:|--:|
+| **−0.412 .. −0.326** | 2,252 | **−0.658** | **+8.65** |
+| −0.326 .. −0.232 | 2,251 | −0.168 | +2.36 |
+| −0.232 .. −0.162 | 2,251 | −0.132 | +1.55 |
+| −0.162 .. −0.112 | 2,251 | −0.122 | +0.41 |
+| −0.112 .. −0.076 | 2,252 | −0.078 | +0.59 |
+| −0.076 .. −0.050 | 2,252 | −0.068 | +2.59 |
+| −0.050 .. −0.030 | 2,251 | −0.060 | +2.01 |
+| −0.030 .. −0.012 | 2,251 | −0.070 | −1.80 |
+| −0.012 .. +0.007 | 2,251 | −0.066 | −5.07 |
+| +0.007 .. +0.111 | 2,252 | −0.063 | −1.38 |
+
+**Below roughly −0.30, protein is limiting** and signal falls steeply — slope +8.65 in the bottom
+decile. **Above roughly −0.16 the slope flattens and turns negative**: more protein buys nothing,
+consistent with the doxycycline-induced overexpression saturating the pathway.
+
+A single linear fit averages across that threshold and describes neither regime.
+
+### 8.2 Three reasons the residual method is weak here
+
+**Abundance explains only 9% of signalling variance.** The naive fit gives slope 1.603, intercept
+−0.053, Pearson r = **+0.305**, R² = **0.093**. Most of what varies in signalling has nothing to do
+with protein level.
+
+**Regression dilution.** Abundance has estimated reliability ≈ **0.545** (§2), so the attenuation-
+corrected slope is 1.603 / 0.545 = **2.94**. A residual computed with the naive slope therefore
+**leaves roughly 45% of the abundance effect unremoved** — the "specific activity" residual still
+contains abundance.
+
+**Matching on a noisy variable has the mirror problem.** Comparing variants within abundance strata
+avoids the linearity assumption, but the strata are defined by a measurement that is ~45% error, so
+bins are contaminated by regression to the mean.
+
+**Nonsense variants do not calibrate this.** They have zero intrinsic function by construction, so
+their signal should be at the floor regardless of protein level. Their observed slope is **+0.590**,
+but that is confounded: a truncation further along the protein is both more stable and more likely
+to retain function, so position drives both axes.
+
+### 8.3 What does work: classify instead of regress
+
+| category | definition | n | share |
+|---|---|--:|--:|
+| **clean signalling defect** | abundance > −0.20, signal in bottom decile | **958** | 4.3% |
+| **clean abundance defect** | abundance ≤ −0.30, signal above the 40th percentile | **1,010** | 4.5% |
+| both low | cannot be separated | 1,002 | 4.5% |
+| both normal | — | 11,074 | 49.2% |
+| ambiguous middle | — | 8,469 | 37.6% |
+
+The two corner categories are interpretable **because they do not depend on a slope**. A variant
+with wild-type protein levels and no signal is a functional defect under any model of the
+relationship; a variant with severely reduced protein that still signals normally is an abundance
+defect under any model. Those ~2,000 variants are the ones that can be named individually.
+
+The 37.6% ambiguous middle cannot be resolved with these data. Neither can the 4.5% where both
+readouts are low — a dead protein present at low level is consistent with either cause, or both.
+
+### 8.4 Practical guidance
+
+| if you want to | do this | not this |
+|---|---|---|
+| name individual variants | take the corner categories | threshold on a residual |
+| compare two groups of variants | compare within abundance strata, and report the strata | report a single regression coefficient |
+| claim a per-molecule activity change | measure it directly | infer it from a residual slope |
+
+**For the interface analysis** (`interface_effect.md`): that result is a **corner claim**, not a
+residual claim — interface variants sit at low abundance while retaining signal, which is the
+clean-abundance-defect quadrant, robust to both the non-linearity and the dilution. What does *not*
+follow from these data is the quantitative "specific activity" language: stating that each surviving
+molecule works harder implies a slope that cannot be estimated reliably here.
+
+---
+
+## 9. How each arm relates to the sequence predictors
 
 *Added after the genome-wide dbNSFP extraction (`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`,
 7,195 variants including CADD and MetaRNN). Both sides oriented so that higher = more damaging.*
@@ -400,7 +485,7 @@ smaller set.
 
 ---
 
-## 9. Descriptive statistics for all sixteen predictors
+## 10. Descriptive statistics for all sixteen predictors
 
 *Raw values, as distributed — **not** sign-flipped. The last column says which direction means damaging.*
 
@@ -433,9 +518,9 @@ clipped range with SD 4.3, and CADD phred runs 0–35. This is why every correla
 as Spearman first.
 
 
-### 9.1 ΔΔG: raw and clipped side by side
+### 10.1 ΔΔG: raw and clipped side by side
 
-Section 9 lists the three ΔΔG terms **clipped to [−10, 10]**, the window the published pipeline
+Section 10 lists the three ΔΔG terms **clipped to [−10, 10]**, the window the published pipeline
 uses. The raw values span three orders of magnitude more, so both are given here. All 22,536
 TYK2 variants, matched AlphaFold 3 pair.
 
@@ -490,12 +575,12 @@ temptation to read the numbers as kcal/mol.
 
 ---
 
-## 10. Correlation matrices — Spearman and Pearson
+## 11. Correlation matrices — Spearman and Pearson
 
 All features **oriented so that higher = more damaging**, so every entry should be positive if two
 features agree.
 
-### 10.1 Spearman (rank)
+### 11.1 Spearman (rank)
 
 | | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -516,7 +601,7 @@ features agree.
 | **ddGopen** | +0.47 | +0.44 | +0.47 | +0.41 | +0.39 | +0.46 | +0.42 | +0.39 | +0.35 | +0.39 | +0.43 | +0.24 | +0.22 | +0.82 | — | +0.26 |
 | **ddGdiff** | +0.02 | +0.03 | +0.00 | +0.01 | +0.01 | +0.01 | +0.02 | +0.01 | -0.00 | +0.03 | +0.03 | +0.02 | +0.02 | -0.18 | +0.26 | — |
 
-### 10.2 Pearson (linear)
+### 11.2 Pearson (linear)
 
 | | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -537,7 +622,7 @@ features agree.
 | **ddGopen** | +0.44 | +0.42 | +0.44 | +0.38 | +0.37 | +0.43 | +0.40 | +0.29 | +0.32 | +0.37 | +0.37 | +0.19 | +0.20 | +0.80 | — | +0.35 |
 | **ddGdiff** | +0.02 | +0.02 | -0.01 | +0.01 | +0.00 | +0.00 | +0.01 | +0.00 | -0.01 | +0.03 | +0.01 | -0.00 | -0.01 | -0.27 | +0.35 | — |
 
-### 10.3 Where Spearman and Pearson disagree
+### 11.3 Where Spearman and Pearson disagree
 
 | pair | Spearman | Pearson | difference | n |
 |---|--:|--:|--:|--:|
@@ -565,7 +650,7 @@ is inflated by the clipped extremes.
 
 ---
 
-## 11. What the matrices show
+## 12. What the matrices show
 
 **One dominant block.** Eleven of the sixteen features correlate at +0.6 to +0.92 with each other:
 AlphaMissense, ESM1b, MetaRNN, CADD, REVEL, VEST4, PolyPhen-2, SIFT, PrimateAI, PROVEAN and (more
@@ -591,7 +676,7 @@ correlated at +0.82 produces.
 
 ---
 
-## 12. Practical summary
+## 13. Practical summary
 
 | | |
 |---|---|
