@@ -432,6 +432,62 @@ group are computed on ~6,800 variants, the others on ~22,500.
 clipped range with SD 4.3, and CADD phred runs 0–35. This is why every correlation below is given
 as Spearman first.
 
+
+### 9.1 ΔΔG: raw and clipped side by side
+
+Section 9 lists the three ΔΔG terms **clipped to [−10, 10]**, the window the published pipeline
+uses. The raw values span three orders of magnitude more, so both are given here. All 22,536
+TYK2 variants, matched AlphaFold 3 pair.
+
+| feature | n | mean | std | min | 1% | 25% | 50% | 75% | 99% | max |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| ddG_closed raw | 22,536 | −50.68 | **188.38** | **−3047.9** | −941.26 | −11.35 | −3.95 | −1.21 | +6.69 | +540.0 |
+| **ddG_closed clipped** | 22,536 | −4.60 | 4.30 | −10.0 | −10.00 | −10.00 | −3.95 | −1.21 | +6.69 | +10.0 |
+| ddG_open raw | 22,536 | −49.00 | 183.02 | −3078.3 | −922.88 | −10.96 | −3.69 | −1.05 | +11.75 | +457.8 |
+| **ddG_open clipped** | 22,536 | −4.41 | 4.42 | −10.0 | −10.00 | −10.00 | −3.69 | −1.05 | +10.00 | +10.0 |
+| ddG_diff raw | 22,536 | +1.68 | **98.37** | −2188.7 | −202.29 | −1.02 | +0.05 | +1.30 | +248.79 | +1963.0 |
+| **ddG_diff clipped** | 22,536 | +0.19 | 2.74 | −20.0 | −8.87 | −0.29 | +0.00 | +0.52 | +10.50 | +20.0 |
+
+**Clipping moves 27.6% of ddG_closed values** (below −10) plus 0.68% above +10. The medians are
+untouched — −3.95 either way — because the window only affects the tails.
+
+### What clipping changes, and what it does not
+
+| quantity | raw | clipped |
+|---|--:|--:|
+| r(closed, open) Pearson | **+0.860** | +0.804 |
+| ρ(closed, open) Spearman | +0.837 | +0.823 |
+| SD of the difference | 98.37 | 2.74 |
+| …as a share of SD(ddG_closed) | 52% | **64%** |
+
+| feature | AUC abundance | AUC IFN 100 U | AUC IFN 1 U |
+|---|--:|--:|--:|
+| ddG_closed raw | **0.714** | **0.745** | 0.567 |
+| **ddG_closed clipped** | 0.704 | 0.733 | 0.565 |
+| ddG_diff raw | 0.490 | 0.507 | 0.502 |
+| **ddG_diff clipped** | 0.499 | 0.516 | 0.499 |
+
+**Three points.**
+
+**Clipping costs about 0.01 AUC.** ddG_closed scores 0.714 raw against 0.704 clipped on abundance,
+0.745 against 0.733 at 100 U/mL. The extreme values carry ordering information: a ΔΔG of −3,000 is
+a meaningless energy but a reliable statement that the substitution does not physically fit.
+Discarding those variants entirely is worse still (0.693 at 100 U/mL).
+
+**The difference feature is null either way** — 0.490 to 0.516 across all six cells. No treatment of
+the tails rescues it, which rules out clipping as the explanation for its failure.
+
+**Clipping slightly lowers the closed↔open correlation** (0.860 → 0.804 Pearson) because it
+compresses the extremes, where the two states agree most strongly. That in turn *raises* the
+difference's apparent share of the variance, from 52% to 64%.
+
+**The magnitudes are not free energies.** The extreme values are ~100% `fa_rep` — pure steric
+overlap — measured directly in `conclusions_ddG_difference_feature.md` §9, and reproduced by
+Rosetta's own `ddg_monomer` (§10). Rank the values; never quote them as energies. On that basis a
+rank transform, not clipping, is the technically correct treatment: it gives results identical to
+raw (both rank-based statistics are unchanged by any monotone transform) while removing the
+temptation to read the numbers as kcal/mol.
+
 ---
 
 ## 10. Correlation matrices — Spearman and Pearson
