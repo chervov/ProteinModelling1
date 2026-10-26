@@ -150,9 +150,61 @@ predict losing signal — which is the general form of the dissociation analysed
 `interface_effect.md`. Note also the scale difference: abundance SD is 0.120 against 0.631 for
 IFN 100 U/mL, so abundance and signalling magnitudes must never be compared directly.
 
+
 ---
 
-## 6. Practical summary
+## 6. How each arm relates to the sequence predictors
+
+*Added after the genome-wide dbNSFP extraction (`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`,
+7,195 variants including CADD and MetaRNN). Both sides oriented so that higher = more damaging.*
+
+Spearman, missense only:
+
+| predictor | ifn_1U | ifn_10U | ifn_100U | ifn_100U′ | BMS 20nM | BMS 20nM′ | NDI 7nM | **abundance** | n |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| **AlphaMissense** | **+0.169** | **+0.367** | +0.341 | +0.335 | +0.328 | +0.364 | +0.375 | **+0.418** | 22,516 |
+| ESM1b | +0.144 | +0.314 | +0.291 | +0.282 | +0.288 | +0.313 | +0.324 | +0.362 | 22,516 |
+| MetaRNN | +0.171 | +0.334 | +0.298 | +0.289 | +0.283 | +0.307 | +0.322 | +0.408 | 6,797 |
+| REVEL | +0.156 | +0.302 | +0.267 | +0.260 | +0.264 | +0.280 | +0.292 | **+0.411** | 6,797 |
+| VEST4 | +0.166 | +0.335 | +0.299 | +0.291 | +0.293 | +0.315 | +0.329 | +0.381 | 6,797 |
+| CADD | +0.147 | +0.288 | +0.257 | +0.241 | +0.268 | +0.278 | +0.289 | +0.380 | 6,797 |
+| PrimateAI | +0.119 | +0.249 | +0.224 | +0.218 | +0.221 | +0.234 | +0.246 | +0.350 | 6,791 |
+| PolyPhen-2 | +0.143 | +0.271 | +0.236 | +0.230 | +0.241 | +0.260 | +0.271 | +0.343 | 6,797 |
+| SIFT | +0.146 | +0.286 | +0.257 | +0.247 | +0.249 | +0.261 | +0.277 | +0.321 | 6,797 |
+| GERP | +0.057 | +0.154 | +0.140 | +0.125 | +0.160 | +0.142 | +0.158 | +0.221 | 5,607 |
+
+### Four observations
+
+**1. Every predictor does better on abundance than on signalling.** AlphaMissense: **+0.418 on
+abundance against +0.341 at 100 U/mL**. The pattern holds for all ten, including pure conservation
+(GERP, +0.221 vs +0.140). These tools were trained to recognise variants that break proteins, and
+protein level is the more direct readout of that. It is also what the stability literature predicts
+(Gerasimavicius et al., *Protein Science* 2023, benchmarking nine tools against 49 DMS datasets).
+
+**2. `ifn_1U` is the hardest arm for every predictor, by a factor of two.** AlphaMissense drops from
++0.367 at 10 U/mL to **+0.169** at 1 U/mL. Not a property of any particular tool — all ten halve.
+The arm's separation is 0.56 and its SD/SE is 1.06 (§3), so most of this is the assay, not the
+predictors. Any conclusion drawn from `ifn_1U` inherits that.
+
+**3. Adding IFN *raises* correlations up to 10 U/mL, then flattens.** 1 U → 10 U → 100 U gives
++0.169 → **+0.367** → +0.341 for AlphaMissense. The peak is at 10 U/mL, not the highest dose, in
+every row. The middle dose has both adequate dynamic range and enough residual sensitivity, and it
+is the arm this project has used least.
+
+**4. The drug arms behave like ordinary signalling arms.** BMS 20 nM, BMS 20 nM′ and NDI 7 nM give
++0.33, +0.36, +0.38 for AlphaMissense — slightly *above* the no-drug 100 U/mL arm (+0.341) and in
+the same range as its batch-2 replicate (+0.335). Sub-saturating inhibitor does not change what the
+predictors can see. That is expected: predictors score intrinsic variant damage, and partial
+inhibition rescales signal without altering which variants are broken.
+
+**Coverage note.** AlphaMissense and ESM1b are available for all 22,516 variants; everything else is
+limited to the ~6,800 reachable by a single nucleotide change. The two sets are not directly
+comparable in precision, though AlphaMissense's value changes by under 0.01 when restricted to the
+smaller set.
+
+---
+
+## 7. Practical summary
 
 | | |
 |---|---|
@@ -162,6 +214,8 @@ IFN 100 U/mL, so abundance and signalling magnitudes must never be compared dire
 | unusable | `bms986202_1uM`, `bms986202_10uM`, `ndi034858_1uM` |
 | mandatory constraint | pair arms **within batch** for any subtraction |
 | per-arm dead anchor | use the arm's own nonsense median, not −0.352 |
+| best arm for predictor benchmarking | **`abundance`** (ρ up to +0.42), then **`ifn_10U`** (+0.37) |
+| worst arm for predictor benchmarking | **`ifn_1U`** (+0.17) — half of every other signalling arm |
 
 *Source: Howard et al., eLife 2026, DOI 10.7554/eLife.110149.2 (preprint bioRxiv
 10.1101/2025.10.11.681520). MaveDB `urn:mavedb:00001270-a` and `00001271-a`, retrieved
