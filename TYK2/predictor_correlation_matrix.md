@@ -3,8 +3,8 @@
 *26 October 2026. Twelve features on the same variants: seven sequence-based pathogenicity
 predictors, three PyRosetta ΔΔG terms, and the two experimental DMS readouts.*
 
-Source: `external_data/TYK2/tyk2_variants_inf_predict_ext.csv`.
-**n = 2,247 variants with a parseable identifier; 2,188 complete across all twelve.**
+**Superseded by a genome-wide extraction — see section 0.** The curated analysis is retained below
+because it was the basis of the first version of this document and the comparison is instructive.
 
 > **Why this sample, and what it costs.** CADD and MetaRNN exist **only** in this curated file —
 > nobody extracted them genome-wide. That is an artefact of how the data was assembled, not a real
@@ -30,6 +30,58 @@ Source: `external_data/TYK2/tyk2_variants_inf_predict_ext.csv`.
 > 3.1, 3.2 and 3.4 stand as written. **Predictor-to-phenotype correlations in this table are
 > understated by 0.06–0.08** — selecting benign variants compresses the damaging end where the
 > signal lives. Genome-wide values should be preferred wherever both exist.
+
+---
+
+## 0. Genome-wide result (use this one)
+
+CADD and MetaRNN were pulled for **every** single-nucleotide-reachable TYK2 substitution from
+myvariant.info / dbNSFP (canonical transcript `ENST00000525621`), giving **7,195 protein changes**
+and **6,796 complete across all twelve features** — 3.1× the curated sample, with no selection for
+clinically observed variants. Script: `pipeline/dbnsfp/fetch_tyk2_dbnsfp.py`; table:
+`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`.
+
+All features oriented so **higher = more damaging**. Spearman.
+
+| | AlphaMiss | ESM1b | REVEL | CADD | SIFT | PPh2 | MetaRNN | ddGclos | ddGopen | ddGdiff | DMSsig | DMSab |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| **AlphaMiss** | — | +0.79 | +0.76 | +0.81 | +0.72 | +0.76 | **+0.86** | +0.48 | +0.47 | +0.02 | **+0.34** | **+0.42** |
+| **ESM1b** | +0.79 | — | +0.66 | +0.72 | +0.64 | +0.68 | +0.76 | +0.44 | +0.44 | +0.03 | +0.29 | +0.36 |
+| **REVEL** | +0.76 | +0.66 | — | +0.81 | +0.70 | +0.77 | **+0.86** | +0.40 | +0.39 | +0.01 | +0.27 | +0.41 |
+| **CADD** | +0.81 | +0.72 | +0.81 | — | +0.76 | +0.81 | +0.85 | +0.42 | +0.41 | +0.01 | +0.26 | +0.38 |
+| **SIFT** | +0.72 | +0.64 | +0.70 | +0.76 | — | +0.72 | +0.79 | +0.40 | +0.39 | +0.01 | +0.26 | +0.32 |
+| **PPh2** | +0.76 | +0.68 | +0.77 | +0.81 | +0.72 | — | +0.83 | +0.42 | +0.42 | +0.02 | +0.24 | +0.34 |
+| **MetaRNN** | +0.86 | +0.76 | +0.86 | +0.85 | +0.79 | +0.83 | — | +0.49 | +0.47 | +0.00 | +0.30 | +0.41 |
+| **ddGclos** | +0.48 | +0.44 | +0.40 | +0.42 | +0.40 | +0.42 | +0.49 | — | **+0.82** | −0.18 | +0.22 | +0.25 |
+| **ddGopen** | +0.47 | +0.44 | +0.39 | +0.41 | +0.39 | +0.42 | +0.47 | +0.82 | — | +0.26 | +0.22 | +0.24 |
+| **ddGdiff** | +0.02 | +0.03 | +0.01 | +0.01 | +0.01 | +0.02 | **+0.00** | −0.18 | +0.26 | — | +0.01 | −0.00 |
+| **DMSsig** | +0.34 | +0.29 | +0.27 | +0.26 | +0.26 | +0.24 | +0.30 | +0.22 | +0.22 | +0.01 | — | **+0.20** |
+| **DMSab** | +0.42 | +0.36 | +0.41 | +0.38 | +0.32 | +0.34 | +0.41 | +0.25 | +0.24 | −0.00 | +0.20 | — |
+
+**PCA on the seven sequence predictors** (rank-transformed, n = 6,796): eigenvalues
+5.59, 0.39, 0.31, 0.23, 0.20, 0.17, 0.10 → **PC1 = 79.9%**. Adding ΔΔG_closed: **73.4%**.
+
+### What changed against the curated set
+
+| quantity | curated (n=2,188) | **genome-wide (n=6,796)** |
+|---|--:|--:|
+| PC1, 7 predictors | 79.3% | **79.9%** |
+| PC1 adding ΔΔG_closed | 73.0% | **73.4%** |
+| AlphaMissense ↔ MetaRNN | +0.85 | +0.86 |
+| ΔΔG_closed ↔ predictors | +0.41–0.49 | +0.40–0.49 |
+| **AlphaMissense ↔ DMS abundance** | +0.36 | **+0.42** |
+| **AlphaMissense ↔ DMS signalling** | +0.26 | **+0.34** |
+| **DMS signalling ↔ DMS abundance** | +0.14 | **+0.20** |
+| ΔΔG_diff ↔ everything | +0.02–0.04 | **+0.00–0.03** |
+
+**The predictor block is unchanged** — PC1 moves by 0.6 points, every pairwise correlation by ≤0.03.
+**The phenotype correlations rise by 0.06–0.08**, exactly the restriction-of-range effect predicted
+from the curated set's benign enrichment (median AlphaMissense 0.170 vs 0.376).
+
+**Every qualitative conclusion survives**, including the sharpest one: the two experimental readouts
+still agree with each other (**+0.20**) less than AlphaMissense agrees with either (+0.34, +0.42).
+And ΔΔG_open − ΔΔG_closed is, if anything, more clearly null — **+0.00 against MetaRNN**, the
+strongest predictor in the panel.
 
 ---
 
