@@ -53,12 +53,30 @@ Separately, 4OLI — the human TYK2 pseudokinase–kinase crystal structure at 2
 JH2–JH1 distance of 39.0 Å, the compact end of that pair's range, confirming it as the closed
 autoinhibited arrangement.
 
-## The compact state comes only from AlphaFold
+## Within the SWISS-MODEL template set the compact state comes only from AlphaFold
 
 Classifying every template by FERM–JH1 with a 60 Å cut gives 33 extended and 8 compact
-observations across the pooled family. **All 8 compact observations are AlphaFold predictions;
-none come from a template-derived model**, because every full-length homology model descends
+observations across the pooled family. Within this set all 8 compact observations are AlphaFold
+predictions and none come from a template-derived model — but that is a property of the template
+source, not of the modelling literature: every full-length SWISS-MODEL homology model descends
 from 7T6F or 8EWY and is therefore extended by construction.
+
+**ModelArchive does contain a closed full-length JAK1 model**, and it was missed in the first pass
+of this analysis. Measured directly from the deposited coordinates:
+
+| model | FERM–SH2 | FERM–JH2 | SH2–JH2 | JH2–JH1 | SH2–JH1 | FERM–JH1 | state |
+|---|--:|--:|--:|--:|--:|--:|---|
+| ma-l9b1f | 40.4 | 47.4 | 40.3 | 39.5 | 55.3 | **40.1** | closed |
+| ma-a1sai | 40.4 | 46.6 | 40.2 | 46.0 | 77.7 | **92.5** | open |
+
+These reproduce the values recorded independently in `reference_states.md` (40.0 and 92.6 Å). They
+also strengthen the central result rather than weakening it: the FERM–SH2–JH2 block is identical
+between the closed and open models to within 0.8 Å on every internal distance, while FERM–JH1
+differs by 52.4 Å. The closed model's JH2–JH1 of 39.5 Å matches the 4OLI crystal at 39.0 Å.
+
+The correct statement is therefore narrower than the heading above: **no SWISS-MODEL template
+lineage yields the closed state**, and any screen built only on that source will see the closed
+arrangement exclusively through AlphaFold.
 
 AlphaFold's choice is not consistent within the family or even within one gene. Human TYK2
 (39.7 Å) and human JAK3 (41.5 Å) are compact, whereas human JAK1 (92.2 Å) and human JAK2
