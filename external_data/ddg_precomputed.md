@@ -53,8 +53,10 @@ stabilities over 331 natural and 148 de novo domains. Excellent for training; **
 comparable to ΔΔG in the large multi-domain proteins analysed in `more_proteins/`, where the mutated
 site may sit in an inter-domain interface that no 40–72 aa domain can represent.
 
-**`myoglobin_clean.csv` is misnamed.** Its rows carry `#SET = TEST_P53` and PDB `2AC0A` with a p53
-sequence, not myoglobin. Check its provenance before using it as a held-out set.
+**`myoglobin_clean.csv` is misnamed.** All 42 rows carry `#SET = TEST_P53`, `CLUID = 2AC0A` and
+`PDB = 2OCJA`, with a p53 sequence — not myoglobin. (Both 2AC0A and 2OCJA are p53 structures; the
+file's columns are `#SET, CLUID, PDB, MUT, DDG, SEQ`, so the PDB identifier is 2OCJA and 2AC0A is
+the cluster id.) Check its provenance before using it as a held-out set.
 
 **Ssym comes in forward and inverse pairs** (342 rows each). The inverse set exists to expose
 antisymmetry bias — a predictor should give ΔΔG(A→B) = −ΔΔG(B→A). Report both or the evaluation is
