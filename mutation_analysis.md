@@ -110,15 +110,114 @@ stretch, which a 2023 modelling study of deucravacitinib identified as the JH1 �
 in the autoinhibited state. (Their motif naming differs slightly from the sequence as read here; verify
 against the primary text before citing.)
 
+**The spatial shell, for comparison with V678 below.** Of the 25 heavy-atom neighbours of P982
+within 8 Å on 4OLI chain A (excluding |Δseq| ≤ 2), **eight are among the 26 residues of the JH2–JH1
+interface, and they span both domains**: S663 (3.97 Å), Q664 (3.62 Å), S666 (3.66 Å), F672 (7.59 Å),
+K728 (5.39 Å) and S580 (7.58 Å) on JH2; R901 (5.91 Å), R992 (7.04 Å) and N1033 (5.95 Å) on JH1. The
+nearest JH1 neighbours D1032 (3.90 Å) and L1031 (4.15 Å) complete a residue sitting in the middle of
+the contact patch. This is the structural reason P982A is the only one of the seven variants with a
+detected effect.
+
 ### 3.4 V678 in detail
 
 V678 makes **zero** heavy-atom contacts with JH1 within 5 Å, and is 53 % exposed on isolated JH2. Its
 17.2 Å² ΔSASA comes from sitting at the interface periphery where the probe is blocked at longer range,
 not from contact. Any effect must be allosteric.
 
-One route is worth noting: **F672 is the single largest interface residue (86.9 Å²) and lies six residues
-from V678**, plausibly packed against the same segment. A substitution at 678 could reposition F672
-without touching JH1 itself.
+#### Correction (27 October 2026): the F672 route does not exist
+
+An earlier version of this section proposed that a substitution at 678 might act by repositioning
+**F672**, the single largest interface residue (86.9 Å²), on the grounds that it "lies six residues
+from V678" and was "plausibly packed against the same segment." That was inferred from sequence
+separation and never measured. Measured on 4OLI chain A (minimum heavy-atom distance):
+
+| pair | distance |
+|---|--:|
+| V678 ↔ F672 | **15.5 Å** |
+| V678 ↔ H674 | 11.0 Å |
+| V678 ↔ R901 | 14.2 Å |
+| V678 ↔ S663 | 13.0 Å |
+| V678 ↔ Q664 | 17.4 Å |
+| V678 ↔ S666 | 22.4 Å |
+| V678 ↔ K728 | 25.2 Å |
+
+F672 is 15.5 Å from V678 with no shared contacts. Six residues apart in sequence says nothing about
+proximity in a folded domain, and here the two are on opposite sides of the structure. **The
+proposed allosteric route through F672 is withdrawn.** The paragraph below replaces it.
+
+#### What V678 actually contacts: the SH2–JH2 linker
+
+All heavy-atom neighbours of V678 within 8 Å on 4OLI chain A, excluding immediate sequence
+neighbours (|Δseq| ≤ 2):
+
+| neighbour | distance | element |
+|---|--:|---|
+| Y656 | 3.25 Å | JH2 |
+| **Q586** | **3.99 Å** | **SH2–JH2 linker** |
+| **V584** | **4.20 Å** | **SH2–JH2 linker** |
+| **D585** | 5.84 Å | **SH2–JH2 linker** |
+| **I589** | 6.48 Å | JH2 N-terminus |
+| **K587** | 7.09 Å | **SH2–JH2 linker** |
+| **R583** | 7.45 Å | **SH2–JH2 linker** |
+| **F581** | 7.57 Å | **SH2–JH2 linker** |
+| E682 | 3.77 Å | JH2 |
+| N683 | 4.00 Å | JH2 |
+| I684 | 5.07 Å | JH2 |
+| P681 | 5.47 Å | JH2 |
+| M685 | 7.28 Å | JH2 |
+| G675 | 7.94 Å | JH2 |
+
+**None of the 26 residues of the 4OLI JH2–JH1 interface appears in this list** — consistent with the
+ΔSASA result in §3.2. V678 is not an interface residue by any measure.
+
+But seven of its fourteen neighbours lie in **581–588, the SH2–JH2 linker** (TYK2 JH2 begins at 589).
+That matters, because the **SH2–JH2 linker is the element through which the JAK2 V617F mechanism is
+proposed to act**: Shan, …, Shaw & Hubbard (*Nat Struct Mol Biol* 2014) attribute V617F's release of
+autoinhibition to stabilisation of an α-helix in that linker, not to any direct JH2–JH1 contact.
+So the structural neighbourhood of V678 corroborates the mechanistic homology to JAK2 V617 by a
+route completely independent of the interface analysis — and explains how a residue with zero
+cross-domain contacts could still influence the arrangement.
+
+This does not rescue V678**M** specifically. The homology is of *position* and *mechanism route*,
+not of substitution: methionine lacks the aromatic ring the V617F mechanism requires, and JAK3
+carries methionine at the aligned position natively (M592). See §2.
+
+#### A tolerant residue in an intolerant neighbourhood
+
+Per-position DMS means over the 19 substitutions at each position (Howard et al., IFN-α 100 U/mL;
+AlphaMissense for comparison):
+
+| position | wt | ifn100 | AlphaMissense |
+|---|---|--:|--:|
+| 667 | H | −0.75 | 0.75 |
+| 670 | L | −0.66 | 0.78 |
+| **675** | **G** | **−1.56** | **0.95** |
+| 676 | V | −0.80 | 0.75 |
+| 677 | C | −0.41 | 0.57 |
+| **678** | **V** | **−0.14** | **0.60** |
+| 684 | I | −0.42 | 0.66 |
+| **686** | **V** | **−1.23** | **0.91** |
+
+And in the linker it packs against:
+
+| position | wt | ifn100 | AlphaMissense |
+|---|---|--:|--:|
+| 579 | L | −1.60 | 0.70 |
+| **581** | **F** | **−1.86** | **0.94** |
+| 584 | V | −0.75 | 0.67 |
+| 589 | I | −0.93 | 0.73 |
+
+**F581 is among the most substitution-sensitive positions in the entire TYK2 DMS, and V678 — which
+touches it — is nearly indifferent to substitution.** V678's relative solvent accessibility in the
+closed model is 0.46, i.e. half exposed, which accounts for the tolerance. The machinery V678
+contacts is load-bearing; the residue itself is not.
+
+**One measurement that does not survive its own control.** The 14-residue shell is more sensitive
+than the rest of the protein (mean ifn100 −0.54 against −0.25). But the shell is also more buried
+than average, and burial alone predicts sensitivity. Against a background matched on relative
+solvent accessibility over the shell's range (n = 1,087 positions) the difference gives
+**Mann–Whitney p = 0.062 with n = 14** — suggestive and nothing more. It should not be quoted as a
+result.
 
 ## 4. Predictions, and the reasoning behind each
 
