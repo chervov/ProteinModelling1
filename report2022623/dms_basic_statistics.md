@@ -78,7 +78,7 @@ matter of magnitude:
 
 The hard floor near **−0.41** is the sorting axis bottoming out, not a measured quantity: a variant
 cannot be placed below the lowest bin. This compresses the low end of abundance, and is one reason
-the slope of signalling on abundance is so steep in the bottom decile (§8.1).
+the slope of signalling on abundance is so steep in the bottom decile (§9.1).
 
 Each arm still carries its own internal floor — the **nonsense** (premature-stop) variants, which
 are non-functional by construction and define what "completely broken" scores in that arm. Those
@@ -280,9 +280,54 @@ Truncation is lethal anywhere in the first 1,176 residues and completely tolerat
 A clean internal validation that the scores mean what they claim — and the reason the nonsense
 *median* rather than the mean is the right anchor.
 
+
 ---
 
-## 5. Assay quality per arm
+## 5. Missense against nonsense: which arms can tell a broken protein from a working one
+
+The nonsense (premature-stop) variants are the built-in control: non-functional by construction. An
+arm is only usable if its missense and nonsense distributions are actually separated. **Separation**
+below is the difference in medians divided by the pooled standard deviation.
+
+| arm | missense median | nonsense median | gap | **separation** | usable |
+|---|--:|--:|--:|--:|:---:|
+| IFN-α 100 U/mL (repeat) | −0.115 | −1.660 | 1.545 | **2.68** | yes |
+| **NDI-034858 7 nM** | −0.159 | −1.574 | 1.415 | **2.63** | yes |
+| **Protein abundance** | −0.076 | −0.352 | 0.275 | **2.62** | yes |
+| IFN-α 100 U/mL | −0.118 | −1.645 | 1.527 | **2.49** | yes |
+| BMS-986202 20 nM (repeat) | −0.158 | −1.364 | 1.206 | 2.43 | yes |
+| IFN-α 10 U/mL | −0.150 | −1.246 | 1.096 | 2.20 | yes |
+| BMS-986202 20 nM | −0.149 | −1.140 | 0.991 | 2.04 | yes |
+| **IFN-α 1 U/mL** | **−0.048** | **−0.228** | **0.179** | **0.56** | **marginal** |
+| NDI-034858 1 µM | +0.009 | +0.006 | −0.003 | **0.01** | **no** |
+| BMS-986202 1 µM | +0.014 | +0.034 | −0.021 | **−0.06** | **no** |
+| BMS-986202 10 µM | +0.011 | +0.068 | −0.056 | **−0.17** | **no** |
+
+### Three tiers, and one trap
+
+**Seven arms discriminate** (separation 2.0–2.7). In these, a truncated protein scores 1.0–1.6 units
+below wild type — or 0.28 on the abundance scale — so the assay has room to place a variant
+anywhere between working and dead.
+
+**Three are flattened.** At saturating drug the nonsense median is **+0.03 to +0.07**: a protein cut
+in half scores the *same as wild type*, because the drug suppresses signalling in every variant and
+the scores are relative to wild type. The separation is slightly negative, which is noise around
+zero. These arms carry no variant information at all.
+
+**`ifn_1U` sits between**, at 0.56. A dead protein reaches only −0.228, barely past the missense
+median of −0.048. Nothing is wrong with the measurement; there is simply very little signal to lose
+at limiting ligand, so loss of function has almost nowhere to show.
+
+**The trap this guards against.** In a drug arm, a variant scoring near zero means *"the drug
+affects this variant about as much as it affects wild type"* — not *"no signal"*. Those two readings
+are indistinguishable without the nonsense control. With it they separate cleanly: at BMS 20 nM a
+dead protein still scores −1.140, so a variant at ~0 genuinely resembles wild type; at BMS 1 µM a
+dead protein scores +0.034, so the same ~0 means nothing. Any claim about a variant's drug response
+should be checked against its arm's nonsense median first.
+
+---
+
+## 6. Assay quality per arm
 
 **Separation** = (missense median − nonsense median) / pooled SD, i.e. how many SD separate a
 typical variant from a dead protein.
@@ -314,7 +359,7 @@ typical variant from a dead protein.
 
 ---
 
-## 6. Correlation between arms
+## 7. Correlation between arms
 
 Spearman, missense only (n up to 22,533):
 
@@ -355,7 +400,7 @@ two noise distributions, not biology.)
 
 ---
 
-## 7. Abundance versus signalling
+## 8. Abundance versus signalling
 
 | signalling arm | Spearman with abundance | median signalling, bottom-quartile abundance | rest |
 |---|--:|--:|--:|
@@ -372,14 +417,14 @@ IFN 100 U/mL, so abundance and signalling magnitudes must never be compared dire
 
 ---
 
-## 8. Separating a signalling defect from an abundance defect
+## 9. Separating a signalling defect from an abundance defect
 
 A variant can lose signal for two different reasons: there is **less protein**, or the protein
 **does not work**. The dataset measures both, so in principle the two can be told apart. In practice
 they can be separated cleanly for about **9% of variants** and not at all for the rest. This section
 sets out why, because the problem applies to any analysis combining the two readouts.
 
-### 8.1 The relationship has two regimes, not one
+### 9.1 The relationship has two regimes, not one
 
 Signalling (IFN-α 100 U/mL) against abundance, in abundance deciles:
 
@@ -402,7 +447,7 @@ consistent with the doxycycline-induced overexpression saturating the pathway.
 
 A single linear fit averages across that threshold and describes neither regime.
 
-### 8.2 Three reasons the residual method is weak here
+### 9.2 Three reasons the residual method is weak here
 
 **Abundance explains only 9% of signalling variance.** The naive fit gives slope 1.603, intercept
 −0.053, Pearson r = **+0.305**, R² = **0.093**. Most of what varies in signalling has nothing to do
@@ -427,7 +472,7 @@ their signal should be at the floor regardless of protein level. Their observed 
 but that is confounded: a truncation further along the protein is both more stable and more likely
 to retain function, so position drives both axes.
 
-### 8.3 What does work: classify instead of regress
+### 9.3 What does work: classify instead of regress
 
 | category | definition | n | share |
 |---|---|--:|--:|
@@ -445,7 +490,7 @@ defect under any model. Those ~2,000 variants are the ones that can be named ind
 The 37.6% ambiguous middle cannot be resolved with these data. Neither can the 4.5% where both
 readouts are low — a dead protein present at low level is consistent with either cause, or both.
 
-### 8.4 Practical guidance
+### 9.4 Practical guidance
 
 | if you want to | do this | not this |
 |---|---|---|
@@ -461,7 +506,7 @@ molecule works harder implies a slope that cannot be estimated reliably here.
 
 ---
 
-## 9. How each arm relates to the sequence predictors
+## 10. How each arm relates to the sequence predictors
 
 *Added after the genome-wide dbNSFP extraction (`external_data/TYK2/tyk2_dbnsfp_genomewide.csv`,
 7,195 variants including CADD and MetaRNN). Both sides oriented so that higher = more damaging.*
@@ -512,7 +557,7 @@ smaller set.
 
 ---
 
-## 10. Descriptive statistics for all sixteen predictors
+## 11. Descriptive statistics for all sixteen predictors
 
 *Raw values, as distributed — **not** sign-flipped. The last column says which direction means damaging.*
 
@@ -545,9 +590,9 @@ clipped range with SD 4.3, and CADD phred runs 0–35. This is why every correla
 as Spearman first.
 
 
-### 10.1 ΔΔG: raw and clipped side by side
+### 11.1 ΔΔG: raw and clipped side by side
 
-Section 10 lists the three ΔΔG terms **clipped to [−10, 10]**, the window the published pipeline
+Section 11 lists the three ΔΔG terms **clipped to [−10, 10]**, the window the published pipeline
 uses. The raw values span three orders of magnitude more, so both are given here. All 22,536
 TYK2 variants, matched AlphaFold 3 pair.
 
@@ -602,12 +647,12 @@ temptation to read the numbers as kcal/mol.
 
 ---
 
-## 11. Correlation matrices — Spearman and Pearson
+## 12. Correlation matrices — Spearman and Pearson
 
 All features **oriented so that higher = more damaging**, so every entry should be positive if two
 features agree.
 
-### 11.1 Spearman (rank)
+### 12.1 Spearman (rank)
 
 | | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -628,7 +673,7 @@ features agree.
 | **ddGopen** | +0.47 | +0.44 | +0.47 | +0.41 | +0.39 | +0.46 | +0.42 | +0.39 | +0.35 | +0.39 | +0.43 | +0.24 | +0.22 | +0.82 | — | +0.26 |
 | **ddGdiff** | +0.02 | +0.03 | +0.00 | +0.01 | +0.01 | +0.01 | +0.02 | +0.01 | -0.00 | +0.03 | +0.03 | +0.02 | +0.02 | -0.18 | +0.26 | — |
 
-### 11.2 Pearson (linear)
+### 12.2 Pearson (linear)
 
 | | AlphaM | ESM1b | MetaRNN | CADD | REVEL | VEST4 | PPh2 | SIFT | PrimAI | MutAss | PROVEAN | GERP | BLOSUM | ddGclos | ddGopen | ddGdiff |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -649,7 +694,7 @@ features agree.
 | **ddGopen** | +0.44 | +0.42 | +0.44 | +0.38 | +0.37 | +0.43 | +0.40 | +0.29 | +0.32 | +0.37 | +0.37 | +0.19 | +0.20 | +0.80 | — | +0.35 |
 | **ddGdiff** | +0.02 | +0.02 | -0.01 | +0.01 | +0.00 | +0.00 | +0.01 | +0.00 | -0.01 | +0.03 | +0.01 | -0.00 | -0.01 | -0.27 | +0.35 | — |
 
-### 11.3 Where Spearman and Pearson disagree
+### 12.3 Where Spearman and Pearson disagree
 
 | pair | Spearman | Pearson | difference | n |
 |---|--:|--:|--:|--:|
@@ -677,7 +722,7 @@ is inflated by the clipped extremes.
 
 ---
 
-## 12. What the matrices show
+## 13. What the matrices show
 
 **One dominant block.** Eleven of the sixteen features correlate at +0.6 to +0.92 with each other:
 AlphaMissense, ESM1b, MetaRNN, CADD, REVEL, VEST4, PolyPhen-2, SIFT, PrimateAI, PROVEAN and (more
@@ -703,7 +748,7 @@ correlated at +0.82 produces.
 
 ---
 
-## 13. Practical summary
+## 14. Practical summary
 
 | | |
 |---|---|
