@@ -219,6 +219,137 @@ solvent accessibility over the shell's range (n = 1,087 positions) the differenc
 **Mann–Whitney p = 0.062 with n = 14** — suggestive and nothing more. It should not be quoted as a
 result.
 
+### 3.5 Other substitutions at 678, and the aromatic partner (added 27 October 2026)
+
+V678M is not the only variant at this codon, and the others carry more information than it does.
+
+#### 3.5.1 ClinVar holds three records at codon 678
+
+| accession | variant | classification | review status | submitters |
+|---|---|---|---|--:|
+| VCV001498697 | **V678M** (c.2032G>A) | Uncertain significance | criteria provided, single submitter (1★) | 1 |
+| **VCV000536640** | **V678A** (c.2033T>C) | Uncertain significance | **multiple submitters, no conflicts (2★)** | **2** |
+| VCV001107471 | V678= (c.2034G>A, synonymous) | Likely benign | criteria provided, single submitter | 1 |
+
+**V678A is the better-supported record of the two missense entries** — Labcorp/Invitae (evaluated
+2017-08-05) and Ambry Genetics (evaluated 2024-11-24), both Uncertain significance, no conflict,
+traits *Immunodeficiency 35* and *Inborn genetic diseases*. Invitae's narrative is the same
+novel-VUS shape as for V678M: absent from population databases, absent from the literature,
+predictors disagreeing ("SIFT: Deleterious; PolyPhen-2: Probably Damaging; Align-GVGD: Class C0").
+Ambry adds only "insufficient or conflicting evidence."
+
+This matters because **V678A is also the second significant hit of our AF scan** (10/16 open against
+2/24 for wild type, Holm 0.0083) — see §3.5.4 for why that is a problem rather than a confirmation.
+
+#### 3.5.2 V678F is the substitution with experimental data
+
+V678F is not in ClinVar; it is a laboratory construct. **Gakovic, Ragimbeau, Francois-Newton,
+Krolewski & Pellegrini, *J Biol Chem* 2008 (PMID 18456658)** built TYK2 V678F explicitly as the
+JAK2 V617F counterpart and reported:
+
+- increased catalytic activity, in cells and in vitro, pronounced when anchored to a homodimeric receptor;
+- constitutive STAT3 phosphorylation;
+- increased erythropoietin sensitivity in the homodimeric-receptor chimera;
+- **no notable effect on IFN-α receptor signalling.**
+
+A commercial TYK2 V678F BaF3 line is sold for IL-3-independent growth assays, which indicates the
+construct is established, though a vendor page is not evidence.
+
+So **V678F is a validated gain of function and V678M has no functional literature whatsoever.**
+§7 recorded the first part of this; the citation and the detail belong here.
+
+#### 3.5.3 The JAK2 π-stacking partner is TYK2 Y656, and it contacts V678
+
+JAK2 V617F activation is attributed to a **π-stacking interaction between F595 and F617**, reported
+as specific to and critical for the constitutive activation of JAK2-V617F (*Biochemistry* 2010,
+PMID 20958061). The equivalent of F595 in TYK2 must therefore be identified before the homology
+argument can be evaluated.
+
+Aligning the two windows directly — they match with a constant offset of +61, no gaps:
+
+```
+TYK2 650  D I A L A F Y E T A S L M S Q V S H T H L A F V H G V C V R G P E N I M  685
+JAK2 589  N Y S E S F F E A A S M M S K L S H K H L V L N Y G V C V C G D E N I L  624
+                      ↑656                                ↑678
+                      ↑595                                ↑617
+```
+
+Anchor residues confirm the register: TYK2 C677 ↔ JAK2 C616, G675 ↔ G614, N683 ↔ N622, I684 ↔ I623.
+
+**JAK2 F595 ↔ TYK2 Y656 — still aromatic, tyrosine rather than phenylalanine.** And from the
+contact calculation in §3.4, **Y656 is V678's single closest neighbour in 4OLI at 3.25 Å.** The
+aromatic partner required by the JAK2 mechanism sits in van der Waals contact with position 678 in
+TYK2.
+
+One limit on that statement: 3.25 Å is a minimum heavy-atom distance. It establishes contact, not
+stacking geometry, which would require ring-centroid and ring-plane measurement with an aromatic
+modelled at 678. The claim here is proximity, not a demonstrated stack.
+
+**The DMS independently shows the ring at 656 is required.** Per-substitution, IFN-α 100 U/mL
+(noise floor ≈ 0.30):
+
+| substitution | ifn100 | aromatic ring |
+|---|--:|---|
+| **Y656F** | **+0.22** | **retained** |
+| **Y656W** | **−0.29** | **retained** |
+| Y656M | +0.70 | no (large hydrophobic) |
+| Y656L | −0.56 | no |
+| Y656I | −0.65 | no |
+| Y656V | −0.86 | no |
+| Y656C | −1.00 | no |
+| Y656H | −1.11 | no |
+| Y656A | **−1.39** | no |
+| Y656D | **−1.51** | no |
+| Y656G | **−1.54** | no |
+| Y656T | **−1.63** | no |
+| Y656Q | **−1.70** | no |
+| Y656N | **−1.84** | no |
+| Y656S | **−1.91** | no |
+| Y656K | **−2.00** | no |
+| Y656E | **−2.24** | no |
+| Y656R | **−2.29** | no |
+
+Phenylalanine and tryptophan are the only two aromatic substitutions available, and they are the
+only two that are tolerated. Every substitution that deletes the ring loses 1.4–2.3 log₂ units,
+five to eight times the noise floor. Methionine is the one anomaly at +0.70 — large, hydrophobic
+and capable of sulphur–aromatic interactions, but not aromatic.
+
+This was not something the campaign set out to test. It is an independent, chemistry-specific
+confirmation from human data that the aromatic at the F595-equivalent position is functionally
+load-bearing in TYK2, and it is consistent with the published requirement for F595 in JAK2.
+
+#### 3.5.4 What this does and does not explain
+
+**It explains V678F versus V678M.** Phenylalanine at 678 can stack with Y656 at 3.25 Å; methionine
+cannot. Both of our measurements agree:
+
+| substitution | AF scan | DMS, IFN-α 1 U/mL |
+|---|---|--:|
+| V678F | **opens, 18/24 vs 2/24, Holm 1e−4** | +0.39 |
+| V678M | trend only, 4/16, p = 0.195 | +0.56 |
+
+**It does not explain V678A.** Alanine has no ring, yet V678A opened TYK2 significantly in the same
+scan (10/16, Holm 0.0083), and the DMS gives it −0.23 at IFN-α 1 U/mL — the opposite sign from
+V678F and V678M. Two substitutions of opposite chemistry both open the structure, and the one with
+a documented activating phenotype is not the one with the stronger ClinVar record.
+
+Two readings, and the data here cannot separate them:
+
+1. removing valine's bulk perturbs the packing against Y656 and the SH2–JH2 linker by a route
+   unrelated to stacking, so aromatic and small substitutions open by different mechanisms;
+2. the AF arrangement signal at position 678 is not chemically specific, and the agreement with
+   V678F is partly coincidental.
+
+**Reading 2 cannot be dismissed**, and it is the more conservative one. The scan averages over
+seeds within one MSA-depth cell, and §4's caveat applies: a single substitution barely changes the
+MSA, so what is being detected is a population shift whose chemical specificity was never
+established. The discriminating experiment is the substitution series at 678 scored against the
+*same* axis — V678F, V678W, V678Y (aromatic) against V678A, V678G, V678S (small) — with wild type
+matched in each cell. If the aromatics and the small residues open by equal amounts, reading 2 wins.
+
+**Recorded as unresolved.** §3.5.3 stands on its own: the Y656/F595 equivalence and the DMS ring
+requirement are measurements, independent of how the AF scan at 678 is interpreted.
+
 ## 4. Predictions, and the reasoning behind each
 
 | Variant | Predicted effect on the open/closed balance | Confidence | Basis |
@@ -274,6 +405,16 @@ Searched per variant. **None of the seven has a dedicated functional study.** Wh
   equivalent JAK2 V617F and JAK1 V658F. No data found on **V678M**.
 - This matters: the activating substitution at this position is the **aromatic** phenylalanine. Methionine
   is what JAK3 carries natively at the equivalent position (M592), so V678M is not expected to act like V678F.
+- **Updated 27 October 2026 — the citation located, and §3.5 supersedes this entry.** The V678F
+  study is **Gakovic et al., *J Biol Chem* 2008, PMID 18456658**: increased catalytic activity in
+  cells and in vitro, constitutive STAT3 phosphorylation, increased Epo sensitivity on a
+  homodimeric-receptor chimera, **no notable effect on IFN-α signalling**. The JAK2 mechanism rests
+  on π-stacking between F595 and F617 (*Biochemistry* 2010, PMID 20958061), and the TYK2 equivalent
+  of F595 is **Y656**, which contacts V678 at 3.25 Å in 4OLI. The DMS shows the ring at 656 is
+  required. See §3.5 for the alignment, the full Y656 substitution series, and the V678A problem.
+- Also correcting the claim above that opens §7 — "none of the seven has a dedicated functional
+  study" is accurate for V678**M**, but a dedicated functional study of V678**F** exists and was
+  missed by the 2026-10-16 search.
 
 ### TYK2 P982
 - **No literature found for P982 in any substitution.** The residue appears in no variant report located.
