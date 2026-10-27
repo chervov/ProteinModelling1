@@ -8,23 +8,56 @@ The evaluation combines Google DeepMind's **AlphaGenome Variant Impact (AVI)** f
 
 ---
 
-## 1. Master Comparative Summary Table
+## 1. Master Comparative Summary Table (with GOF / LOF Status)
 
-| Protein & Variant | Structural Domain | AlphaGenome AVI (Phred & Rank) | AlphaMissense Score & Class | Thermodynamic Consensus ($\Delta\Delta G$) | Qualitative Conclusion | Key Molecular & Clinical Arguments |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`TYK2 P982A`** | **JH1 Kinase Hinge** (ATP pocket) | **Phred 24.73** *(Top 0.34%)* | **0.526** *(Ambiguous / High)* | **$+1.72\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / VUS Leaning Pathogenic** | • Loss of cyclic proline backbone rigidity in the hinge.<br>• Directly perturbs ATP-binding cleft and drug inhibitor contacts (*cirsiliol*).<br>• Normal mRNA transcription ($\Delta\text{RNA} \approx 0.01$). |
-| **`TYK2 V678M`** | **JH2 Pseudokinase** (Autoinhibitory Switch) | **Phred 23.40** *(Top 0.46%)* | **0.62** *(Likely Pathogenic)* | **$+1.65\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / Allosteric Activation** | • **Direct structural homolog to canonical JAK2 V617.**<br>• Bulkier methionine ($163\text{ \AA}^3$ vs. $140\text{ \AA}^3$) disrupts closed autoinhibited state.<br>• Promotes de-repression and downstream STAT hypersensitivity. |
-| **`JAK2 V1110E`** | **JH1 Catalytic Core** (C-lobe $\alpha\text{I}$) | **Phred 28.94** *(Top 0.13%)* | **0.81** *(Likely Pathogenic)* | **$+2.98\text{ kcal/mol}$** *(Severely Destabilizing)* | **Severely Damaging / Loss-of-Function** | • Burying an unshielded negative charge ($-\text{COO}^-$) in a hydrophobic core causes severe electrostatic repulsion ($\Delta\Delta G_{\text{elec}} = +1.42$).<br>• Inactivates the catalytic engine (contrast with activating V617F). |
-| **`JAK2 G571R`** | **JH2 Pseudokinase** (Exon 13 N-lobe) | **Phred 29.82** *(Top 0.10%)* | **0.89** *(Likely Pathogenic)* | **$+3.85\text{ kcal/mol}$** *(Severely Destabilizing)* | **Pathogenic / Clinically Damaging** | • Massive steric clash ($+165\text{ \AA}^3$) and charge insertion into a tight glycine loop.<br>• Relieves autoinhibition of catalytic JH1.<br>• **Documented in patients with chronic MPNs and erythrocytosis.** |
-| **`JAK2 V578I`** | **JH2 Pseudokinase** (Exon 13) | **Phred 6.45** *(Bottom 77%)* | **0.21** *(Likely Benign)* | **$+0.32\text{ kcal/mol}$** *(Neutral)* | **Likely Benign / Neutral Polymorphism** | • Conservative aliphatic exchange ($V \to I$, $+26\text{ \AA}^3$).<br>• Fully accommodated by local rotamer repacking with zero electrostatic penalty.<br>• Energy shift is within thermal noise ($\pm 0.5\text{ kcal/mol}$). |
-| **`JAK2 L805I`** | **JH2-JH1 Inter-Domain Linker** (Exon 19) | **Phred 11.20** *(Top 7.59%)* | **0.32** *(Tolerated / Ambiguous)* | **$+0.78\text{ kcal/mol}$** *(Mildly Destabilizing)* | **VUS Leaning Benign** | • Constitutional isomer exchange ($L \to I$) preserving hydrophobicity and mass.<br>• Slight $\beta$-branching strain, but well below loss-of-function threshold ($<1.5\text{ kcal/mol}$).<br>• Inter-domain tether remains functionally intact. |
-| **`JAK3 Y581C`** | **JH2 Pseudokinase** (Regulatory Clamp) | **Phred 26.85** *(Top 0.21%)* | **0.76** *(Likely Pathogenic)* | **$+2.48\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / Structurally Disruptive** | • Shrinking aromatic Tyr ($194\text{ \AA}^3$) to Cys ($108\text{ \AA}^3$) creates an internal structural void ($\sim 86\text{ \AA}^3$).<br>• Strips $\pi$-stacking in the autoinhibitory clamp, altering cytokine receptor ($\gamma_c$) regulation. |
+| Protein & Variant | Structural Domain | Functional Status (GOF / LOF) | AlphaGenome AVI (Phred & Rank) | AlphaMissense Score & Class | Thermodynamic Consensus ($\Delta\Delta G$) | Qualitative Conclusion | Key Molecular & Clinical Arguments |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **`JAK2 G571R`** | **JH2 Pseudokinase** (Exon 13 N-lobe) | **Gain-of-Function (GOF)** | **Phred 29.82** *(Top 0.10%)* | **0.89** *(Likely Pathogenic)* | **$+3.85\text{ kcal/mol}$** *(Severely Destabilizing)* | **Pathogenic / Clinically Damaging** | • Massive steric clash ($+165\text{ \AA}^3$) disrupts JH2 autoinhibition.<br>• Relieves negative regulation of JH1.<br>• **Documented in chronic MPNs and erythrocytosis.** |
+| **`TYK2 V678M`** | **JH2 Pseudokinase** (Autoinhibitory Switch) | **Gain-of-Function (GOF)** | **Phred 23.40** *(Top 0.46%)* | **0.62** *(Likely Pathogenic)* | **$+1.65\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / Allosteric Activation** | • **Direct structural homolog to canonical JAK2 V617.**<br>• Bulkier methionine side chain wedges open the autoinhibited closed state.<br>• Promotes de-repression and downstream STAT hypersensitivity. |
+| **`JAK2 V1110E`** | **JH1 Catalytic Core** (C-lobe $\alpha\text{I}$) | **Loss-of-Function (LOF)** | **Phred 28.94** *(Top 0.13%)* | **0.81** *(Likely Pathogenic)* | **$+2.98\text{ kcal/mol}$** *(Severely Destabilizing)* | **Severely Damaging / Loss-of-Function** | • Burying an unshielded negative charge ($-\text{COO}^-$) in a hydrophobic core causes severe electrostatic repulsion ($\Delta\Delta G_{\text{elec}} = +1.42$).<br>• Directly destroys the catalytic kinase engine. |
+| **`TYK2 P982A`** | **JH1 Kinase Hinge** (ATP pocket) | **Loss-of-Function (LOF)** | **Phred 24.73** *(Top 0.34%)* | **0.526** *(Ambiguous / High)* | **$+1.72\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / VUS Leaning Pathogenic** | • Loss of cyclic proline backbone rigidity in the hinge.<br>• Directly perturbs ATP-binding cleft and drug inhibitor contacts (*cirsiliol*).<br>• Normal mRNA transcription ($\Delta\text{RNA} \approx 0.01$). |
+| **`JAK3 Y581C`** | **JH2 Pseudokinase** (Regulatory Clamp) | **Predominantly LOF** *(Dual Potential)* | **Phred 26.85** *(Top 0.21%)* | **0.76** *(Likely Pathogenic)* | **$+2.48\text{ kcal/mol}$** *(Destabilizing)* | **Damaging / Structurally Disruptive** | • Internal cavity creation ($\sim 86\text{ \AA}^3$ void) and loss of $\pi$-stacking in the clamp.<br>• Predisposes to JH2 domain misfolding and degradation (linked to SCID phenotype). |
+| **`JAK2 L805I`** | **JH2-JH1 Linker** (Exon 19) | **Neutral / Near-WT** | **Phred 11.20** *(Top 7.59%)* | **0.32** *(Tolerated / Ambiguous)* | **$+0.78\text{ kcal/mol}$** *(Mildly Destabilizing)* | **VUS Leaning Benign** | • Constitutional isomer exchange ($L \to I$) preserving hydrophobicity and mass.<br>• Slight $\beta$-branching strain, but well below loss-of-function threshold ($<1.5\text{ kcal/mol}$). |
+| **`JAK2 V578I`** | **JH2 Pseudokinase** (Exon 13) | **Neutral / Wild-Type** | **Phred 6.45** *(Bottom 77%)* | **0.21** *(Likely Benign)* | **$+0.32\text{ kcal/mol}$** *(Neutral)* | **Likely Benign / Neutral Polymorphism** | • Conservative aliphatic exchange ($V \to I$, $+26\text{ \AA}^3$).<br>• Fully accommodated by local rotamer repacking with zero electrostatic penalty.<br>• Energy shift is within thermal noise ($\pm 0.5\text{ kcal/mol}$). |
 
 ---
 
-## 2. Master Quantitative Data Matrix (All Scores & Predictors)
+## 2. Gain-of-Function (GOF) vs. Loss-of-Function (LOF) Detailed Analysis
 
-### 2.1 AlphaGenome Variant Impact (AVI) Quantitative Breakdown
+In the Janus kinase family, whether a mutation produces a **Gain-of-Function (GOF)** or **Loss-of-Function (LOF)** phenotype is dictated by the **domain location** within the tandem kinase architecture:
+
+```
+                  ┌────────────────────────────────────────────────────────┐
+                  │                 THE TANDEM KINASE SWITCH               │
+                  └────────────────────────────────────────────────────────┘
+
+    [ JH2 PSEUDOKINASE DOMAIN ]                    [ JH1 CATALYTIC KINASE DOMAIN ]
+    • Function: Autoinhibitory Clamp               • Function: Enzymatic Engine
+    • Destabilizing mutations relieve clamp        • Destabilizing mutations destroy active site
+    ───────────────┬───────────────                ───────────────┬───────────────
+                   ▼                                              ▼
+       GAIN-OF-FUNCTION (GOF)                         LOSS-OF-FUNCTION (LOF)
+       Constitutive hyperactivation                   Enzymatic inactivation / misfolding
+       (e.g., JAK2 G571R, TYK2 V678M)                 (e.g., JAK2 V1110E, TYK2 P982A)
+```
+
+### 2.1 Variant GOF / LOF Classification Matrix
+
+| Protein & Variant | Functional Classification | Affected Structural Module | Molecular Mechanism of Action | Clinical / Phenotypic Consequence |
+| :--- | :--- | :--- | :--- | :--- |
+| **`JAK2 G571R`** | **Gain-of-Function (GOF)** | JH2 Pseudokinase N-lobe | Massive steric clash disrupts the autoinhibitory interface that clamps JH1 shut, triggering constitutive catalytic firing | Chronic Myeloproliferative Neoplasms (PV/ET) and idiopathic erythrocytosis |
+| **`TYK2 V678M`** | **Gain-of-Function (GOF)** | JH2 Autoinhibitory Switch (Homolog of JAK2 V617) | Bulky methionine wedges open the autoinhibited closed conformation, mimicking the activating mechanism of *JAK2 V617F* | Hyperactive STAT3/STAT5 signaling; cytokine ligand hypersensitivity |
+| **`JAK2 V1110E`** | **Loss-of-Function (LOF)** | JH1 Catalytic Core (C-terminal Lobe $\alpha\text{I}$) | Burying an unshielded negative charge in the hydrophobic core creates severe electrostatic repulsion, distorting the catalytic cleft | Catalytic kinase inactivation; loss of downstream phosphorylation signaling |
+| **`TYK2 P982A`** | **Loss-of-Function (LOF)** | JH1 Catalytic Hinge (ATP-binding pocket) | Loss of rigid cyclic proline introduces backbone laxity, impairing ATP coordination and abrogating small-molecule inhibitor binding | Reduced kinase efficiency; pharmacological resistance to ATP-competitive inhibitors |
+| **`JAK3 Y581C`** | **Predominantly LOF** *(Dual Potential)* | JH2 Pseudokinase Regulatory Clamp | Severe cavity formation ($\sim 86\text{ \AA}^3$) and loss of $\pi$-stacking in JH2 triggers domain misfolding and proteasomal degradation | Autosomal recessive SCID ($\text{T}^-\text{B}^+\text{NK}^-$ immunodeficiency); low risk of de-repression |
+| **`JAK2 L805I`** | **Neutral / Near-WT** | JH2-JH1 Inter-domain Linker | Isomeric hydrophobic exchange accommodates without altering domain spacing or autoinhibition | Normal baseline signaling; tolerated variant |
+| **`JAK2 V578I`** | **Neutral / Wild-Type** | JH2 Pseudokinase Hydrophobic Core | Conservative aliphatic exchange fully preserved in the folded core; zero alteration to regulatory clamp | Normal physiological kinase regulation; neutral polymorphism |
+
+---
+
+## 3. Master Quantitative Data Matrix (All Scores & Predictors)
+
+### 3.1 AlphaGenome Variant Impact (AVI) Quantitative Breakdown
 
 | Protein & Variant | Transcript ID | Genomic Coordinate | AVI Phred | AVI Quantile | Top Percentile (%) | AVI Raw Score | Top Contributing Modality | Top Modality Attribution | 2nd Modality Attribution |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -38,72 +71,56 @@ The evaluation combines Google DeepMind's **AlphaGenome Variant Impact (AVI)** f
 
 ---
 
-### 2.2 Protein-Level Pathogenicity & Homology Predictor Scores
+### 3.2 Protein-Level Pathogenicity & Homology Predictor Scores
 
-| Protein & Variant | AlphaMissense Score | AlphaMissense Tier | SIFT Score | SIFT Category | PolyPhen-2 Score | PolyPhen-2 Category | ClinVar Status | Evidence Classification |
+| Protein & Variant | Functional Type | AlphaMissense Score | AlphaMissense Tier | SIFT Score | SIFT Category | PolyPhen-2 Score | PolyPhen-2 Category | ClinVar Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`TYK2 P982A`** | **0.526** | Ambiguous (High) | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported | VUS Leaning Pathogenic |
-| **`TYK2 V678M`** | **0.620** | Likely Pathogenic | **0.01** | Deleterious | **0.98** | Probably Damaging | Novel / VUS | Allosteric Activating |
-| **`JAK2 V1110E`**| **0.810** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported | Loss-of-Function Damaging |
-| **`JAK2 G571R`** | **0.890** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Pathogenic / VUS | Documented MPN Driver |
-| **`JAK2 V578I`** | **0.210** | Likely Benign | **0.42** | Tolerated | **0.08** | Benign | Polymorphism | Neutral Benign |
-| **`JAK2 L805I`** | **0.320** | Likely Benign / Amb. | **0.28** | Tolerated | **0.26** | Benign | Unreported | VUS Leaning Benign |
-| **`JAK3 Y581C`** | **0.760** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported | Structurally Disruptive |
+| **`JAK2 G571R`** | **GOF (Activating)** | **0.890** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Pathogenic / MPN Associated |
+| **`TYK2 V678M`** | **GOF (Activating)** | **0.620** | Likely Pathogenic | **0.01** | Deleterious | **0.98** | Probably Damaging | Novel / VUS |
+| **`JAK2 V1110E`**| **LOF (Inactivating)**| **0.810** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported |
+| **`TYK2 P982A`** | **LOF (Desensitizing)**| **0.526** | Ambiguous (High) | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported |
+| **`JAK3 Y581C`** | **LOF (Misfolding)** | **0.760** | Likely Pathogenic | **0.00** | Deleterious | **1.00** | Probably Damaging | Unreported |
+| **`JAK2 L805I`** | **Neutral** | **0.320** | Likely Benign / Amb. | **0.28** | Tolerated | **0.26** | Benign | Unreported |
+| **`JAK2 V578I`** | **Neutral** | **0.210** | Likely Benign | **0.42** | Tolerated | **0.08** | Benign | Polymorphism |
 
 ---
 
-### 2.3 Cross-Platform Multi-Tool Thermodynamic Stability ($\Delta\Delta G$ in $\text{kcal/mol}$)
+### 3.3 Cross-Platform Multi-Tool Thermodynamic Stability ($\Delta\Delta G$ in $\text{kcal/mol}$)
 
-| Protein & Variant | FoldX 5.0 | Rosetta (`cartesian_ddg`) | PopMusic 3.1 | mCSM-Stability | DUET Consensus | Cross-Tool Mean ($\Delta\Delta G$) | Consensus Qualitative Verdict |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`JAK2 G571R`** | **$+3.85$** | **$+4.20$** | **$+3.10$** | **$-2.85$** | **$-2.92$** | **$+3.38$** | **Severely Destabilizing** ($\gg 2.5$) |
-| **`JAK2 V1110E`**| **$+2.98$** | **$+3.62$** | **$+2.65$** | **$-2.52$** | **$-2.61$** | **$+2.88$** | **Severely Destabilizing** ($\ge 2.5$) |
-| **`JAK3 Y581C`** | **$+2.48$** | **$+2.85$** | **$+2.31$** | **$-2.24$** | **$-2.36$** | **$+2.45$** | **Destabilizing** ($\approx 2.5$) |
-| **`TYK2 P982A`** | **$+1.72$** | **$+1.88$** | **$+1.62$** | **$-1.58$** | **$-1.64$** | **$+1.69$** | **Destabilizing** ($>1.5$) |
-| **`TYK2 V678M`** | **$+1.65$** | **$+1.92$** | **$+1.54$** | **$-1.48$** | **$-1.55$** | **$+1.63$** | **Destabilizing** ($>1.5$) |
-| **`JAK2 L805I`** | **$+0.78$** | **$+0.92$** | **$+0.65$** | **$-0.71$** | **$-0.68$** | **$+0.75$** | **Mildly Destabilizing** ($0.5 - 1.5$) |
-| **`JAK2 V578I`** | **$+0.32$** | **$+0.45$** | **$+0.28$** | **$-0.35$** | **$-0.31$** | **$+0.34$** | **Neutral / Tolerated** ($<0.5$) |
+| Protein & Variant | Functional Type | FoldX 5.0 | Rosetta (`cartesian_ddg`) | PopMusic 3.1 | mCSM-Stability | DUET Consensus | Cross-Tool Mean | Thermodynamic Verdict |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **`JAK2 G571R`** | **GOF** | **$+3.85$** | **$+4.20$** | **$+3.10$** | **$-2.85$** | **$-2.92$** | **$+3.38$** | **Severely Destabilizing** ($\gg 2.5$) |
+| **`JAK2 V1110E`**| **LOF** | **$+2.98$** | **$+3.62$** | **$+2.65$** | **$-2.52$** | **$-2.61$** | **$+2.88$** | **Severely Destabilizing** ($\ge 2.5$) |
+| **`JAK3 Y581C`** | **LOF** | **$+2.48$** | **$+2.85$** | **$+2.31$** | **$-2.24$** | **$-2.36$** | **$+2.45$** | **Destabilizing** ($\approx 2.5$) |
+| **`TYK2 P982A`** | **LOF** | **$+1.72$** | **$+1.88$** | **$+1.62$** | **$-1.58$** | **$-1.64$** | **$+1.69$** | **Destabilizing** ($>1.5$) |
+| **`TYK2 V678M`** | **GOF** | **$+1.65$** | **$+1.92$** | **$+1.54$** | **$-1.48$** | **$-1.55$** | **$+1.63$** | **Destabilizing** ($>1.5$) |
+| **`JAK2 L805I`** | **Neutral** | **$+0.78$** | **$+0.92$** | **$+0.65$** | **$-0.71$** | **$-0.68$** | **$+0.75$** | **Mildly Destabilizing** ($0.5 - 1.5$) |
+| **`JAK2 V578I`** | **Neutral** | **$+0.32$** | **$+0.45$** | **$+0.28$** | **$-0.35$** | **$-0.31$** | **$+0.34$** | **Neutral / Tolerated** ($<0.5$) |
 
-*(Note on signs: FoldX, Rosetta, PopMusic use $\Delta\Delta G > 0$ as destabilizing; mCSM and DUET use $\Delta\Delta G < 0$ as destabilizing. The Cross-Tool Mean normalizes to the positive-destabilizing convention).*
-
----
-
-### 2.4 FoldX Physical Energy Component Decomposition ($\text{kcal/mol}$)
-
-| Protein & Variant | Net $\Delta\Delta G$ | Electrostatic ($\Delta\Delta G_{\text{elec}}$) | Desolvation ($\Delta\Delta G_{\text{desolv}}$) | Van der Waals / Steric ($\Delta\Delta G_{\text{vdw}}$) | Torsional Entropy ($\Delta\Delta G_{\text{tor}}$) | Hydrogen Bonding ($\Delta\Delta G_{\text{hbond}}$) | Primary Destabilizing Biophysical Factor |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`JAK2 G571R`** | **$+3.85$** | $+0.94$ | $+0.28$ | **$+2.42$** | $+0.49$ | $-0.28$ | Massive steric clash of bulky Arg side chain ($+165\text{ \AA}^3$) |
-| **`JAK2 V1110E`**| **$+2.98$** | **$+1.42$** | $+0.86$ | $+0.48$ | $+0.22$ | $0.00$ | Burying an unshielded negative carboxylate in hydrophobic core |
-| **`JAK3 Y581C`** | **$+2.48$** | $+0.12$ | $+0.36$ | **$+1.38$** | $+0.12$ | $+0.50$ | Cavity formation ($\sim 86\text{ \AA}^3$ void) and loss of Tyr $\pi$-stacking |
-| **`TYK2 P982A`** | **$+1.72$** | $+0.05$ | $+0.14$ | $+0.42$ | **$+0.86$** | $+0.25$ | Loss of rigid cyclic proline backbone dihedral constraint |
-| **`TYK2 V678M`** | **$+1.65$** | $+0.02$ | $+0.13$ | **$+1.12$** | $+0.38$ | $0.00$ | Steric impingement of extended Met side chain on JH2 $\alpha\text{C}$ helix |
-| **`JAK2 L805I`** | **$+0.78$** | $0.00$ | $+0.08$ | $+0.39$ | $+0.31$ | $0.00$ | Minor torsional strain from $\beta$-branched Ile in linker |
-| **`JAK2 V578I`** | **$+0.32$** | $0.00$ | $+0.08$ | $+0.24$ | $0.00$ | $0.00$ | Neutral aliphatic packing shift accommodated by rotamers |
+*(Note on signs: FoldX, Rosetta, PopMusic use $\Delta\Delta G > 0$ as destabilizing; mCSM and DUET use $\Delta\Delta G < 0$ as destabilizing).*
 
 ---
 
-## 3. Stratified Variant Classification
+## 4. Stratified Functional Classification (GOF vs. LOF vs. Neutral)
 
 ```
-[ SEVERELY DAMAGING / PATHOGENIC ]
-  ├── JAK2 G571R (Phred 29.82, ΔΔG = +3.85) ── Clinically documented in MPNs / erythrocytosis
-  └── JAK2 V1110E (Phred 28.94, ΔΔG = +2.98) ── Catalytic core disruption; severe loss-of-function
+[ GAIN-OF-FUNCTION (GOF) / HYPERACTIVATING DRIVERS ]
+  ├── JAK2 G571R (Phred 29.82, ΔΔG = +3.85) ── Relieves JH2 clamp; documented in MPNs & erythrocytosis
+  └── TYK2 V678M (Phred 23.40, ΔΔG = +1.65) ── Direct JAK2 V617 homolog; allosteric de-repression of STATs
 
-[ HIGH STRUCTURAL / REGULATORY DISRUPTION ]
-  ├── JAK3 Y581C (Phred 26.85, ΔΔG = +2.48) ── Cavity formation in pseudokinase regulatory clamp
-  ├── TYK2 P982A (Phred 24.73, ΔΔG = +1.72) ── Loss of hinge rigidity; ATP/inhibitor pocket disruption
-  └── TYK2 V678M (Phred 23.40, ΔΔG = +1.65) ── Direct homolog of JAK2 V617; allosteric de-repression
+[ LOSS-OF-FUNCTION (LOF) / INACTIVATING & STRUCTURAL ]
+  ├── JAK2 V1110E (Phred 28.94, ΔΔG = +2.98) ── Buried charge destroys catalytic engine (inactivating)
+  ├── JAK3 Y581C (Phred 26.85, ΔΔG = +2.48) ── Cavity in clamp; domain misfolding and SCID-like phenotype
+  └── TYK2 P982A (Phred 24.73, ΔΔG = +1.72) ── Loss of hinge rigidity; ATP/inhibitor pocket disruption
 
-[ MILD STRUCTURAL STRAIN ]
-  └── JAK2 L805I (Phred 11.20, ΔΔG = +0.78) ── Inter-domain linker isomer; accommodated
-
-[ BENIGN / NEUTRAL ]
-  └── JAK2 V578I (Phred 6.45, ΔΔG = +0.32)  ── Conservative aliphatic exchange; baseline neutral
+[ NEUTRAL / TOLERATED ]
+  ├── JAK2 L805I (Phred 11.20, ΔΔG = +0.78) ── Inter-domain linker isomer; near-wild-type baseline
+  └── JAK2 V578I (Phred 6.45, ΔΔG = +0.32)  ── Conservative aliphatic exchange; wild-type equivalent
 ```
 
 ---
 
-## 4. Links to Detailed Individual Variant Reports
+## 5. Links to Detailed Individual Variant Reports
 
 Each variant has a dedicated report with complete molecular mapping, feature attribution breakdowns, and structural mechanics:
 
