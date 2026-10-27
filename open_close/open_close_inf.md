@@ -30,6 +30,9 @@ need to be distinguished explicitly every time, because the words alone do not d
 
 **They are orthogonal, not nested.** A JAK can be DFG-in while JH1 is either docked or released;
 it can have a closed G-loop in either arrangement. Knowing one tells you nothing about the others.
+This is not only an argument from first principles: **4OLI, the autoinhibited closed structure, is
+classified `DFGin-BLAminus` — the active configuration.** Section 2b gives that case and the
+family-level statistics behind it.
 
 Two consequences matter for us:
 
@@ -60,6 +63,89 @@ why the project uses the **arrangement metric** (JH1 Cα RMSD after superposing 
 rather than a centroid distance. "Compact" and "closed" are also not the same thing: at shallow MSA
 every seed can be compact by FERM–JH1 while sitting 28 Å or more from the closed reference by
 arrangement. See `open_close.md` and `mutation_analysis.md` §9.
+
+---
+
+## 2b. Do the definitions agree? Measured: no (added 27 October 2026)
+
+Section 2 asserts orthogonality. This section tests it, because the assertion is cheap and the
+evidence is not — and the evidence turns out to be sharper than the assertion.
+
+### 4OLI is autoinhibited *and* active-site-active at the same time
+
+The decisive case is the one structure where the two axes are both measurable on the same
+coordinates: **4OLI**, the TYK2 JH2–JH1 autoinhibited crystal. Our arrangement metric calls it
+closed — it *is* the closed reference. Kincore's record for it:
+
+```
+gene TYK2-12 · entry TYK2_HUMAN · pdb 4OLIA · res 2.8 · activity Pseudo · conf DFGin-BLAminus
+```
+
+**`DFGin-BLAminus` is the catalytically active configuration.** So the inter-domain axis says
+"autoinhibited" while the active-site axis says "active-competent", on the same atoms.
+
+That is not a contradiction; it is how JAK autoinhibition works. JH2 **physically occludes and
+holds JH1 in place**. It does not distort the DFG motif. The active site can be perfectly well
+formed while the domain cannot reach its substrate or be phosphorylated. 4OLI is that situation
+crystallised — and it is a worked counterexample to any attempt to read one axis off the other.
+
+**Caveat, not yet resolved.** 4OLI is listed under gene `TYK2-12`, i.e. both domains, with
+`activity: Pseudo`. **Which domain the `DFGin-BLAminus` label describes — JH1 (catalytic, DFG at
+~D1023) or JH2 (pseudokinase) — has not been verified.** The pseudokinase-alone records (`TYK2-1`,
+84 entries) are uniformly `DFGin-None`, which makes a JH2 origin for a BLAminus call unlikely, but
+that is inference. Resolving it needs residue-level Kincore output; the standalone tool is in
+`~/kincore/Kincore-standalone2`. The family-level statistics below do not depend on this.
+
+### The DFG axis is nearly frozen in the JAK family
+
+Across all **942 JAK-family records** in the Kincore table (JAK1/JAK2/JAK3/TYK2, all domains):
+
+| spatial DFG label | n | share |
+|---|--:|--:|
+| **DFGin** | 936 | **99.4 %** |
+| DFGout | 6 | 0.6 % |
+
+The whole PDB is **8.1 % DFGout**; the JAK family is **0.6 %**, and all six records are the same
+three JAK2 JH1 structures (3UGC, 7RN6, 7TEU), each appearing twice in the table.
+
+**So the DFG spatial axis cannot be the axis that distinguishes the states this project studies —
+it barely varies in JAKs at all.** Where JAKs do vary is the finer *dihedral* sub-label:
+
+| dihedral label | n | share |
+|---|--:|--:|
+| ABAminus | 444 | 47.1 % |
+| BLAminus | 272 | 28.9 % |
+| None | 220 | 23.4 % |
+| BBAminus | 6 | 0.6 % |
+
+and that is activation-loop conformation, which is what Kincore's Active (124) / Inactive (528)
+calls rest on. A different and finer property than DFG-in/out.
+
+### What to expect in our own predictions
+
+KinConfBench's apo-drift finding is that models default to the dominant training prior. If that
+holds here, an AlphaFold prediction of a JAK will come out DFG-in almost regardless of what we do,
+because 99.4 % of JAK structures are — while the inter-domain arrangement is the thing that
+responds to MSA depth and template choice. The two axes would then be **set by different causes in
+our own pipeline**: the active site by the training prior, the arrangement by our controls. The
+prediction is therefore near-zero correlation between them in our output.
+
+**This is testable and has not been tested.** The experiment is to run the DFG/αC classification
+over the 394 TYK2 predictions in `data/tyk2_per_run_rows.json` and cross-tabulate against their
+open/closed arrangement call. Until that is done, the claim above is a prediction, not a result.
+
+### Summary of the relation
+
+The honest statement is that these are **three independent coordinates on the same molecule**,
+coupled only loosely and only through coarse functional outcomes:
+
+| claim | holds? |
+|---|---|
+| closed ⇒ not signalling in cells | yes, by definition of autoinhibition |
+| closed ⇒ active site in an inactive geometry | **no — 4OLI is the counterexample** |
+| open ⇒ active | no; releasing JH1 is necessary, not sufficient (activation-loop phosphorylation still required) |
+| G-loop closed ⇒ anything about either other axis | no; it is ligand-induced fit, independent of activity state |
+| any one axis predicts another | no |
 
 ---
 
