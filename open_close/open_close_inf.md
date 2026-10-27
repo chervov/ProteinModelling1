@@ -147,6 +147,137 @@ coupled only loosely and only through coarse functional outcomes:
 | G-loop closed ⇒ anything about either other axis | no; it is ligand-induced fit, independent of activity state |
 | any one axis predicts another | no |
 
+**But this is a JAK property, not a general one.** In SRC the inter-domain and active-site axes *are* coupled — see §2c.
+
+---
+
+## 2c. SRC is the opposite case — the axes are coupled there (added 27 October 2026)
+
+Section 2b shows the JAK axes are uncoupled. That raises the obvious question of whether this is
+how multi-domain kinase autoinhibition generally works. It is not. **SRC couples them, and it is
+the better-studied paradigm**, which is precisely why the JAK result is easy to get wrong.
+
+### The decisive pair
+
+Both of these are the canonical autoinhibited structure of their family, and both are classified by
+Kincore:
+
+| structure | what it is | Kincore conformation | Kincore activity |
+|---|---|---|---|
+| **2SRC** | autoinhibited c-Src, SH3–SH2 clamped (Xu & Harrison) | `DFGin-BLBplus` | **Inactive** |
+| **4OLI** | autoinhibited TYK2 JH2–JH1 | `DFGin-BLAminus` | *the active configuration* |
+
+**In SRC the inter-domain clamp propagates into the active site and distorts it. In TYK2 it does
+not.** JAK autoinhibition holds a well-formed active site out of action; SRC autoinhibition
+deforms the active site itself. One mechanism, two very different structural consequences — and the
+reason the two literatures cannot share a vocabulary.
+
+Within c-Src the three classic structures separate exactly as the literature describes:
+
+| PDB | state | Kincore conformation |
+|---|---|---|
+| 2SRC | autoinhibited | `DFGin-BLBplus` |
+| 1FMK | inactive | `DFGin-BLBminus` |
+| 1Y57 | activated-like | `DFGin-BLAminus` |
+
+### The two families are inactive in mutually exclusive ways
+
+Dihedral label distribution, deduplicated records from the local Kincore table:
+
+| dihedral label | JAK family | SRC family | whole PDB |
+|---|--:|--:|--:|
+| BLAminus *(active)* | 28.9 % | 43.3 % | 56.6 % |
+| **ABAminus** | **47.1 %** | **1.0 %** | 7.7 % |
+| **BLBplus** | **0.0 %** | **17.2 %** | 7.8 % |
+| BLBminus | 0.0 % | 2.9 % | 3.4 % |
+| BBAminus | 0.6 % | 10.5 % | 5.2 % |
+| BLAplus | 0.0 % | 1.3 % | 2.6 % |
+| BLBtrans | 0.0 % | 2.9 % | 2.1 % |
+| None | 23.4 % | 20.7 % | 14.3 % |
+| **n** | **471** | **314** | **13,161** |
+
+**BLBplus is the label the literature calls "SRC-inactive" — and JAKs use it zero times.** JAK's
+characteristic inactive state is ABAminus, which SRC uses 1 % of the time. There is no shared
+inactive conformation between the families.
+
+The spatial axis differs too:
+
+| | DFGin | DFGout | DFGinter | None |
+|---|--:|--:|--:|--:|
+| JAK family | 99.4 % | **0.6 %** | 0.0 % | 0.0 % |
+| SRC family | 79.3 % | **14.3 %** | 1.0 % | 5.4 % |
+| whole PDB | 86.8 % | 8.1 % | 2.0 % | 3.2 % |
+
+SRC genuinely visits DFG-out — **above** the PDB average, with 35 DFGout records for c-Src alone —
+which is why type II inhibitors are a live option for SRC-family kinases and essentially not for
+JAKs. SRC-family genes counted here: SRC, FYN, LCK, HCK, LYN, FGR, YES1, BLK, FRK, SRMS, PTK6.
+
+### The architectural parallel is real but uncited
+
+Both families hold a catalytic domain inactive with an **SH2-plus-linker module**, and in both the
+**linker is the signal-relaying switch**:
+
+- **SRC** — SH2 binds the phosphorylated C-terminal tail (pTyr527, chicken numbering), SH3 binds a
+  PxxP motif in the **SH2–kinase linker**, and both assemble on the *back* of the kinase domain.
+  The linker adopts a polyproline-II helix with one face held by SH3's ligand pocket and the other
+  pressed against the kinase N-lobe. Disrupting either contact destabilises autoinhibition.
+- **JAK** — the **SH2–pseudokinase (SH2–JH2) linker** relays receptor engagement to activation.
+  Substitutions at E543–D544, or L611/R683/F694 in the pseudokinase hinge region, give
+  constitutively activated JAK2 that Epo cannot stimulate further (*JBC* 2009). This is also the
+  element through which **V617F** is proposed to act (Shan et al. 2014) — see §5.
+
+**Caveat, and it matters.** No paper was found that compares the two linkers or the two mechanisms
+side by side. Searching for it returned JAK material and SRC material and almost nothing joining
+them. **The parallel above is a structural observation, not a citable claim**, and the Kincore
+comparison in this section is our own evidence for it. What that evidence says is that the
+architectures rhyme while the conformational consequences diverge.
+
+### SRC literature
+
+**Structural foundation**
+- **Xu, Doshi, Lei, Eck & Harrison**, "Crystal structures of c-Src reveal features of its
+  autoinhibitory mechanism", *Molecular Cell* 1999, DOI
+  [10.1016/S1097-2765(00)80242-5](https://doi.org/10.1016/S1097-2765(00)80242-5) — the autoinhibited
+  c-Src structures and the SH3–SH2 clamp model. Companion: Xu, Harrison & Eck, *Nature* 1997.
+- "The Src module: an ancient scaffold in the evolution of cytoplasmic tyrosine kinases",
+  [*Crit Rev Biochem Mol Biol* 2018](https://www.tandfonline.com/doi/full/10.1080/10409238.2018.1495173)
+  — the clamp, the polyproline-II linker, and the module's evolution.
+
+**Dynamics and energetics**
+- [The activation of c-Src tyrosine kinase: conformational transition pathway and free energy landscape (PMC5398919)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5398919/)
+- [Tyrosine kinase activation and conformational flexibility: lessons from Src-family tyrosine kinases (PMC6602532)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6602532/)
+- [Dynamic coupling between the SH2 and SH3 domains of c-Src and Hck underlies their inactivation by C-terminal tyrosine phosphorylation, *Cell* 2001](https://www.cell.com/fulltext/S0092-8674(01)00301-4) — the SH2–SH3 connector as an inducible "snap lock".
+- [SH2–catalytic domain linker heterogeneity influences allosteric coupling across the SFK family, *Biochemistry*](https://pubs.acs.org/doi/10.1021/bi5008194)
+- [SH2 domains: modulators of nonreceptor tyrosine kinase activity, *Curr Opin Struct Biol*](https://sciencedirect.com/science/article/pii/S0959440X09001511)
+
+**Nomenclature, and why it is unsettled**
+- "Src-like inactive" originates in a 2006 *PLOS Biology* Abl paper: Abl's inactive state has the
+  DFG motif flipped, whereas inactive **Src** structures do not, and the Abl structure was found to
+  resemble Src closely. [PMC1450098](https://pmc.ncbi.nlm.nih.gov/articles/PMC1450098)
+- A consensus name is still lacking — the same non-DFGout inactive states appear in the literature
+  as *pseudo-DFGout*, *DFGup*, *SRC-like inactive* and *atypical DFGout*. Ung et al.'s CODI/CODO
+  scheme (αC-out–DFG-in, αC-out–DFG-out) and Möbitz's 12-category angle scheme are alternatives to
+  Dunbrack's labels. [PMC8728253](https://pmc.ncbi.nlm.nih.gov/articles/PMC8728253)
+- Note the irony for our purposes: the inactive conformation is **named after SRC**, and JAKs never
+  adopt it.
+
+**On the JAK side of the comparison**
+- [Lupardus et al., *PNAS* 2014](https://www.pnas.org/doi/10.1073/pnas.1401180111) — clinically
+  relevant N-lobe mutations cluster at the JH2–JH1 interface, arguing it is the physiological
+  autoinhibitory conformation.
+- [A JAK2 interdomain linker relays Epo receptor engagement signals to kinase activation, *JBC* 2009, PMID 19638629](https://pubmed.ncbi.nlm.nih.gov/19638629/)
+
+### Two Kincore gene assignments not to trust
+
+While checking the above, two entries in the local table carry gene labels that disagree with the
+structures' usual identification, probably reflecting per-chain assignment:
+
+- **1OPK** (autoinhibited Hck) is labelled `ABL1`
+- **2OIQ** (Abl) appears under `SRC`
+
+Neither is used in the statistics above, but do not cite the local table's gene field for an
+individual PDB entry without checking it.
+
 ---
 
 ## 3. The G-loop sense — Sanachai et al. 2020
