@@ -186,6 +186,115 @@ From domain knowledge, not verified this session — each would need checking be
 
 ---
 
+## 4.4 Worked case: PTPN2 — no, and the reason is instructive (28 October 2026)
+
+Asked whether PTPN2 has an open/closed arrangement in this project's sense. **It cannot: it has one
+domain.**
+
+UniProt P17706, 415 residues:
+
+| | |
+|---|---|
+| **Domain** | Tyrosine-protein phosphatase, **5–275 — the only one** |
+| Active site | C216, phosphocysteine intermediate |
+| Region | 346–415 ER location; 376–415 mediates STX17 interaction |
+
+Residues 276–415 are regulatory **regions**, not domains, so no domain pair exists and PTPN2 is
+correctly absent from every table in `more_proteins/` (verified: 0 rows in `kinome480_*`,
+`nonkinase_screen_full.csv`, and both tables computed here).
+
+The SWISS-MODEL repository agrees — 16 structures, widest genuine span **1–302** (7f5o, 7f5n):
+catalytic domain plus a little. There is nothing to measure.
+
+**PTPN2 is regulated, but by a different mechanism.** Its disordered C-terminal tail is an
+*intramolecular* brake —
+[Nature Communications 2021](https://www.nature.com/articles/s41467-021-27633-6) shows by NMR, SAXS
+and XL-MS that the tail autoinhibits by generating steric bulk near the active site rather than
+occupying it, and that the Integrin-α1 cytosolic tail displaces it and fully activates the enzyme.
+That is **tail-on-domain**, not domain-on-domain: there is no second folded module to dock, so there
+is no closed state in our sense and no arrangement to model.
+
+Worth noting for the project's biology regardless: **TCPTP dephosphorylates JAK1 and JAK3 but not
+JAK2**, while PTP1B does the reverse ([FEBS J review](https://febs.onlinelibrary.wiley.com/doi/10.1111/j.1742-4658.2012.08563.x)).
+So PTPN2 is a direct JAK regulator — biologically central, structurally not analogous.
+
+A caution on terminology: the PTP literature does use "open/closed" for the **WPD loop** over the
+active site, which would be a fourth sense to add to the three in `open_close/open_close_inf.md`
+(G-loop, DFG, JH2–JH1). But the WPD-dynamics work I found is on **PTP1B**, not TCPTP, and for TCPTP
+the search returned no WPD open/closed result — so do not attribute it to PTPN2 without checking.
+
+### The real finding: SHP2 and SHP1 are what you wanted, and both are missing from the screen
+
+**PTPN11 (SHP2)**, Q06124, 593 residues — three domains, exactly the architecture:
+
+```
+SH2-1    6-102
+SH2-2  112-216
+PTP    247-517      (active site C459)
+```
+
+One structure file sits in `more_proteins/structures/` — `PTPN11_SHP2_template-4DGX.pdb` — named
+unlike every other file (no accession, no provider), so it was added by hand as a control rather
+than produced by the pipeline. I measured it:
+
+| pair | centroid distance | **inter-domain contacts** |
+|---|--:|--:|
+| **SH2-1 ↔ PTP** | 30.3 Å | **64** |
+| SH2-2 ↔ PTP | 41.6 Å | **0** |
+| SH2-1 ↔ SH2-2 | 33.8 Å | **0** |
+
+Domain coverage 100 / 100 / 94%. **This is the JAK pattern precisely**: one specific pairwise
+interface carrying the autoinhibition, the other pairs merely co-located. For scale, TYK2's JH2–JH1
+interface is 21 residues and 1147 Å². The N-SH2 blocking the PTP active site, released by E76K and
+the other activating mutations, is textbook two-state inter-domain autoinhibition — and it is a
+**phosphatase**, i.e. a functional counterpart to JAK rather than another kinase.
+
+**And the templates exist in quantity.** SWISS-MODEL returns **119 structures** for Q06124,
+including full-module spans:
+
+```
+  4-537  len 534  PDB         4h34
+  2-535  len 534  PDB         4gwf
+  1-534  len 534  PDB         5xzr
+  2-534  len 533  SWISSMODEL  4nwg.1.A   identity 99.814
+  3-533  len 531  PDB         4nwf
+```
+
+**Yet PTPN11 appears nowhere in the 3,247-protein non-kinase screen.** Not scored zero — absent.
+
+**PTPN6 (SHP1)**, P29350, same three-domain architecture (SH2-1 4–100, SH2-2 110–213, PTP 244–515),
+*was* screened:
+
+```
+nonkinase_screen_full.csv:
+  P29350, n_parents=0, n_entries=0, PTPN6, n_dom=3, n_pdb=14
+```
+
+**n_parents = 0** — no multi-domain template survived the gate. But SWISS-MODEL offers
+`3ps5.1.A` at **99.8%** identity and `2b3o.1.A` at **100%**, both spanning **1–529**, the entire
+module. Three domains, 14 PDB entries, full-length same-protein templates — and the pipeline
+recorded nothing.
+
+### Why this matters
+
+This is the **same failure as §2 of `more_proteins_review.md`**, in a new place. There, JAK's own
+closed state was missing because the SWISS-MODEL lineage only carries the extended cryo-EM
+structures. Here, two proteins with abundant, high-identity, full-module templates produce zero
+usable observations.
+
+The two cases differ in cause — JAK's is source coverage, SHP1's looks like the gate or the ≥50%
+domain-coverage rule — but the consequence is identical: **the screen is silent on exactly the
+proteins that best match the target phenotype.** SHP1 and SHP2 should be the easiest possible hits.
+
+**Recommended actions:**
+
+1. **Debug SHP1 (P29350) specifically.** It is a single-protein, reproducible failure with known-good templates at 99.8–100% identity. Whatever rejects it is likely rejecting others silently — the 3,247-protein screen's zero-parent rows deserve an audit, not a filter.
+2. **Add PTPN11 to the screen.** Its omission from the candidate list needs explaining; if the list was built from a gene set that excluded it, that set needs checking too.
+3. **Use SHP2 as the second positive control alongside FAK** (§4.2). Both have a crystallised autoinhibited state with one specific interface; FAK is the kinase analogue, SHP2 the phosphatase one. A pipeline that misses both is not yet measuring the right thing.
+4. **Do not look for open/closed in PTPN2, PTPN1 or other single-domain PTPs.** Their regulation is tail- or loop-based. The multi-domain PTPs — PTPN11, PTPN6, and the receptor PTPs with tandem catalytic domains — are where the question applies.
+
+---
+
 ## 5. The PAE warning — important
 
 You asked about PAE as a selection signal. **High inter-module PAE cannot distinguish a two-state
