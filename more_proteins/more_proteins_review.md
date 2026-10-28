@@ -23,6 +23,12 @@ Second finding: **76% of the ">20 Å" hits rest on a single structure of the tar
 reported range is mostly target-versus-homolog, not one protein moving. The reports flag this for
 ROS1; it is systematic.
 
+Third, now measured (§5.1b): **centroid distance is a one-directional under-estimate.** On the 161
+committed structures it never over-calls mobility, but **66 of the 94 pairs it calls rigid are
+mobile by a superposition metric**, 28 of them strongly — CD163 SRCR2↔SRCR8 is 3.6 Å by centroid
+and **100 Å** by superposition. Eleven pairs across eight genes change verdict on well-supported
+evidence.
+
 ---
 
 ## 1. What reproduces, and what is genuinely good
@@ -210,6 +216,106 @@ A JAK-like protein of the second kind scores as rigid. Adding a superposition-ba
 RMSD after superposing JH2 — the metric already used in `reference_states.md`) on the ~155
 committed structures would close this, and the structures are already downloaded.
 
+## 5.1b Rotation blindness, now measured (28 October 2026)
+
+§5.1 argued from first principles that centroid distance misses hinge rotations. I then tested it on
+the **161 structure files committed under `more_proteins/structures/`** — 40 genes with ≥2 models and
+≥2 UniProt domains, giving **296 (protein, pair) rows**.
+
+Method: for every pair of structures, superpose on domain A's Cα by Kabsch, then take the Cα **RMSD
+of domain B**. This is the metric `reference_states.md` already uses for JAK (JH1 RMSD after
+superposing JH2) and it is sensitive to rotations that preserve the centroid distance. Script:
+`superpose.py`; output `superposition_vs_centroid.csv`.
+
+### The two metrics are strongly related but the error is one-directional
+
+```
+Spearman(centroid spread, superposition RMSD) = +0.776   p = 1.1e-60   n = 296
+```
+
+| centroid \ superposition | rigid (<5 Å) | mid (5–15) | **mobile (>15 Å)** |
+|---|--:|--:|--:|
+| **rigid** (<5 Å) | 28 | 38 | **28** |
+| mid (5–15) | 0 | 1 | 72 |
+| mobile (>15) | 0 | 0 | 129 |
+
+**The table is strictly upper-triangular.** Centroid distance **never over-calls** mobility — but of
+94 pairs it classes as rigid, **66 are mid or mobile by superposition, 28 of them strongly so.**
+Only 53% of rows land in the same class.
+
+So the centroid method is a conservative **lower bound** on mobility, not a measure of it. Nothing
+it flags is spurious; a lot of what it clears is not actually rigid.
+
+### Extreme cases
+
+| gene | pair | centroid spread | superposition RMSD |
+|---|---|--:|--:|
+| CD163 | SRCR 2 ↔ SRCR 8 | **3.6 Å** | **100.3 Å** |
+| CD163 | SRCR 2 ↔ SRCR 6 | 1.1 Å | 95.5 Å |
+| ABCC4 | ABC transporter 1 ↔ transmembrane 2 | 2.2 Å | 83.2 Å |
+| TMPRSS15 | MAM ↔ CUB 2 | **0.2 Å** | **73.1 Å** |
+| CFB | Sushi 2 ↔ Peptidase S1 | 3.9 Å | 62.0 Å |
+
+A 0.2 Å centroid spread with a 73 Å superposition RMSD is a domain swinging on a hinge while holding
+its distance — exactly the blind spot, and exactly the JAK-like geometry the project wants.
+
+### The fairness check: is superposition RMSD just a lever-arm artefact?
+
+It could be — a small rotation at long separation produces a large RMSD. Tested:
+
+```
+Spearman(mean centroid DISTANCE, superposition RMSD) = +0.690
+Spearman(centroid SPREAD,        superposition RMSD) = +0.776
+```
+
+The lever arm explains a lot but less than the motion does. Normalising by mean domain separation,
+**19 of the 28 blind-spot pairs move further than half their own separation** (sup/sep > 0.5), and
+several exceed 1.0 — CD163 SRCR7↔8 at 1.64, CFB Sushi2↔Peptidase at 1.63, TMPRSS15 MAM↔CUB2 at 1.32.
+Those are not amplification artefacts.
+
+**Neither metric is "better".** Centroid sees translation only; superposition sees translation plus
+rotation, amplified by separation. They should both be reported, and the screen reports only one.
+
+### Verdict changes on the better-supported evidence
+
+Requiring ≥3 structures, centroid spread < 5 Å, and sup/sep > 0.5 — i.e. only cases where the
+evidence is not thin and the motion is not a lever artefact:
+
+| gene | pair | n | centroid spread | superposition RMSD | sup/sep |
+|---|---|--:|--:|--:|--:|
+| **ABCC4** | ABC transporter 1 ↔ transmembrane 2 | 4 | 2.2 | **83.2** | 1.32 |
+| **IGF2R** | MRH 3 ↔ MRH 4 | 4 | 3.6 | 37.8 | 1.05 |
+| UBB | Ubiquitin-like 1 ↔ 2 | 3 | 3.0 | 32.8 | 1.09 |
+| **ITGB1** | I-EGF 1 ↔ I-EGF 2 | 5 | 4.7 | 28.1 | 1.19 |
+| **ITGB2** | I-EGF 1 ↔ I-EGF 2 | 5 | 4.9 | 23.8 | 1.02 |
+| ITPR3 | MIR 3 ↔ MIR 4 | 3 | 0.4 | 12.1 | 0.70 |
+| ITGB1 | PSI ↔ I-EGF 1 | 6 | 2.4 | 11.0 | 0.60 |
+| ITGB2 | PSI ↔ I-EGF 1 | 6 | 2.9 | 10.6 | 0.59 |
+| ABCB1 | transmembrane 1 ↔ 2 | 3 | 1.9 | 10.5 | 0.84 |
+| ABCC2 | transmembrane 1 ↔ 2 | 4 | 1.3 | 7.6 | 0.55 |
+| ITPR3 | MIR 4 ↔ MIR 5 | 3 | 0.6 | 5.9 | 0.57 |
+
+**11 pairs across 8 genes change verdict** on this sample alone — and this sample is only the 161
+committed structures, which were themselves selected for having *centroid* spread above 8 Å. Run
+over the full set the yield would be higher, because the pairs most likely to be
+rotation-only-mobile were never committed.
+
+A second, larger band is **under-called rather than missed**: 45 pairs with centroid spread 5–15 Å
+but superposition RMSD > 15 Å, including IGF2R MRH4↔MRH12 (9.8 → **146.4 Å**), DICER1
+Helicase↔PAZ (9.1 → **141.2 Å**) and SMARCA4 HSA↔Helicase-C (6.0 → **116.1 Å**). On the project's
+own 15 Å arrangement threshold these are all mobile; the centroid table ranks them as moderate.
+
+### Why this is the same problem as §2
+
+JAK's JH2–JH1 pair has a centroid spread of ~7 Å between the closed and open references — which
+`reference_states.md` states outright is "far too small to classify a single structure", and why the
+project adopted the superposition metric for JAK in the first place. **The screen then used the
+metric the project had already rejected for its own founding example.** §2 shows the screen misses
+JAK's FERM–JH1 for a source-coverage reason; this section shows it would also mis-rank JAK's
+JH2–JH1 for a metric reason. Two independent routes to the same failure.
+
+---
+
 ### 5.2 The non-kinase screen ranks by data availability
 
 `nonkinase_screen_full.csv` has 3,247 proteins with columns `n_parents, n_entries, n_dom, n_pdb`,
@@ -274,7 +380,7 @@ defensible way to survey inter-domain mobility at proteome scale, and the execut
 **As a selection of JAK-like candidates: not yet**, for three reasons in priority order:
 
 1. **It cannot detect the JAK phenomenon.** Demonstrated on JAK itself: 9.0 Å where the truth is 54.5 Å. Fix by adding ModelArchive and ortholog pooling to the production path.
-2. **It measures translation, not rotation.** JAK's own functionally important pair ranks in the top 32% — i.e. unremarkable. Fix by adding the superposition metric already used elsewhere in the project.
+2. **It measures translation, not rotation — measured in §5.1b.** JAK's own functionally important pair ranks in the top 32%, and across the committed structures 66/94 centroid-"rigid" pairs are mobile by superposition. Fix by adding the superposition metric already used elsewhere in the project; `superpose.py` in this folder does it, and the agreement table quantifies what is being lost.
 3. **It ranks candidates by how well-studied they are.** Fix by reporting spread-per-entry or by stratifying the ranking on `n_entries`.
 
 And two accuracy fixes: **restate PRKCA/PRKCG and INSR/IGF1R** on same-protein evidence, and
@@ -331,3 +437,7 @@ print(spearmanr([int(r['n_parents']) for r in pv],
 | chain-suffix inflation in kinome480 | 88/270 pairs; changes no conclusion |
 | Spearman(n_parents, spread) | +0.249 |
 | PAE data committed under `more_proteins/` | none |
+| Spearman(centroid spread, superposition RMSD) | +0.776, n = 296 |
+| centroid-rigid pairs that are mobile by superposition | 66/94; 28 strongly |
+| centroid pairs that over-call vs superposition | **0** |
+| verdict changes on ≥3 structures and sup/sep > 0.5 | 11 pairs, 8 genes |
