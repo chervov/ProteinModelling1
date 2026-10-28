@@ -1,5 +1,9 @@
 # Computing ΔΔG for large-scale human variant analysis
 
+> **Three documents in this folder cover ΔΔG.** See
+> [`ddg_docs_review.md`](ddg_docs_review.md) for which to read for what, and for the
+> corrections each one needs.
+
 Research date: **28 October 2026**. Prepared for Alexander Chervov.
 
 This file contains the original user prompts, the complete substantive survey, source links, the execution checks performed during the research, and supplementary methodological guidance from the preceding discussion. Chat-specific citation markers have been replaced by portable Markdown references. Availability and software observations refer to the research date; no new large-scale computations have been performed for this document.
