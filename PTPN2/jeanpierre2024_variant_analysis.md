@@ -149,6 +149,65 @@ transiently unfolded state, so increasing that population increases degradation 
 be 98% folded at equilibrium and still be cleared, because the machinery samples the other 2%
 continuously.
 
+### The literature on "destabilised → degraded → low abundance"
+
+This chain is not my inference; it is an established and quantified body of work, mostly from the
+Lindorff-Larsen and Hartmann-Petersen groups. Checked this session:
+
+**The mechanism, with a numerical threshold.**
+[**Abildgaard et al., *eLife* 2019**](https://elifesciences.org/articles/49138) — MLH1 in Lynch
+syndrome. A majority of disease-linked MLH1 variants are present at **reduced cellular levels**, and
+destabilised variants are targeted for **HSP70 chaperone-assisted proteasomal degradation**, which
+also drags down the co-factors PMS1 and PMS2. The quantitative relation is the useful part: **almost
+all variants with steady-state levels above 75% had ΔΔG below 3 kcal/mol.** An earlier
+[**PLoS Genetics 2017**](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006739)
+paper on MSH2 put it more sharply — **destabilisation of as little as 3 kcal/mol is sufficient to
+cause rapid degradation via the ubiquitin–proteasome pathway.**
+
+**Against that threshold, Y126N and C216S fall on opposite sides:**
+
+| | FoldX | ThermoMPNN | vs the ~3 kcal/mol threshold | measured abundance |
+|---|--:|--:|---|---|
+| **Y126N** | **+4.59** | +2.27 | **above** (FoldX), borderline (ThermoMPNN) | **10% of WT** |
+| **C216S** | +0.71 | −1.32 | **well below** | **100% of WT** |
+
+The measured levels agree with the threshold in both cases. Note the methods straddle it for Y126N —
+another instance of the magnitude problem, and a reason to treat 3 kcal/mol as a soft boundary.
+
+**The proteome-scale evidence.**
+[**Matreyek et al. 2018**](https://www.biorxiv.org/content/10.1101/211011.full.pdf) introduced
+**VAMP-seq**, measuring abundance for thousands of variants at once; on PTEN it scored 3,946 variants
+and identified **1,079 previously uncharacterised low-abundance variants likely to be pathogenic**.
+[**Høie, Cagiada, Frederiksen, Stein & Lindorff-Larsen, *Cell Reports* 2021**](https://www.cell.com/cell-reports/fulltext/S2211-1247(21)01711-3)
+analysed ~150,000 variant effects and found **about half of loss-of-function variants lose function
+through loss of stability**, and — directly relevant to us — that **VAMP-seq abundance assays
+correlate more strongly with ΔΔG than activity assays do.**
+[**Schulze & Lindorff-Larsen 2024**](https://www.biorxiv.org/content/10.1101/2024.09.23.614650v1.full.pdf)
+pooled six VAMP-seq datasets into 31,614 abundance scores and confirmed that Rosetta ΔΔG correlates
+with them.
+
+**The framework for separating the two mechanisms.** Cagiada et al., *Mol Biol Evol* 2021
+([10.1093/molbev/msab095](https://doi.org/10.1093/molbev/msab095)) — combining a VAMP-seq abundance
+MAVE with an activity MAVE lets you **distinguish variants that lose function through lowered
+abundance from those that change intrinsic activity.** That is precisely the PTPN2 split in §3 of
+this document, done at scale, and it is also what
+`TYK2/DMS_Howard2026/dms_basic_statistics.md` §9 ("separating a signalling defect from an abundance
+defect") does ad hoc for TYK2. **We should cite this framework there rather than presenting the
+approach as our own.**
+
+**What the literature itself concedes is unresolved.** A reviewer of the MLH1 paper asked how *local*
+instability leads to proteasomal degradation at all; the authors' answer was that destabilised
+variants are more **insoluble**, and that proteasome inhibition mainly produces accumulation of
+insoluble MLH1. So the step from a shifted folding equilibrium to a specific degradation route is
+still not mechanistically closed even in the best-studied systems — which is the honest limit on the
+PTPN2 reading too.
+
+**Why this matters for our TYK2 work.** `external_data/ddg_study.md` §7b measured, on 20,162 TYK2
+variants, that ΔΔG correlates better with the DMS **abundance** arm (FoldX ρ = 0.275, ours 0.244)
+than with signalling (0.128 and 0.108 at IFN-α 1 U). **That is the expected pattern, not an
+anomaly** — Høie et al. report exactly this ordering across ~150,000 variants. Our numbers are in
+line with the field, and this is the citation for saying so.
+
 ### Two further things the measurements show that ΔΔG could not
 
 **W289\* is expressed at 10%, not zero.** So it is not pure nonsense-mediated decay to nothing —
