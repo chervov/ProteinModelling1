@@ -1,5 +1,9 @@
 # Precomputed ΔΔG data — where to get it
 
+> **Three documents in this folder cover ΔΔG.** See
+> [`ddg_docs_review.md`](ddg_docs_review.md) for which to read for what, and for the
+> corrections each one needs.
+
 *Compiled 27 October 2026. Row counts and columns verified by direct download, not quoted from papers.*
 
 ## Short answer
