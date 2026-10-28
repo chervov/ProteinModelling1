@@ -75,6 +75,17 @@ ThermoMPNN's advantage holds on full-length proteins, this resource is roughly *
 informative per variant** as what I downloaded — and it ships **ESM-1v in the same table**, which is
 a second, independent channel.
 
+> ⚠ **The prediction in the paragraph above was tested on 28 October 2026 and is WRONG.**
+> ThermoMPNN and FoldX **tie** (ρ = +0.275 vs +0.275 on TYK2 abundance, n = 20,162). The Domainome
+> advantage does not transfer, because Domainome measures isolated 40–72-residue domains — the same
+> regime as ThermoMPNN's training data — and TYK2 is 1,187 residues across four domains. **Benchmark
+> results do not transfer across protein-size regimes**, which is the caveat the survey itself
+> states in §6 and which I under-weighted when writing this section.
+>
+> The second clause was right for the wrong reason: the ESM-1v column *is* the valuable part — it
+> **beats every ΔΔG method tested** (ρ = +0.380 overall, **+0.513** on buried residues against
+> ΔΔG's ~0.30). Full results in `ddg_study.md` §7b.
+
 Caveat the survey correctly notes: that analysis retained **19,288 proteins**, excluding anything
 under 16 or over 2,700 residues and anything without matching ESM-1v. And Domainome correlations
 are *abundance* correlations, not kcal/mol accuracy.
@@ -156,7 +167,7 @@ documents contains it.
 | Does the ProtVar bulk download work? | **Yes** — 1.5 GB, 208,792,558 rows, 6 min. The survey's HTTP error was transient. |
 | Which ProtVar paper to cite? | **Both.** Jänes et al. (PMC11160786) for the 208 M FoldX computation; Stephenson et al. NAR 52:W140–W147 for the server/API. |
 | Is the pLDDT>70 filter applied? | **In the 2024 file, per its README. Not in the 2025 file** — filter yourself. |
-| Best precomputed source for human genes? | **Unresolved, and this is the open question.** `ddg_study.md` says ProtVar FoldX (obtained, tested, ρ 0.275 on our data). The survey says Liao & Lehner ThermoMPNN (ρ ≈0.50 on Domainome, not obtained). **The ThermoMPNN resource is probably better and has not been tested.** |
+| Best precomputed source for human genes? | **Settled by measurement — see `ddg_study.md` §7b.** The two **tie** on ΔΔG (ThermoMPNN +0.275 vs FoldX +0.275 on TYK2 abundance, n = 20,162). My prediction in §3.1 that ThermoMPNN would be ~2× better **was wrong** — the Domainome ρ ≈ 0.50 comes from isolated 40–72-residue domains and does not transfer to a 1,187-residue multidomain protein. **Prefer the Liao & Lehner file anyway**, for the ESM-1v / AlphaMissense / RSA / pLDDT / ClinVar columns it ships alongside. |
 | RaSP proteome coverage | Survey is more precise: 23,391 **AlphaFold structure files**, not 23,391 distinct genes. Both documents agree the ERDA route fails from here. |
 | Is ΔΔG a good variant-effect predictor? | Both agree: no. ρ ≈0.26 vs ≈0.35–0.40 for sequence VEPs; FoldX AUC 0.661 for pathogenicity; only 43% of predicted-pathogenic variants predicted destabilising. Use it for **mechanism**, not ranking. |
 
@@ -164,7 +175,7 @@ documents contains it.
 
 ## 5. What I would do next, given all three
 
-1. **Download and test the Liao & Lehner ThermoMPNN proteome set** (5.72 GB, CC-BY-4.0). This is the highest-value open action across all three documents. Then repeat the §7 measurement — ThermoMPNN vs the Howard DMS on TYK2 — against the FoldX ρ = 0.275 baseline. If it reaches ~0.4–0.5 it becomes the primary source and no computation is needed for human genes at all.
+1. ~~Download and test the Liao & Lehner ThermoMPNN proteome set.~~ **Done, 28 October 2026 — see `ddg_study.md` §7b.** It ties with FoldX on ΔΔG but its file is still the better download for its other columns. Extracted to `external_data/thermompnn_jak_src.csv`. **The open question it replaces: does ESM-1v beat ΔΔG on proteins other than TYK2?** If it does, the ΔΔG effort is largely redundant for ranking purposes and should be reframed entirely as mechanism annotation.
 2. **Then** build the lookup index over whichever wins, keyed on `(accession, position, mutated_type)`, with one column per method and the pLDDT/confidence retained — per the survey's "one column per method, do not collapse to an average".
 3. **Add Human Domainome 1** to `ddg_precomputed.md` as the primary human evaluation set.
 4. **Run the Ssym antisymmetry test** on our own PyRosetta protocol before extending it. Both documents flag antisymmetry; neither has run it. Data already in `external_data/new_predictors/Ssym.tsv`.
@@ -180,6 +191,9 @@ documents contains it.
 | ProtVar bulk file row count | ✅ 208,792,558 (counted locally) |
 | ProtVar covers JAK1/2/3, TYK2, SRC | ✅ 89,927 variants extracted |
 | FoldX vs our PyRosetta agreement | ✅ ρ = 0.555 on 20,162 shared TYK2 variants |
+| Liao & Lehner archive downloaded and tested | ✅ 5.72 GB; one CSV per accession; ThermoMPNN ties FoldX at ρ = 0.275 |
+| ThermoMPNN vs FoldX agreement | ✅ ρ = 0.688 — closer than either is to our PyRosetta |
+| ESM-1v beats all ΔΔG methods on TYK2 | ✅ ρ = 0.380 overall, 0.513 on buried residues |
 
-Not checked: the Liao & Lehner archive contents (metadata only), Human Domainome 1 figures, the
+Not checked: Human Domainome 1 figures, the
 SPURS and StabilitySort numbers, and every published timing quoted in the survey.
