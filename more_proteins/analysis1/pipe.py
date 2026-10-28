@@ -29,6 +29,18 @@ def load_features(acc):
             try: F[(int(r["pos"]), r["alt"])] = {"wt": r["wt"], "foldx": float(r["foldx_ddg"]),
                                                  "plddt_fx": float(r["plddt"])}
             except ValueError: pass
+    p = f"feat/{acc}.dbnsfp.csv"
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p)):
+            try: k = (int(r["pos"]), r["alt"])
+            except (ValueError, KeyError): continue
+            d = F.setdefault(k, {"wt": r.get("wt")})
+            for c in ("revel","cadd","sift","polyphen","metarnn","vest4","primateai",
+                      "mutassessor","provean","gerp","esm1b","am_dbnsfp"):
+                v = r.get(c)
+                if v not in (None, ""):
+                    try: d[c] = float(v)
+                    except ValueError: pass
     p = f"feat/{acc}.tmpnn.csv"
     if os.path.exists(p):
         for r in csv.DictReader(open(p)):
@@ -135,7 +147,11 @@ def two_clusters(X, names):
 # ---------------------------------------------------------------- report writer
 
 DAMAGING = [("am","AlphaMissense",+1),("esm1v","ESM-1v",-1),("foldx","FoldX ΔΔG",+1),
-            ("tmpnn","ThermoMPNN ΔΔG",+1)]
+            ("tmpnn","ThermoMPNN ΔΔG",+1),("revel","REVEL",+1),("cadd","CADD phred",+1),
+            ("sift","SIFT",-1),("polyphen","PolyPhen-2 HVAR",+1),("metarnn","MetaRNN",+1),
+            ("vest4","VEST4",+1),("primateai","PrimateAI",+1),("mutassessor","MutationAssessor",+1),
+            ("provean","PROVEAN",-1),("esm1b","ESM1b",-1),("am_dbnsfp","AlphaMissense (dbNSFP)",+1),
+            ("gerp","GERP++",+1)]
 
 def analyse(acc, e, gn):
     F = load_features(acc)
@@ -176,15 +192,21 @@ def analyse(acc, e, gn):
                     med_in=round(float(np.median(inn)), 3), med_out=round(float(np.median(out)), 3),
                     p=float(u.pvalue))
     # two clusters
-    if len(keys) >= 2:
+    SETS = [("rich", ["am","esm1v","foldx","tmpnn","revel","cadd","sift","polyphen","metarnn",
+                       "vest4","primateai","provean"]),
+            ("full", ["am","esm1v","foldx","tmpnn"])]
+    for tag, CLUSTER_ON in SETS:
+        keys = [k for k in CLUSTER_ON if have.get(k, 0) > 200]
+        if len(keys) < 2: continue
         rows = [(kk, v) for kk, v in F.items() if all(v.get(k) is not None for k in keys)]
         if len(rows) > 200:
-            X = np.array([[ (v[k] if s > 0 else -v[k]) for k, _, s in DAMAGING if k in keys]
+            X = np.array([[ (v[k] if sg > 0 else -v[k]) for k, _, sg in DAMAGING if k in keys]
                           for _, v in rows], dtype=float)
             names = [lab for k, lab, _ in DAMAGING if k in keys]
             lab, means = two_clusters(X, names)
-            rep["cluster"] = dict(n=len(rows), names=names, sizes=[int((lab == 0).sum()), int((lab == 1).sum())],
-                                  means=means)
+            key = "cluster" if tag == "rich" else "cluster_full"
+            rep[key] = dict(n=len(rows), names=names, tag=tag,
+                            sizes=[int((lab == 0).sum()), int((lab == 1).sum())], means=means)
             # does the split agree with ClinVar and with gnomAD presence?
             pathog = np.array([1 if (v.get("clinvar_sig") or "").lower().startswith(("pathogenic","likely path"))
                                else 0 for _, v in rows])
@@ -195,21 +217,21 @@ def analyse(acc, e, gn):
                        [int(((lab==0)&(pathog==1)).sum()), int(((lab==0)&(benign==1)).sum())]]
                 try: orr, pv = fisher_exact(tab)
                 except Exception: orr, pv = None, None
-                rep["cluster"]["clinvar_tab"] = tab
-                rep["cluster"]["clinvar_or"] = None if orr is None else round(float(orr), 2)
-                rep["cluster"]["clinvar_p"] = None if pv is None else float(pv)
+                rep[key]["clinvar_tab"] = tab
+                rep[key]["clinvar_or"] = None if orr is None else round(float(orr), 2)
+                rep[key]["clinvar_p"] = None if pv is None else float(pv)
             if gn:
                 ing = np.array([1 if kk in gn else 0 for kk, _ in rows])
                 if ing.sum() >= 10:
                     f1 = float(ing[lab==1].mean()); f0 = float(ing[lab==0].mean())
-                    rep["cluster"]["gnomad_frac"] = [round(f0,4), round(f1,4)]
-                    rep["cluster"]["gnomad_n"] = [int(ing[lab==0].sum()), int(ing[lab==1].sum())]
+                    rep[key]["gnomad_frac"] = [round(f0,4), round(f1,4)]
+                    rep[key]["gnomad_n"] = [int(ing[lab==0].sum()), int(ing[lab==1].sum())]
             # interface enrichment per cluster
             if iface and iface["resA"]:
                 S = set(iface["resA"]) | set(iface["resB"])
                 inif = np.array([1 if kk[0] in S else 0 for kk, _ in rows])
                 if inif.sum() >= 10:
-                    rep["cluster"]["iface_frac"] = [round(float(inif[lab==0].mean()),4),
+                    rep[key]["iface_frac"] = [round(float(inif[lab==0].mean()),4),
                                                     round(float(inif[lab==1].mean()),4)]
     rep["proteingym"] = [dict(id=r["DMS_id"], n=r["DMS_total_number_mutants"],
                               sel=r.get("coarse_selection_type"), region=r.get("region_mutated"))

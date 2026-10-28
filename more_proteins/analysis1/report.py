@@ -63,7 +63,11 @@ def md(r):
     NAMES = {"am":"AlphaMissense","esm1v":"ESM-1v","foldx":"FoldX ΔΔG (ProtVar)","tmpnn":"ThermoMPNN ΔΔG"}
     for k, v in r["coverage"].items():
         L.append(f"| {NAMES.get(k,k)} | {v:,} |")
-    L.append("")
+    L += ["", "*Four features score every substitution (AlphaMissense, ESM-1v and the two ΔΔG "
+          "methods). The dbNSFP predictors cover only variants reachable by a **single nucleotide "
+          "change** — typically ~30% of all substitutions — which is the same boundary documented "
+          "for the JAKs in `TYK2/predictor_correlation_matrix.md`. GERP++ could not be retrieved: "
+          "the `++` in its field name breaks the myvariant.info field path.*", ""]
     if r.get("cors"):
         L += ["All-vs-all Spearman (signs as reported, not oriented):", "",
               "| pair | ρ |", "|---|--:|"]
@@ -117,6 +121,30 @@ def md(r):
             L += ["", f"**Against ClinVar** (pathogenic/likely vs benign/likely, Fisher exact): "
                   f"cluster 1 has {t[0][0]} pathogenic / {t[0][1]} benign, cluster 0 has "
                   f"{t[1][0]} / {t[1][1]}; OR = {c.get('clinvar_or')}, p = {fmt_p(c.get('clinvar_p'))}."]
+    L.append("")
+    cf = r.get("cluster_full")
+    if cf:
+        L += ["", "### The same split on all variants, using only the four full-coverage features", "",
+              f"The table above uses {len((r.get('cluster') or {}).get('names',[]))} features and is "
+              f"therefore restricted to variants dbNSFP scores — i.e. those reachable by a single "
+              f"nucleotide change. Repeating the split with only **AlphaMissense, ESM-1v, FoldX ΔΔG "
+              f"and ThermoMPNN ΔΔG**, which score every substitution, gives **n = {cf['n']:,}**:", "",
+              "| | cluster 0 (tolerant) | cluster 1 (damaging) |", "|---|--:|--:|",
+              f"| size | {cf['sizes'][0]:,} | {cf['sizes'][1]:,} |"]
+        for nm in cf["names"]:
+            m0 = cf["means"]["0"] if "0" in cf["means"] else cf["means"][0]
+            m1 = cf["means"]["1"] if "1" in cf["means"] else cf["means"][1]
+            L.append(f"| mean {nm} | {m0[nm]} | {m1[nm]} |")
+        if cf.get("gnomad_frac"):
+            a, b = cf["gnomad_frac"]
+            L.append(f"| **fraction seen in gnomAD** | **{100*a:.2f}%** ({cf['gnomad_n'][0]:,}) "
+                     f"| **{100*b:.2f}%** ({cf['gnomad_n'][1]:,}) |")
+            if b > 0:
+                L += ["", f"Depletion **{a/b:.1f}×**. The two splits should be read together: the "
+                      "12-feature one uses richer evidence on a third of the variants, the 4-feature "
+                      "one uses weaker evidence on all of them."]
+        if cf.get("iface_frac"):
+            L.append(f"| fraction at the interface | {100*cf['iface_frac'][0]:.2f}% | {100*cf['iface_frac'][1]:.2f}% |")
     L.append("")
     # 6 proteingym
     L += ["## 6. ProteinGym", ""]

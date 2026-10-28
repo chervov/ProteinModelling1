@@ -49,6 +49,20 @@ Most compact structure: `P01861_6hyg-1-A.pdb`, centroid distance **17.0 Å**, **
 | ESM-1v | 6,213 |
 | FoldX ΔΔG (ProtVar) | 6,118 |
 | ThermoMPNN ΔΔG | 6,213 |
+| revel | 0 |
+| cadd | 0 |
+| sift | 0 |
+| polyphen | 0 |
+| metarnn | 0 |
+| vest4 | 0 |
+| primateai | 0 |
+| mutassessor | 0 |
+| provean | 0 |
+| esm1b | 0 |
+| am_dbnsfp | 0 |
+| gerp | 0 |
+
+*Four features score every substitution (AlphaMissense, ESM-1v and the two ΔΔG methods). The dbNSFP predictors cover only variants reachable by a **single nucleotide change** — typically ~30% of all substitutions — which is the same boundary documented for the JAKs in `TYK2/predictor_correlation_matrix.md`. GERP++ could not be retrieved: the `++` in its field name breaks the myvariant.info field path.*
 
 All-vs-all Spearman (signs as reported, not oriented):
 
@@ -84,6 +98,23 @@ k-means, k = 2, on z-scored features oriented so that higher = more damaging. **
 | fraction at the interface | 18.80% | 18.36% |
 
 **Validation:** the damaging cluster is **depleted** in the population — 5.73% of it appears in gnomAD against 13.56% of the tolerant cluster (a 2.4-fold difference). Purifying selection acting on the damaging cluster is the expected pattern and is an independent check on the split.
+
+
+### The same split on all variants, using only the four full-coverage features
+
+The table above uses 4 features and is therefore restricted to variants dbNSFP scores — i.e. those reachable by a single nucleotide change. Repeating the split with only **AlphaMissense, ESM-1v, FoldX ΔΔG and ThermoMPNN ΔΔG**, which score every substitution, gives **n = 6,118**:
+
+| | cluster 0 (tolerant) | cluster 1 (damaging) |
+|---|--:|--:|
+| size | 3,798 | 2,320 |
+| mean AlphaMissense | 0.3 | 0.837 |
+| mean ESM-1v | 8.248 | 13.046 |
+| mean FoldX ΔΔG | 0.463 | 4.131 |
+| mean ThermoMPNN ΔΔG | 0.458 | 1.776 |
+| **fraction seen in gnomAD** | **13.56%** (515) | **5.73%** (133) |
+
+Depletion **2.4×**. The two splits should be read together: the 12-feature one uses richer evidence on a third of the variants, the 4-feature one uses weaker evidence on all of them.
+| fraction at the interface | 18.80% | 18.36% |
 
 ## 6. ProteinGym
 

@@ -41,6 +41,17 @@ Most compact structure: `Q08881_8s93-1-A.pdb`, centroid distance **42.3 Å**, **
 | ESM-1v | 304 | 11,476 | -7.608 | -8.372 | 0.00041 |
 | FoldX ΔΔG | 304 | 11,229 | 0.753 | 1.156 | 0.0011 |
 | ThermoMPNN ΔΔG | 304 | 11,476 | 0.533 | 0.832 | 2.9e-05 |
+| REVEL | 96 | 3,512 | 0.48 | 0.499 | 0.24 |
+| CADD phred | 104 | 3,715 | 24.0 | 25.4 | 0.13 |
+| SIFT | 96 | 3,512 | 0.036 | 0.011 | 0.013 |
+| PolyPhen-2 HVAR | 96 | 3,512 | 0.387 | 0.721 | 0.0066 |
+| MetaRNN | 96 | 3,512 | 0.603 | 0.73 | 0.0088 |
+| VEST4 | 104 | 3,715 | 0.548 | 0.607 | 0.048 |
+| PrimateAI | 96 | 3,512 | 0.684 | 0.667 | 0.22 |
+| MutationAssessor | 96 | 3,512 | 1.383 | 1.865 | 6.1e-05 |
+| PROVEAN | 96 | 3,512 | -2.375 | -2.95 | 0.077 |
+| ESM1b | 96 | 3,512 | -7.324 | -8.303 | 0.031 |
+| AlphaMissense (dbNSFP) | 96 | 3,512 | 0.176 | 0.439 | 5.7e-06 |
 
 ## 3. Feature coverage and independence
 
@@ -50,6 +61,20 @@ Most compact structure: `Q08881_8s93-1-A.pdb`, centroid distance **42.3 Å**, **
 | ESM-1v | 11,780 |
 | FoldX ΔΔG (ProtVar) | 11,533 |
 | ThermoMPNN ΔΔG | 11,780 |
+| revel | 3,608 |
+| cadd | 3,819 |
+| sift | 3,608 |
+| polyphen | 3,608 |
+| metarnn | 3,608 |
+| vest4 | 3,819 |
+| primateai | 3,608 |
+| mutassessor | 3,608 |
+| provean | 3,608 |
+| esm1b | 3,608 |
+| am_dbnsfp | 3,608 |
+| gerp | 0 |
+
+*Four features score every substitution (AlphaMissense, ESM-1v and the two ΔΔG methods). The dbNSFP predictors cover only variants reachable by a **single nucleotide change** — typically ~30% of all substitutions — which is the same boundary documented for the JAKs in `TYK2/predictor_correlation_matrix.md`. GERP++ could not be retrieved: the `++` in its field name breaks the myvariant.info field path.*
 
 All-vs-all Spearman (signs as reported, not oriented):
 
@@ -58,9 +83,108 @@ All-vs-all Spearman (signs as reported, not oriented):
 | AlphaMissense vs ESM-1v | -0.879 |
 | AlphaMissense vs FoldX ΔΔG (ProtVar) | +0.525 |
 | AlphaMissense vs ThermoMPNN ΔΔG | +0.552 |
+| AlphaMissense vs revel | +0.758 |
+| AlphaMissense vs cadd | +0.770 |
+| AlphaMissense vs sift | -0.755 |
+| AlphaMissense vs polyphen | +0.716 |
+| AlphaMissense vs metarnn | +0.831 |
+| AlphaMissense vs vest4 | +0.763 |
+| AlphaMissense vs primateai | +0.572 |
+| AlphaMissense vs mutassessor | +0.705 |
+| AlphaMissense vs provean | -0.759 |
+| AlphaMissense vs esm1b | -0.842 |
+| AlphaMissense vs am_dbnsfp | +0.988 |
 | ESM-1v vs FoldX ΔΔG (ProtVar) | -0.511 |
 | ESM-1v vs ThermoMPNN ΔΔG | -0.556 |
+| ESM-1v vs revel | -0.758 |
+| ESM-1v vs cadd | -0.796 |
+| ESM-1v vs sift | +0.802 |
+| ESM-1v vs polyphen | -0.707 |
+| ESM-1v vs metarnn | -0.845 |
+| ESM-1v vs vest4 | -0.747 |
+| ESM-1v vs primateai | -0.515 |
+| ESM-1v vs mutassessor | -0.758 |
+| ESM-1v vs provean | +0.825 |
+| ESM-1v vs esm1b | +0.918 |
+| ESM-1v vs am_dbnsfp | -0.850 |
 | FoldX ΔΔG (ProtVar) vs ThermoMPNN ΔΔG | +0.726 |
+| FoldX ΔΔG (ProtVar) vs revel | +0.421 |
+| FoldX ΔΔG (ProtVar) vs cadd | +0.425 |
+| FoldX ΔΔG (ProtVar) vs sift | -0.433 |
+| FoldX ΔΔG (ProtVar) vs polyphen | +0.400 |
+| FoldX ΔΔG (ProtVar) vs metarnn | +0.490 |
+| FoldX ΔΔG (ProtVar) vs vest4 | +0.441 |
+| FoldX ΔΔG (ProtVar) vs primateai | +0.273 |
+| FoldX ΔΔG (ProtVar) vs mutassessor | +0.458 |
+| FoldX ΔΔG (ProtVar) vs provean | -0.464 |
+| FoldX ΔΔG (ProtVar) vs esm1b | -0.491 |
+| FoldX ΔΔG (ProtVar) vs am_dbnsfp | +0.517 |
+| ThermoMPNN ΔΔG vs revel | +0.434 |
+| ThermoMPNN ΔΔG vs cadd | +0.439 |
+| ThermoMPNN ΔΔG vs sift | -0.461 |
+| ThermoMPNN ΔΔG vs polyphen | +0.419 |
+| ThermoMPNN ΔΔG vs metarnn | +0.531 |
+| ThermoMPNN ΔΔG vs vest4 | +0.487 |
+| ThermoMPNN ΔΔG vs primateai | +0.292 |
+| ThermoMPNN ΔΔG vs mutassessor | +0.519 |
+| ThermoMPNN ΔΔG vs provean | -0.468 |
+| ThermoMPNN ΔΔG vs esm1b | -0.562 |
+| ThermoMPNN ΔΔG vs am_dbnsfp | +0.548 |
+| revel vs cadd | +0.740 |
+| revel vs sift | -0.727 |
+| revel vs polyphen | +0.793 |
+| revel vs metarnn | +0.859 |
+| revel vs vest4 | +0.758 |
+| revel vs primateai | +0.533 |
+| revel vs mutassessor | +0.701 |
+| revel vs provean | -0.736 |
+| revel vs esm1b | -0.733 |
+| revel vs am_dbnsfp | +0.761 |
+| cadd vs sift | -0.794 |
+| cadd vs polyphen | +0.729 |
+| cadd vs metarnn | +0.822 |
+| cadd vs vest4 | +0.763 |
+| cadd vs primateai | +0.520 |
+| cadd vs mutassessor | +0.652 |
+| cadd vs provean | -0.763 |
+| cadd vs esm1b | -0.766 |
+| cadd vs am_dbnsfp | +0.772 |
+| sift vs polyphen | -0.674 |
+| sift vs metarnn | -0.790 |
+| sift vs vest4 | -0.693 |
+| sift vs primateai | -0.425 |
+| sift vs mutassessor | -0.706 |
+| sift vs provean | +0.803 |
+| sift vs esm1b | +0.770 |
+| sift vs am_dbnsfp | -0.763 |
+| polyphen vs metarnn | +0.845 |
+| polyphen vs vest4 | +0.781 |
+| polyphen vs primateai | +0.556 |
+| polyphen vs mutassessor | +0.636 |
+| polyphen vs provean | -0.667 |
+| polyphen vs esm1b | -0.685 |
+| polyphen vs am_dbnsfp | +0.723 |
+| metarnn vs vest4 | +0.892 |
+| metarnn vs primateai | +0.592 |
+| metarnn vs mutassessor | +0.744 |
+| metarnn vs provean | -0.803 |
+| metarnn vs esm1b | -0.823 |
+| metarnn vs am_dbnsfp | +0.829 |
+| vest4 vs primateai | +0.621 |
+| vest4 vs mutassessor | +0.646 |
+| vest4 vs provean | -0.721 |
+| vest4 vs esm1b | -0.736 |
+| vest4 vs am_dbnsfp | +0.775 |
+| primateai vs mutassessor | +0.400 |
+| primateai vs provean | -0.437 |
+| primateai vs esm1b | -0.528 |
+| primateai vs am_dbnsfp | +0.574 |
+| mutassessor vs provean | -0.718 |
+| mutassessor vs esm1b | -0.720 |
+| mutassessor vs am_dbnsfp | +0.711 |
+| provean vs esm1b | +0.791 |
+| provean vs am_dbnsfp | -0.766 |
+| esm1b vs am_dbnsfp | -0.841 |
 
 *Two ΔΔG methods correlating well below 1.0 is the expected result — see `external_data/ddg_study.md` §7 and §7b, where FoldX and our PyRosetta agree at ρ = 0.555 and FoldX and ThermoMPNN at ρ = 0.688 on TYK2.*
 
@@ -77,7 +201,32 @@ All-vs-all Spearman (signs as reported, not oriented):
 
 ## 5. Two-cluster split (the Jeanpierre/Debeaupuis step)
 
-k-means, k = 2, on z-scored features oriented so that higher = more damaging. **n = 11,533** variants with all of AlphaMissense, ESM-1v, FoldX ΔΔG, ThermoMPNN ΔΔG.
+k-means, k = 2, on z-scored features oriented so that higher = more damaging. **n = 3,532** variants with all of AlphaMissense, ESM-1v, FoldX ΔΔG, ThermoMPNN ΔΔG, REVEL, CADD phred, SIFT, PolyPhen-2 HVAR, MetaRNN, VEST4, PrimateAI, PROVEAN.
+
+| | cluster 0 (tolerant) | cluster 1 (damaging) |
+|---|--:|--:|
+| size | 1,611 | 1,921 |
+| mean AlphaMissense | 0.201 | 0.765 |
+| mean ESM-1v | 4.82 | 9.871 |
+| mean FoldX ΔΔG | 0.593 | 2.804 |
+| mean ThermoMPNN ΔΔG | 0.461 | 1.382 |
+| mean REVEL | 0.269 | 0.713 |
+| mean CADD phred | 18.292 | 28.459 |
+| mean SIFT | -0.275 | -0.019 |
+| mean PolyPhen-2 HVAR | 0.237 | 0.863 |
+| mean MetaRNN | 0.365 | 0.884 |
+| mean VEST4 | 0.359 | 0.748 |
+| mean PrimateAI | 0.569 | 0.727 |
+| mean PROVEAN | 1.217 | 5.209 |
+| **fraction seen in gnomAD** | **21.79%** (351) | **14.37%** (276) |
+| fraction at the interface | 3.35% | 2.19% |
+
+**Validation:** the damaging cluster is **depleted** in the population — 14.37% of it appears in gnomAD against 21.79% of the tolerant cluster (a 1.5-fold difference). Purifying selection acting on the damaging cluster is the expected pattern and is an independent check on the split.
+
+
+### The same split on all variants, using only the four full-coverage features
+
+The table above uses 12 features and is therefore restricted to variants dbNSFP scores — i.e. those reachable by a single nucleotide change. Repeating the split with only **AlphaMissense, ESM-1v, FoldX ΔΔG and ThermoMPNN ΔΔG**, which score every substitution, gives **n = 11,533**:
 
 | | cluster 0 (tolerant) | cluster 1 (damaging) |
 |---|--:|--:|
@@ -87,9 +236,9 @@ k-means, k = 2, on z-scored features oriented so that higher = more damaging. **
 | mean FoldX ΔΔG | 0.573 | 4.124 |
 | mean ThermoMPNN ΔΔG | 0.453 | 1.827 |
 | **fraction seen in gnomAD** | **7.54%** (483) | **2.86%** (147) |
-| fraction at the interface | 3.31% | 1.79% |
 
-**Validation:** the damaging cluster is **depleted** in the population — 2.86% of it appears in gnomAD against 7.54% of the tolerant cluster (a 2.6-fold difference). Purifying selection acting on the damaging cluster is the expected pattern and is an independent check on the split.
+Depletion **2.6×**. The two splits should be read together: the 12-feature one uses richer evidence on a third of the variants, the 4-feature one uses weaker evidence on all of them.
+| fraction at the interface | 3.31% | 1.79% |
 
 ## 6. ProteinGym
 
