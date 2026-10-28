@@ -30,6 +30,11 @@ cover:
 **The free download is slightly better than what we computed ourselves.** That is the single most
 important finding in this document.
 
+**Update, §7b:** a second precomputed resource (Liao & Lehner 2026, ThermoMPNN) was then tested and
+**ties with FoldX exactly** (ρ = 0.275 on abundance). But its file also ships **ESM-1v, which beats
+every ΔΔG method tested** (ρ = 0.380 overall, **0.513** on buried residues), plus AlphaMissense,
+RSA, pLDDT and ClinVar pre-joined. **Prefer that download** — for its other columns, not its ΔΔG.
+
 Compute your own ΔΔG only when one of these holds: the protein is non-human; you need a specific
 conformational state (as we do for open/closed JAK); you need a complex/interface ΔΔG; or you need
 a method other than FoldX. Otherwise the marginal value of compute is negative.
@@ -412,6 +417,120 @@ Three things follow:
 
 ---
 
+## 7b. Measured here: ThermoMPNN tested against FoldX — they tie (28 October 2026)
+
+`ddg_computations_survey_gpt.md` identified a resource §2 of this document missed: **Liao & Lehner
+2026**, proteome-wide ThermoMPNN predictions. Reviewing it (`ddg_docs_review.md` §3.1) I predicted
+it would be "roughly twice as informative per variant" as ProtVar FoldX, extrapolating from
+ThermoMPNN's Human Domainome median Spearman ≈ 0.50 against FoldX's ≈ 0.26.
+
+**That prediction was wrong. Tested, they tie.**
+
+### The resource
+
+```
+Zenodo 18386427 · zenodo_final_jan2026.tar.gz · 5.72 GB · CC-BY-4.0 · deposited 2026-01-27
+Liao, X. & Lehner, B. "Allostery is a widespread cause of loss-of-function variant
+pathogenicity." Nat Commun 2026. doi:10.1038/s41467-026-74517-8
+```
+
+**Layout: one CSV per UniProt accession** (`{ACC}_merged.csv`), so a single protein can be extracted
+without unpacking 5.72 GB. Each row carries far more than ΔΔG:
+
+```
+variant, Model, Dataset, ddG_pred, new_position, wildtype, mutation,
+exposure_ss, exposure_plddt, exposure_rasa, spot_disorder, chain, uniprot,
+clinvar_variation_id, clinvar_clinical_significance, clinvar_review_status,
+ESM1v_all_variants, am_pathogenicity, am_class
+```
+
+That is **ThermoMPNN + ESM-1v + AlphaMissense + RSA + pLDDT + secondary structure + disorder +
+ClinVar, pre-joined.** Positive `ddG_pred` = destabilising, as with FoldX.
+
+| protein | variants | median ΔΔG | median ESM-1v | median pLDDT | disordered | ClinVar-linked |
+|---|--:|--:|--:|--:|--:|--:|
+| TYK2 | 22,553 | +0.78 | −4.82 | 90.3 | 6.7% | 394 |
+| JAK1 | 21,926 | +0.76 | −4.54 | 92.2 | 6.0% | 1 |
+| JAK2 | 21,508 | +0.74 | −4.74 | 92.9 | 3.2% | 153 |
+| JAK3 | 21,356 | +0.79 | −5.05 | 92.2 | 2.9% | 317 |
+| SRC | 10,184 | +0.75 | −9.29 | 93.6 | 16.6% | 18 |
+
+Extracted to `external_data/thermompnn_jak_src.csv` (97,527 rows, 12.3 MB).
+
+### The result
+
+Spearman against the Howard TYK2 DMS, **n = 20,162** variants covered by all methods, every score
+oriented so higher = more damaging:
+
+| | IFN-α 1 U | IFN-α 100 U | **abundance** |
+|---|--:|--:|--:|
+| **AlphaMissense** | **+0.173** | **+0.362** | **+0.417** |
+| **ESM-1v** *(same file)* | +0.136 | +0.258 | **+0.380** |
+| ProtVar FoldX | +0.128 | +0.275 | +0.275 |
+| **ThermoMPNN** | +0.124 | +0.273 | **+0.275** |
+| our PyRosetta | +0.108 | +0.236 | +0.244 |
+
+**ThermoMPNN equals FoldX to three decimal places on abundance and to 0.002 on IFN 100 U.** There
+is no reason to prefer one over the other on this evidence.
+
+**Why the prediction failed, and it generalises.** Human Domainome measures **isolated small
+domains** — the same regime as ThermoMPNN's Tsuboyama training data (40–72 residues). TYK2 is 1,187
+residues across four domains. The Domainome advantage does not survive the transfer. This is
+precisely the caveat `ddg_computations_survey_gpt.md` §6 states — "applying a model learned from
+[small domains] to large multidomain human proteins is still a generalization problem" — and which
+this document under-weighted. **Benchmark results do not transfer across protein-size regimes.**
+
+### The finding worth more than the one we went looking for
+
+Stratifying the abundance arm by structural context:
+
+| subset | n | ThermoMPNN | FoldX | ours | **ESM-1v** |
+|---|--:|--:|--:|--:|--:|
+| all shared | 20,139 | +0.275 | +0.275 | +0.244 | **+0.380** |
+| pLDDT ≥ 90 | 11,592 | +0.306 | +0.329 | +0.252 | **+0.459** |
+| **buried, RASA ≤ 0.05** | 5,631 | +0.305 | +0.306 | +0.202 | **+0.508** |
+| buried **and** pLDDT ≥ 90 | 4,855 | +0.284 | +0.317 | +0.186 | **+0.513** |
+| exposed, RASA ≥ 0.5 | 4,348 | +0.024 | +0.007 | +0.114 | +0.153 |
+
+**ESM-1v, a sequence-only model, beats every ΔΔG method everywhere — and the gap widens precisely
+where ΔΔG should be strongest.** In the buried core, where destabilisation is the dominant loss
+mechanism, ESM-1v reaches **0.513** against ΔΔG's ~0.30.
+
+And **all three ΔΔG methods collapse to ρ ≈ 0 on exposed residues** (+0.024, +0.007, +0.114) where
+ESM-1v still manages +0.153. A variant on the surface that breaks function does so by a mechanism
+no folding ΔΔG represents — which is the same conclusion our TYK2 interface work reached from the
+other direction.
+
+Note our PyRosetta is the only method that does *not* degrade on exposed residues (+0.114, its best
+relative showing) and the worst on buried ones (+0.186). Worth a look; it may be a scale artefact
+from the `fa_rep`-dominated tail.
+
+### Cross-method agreement, updated
+
+| pair | Spearman (n = 20,162) |
+|---|--:|
+| **ThermoMPNN vs FoldX** | **+0.688** |
+| FoldX vs our PyRosetta | +0.555 |
+| ThermoMPNN vs our PyRosetta | +0.515 |
+
+ThermoMPNN and FoldX agree best — both run on AlphaFold2 structures. **Our protocol is the outlier
+of the three**, and that is informative in itself.
+
+Distributions: ThermoMPNN median +0.93 kcal/mol (IQR +0.31…+1.76), FoldX +1.30 (IQR +0.19…+3.25).
+ThermoMPNN is the more compressed — consistent with ML predictors regressing toward the training
+mean.
+
+### Revised recommendation
+
+**Download the Liao & Lehner file rather than ProtVar — not for its ΔΔG, but for everything else in
+it.** The ΔΔG column is a tie; the file additionally gives ESM-1v (which outperforms it), AlphaMissense,
+RSA, pLDDT, secondary structure, disorder and ClinVar links in one pre-joined table, at 12.3 MB per
+five proteins instead of a 209 M-row scan.
+
+Keep ProtVar as the second ΔΔG opinion. Their ρ = 0.688 disagreement is a usable confidence signal.
+
+---
+
 ## 8. Recommended plan for computing ΔΔG across many human genes
 
 **Phase 0 — don't compute (1 day).** Download ProtVar once (1.5 GB, 6 min). Build a local index —
@@ -458,6 +577,8 @@ Committed to the repository: `external_data/new_predictors/` (COSMIS + ABYSSAL b
 ## 10. Open items
 
 - RaSP proteome set needs a browser fetch (ERDA blocked here)
+- Why our PyRosetta alone does not degrade on exposed residues (§7b) — possible `fa_rep` scale artefact
+- Whether the ESM-1v advantage over ΔΔG holds on other proteins, or is TYK2-specific
 - ProDDG not yet examined
 - Gerasimavicius 2022 *Nat Commun* LOF/GOF paper not read in full
 - No 2025–2026 comparative review of ΔΔG predictors was found; Pancotti 2022 + the S461 critique remain the standard
