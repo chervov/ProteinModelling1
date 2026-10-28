@@ -1,0 +1,3168 @@
+{
+ "P29597": {
+  "gene": "TYK2",
+  "pair": "Protein kinase 1|Protein kinase 2",
+  "domains": [
+   [
+    "FERM",
+    26,
+    431
+   ],
+   [
+    "SH2; atypical",
+    450,
+    529
+   ],
+   [
+    "Protein kinase 1",
+    589,
+    875
+   ],
+   [
+    "Protein kinase 2",
+    897,
+    1176
+   ]
+  ],
+  "length": 1187,
+  "kind": "reference",
+  "report": "r20",
+  "name": "Non-receptor tyrosine-protein kinase TYK2",
+  "pae_dom": {
+   "inter": 14.62,
+   "intra": 6.67,
+   "ratio": 2.19
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 37.9,
+    "contacts": 44,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4OLI (X-ray, closed JH2-JH1)",
+    "dist": 39.6,
+    "contacts": 38,
+    "cov_a": 89,
+    "cov_b": 95
+   }
+  ]
+ },
+ "P23458": {
+  "gene": "JAK1",
+  "pair": "FERM|Protein kinase 2",
+  "domains": [
+   [
+    "FERM",
+    34,
+    420
+   ],
+   [
+    "SH2",
+    439,
+    544
+   ],
+   [
+    "Protein kinase 1",
+    583,
+    855
+   ],
+   [
+    "Protein kinase 2",
+    875,
+    1153
+   ]
+  ],
+  "length": 1154,
+  "kind": "reference",
+  "report": "r20",
+  "name": "Tyrosine-protein kinase JAK1",
+  "pae_dom": {
+   "inter": 25.79,
+   "intra": 7.1,
+   "ratio": 3.63
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 92.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "ma-l9b1f (Jeanpierre, closed)",
+    "dist": 39.8,
+    "contacts": 7,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "ma-a1sai (Jeanpierre, open)",
+    "dist": 92.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q05397": {
+  "gene": "PTK2",
+  "pair": "FERM|Protein kinase",
+  "domains": [
+   [
+    "FERM",
+    35,
+    355
+   ],
+   [
+    "Protein kinase",
+    422,
+    680
+   ],
+   [
+    "Focal AT",
+    914,
+    1045
+   ]
+  ],
+  "length": 1052,
+  "kind": "reference",
+  "report": "r20",
+  "name": "Focal adhesion kinase 1",
+  "pae_dom": null,
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 44.4,
+    "contacts": 43,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "2J0J (X-ray, autoinhibited FERM-kinase)",
+    "dist": 45.0,
+    "contacts": 42,
+    "cov_a": 100,
+    "cov_b": 96
+   }
+  ]
+ },
+ "Q06124": {
+  "gene": "PTPN11",
+  "pair": "SH2 1|Tyrosine-protein phosphatase",
+  "domains": [
+   [
+    "SH2 1",
+    6,
+    102
+   ],
+   [
+    "SH2 2",
+    112,
+    216
+   ],
+   [
+    "Tyrosine-protein phosphatase",
+    247,
+    517
+   ]
+  ],
+  "length": 593,
+  "kind": "reference",
+  "report": "r20",
+  "name": "Tyrosine-protein phosphatase non-receptor type 11",
+  "pae_dom": {
+   "inter": 6.54,
+   "intra": 3.26,
+   "ratio": 2.01
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 30.6,
+    "contacts": 70,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4DGX (X-ray, autoinhibited)",
+    "dist": 30.3,
+    "contacts": 64,
+    "cov_a": 100,
+    "cov_b": 94
+   }
+  ]
+ },
+ "P08183": {
+  "gene": "ABCB1",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    51,
+    357
+   ],
+   [
+    "ABC transporter 1",
+    392,
+    628
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    711,
+    1000
+   ],
+   [
+    "ABC transporter 2",
+    1035,
+    1273
+   ]
+  ],
+  "length": 1280,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "ATP-dependent translocase ABCB1",
+  "pae_dom": {
+   "inter": 14.97,
+   "intra": 4.38,
+   "ratio": 3.42
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 44.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6s7p-1-A_36-1252",
+    "dist": 28.0,
+    "contacts": 78,
+    "cov_a": 100,
+    "cov_b": 91
+   },
+   {
+    "source": "SWISSMODEL_9ctc-1-A_30-1272",
+    "dist": 34.4,
+    "contacts": 15,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9oe2-1-A_30-1276",
+    "dist": 62.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P13569": {
+  "gene": "CFTR",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    81,
+    365
+   ],
+   [
+    "ABC transporter 1",
+    423,
+    646
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    859,
+    1155
+   ],
+   [
+    "ABC transporter 2",
+    1210,
+    1443
+   ]
+  ],
+  "length": 1480,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Cystic fibrosis transmembrane conductance regulator",
+  "pae_dom": {
+   "inter": 13.06,
+   "intra": 6.2,
+   "ratio": 2.11
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 30.0,
+    "contacts": 14,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6d3r-1-A_42-1439",
+    "dist": 40.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 98
+   },
+   {
+    "source": "SWISSMODEL_9dw5-1-A_3-1436",
+    "dist": 46.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   },
+   {
+    "source": "SWISSMODEL_9dw9-1-A_1-1451",
+    "dist": 27.1,
+    "contacts": 64,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q92887": {
+  "gene": "ABCC2",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    322,
+    605
+   ],
+   [
+    "ABC transporter 1",
+    637,
+    861
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    979,
+    1264
+   ],
+   [
+    "ABC transporter 2",
+    1300,
+    1534
+   ]
+  ],
+  "length": 1545,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "ATP-binding cassette sub-family C member 2",
+  "pae_dom": {
+   "inter": 14.86,
+   "intra": 5.06,
+   "ratio": 2.94
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 34.1,
+    "contacts": 6,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7w4o-1-H_24-1530",
+    "dist": 27.7,
+    "contacts": 40,
+    "cov_a": 100,
+    "cov_b": 98
+   },
+   {
+    "source": "SWISSMODEL_8rq3-1-A_2-1534",
+    "dist": 49.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9dw9-1-A_192-1535",
+    "dist": 27.6,
+    "contacts": 63,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9jn1-1-A_1-1516",
+    "dist": 46.6,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 92
+   }
+  ]
+ },
+ "O15439": {
+  "gene": "ABCC4",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    93,
+    377
+   ],
+   [
+    "ABC transporter 1",
+    410,
+    633
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    711,
+    1005
+   ],
+   [
+    "ABC transporter 2",
+    1041,
+    1274
+   ]
+  ],
+  "length": 1325,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "ATP-binding cassette sub-family C member 4",
+  "pae_dom": {
+   "inter": 18.03,
+   "intra": 5.16,
+   "ratio": 3.49
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 38.5,
+    "contacts": 1,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8i4a-1-A_9-1298",
+    "dist": 50.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8swn-1-A_47-1298",
+    "dist": 27.5,
+    "contacts": 60,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9dw9-1-A_9-1266",
+    "dist": 28.0,
+    "contacts": 50,
+    "cov_a": 100,
+    "cov_b": 97
+   },
+   {
+    "source": "SWISSMODEL_9y1q-1-A_53-1265",
+    "dist": 70.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 96
+   }
+  ]
+ },
+ "P60842": {
+  "gene": "EIF4A1",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    63,
+    234
+   ],
+   [
+    "Helicase C-terminal",
+    245,
+    406
+   ]
+  ],
+  "length": 406,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Eukaryotic initiation factor 4A-I",
+  "pae_dom": {
+   "inter": 9.66,
+   "intra": 3.95,
+   "ratio": 2.44
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 30.1,
+    "contacts": 49,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_2hxy-1-A_32-406",
+    "dist": 36.7,
+    "contacts": 27,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_3eiq-1-A_22-400",
+    "dist": 36.4,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 96
+   },
+   {
+    "source": "SWISSMODEL_4c9b-1-A_15-406",
+    "dist": 47.6,
+    "contacts": 3,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9avr-1-A_30-402",
+    "dist": 29.2,
+    "contacts": 54,
+    "cov_a": 100,
+    "cov_b": 98
+   }
+  ]
+ },
+ "P38919": {
+  "gene": "EIF4A3",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    69,
+    239
+   ],
+   [
+    "Helicase C-terminal",
+    250,
+    411
+   ]
+  ],
+  "length": 411,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Eukaryotic initiation factor 4A-III",
+  "pae_dom": {
+   "inter": 6.15,
+   "intra": 3.71,
+   "ratio": 1.66
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 29.4,
+    "contacts": 52,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_4c9b-1-A_21-411",
+    "dist": 47.5,
+    "contacts": 3,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7a5p-1-k_22-411",
+    "dist": 29.3,
+    "contacts": 56,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8xxn-1-a_31-406",
+    "dist": 37.2,
+    "contacts": 3,
+    "cov_a": 100,
+    "cov_b": 97
+   }
+  ]
+ },
+ "O00571": {
+  "gene": "DDX3X",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    211,
+    403
+   ],
+   [
+    "Helicase C-terminal",
+    414,
+    575
+   ]
+  ],
+  "length": 662,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "ATP-dependent RNA helicase DDX3X",
+  "pae_dom": {
+   "inter": 12.59,
+   "intra": 3.76,
+   "ratio": 3.35
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 31.8,
+    "contacts": 36,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8q7x-1-C_169-552",
+    "dist": 32.3,
+    "contacts": 31,
+    "cov_a": 100,
+    "cov_b": 86
+   },
+   {
+    "source": "SWISSMODEL_8ssw-1-A_134-580",
+    "dist": 50.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9e2c-1-A_134-574",
+    "dist": 32.0,
+    "contacts": 38,
+    "cov_a": 100,
+    "cov_b": 99
+   }
+  ]
+ },
+ "O15523": {
+  "gene": "DDX3Y",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    209,
+    401
+   ],
+   [
+    "Helicase C-terminal",
+    412,
+    573
+   ]
+  ],
+  "length": 660,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "ATP-dependent RNA helicase DDX3Y",
+  "pae_dom": {
+   "inter": 12.36,
+   "intra": 3.96,
+   "ratio": 3.12
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 31.6,
+    "contacts": 35,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8ark-2-A_125-573",
+    "dist": 42.2,
+    "contacts": 18,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8arp-1-A_118-573",
+    "dist": 31.4,
+    "contacts": 44,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8ssw-1-A_132-578",
+    "dist": 50.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9e2c-1-A_132-572",
+    "dist": 31.9,
+    "contacts": 38,
+    "cov_a": 100,
+    "cov_b": 99
+   }
+  ]
+ },
+ "Q9BUQ8": {
+  "gene": "DDX23",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    422,
+    627
+   ],
+   [
+    "Helicase C-terminal",
+    651,
+    799
+   ]
+  ],
+  "length": 820,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Probable ATP-dependent RNA helicase DDX23",
+  "pae_dom": {
+   "inter": 17.1,
+   "intra": 3.92,
+   "ratio": 4.36
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 34.6,
+    "contacts": 15,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_2hxy-3-A_392-781",
+    "dist": 34.0,
+    "contacts": 33,
+    "cov_a": 100,
+    "cov_b": 88
+   },
+   {
+    "source": "SWISSMODEL_4c9b-1-A_392-781",
+    "dist": 46.7,
+    "contacts": 1,
+    "cov_a": 100,
+    "cov_b": 88
+   },
+   {
+    "source": "SWISSMODEL_4kbf-1-A_393-779",
+    "dist": 35.2,
+    "contacts": 35,
+    "cov_a": 100,
+    "cov_b": 87
+   },
+   {
+    "source": "SWISSMODEL_4kbf-2-A_393-779",
+    "dist": 56.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 87
+   },
+   {
+    "source": "SWISSMODEL_6ah0-1-s_352-790",
+    "dist": 43.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 94
+   },
+   {
+    "source": "SWISSMODEL_6o5f-1-A_375-803",
+    "dist": 45.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6qw6-1-X_158-806",
+    "dist": 41.6,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8y6o-1-I_158-806",
+    "dist": 35.5,
+    "contacts": 18,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q9H4L7": {
+  "gene": "SMARCAD1",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "CUE 1",
+    157,
+    199
+   ],
+   [
+    "CUE 2",
+    251,
+    294
+   ],
+   [
+    "Helicase ATP-binding",
+    509,
+    677
+   ],
+   [
+    "Helicase C-terminal",
+    858,
+    1010
+   ]
+  ],
+  "length": 1026,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A containing DEAD/H box 1",
+  "pae_dom": {
+   "inter": 8.88,
+   "intra": 5.0,
+   "ratio": 1.78
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 29.3,
+    "contacts": 36,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8oop-1-G_487-1005",
+    "dist": 130.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   },
+   {
+    "source": "SWISSMODEL_8qyv-1-I_486-1006",
+    "dist": 104.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   },
+   {
+    "source": "SWISSMODEL_9c9t-1-K_498-1001",
+    "dist": 133.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 94
+   },
+   {
+    "source": "SWISSMODEL_9gcg-1-H_497-1003",
+    "dist": 70.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 95
+   },
+   {
+    "source": "SWISSMODEL_9jao-1-A_375-1003",
+    "dist": 28.4,
+    "contacts": 53,
+    "cov_a": 100,
+    "cov_b": 95
+   }
+  ]
+ },
+ "P51532": {
+  "gene": "SMARCA4",
+  "pair": "HSA|Helicase C-terminal",
+  "domains": [
+   [
+    "QLQ",
+    171,
+    206
+   ],
+   [
+    "HSA",
+    460,
+    532
+   ],
+   [
+    "Helicase ATP-binding",
+    766,
+    931
+   ],
+   [
+    "Helicase C-terminal",
+    1084,
+    1246
+   ],
+   [
+    "Bromo",
+    1453,
+    1564
+   ]
+  ],
+  "length": 1647,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4",
+  "pae_dom": {
+   "inter": 23.34,
+   "intra": 6.88,
+   "ratio": 3.39
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 71.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7y8r-1-J_365-1345",
+    "dist": 71.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9rl4-1-I_350-1400",
+    "dist": 65.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9rn1-1-I_350-1382",
+    "dist": 67.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q9UPY3": {
+  "gene": "DICER1",
+  "pair": "Helicase ATP-binding|RNase III 2",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    51,
+    227
+   ],
+   [
+    "Helicase C-terminal",
+    433,
+    602
+   ],
+   [
+    "Dicer dsRNA-binding fold",
+    630,
+    722
+   ],
+   [
+    "PAZ",
+    895,
+    1042
+   ],
+   [
+    "RNase III 1",
+    1276,
+    1403
+   ],
+   [
+    "RNase III 2",
+    1666,
+    1824
+   ],
+   [
+    "DRBM",
+    1849,
+    1914
+   ]
+  ],
+  "length": 1922,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Endoribonuclease Dicer",
+  "pae_dom": {
+   "inter": 17.12,
+   "intra": 6.04,
+   "ratio": 2.83
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 44.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7v6c-1-A_44-1915",
+    "dist": 96.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7w0e-1-C_40-1914",
+    "dist": 58.0,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7xw3-1-A_39-1917",
+    "dist": 34.4,
+    "contacts": 33,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7zpj-1-A_46-1916",
+    "dist": 32.7,
+    "contacts": 39,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8hf0-1-A_40-1915",
+    "dist": 55.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q15427": {
+  "gene": "SF3B4",
+  "pair": "RRM 1|RRM 2",
+  "domains": [
+   [
+    "RRM 1",
+    13,
+    91
+   ],
+   [
+    "RRM 2",
+    100,
+    179
+   ]
+  ],
+  "length": 424,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Splicing factor 3B subunit 4",
+  "pae_dom": {
+   "inter": 8.77,
+   "intra": 2.72,
+   "ratio": 3.23
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 25.3,
+    "contacts": 17,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6tr0-1-A_6-182",
+    "dist": 37.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6xlx-1-A_9-181",
+    "dist": 24.8,
+    "contacts": 23,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8hk1-1-E_11-181",
+    "dist": 23.8,
+    "contacts": 43,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8i0p-1-9_13-180",
+    "dist": 26.9,
+    "contacts": 7,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9f4k-1-A_7-179",
+    "dist": 31.0,
+    "contacts": 11,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P26368": {
+  "gene": "U2AF2",
+  "pair": "RRM 1|RRM 2",
+  "domains": [
+   [
+    "RRM 1",
+    149,
+    231
+   ],
+   [
+    "RRM 2",
+    259,
+    337
+   ],
+   [
+    "RRM 3",
+    385,
+    466
+   ]
+  ],
+  "length": 475,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Splicing factor U2AF 65 kDa subunit",
+  "pae_dom": {
+   "inter": 7.51,
+   "intra": 2.96,
+   "ratio": 2.53
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 26.7,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6tr0-1-A_140-342",
+    "dist": 37.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7s3a-1-A_142-340",
+    "dist": 25.8,
+    "contacts": 16,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "O43707": {
+  "gene": "ACTN4",
+  "pair": "Calponin-homology (CH) 1|Calponin-homology (CH) 2",
+  "domains": [
+   [
+    "Calponin-homology (CH) 1",
+    50,
+    154
+   ],
+   [
+    "Calponin-homology (CH) 2",
+    163,
+    269
+   ],
+   [
+    "EF-hand 1",
+    765,
+    800
+   ],
+   [
+    "EF-hand 2",
+    806,
+    841
+   ]
+  ],
+  "length": 911,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Alpha-actinin-4",
+  "pae_dom": {
+   "inter": 6.44,
+   "intra": 3.03,
+   "ratio": 2.13
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 27.0,
+    "contacts": 38,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_1sjj-1-A_44-911",
+    "dist": 46.0,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6sl3-1-B_48-483",
+    "dist": 27.3,
+    "contacts": 33,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6sl7-1-B_48-483",
+    "dist": 26.7,
+    "contacts": 38,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7ank-1-A_47-519",
+    "dist": 26.5,
+    "contacts": 46,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9sis-1-B_46-909",
+    "dist": 26.9,
+    "contacts": 45,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q9NZN4": {
+  "gene": "EHD2",
+  "pair": "Dynamin-type G|EH",
+  "domains": [
+   [
+    "Dynamin-type G",
+    55,
+    286
+   ],
+   [
+    "EH",
+    449,
+    537
+   ],
+   [
+    "EF-hand",
+    481,
+    516
+   ]
+  ],
+  "length": 543,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "EH domain-containing protein 2",
+  "pae_dom": {
+   "inter": 16.84,
+   "intra": 3.53,
+   "ratio": 4.78
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 52.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_4cid-1-B_6-539",
+    "dist": 52.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_9rbu-1-A_1-536",
+    "dist": 35.7,
+    "contacts": 21,
+    "cov_a": 100,
+    "cov_b": 99
+   }
+  ]
+ },
+ "P11717": {
+  "gene": "IGF2R",
+  "pair": "MRH 6|MRH 9",
+  "domains": [
+   [
+    "MRH 1",
+    47,
+    163
+   ],
+   [
+    "MRH 2",
+    172,
+    320
+   ],
+   [
+    "MRH 3",
+    326,
+    468
+   ],
+   [
+    "MRH 4",
+    473,
+    619
+   ],
+   [
+    "MRH 5",
+    625,
+    762
+   ],
+   [
+    "MRH 6",
+    765,
+    924
+   ],
+   [
+    "MRH 7",
+    932,
+    1079
+   ],
+   [
+    "MRH 8",
+    1082,
+    1219
+   ],
+   [
+    "MRH 9",
+    1225,
+    1363
+   ],
+   [
+    "MRH 10",
+    1367,
+    1508
+   ],
+   [
+    "MRH 11",
+    1514,
+    1648
+   ],
+   [
+    "MRH 12",
+    1650,
+    1797
+   ],
+   [
+    "Fibronectin type-II",
+    1802,
+    1989
+   ],
+   [
+    "MRH 14",
+    1992,
+    2127
+   ],
+   [
+    "MRH 15",
+    2135,
+    2280
+   ]
+  ],
+  "length": 2491,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Cation-independent mannose-6-phosphate receptor",
+  "pae_dom": {
+   "inter": 14.03,
+   "intra": 5.83,
+   "ratio": 2.4
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 24.7,
+    "contacts": 34,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6um1-1-A_42-2282",
+    "dist": 23.0,
+    "contacts": 64,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6um1-1-A_59-1990",
+    "dist": 22.7,
+    "contacts": 80,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6um2-1-A_171-1795",
+    "dist": 44.5,
+    "contacts": 2,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_6um2-1-A_472-2125",
+    "dist": 36.9,
+    "contacts": 13,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P05556": {
+  "gene": "ITGB1",
+  "pair": "PSI|I-EGF 2",
+  "domains": [
+   [
+    "PSI",
+    26,
+    76
+   ],
+   [
+    "VWFA",
+    140,
+    378
+   ],
+   [
+    "I-EGF 1",
+    466,
+    501
+   ],
+   [
+    "I-EGF 2",
+    502,
+    554
+   ],
+   [
+    "I-EGF 3",
+    555,
+    591
+   ],
+   [
+    "I-EGF 4",
+    592,
+    631
+   ]
+  ],
+  "length": 798,
+  "kind": "candidate",
+  "report": "r20",
+  "name": "Integrin beta-1",
+  "pae_dom": {
+   "inter": 8.01,
+   "intra": 3.8,
+   "ratio": 2.11
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 20.2,
+    "contacts": 15,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7nxd-1-B_23-723",
+    "dist": 23.0,
+    "contacts": 7,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_7usl-1-B_27-724",
+    "dist": 21.1,
+    "contacts": 10,
+    "cov_a": 98,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8xei-1-B_25-722",
+    "dist": 22.0,
+    "contacts": 6,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8xen-1-B_25-632",
+    "dist": 31.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "SWISSMODEL_8xez-1-B_23-633",
+    "dist": 22.5,
+    "contacts": 12,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P29350": {
+  "gene": "PTPN6",
+  "pair": "SH2 1|Tyrosine-protein phosphatase",
+  "domains": [
+   [
+    "SH2 1",
+    4,
+    100
+   ],
+   [
+    "SH2 2",
+    110,
+    213
+   ],
+   [
+    "Tyrosine-protein phosphatase",
+    244,
+    515
+   ]
+  ],
+  "length": 595,
+  "kind": "debug case",
+  "report": "r30",
+  "name": "Tyrosine-protein phosphatase non-receptor type 6",
+  "pae_dom": {
+   "inter": 12.88,
+   "intra": 3.27,
+   "ratio": 3.94
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 40.8,
+    "contacts": 16,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "3ps5.1.A (99.8% id)",
+    "dist": 41.1,
+    "contacts": 13,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "2b3o.1.A (100.0% id)",
+    "dist": 30.2,
+    "contacts": 77,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P00533": {
+  "gene": "EGFR",
+  "pair": null,
+  "domains": [
+   [
+    "Protein kinase",
+    712,
+    979
+   ]
+  ],
+  "length": 1210,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Epidermal growth factor receptor",
+  "pae_dom": null,
+  "geom": []
+ },
+ "P18206": {
+  "gene": "VCL",
+  "pair": null,
+  "domains": [],
+  "length": 1134,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Vinculin",
+  "pae_dom": null,
+  "geom": []
+ },
+ "Q9Y490": {
+  "gene": "TLN1",
+  "pair": "FERM|I/LWEQ",
+  "domains": [
+   [
+    "FERM",
+    86,
+    403
+   ],
+   [
+    "I/LWEQ",
+    2293,
+    2533
+   ]
+  ],
+  "length": 2541,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Talin-1",
+  "pae_dom": {
+   "inter": 27.93,
+   "intra": 12.9,
+   "ratio": 2.16
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 48.2,
+    "contacts": 4,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q07889": {
+  "gene": "SOS1",
+  "pair": "DH|Ras-GEF",
+  "domains": [
+   [
+    "DH",
+    200,
+    390
+   ],
+   [
+    "PH",
+    444,
+    548
+   ],
+   [
+    "N-terminal Ras-GEF",
+    597,
+    741
+   ],
+   [
+    "Ras-GEF",
+    780,
+    1019
+   ]
+  ],
+  "length": 1333,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Son of sevenless homolog 1",
+  "pae_dom": {
+   "inter": 14.55,
+   "intra": 3.14,
+   "ratio": 4.63
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 62.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "3ksy.1.A (100.0% id)",
+    "dist": 64.0,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "1xdv.1.A (100.0% id)",
+    "dist": 61.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q9UQM7": {
+  "gene": "CAMK2A",
+  "pair": null,
+  "domains": [
+   [
+    "Protein kinase",
+    13,
+    271
+   ]
+  ],
+  "length": 478,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Calcium/calmodulin-dependent protein kinase type II subunit alpha",
+  "pae_dom": null,
+  "geom": []
+ },
+ "P14598": {
+  "gene": "NCF1",
+  "pair": "PX|SH3 2",
+  "domains": [
+   [
+    "PX",
+    4,
+    125
+   ],
+   [
+    "SH3 1",
+    156,
+    215
+   ],
+   [
+    "SH3 2",
+    226,
+    285
+   ]
+  ],
+  "length": 390,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Neutrophil cytosol factor 1",
+  "pae_dom": {
+   "inter": 28.66,
+   "intra": 2.7,
+   "ratio": 10.63
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 48.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "2dyb.1.A (21.8% id)",
+    "dist": 27.6,
+    "contacts": 17,
+    "cov_a": 100,
+    "cov_b": 95
+   }
+  ]
+ },
+ "P08575": {
+  "gene": "PTPRC",
+  "pair": "Fibronectin type-III 1|Tyrosine-protein phosphatase 2",
+  "domains": [
+   [
+    "Fibronectin type-III 1",
+    391,
+    483
+   ],
+   [
+    "Fibronectin type-III 2",
+    484,
+    576
+   ],
+   [
+    "Tyrosine-protein phosphatase 1",
+    653,
+    912
+   ],
+   [
+    "Tyrosine-protein phosphatase 2",
+    944,
+    1228
+   ]
+  ],
+  "length": 1306,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Receptor-type tyrosine-protein phosphatase C",
+  "pae_dom": {
+   "inter": 28.74,
+   "intra": 5.76,
+   "ratio": 4.99
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 56.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P12931": {
+  "gene": "SRC",
+  "pair": "SH3|Protein kinase",
+  "domains": [
+   [
+    "SH3",
+    84,
+    145
+   ],
+   [
+    "SH2",
+    151,
+    248
+   ],
+   [
+    "Protein kinase",
+    270,
+    523
+   ]
+  ],
+  "length": 536,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Proto-oncogene tyrosine-protein kinase Src",
+  "pae_dom": {
+   "inter": 8.44,
+   "intra": 3.84,
+   "ratio": 2.2
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 36.2,
+    "contacts": 8,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8jn9.1.A (100.0% id)",
+    "dist": 35.9,
+    "contacts": 8,
+    "cov_a": 97,
+    "cov_b": 100
+   },
+   {
+    "source": "1y57.1.A (100.0% id)",
+    "dist": 37.3,
+    "contacts": 9,
+    "cov_a": 97,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P00519": {
+  "gene": "ABL1",
+  "pair": "SH3|Protein kinase",
+  "domains": [
+   [
+    "SH3",
+    61,
+    121
+   ],
+   [
+    "SH2",
+    127,
+    217
+   ],
+   [
+    "Protein kinase",
+    242,
+    493
+   ]
+  ],
+  "length": 1130,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase ABL1",
+  "pae_dom": {
+   "inter": 8.58,
+   "intra": 3.48,
+   "ratio": 2.46
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 34.6,
+    "contacts": 8,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "1opl.1.A (99.4% id)",
+    "dist": 34.8,
+    "contacts": 5,
+    "cov_a": 98,
+    "cov_b": 100
+   },
+   {
+    "source": "1y57.1.A (43.1% id)",
+    "dist": 37.4,
+    "contacts": 4,
+    "cov_a": 95,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q06187": {
+  "gene": "BTK",
+  "pair": "PH|Protein kinase",
+  "domains": [
+   [
+    "PH",
+    3,
+    133
+   ],
+   [
+    "SH3",
+    214,
+    274
+   ],
+   [
+    "SH2",
+    281,
+    377
+   ],
+   [
+    "Protein kinase",
+    402,
+    655
+   ]
+  ],
+  "length": 659,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase BTK",
+  "pae_dom": {
+   "inter": 26.38,
+   "intra": 5.1,
+   "ratio": 5.17
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 43.0,
+    "contacts": 3,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8s93.1.A (92.3% id)",
+    "dist": 44.4,
+    "contacts": 14,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4y93.1.A (96.0% id)",
+    "dist": 39.5,
+    "contacts": 13,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q08881": {
+  "gene": "ITK",
+  "pair": "PH|Protein kinase",
+  "domains": [
+   [
+    "PH",
+    4,
+    111
+   ],
+   [
+    "SH3",
+    171,
+    231
+   ],
+   [
+    "SH2",
+    239,
+    338
+   ],
+   [
+    "Protein kinase",
+    363,
+    615
+   ]
+  ],
+  "length": 620,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase ITK/TSK",
+  "pae_dom": {
+   "inter": 29.79,
+   "intra": 4.48,
+   "ratio": 6.65
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 41.4,
+    "contacts": 1,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4y93.1.A (55.3% id)",
+    "dist": 39.0,
+    "contacts": 13,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8s93.1.A (53.0% id)",
+    "dist": 42.3,
+    "contacts": 14,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P43403": {
+  "gene": "ZAP70",
+  "pair": "SH2 1|Protein kinase",
+  "domains": [
+   [
+    "SH2 1",
+    10,
+    102
+   ],
+   [
+    "SH2 2",
+    163,
+    254
+   ],
+   [
+    "Protein kinase",
+    338,
+    600
+   ]
+  ],
+  "length": 619,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase ZAP-70",
+  "pae_dom": {
+   "inter": 13.22,
+   "intra": 3.5,
+   "ratio": 3.77
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 42.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4k2r.1.A (99.8% id)",
+    "dist": 43.0,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4fl2.1.A (56.9% id)",
+    "dist": 35.0,
+    "contacts": 17,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P43405": {
+  "gene": "SYK",
+  "pair": "SH2 1|Protein kinase",
+  "domains": [
+   [
+    "SH2 1",
+    15,
+    107
+   ],
+   [
+    "SH2 2",
+    168,
+    259
+   ],
+   [
+    "Protein kinase",
+    371,
+    631
+   ]
+  ],
+  "length": 635,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase SYK",
+  "pae_dom": {
+   "inter": 8.79,
+   "intra": 3.52,
+   "ratio": 2.49
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 35.5,
+    "contacts": 15,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "4fl2.1.A (100.0% id)",
+    "dist": 35.3,
+    "contacts": 15,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P41240": {
+  "gene": "CSK",
+  "pair": "SH3|Protein kinase",
+  "domains": [
+   [
+    "SH3",
+    9,
+    70
+   ],
+   [
+    "SH2",
+    82,
+    171
+   ],
+   [
+    "Protein kinase",
+    195,
+    449
+   ]
+  ],
+  "length": 450,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Tyrosine-protein kinase CSK",
+  "pae_dom": {
+   "inter": 11.09,
+   "intra": 3.39,
+   "ratio": 3.27
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 34.4,
+    "contacts": 11,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "1k9a.5.A (98.4% id)",
+    "dist": 35.8,
+    "contacts": 8,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P17252": {
+  "gene": "PRKCA",
+  "pair": "C2|AGC-kinase C-terminal",
+  "domains": [
+   [
+    "C2",
+    158,
+    275
+   ],
+   [
+    "Protein kinase",
+    339,
+    597
+   ],
+   [
+    "AGC-kinase C-terminal",
+    598,
+    668
+   ]
+  ],
+  "length": 672,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Protein kinase C alpha type",
+  "pae_dom": {
+   "inter": 27.85,
+   "intra": 5.54,
+   "ratio": 5.03
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 41.1,
+    "contacts": 16,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8se1.2.A (80.7% id)",
+    "dist": 46.1,
+    "contacts": 2,
+    "cov_a": 100,
+    "cov_b": 99
+   },
+   {
+    "source": "8se4.2.A (80.5% id)",
+    "dist": 47.4,
+    "contacts": 11,
+    "cov_a": 100,
+    "cov_b": 94
+   },
+   {
+    "source": "8se3.1.A (80.5% id)",
+    "dist": 42.2,
+    "contacts": 17,
+    "cov_a": 100,
+    "cov_b": 94
+   },
+   {
+    "source": "3pfq.1.A (80.6% id)",
+    "dist": 64.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   }
+  ]
+ },
+ "P06213": {
+  "gene": "INSR",
+  "pair": "Fibronectin type-III 1|Protein kinase",
+  "domains": [
+   [
+    "Fibronectin type-III 1",
+    624,
+    726
+   ],
+   [
+    "Fibronectin type-III 2",
+    757,
+    842
+   ],
+   [
+    "Fibronectin type-III 3",
+    853,
+    947
+   ],
+   [
+    "Protein kinase",
+    1023,
+    1298
+   ]
+  ],
+  "length": 1382,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Insulin receptor",
+  "pae_dom": {
+   "inter": 28.52,
+   "intra": 10.95,
+   "ratio": 2.6
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 49.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P29317": {
+  "gene": "EPHA2",
+  "pair": "Eph LBD|SAM",
+  "domains": [
+   [
+    "Eph LBD",
+    28,
+    206
+   ],
+   [
+    "Fibronectin type-III 1",
+    328,
+    432
+   ],
+   [
+    "Fibronectin type-III 2",
+    438,
+    529
+   ],
+   [
+    "Protein kinase",
+    613,
+    875
+   ],
+   [
+    "SAM",
+    904,
+    968
+   ]
+  ],
+  "length": 976,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Ephrin type-A receptor 2",
+  "pae_dom": {
+   "inter": 21.09,
+   "intra": 4.09,
+   "ratio": 5.15
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 34.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P07333": {
+  "gene": "CSF1R",
+  "pair": "Ig-like C2-type 1|Protein kinase",
+  "domains": [
+   [
+    "Ig-like C2-type 1",
+    21,
+    104
+   ],
+   [
+    "Ig-like C2-type 2",
+    107,
+    197
+   ],
+   [
+    "Ig-like C2-type 3",
+    203,
+    290
+   ],
+   [
+    "Ig-like C2-type 4",
+    299,
+    399
+   ],
+   [
+    "Ig-like C2-type 5",
+    402,
+    502
+   ],
+   [
+    "Protein kinase",
+    582,
+    910
+   ]
+  ],
+  "length": 972,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Macrophage colony-stimulating factor 1 receptor",
+  "pae_dom": {
+   "inter": 28.91,
+   "intra": 7.42,
+   "ratio": 3.9
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 51.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q5S007": {
+  "gene": "LRRK2",
+  "pair": "Roc|Protein kinase",
+  "domains": [
+   [
+    "Roc",
+    1328,
+    1511
+   ],
+   [
+    "COR",
+    1546,
+    1740
+   ],
+   [
+    "Protein kinase",
+    1879,
+    2138
+   ]
+  ],
+  "length": 2527,
+  "kind": "proposed",
+  "report": "r30",
+  "name": "Leucine-rich repeat serine/threonine-protein kinase 2",
+  "pae_dom": {
+   "inter": 17.47,
+   "intra": 6.17,
+   "ratio": 2.83
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 50.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9om2.1.A (100.0% id)",
+    "dist": 56.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8tzh.1.B (100.0% id)",
+    "dist": 55.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9yqk.1.A (100.0% id)",
+    "dist": 50.2,
+    "contacts": 0,
+    "cov_a": 98,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P01861": {
+  "gene": "IGHG4",
+  "pair": "Ig-like 1|Ig-like 3",
+  "domains": [
+   [
+    "Ig-like 1",
+    6,
+    99
+   ],
+   [
+    "Ig-like 2",
+    118,
+    217
+   ],
+   [
+    "Ig-like 3",
+    226,
+    322
+   ]
+  ],
+  "length": 396,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Immunoglobulin heavy constant gamma 4",
+  "pae_dom": {
+   "inter": 28.05,
+   "intra": 3.42,
+   "ratio": 8.2
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 61.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "6gfe.1.A (99.7% id)",
+    "dist": 56.2,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "6hyg.1.A (74.8% id)",
+    "dist": 17.0,
+    "contacts": 66,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q9UKX2": {
+  "gene": "MYH2",
+  "pair": "Myosin motor|IQ",
+  "domains": [
+   [
+    "Myosin N-terminal SH3-like",
+    33,
+    82
+   ],
+   [
+    "Myosin motor",
+    86,
+    784
+   ],
+   [
+    "IQ",
+    787,
+    816
+   ]
+  ],
+  "length": 1941,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Myosin-2",
+  "pae_dom": {
+   "inter": 14.93,
+   "intra": 6.33,
+   "ratio": 2.36
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 50.6,
+    "contacts": 6,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8q6t.1.A (81.3% id)",
+    "dist": 59.6,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "3dtp.1.A (52.6% id)",
+    "dist": 63.1,
+    "contacts": 4,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "5tby.1.B (81.2% id)",
+    "dist": 51.7,
+    "contacts": 16,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9tpl.1.A (81.2% id)",
+    "dist": 47.8,
+    "contacts": 6,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q03518": {
+  "gene": "TAP1",
+  "pair": "ABC transmembrane type-1|ABC transporter",
+  "domains": [
+   [
+    "ABC transmembrane type-1",
+    187,
+    470
+   ],
+   [
+    "ABC transporter",
+    503,
+    742
+   ]
+  ],
+  "length": 748,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Antigen peptide transporter 1",
+  "pae_dom": {
+   "inter": 13.88,
+   "intra": 6.25,
+   "ratio": 2.22
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 58.7,
+    "contacts": 10,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9h8o.1.A (29.2% id)",
+    "dist": 54.2,
+    "contacts": 20,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9n62.1.A (100.0% id)",
+    "dist": 62.6,
+    "contacts": 8,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q05193": {
+  "gene": "DNM1",
+  "pair": "Dynamin-type G|GED",
+  "domains": [
+   [
+    "Dynamin-type G",
+    28,
+    294
+   ],
+   [
+    "PH",
+    519,
+    625
+   ],
+   [
+    "GED",
+    659,
+    750
+   ]
+  ],
+  "length": 864,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Dynamin-1",
+  "pae_dom": {
+   "inter": 19.04,
+   "intra": 7.0,
+   "ratio": 2.72
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 61.9,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "5a3f.1.A (84.5% id)",
+    "dist": 59.2,
+    "contacts": 4,
+    "cov_a": 100,
+    "cov_b": 95
+   }
+  ]
+ },
+ "P50570": {
+  "gene": "DNM2",
+  "pair": "Dynamin-type G|GED",
+  "domains": [
+   [
+    "Dynamin-type G",
+    28,
+    294
+   ],
+   [
+    "PH",
+    519,
+    625
+   ],
+   [
+    "GED",
+    653,
+    744
+   ]
+  ],
+  "length": 870,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Dynamin-2",
+  "pae_dom": {
+   "inter": 19.07,
+   "intra": 6.98,
+   "ratio": 2.73
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 58.1,
+    "contacts": 5,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8v8t.1.A (41.4% id)",
+    "dist": 60.4,
+    "contacts": 13,
+    "cov_a": 100,
+    "cov_b": 99
+   },
+   {
+    "source": "4bej.2.A (46.8% id)",
+    "dist": 64.3,
+    "contacts": 2,
+    "cov_a": 100,
+    "cov_b": 95
+   },
+   {
+    "source": "5a3f.1.A (84.2% id)",
+    "dist": 59.2,
+    "contacts": 4,
+    "cov_a": 100,
+    "cov_b": 95
+   }
+  ]
+ },
+ "Q9NZN3": {
+  "gene": "EHD3",
+  "pair": "Dynamin-type G|EH",
+  "domains": [
+   [
+    "Dynamin-type G",
+    55,
+    286
+   ],
+   [
+    "EH",
+    444,
+    532
+   ],
+   [
+    "EF-hand",
+    476,
+    511
+   ]
+  ],
+  "length": 535,
+  "kind": "measured",
+  "report": "r30",
+  "name": "EH domain-containing protein 3",
+  "pae_dom": {
+   "inter": 22.35,
+   "intra": 3.4,
+   "ratio": 6.58
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 48.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "2qpt.1.B (71.3% id)",
+    "dist": 52.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7sox.1.A (76.8% id)",
+    "dist": 35.4,
+    "contacts": 21,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P05107": {
+  "gene": "ITGB2",
+  "pair": "PSI|I-EGF 4",
+  "domains": [
+   [
+    "PSI",
+    24,
+    74
+   ],
+   [
+    "VWFA",
+    124,
+    363
+   ],
+   [
+    "I-EGF 1",
+    449,
+    482
+   ],
+   [
+    "I-EGF 2",
+    483,
+    535
+   ],
+   [
+    "I-EGF 3",
+    536,
+    574
+   ],
+   [
+    "I-EGF 4",
+    575,
+    613
+   ]
+  ],
+  "length": 769,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Integrin beta-2",
+  "pae_dom": {
+   "inter": 14.65,
+   "intra": 2.75,
+   "ratio": 5.33
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 43.9,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "3k6s.1.B (99.9% id)",
+    "dist": 44.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7nxd.1.B (47.3% id)",
+    "dist": 43.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7usl.1.B (100.0% id)",
+    "dist": 42.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8xez.1.B (40.1% id)",
+    "dist": 50.5,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P05106": {
+  "gene": "ITGB3",
+  "pair": "PSI|I-EGF 4",
+  "domains": [
+   [
+    "PSI",
+    30,
+    76
+   ],
+   [
+    "VWFA",
+    135,
+    377
+   ],
+   [
+    "I-EGF 1",
+    463,
+    498
+   ],
+   [
+    "I-EGF 2",
+    499,
+    548
+   ],
+   [
+    "I-EGF 3",
+    549,
+    585
+   ],
+   [
+    "I-EGF 4",
+    586,
+    625
+   ]
+  ],
+  "length": 788,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Integrin beta-3",
+  "pae_dom": {
+   "inter": 13.48,
+   "intra": 2.62,
+   "ratio": 5.14
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 46.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "6bxj.1.A (78.3% id)",
+    "dist": 45.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8xei.1.B (100.0% id)",
+    "dist": 46.4,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8xez.1.B (100.0% id)",
+    "dist": 51.0,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "8xen.1.B (100.0% id)",
+    "dist": 77.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P21359": {
+  "gene": "NF1",
+  "pair": "Ras-GAP|CRAL-TRIO",
+  "domains": [
+   [
+    "Ras-GAP",
+    1251,
+    1482
+   ],
+   [
+    "CRAL-TRIO",
+    1580,
+    1738
+   ]
+  ],
+  "length": 2839,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Neurofibromin",
+  "pae_dom": null,
+  "geom": [
+   {
+    "source": "7r03.1.A (100.0% id)",
+    "dist": 42.0,
+    "contacts": 1,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7r04.1.A (100.0% id)",
+    "dist": 74.1,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "Q86VB7": {
+  "gene": "CD163",
+  "pair": "SRCR 1|SRCR 9",
+  "domains": [
+   [
+    "SRCR 1",
+    51,
+    152
+   ],
+   [
+    "SRCR 2",
+    159,
+    259
+   ],
+   [
+    "SRCR 3",
+    266,
+    366
+   ],
+   [
+    "SRCR 4",
+    373,
+    473
+   ],
+   [
+    "SRCR 5",
+    478,
+    578
+   ],
+   [
+    "SRCR 6",
+    583,
+    683
+   ],
+   [
+    "SRCR 7",
+    719,
+    819
+   ],
+   [
+    "SRCR 8",
+    824,
+    926
+   ],
+   [
+    "SRCR 9",
+    929,
+    1029
+   ]
+  ],
+  "length": 1156,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Scavenger receptor cysteine-rich type 1 protein M130",
+  "pae_dom": {
+   "inter": 29.21,
+   "intra": 3.83,
+   "ratio": 7.63
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 121.6,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P51531": {
+  "gene": "SMARCA2",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "domains": [
+   [
+    "QLQ",
+    173,
+    208
+   ],
+   [
+    "HSA",
+    436,
+    508
+   ],
+   [
+    "Helicase ATP-binding",
+    736,
+    901
+   ],
+   [
+    "Helicase C-terminal",
+    1054,
+    1216
+   ],
+   [
+    "Bromo",
+    1378,
+    1506
+   ]
+  ],
+  "length": 1590,
+  "kind": "measured",
+  "report": "r30",
+  "name": "SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 2",
+  "pae_dom": {
+   "inter": 8.66,
+   "intra": 5.08,
+   "ratio": 1.7
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 28.5,
+    "contacts": 31,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9rl4.1.I (78.7% id)",
+    "dist": 33.7,
+    "contacts": 16,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "9rn1.1.I (78.7% id)",
+    "dist": 30.2,
+    "contacts": 23,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7egp.1.H (47.5% id)",
+    "dist": 26.3,
+    "contacts": 61,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "7y8r.1.J (78.7% id)",
+    "dist": 26.2,
+    "contacts": 51,
+    "cov_a": 100,
+    "cov_b": 100
+   }
+  ]
+ },
+ "P07384": {
+  "gene": "CAPN1",
+  "pair": "Calpain catalytic|EF-hand 4",
+  "domains": [
+   [
+    "Calpain catalytic",
+    55,
+    354
+   ],
+   [
+    "EF-hand 1",
+    541,
+    576
+   ],
+   [
+    "EF-hand 2",
+    585,
+    618
+   ],
+   [
+    "EF-hand 3",
+    615,
+    650
+   ],
+   [
+    "EF-hand 4",
+    680,
+    714
+   ]
+  ],
+  "length": 714,
+  "kind": "measured",
+  "report": "r30",
+  "name": "Calpain-1 catalytic subunit",
+  "pae_dom": {
+   "inter": 13.37,
+   "intra": 4.19,
+   "ratio": 3.19
+  },
+  "geom": [
+   {
+    "source": "AlphaFold v6",
+    "dist": 55.8,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 100
+   },
+   {
+    "source": "1df0.1.A (61.7% id)",
+    "dist": 55.3,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   },
+   {
+    "source": "3bow.1.A (61.7% id)",
+    "dist": 47.7,
+    "contacts": 0,
+    "cov_a": 100,
+    "cov_b": 97
+   }
+  ]
+ }
+}
