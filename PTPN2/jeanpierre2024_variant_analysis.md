@@ -29,7 +29,10 @@ maximal disagreement is the signal: the protein folds perfectly and does nothing
 the catalytic cysteine** (UniProt P17706, Active site 216, "Phosphocysteine intermediate").
 
 So "haploinsufficiency" — reduced functional dosage — is the right label for most of the series but
-**not for C216S**, which produces a full complement of stable, catalytically dead protein. The
+**not for C216S**, which produces a full complement of stable, catalytically dead protein.
+
+**Both predictions are confirmed by the paper's own westerns** (§2.1b): Y126N is expressed at **10%
+of wild type**, C216S at **100%**. The
 distinction matters for therapy: a dosage problem and a dead-enzyme problem respond differently to
 anything that raises expression.
 
@@ -84,6 +87,80 @@ closed packing environment — is the canonical destabilising substitution.
 
 **This is the variant for which "haploinsufficiency" is literally correct:** the allele produces
 less folded protein. The paper notes Y126 is conserved across PTPN2 orthologs, which is consistent.
+
+## 2.1b The destabilisation claim, tested against the paper's own westerns
+
+§2.1 inferred that Y126N acts by destabilisation from ΔΔG alone. That was a prediction. **The paper
+measures it, and the prediction holds in both directions.**
+
+Fig. 2 B — expression plasmids transfected into HEK293T, quantified by automated quantitative
+western with anti-HA and anti-PTPN2:
+
+| variant | measured protein level | ΔΔG prediction |
+|---|---|---|
+| W98\* (98 aa), E24Mfs\*20 (43 aa) | **undetectable** | n/a (truncations) |
+| **Y126N** | **10% of WT** | **destabilising: FoldX +4.59, ThermoMPNN +2.27** ✅ |
+| W289\* | 10% of WT | n/a (truncation) |
+| F403Lfs\*25 | ~50% of WT | n/a (frameshift) |
+| **C216S** | **no effect vs WT** | **not destabilising: ThermoMPNN −1.32, 0th pct** ✅ |
+| C216G (Crohn's control) | no effect vs WT | — |
+
+A 10-fold reduction for Y126N and no reduction for C216S — predicted correctly by two independent
+ΔΔG methods before the measurement was read.
+
+### Why this is strong evidence specifically for *protein* degradation
+
+Two features of the experimental design matter:
+
+1. **Y126N carries no premature termination codon**, so nonsense-mediated decay cannot apply to it. The transcript is intact.
+2. **Expression is from a transfected plasmid**, so the mRNA level is driven by the vector promoter, not by the endogenous locus or its regulation.
+
+With an intact, vector-driven transcript, a **10-fold deficit in protein can only arise
+post-transcriptionally** — reduced translation or increased turnover. For a buried aromatic→polar
+substitution predicted destabilising by two methods, increased turnover of a misfolded product is
+the parsimonious reading, and it is the reading the field's abundance assays support.
+
+**What is still not directly shown:** the paper measures *steady-state abundance*, not folding and
+not degradation rate. Proving the mechanism would need a thermal or chemical denaturation curve on
+purified protein (to show ΔG_fold actually changed), or a proteasome-inhibitor rescue (MG132
+restoring Y126N levels but not C216S). Neither appears in the paper. So the correct statement is
+**"destabilising by prediction, with a 10-fold abundance deficit measured, consistent with
+degradation of a misfolded product"** — not "unfolds and is degraded" as a demonstrated fact.
+
+### What ΔΔG means numerically, and why the two methods disagree by 40×
+
+ΔΔG is the change in folding free energy, ΔΔG = ΔG_fold(mutant) − ΔG_fold(WT). It does **not** say
+the protein is unfolded; it says the folded state is less favourable by that amount. The shift in
+the folded↔unfolded equilibrium at 37 °C (RT = 0.616 kcal/mol) is exp(ΔΔG/RT):
+
+| method | ΔΔG | predicted shift toward unfolded |
+|---|--:|--:|
+| FoldX | +4.59 kcal/mol | **≈ 1,700×** |
+| ThermoMPNN | +2.27 kcal/mol | **≈ 40×** |
+
+Both say "much more unfolded"; they disagree about the amount by a factor of 40. That is the
+magnitude unreliability documented in `external_data/ddg_study.md` §3.4 — **these methods rank
+acceptably and quantify badly**, and the agreement that matters here is the sign and the percentile
+rank, not the number.
+
+The link from an equilibrium shift to lower abundance is mechanistic but indirect: cellular quality
+control — chaperones, ubiquitin ligases, the proteasome — acts on hydrophobic surface exposed in the
+transiently unfolded state, so increasing that population increases degradation flux. A protein can
+be 98% folded at equilibrium and still be cleared, because the machinery samples the other 2%
+continuously.
+
+### Two further things the measurements show that ΔΔG could not
+
+**W289\* is expressed at 10%, not zero.** So it is not pure nonsense-mediated decay to nothing —
+some protein is made, and §2.3 shows that protein is functional (it behaved like WT in the reporter
+assay). Its mechanism is therefore **reduced quantity of a competent protein**, which is
+haploinsufficiency in the strictest sense.
+
+**F403Lfs\*25 is at ~50%**, so family A has both a partial abundance deficit *and* the
+mislocalisation of §2.4 — two contributions, not one. The paper notes the frameshift replaces the
+last 13 C-terminal residues of the long isoform with a 24-residue neo-sequence.
+
+---
 
 ### 2.2 C216S — catalytic ablation, not haploinsufficiency
 
@@ -188,7 +265,7 @@ paper's own functional assays corroborate:
 **Does not add.** No claim here is a substitute for experiment. Specifically:
 
 - ΔΔG is a weak predictor in general — ρ ≈ 0.26–0.28 against DMS data (`external_data/ddg_study.md` §5). Y126N's result is credible because two methods agree, the residue is fully buried (RASA 0), the model is confident (pLDDT 98) and the substitution type is canonical — not because any single number is reliable.
-- **Protein abundance in patient cells was not extracted from the paper here.** If the paper reports western blots per variant, Y126N should show reduced PTPN2 and C216S should not. That is the direct test of this analysis and it should be checked against their Fig. 2 before any of this is relied on.
+- ~~Protein abundance was not extracted from the paper.~~ **Done — see §2.1b. The paper's Fig. 2 B westerns confirm the prediction: Y126N at 10% of WT, C216S unchanged.** The ΔΔG call was correct in both directions. What remains unmeasured is folding itself and degradation rate; a denaturation curve or an MG132 rescue would close that.
 - No modelling of the C-terminal tail was done. The tail is disordered, so ΔΔG is undefined there and all four truncating/frameshift variants are outside what these resources can score.
 
 ---
