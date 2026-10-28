@@ -16,7 +16,9 @@ two or more distinct parent templates, 30 exceed 15 Å of spread and 18 exceed 2
 
 ## What moves
 
-**ITGB3 (integrin β3) is the largest motion measured anywhere in this project.** Its VWFA-to-I-EGF-4
+**ITGB3 (integrin β3) is the largest range of motion measured anywhere in this project, 110 Å.**
+(The α-actinins found later in batch 2/3 reach larger *absolute* distances, ~280 Å, but vary by
+only ~28 Å across templates — a long rod rather than a large motion.) Its VWFA-to-I-EGF-4
 distance spans **32.5–142.5 Å across 12 distinct parent templates** — a 110 Å range — with
 VWFA-to-I-EGF-3 at 72 Å over the same 12. This is the bent-to-extended ectodomain switch
 ([Nishida et al. 2006](https://doi.org/10.1016/j.immuni.2006.07.016);
