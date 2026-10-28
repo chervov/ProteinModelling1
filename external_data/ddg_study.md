@@ -1,5 +1,9 @@
 # Computing ΔΔG for large numbers of human variants: a practical study
 
+> **Three documents in this folder cover ΔΔG.** See
+> [`ddg_docs_review.md`](ddg_docs_review.md) for which to read for what, and for the
+> corrections each one needs.
+
 *Written 28 October 2026. Research done for the question "how should we compute ΔΔG at scale for
 human genes?" — covering precomputed databases, best practices, software, speed, support, and the
 benchmark literature. All numbers in §2, §7 and §8 were measured here, not quoted.*
