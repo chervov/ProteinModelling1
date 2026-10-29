@@ -1,0 +1,1094 @@
+{
+ "P29597": [
+  {
+   "pmid": "24843152",
+   "tier": "A",
+   "note": "The 2.8 A crystal of the TYK2 JH2-JH1 module: the only experimental CLOSED inter-domain state anywhere in the JAK family. Our 4OLI.",
+   "title": "Structure of the pseudokinase-kinase domains from protein kinase TYK2 reveals a mechanism for Janus kinase (JAK) autoinhibition.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2014 Jun 3",
+   "vol": "111",
+   "pages": "8025-30",
+   "doi": "10.1073/pnas.1401180111",
+   "authors": [
+    "Lupardus PJ",
+    "Ultsch M",
+    "Wallweber H",
+    "Bir Kohli P",
+    "Johnson AR",
+    "Eigenbrot C"
+   ]
+  },
+  {
+   "pmid": "24704786",
+   "tier": "B",
+   "note": "TYK2 FERM-SH2 bound to the IFNAR1 box1/box2 region - the other half of the architecture, fixing where the N-terminal module sits.",
+   "title": "Structural basis of recognition of interferon-\u03b1 receptor by tyrosine kinase 2.",
+   "j": "Nat Struct Mol Biol",
+   "date": "2014 May",
+   "vol": "21",
+   "pages": "443-8",
+   "doi": "10.1038/nsmb.2807",
+   "authors": [
+    "Wallweber HJ",
+    "Tam C",
+    "Franke Y",
+    "Starovasnik MA",
+    "Lupardus PJ"
+   ]
+  },
+  {
+   "pmid": "35271300",
+   "tier": "A",
+   "note": "Full-length JAK on a receptor dimer by cryo-EM: the autoinhibited JH2-JH1 module docked against FERM-SH2, and the activated dimer. The architecture TYK2 is read onto.",
+   "title": "Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.",
+   "j": "Science",
+   "date": "2022 Apr 8",
+   "vol": "376",
+   "pages": "163-169",
+   "doi": "10.1126/science.abn8933",
+   "authors": [
+    "Glassman CR",
+    "Tsutsumi N",
+    "Saxton RA",
+    "Lupardus PJ",
+    "Jude KM",
+    "Garcia KC"
+   ]
+  },
+  {
+   "pmid": "40378946",
+   "tier": "B",
+   "note": "Allosteric TYK2-specific inhibitors acting by a triple mechanism; the drug works by holding the JH2-JH1 arrangement, so it is a conformational readout.",
+   "title": "A Triple-Action Inhibitory Mechanism of Allosteric TYK2-Specific Inhibitors.",
+   "j": "J Invest Dermatol",
+   "date": "2025 Dec",
+   "vol": "145",
+   "pages": "3158-3173",
+   "doi": "10.1016/j.jid.2025.04.025",
+   "authors": [
+    "Wang J",
+    "Lomakin IB",
+    "Batista VS",
+    "Bunick CG"
+   ]
+  },
+  {
+   "pmid": "35525559",
+   "tier": "B",
+   "note": "Pseudokinase-domain STABILISERS that allosterically inhibit TYK2 - small molecules selected for locking the closed state.",
+   "title": "Identification and characterization of TYK2 pseudokinase domain stabilizers that allosterically inhibit TYK2 signaling.",
+   "j": "Methods Enzymol",
+   "date": "2022",
+   "vol": "667",
+   "pages": "685-727",
+   "doi": "10.1016/bs.mie.2022.03.051",
+   "authors": [
+    "Locke GA",
+    "Muckelbauer J",
+    "Tokarski JS",
+    "Barbieri CM",
+    "Beli\u0107 S",
+    "Falk B",
+    "Tredup J",
+    "Wang YK"
+   ]
+  }
+ ],
+ "P23458": [
+  {
+   "pmid": "35271300",
+   "tier": "A",
+   "note": "Full-length JAK1 cryo-EM: the compact autoinhibited arrangement and the activated receptor-dimer arrangement side by side.",
+   "title": "Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.",
+   "j": "Science",
+   "date": "2022 Apr 8",
+   "vol": "376",
+   "pages": "163-169",
+   "doi": "10.1126/science.abn8933",
+   "authors": [
+    "Glassman CR",
+    "Tsutsumi N",
+    "Saxton RA",
+    "Lupardus PJ",
+    "Jude KM",
+    "Garcia KC"
+   ]
+  },
+  {
+   "pmid": "36867534",
+   "tier": "A",
+   "note": "Structural basis of JAK trans-activation - the dimeric, activated JH1-JH1 arrangement that the closed state must give way to.",
+   "title": "Structural basis of Janus kinase trans-activation.",
+   "j": "Cell Rep",
+   "date": "2023 Mar 28",
+   "vol": "42",
+   "pages": "112201",
+   "doi": "10.1016/j.celrep.2023.112201",
+   "authors": [
+    "Caveney NA",
+    "Saxton RA",
+    "Waghray D",
+    "Glassman CR",
+    "Tsutsumi N",
+    "Hubbard SR",
+    "Garcia KC"
+   ]
+  },
+  {
+   "pmid": "38446738",
+   "tier": "A",
+   "note": "Multi-domain motions in JAK1 activation studied on an energy landscape: explicitly the open-vs-closed inter-domain question, computationally.",
+   "title": "A novel approach to study multi-domain motions in JAK1's activation mechanism based on energy landscape.",
+   "j": "Brief Bioinform",
+   "date": "2024 Jan 22",
+   "vol": "25",
+   "pages": "",
+   "doi": "10.1093/bib/bbae079",
+   "authors": [
+    "Sun S",
+    "Rodriguez G",
+    "Zhao G",
+    "Sanchez JE",
+    "Guo W",
+    "Du D",
+    "Rodriguez Moncivais OJ",
+    "Hu D",
+    "Liu J",
+    "Kirken RA",
+    "Li L"
+   ]
+  },
+  {
+   "pmid": "40868963",
+   "tier": "B",
+   "note": "MD of JAK1 initial activation: phosphorylation-induced conformational dynamics and inter-domain interactions.",
+   "title": "Molecular Dynamics Simulation Analysis of JAK1 Initial Activation: Phosphorylation-Induced Conformational Dynamics and Domain Interactions.",
+   "j": "Life (Basel)",
+   "date": "2025 Aug 19",
+   "vol": "15",
+   "pages": "",
+   "doi": "10.3390/life15081316",
+   "authors": [
+    "Peng X",
+    "Liu K",
+    "Chen G",
+    "Sun S"
+   ]
+  },
+  {
+   "pmid": "27227461",
+   "tier": "B",
+   "note": "Crystal structure of the JAK2 FERM-SH2 module - the evidence that FERM and SH2 move as one rigid block, which is why only FERM-vs-kinase moves.",
+   "title": "Crystal Structure of the FERM-SH2 Module of Human Jak2.",
+   "j": "PLoS One",
+   "date": "2016",
+   "vol": "11",
+   "pages": "e0156218",
+   "doi": "10.1371/journal.pone.0156218",
+   "authors": [
+    "McNally R",
+    "Toms AV",
+    "Eck MJ"
+   ]
+  }
+ ],
+ "Q06124": [
+  {
+   "pmid": "9491886",
+   "tier": "A",
+   "note": "The founding autoinhibited crystal: N-SH2 inserted into the PTP catalytic cleft. The CLOSED state of this protein.",
+   "title": "Crystal structure of the tyrosine phosphatase SHP-2.",
+   "j": "Cell",
+   "date": "1998 Feb 20",
+   "vol": "92",
+   "pages": "441-50",
+   "doi": "",
+   "authors": [
+    "Hof P",
+    "Pluskey S",
+    "Dhe-Paganon S",
+    "Eck MJ",
+    "Shoelson SE"
+   ]
+  },
+  {
+   "pmid": "27362227",
+   "tier": "A",
+   "note": "SHP099 binds a tunnel formed only where N-SH2, C-SH2 and PTP meet - an allosteric site that exists in the closed state and not the open one.",
+   "title": "Allosteric inhibition of SHP2 phosphatase inhibits cancers driven by receptor tyrosine kinases.",
+   "j": "Nature",
+   "date": "2016 Jul 7",
+   "vol": "535",
+   "pages": "148-52",
+   "doi": "",
+   "authors": [
+    "Chen YN",
+    "LaMarche MJ",
+    "Chan HM",
+    "Fekkes P",
+    "Garcia-Fortanet J",
+    "Acker MG",
+    "Antonakos B",
+    "Chen CH",
+    "Chen Z",
+    "Cooke VG",
+    "Dobson JR",
+    "Deng Z",
+    "Fei F",
+    "Firestone B",
+    "Fodor M",
+    "Fridrich C",
+    "Gao H",
+    "Grunenfelder D",
+    "Hao HX",
+    "Jacob J",
+    "Ho S",
+    "Hsiao K",
+    "Kang ZB",
+    "Karki R",
+    "Kato M",
+    "Larrow J",
+    "La Bonte LR",
+    "Lenoir F",
+    "Liu G",
+    "Liu S",
+    "Majumdar D",
+    "Meyer MJ",
+    "Palermo M",
+    "Perez L",
+    "Pu M",
+    "Price E",
+    "Quinn C",
+    "Shakya S",
+    "Shultz MD",
+    "Slisz J",
+    "Venkatesan K",
+    "Wang P",
+    "Warmuth M",
+    "Williams S",
+    "Yang G",
+    "Yuan J",
+    "Zhang JH",
+    "Zhu P",
+    "Ramsey T",
+    "Keen NJ",
+    "Sellers WR",
+    "Stams T",
+    "Fortin PD"
+   ]
+  },
+  {
+   "pmid": "30375376",
+   "tier": "A",
+   "note": "Mechanism of activating mutations AND allosteric drug inhibition: the open and closed states and the mutations that shift between them.",
+   "title": "Mechanism of activating mutations and allosteric drug inhibition of the phosphatase SHP2.",
+   "j": "Nat Commun",
+   "date": "2018 Oct 30",
+   "vol": "9",
+   "pages": "4507",
+   "doi": "10.1038/s41467-018-06814-w",
+   "authors": [
+    "P\u00e1dua RAP",
+    "Sun Y",
+    "Marko I",
+    "Pitsawong W",
+    "Stiller JB",
+    "Otten R",
+    "Kern D"
+   ]
+  },
+  {
+   "pmid": "30375388",
+   "tier": "A",
+   "note": "Structural reorganization by oncogenic mutations, and why an open-shifted oncoprotein resists an inhibitor that needs the closed state.",
+   "title": "Structural reorganization of SHP2 by oncogenic mutations and implications for oncoprotein resistance to allosteric inhibition.",
+   "j": "Nat Commun",
+   "date": "2018 Oct 30",
+   "vol": "9",
+   "pages": "4508",
+   "doi": "10.1038/s41467-018-06823-9",
+   "authors": [
+    "LaRochelle JR",
+    "Fodor M",
+    "Vemulapalli V",
+    "Mohseni M",
+    "Wang P",
+    "Stams T",
+    "LaMarche MJ",
+    "Chopra R",
+    "Acker MG",
+    "Blacklow SC"
+   ]
+  },
+  {
+   "pmid": "38129686",
+   "tier": "A",
+   "note": "An atomistic ensemble of the ACTIVE (open) phosphatase - the open state characterised in its own right rather than inferred.",
+   "title": "Atomistic ensemble of active SHP2 phosphatase.",
+   "j": "Commun Biol",
+   "date": "2023 Dec 21",
+   "vol": "6",
+   "pages": "1289",
+   "doi": "10.1038/s42003-023-05682-5",
+   "authors": [
+    "Anselmi M",
+    "Hub JS"
+   ]
+  }
+ ],
+ "P12931": [
+  {
+   "pmid": "9024657",
+   "tier": "B",
+   "note": "The first three-dimensional structure of c-Src: the assembled, autoinhibited SH3-SH2-kinase arrangement.",
+   "title": "Three-dimensional structure of the tyrosine kinase c-Src.",
+   "j": "Nature",
+   "date": "1997 Feb 13",
+   "vol": "385",
+   "pages": "595-602",
+   "doi": "",
+   "authors": [
+    "Xu W",
+    "Harrison SC",
+    "Eck MJ"
+   ]
+  },
+  {
+   "pmid": "10360179",
+   "tier": "A",
+   "note": "Crystal structures of c-Src revealing the autoinhibitory mechanism - the SH3-SH2 clamp on the back of the kinase domain.",
+   "title": "Crystal structures of c-Src reveal features of its autoinhibitory mechanism.",
+   "j": "Mol Cell",
+   "date": "1999 May",
+   "vol": "3",
+   "pages": "629-38",
+   "doi": "",
+   "authors": [
+    "Xu W",
+    "Doshi A",
+    "Lei M",
+    "Eck MJ",
+    "Harrison SC"
+   ]
+  },
+  {
+   "pmid": "15939018",
+   "tier": "A",
+   "note": "An ACTIVE-conformation c-Src complex, with the proposed steps of activation: the second state, and the path between.",
+   "title": "The crystal structure of a c-Src complex in an active conformation suggests possible steps in c-Src activation.",
+   "j": "Structure",
+   "date": "2005 Jun",
+   "vol": "13",
+   "pages": "861-71",
+   "doi": "",
+   "authors": [
+    "Cowan-Jacob SW",
+    "Fendrich G",
+    "Manley PW",
+    "Jahnke W",
+    "Fabbro D",
+    "Liebetanz J",
+    "Meyer T"
+   ]
+  },
+  {
+   "pmid": "27715044",
+   "tier": "A",
+   "note": "The conformational transition pathway and free energy landscape of c-Src activation - the open/closed transition computed end to end.",
+   "title": "The Activation of c-Src Tyrosine Kinase: Conformational Transition Pathway and Free Energy Landscape.",
+   "j": "J Phys Chem B",
+   "date": "2017 Apr 20",
+   "vol": "121",
+   "pages": "3352-3363",
+   "doi": "10.1021/acs.jpcb.6b08409",
+   "authors": [
+    "Fajer M",
+    "Meng Y",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "31331936",
+   "tier": "A",
+   "note": "Autophosphorylation activates c-Src through GLOBAL structural rearrangements - the inter-domain change measured, not the active site.",
+   "title": "Autophosphorylation activates c-Src kinase through global structural rearrangements.",
+   "j": "J Biol Chem",
+   "date": "2019 Aug 30",
+   "vol": "294",
+   "pages": "13186-13197",
+   "doi": "10.1074/jbc.RA119.008199",
+   "authors": [
+    "Boczek EE",
+    "Luo Q",
+    "Dehling M",
+    "R\u00f6pke M",
+    "Mader SL",
+    "Seidl A",
+    "Kaila VRI",
+    "Buchner J"
+   ]
+  }
+ ],
+ "P00519": [
+  {
+   "pmid": "12654251",
+   "tier": "A",
+   "note": "Structural basis for the autoinhibition of c-Abl: the assembled SH3-SH2-kinase clamp. The CLOSED state.",
+   "title": "Structural basis for the autoinhibition of c-Abl tyrosine kinase.",
+   "j": "Cell",
+   "date": "2003 Mar 21",
+   "vol": "112",
+   "pages": "859-71",
+   "doi": "",
+   "authors": [
+    "Nagar B",
+    "Hantschel O",
+    "Young MA",
+    "Scheffzek K",
+    "Veach D",
+    "Bornmann W",
+    "Clarkson B",
+    "Superti-Furga G",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "12654250",
+   "tier": "A",
+   "note": "The myristoyl/phosphotyrosine switch - the latch that holds the closed state, and what releasing it does.",
+   "title": "A myristoyl/phosphotyrosine switch regulates c-Abl.",
+   "j": "Cell",
+   "date": "2003 Mar 21",
+   "vol": "112",
+   "pages": "845-57",
+   "doi": "",
+   "authors": [
+    "Hantschel O",
+    "Nagar B",
+    "Guettler S",
+    "Kretzschmar J",
+    "Dorey K",
+    "Kuriyan J",
+    "Superti-Furga G"
+   ]
+  },
+  {
+   "pmid": "16543148",
+   "tier": "A",
+   "note": "Organization of the SH3-SH2 unit in ACTIVE AND INACTIVE forms of c-Abl: both inter-domain arrangements in one paper.",
+   "title": "Organization of the SH3-SH2 unit in active and inactive forms of the c-Abl tyrosine kinase.",
+   "j": "Mol Cell",
+   "date": "2006 Mar 17",
+   "vol": "21",
+   "pages": "787-98",
+   "doi": "",
+   "authors": [
+    "Nagar B",
+    "Hantschel O",
+    "Seeliger M",
+    "Davies JM",
+    "Weis WI",
+    "Superti-Furga G",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "33004676",
+   "tier": "A",
+   "note": "Conformational states dynamically populated by a kinase determine its function - the Abl state ensemble, not a single structure.",
+   "title": "Conformational states dynamically populated by a kinase determine its function.",
+   "j": "Science",
+   "date": "2020 Oct 9",
+   "vol": "370",
+   "pages": "",
+   "doi": "10.1126/science.abc2754",
+   "authors": [
+    "Xie T",
+    "Saleh T",
+    "Rossi P",
+    "Kalodimos CG"
+   ]
+  },
+  {
+   "pmid": "37843155",
+   "tier": "B",
+   "note": "The myristoyl group's dual role in allosterically regulating and localising Abl: simulations of the latched and unlatched arrangements.",
+   "title": "Myristoyl's dual role in allosterically regulating and localizing Abl kinase.",
+   "j": "Elife",
+   "date": "2023 Oct 16",
+   "vol": "12",
+   "pages": "",
+   "doi": "10.7554/eLife.85216",
+   "authors": [
+    "de Buhr S",
+    "Gr\u00e4ter F"
+   ]
+  }
+ ],
+ "Q06187": [
+  {
+   "pmid": "25699547",
+   "tier": "A",
+   "note": "Autoinhibition of BTK and its activation by soluble IP6: the compact autoinhibited arrangement and what opens it.",
+   "title": "Autoinhibition of Bruton's tyrosine kinase (Btk) and activation by soluble inositol hexakisphosphate.",
+   "j": "Elife",
+   "date": "2015 Feb 20",
+   "vol": "4",
+   "pages": "",
+   "doi": "10.7554/eLife.06074",
+   "authors": [
+    "Wang Q",
+    "Vogan EM",
+    "Nocka LM",
+    "Rosen CE",
+    "Zorn JA",
+    "Harrison SC",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "31019091",
+   "tier": "A",
+   "note": "D. E. Shaw Research. Structural mechanism for BTK activation at the cell membrane - the full open/closed transition from long-timescale MD.",
+   "title": "Structural mechanism for Bruton's tyrosine kinase activation at the cell membrane.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2019 May 7",
+   "vol": "116",
+   "pages": "9390-9399",
+   "doi": "10.1073/pnas.1819301116",
+   "authors": [
+    "Wang Q",
+    "Pechersky Y",
+    "Sagawa S",
+    "Pan AC",
+    "Shaw DE"
+   ]
+  },
+  {
+   "pmid": "31591208",
+   "tier": "A",
+   "note": "The lipid-targeting PH domain turns its AUTOINHIBITORY face toward the TEC kinases - how the PH-TH module docks in the closed state.",
+   "title": "Lipid-targeting pleckstrin homology domain turns its autoinhibitory face toward the TEC kinases.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2019 Oct 22",
+   "vol": "116",
+   "pages": "21539-21544",
+   "doi": "10.1073/pnas.1907566116",
+   "authors": [
+    "Amatya N",
+    "Wales TE",
+    "Kwon A",
+    "Yeung W",
+    "Joseph RE",
+    "Fulton DB",
+    "Kannan N",
+    "Engen JR",
+    "Andreotti AH"
+   ]
+  },
+  {
+   "pmid": "33226337",
+   "tier": "A",
+   "note": "Differential impact of active-site inhibitors on the conformational state of FULL-LENGTH BTK: drugs read out as open or closed.",
+   "title": "Differential impact of BTK active site inhibitors on the conformational state of full-length BTK.",
+   "j": "Elife",
+   "date": "2020 Nov 23",
+   "vol": "9",
+   "pages": "",
+   "doi": "10.7554/eLife.60470",
+   "authors": [
+    "Joseph RE",
+    "Amatya N",
+    "Fulton DB",
+    "Engen JR",
+    "Wales TE",
+    "Andreotti A"
+   ]
+  },
+  {
+   "pmid": "39728925",
+   "tier": "A",
+   "note": "The clinically approved BTK inhibitors against full-length BTK conformation, with the CLL resistance mutations - conformation and resistance in one study.",
+   "title": "Impact of the clinically approved BTK inhibitors on the conformation of full-length BTK and analysis of the development of BTK resistance mutations in chronic lymphocytic leukemia.",
+   "j": "Elife",
+   "date": "2024 Dec 27",
+   "vol": "13",
+   "pages": "",
+   "doi": "10.7554/eLife.95488",
+   "authors": [
+    "Joseph RE",
+    "Wales TE",
+    "Jayne S",
+    "Britton RG",
+    "Fulton DB",
+    "Engen JR",
+    "Dyer MJS",
+    "Andreotti AH"
+   ]
+  }
+ ],
+ "Q5S007": [
+  {
+   "pmid": "32814344",
+   "tier": "A",
+   "note": "Cryo-EM of LRRK2 and a model for microtubule interaction: the first full inter-domain architecture.",
+   "title": "Structure of LRRK2 in Parkinson's disease and model for microtubule interaction.",
+   "j": "Nature",
+   "date": "2020 Dec",
+   "vol": "588",
+   "pages": "344-349",
+   "doi": "10.1038/s41586-020-2673-2",
+   "authors": [
+    "Deniston CK",
+    "Salogiannis J",
+    "Mathea S",
+    "Snead DM",
+    "Lahiri I",
+    "Matyszewski M",
+    "Donosa O",
+    "Watanabe R",
+    "B\u00f6hning J",
+    "Shiau AK",
+    "Knapp S",
+    "Villa E",
+    "Reck-Peterson SL",
+    "Leschziner AE"
+   ]
+  },
+  {
+   "pmid": "32783917",
+   "tier": "A",
+   "note": "The IN SITU structure of LRRK2 inside cells - the arrangement as it actually occurs, including the filament form.",
+   "title": "The In Situ Structure of Parkinson's Disease-Linked LRRK2.",
+   "j": "Cell",
+   "date": "2020 Sep 17",
+   "vol": "182",
+   "pages": "1508-1518.e16",
+   "doi": "10.1016/j.cell.2020.08.004",
+   "authors": [
+    "Watanabe R",
+    "Buschauer R",
+    "B\u00f6hning J",
+    "Audagnotto M",
+    "Lasker K",
+    "Lu TW",
+    "Boassa D",
+    "Taylor S",
+    "Villa E"
+   ]
+  },
+  {
+   "pmid": "34107286",
+   "tier": "A",
+   "note": "Structural analysis of full-length human LRRK2: the autoinhibited, closed inter-domain arrangement of the whole protein.",
+   "title": "Structural analysis of the full-length human LRRK2.",
+   "j": "Cell",
+   "date": "2021 Jun 24",
+   "vol": "184",
+   "pages": "3519-3527.e10",
+   "doi": "10.1016/j.cell.2021.05.004",
+   "authors": [
+    "Myasnikov A",
+    "Zhu H",
+    "Hixson P",
+    "Xie B",
+    "Yu K",
+    "Pitre A",
+    "Peng J",
+    "Sun J"
+   ]
+  },
+  {
+   "pmid": "38127736",
+   "tier": "A",
+   "note": "Rab29-dependent ASYMMETRICAL activation - two different inter-domain arrangements within one assembly.",
+   "title": "Rab29-dependent asymmetrical activation of leucine-rich repeat kinase 2.",
+   "j": "Science",
+   "date": "2023 Dec 22",
+   "vol": "382",
+   "pages": "1404-1411",
+   "doi": "10.1126/science.adi9926",
+   "authors": [
+    "Zhu H",
+    "Tonelli F",
+    "Turk M",
+    "Prescott A",
+    "Alessi DR",
+    "Sun J"
+   ]
+  },
+  {
+   "pmid": "42575089",
+   "tier": "A",
+   "note": "The structural basis for LRRK2's activation and autoinhibition: the open and closed states and the transition, 2026.",
+   "title": "The structural basis for LRRK2's activation and autoinhibition.",
+   "j": "Cell",
+   "date": "2026 Oct 1",
+   "vol": "189",
+   "pages": "6460-6473.e7",
+   "doi": "10.1016/j.cell.2026.07.027",
+   "authors": [
+    "Villagran Suarez A",
+    "Hatch KS",
+    "Bodrug T",
+    "Gai W",
+    "Surridge KJ",
+    "Moussikhina E",
+    "Nguyen KHV",
+    "Sanz-Murillo M",
+    "Callahan R",
+    "Xiong E",
+    "Ramos D",
+    "Zhu L",
+    "Dederer V",
+    "Mathea S",
+    "Iwasa J",
+    "Knapp S",
+    "Shokat KM",
+    "Reck-Peterson SL",
+    "Leschziner AE"
+   ]
+  }
+ ],
+ "P13569": [
+  {
+   "pmid": "27912062",
+   "tier": "B",
+   "note": "The first atomic structure of CFTR (zebrafish, dephosphorylated): the NBD-separated state.",
+   "title": "Atomic Structure of the Cystic Fibrosis Transmembrane Conductance Regulator.",
+   "j": "Cell",
+   "date": "2016 Dec 1",
+   "vol": "167",
+   "pages": "1586-1597.e9",
+   "doi": "10.1016/j.cell.2016.11.014",
+   "authors": [
+    "Zhang Z",
+    "Chen J"
+   ]
+  },
+  {
+   "pmid": "28340353",
+   "tier": "A",
+   "note": "Molecular structure of the HUMAN CFTR ion channel in the dephosphorylated, NBD-separated state. Our 5UAK lineage.",
+   "title": "Molecular Structure of the Human CFTR Ion Channel.",
+   "j": "Cell",
+   "date": "2017 Mar 23",
+   "vol": "169",
+   "pages": "85-95.e8",
+   "doi": "10.1016/j.cell.2017.02.024",
+   "authors": [
+    "Liu F",
+    "Zhang Z",
+    "Csan\u00e1dy L",
+    "Gadsby DC",
+    "Chen J"
+   ]
+  },
+  {
+   "pmid": "28735752",
+   "tier": "A",
+   "note": "Conformational changes of CFTR upon phosphorylation AND ATP binding - the NBD-separated and NBD-dimerised states in one study. Exactly our open/closed pair.",
+   "title": "Conformational Changes of CFTR upon Phosphorylation and ATP Binding.",
+   "j": "Cell",
+   "date": "2017 Jul 27",
+   "vol": "170",
+   "pages": "483-491.e8",
+   "doi": "10.1016/j.cell.2017.06.041",
+   "authors": [
+    "Zhang Z",
+    "Liu F",
+    "Chen J"
+   ]
+  },
+  {
+   "pmid": "30459277",
+   "tier": "A",
+   "note": "The ATP-bound, phosphorylated human CFTR: the NBD-dimerised CLOSED state at higher resolution. Our 6MSM lineage.",
+   "title": "Molecular structure of the ATP-bound, phosphorylated human CFTR.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2018 Dec 11",
+   "vol": "115",
+   "pages": "12757-12762",
+   "doi": "10.1073/pnas.1815287115",
+   "authors": [
+    "Zhang Z",
+    "Liu F",
+    "Chen J"
+   ]
+  },
+  {
+   "pmid": "36949202",
+   "tier": "A",
+   "note": "CFTR function, pathology and pharmacology at single-molecule resolution - the state occupancies measured one molecule at a time.",
+   "title": "CFTR function, pathology and pharmacology at single-molecule resolution.",
+   "j": "Nature",
+   "date": "2023 Apr",
+   "vol": "616",
+   "pages": "606-614",
+   "doi": "10.1038/s41586-023-05854-7",
+   "authors": [
+    "Levring J",
+    "Terry DS",
+    "Kilic Z",
+    "Fitzgerald G",
+    "Blanchard SC",
+    "Chen J"
+   ]
+  }
+ ],
+ "P08183": [
+  {
+   "pmid": "29440498",
+   "tier": "A",
+   "note": "Zosuquidar- and UIC2-bound human-mouse chimeric ABCB1: an inhibitor-trapped inward-facing arrangement.",
+   "title": "Structure of a zosuquidar and UIC2-bound human-mouse chimeric ABCB1.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2018 Feb 27",
+   "vol": "115",
+   "pages": "E1973-E1982",
+   "doi": "10.1073/pnas.1717044115",
+   "authors": [
+    "Alam A",
+    "K\u00fcng R",
+    "Kowal J",
+    "McLeod RA",
+    "Tremp N",
+    "Broude EV",
+    "Roninson IB",
+    "Stahlberg H",
+    "Locher KP"
+   ]
+  },
+  {
+   "pmid": "30765569",
+   "tier": "A",
+   "note": "Structural insight into substrate and inhibitor discrimination by human P-glycoprotein - different NBD arrangements for different cargo.",
+   "title": "Structural insight into substrate and inhibitor discrimination by human P-glycoprotein.",
+   "j": "Science",
+   "date": "2019 Feb 15",
+   "vol": "363",
+   "pages": "753-756",
+   "doi": "10.1126/science.aav7102",
+   "authors": [
+    "Alam A",
+    "Kowal J",
+    "Broude E",
+    "Roninson I",
+    "Locher KP"
+   ]
+  },
+  {
+   "pmid": "30622258",
+   "tier": "A",
+   "note": "INWARD- AND OUTWARD-FACING X-ray structures of a homodimeric P-glycoprotein: both ends of the transport cycle in one paper.",
+   "title": "Inward- and outward-facing X-ray crystal structures of homodimeric P-glycoprotein CmABCB1.",
+   "j": "Nat Commun",
+   "date": "2019 Jan 8",
+   "vol": "10",
+   "pages": "88",
+   "doi": "10.1038/s41467-018-08007-x",
+   "authors": [
+    "Kodan A",
+    "Yamaguchi T",
+    "Nakatsu T",
+    "Matsuoka K",
+    "Kimura Y",
+    "Ueda K",
+    "Kato H"
+   ]
+  },
+  {
+   "pmid": "33020312",
+   "tier": "A",
+   "note": "Cryo-EM structures revealing distinct mechanisms of inhibition of human ABCB1 - several distinct NBD arrangements.",
+   "title": "Cryo-EM structures reveal distinct mechanisms of inhibition of the human multidrug transporter ABCB1.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2020 Oct 20",
+   "vol": "117",
+   "pages": "26245-26253",
+   "doi": "10.1073/pnas.2010264117",
+   "authors": [
+    "Nosol K",
+    "Romane K",
+    "Irobalieva RN",
+    "Alam A",
+    "Kowal J",
+    "Fujita N",
+    "Locher KP"
+   ]
+  },
+  {
+   "pmid": "31641149",
+   "tier": "A",
+   "note": "Dynamics of P-glycoprotein in THREE conformational states - the states characterised dynamically, not as static snapshots.",
+   "title": "Dynamics of ABC Transporter P-glycoprotein in Three Conformational States.",
+   "j": "Sci Rep",
+   "date": "2019 Oct 22",
+   "vol": "9",
+   "pages": "15092",
+   "doi": "10.1038/s41598-019-50578-2",
+   "authors": [
+    "Kopcho N",
+    "Chang G",
+    "Komives EA"
+   ]
+  }
+ ],
+ "O00571": [
+  {
+   "pmid": "26598523",
+   "tier": "A",
+   "note": "Autoinhibitory INTERDOMAIN interactions redefine the catalytic core of human DDX3 - the RecA1-RecA2 open/closed question stated directly.",
+   "title": "Autoinhibitory Interdomain Interactions and Subfamily-specific Extensions Redefine the Catalytic Core of the Human DEAD-box Protein DDX3.",
+   "j": "J Biol Chem",
+   "date": "2016 Jan 29",
+   "vol": "291",
+   "pages": "2412-21",
+   "doi": "10.1074/jbc.M115.700625",
+   "authors": [
+    "Floor SN",
+    "Condon KJ",
+    "Sharma D",
+    "Jankowsky E",
+    "Doudna JA"
+   ]
+  },
+  {
+   "pmid": "25724843",
+   "tier": "A",
+   "note": "Cancer-associated DDX3X mutants defective in RNA-stimulated ATP hydrolysis, with crystal structures: the mutations that break domain closure.",
+   "title": "Cancer-associated mutants of RNA helicase DDX3X are defective in RNA-stimulated ATP hydrolysis.",
+   "j": "J Mol Biol",
+   "date": "2015 May 8",
+   "vol": "427",
+   "pages": "1779-1796",
+   "doi": "10.1016/j.jmb.2015.02.015",
+   "authors": [
+    "Epling LB",
+    "Grace CR",
+    "Lowe BR",
+    "Partridge JF",
+    "Enemark EJ"
+   ]
+  },
+  {
+   "pmid": "31300642",
+   "tier": "A",
+   "note": "The mechanism of RNA duplex recognition and unwinding by DDX3X - the RNA-bound CLOSED state of the two RecA lobes.",
+   "title": "The mechanism of RNA duplex recognition and unwinding by DEAD-box helicase DDX3X.",
+   "j": "Nat Commun",
+   "date": "2019 Jul 12",
+   "vol": "10",
+   "pages": "3085",
+   "doi": "10.1038/s41467-019-11083-2",
+   "authors": [
+    "Song H",
+    "Ji X"
+   ]
+  },
+  {
+   "pmid": "34056415",
+   "tier": "B",
+   "note": "C-terminally truncated DDX3X with RNA and nucleotide substrates: how ligand occupancy sets the inter-lobe arrangement.",
+   "title": "Interactions of the C-Terminal Truncated DEAD-Box Protein DDX3X With RNA and Nucleotide Substrates.",
+   "j": "ACS Omega",
+   "date": "2021 May 18",
+   "vol": "6",
+   "pages": "12640-12646",
+   "doi": "10.1021/acsomega.1c00700",
+   "authors": [
+    "Moore AFT",
+    "de Victoria AL",
+    "Koculi E"
+   ]
+  },
+  {
+   "pmid": "42497113",
+   "tier": "A",
+   "note": "DDX3X syndrome mutations LOCK DDX3X-RNA conformational states - pathogenic variants acting by trapping one state. 2026.",
+   "title": "DDX3X syndrome mutations lock DDX3X-RNA conformational states to drive persistent pathological condensation and neuronal death.",
+   "j": "Hum Mol Genet",
+   "date": "2026 Jul 15",
+   "vol": "35",
+   "pages": "",
+   "doi": "pii: ddag066. 10.1093/hmg/ddag066",
+   "authors": [
+    "Ghosh P",
+    "Kapuganti SK",
+    "Gopal S",
+    "A R V",
+    "Lamba S",
+    "Rajyaguru PI",
+    "Kesavardhana S"
+   ]
+  }
+ ],
+ "_jakref": [
+  {
+   "pmid": "24918548",
+   "label": "Shan / D. E. Shaw Research, JAK2 JH2-JH1",
+   "note": "MD-derived model of the pseudokinase-kinase autoinhibitory interface; nearly all activating disease mutations map to it.",
+   "title": "Molecular basis for pseudokinase-dependent autoinhibition of JAK2 tyrosine kinase.",
+   "j": "Nat Struct Mol Biol",
+   "date": "2014 Jul",
+   "vol": "21",
+   "pages": "579-84",
+   "doi": "10.1038/nsmb.2849",
+   "authors": [
+    "Shan Y",
+    "Gnanasambandan K",
+    "Ungureanu D",
+    "Kim ET",
+    "Hammar\u00e9n H",
+    "Yamashita K",
+    "Silvennoinen O",
+    "Shaw DE",
+    "Hubbard SR"
+   ]
+  },
+  {
+   "pmid": "biorxiv-727727",
+   "label": "Ayaz / D. E. Shaw Research, FULL-LENGTH JAK2",
+   "note": "Structural models of full-length JAK2 in active AND inactive forms from long-timescale MD - the four-domain arrangement, i.e. exactly our open/closed sense."
+  },
+  {
+   "pmid": "24843152",
+   "label": "Lupardus, experimental TYK2",
+   "note": "The 2.8 A JH2-JH1 crystal: the only experimental closed inter-domain state in the family.",
+   "title": "Structure of the pseudokinase-kinase domains from protein kinase TYK2 reveals a mechanism for Janus kinase (JAK) autoinhibition.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2014 Jun 3",
+   "vol": "111",
+   "pages": "8025-30",
+   "doi": "10.1073/pnas.1401180111",
+   "authors": [
+    "Lupardus PJ",
+    "Ultsch M",
+    "Wallweber H",
+    "Bir Kohli P",
+    "Johnson AR",
+    "Eigenbrot C"
+   ]
+  },
+  {
+   "pmid": "35271300",
+   "label": "Glassman, experimental full-length JAK",
+   "note": "Cryo-EM of a JAK-cytokine-receptor complex: autoinhibited module and activated dimer.",
+   "title": "Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.",
+   "j": "Science",
+   "date": "2022 Apr 8",
+   "vol": "376",
+   "pages": "163-169",
+   "doi": "10.1126/science.abn8933",
+   "authors": [
+    "Glassman CR",
+    "Tsutsumi N",
+    "Saxton RA",
+    "Lupardus PJ",
+    "Jude KM",
+    "Garcia KC"
+   ]
+  }
+ ]
+}

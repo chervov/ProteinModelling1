@@ -262,6 +262,159 @@ whole protein**, so a kinase domain may be borrowed from such a hit but an inter
   carries the signal that identity has lost.
 - **PTPN11's closest relative, PTPN6/SHP1 at 58.3%**, is the protein with the same N-SH2-occludes-PTP
   autoinhibition, so its structures and its mutation literature transfer directly.
+## Papers establishing the open/closed states, per protein
+
+The benchmark for this project is the JAK set — four papers that between them report the inter-domain
+arrangement experimentally and model the transition:
+
+- **Shan / D. E. Shaw Research, JAK2 JH2-JH1** — Shan Y, Gnanasambandan K, Ungureanu D, Kim ET, Hammarén H, Yamashita K, Silvennoinen O, Shaw DE, Hubbard SR. *Molecular basis for pseudokinase-dependent autoinhibition of JAK2 tyrosine kinase.* **Nat Struct Mol Biol** 2014;21:579-84. doi:10.1038/nsmb.2849 · PMID 24918548
+  <br>MD-derived model of the pseudokinase-kinase autoinhibitory interface; nearly all activating disease mutations map to it.
+- **Ayaz / D. E. Shaw Research, FULL-LENGTH JAK2** — Ayaz P, Hammarén HM, Raivola J, Sharon D, Hubbard SR, Silvennoinen O, Shan Y, Shaw DE. *Structural models of full-length JAK2 kinase.* **bioRxiv**, posted 7 August 2019. doi:10.1101/727727 — **preprint, no peer-reviewed version noted**
+  <br>Structural models of full-length JAK2 in active AND inactive forms from long-timescale MD - the four-domain arrangement, i.e. exactly our open/closed sense.
+- **Lupardus, experimental TYK2** — Lupardus PJ, Ultsch M, Wallweber H, Bir Kohli P, Johnson AR, Eigenbrot C. *Structure of the pseudokinase-kinase domains from protein kinase TYK2 reveals a mechanism for Janus kinase (JAK) autoinhibition.* **Proc Natl Acad Sci U S A** 2014;111:8025-30. doi:10.1073/pnas.1401180111 · PMID 24843152
+  <br>The 2.8 A JH2-JH1 crystal: the only experimental closed inter-domain state in the family.
+- **Glassman, experimental full-length JAK** — Glassman CR, Tsutsumi N, Saxton RA, Lupardus PJ, Jude KM, Garcia KC. *Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.* **Science** 2022;376:163-169. doi:10.1126/science.abn8933 · PMID 35271300
+  <br>Cryo-EM of a JAK-cytokine-receptor complex: autoinhibited module and activated dimer.
+
+Note that **Shan 2014 and Ayaz 2019 are two different D. E. Shaw Research papers**: the first models only
+the JH2–JH1 pair, the second the complete FERM–SH2–JH2–JH1 arrangement in active *and* inactive forms,
+which is the one that matches the inter-domain sense used throughout this project.
+
+Below, five equivalents for each of the ten, graded by how directly they answer the question.
+**Tier A** = reports or models two or more distinct inter-domain arrangements of that protein;
+**Tier B** = one arrangement experimentally, or the transition approached indirectly.
+Full records in [`data/conf_papers.json`](data/conf_papers.json).
+
+### TYK2 (P29597)
+
+1. **[A]** Lupardus PJ et al., *Proc Natl Acad Sci U S A* 2014;111:8025-30. [Structure of the pseudokinase-kinase domains from protein kinase TYK2 reveals a mechanism for Janus kinase (JAK) autoinhibition.](https://doi.org/10.1073/pnas.1401180111) · PMID 24843152
+   <br>The 2.8 A crystal of the TYK2 JH2-JH1 module: the only experimental CLOSED inter-domain state anywhere in the JAK family. Our 4OLI.
+2. **[B]** Wallweber HJ et al., *Nat Struct Mol Biol* 2014;21:443-8. [Structural basis of recognition of interferon-α receptor by tyrosine kinase 2.](https://doi.org/10.1038/nsmb.2807) · PMID 24704786
+   <br>TYK2 FERM-SH2 bound to the IFNAR1 box1/box2 region - the other half of the architecture, fixing where the N-terminal module sits.
+3. **[A]** Glassman CR et al., *Science* 2022;376:163-169. [Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.](https://doi.org/10.1126/science.abn8933) · PMID 35271300
+   <br>Full-length JAK on a receptor dimer by cryo-EM: the autoinhibited JH2-JH1 module docked against FERM-SH2, and the activated dimer. The architecture TYK2 is read onto.
+4. **[B]** Wang J et al., *J Invest Dermatol* 2025;145:3158-3173. [A Triple-Action Inhibitory Mechanism of Allosteric TYK2-Specific Inhibitors.](https://doi.org/10.1016/j.jid.2025.04.025) · PMID 40378946
+   <br>Allosteric TYK2-specific inhibitors acting by a triple mechanism; the drug works by holding the JH2-JH1 arrangement, so it is a conformational readout.
+5. **[B]** Locke GA et al., *Methods Enzymol* 2022;667:685-727. [Identification and characterization of TYK2 pseudokinase domain stabilizers that allosterically inhibit TYK2 signaling.](https://doi.org/10.1016/bs.mie.2022.03.051) · PMID 35525559
+   <br>Pseudokinase-domain STABILISERS that allosterically inhibit TYK2 - small molecules selected for locking the closed state.
+
+### JAK1 (P23458)
+
+1. **[A]** Glassman CR et al., *Science* 2022;376:163-169. [Structure of a Janus kinase cytokine receptor complex reveals the basis for dimeric activation.](https://doi.org/10.1126/science.abn8933) · PMID 35271300
+   <br>Full-length JAK1 cryo-EM: the compact autoinhibited arrangement and the activated receptor-dimer arrangement side by side.
+2. **[A]** Caveney NA et al., *Cell Rep* 2023;42:112201. [Structural basis of Janus kinase trans-activation.](https://doi.org/10.1016/j.celrep.2023.112201) · PMID 36867534
+   <br>Structural basis of JAK trans-activation - the dimeric, activated JH1-JH1 arrangement that the closed state must give way to.
+3. **[A]** Sun S et al., *Brief Bioinform* 2024;25:. [A novel approach to study multi-domain motions in JAK1's activation mechanism based on energy landscape.](https://doi.org/10.1093/bib/bbae079) · PMID 38446738
+   <br>Multi-domain motions in JAK1 activation studied on an energy landscape: explicitly the open-vs-closed inter-domain question, computationally.
+4. **[B]** Peng X et al., *Life (Basel)* 2025;15:. [Molecular Dynamics Simulation Analysis of JAK1 Initial Activation: Phosphorylation-Induced Conformational Dynamics and Domain Interactions.](https://doi.org/10.3390/life15081316) · PMID 40868963
+   <br>MD of JAK1 initial activation: phosphorylation-induced conformational dynamics and inter-domain interactions.
+5. **[B]** McNally R et al., *PLoS One* 2016;11:e0156218. [Crystal Structure of the FERM-SH2 Module of Human Jak2.](https://doi.org/10.1371/journal.pone.0156218) · PMID 27227461
+   <br>Crystal structure of the JAK2 FERM-SH2 module - the evidence that FERM and SH2 move as one rigid block, which is why only FERM-vs-kinase moves.
+
+### PTPN11 (Q06124)
+
+1. **[A]** Hof P et al., *Cell* 1998;92:441-50. [Crystal structure of the tyrosine phosphatase SHP-2.](https://pubmed.ncbi.nlm.nih.gov/9491886/) · PMID 9491886
+   <br>The founding autoinhibited crystal: N-SH2 inserted into the PTP catalytic cleft. The CLOSED state of this protein.
+2. **[A]** Chen YN et al., *Nature* 2016;535:148-52. [Allosteric inhibition of SHP2 phosphatase inhibits cancers driven by receptor tyrosine kinases.](https://pubmed.ncbi.nlm.nih.gov/27362227/) · PMID 27362227
+   <br>SHP099 binds a tunnel formed only where N-SH2, C-SH2 and PTP meet - an allosteric site that exists in the closed state and not the open one.
+3. **[A]** Pádua RAP et al., *Nat Commun* 2018;9:4507. [Mechanism of activating mutations and allosteric drug inhibition of the phosphatase SHP2.](https://doi.org/10.1038/s41467-018-06814-w) · PMID 30375376
+   <br>Mechanism of activating mutations AND allosteric drug inhibition: the open and closed states and the mutations that shift between them.
+4. **[A]** LaRochelle JR et al., *Nat Commun* 2018;9:4508. [Structural reorganization of SHP2 by oncogenic mutations and implications for oncoprotein resistance to allosteric inhibition.](https://doi.org/10.1038/s41467-018-06823-9) · PMID 30375388
+   <br>Structural reorganization by oncogenic mutations, and why an open-shifted oncoprotein resists an inhibitor that needs the closed state.
+5. **[A]** Anselmi M et al., *Commun Biol* 2023;6:1289. [Atomistic ensemble of active SHP2 phosphatase.](https://doi.org/10.1038/s42003-023-05682-5) · PMID 38129686
+   <br>An atomistic ensemble of the ACTIVE (open) phosphatase - the open state characterised in its own right rather than inferred.
+
+### SRC (P12931)
+
+1. **[B]** Xu W et al., *Nature* 1997;385:595-602. [Three-dimensional structure of the tyrosine kinase c-Src.](https://pubmed.ncbi.nlm.nih.gov/9024657/) · PMID 9024657
+   <br>The first three-dimensional structure of c-Src: the assembled, autoinhibited SH3-SH2-kinase arrangement.
+2. **[A]** Xu W et al., *Mol Cell* 1999;3:629-38. [Crystal structures of c-Src reveal features of its autoinhibitory mechanism.](https://pubmed.ncbi.nlm.nih.gov/10360179/) · PMID 10360179
+   <br>Crystal structures of c-Src revealing the autoinhibitory mechanism - the SH3-SH2 clamp on the back of the kinase domain.
+3. **[A]** Cowan-Jacob SW et al., *Structure* 2005;13:861-71. [The crystal structure of a c-Src complex in an active conformation suggests possible steps in c-Src activation.](https://pubmed.ncbi.nlm.nih.gov/15939018/) · PMID 15939018
+   <br>An ACTIVE-conformation c-Src complex, with the proposed steps of activation: the second state, and the path between.
+4. **[A]** Fajer M et al., *J Phys Chem B* 2017;121:3352-3363. [The Activation of c-Src Tyrosine Kinase: Conformational Transition Pathway and Free Energy Landscape.](https://doi.org/10.1021/acs.jpcb.6b08409) · PMID 27715044
+   <br>The conformational transition pathway and free energy landscape of c-Src activation - the open/closed transition computed end to end.
+5. **[A]** Boczek EE et al., *J Biol Chem* 2019;294:13186-13197. [Autophosphorylation activates c-Src kinase through global structural rearrangements.](https://doi.org/10.1074/jbc.RA119.008199) · PMID 31331936
+   <br>Autophosphorylation activates c-Src through GLOBAL structural rearrangements - the inter-domain change measured, not the active site.
+
+### ABL1 (P00519)
+
+1. **[A]** Nagar B et al., *Cell* 2003;112:859-71. [Structural basis for the autoinhibition of c-Abl tyrosine kinase.](https://pubmed.ncbi.nlm.nih.gov/12654251/) · PMID 12654251
+   <br>Structural basis for the autoinhibition of c-Abl: the assembled SH3-SH2-kinase clamp. The CLOSED state.
+2. **[A]** Hantschel O et al., *Cell* 2003;112:845-57. [A myristoyl/phosphotyrosine switch regulates c-Abl.](https://pubmed.ncbi.nlm.nih.gov/12654250/) · PMID 12654250
+   <br>The myristoyl/phosphotyrosine switch - the latch that holds the closed state, and what releasing it does.
+3. **[A]** Nagar B et al., *Mol Cell* 2006;21:787-98. [Organization of the SH3-SH2 unit in active and inactive forms of the c-Abl tyrosine kinase.](https://pubmed.ncbi.nlm.nih.gov/16543148/) · PMID 16543148
+   <br>Organization of the SH3-SH2 unit in ACTIVE AND INACTIVE forms of c-Abl: both inter-domain arrangements in one paper.
+4. **[A]** Xie T et al., *Science* 2020;370:. [Conformational states dynamically populated by a kinase determine its function.](https://doi.org/10.1126/science.abc2754) · PMID 33004676
+   <br>Conformational states dynamically populated by a kinase determine its function - the Abl state ensemble, not a single structure.
+5. **[B]** de Buhr S et al., *Elife* 2023;12:. [Myristoyl's dual role in allosterically regulating and localizing Abl kinase.](https://doi.org/10.7554/eLife.85216) · PMID 37843155
+   <br>The myristoyl group's dual role in allosterically regulating and localising Abl: simulations of the latched and unlatched arrangements.
+
+### BTK (Q06187)
+
+1. **[A]** Wang Q et al., *Elife* 2015;4:. [Autoinhibition of Bruton's tyrosine kinase (Btk) and activation by soluble inositol hexakisphosphate.](https://doi.org/10.7554/eLife.06074) · PMID 25699547
+   <br>Autoinhibition of BTK and its activation by soluble IP6: the compact autoinhibited arrangement and what opens it.
+2. **[A]** Wang Q et al., *Proc Natl Acad Sci U S A* 2019;116:9390-9399. [Structural mechanism for Bruton's tyrosine kinase activation at the cell membrane.](https://doi.org/10.1073/pnas.1819301116) · PMID 31019091
+   <br>D. E. Shaw Research. Structural mechanism for BTK activation at the cell membrane - the full open/closed transition from long-timescale MD.
+3. **[A]** Amatya N et al., *Proc Natl Acad Sci U S A* 2019;116:21539-21544. [Lipid-targeting pleckstrin homology domain turns its autoinhibitory face toward the TEC kinases.](https://doi.org/10.1073/pnas.1907566116) · PMID 31591208
+   <br>The lipid-targeting PH domain turns its AUTOINHIBITORY face toward the TEC kinases - how the PH-TH module docks in the closed state.
+4. **[A]** Joseph RE et al., *Elife* 2020;9:. [Differential impact of BTK active site inhibitors on the conformational state of full-length BTK.](https://doi.org/10.7554/eLife.60470) · PMID 33226337
+   <br>Differential impact of active-site inhibitors on the conformational state of FULL-LENGTH BTK: drugs read out as open or closed.
+5. **[A]** Joseph RE et al., *Elife* 2024;13:. [Impact of the clinically approved BTK inhibitors on the conformation of full-length BTK and analysis of the development of BTK resistance mutations in chronic lymphocytic leukemia.](https://doi.org/10.7554/eLife.95488) · PMID 39728925
+   <br>The clinically approved BTK inhibitors against full-length BTK conformation, with the CLL resistance mutations - conformation and resistance in one study.
+
+### LRRK2 (Q5S007)
+
+1. **[A]** Deniston CK et al., *Nature* 2020;588:344-349. [Structure of LRRK2 in Parkinson's disease and model for microtubule interaction.](https://doi.org/10.1038/s41586-020-2673-2) · PMID 32814344
+   <br>Cryo-EM of LRRK2 and a model for microtubule interaction: the first full inter-domain architecture.
+2. **[A]** Watanabe R et al., *Cell* 2020;182:1508-1518.e16. [The In Situ Structure of Parkinson's Disease-Linked LRRK2.](https://doi.org/10.1016/j.cell.2020.08.004) · PMID 32783917
+   <br>The IN SITU structure of LRRK2 inside cells - the arrangement as it actually occurs, including the filament form.
+3. **[A]** Myasnikov A et al., *Cell* 2021;184:3519-3527.e10. [Structural analysis of the full-length human LRRK2.](https://doi.org/10.1016/j.cell.2021.05.004) · PMID 34107286
+   <br>Structural analysis of full-length human LRRK2: the autoinhibited, closed inter-domain arrangement of the whole protein.
+4. **[A]** Zhu H et al., *Science* 2023;382:1404-1411. [Rab29-dependent asymmetrical activation of leucine-rich repeat kinase 2.](https://doi.org/10.1126/science.adi9926) · PMID 38127736
+   <br>Rab29-dependent ASYMMETRICAL activation - two different inter-domain arrangements within one assembly.
+5. **[A]** Villagran Suarez A et al., *Cell* 2026;189:6460-6473.e7. [The structural basis for LRRK2's activation and autoinhibition.](https://doi.org/10.1016/j.cell.2026.07.027) · PMID 42575089
+   <br>The structural basis for LRRK2's activation and autoinhibition: the open and closed states and the transition, 2026.
+
+### CFTR (P13569)
+
+1. **[B]** Zhang Z et al., *Cell* 2016;167:1586-1597.e9. [Atomic Structure of the Cystic Fibrosis Transmembrane Conductance Regulator.](https://doi.org/10.1016/j.cell.2016.11.014) · PMID 27912062
+   <br>The first atomic structure of CFTR (zebrafish, dephosphorylated): the NBD-separated state.
+2. **[A]** Liu F et al., *Cell* 2017;169:85-95.e8. [Molecular Structure of the Human CFTR Ion Channel.](https://doi.org/10.1016/j.cell.2017.02.024) · PMID 28340353
+   <br>Molecular structure of the HUMAN CFTR ion channel in the dephosphorylated, NBD-separated state. Our 5UAK lineage.
+3. **[A]** Zhang Z et al., *Cell* 2017;170:483-491.e8. [Conformational Changes of CFTR upon Phosphorylation and ATP Binding.](https://doi.org/10.1016/j.cell.2017.06.041) · PMID 28735752
+   <br>Conformational changes of CFTR upon phosphorylation AND ATP binding - the NBD-separated and NBD-dimerised states in one study. Exactly our open/closed pair.
+4. **[A]** Zhang Z et al., *Proc Natl Acad Sci U S A* 2018;115:12757-12762. [Molecular structure of the ATP-bound, phosphorylated human CFTR.](https://doi.org/10.1073/pnas.1815287115) · PMID 30459277
+   <br>The ATP-bound, phosphorylated human CFTR: the NBD-dimerised CLOSED state at higher resolution. Our 6MSM lineage.
+5. **[A]** Levring J et al., *Nature* 2023;616:606-614. [CFTR function, pathology and pharmacology at single-molecule resolution.](https://doi.org/10.1038/s41586-023-05854-7) · PMID 36949202
+   <br>CFTR function, pathology and pharmacology at single-molecule resolution - the state occupancies measured one molecule at a time.
+
+### ABCB1 (P08183)
+
+1. **[A]** Alam A et al., *Proc Natl Acad Sci U S A* 2018;115:E1973-E1982. [Structure of a zosuquidar and UIC2-bound human-mouse chimeric ABCB1.](https://doi.org/10.1073/pnas.1717044115) · PMID 29440498
+   <br>Zosuquidar- and UIC2-bound human-mouse chimeric ABCB1: an inhibitor-trapped inward-facing arrangement.
+2. **[A]** Alam A et al., *Science* 2019;363:753-756. [Structural insight into substrate and inhibitor discrimination by human P-glycoprotein.](https://doi.org/10.1126/science.aav7102) · PMID 30765569
+   <br>Structural insight into substrate and inhibitor discrimination by human P-glycoprotein - different NBD arrangements for different cargo.
+3. **[A]** Kodan A et al., *Nat Commun* 2019;10:88. [Inward- and outward-facing X-ray crystal structures of homodimeric P-glycoprotein CmABCB1.](https://doi.org/10.1038/s41467-018-08007-x) · PMID 30622258
+   <br>INWARD- AND OUTWARD-FACING X-ray structures of a homodimeric P-glycoprotein: both ends of the transport cycle in one paper.
+4. **[A]** Nosol K et al., *Proc Natl Acad Sci U S A* 2020;117:26245-26253. [Cryo-EM structures reveal distinct mechanisms of inhibition of the human multidrug transporter ABCB1.](https://doi.org/10.1073/pnas.2010264117) · PMID 33020312
+   <br>Cryo-EM structures revealing distinct mechanisms of inhibition of human ABCB1 - several distinct NBD arrangements.
+5. **[A]** Kopcho N et al., *Sci Rep* 2019;9:15092. [Dynamics of ABC Transporter P-glycoprotein in Three Conformational States.](https://doi.org/10.1038/s41598-019-50578-2) · PMID 31641149
+   <br>Dynamics of P-glycoprotein in THREE conformational states - the states characterised dynamically, not as static snapshots.
+
+### DDX3X (O00571)
+
+1. **[A]** Floor SN et al., *J Biol Chem* 2016;291:2412-21. [Autoinhibitory Interdomain Interactions and Subfamily-specific Extensions Redefine the Catalytic Core of the Human DEAD-box Protein DDX3.](https://doi.org/10.1074/jbc.M115.700625) · PMID 26598523
+   <br>Autoinhibitory INTERDOMAIN interactions redefine the catalytic core of human DDX3 - the RecA1-RecA2 open/closed question stated directly.
+2. **[A]** Epling LB et al., *J Mol Biol* 2015;427:1779-1796. [Cancer-associated mutants of RNA helicase DDX3X are defective in RNA-stimulated ATP hydrolysis.](https://doi.org/10.1016/j.jmb.2015.02.015) · PMID 25724843
+   <br>Cancer-associated DDX3X mutants defective in RNA-stimulated ATP hydrolysis, with crystal structures: the mutations that break domain closure.
+3. **[A]** Song H et al., *Nat Commun* 2019;10:3085. [The mechanism of RNA duplex recognition and unwinding by DEAD-box helicase DDX3X.](https://doi.org/10.1038/s41467-019-11083-2) · PMID 31300642
+   <br>The mechanism of RNA duplex recognition and unwinding by DDX3X - the RNA-bound CLOSED state of the two RecA lobes.
+4. **[B]** Moore AFT et al., *ACS Omega* 2021;6:12640-12646. [Interactions of the C-Terminal Truncated DEAD-Box Protein DDX3X With RNA and Nucleotide Substrates.](https://doi.org/10.1021/acsomega.1c00700) · PMID 34056415
+   <br>C-terminally truncated DDX3X with RNA and nucleotide substrates: how ligand occupancy sets the inter-lobe arrangement.
+5. **[A]** Ghosh P et al., *Hum Mol Genet* 2026;35:. [DDX3X syndrome mutations lock DDX3X-RNA conformational states to drive persistent pathological condensation and neuronal death.](https://doi.org/pii: ddag066. 10.1093/hmg/ddag066) · PMID 42497113
+   <br>DDX3X syndrome mutations LOCK DDX3X-RNA conformational states - pathogenic variants acting by trapping one state. 2026.
+
 ## Reproducing
 
 ```
@@ -274,6 +427,7 @@ scripts/ddg.py      dual-state PyRosetta ddG, sequence-aligned numbering -> ddg.
 scripts/mutfeat.py  per-mutation predictors, pLDDT, pockets, interface -> mutfeat.json
 scripts/clust.py    k=2 clustering + gnomAD r4 -> clusters.json
 scripts/homol.py    phmmer vs reviewed human SwissProt -> homologs.json
+scripts/confpapers.py  curated conformational-state literature, PubMed-verified -> conf_papers.json
 scripts/rep10.py    builds the HTML
 ```
 
