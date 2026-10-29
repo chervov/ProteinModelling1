@@ -1,0 +1,727 @@
+{
+ "P29597": {
+  "gene": "TYK2",
+  "pair": "Protein kinase 1|Protein kinase 2",
+  "closed": {
+   "label": "AlphaFold v6",
+   "file": "af/P29597.pdb",
+   "chain": null,
+   "dist": 37.9,
+   "contacts": 44
+  },
+  "open": {
+   "label": "7t6f.1.A (48.2% id)",
+   "file": "st/P29597_sm_7t6f-1-A.pdb",
+   "chain": null,
+   "dist": 47.8,
+   "contacts": 17
+  },
+  "ddg": {
+   "V678F": {
+    "closed": 15.503,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.767
+   },
+   "V678M": {
+    "closed": 3.704,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 2.881
+   },
+   "V678A": {
+    "closed": 3.257,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 2.564
+   },
+   "P982A": {
+    "closed": -8.206,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 1.492
+   },
+   "P1104A": {
+    "closed": -10.465,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 2.639
+   },
+   "I684S": {
+    "closed": 6.55,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 6.869
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1187
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1151
+    }
+   }
+  }
+ },
+ "P23458": {
+  "gene": "JAK1",
+  "pair": "Protein kinase 1|Protein kinase 2",
+  "closed": {
+   "label": "ma-l9b1f \u2014 Jeanpierre closed JAK1",
+   "file": "st/P23458_ma-l9b1f.cif",
+   "chain": null,
+   "dist": 39.8,
+   "contacts": 33
+  },
+  "open": {
+   "label": "7t6f.1.A (94.5% id)",
+   "file": "st/P23458_sm_7t6f-1-A.pdb",
+   "chain": null,
+   "dist": 46.4,
+   "contacts": 19
+  },
+  "ddg": {
+   "V658F": {
+    "closed": 8.458,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.278
+   },
+   "A634D": {
+    "closed": 46.845,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 3.48
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1154
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1123
+    }
+   }
+  }
+ },
+ "P00519": {
+  "gene": "ABL1",
+  "pair": "SH2|Protein kinase",
+  "closed": {
+   "label": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+   "file": "st/P00519_1OPL.pdb",
+   "chain": "A",
+   "dist": 32.6,
+   "contacts": 15
+  },
+  "open": {
+   "label": "1y57.1.A (43.1% id)",
+   "file": "st/P00519_sm_1y57-1-A.pdb",
+   "chain": null,
+   "dist": 54.1,
+   "contacts": 0
+  },
+  "ddg": {
+   "T315I": {
+    "closed": 58.809,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 6.466
+   },
+   "Y253H": {
+    "closed": 0.276,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.007
+   },
+   "E255K": {
+    "closed": 2.022,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 4.064
+   },
+   "M351T": {
+    "closed": 5.341,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 2.944
+   },
+   "F317L": {
+    "closed": 0.272,
+    "flag": {
+     "closed": "",
+     "open": "clash"
+    },
+    "open": 26.825
+   },
+   "H396R": {
+    "closed": 2.789,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 4.495
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": -19,
+     "nres": 451
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 437
+    }
+   }
+  }
+ },
+ "P12931": {
+  "gene": "SRC",
+  "pair": "SH2|Protein kinase",
+  "closed": {
+   "label": "1FMK \u2014 inactive c-Src",
+   "file": "st/P12931_1FMK.pdb",
+   "chain": "A",
+   "dist": 34.7,
+   "contacts": 18
+  },
+  "open": {
+   "label": "1Y57 \u2014 activated-like",
+   "file": "st/P12931_1Y57.pdb",
+   "chain": "A",
+   "dist": 53.9,
+   "contacts": 0
+  },
+  "ddg": {
+   "Y530F": {
+    "closed": -3.491,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -9.125
+   },
+   "E527K": {
+    "closed": -58.771,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 4.55
+   },
+   "K298M": {
+    "closed": 0.296,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 5.493
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 3,
+     "nres": 438
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 3,
+     "nres": 452
+    }
+   }
+  }
+ },
+ "Q06187": {
+  "gene": "BTK",
+  "pair": "SH3|Protein kinase",
+  "closed": {
+   "label": "AlphaFold v6",
+   "file": "af/Q06187.pdb",
+   "chain": null,
+   "dist": 32.8,
+   "contacts": 9
+  },
+  "open": {
+   "label": "8GMB \u2014 BTK full-length autoinhibited",
+   "file": "st/Q06187_8GMB.pdb",
+   "chain": "A",
+   "dist": 85.2,
+   "contacts": 0
+  },
+  "ddg": {
+   "C481S": {
+    "closed": -1.568,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.542
+   },
+   "C481T": {
+    "closed": -0.619,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 0.711
+   },
+   "T474I": {
+    "closed": 8.858,
+    "flag": {
+     "closed": "",
+     "open": "clash"
+    },
+    "open": 29.208
+   },
+   "T316A": {
+    "closed": 1.747,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -4.312
+   },
+   "R28C": {
+    "closed": -18.752,
+    "flag": {
+     "closed": ""
+    },
+    "open": null
+   },
+   "E41K": {
+    "closed": 1.147,
+    "flag": {
+     "closed": ""
+    },
+    "open": null
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 659
+    },
+    "open": {
+     "seq_match": 95,
+     "offset": 0,
+     "nres": 438
+    }
+   }
+  }
+ },
+ "Q06124": {
+  "gene": "PTPN11",
+  "pair": "SH2 1|Tyrosine-protein phosphatase",
+  "closed": {
+   "label": "AlphaFold v6",
+   "file": "af/Q06124.pdb",
+   "chain": null,
+   "dist": 30.6,
+   "contacts": 70
+  },
+  "open": {
+   "label": "6CRF \u2014 activated SHP2 E76K",
+   "file": "st/Q06124_6CRF.pdb",
+   "chain": "A",
+   "dist": 46.4,
+   "contacts": 1
+  },
+  "ddg": {
+   "E76K": {
+    "closed": 7.174,
+    "flag": {
+     "closed": ""
+    },
+    "open": "wt_mismatch"
+   },
+   "A72V": {
+    "closed": 43.137,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 0.904
+   },
+   "D61G": {
+    "closed": 7.105,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 3.343
+   },
+   "T42A": {
+    "closed": 2.019,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 1.925
+   },
+   "N308D": {
+    "closed": 3.642,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -0.67
+   },
+   "T507K": {
+    "closed": -4.521,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 0.906
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 593
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 475
+    }
+   }
+  }
+ },
+ "P13569": {
+  "gene": "CFTR",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "closed": {
+   "label": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+   "file": "st/P13569_6MSM.pdb",
+   "chain": "A",
+   "dist": 26.7,
+   "contacts": 70
+  },
+  "open": {
+   "label": "5UAK \u2014 CFTR dephosphorylated/NBD-separated",
+   "file": "st/P13569_5UAK.pdb",
+   "chain": "A",
+   "dist": 46.7,
+   "contacts": 0
+  },
+  "ddg": {
+   "G551D": {
+    "closed": 51.26,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 6.899
+   },
+   "R117H": {
+    "closed": 1.24,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 0.957
+   },
+   "N1303K": {
+    "closed": 179.489,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": 9.173
+   },
+   "G85E": {
+    "closed": 1608.387,
+    "flag": {
+     "closed": "clash",
+     "open": "clash"
+    },
+    "open": 262.738
+   },
+   "R334W": {
+    "closed": -1.417,
+    "flag": {
+     "closed": "",
+     "open": "clash"
+    },
+    "open": 143.303
+   },
+   "S549N": {
+    "closed": 7.199,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 0.41
+   },
+   "G1244E": {
+    "closed": 397.548,
+    "flag": {
+     "closed": "clash",
+     "open": "clash"
+    },
+    "open": 259.09
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1185
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1139
+    }
+   }
+  }
+ },
+ "P08183": {
+  "gene": "ABCB1",
+  "pair": "ABC transporter 1|ABC transporter 2",
+  "closed": {
+   "label": "6s7p.1.A (78.1% id)",
+   "file": "st/P08183_sm_6s7p-1-A.pdb",
+   "chain": null,
+   "dist": 28.0,
+   "contacts": 78
+  },
+  "open": {
+   "label": "AlphaFold v6",
+   "file": "af/P08183.pdb",
+   "chain": null,
+   "dist": 44.4,
+   "contacts": 0
+  },
+  "ddg": {
+   "G185V": {
+    "closed": 653.287,
+    "flag": {
+     "closed": "clash",
+     "open": "clash"
+    },
+    "open": 821.794
+   },
+   "S893Y": {
+    "closed": 1530.243,
+    "flag": {
+     "closed": "clash",
+     "open": "clash"
+    },
+    "open": 1787.857
+   },
+   "I261V": {
+    "closed": 2.85,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": 3.424
+   },
+   "N183S": {
+    "closed": -1.158,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.023
+   },
+   "V1251I": {
+    "closed": 9.489,
+    "flag": {
+     "closed": "",
+     "open": "clash"
+    },
+    "open": 97.41
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1220
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1280
+    }
+   }
+  }
+ },
+ "Q5S007": {
+  "gene": "LRRK2",
+  "pair": "COR|Protein kinase",
+  "closed": {
+   "label": "AlphaFold v6",
+   "file": "af/Q5S007.pdb",
+   "chain": null,
+   "dist": 32.6,
+   "contacts": 26
+  },
+  "open": {
+   "label": "7LHW \u2014 LRRK2 full-length",
+   "file": "st/Q5S007_7LHW.pdb",
+   "chain": "A",
+   "dist": 38.6,
+   "contacts": 3
+  },
+  "ddg": {
+   "G2019S": {
+    "closed": 87.736,
+    "flag": {
+     "closed": "clash",
+     "open": ""
+    },
+    "open": -0.596
+   },
+   "I2020T": {
+    "closed": -23.018,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -3.731
+   },
+   "R1441C": {
+    "closed": 3.816,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -2.593
+   },
+   "R1441G": {
+    "closed": 7.908,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -1.054
+   },
+   "Y1699C": {
+    "closed": -22.775,
+    "flag": {
+     "closed": "",
+     "open": "clash"
+    },
+    "open": -37.531
+   },
+   "Y2018F": {
+    "closed": -0.598,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -2.31
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 2527
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 1814
+    }
+   }
+  }
+ },
+ "O00571": {
+  "gene": "DDX3X",
+  "pair": "Helicase ATP-binding|Helicase C-terminal",
+  "closed": {
+   "label": "AlphaFold v6",
+   "file": "af/O00571.pdb",
+   "chain": null,
+   "dist": 31.8,
+   "contacts": 36
+  },
+  "open": {
+   "label": "8ssw.1.A (100.0% id)",
+   "file": "st/O00571_sm_8ssw-1-A.pdb",
+   "chain": null,
+   "dist": 50.7,
+   "contacts": 0
+  },
+  "ddg": {
+   "G302V": {
+    "closed": -2.395,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -0.592
+   },
+   "G325E": {
+    "closed": -2.714,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -3.184
+   },
+   "R534H": {
+    "closed": 10.442,
+    "flag": {
+     "closed": "",
+     "open": ""
+    },
+    "open": -0.941
+   },
+   "R376C": {
+    "closed": -77.958,
+    "flag": {
+     "closed": "clash",
+     "open": "clash"
+    },
+    "open": -55.537
+   },
+   "_meta": {
+    "closed": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 662
+    },
+    "open": {
+     "seq_match": 100,
+     "offset": 0,
+     "nres": 447
+    }
+   }
+  }
+ }
+}

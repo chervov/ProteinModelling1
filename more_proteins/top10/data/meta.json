@@ -1,0 +1,9898 @@
+{
+ "P29597": {
+  "gene": "TYK2",
+  "acc": "P29597",
+  "why": "JH2 pseudokinase clamps JH1; deucravacitinib/BMS-986202 bind JH2",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P29597.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "4OLI \u2014 closed JH2-JH1 (X-ray 2.8 A)",
+    "file": "st/P29597_4OLI.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 4OLI"
+   },
+   {
+    "label": "8ewy.1.A (48.2% id)",
+    "file": "st/P29597_sm_8ewy-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 48.165,
+    "chain": null,
+    "src": "SWISS-MODEL on 8ewy.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "7t6f.1.A (48.2% id)",
+    "file": "st/P29597_sm_7t6f-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 48.165,
+    "chain": null,
+    "src": "SWISS-MODEL on 7t6f.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "4oli.1.A (99.7% id)",
+    "file": "st/P29597_sm_4oli-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 99.678,
+    "chain": null,
+    "src": "SWISS-MODEL on 4oli.1.A",
+    "ndom": 2
+   }
+  ],
+  "length": 1187,
+  "name": "Non-receptor tyrosine-protein kinase TYK2",
+  "domains": [
+   [
+    "FERM",
+    26,
+    431
+   ],
+   [
+    "SH2; atypical",
+    450,
+    529
+   ],
+   [
+    "Protein kinase 1",
+    589,
+    875
+   ],
+   [
+    "Protein kinase 2",
+    897,
+    1176
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 1187,
+    "plddt_med": 90.1,
+    "pairs": {
+     "FERM|SH2; atypical": {
+      "dist": 39.0,
+      "contacts": 24,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       58,
+       59,
+       62,
+       67,
+       68,
+       69,
+       71,
+       125,
+       126,
+       127,
+       128,
+       140,
+       431
+      ],
+      "resB": [
+       451,
+       453,
+       454,
+       456,
+       458,
+       459,
+       462,
+       476,
+       477,
+       478,
+       479,
+       480,
+       481
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 48.5,
+      "contacts": 35,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       285,
+       286,
+       289,
+       292,
+       293,
+       380,
+       381,
+       382,
+       383,
+       384,
+       385,
+       387,
+       396,
+       398,
+       399,
+       400,
+       424,
+       428,
+       429
+      ],
+      "resB": [
+       667,
+       668,
+       669,
+       716,
+       720,
+       723,
+       724,
+       727,
+       744,
+       752,
+       754,
+       860,
+       863,
+       864,
+       867,
+       870,
+       872,
+       875
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 39.6,
+      "contacts": 6,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       123,
+       131,
+       132,
+       287,
+       376,
+       401
+      ],
+      "resB": [
+       918,
+       955,
+       963,
+       1170,
+       1174
+      ]
+     },
+     "SH2; atypical|Protein kinase 1": {
+      "dist": 41.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2; atypical|Protein kinase 2": {
+      "dist": 52.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 37.9,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       610,
+       611,
+       613,
+       635,
+       637,
+       663,
+       664,
+       665,
+       666,
+       668,
+       672,
+       674,
+       688,
+       728,
+       743,
+       744,
+       754,
+       756
+      ],
+      "resB": [
+       898,
+       899,
+       900,
+       901,
+       902,
+       910,
+       913,
+       919,
+       921,
+       922,
+       923,
+       924,
+       926,
+       980,
+       982,
+       983,
+       1032,
+       1033,
+       1034
+      ]
+     }
+    }
+   },
+   {
+    "label": "4OLI \u2014 closed JH2-JH1 (X-ray 2.8 A)",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 4OLI",
+    "nres": 539,
+    "plddt_med": 75.9,
+    "pairs": {
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 39.6,
+      "contacts": 38,
+      "cov": [
+       89,
+       95
+      ],
+      "resA": [
+       610,
+       637,
+       663,
+       664,
+       665,
+       666,
+       668,
+       672,
+       674,
+       688,
+       728,
+       743,
+       744,
+       754,
+       756
+      ],
+      "resB": [
+       899,
+       900,
+       901,
+       913,
+       919,
+       921,
+       922,
+       923,
+       924,
+       926,
+       980,
+       982,
+       983,
+       989,
+       1032,
+       1033,
+       1034
+      ]
+     }
+    }
+   },
+   {
+    "label": "8ewy.1.A (48.2% id)",
+    "kind": "swissmodel",
+    "identity": 48.165,
+    "src": "SWISS-MODEL on 8ewy.1.A",
+    "nres": 1151,
+    "plddt_med": 0.7,
+    "pairs": {
+     "FERM|SH2; atypical": {
+      "dist": 39.8,
+      "contacts": 9,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       62,
+       68,
+       69,
+       71
+      ],
+      "resB": [
+       454,
+       475,
+       476,
+       477,
+       478,
+       479,
+       480
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 46.7,
+      "contacts": 32,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       285,
+       286,
+       287,
+       288,
+       290,
+       366,
+       383,
+       384,
+       385,
+       386,
+       387,
+       398,
+       399,
+       400,
+       424,
+       429
+      ],
+      "resB": [
+       622,
+       667,
+       668,
+       669,
+       717,
+       720,
+       721,
+       723,
+       724,
+       727,
+       743,
+       744,
+       751,
+       754,
+       756,
+       860,
+       863,
+       864,
+       867
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 94.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2; atypical|Protein kinase 1": {
+      "dist": 40.8,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2; atypical|Protein kinase 2": {
+      "dist": 79.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 47.6,
+      "contacts": 29,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [
+       593,
+       594,
+       595,
+       596,
+       597,
+       599,
+       600,
+       647,
+       648,
+       697,
+       701,
+       768,
+       770,
+       771,
+       774
+      ],
+      "resB": [
+       897,
+       898,
+       899,
+       914,
+       918,
+       919,
+       920,
+       921,
+       934,
+       968,
+       969,
+       970,
+       972
+      ]
+     }
+    }
+   },
+   {
+    "label": "7t6f.1.A (48.2% id)",
+    "kind": "swissmodel",
+    "identity": 48.165,
+    "src": "SWISS-MODEL on 7t6f.1.A",
+    "nres": 1151,
+    "plddt_med": 0.7,
+    "pairs": {
+     "FERM|SH2; atypical": {
+      "dist": 40.7,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       58,
+       62,
+       68,
+       69,
+       126,
+       127
+      ],
+      "resB": [
+       454,
+       459,
+       476,
+       477,
+       478,
+       479,
+       480
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 46.5,
+      "contacts": 35,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       285,
+       286,
+       287,
+       288,
+       289,
+       290,
+       380,
+       381,
+       382,
+       383,
+       384,
+       385,
+       387,
+       398,
+       399,
+       400,
+       424
+      ],
+      "resB": [
+       667,
+       668,
+       669,
+       720,
+       723,
+       724,
+       727,
+       743,
+       744,
+       751,
+       754,
+       756,
+       860,
+       863,
+       864,
+       867
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 85.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2; atypical|Protein kinase 1": {
+      "dist": 41.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2; atypical|Protein kinase 2": {
+      "dist": 55.6,
+      "contacts": 0,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 47.8,
+      "contacts": 17,
+      "cov": [
+       100,
+       99
+      ],
+      "resA": [
+       769,
+       770,
+       773,
+       819,
+       820,
+       821,
+       822,
+       824,
+       825,
+       828,
+       829
+      ],
+      "resB": [
+       916,
+       925,
+       951,
+       952,
+       954,
+       955,
+       961,
+       962,
+       963,
+       1013
+      ]
+     }
+    }
+   },
+   {
+    "label": "4oli.1.A (99.7% id)",
+    "kind": "swissmodel",
+    "identity": 99.678,
+    "src": "SWISS-MODEL on 4oli.1.A",
+    "nres": 599,
+    "plddt_med": 0.8,
+    "pairs": {
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 38.4,
+      "contacts": 43,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       610,
+       611,
+       617,
+       637,
+       663,
+       664,
+       665,
+       666,
+       668,
+       672,
+       673,
+       674,
+       688,
+       728,
+       730,
+       743,
+       744,
+       754,
+       756
+      ],
+      "resB": [
+       898,
+       899,
+       900,
+       901,
+       913,
+       921,
+       922,
+       923,
+       924,
+       926,
+       969,
+       980,
+       982,
+       983,
+       1032,
+       1033,
+       1034,
+       1036
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "FERM|Protein kinase 1": {
+    "n": 3,
+    "dmin": 46.5,
+    "dmax": 48.5,
+    "spread": 2.0,
+    "cmin": 32,
+    "cmax": 35,
+    "at_min": "7t6f.1.A (48.2% id)",
+    "at_max": "AlphaFold v6"
+   },
+   "FERM|Protein kinase 2": {
+    "n": 3,
+    "dmin": 39.6,
+    "dmax": 94.1,
+    "spread": 54.5,
+    "cmin": 0,
+    "cmax": 6,
+    "at_min": "AlphaFold v6",
+    "at_max": "8ewy.1.A (48.2% id)"
+   },
+   "FERM|SH2; atypical": {
+    "n": 3,
+    "dmin": 39.0,
+    "dmax": 40.7,
+    "spread": 1.7,
+    "cmin": 9,
+    "cmax": 24,
+    "at_min": "AlphaFold v6",
+    "at_max": "7t6f.1.A (48.2% id)"
+   },
+   "Protein kinase 1|Protein kinase 2": {
+    "n": 5,
+    "dmin": 37.9,
+    "dmax": 47.8,
+    "spread": 9.9,
+    "cmin": 17,
+    "cmax": 44,
+    "at_min": "AlphaFold v6",
+    "at_max": "7t6f.1.A (48.2% id)"
+   },
+   "SH2; atypical|Protein kinase 1": {
+    "n": 3,
+    "dmin": 40.8,
+    "dmax": 41.9,
+    "spread": 1.1,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "8ewy.1.A (48.2% id)",
+    "at_max": "7t6f.1.A (48.2% id)"
+   },
+   "SH2; atypical|Protein kinase 2": {
+    "n": 3,
+    "dmin": 52.1,
+    "dmax": 79.3,
+    "spread": 27.2,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "AlphaFold v6",
+    "at_max": "8ewy.1.A (48.2% id)"
+   }
+  }
+ },
+ "P23458": {
+  "gene": "JAK1",
+  "acc": "P23458",
+  "why": "open and closed full-length models exist (ModelArchive); JAK inhibitors",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P23458.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "ma-l9b1f \u2014 Jeanpierre closed JAK1",
+    "file": "st/P23458_ma-l9b1f.cif",
+    "kind": "model",
+    "identity": null,
+    "chain": null,
+    "src": "ModelArchive ma-l9b1f"
+   },
+   {
+    "label": "ma-a1sai \u2014 Jeanpierre open JAK1",
+    "file": "st/P23458_ma-a1sai.cif",
+    "kind": "model",
+    "identity": null,
+    "chain": null,
+    "src": "ModelArchive ma-a1sai"
+   },
+   {
+    "label": "8ewy.1.A (94.5% id)",
+    "file": "st/P23458_sm_8ewy-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 94.531,
+    "chain": null,
+    "src": "SWISS-MODEL on 8ewy.1.A",
+    "ndom": 4
+   },
+   {
+    "label": "7t6f.1.A (94.5% id)",
+    "file": "st/P23458_sm_7t6f-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 94.531,
+    "chain": null,
+    "src": "SWISS-MODEL on 7t6f.1.A",
+    "ndom": 4
+   }
+  ],
+  "length": 1154,
+  "name": "Tyrosine-protein kinase JAK1",
+  "domains": [
+   [
+    "FERM",
+    34,
+    420
+   ],
+   [
+    "SH2",
+    439,
+    544
+   ],
+   [
+    "Protein kinase 1",
+    583,
+    855
+   ],
+   [
+    "Protein kinase 2",
+    875,
+    1153
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 1154,
+    "plddt_med": 92.0,
+    "pairs": {
+     "FERM|SH2": {
+      "dist": 40.5,
+      "contacts": 25,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       62,
+       65,
+       66,
+       70,
+       71,
+       72,
+       73,
+       75,
+       129,
+       130,
+       131,
+       420
+      ],
+      "resB": [
+       440,
+       441,
+       442,
+       443,
+       444,
+       445,
+       447,
+       448,
+       468,
+       469,
+       470,
+       471,
+       472,
+       473
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 46.4,
+      "contacts": 35,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       297,
+       370,
+       371,
+       372,
+       373,
+       374,
+       376,
+       377,
+       378,
+       387,
+       388,
+       389,
+       413,
+       418,
+       420
+      ],
+      "resB": [
+       647,
+       648,
+       649,
+       697,
+       700,
+       703,
+       704,
+       707,
+       724,
+       734,
+       837,
+       839,
+       842,
+       843,
+       846,
+       850
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 92.5,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase 1": {
+      "dist": 40.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase 2": {
+      "dist": 79.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 46.5,
+      "contacts": 27,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       588,
+       589,
+       590,
+       591,
+       598,
+       627,
+       677,
+       680,
+       681,
+       750,
+       754,
+       799
+      ],
+      "resB": [
+       875,
+       876,
+       877,
+       890,
+       896,
+       897,
+       898,
+       899,
+       912,
+       946,
+       947,
+       948,
+       949,
+       950,
+       953
+      ]
+     }
+    }
+   },
+   {
+    "label": "ma-l9b1f \u2014 Jeanpierre closed JAK1",
+    "kind": "model",
+    "identity": null,
+    "src": "ModelArchive ma-l9b1f",
+    "nres": 1154,
+    "plddt_med": 99.6,
+    "pairs": {
+     "FERM|SH2": {
+      "dist": 40.8,
+      "contacts": 26,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       62,
+       65,
+       66,
+       70,
+       71,
+       72,
+       73,
+       75,
+       129,
+       130,
+       131,
+       420
+      ],
+      "resB": [
+       440,
+       441,
+       442,
+       443,
+       444,
+       445,
+       447,
+       448,
+       451,
+       468,
+       469,
+       470,
+       471,
+       472,
+       473
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 47.6,
+      "contacts": 31,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       297,
+       370,
+       371,
+       372,
+       373,
+       374,
+       376,
+       377,
+       378,
+       387,
+       389,
+       413,
+       418,
+       420
+      ],
+      "resB": [
+       647,
+       648,
+       649,
+       700,
+       703,
+       704,
+       707,
+       724,
+       734,
+       837,
+       839,
+       842,
+       843,
+       846,
+       850
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 39.8,
+      "contacts": 7,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       297,
+       298,
+       362,
+       365,
+       366
+      ],
+      "resB": [
+       894,
+       901,
+       902,
+       903,
+       933,
+       997
+      ]
+     },
+     "SH2|Protein kinase 1": {
+      "dist": 40.3,
+      "contacts": 1,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       542
+      ],
+      "resB": [
+       833
+      ]
+     },
+     "SH2|Protein kinase 2": {
+      "dist": 55.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 39.8,
+      "contacts": 33,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       604,
+       615,
+       617,
+       643,
+       646,
+       648,
+       652,
+       654,
+       668,
+       669,
+       723,
+       724,
+       731,
+       734,
+       736
+      ],
+      "resB": [
+       877,
+       878,
+       879,
+       891,
+       893,
+       897,
+       899,
+       900,
+       901,
+       904,
+       958,
+       960,
+       961
+      ]
+     }
+    }
+   },
+   {
+    "label": "ma-a1sai \u2014 Jeanpierre open JAK1",
+    "kind": "model",
+    "identity": null,
+    "src": "ModelArchive ma-a1sai",
+    "nres": 1154,
+    "plddt_med": 92.8,
+    "pairs": {
+     "FERM|SH2": {
+      "dist": 40.8,
+      "contacts": 27,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       62,
+       65,
+       66,
+       70,
+       71,
+       72,
+       73,
+       75,
+       129,
+       130,
+       131,
+       133,
+       420
+      ],
+      "resB": [
+       440,
+       441,
+       442,
+       443,
+       444,
+       445,
+       447,
+       448,
+       451,
+       468,
+       469,
+       470,
+       471,
+       472,
+       473
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 46.7,
+      "contacts": 33,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       369,
+       370,
+       371,
+       372,
+       373,
+       374,
+       376,
+       377,
+       378,
+       387,
+       389,
+       413,
+       418,
+       420
+      ],
+      "resB": [
+       647,
+       648,
+       649,
+       697,
+       700,
+       703,
+       704,
+       707,
+       734,
+       837,
+       839,
+       842,
+       843,
+       846,
+       850
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 92.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase 1": {
+      "dist": 40.3,
+      "contacts": 1,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       542
+      ],
+      "resB": [
+       833
+      ]
+     },
+     "SH2|Protein kinase 2": {
+      "dist": 78.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 46.3,
+      "contacts": 32,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       587,
+       588,
+       589,
+       590,
+       591,
+       592,
+       593,
+       594,
+       598,
+       627,
+       677,
+       681,
+       748,
+       750,
+       751,
+       754,
+       799
+      ],
+      "resB": [
+       875,
+       876,
+       877,
+       890,
+       896,
+       897,
+       898,
+       899,
+       900,
+       912,
+       946,
+       947,
+       948,
+       949,
+       950,
+       953
+      ]
+     }
+    }
+   },
+   {
+    "label": "8ewy.1.A (94.5% id)",
+    "kind": "swissmodel",
+    "identity": 94.531,
+    "src": "SWISS-MODEL on 8ewy.1.A",
+    "nres": 1123,
+    "plddt_med": 0.8,
+    "pairs": {
+     "FERM|SH2": {
+      "dist": 42.5,
+      "contacts": 26,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       65,
+       66,
+       70,
+       71,
+       72,
+       73,
+       75,
+       129,
+       130,
+       131,
+       133,
+       134,
+       420
+      ],
+      "resB": [
+       440,
+       441,
+       442,
+       443,
+       444,
+       447,
+       448,
+       450,
+       451,
+       454,
+       468,
+       469,
+       470,
+       471,
+       472
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 47.9,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       297,
+       298,
+       299,
+       301,
+       370,
+       372,
+       373,
+       374,
+       375,
+       376,
+       377,
+       385,
+       387,
+       388,
+       389,
+       413
+      ],
+      "resB": [
+       647,
+       648,
+       649,
+       693,
+       696,
+       697,
+       700,
+       701,
+       703,
+       704,
+       707,
+       723,
+       724,
+       731,
+       732,
+       734,
+       736,
+       839,
+       842,
+       843,
+       846,
+       850
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 94.5,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase 1": {
+      "dist": 40.7,
+      "contacts": 5,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       456,
+       542,
+       543
+      ],
+      "resB": [
+       831,
+       832,
+       833,
+       834
+      ]
+     },
+     "SH2|Protein kinase 2": {
+      "dist": 78.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 47.2,
+      "contacts": 25,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       587,
+       588,
+       589,
+       590,
+       591,
+       593,
+       594,
+       598,
+       627,
+       677,
+       681,
+       748,
+       750,
+       751,
+       754
+      ],
+      "resB": [
+       875,
+       876,
+       877,
+       893,
+       896,
+       897,
+       899,
+       900,
+       912,
+       946,
+       947,
+       948,
+       953
+      ]
+     }
+    }
+   },
+   {
+    "label": "7t6f.1.A (94.5% id)",
+    "kind": "swissmodel",
+    "identity": 94.531,
+    "src": "SWISS-MODEL on 7t6f.1.A",
+    "nres": 1123,
+    "plddt_med": 0.8,
+    "pairs": {
+     "FERM|SH2": {
+      "dist": 41.9,
+      "contacts": 23,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       62,
+       65,
+       66,
+       70,
+       71,
+       72,
+       73,
+       75,
+       129,
+       130,
+       131,
+       133,
+       134,
+       420
+      ],
+      "resB": [
+       440,
+       443,
+       445,
+       447,
+       448,
+       450,
+       454,
+       468,
+       469,
+       470,
+       471,
+       472
+      ]
+     },
+     "FERM|Protein kinase 1": {
+      "dist": 47.0,
+      "contacts": 41,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       297,
+       298,
+       299,
+       300,
+       301,
+       370,
+       372,
+       373,
+       374,
+       376,
+       387,
+       388,
+       389,
+       413,
+       418,
+       420
+      ],
+      "resB": [
+       647,
+       648,
+       649,
+       693,
+       697,
+       700,
+       703,
+       704,
+       707,
+       723,
+       724,
+       730,
+       731,
+       732,
+       734,
+       736,
+       837,
+       839,
+       842,
+       843,
+       846
+      ]
+     },
+     "FERM|Protein kinase 2": {
+      "dist": 85.5,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase 1": {
+      "dist": 40.8,
+      "contacts": 2,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       542,
+       543
+      ],
+      "resB": [
+       833
+      ]
+     },
+     "SH2|Protein kinase 2": {
+      "dist": 53.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "Protein kinase 1|Protein kinase 2": {
+      "dist": 46.4,
+      "contacts": 19,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       749,
+       753,
+       798,
+       799,
+       800,
+       801,
+       803,
+       804,
+       807
+      ],
+      "resB": [
+       903,
+       929,
+       930,
+       931,
+       932,
+       933,
+       939,
+       940,
+       941
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "FERM|Protein kinase 1": {
+    "n": 5,
+    "dmin": 46.4,
+    "dmax": 47.9,
+    "spread": 1.5,
+    "cmin": 31,
+    "cmax": 44,
+    "at_min": "AlphaFold v6",
+    "at_max": "8ewy.1.A (94.5% id)"
+   },
+   "FERM|Protein kinase 2": {
+    "n": 5,
+    "dmin": 39.8,
+    "dmax": 94.5,
+    "spread": 54.7,
+    "cmin": 0,
+    "cmax": 7,
+    "at_min": "ma-l9b1f \u2014 Jeanpierre closed JAK1",
+    "at_max": "8ewy.1.A (94.5% id)"
+   },
+   "FERM|SH2": {
+    "n": 5,
+    "dmin": 40.5,
+    "dmax": 42.5,
+    "spread": 2.0,
+    "cmin": 23,
+    "cmax": 27,
+    "at_min": "AlphaFold v6",
+    "at_max": "8ewy.1.A (94.5% id)"
+   },
+   "Protein kinase 1|Protein kinase 2": {
+    "n": 5,
+    "dmin": 39.8,
+    "dmax": 47.2,
+    "spread": 7.4,
+    "cmin": 19,
+    "cmax": 33,
+    "at_min": "ma-l9b1f \u2014 Jeanpierre closed JAK1",
+    "at_max": "8ewy.1.A (94.5% id)"
+   },
+   "SH2|Protein kinase 1": {
+    "n": 5,
+    "dmin": 40.3,
+    "dmax": 40.8,
+    "spread": 0.5,
+    "cmin": 0,
+    "cmax": 5,
+    "at_min": "AlphaFold v6",
+    "at_max": "7t6f.1.A (94.5% id)"
+   },
+   "SH2|Protein kinase 2": {
+    "n": 5,
+    "dmin": 53.9,
+    "dmax": 79.3,
+    "spread": 25.4,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "7t6f.1.A (94.5% id)",
+    "at_max": "AlphaFold v6"
+   }
+  }
+ },
+ "P00519": {
+  "gene": "ABL1",
+  "acc": "P00519",
+  "why": "SH3-SH2 clamp + myristoyl pocket; imatinib, T315I resistance",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P00519.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+    "file": "st/P00519_1OPL.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 1OPL"
+   },
+   {
+    "label": "2GQG \u2014 imatinib-bound",
+    "file": "st/P00519_2GQG.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 2GQG"
+   },
+   {
+    "label": "1opl.1.A (99.4% id)",
+    "file": "st/P00519_sm_1opl-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 99.385,
+    "chain": null,
+    "src": "SWISS-MODEL on 1opl.1.A",
+    "ndom": 2
+   },
+   {
+    "label": "1y57.1.A (43.1% id)",
+    "file": "st/P00519_sm_1y57-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 43.056,
+    "chain": null,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "ndom": 2
+   }
+  ],
+  "length": 1130,
+  "name": "Tyrosine-protein kinase ABL1",
+  "domains": [
+   [
+    "SH3",
+    61,
+    121
+   ],
+   [
+    "SH2",
+    127,
+    217
+   ],
+   [
+    "Protein kinase",
+    242,
+    493
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 1130,
+    "plddt_med": 54.0,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 34.6,
+      "contacts": 8,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       74,
+       75,
+       76,
+       77,
+       96,
+       98
+      ],
+      "resB": [
+       263,
+       264,
+       294
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.8,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       135,
+       136,
+       138,
+       139,
+       142
+      ],
+      "resB": [
+       338,
+       339,
+       341,
+       342,
+       374,
+       375,
+       493
+      ]
+     }
+    }
+   },
+   {
+    "label": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 1OPL",
+    "nres": 451,
+    "plddt_med": 71.5,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 24.3,
+      "contacts": 70,
+      "cov": [
+       67,
+       100
+      ],
+      "resA": [
+       84,
+       85,
+       86,
+       87,
+       88,
+       89,
+       90,
+       91,
+       97,
+       98,
+       99,
+       101,
+       107,
+       109,
+       110,
+       111,
+       112,
+       113,
+       116,
+       117,
+       118,
+       119,
+       120,
+       121
+      ],
+      "resB": [
+       127,
+       128,
+       129,
+       130,
+       131,
+       132,
+       133,
+       134,
+       135,
+       136,
+       137,
+       138,
+       139,
+       142,
+       143
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 32.5,
+      "contacts": 21,
+      "cov": [
+       67,
+       100
+      ],
+      "resA": [
+       89,
+       94,
+       95,
+       97,
+       98,
+       113,
+       114,
+       115,
+       117,
+       118
+      ],
+      "resB": [
+       242,
+       244,
+       245,
+       246,
+       247,
+       248,
+       249,
+       250,
+       251,
+       282,
+       283,
+       313
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 32.6,
+      "contacts": 15,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       129,
+       131,
+       133,
+       134,
+       154,
+       155,
+       157,
+       158
+      ],
+      "resB": [
+       242,
+       243,
+       244,
+       249,
+       357,
+       358,
+       360,
+       361,
+       393,
+       394
+      ]
+     }
+    }
+   },
+   {
+    "label": "2GQG \u2014 imatinib-bound",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 2GQG",
+    "nres": 277,
+    "plddt_med": 26.7,
+    "pairs": {}
+   },
+   {
+    "label": "1opl.1.A (99.4% id)",
+    "kind": "swissmodel",
+    "identity": 99.385,
+    "src": "SWISS-MODEL on 1opl.1.A",
+    "nres": 451,
+    "plddt_med": 0.8,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 29.0,
+      "contacts": 0,
+      "cov": [
+       98,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 34.8,
+      "contacts": 5,
+      "cov": [
+       98,
+       100
+      ],
+      "resA": [
+       75,
+       76,
+       96,
+       98
+      ],
+      "resB": [
+       263,
+       264,
+       294
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.5,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       135,
+       136,
+       138,
+       139,
+       142
+      ],
+      "resB": [
+       338,
+       339,
+       341,
+       342,
+       374,
+       375,
+       493
+      ]
+     }
+    }
+   },
+   {
+    "label": "1y57.1.A (43.1% id)",
+    "kind": "swissmodel",
+    "identity": 43.056,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "nres": 437,
+    "plddt_med": 0.7,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.3,
+      "contacts": 1,
+      "cov": [
+       95,
+       100
+      ],
+      "resA": [
+       84
+      ],
+      "resB": [
+       215
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 37.4,
+      "contacts": 4,
+      "cov": [
+       95,
+       100
+      ],
+      "resA": [
+       75,
+       76,
+       77
+      ],
+      "resB": [
+       288,
+       291
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 54.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   }
+  ],
+  "movement": {
+   "SH2|Protein kinase": {
+    "n": 4,
+    "dmin": 32.6,
+    "dmax": 54.1,
+    "spread": 21.5,
+    "cmin": 0,
+    "cmax": 15,
+    "at_min": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+    "at_max": "1y57.1.A (43.1% id)"
+   },
+   "SH3|Protein kinase": {
+    "n": 4,
+    "dmin": 32.5,
+    "dmax": 37.4,
+    "spread": 4.9,
+    "cmin": 4,
+    "cmax": 21,
+    "at_min": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+    "at_max": "1y57.1.A (43.1% id)"
+   },
+   "SH3|SH2": {
+    "n": 4,
+    "dmin": 24.3,
+    "dmax": 29.0,
+    "spread": 4.7,
+    "cmin": 0,
+    "cmax": 70,
+    "at_min": "1OPL \u2014 autoinhibited ABL1 (SH3-SH2 clamped)",
+    "at_max": "1opl.1.A (99.4% id)"
+   }
+  }
+ },
+ "P12931": {
+  "gene": "SRC",
+  "acc": "P12931",
+  "why": "SH3-SH2 clamp; 2SRC/1Y57 both solved; dasatinib; in ProteinGym with 3 DMS",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P12931.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "2SRC \u2014 autoinhibited c-Src",
+    "file": "st/P12931_2SRC.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 2SRC"
+   },
+   {
+    "label": "1FMK \u2014 inactive c-Src",
+    "file": "st/P12931_1FMK.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 1FMK"
+   },
+   {
+    "label": "1Y57 \u2014 activated-like",
+    "file": "st/P12931_1Y57.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 1Y57"
+   },
+   {
+    "label": "8jn9.1.A (100.0% id)",
+    "file": "st/P12931_sm_8jn9-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 8jn9.1.A",
+    "ndom": 2
+   },
+   {
+    "label": "1y57.1.A (100.0% id)",
+    "file": "st/P12931_sm_1y57-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "ndom": 2
+   }
+  ],
+  "length": 536,
+  "name": "Proto-oncogene tyrosine-protein kinase Src",
+  "domains": [
+   [
+    "SH3",
+    84,
+    145
+   ],
+   [
+    "SH2",
+    151,
+    248
+   ],
+   [
+    "Protein kinase",
+    270,
+    523
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 536,
+    "plddt_med": 93.8,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 29.0,
+      "contacts": 1,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       145
+      ],
+      "resB": [
+       227
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 36.2,
+      "contacts": 8,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       97,
+       98,
+       99,
+       120
+      ],
+      "resB": [
+       289,
+       290,
+       292,
+       293,
+       321
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.9,
+      "contacts": 16,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       163,
+       164,
+       167
+      ],
+      "resB": [
+       323,
+       324,
+       367,
+       368,
+       371,
+       372,
+       400,
+       402,
+       519,
+       520,
+       521
+      ]
+     }
+    }
+   },
+   {
+    "label": "2SRC \u2014 autoinhibited c-Src",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 2SRC",
+    "nres": 449,
+    "plddt_med": 24.6,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.4,
+      "contacts": 5,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       90,
+       142,
+       143
+      ],
+      "resB": [
+       223,
+       224,
+       247,
+       248
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 36.2,
+      "contacts": 9,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       94,
+       95,
+       96,
+       97
+      ],
+      "resB": [
+       286,
+       287,
+       289,
+       290
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.7,
+      "contacts": 17,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       156,
+       157,
+       160,
+       161,
+       164
+      ],
+      "resB": [
+       320,
+       321,
+       365,
+       368,
+       369,
+       397,
+       398,
+       399,
+       516,
+       517,
+       518,
+       522
+      ]
+     }
+    }
+   },
+   {
+    "label": "1FMK \u2014 inactive c-Src",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 1FMK",
+    "nres": 437,
+    "plddt_med": 24.5,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.3,
+      "contacts": 6,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       90,
+       142,
+       143
+      ],
+      "resB": [
+       184,
+       223,
+       224,
+       247,
+       248
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 35.2,
+      "contacts": 8,
+      "cov": [
+       100,
+       94
+      ],
+      "resA": [
+       94,
+       95,
+       96,
+       117
+      ],
+      "resB": [
+       286,
+       287,
+       289,
+       290,
+       318
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 34.7,
+      "contacts": 18,
+      "cov": [
+       100,
+       94
+      ],
+      "resA": [
+       156,
+       157,
+       160,
+       161,
+       164,
+       178
+      ],
+      "resB": [
+       321,
+       365,
+       368,
+       369,
+       396,
+       397,
+       398,
+       399,
+       516,
+       517,
+       522,
+       523
+      ]
+     }
+    }
+   },
+   {
+    "label": "1Y57 \u2014 activated-like",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 1Y57",
+    "nres": 452,
+    "plddt_med": 26.6,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.1,
+      "contacts": 4,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       90,
+       143
+      ],
+      "resB": [
+       223,
+       224,
+       247,
+       248
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 37.7,
+      "contacts": 8,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       94,
+       95,
+       96,
+       97
+      ],
+      "resB": [
+       305,
+       308,
+       312,
+       315
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 53.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "8jn9.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 8jn9.1.A",
+    "nres": 451,
+    "plddt_med": 0.8,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.4,
+      "contacts": 2,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       144,
+       145
+      ],
+      "resB": [
+       227
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 35.9,
+      "contacts": 8,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       96,
+       97,
+       98,
+       99
+      ],
+      "resB": [
+       289,
+       290,
+       292,
+       293
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.8,
+      "contacts": 17,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       163,
+       164,
+       167
+      ],
+      "resB": [
+       324,
+       367,
+       368,
+       371,
+       372,
+       400,
+       401,
+       402,
+       519,
+       520,
+       521
+      ]
+     }
+    }
+   },
+   {
+    "label": "1y57.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "nres": 451,
+    "plddt_med": 0.8,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.7,
+      "contacts": 0,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 37.3,
+      "contacts": 9,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       97,
+       98,
+       99,
+       100
+      ],
+      "resB": [
+       308,
+       311,
+       315,
+       318,
+       333
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 53.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   }
+  ],
+  "movement": {
+   "SH2|Protein kinase": {
+    "n": 6,
+    "dmin": 34.7,
+    "dmax": 53.9,
+    "spread": 19.2,
+    "cmin": 0,
+    "cmax": 18,
+    "at_min": "1FMK \u2014 inactive c-Src",
+    "at_max": "1Y57 \u2014 activated-like"
+   },
+   "SH3|Protein kinase": {
+    "n": 6,
+    "dmin": 35.2,
+    "dmax": 37.7,
+    "spread": 2.5,
+    "cmin": 8,
+    "cmax": 9,
+    "at_min": "1FMK \u2014 inactive c-Src",
+    "at_max": "1Y57 \u2014 activated-like"
+   },
+   "SH3|SH2": {
+    "n": 6,
+    "dmin": 28.1,
+    "dmax": 29.0,
+    "spread": 0.9,
+    "cmin": 0,
+    "cmax": 6,
+    "at_min": "1Y57 \u2014 activated-like",
+    "at_max": "AlphaFold v6"
+   }
+  }
+ },
+ "Q06187": {
+  "gene": "BTK",
+  "acc": "Q06187",
+  "why": "PH-TH and SH3-SH2 modules; ibrutinib, C481S resistance",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/Q06187.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "8GMB \u2014 BTK full-length autoinhibited",
+    "file": "st/Q06187_8GMB.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 8GMB"
+   },
+   {
+    "label": "8s93.1.A (92.3% id)",
+    "file": "st/Q06187_sm_8s93-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 92.341,
+    "chain": null,
+    "src": "SWISS-MODEL on 8s93.1.A",
+    "ndom": 4
+   },
+   {
+    "label": "4y93.1.A (96.0% id)",
+    "file": "st/Q06187_sm_4y93-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 95.955,
+    "chain": null,
+    "src": "SWISS-MODEL on 4y93.1.A",
+    "ndom": 4
+   },
+   {
+    "label": "8gmb.1.A (95.9% id)",
+    "file": "st/Q06187_sm_8gmb-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 95.903,
+    "chain": null,
+    "src": "SWISS-MODEL on 8gmb.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "1k9a.1.A (37.3% id)",
+    "file": "st/Q06187_sm_1k9a-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 37.296,
+    "chain": null,
+    "src": "SWISS-MODEL on 1k9a.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "1y57.1.A (38.6% id)",
+    "file": "st/Q06187_sm_1y57-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 38.621,
+    "chain": null,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "ndom": 2
+   },
+   {
+    "label": "1qcf.1.A (38.7% id)",
+    "file": "st/Q06187_sm_1qcf-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 38.657,
+    "chain": null,
+    "src": "SWISS-MODEL on 1qcf.1.A",
+    "ndom": 2
+   },
+   {
+    "label": "1opl.2.A (39.8% id)",
+    "file": "st/Q06187_sm_1opl-2-A.pdb",
+    "kind": "swissmodel",
+    "identity": 39.817,
+    "chain": null,
+    "src": "SWISS-MODEL on 1opl.2.A",
+    "ndom": 2
+   }
+  ],
+  "length": 659,
+  "name": "Tyrosine-protein kinase BTK",
+  "domains": [
+   [
+    "PH",
+    3,
+    133
+   ],
+   [
+    "SH3",
+    214,
+    274
+   ],
+   [
+    "SH2",
+    281,
+    377
+   ],
+   [
+    "Protein kinase",
+    402,
+    655
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 659,
+    "plddt_med": 90.1,
+    "pairs": {
+     "PH|SH3": {
+      "dist": 30.6,
+      "contacts": 7,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       126,
+       127,
+       130,
+       133
+      ],
+      "resB": [
+       245,
+       246,
+       247,
+       248,
+       249
+      ]
+     },
+     "PH|SH2": {
+      "dist": 54.4,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "PH|Protein kinase": {
+      "dist": 43.0,
+      "contacts": 3,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       34,
+       35,
+       133
+      ],
+      "resB": [
+       444,
+       448,
+       451
+      ]
+     },
+     "SH3|SH2": {
+      "dist": 30.4,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 32.8,
+      "contacts": 9,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       226,
+       228,
+       229,
+       249,
+       250,
+       267
+      ],
+      "resB": [
+       421,
+       422,
+       425,
+       451,
+       453
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 36.9,
+      "contacts": 8,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       285,
+       287,
+       289,
+       290
+      ],
+      "resB": [
+       496,
+       500,
+       503,
+       652,
+       655
+      ]
+     }
+    }
+   },
+   {
+    "label": "8GMB \u2014 BTK full-length autoinhibited",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 8GMB",
+    "nres": 438,
+    "plddt_med": 150.6,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 35.8,
+      "contacts": 0,
+      "cov": [
+       100,
+       92
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 85.2,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase": {
+      "dist": 54.4,
+      "contacts": 0,
+      "cov": [
+       92,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "8s93.1.A (92.3% id)",
+    "kind": "swissmodel",
+    "identity": 92.341,
+    "src": "SWISS-MODEL on 8s93.1.A",
+    "nres": 659,
+    "plddt_med": 0.7,
+    "pairs": {
+     "PH|SH3": {
+      "dist": 48.4,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "PH|SH2": {
+      "dist": 29.4,
+      "contacts": 3,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       119,
+       126,
+       127
+      ],
+      "resB": [
+       361,
+       362
+      ]
+     },
+     "PH|Protein kinase": {
+      "dist": 44.4,
+      "contacts": 14,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       3,
+       5,
+       34,
+       35,
+       58,
+       59,
+       130,
+       131,
+       133
+      ],
+      "resB": [
+       421,
+       422,
+       424,
+       425,
+       461
+      ]
+     },
+     "SH3|SH2": {
+      "dist": 40.8,
+      "contacts": 8,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       260,
+       261,
+       262,
+       273,
+       274
+      ],
+      "resB": [
+       343,
+       364,
+       365,
+       366,
+       367
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 64.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase": {
+      "dist": 45.4,
+      "contacts": 4,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       353,
+       355,
+       356,
+       357
+      ],
+      "resB": [
+       466
+      ]
+     }
+    }
+   },
+   {
+    "label": "4y93.1.A (96.0% id)",
+    "kind": "swissmodel",
+    "identity": 95.955,
+    "src": "SWISS-MODEL on 4y93.1.A",
+    "nres": 658,
+    "plddt_med": 0.8,
+    "pairs": {
+     "PH|SH3": {
+      "dist": 75.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "PH|SH2": {
+      "dist": 51.0,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "PH|Protein kinase": {
+      "dist": 39.5,
+      "contacts": 13,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       5,
+       34,
+       35,
+       127,
+       130,
+       131,
+       133
+      ],
+      "resB": [
+       444,
+       447,
+       448,
+       450,
+       451,
+       461
+      ]
+     },
+     "SH3|SH2": {
+      "dist": 32.6,
+      "contacts": 4,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       225,
+       249,
+       260,
+       261
+      ],
+      "resB": [
+       281,
+       286
+      ]
+     },
+     "SH3|Protein kinase": {
+      "dist": 79.9,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase": {
+      "dist": 47.4,
+      "contacts": 2,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       375
+      ],
+      "resB": [
+       424,
+       425
+      ]
+     }
+    }
+   },
+   {
+    "label": "8gmb.1.A (95.9% id)",
+    "kind": "swissmodel",
+    "identity": 95.903,
+    "src": "SWISS-MODEL on 8gmb.1.A",
+    "nres": 446,
+    "plddt_med": 0.8,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 35.0,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 85.2,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2|Protein kinase": {
+      "dist": 56.0,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "1k9a.1.A (37.3% id)",
+    "kind": "swissmodel",
+    "identity": 37.296,
+    "src": "SWISS-MODEL on 1k9a.1.A",
+    "nres": 444,
+    "plddt_med": 0.7,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 45.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 35.4,
+      "contacts": 6,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       236,
+       237,
+       238,
+       239,
+       274
+      ],
+      "resB": [
+       422,
+       423,
+       450,
+       451,
+       461
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 39.1,
+      "contacts": 30,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       281,
+       282,
+       315,
+       341,
+       342,
+       344,
+       353,
+       354,
+       355,
+       356,
+       357,
+       360
+      ],
+      "resB": [
+       433,
+       434,
+       436,
+       437,
+       438,
+       439,
+       440,
+       443,
+       465,
+       467,
+       468
+      ]
+     }
+    }
+   },
+   {
+    "label": "1y57.1.A (38.6% id)",
+    "kind": "swissmodel",
+    "identity": 38.621,
+    "src": "SWISS-MODEL on 1y57.1.A",
+    "nres": 441,
+    "plddt_med": 0.7,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 28.6,
+      "contacts": 0,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 37.7,
+      "contacts": 7,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       226,
+       227,
+       228
+      ],
+      "resB": [
+       440,
+       441,
+       443,
+       444,
+       447
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 53.8,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "1qcf.1.A (38.7% id)",
+    "kind": "swissmodel",
+    "identity": 38.657,
+    "src": "SWISS-MODEL on 1qcf.1.A",
+    "nres": 440,
+    "plddt_med": 0.7,
+    "pairs": {
+     "SH3|SH2": {
+      "dist": 30.4,
+      "contacts": 0,
+      "cov": [
+       95,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH3|Protein kinase": {
+      "dist": 37.1,
+      "contacts": 4,
+      "cov": [
+       95,
+       100
+      ],
+      "resA": [
+       225,
+       228,
+       229
+      ],
+      "resB": [
+       424,
+       425
+      ]
+     },
+     "SH2|Protein kinase": {
+      "dist": 35.2,
+      "contacts": 16,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       287,
+       289,
+       290,
+       292,
+       293,
+       296,
+       297,
+       328
+      ],
+      "resB": [
+       455,
+       456,
+       496,
+       500,
+       503,
+       504,
+       507,
+       531,
+       532,
+       534,
+       652
+      ]
+     }
+    }
+   },
+   {
+    "label": "1opl.2.A (39.8% id)",
+    "kind": "swissmodel",
+    "identity": 39.817,
+    "src": "SWISS-MODEL on 1opl.2.A",
+    "nres": 383,
+    "plddt_med": 0.7,
+    "pairs": {
+     "SH2|Protein kinase": {
+      "dist": 41.7,
+      "contacts": 34,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       296,
+       297,
+       298,
+       299,
+       300,
+       301,
+       320,
+       322,
+       327,
+       328,
+       329,
+       374,
+       375,
+       376
+      ],
+      "resB": [
+       402,
+       403,
+       404,
+       405,
+       406,
+       407,
+       415,
+       417,
+       422,
+       431,
+       432,
+       434,
+       468,
+       469,
+       471
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "PH|Protein kinase": {
+    "n": 3,
+    "dmin": 39.5,
+    "dmax": 44.4,
+    "spread": 4.9,
+    "cmin": 3,
+    "cmax": 14,
+    "at_min": "4y93.1.A (96.0% id)",
+    "at_max": "8s93.1.A (92.3% id)"
+   },
+   "PH|SH2": {
+    "n": 3,
+    "dmin": 29.4,
+    "dmax": 54.4,
+    "spread": 25.0,
+    "cmin": 0,
+    "cmax": 3,
+    "at_min": "8s93.1.A (92.3% id)",
+    "at_max": "AlphaFold v6"
+   },
+   "PH|SH3": {
+    "n": 3,
+    "dmin": 30.6,
+    "dmax": 75.3,
+    "spread": 44.7,
+    "cmin": 0,
+    "cmax": 7,
+    "at_min": "AlphaFold v6",
+    "at_max": "4y93.1.A (96.0% id)"
+   },
+   "SH2|Protein kinase": {
+    "n": 9,
+    "dmin": 35.2,
+    "dmax": 56.0,
+    "spread": 20.8,
+    "cmin": 0,
+    "cmax": 34,
+    "at_min": "1qcf.1.A (38.7% id)",
+    "at_max": "8gmb.1.A (95.9% id)"
+   },
+   "SH3|Protein kinase": {
+    "n": 8,
+    "dmin": 32.8,
+    "dmax": 85.2,
+    "spread": 52.4,
+    "cmin": 0,
+    "cmax": 9,
+    "at_min": "AlphaFold v6",
+    "at_max": "8GMB \u2014 BTK full-length autoinhibited"
+   },
+   "SH3|SH2": {
+    "n": 8,
+    "dmin": 28.6,
+    "dmax": 45.1,
+    "spread": 16.5,
+    "cmin": 0,
+    "cmax": 8,
+    "at_min": "1y57.1.A (38.6% id)",
+    "at_max": "1k9a.1.A (37.3% id)"
+   }
+  }
+ },
+ "Q06124": {
+  "gene": "PTPN11",
+  "acc": "Q06124",
+  "why": "N-SH2 occludes the PTP active site; E76K; SHP099 allosteric inhibitors",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/Q06124.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "4DGX \u2014 autoinhibited SHP2",
+    "file": "st/Q06124_4DGX.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 4DGX"
+   },
+   {
+    "label": "6CRF \u2014 activated SHP2 E76K",
+    "file": "st/Q06124_6CRF.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 6CRF"
+   },
+   {
+    "label": "4nwg.1.A (99.8% id)",
+    "file": "st/Q06124_sm_4nwg-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 99.814,
+    "chain": null,
+    "src": "SWISS-MODEL on 4nwg.1.A",
+    "ndom": 3
+   }
+  ],
+  "length": 593,
+  "name": "Tyrosine-protein phosphatase non-receptor type 11",
+  "domains": [
+   [
+    "SH2 1",
+    6,
+    102
+   ],
+   [
+    "SH2 2",
+    112,
+    216
+   ],
+   [
+    "Tyrosine-protein phosphatase",
+    247,
+    517
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 593,
+    "plddt_med": 93.2,
+    "pairs": {
+     "SH2 1|SH2 2": {
+      "dist": 34.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2 1|Tyrosine-protein phosphatase": {
+      "dist": 30.6,
+      "contacts": 70,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       6,
+       7,
+       9,
+       10,
+       33,
+       41,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74,
+       75,
+       76,
+       79,
+       80
+      ],
+      "resB": [
+       248,
+       252,
+       255,
+       256,
+       258,
+       259,
+       262,
+       265,
+       279,
+       280,
+       281,
+       282,
+       285,
+       366,
+       425,
+       426,
+       427,
+       459,
+       460,
+       461,
+       463,
+       464,
+       465,
+       502,
+       503,
+       506,
+       507,
+       510
+      ]
+     },
+     "SH2 2|Tyrosine-protein phosphatase": {
+      "dist": 42.0,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "4DGX \u2014 autoinhibited SHP2",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 4DGX",
+    "nres": 500,
+    "plddt_med": 45.9,
+    "pairs": {
+     "SH2 1|SH2 2": {
+      "dist": 33.8,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2 1|Tyrosine-protein phosphatase": {
+      "dist": 30.2,
+      "contacts": 64,
+      "cov": [
+       100,
+       94
+      ],
+      "resA": [
+       7,
+       9,
+       10,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74,
+       75,
+       76,
+       79,
+       80
+      ],
+      "resB": [
+       248,
+       252,
+       255,
+       258,
+       259,
+       261,
+       262,
+       265,
+       279,
+       280,
+       281,
+       282,
+       285,
+       362,
+       366,
+       425,
+       427,
+       460,
+       461,
+       463,
+       464,
+       465,
+       502,
+       503,
+       506,
+       507,
+       510
+      ]
+     },
+     "SH2 2|Tyrosine-protein phosphatase": {
+      "dist": 41.5,
+      "contacts": 0,
+      "cov": [
+       100,
+       94
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "6CRF \u2014 activated SHP2 E76K",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 6CRF",
+    "nres": 475,
+    "plddt_med": 60.4,
+    "pairs": {
+     "SH2 1|SH2 2": {
+      "dist": 31.9,
+      "contacts": 0,
+      "cov": [
+       97,
+       73
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2 1|Tyrosine-protein phosphatase": {
+      "dist": 46.4,
+      "contacts": 1,
+      "cov": [
+       97,
+       96
+      ],
+      "resA": [
+       73
+      ],
+      "resB": [
+       484
+      ]
+     },
+     "SH2 2|Tyrosine-protein phosphatase": {
+      "dist": 42.8,
+      "contacts": 0,
+      "cov": [
+       73,
+       96
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   },
+   {
+    "label": "4nwg.1.A (99.8% id)",
+    "kind": "swissmodel",
+    "identity": 99.814,
+    "src": "SWISS-MODEL on 4nwg.1.A",
+    "nres": 533,
+    "plddt_med": 0.9,
+    "pairs": {
+     "SH2 1|SH2 2": {
+      "dist": 33.6,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "SH2 1|Tyrosine-protein phosphatase": {
+      "dist": 30.4,
+      "contacts": 66,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       6,
+       7,
+       9,
+       10,
+       33,
+       41,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       69,
+       70,
+       71,
+       72,
+       73,
+       74,
+       75,
+       76,
+       79,
+       80,
+       87
+      ],
+      "resB": [
+       248,
+       252,
+       255,
+       256,
+       258,
+       259,
+       262,
+       265,
+       279,
+       280,
+       281,
+       282,
+       285,
+       366,
+       425,
+       426,
+       427,
+       460,
+       461,
+       463,
+       464,
+       465,
+       502,
+       503,
+       506,
+       507,
+       510
+      ]
+     },
+     "SH2 2|Tyrosine-protein phosphatase": {
+      "dist": 41.2,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   }
+  ],
+  "movement": {
+   "SH2 1|SH2 2": {
+    "n": 4,
+    "dmin": 31.9,
+    "dmax": 34.3,
+    "spread": 2.4,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "6CRF \u2014 activated SHP2 E76K",
+    "at_max": "AlphaFold v6"
+   },
+   "SH2 1|Tyrosine-protein phosphatase": {
+    "n": 4,
+    "dmin": 30.2,
+    "dmax": 46.4,
+    "spread": 16.2,
+    "cmin": 1,
+    "cmax": 70,
+    "at_min": "4DGX \u2014 autoinhibited SHP2",
+    "at_max": "6CRF \u2014 activated SHP2 E76K"
+   },
+   "SH2 2|Tyrosine-protein phosphatase": {
+    "n": 4,
+    "dmin": 41.2,
+    "dmax": 42.8,
+    "spread": 1.6,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "4nwg.1.A (99.8% id)",
+    "at_max": "6CRF \u2014 activated SHP2 E76K"
+   }
+  }
+ },
+ "P13569": {
+  "gene": "CFTR",
+  "acc": "P13569",
+  "why": "NBD1-NBD2 dimerisation cycle; F508del, G551D; ivacaftor/lumacaftor",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P13569.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "5UAK \u2014 CFTR dephosphorylated/NBD-separated",
+    "file": "st/P13569_5UAK.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 5UAK"
+   },
+   {
+    "label": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+    "file": "st/P13569_6MSM.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 6MSM"
+   },
+   {
+    "label": "9dw9.1.A (99.9% id)",
+    "file": "st/P13569_sm_9dw9-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 99.932,
+    "chain": null,
+    "src": "SWISS-MODEL on 9dw9.1.A",
+    "ndom": 4
+   },
+   {
+    "label": "9dw5.1.A (100.0% id)",
+    "file": "st/P13569_sm_9dw5-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 9dw5.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "6d3r.1.A (80.5% id)",
+    "file": "st/P13569_sm_6d3r-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 80.498,
+    "chain": null,
+    "src": "SWISS-MODEL on 6d3r.1.A",
+    "ndom": 3
+   }
+  ],
+  "length": 1480,
+  "name": "Cystic fibrosis transmembrane conductance regulator",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    81,
+    365
+   ],
+   [
+    "ABC transporter 1",
+    423,
+    646
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    859,
+    1155
+   ],
+   [
+    "ABC transporter 2",
+    1210,
+    1443
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 1480,
+    "plddt_med": 86.0,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 57.9,
+      "contacts": 4,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       168,
+       169,
+       170
+      ],
+      "resB": [
+       474,
+       475,
+       476
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 13.9,
+      "contacts": 258,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       102,
+       105,
+       106,
+       107,
+       108,
+       109,
+       110,
+       111,
+       112,
+       117,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       139,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       184,
+       185,
+       186,
+       189,
+       192,
+       193,
+       251,
+       258,
+       259,
+       262,
+       263,
+       265,
+       266,
+       269,
+       270,
+       272,
+       273,
+       278,
+       281,
+       282,
+       285,
+       286,
+       289,
+       290,
+       292,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       310,
+       311,
+       312,
+       313,
+       314,
+       315,
+       323,
+       326,
+       327,
+       330,
+       331,
+       332,
+       333,
+       334,
+       336,
+       337,
+       340,
+       344,
+       347,
+       352
+      ],
+      "resB": [
+       902,
+       903,
+       904,
+       905,
+       906,
+       907,
+       910,
+       911,
+       913,
+       914,
+       915,
+       917,
+       918,
+       921,
+       922,
+       924,
+       925,
+       928,
+       929,
+       930,
+       931,
+       934,
+       935,
+       938,
+       939,
+       942,
+       943,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       956,
+       957,
+       958,
+       959,
+       960,
+       961,
+       964,
+       969,
+       972,
+       973,
+       976,
+       977,
+       978,
+       980,
+       984,
+       985,
+       986,
+       989,
+       992,
+       993,
+       996,
+       997,
+       1000,
+       1048,
+       1051,
+       1052,
+       1054,
+       1055,
+       1056,
+       1058,
+       1059,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1107,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1118,
+       1119,
+       1122,
+       1123,
+       1124,
+       1125,
+       1126,
+       1127,
+       1130,
+       1131,
+       1134,
+       1137,
+       1138,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 58.3,
+      "contacts": 57,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       260,
+       261,
+       264,
+       265,
+       267,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       278,
+       279,
+       280,
+       281,
+       283,
+       284
+      ],
+      "resB": [
+       1255,
+       1258,
+       1260,
+       1280,
+       1283,
+       1284,
+       1286,
+       1288,
+       1289,
+       1290,
+       1292,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1303,
+       1304,
+       1306,
+       1307,
+       1340,
+       1341,
+       1342,
+       1355,
+       1358
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 61.9,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       492,
+       494,
+       496,
+       498,
+       499,
+       504,
+       508,
+       509,
+       510,
+       543,
+       560,
+       561,
+       564
+      ],
+      "resB": [
+       1053,
+       1056,
+       1057,
+       1058,
+       1060,
+       1061,
+       1062,
+       1063,
+       1064,
+       1065,
+       1066,
+       1067,
+       1068,
+       1070,
+       1073,
+       1074
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 30.0,
+      "contacts": 14,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       528,
+       532,
+       549,
+       551,
+       576,
+       577,
+       578,
+       579,
+       580,
+       581
+      ],
+      "resB": [
+       1245,
+       1246,
+       1247,
+       1374,
+       1375,
+       1402,
+       1440
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 57.7,
+      "contacts": 6,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       958,
+       961,
+       962,
+       965
+      ],
+      "resB": [
+       1219,
+       1260,
+       1262,
+       1280
+      ]
+     }
+    }
+   },
+   {
+    "label": "5UAK \u2014 CFTR dephosphorylated/NBD-separated",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 5UAK",
+    "nres": 1139,
+    "plddt_med": 291.5,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 60.8,
+      "contacts": 3,
+      "cov": [
+       100,
+       92
+      ],
+      "resA": [
+       167,
+       168,
+       169
+      ],
+      "resB": [
+       474
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 14.3,
+      "contacts": 217,
+      "cov": [
+       100,
+       92
+      ],
+      "resA": [
+       98,
+       102,
+       105,
+       106,
+       109,
+       110,
+       117,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       139,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       184,
+       185,
+       188,
+       193,
+       251,
+       258,
+       259,
+       262,
+       263,
+       265,
+       266,
+       267,
+       269,
+       270,
+       272,
+       273,
+       277,
+       278,
+       281,
+       282,
+       285,
+       286,
+       289,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       310,
+       311,
+       312,
+       313,
+       314,
+       315,
+       318,
+       319,
+       322,
+       331,
+       333,
+       336,
+       337,
+       340,
+       341,
+       344,
+       345,
+       347,
+       348,
+       352
+      ],
+      "resB": [
+       909,
+       910,
+       914,
+       915,
+       917,
+       918,
+       919,
+       922,
+       924,
+       925,
+       928,
+       929,
+       930,
+       931,
+       933,
+       934,
+       935,
+       938,
+       939,
+       942,
+       943,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       956,
+       957,
+       958,
+       959,
+       960,
+       961,
+       964,
+       969,
+       972,
+       973,
+       976,
+       977,
+       980,
+       984,
+       985,
+       989,
+       992,
+       993,
+       996,
+       997,
+       1048,
+       1052,
+       1054,
+       1055,
+       1058,
+       1059,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1118,
+       1119,
+       1120,
+       1121,
+       1123,
+       1125,
+       1126,
+       1127,
+       1129,
+       1130,
+       1131,
+       1133,
+       1134,
+       1137,
+       1138,
+       1140,
+       1141,
+       1144,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 61.3,
+      "contacts": 44,
+      "cov": [
+       100,
+       97
+      ],
+      "resA": [
+       260,
+       261,
+       264,
+       265,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       278,
+       279,
+       280,
+       281,
+       284
+      ],
+      "resB": [
+       1255,
+       1258,
+       1260,
+       1280,
+       1283,
+       1284,
+       1288,
+       1290,
+       1292,
+       1293,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1303,
+       1306,
+       1307,
+       1342,
+       1355,
+       1358,
+       1359
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 61.0,
+      "contacts": 36,
+      "cov": [
+       92,
+       92
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       492,
+       496,
+       498,
+       499,
+       504,
+       508,
+       509,
+       542,
+       543,
+       560,
+       561,
+       564
+      ],
+      "resB": [
+       1053,
+       1056,
+       1057,
+       1058,
+       1060,
+       1061,
+       1063,
+       1064,
+       1066,
+       1067,
+       1068,
+       1070,
+       1073,
+       1074
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 46.7,
+      "contacts": 0,
+      "cov": [
+       92,
+       97
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 56.4,
+      "contacts": 9,
+      "cov": [
+       92,
+       97
+      ],
+      "resA": [
+       958,
+       961,
+       962,
+       965,
+       966
+      ],
+      "resB": [
+       1219,
+       1220,
+       1221,
+       1260,
+       1261,
+       1262,
+       1280
+      ]
+     }
+    }
+   },
+   {
+    "label": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 6MSM",
+    "nres": 1181,
+    "plddt_med": 150.2,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 57.8,
+      "contacts": 5,
+      "cov": [
+       100,
+       91
+      ],
+      "resA": [
+       169,
+       170,
+       267
+      ],
+      "resB": [
+       474,
+       475,
+       476,
+       543,
+       546
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 14.0,
+      "contacts": 279,
+      "cov": [
+       100,
+       97
+      ],
+      "resA": [
+       102,
+       103,
+       105,
+       106,
+       107,
+       108,
+       109,
+       110,
+       111,
+       117,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       138,
+       139,
+       140,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       182,
+       184,
+       185,
+       186,
+       188,
+       189,
+       192,
+       193,
+       251,
+       258,
+       259,
+       262,
+       263,
+       265,
+       266,
+       267,
+       269,
+       270,
+       272,
+       273,
+       277,
+       278,
+       281,
+       282,
+       285,
+       289,
+       292,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       310,
+       311,
+       312,
+       313,
+       314,
+       315,
+       323,
+       326,
+       327,
+       330,
+       331,
+       332,
+       333,
+       334,
+       336,
+       337,
+       340,
+       344,
+       347,
+       348,
+       352
+      ],
+      "resB": [
+       902,
+       903,
+       904,
+       905,
+       906,
+       909,
+       910,
+       911,
+       913,
+       914,
+       915,
+       917,
+       918,
+       921,
+       922,
+       924,
+       925,
+       928,
+       929,
+       930,
+       931,
+       934,
+       935,
+       938,
+       939,
+       942,
+       943,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       956,
+       957,
+       958,
+       959,
+       960,
+       961,
+       964,
+       972,
+       973,
+       976,
+       977,
+       978,
+       980,
+       984,
+       985,
+       986,
+       989,
+       992,
+       993,
+       996,
+       997,
+       1000,
+       1041,
+       1044,
+       1048,
+       1051,
+       1052,
+       1054,
+       1055,
+       1056,
+       1058,
+       1059,
+       1060,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1107,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1118,
+       1119,
+       1122,
+       1123,
+       1124,
+       1125,
+       1126,
+       1127,
+       1130,
+       1131,
+       1134,
+       1138,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 58.6,
+      "contacts": 58,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       172,
+       173,
+       260,
+       261,
+       264,
+       265,
+       267,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       278,
+       279,
+       280,
+       281,
+       283,
+       284
+      ],
+      "resB": [
+       1255,
+       1258,
+       1260,
+       1280,
+       1283,
+       1284,
+       1288,
+       1289,
+       1290,
+       1292,
+       1293,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1303,
+       1306,
+       1307,
+       1340,
+       1341,
+       1342,
+       1344,
+       1345,
+       1355,
+       1358
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 59.4,
+      "contacts": 47,
+      "cov": [
+       91,
+       97
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       492,
+       494,
+       496,
+       497,
+       498,
+       499,
+       508,
+       509,
+       510,
+       543,
+       544,
+       546,
+       560,
+       561,
+       564
+      ],
+      "resB": [
+       965,
+       969,
+       1053,
+       1056,
+       1057,
+       1058,
+       1060,
+       1061,
+       1063,
+       1064,
+       1065,
+       1066,
+       1067,
+       1068,
+       1070,
+       1073,
+       1074,
+       1077
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 26.7,
+      "contacts": 70,
+      "cov": [
+       91,
+       100
+      ],
+      "resA": [
+       438,
+       458,
+       459,
+       460,
+       461,
+       493,
+       494,
+       525,
+       528,
+       529,
+       532,
+       546,
+       549,
+       550,
+       551,
+       552,
+       553,
+       555,
+       573,
+       576,
+       577,
+       578,
+       579,
+       580,
+       581,
+       582,
+       584,
+       605,
+       606
+      ],
+      "resB": [
+       1244,
+       1245,
+       1246,
+       1247,
+       1248,
+       1291,
+       1292,
+       1330,
+       1347,
+       1348,
+       1349,
+       1350,
+       1352,
+       1371,
+       1374,
+       1375,
+       1376,
+       1377,
+       1378,
+       1380,
+       1402,
+       1404,
+       1436,
+       1437,
+       1439,
+       1440,
+       1441,
+       1442
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 56.5,
+      "contacts": 3,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       961,
+       962
+      ],
+      "resB": [
+       1219,
+       1260,
+       1261
+      ]
+     }
+    }
+   },
+   {
+    "label": "9dw9.1.A (99.9% id)",
+    "kind": "swissmodel",
+    "identity": 99.932,
+    "src": "SWISS-MODEL on 9dw9.1.A",
+    "nres": 1451,
+    "plddt_med": 0.8,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 59.0,
+      "contacts": 3,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       169,
+       170
+      ],
+      "resB": [
+       474,
+       475,
+       476
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 13.9,
+      "contacts": 276,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       102,
+       105,
+       106,
+       107,
+       108,
+       109,
+       110,
+       111,
+       117,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       138,
+       139,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       184,
+       185,
+       186,
+       188,
+       189,
+       192,
+       193,
+       251,
+       258,
+       259,
+       262,
+       263,
+       265,
+       266,
+       267,
+       269,
+       270,
+       273,
+       278,
+       282,
+       285,
+       286,
+       289,
+       292,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       310,
+       311,
+       312,
+       313,
+       314,
+       315,
+       316,
+       318,
+       326,
+       327,
+       329,
+       330,
+       331,
+       332,
+       333,
+       334,
+       336,
+       337,
+       340,
+       344,
+       347,
+       348,
+       352
+      ],
+      "resB": [
+       897,
+       903,
+       904,
+       905,
+       906,
+       907,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       917,
+       918,
+       921,
+       922,
+       924,
+       925,
+       928,
+       929,
+       930,
+       931,
+       934,
+       935,
+       938,
+       939,
+       940,
+       942,
+       943,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       956,
+       957,
+       958,
+       959,
+       961,
+       964,
+       972,
+       973,
+       976,
+       977,
+       978,
+       980,
+       984,
+       985,
+       986,
+       989,
+       992,
+       993,
+       996,
+       997,
+       1000,
+       1041,
+       1044,
+       1048,
+       1051,
+       1052,
+       1054,
+       1055,
+       1056,
+       1058,
+       1059,
+       1060,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1118,
+       1119,
+       1122,
+       1123,
+       1124,
+       1125,
+       1126,
+       1127,
+       1130,
+       1131,
+       1134,
+       1138,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 59.5,
+      "contacts": 55,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       173,
+       257,
+       260,
+       261,
+       264,
+       265,
+       267,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       278,
+       279,
+       280,
+       281,
+       284
+      ],
+      "resB": [
+       1255,
+       1258,
+       1260,
+       1280,
+       1283,
+       1284,
+       1288,
+       1290,
+       1292,
+       1293,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1303,
+       1304,
+       1306,
+       1307,
+       1340,
+       1341,
+       1342,
+       1355,
+       1358
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 62.3,
+      "contacts": 43,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       496,
+       497,
+       498,
+       499,
+       508,
+       509,
+       510,
+       543,
+       546,
+       560,
+       561,
+       564
+      ],
+      "resB": [
+       965,
+       1053,
+       1056,
+       1057,
+       1060,
+       1061,
+       1063,
+       1064,
+       1065,
+       1066,
+       1067,
+       1068,
+       1070,
+       1073,
+       1074
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 27.1,
+      "contacts": 64,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       458,
+       459,
+       460,
+       461,
+       493,
+       494,
+       525,
+       528,
+       529,
+       549,
+       550,
+       551,
+       552,
+       553,
+       555,
+       573,
+       576,
+       577,
+       578,
+       579,
+       580,
+       581,
+       582,
+       584,
+       585,
+       605,
+       608,
+       611
+      ],
+      "resB": [
+       1244,
+       1245,
+       1246,
+       1247,
+       1291,
+       1292,
+       1347,
+       1348,
+       1349,
+       1350,
+       1371,
+       1374,
+       1375,
+       1376,
+       1377,
+       1378,
+       1380,
+       1402,
+       1404,
+       1436,
+       1437,
+       1439,
+       1440,
+       1441,
+       1442,
+       1443
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.5,
+      "contacts": 3,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       961,
+       962
+      ],
+      "resB": [
+       1219,
+       1260,
+       1262
+      ]
+     }
+    }
+   },
+   {
+    "label": "9dw5.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 9dw5.1.A",
+    "nres": 1434,
+    "plddt_med": 0.7,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 60.1,
+      "contacts": 5,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       169,
+       170
+      ],
+      "resB": [
+       469,
+       474,
+       475,
+       476,
+       477
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 13.7,
+      "contacts": 232,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       95,
+       98,
+       102,
+       105,
+       106,
+       108,
+       109,
+       110,
+       111,
+       113,
+       116,
+       117,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       139,
+       140,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       184,
+       185,
+       188,
+       189,
+       192,
+       193,
+       251,
+       258,
+       259,
+       262,
+       263,
+       266,
+       269,
+       270,
+       272,
+       273,
+       278,
+       281,
+       282,
+       285,
+       286,
+       289,
+       290,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       310,
+       311,
+       312,
+       313,
+       314,
+       315,
+       318,
+       319,
+       322,
+       333,
+       337,
+       340,
+       341,
+       344,
+       347,
+       348,
+       352
+      ],
+      "resB": [
+       891,
+       914,
+       915,
+       917,
+       918,
+       921,
+       922,
+       924,
+       925,
+       928,
+       929,
+       930,
+       931,
+       933,
+       934,
+       935,
+       938,
+       939,
+       942,
+       943,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       957,
+       958,
+       959,
+       960,
+       961,
+       964,
+       969,
+       972,
+       973,
+       976,
+       977,
+       980,
+       984,
+       985,
+       989,
+       992,
+       993,
+       996,
+       997,
+       1048,
+       1051,
+       1052,
+       1054,
+       1055,
+       1058,
+       1059,
+       1060,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1107,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1119,
+       1120,
+       1122,
+       1123,
+       1126,
+       1127,
+       1129,
+       1130,
+       1131,
+       1133,
+       1134,
+       1137,
+       1138,
+       1140,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 61.1,
+      "contacts": 41,
+      "cov": [
+       100,
+       97
+      ],
+      "resA": [
+       261,
+       264,
+       265,
+       267,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       279,
+       280,
+       281,
+       284
+      ],
+      "resB": [
+       1258,
+       1260,
+       1279,
+       1280,
+       1283,
+       1284,
+       1288,
+       1290,
+       1292,
+       1293,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1306,
+       1307,
+       1342,
+       1355,
+       1358,
+       1359
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 64.2,
+      "contacts": 35,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       492,
+       496,
+       497,
+       498,
+       499,
+       504,
+       508,
+       543,
+       560,
+       561,
+       564
+      ],
+      "resB": [
+       1053,
+       1057,
+       1060,
+       1061,
+       1063,
+       1064,
+       1066,
+       1067,
+       1068,
+       1069,
+       1070,
+       1073,
+       1074,
+       1077
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 46.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       97
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.9,
+      "contacts": 7,
+      "cov": [
+       100,
+       97
+      ],
+      "resA": [
+       961,
+       962,
+       965
+      ],
+      "resB": [
+       1219,
+       1220,
+       1221,
+       1260,
+       1261,
+       1262
+      ]
+     }
+    }
+   },
+   {
+    "label": "6d3r.1.A (80.5% id)",
+    "kind": "swissmodel",
+    "identity": 80.498,
+    "src": "SWISS-MODEL on 6d3r.1.A",
+    "nres": 1398,
+    "plddt_med": 0.7,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 58.7,
+      "contacts": 4,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       169,
+       170
+      ],
+      "resB": [
+       474,
+       475,
+       476
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 7.7,
+      "contacts": 246,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       98,
+       99,
+       102,
+       105,
+       106,
+       109,
+       110,
+       111,
+       120,
+       121,
+       124,
+       125,
+       127,
+       128,
+       131,
+       132,
+       134,
+       135,
+       136,
+       139,
+       140,
+       142,
+       143,
+       146,
+       147,
+       150,
+       153,
+       154,
+       157,
+       158,
+       161,
+       162,
+       164,
+       165,
+       166,
+       167,
+       168,
+       169,
+       172,
+       177,
+       180,
+       181,
+       184,
+       185,
+       188,
+       189,
+       192,
+       219,
+       221,
+       224,
+       225,
+       228,
+       229,
+       231,
+       232,
+       236,
+       251,
+       258,
+       259,
+       262,
+       263,
+       265,
+       266,
+       267,
+       269,
+       270,
+       272,
+       273,
+       278,
+       279,
+       282,
+       285,
+       286,
+       289,
+       290,
+       293,
+       296,
+       297,
+       300,
+       301,
+       303,
+       304,
+       305,
+       307,
+       308,
+       309,
+       310,
+       311,
+       312,
+       315,
+       316,
+       319,
+       320,
+       323,
+       327,
+       328,
+       333,
+       337,
+       341,
+       344,
+       347,
+       348,
+       352
+      ],
+      "resB": [
+       868,
+       871,
+       874,
+       875,
+       878,
+       879,
+       881,
+       882,
+       911,
+       912,
+       916,
+       919,
+       920,
+       923,
+       924,
+       927,
+       931,
+       934,
+       935,
+       938,
+       939,
+       942,
+       945,
+       946,
+       949,
+       950,
+       953,
+       954,
+       956,
+       957,
+       958,
+       959,
+       961,
+       964,
+       969,
+       972,
+       973,
+       976,
+       977,
+       980,
+       984,
+       985,
+       988,
+       989,
+       992,
+       993,
+       996,
+       1044,
+       1048,
+       1052,
+       1054,
+       1055,
+       1058,
+       1059,
+       1060,
+       1062,
+       1063,
+       1065,
+       1066,
+       1071,
+       1074,
+       1075,
+       1078,
+       1079,
+       1082,
+       1085,
+       1086,
+       1089,
+       1090,
+       1093,
+       1094,
+       1097,
+       1100,
+       1101,
+       1104,
+       1105,
+       1108,
+       1111,
+       1112,
+       1115,
+       1116,
+       1118,
+       1119,
+       1120,
+       1123,
+       1126,
+       1127,
+       1129,
+       1130,
+       1131,
+       1133,
+       1134,
+       1136,
+       1137,
+       1138,
+       1140,
+       1141,
+       1144,
+       1145
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 60.9,
+      "contacts": 42,
+      "cov": [
+       100,
+       98
+      ],
+      "resA": [
+       261,
+       264,
+       267,
+       268,
+       270,
+       271,
+       272,
+       273,
+       274,
+       275,
+       276,
+       277,
+       278,
+       279,
+       280,
+       281,
+       284
+      ],
+      "resB": [
+       1258,
+       1260,
+       1279,
+       1280,
+       1283,
+       1284,
+       1286,
+       1288,
+       1292,
+       1294,
+       1295,
+       1296,
+       1297,
+       1302,
+       1303,
+       1306,
+       1307,
+       1342,
+       1355,
+       1358
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 60.8,
+      "contacts": 31,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       469,
+       472,
+       474,
+       488,
+       489,
+       490,
+       492,
+       496,
+       498,
+       499,
+       504,
+       508,
+       509,
+       510,
+       543,
+       561,
+       564
+      ],
+      "resB": [
+       1053,
+       1057,
+       1058,
+       1060,
+       1061,
+       1063,
+       1064,
+       1065,
+       1066,
+       1067,
+       1068,
+       1070,
+       1073,
+       1074
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 40.3,
+      "contacts": 0,
+      "cov": [
+       100,
+       98
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.4,
+      "contacts": 7,
+      "cov": [
+       100,
+       98
+      ],
+      "resA": [
+       961,
+       962
+      ],
+      "resB": [
+       1218,
+       1219,
+       1220,
+       1259,
+       1260,
+       1262
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+    "n": 6,
+    "dmin": 7.7,
+    "dmax": 14.3,
+    "spread": 6.6,
+    "cmin": 217,
+    "cmax": 279,
+    "at_min": "6d3r.1.A (80.5% id)",
+    "at_max": "5UAK \u2014 CFTR dephosphorylated/NBD-separated"
+   },
+   "ABC transmembrane type-1 1|ABC transporter 1": {
+    "n": 6,
+    "dmin": 57.8,
+    "dmax": 60.8,
+    "spread": 3.0,
+    "cmin": 3,
+    "cmax": 5,
+    "at_min": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+    "at_max": "5UAK \u2014 CFTR dephosphorylated/NBD-separated"
+   },
+   "ABC transmembrane type-1 1|ABC transporter 2": {
+    "n": 6,
+    "dmin": 58.3,
+    "dmax": 61.3,
+    "spread": 3.0,
+    "cmin": 41,
+    "cmax": 58,
+    "at_min": "AlphaFold v6",
+    "at_max": "5UAK \u2014 CFTR dephosphorylated/NBD-separated"
+   },
+   "ABC transmembrane type-1 2|ABC transporter 2": {
+    "n": 6,
+    "dmin": 56.4,
+    "dmax": 58.9,
+    "spread": 2.5,
+    "cmin": 3,
+    "cmax": 9,
+    "at_min": "5UAK \u2014 CFTR dephosphorylated/NBD-separated",
+    "at_max": "9dw5.1.A (100.0% id)"
+   },
+   "ABC transporter 1|ABC transmembrane type-1 2": {
+    "n": 6,
+    "dmin": 59.4,
+    "dmax": 64.2,
+    "spread": 4.8,
+    "cmin": 31,
+    "cmax": 47,
+    "at_min": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+    "at_max": "9dw5.1.A (100.0% id)"
+   },
+   "ABC transporter 1|ABC transporter 2": {
+    "n": 6,
+    "dmin": 26.7,
+    "dmax": 46.7,
+    "spread": 20.0,
+    "cmin": 0,
+    "cmax": 70,
+    "at_min": "6MSM \u2014 CFTR phosphorylated ATP-bound",
+    "at_max": "5UAK \u2014 CFTR dephosphorylated/NBD-separated"
+   }
+  }
+ },
+ "P08183": {
+  "gene": "ABCB1",
+  "acc": "P08183",
+  "why": "NBD dimerisation; multidrug resistance; both states solved",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/P08183.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "6QEX \u2014 P-gp inward-open",
+    "file": "st/P08183_6QEX.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 6QEX"
+   },
+   {
+    "label": "6C0V \u2014 P-gp nucleotide-bound occluded",
+    "file": "st/P08183_6C0V.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 6C0V"
+   },
+   {
+    "label": "9oe2.1.A (64.6% id)",
+    "file": "st/P08183_sm_9oe2-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 64.612,
+    "chain": null,
+    "src": "SWISS-MODEL on 9oe2.1.A",
+    "ndom": 4
+   },
+   {
+    "label": "9ctc.1.A (100.0% id)",
+    "file": "st/P08183_sm_9ctc-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 9ctc.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "6s7p.1.A (78.1% id)",
+    "file": "st/P08183_sm_6s7p-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 78.102,
+    "chain": null,
+    "src": "SWISS-MODEL on 6s7p.1.A",
+    "ndom": 3
+   }
+  ],
+  "length": 1280,
+  "name": "ATP-dependent translocase ABCB1",
+  "domains": [
+   [
+    "ABC transmembrane type-1 1",
+    51,
+    357
+   ],
+   [
+    "ABC transporter 1",
+    392,
+    628
+   ],
+   [
+    "ABC transmembrane type-1 2",
+    711,
+    1000
+   ],
+   [
+    "ABC transporter 2",
+    1035,
+    1273
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 1280,
+    "plddt_med": 90.7,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 62.2,
+      "contacts": 12,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       161,
+       164,
+       165
+      ],
+      "resB": [
+       401,
+       402,
+       403,
+       443,
+       444
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 12.5,
+      "contacts": 260,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       61,
+       64,
+       65,
+       68,
+       72,
+       75,
+       76,
+       79,
+       80,
+       83,
+       84,
+       86,
+       87,
+       88,
+       100,
+       104,
+       107,
+       108,
+       111,
+       112,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       129,
+       130,
+       132,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       149,
+       152,
+       153,
+       155,
+       156,
+       157,
+       158,
+       159,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       175,
+       176,
+       180,
+       188,
+       192,
+       195,
+       243,
+       247,
+       251,
+       253,
+       254,
+       255,
+       257,
+       258,
+       259,
+       261,
+       262,
+       264,
+       265,
+       270,
+       273,
+       274,
+       277,
+       278,
+       281,
+       282,
+       284,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       308,
+       310,
+       311,
+       314,
+       315,
+       318,
+       321,
+       322,
+       328,
+       332,
+       336
+      ],
+      "resB": [
+       724,
+       725,
+       728,
+       732,
+       735,
+       736,
+       739,
+       740,
+       741,
+       742,
+       745,
+       748,
+       749,
+       752,
+       753,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       799,
+       800,
+       801,
+       804,
+       805,
+       811,
+       814,
+       815,
+       818,
+       819,
+       826,
+       890,
+       894,
+       896,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       907,
+       908,
+       913,
+       916,
+       917,
+       920,
+       921,
+       924,
+       925,
+       928,
+       931,
+       932,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       960,
+       961,
+       962,
+       964,
+       965,
+       967,
+       971,
+       975
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 64.0,
+      "contacts": 45,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       252,
+       256,
+       257,
+       259,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       272,
+       273,
+       276
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1087,
+       1107,
+       1110,
+       1115,
+       1121,
+       1122,
+       1123,
+       1124,
+       1133,
+       1134,
+       1136,
+       1172,
+       1188,
+       1189,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 62.1,
+      "contacts": 45,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       438,
+       441,
+       443,
+       444,
+       464,
+       467,
+       468,
+       470,
+       472,
+       478,
+       479,
+       480,
+       481,
+       486,
+       489,
+       490,
+       491,
+       492,
+       493,
+       527,
+       543,
+       547
+      ],
+      "resB": [
+       891,
+       895,
+       899,
+       903,
+       905,
+       906,
+       907,
+       908,
+       909,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       916,
+       919
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 44.4,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.6,
+      "contacts": 12,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       806,
+       807
+      ],
+      "resB": [
+       1044,
+       1045,
+       1046,
+       1086,
+       1087
+      ]
+     }
+    }
+   },
+   {
+    "label": "6QEX \u2014 P-gp inward-open",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 6QEX",
+    "nres": 1182,
+    "plddt_med": 98.3,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 63.2,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       157,
+       159,
+       160,
+       161,
+       164,
+       165
+      ],
+      "resB": [
+       402,
+       403,
+       442,
+       443,
+       444,
+       464,
+       467
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 12.9,
+      "contacts": 258,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       61,
+       64,
+       65,
+       68,
+       72,
+       75,
+       76,
+       79,
+       80,
+       83,
+       84,
+       86,
+       87,
+       88,
+       100,
+       104,
+       107,
+       108,
+       111,
+       112,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       129,
+       130,
+       132,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       149,
+       152,
+       153,
+       155,
+       156,
+       157,
+       158,
+       159,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       175,
+       176,
+       177,
+       179,
+       180,
+       184,
+       188,
+       189,
+       192,
+       232,
+       236,
+       237,
+       239,
+       243,
+       247,
+       254,
+       257,
+       258,
+       259,
+       261,
+       262,
+       264,
+       265,
+       270,
+       273,
+       274,
+       275,
+       277,
+       278,
+       281,
+       282,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       308,
+       310,
+       311,
+       314,
+       315,
+       318,
+       321,
+       322,
+       328,
+       332,
+       336,
+       347
+      ],
+      "resB": [
+       724,
+       725,
+       728,
+       732,
+       735,
+       736,
+       739,
+       740,
+       741,
+       742,
+       745,
+       748,
+       749,
+       752,
+       753,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       799,
+       801,
+       804,
+       805,
+       811,
+       814,
+       815,
+       818,
+       819,
+       823,
+       875,
+       876,
+       878,
+       879,
+       880,
+       884,
+       887,
+       890,
+       891,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       908,
+       913,
+       914,
+       916,
+       917,
+       920,
+       921,
+       924,
+       925,
+       928,
+       931,
+       932,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       949,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       960,
+       961,
+       962,
+       964,
+       965,
+       966,
+       967,
+       971,
+       975,
+       978,
+       990,
+       994,
+       996
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 63.2,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       252,
+       256,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       272,
+       273,
+       276
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1107,
+       1110,
+       1115,
+       1117,
+       1121,
+       1122,
+       1123,
+       1124,
+       1129,
+       1132,
+       1133,
+       1134,
+       1135,
+       1136,
+       1140,
+       1188,
+       1189,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 62.2,
+      "contacts": 36,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       441,
+       443,
+       464,
+       467,
+       468,
+       470,
+       472,
+       478,
+       480,
+       481,
+       486,
+       490,
+       491,
+       526,
+       527,
+       543,
+       547
+      ],
+      "resB": [
+       899,
+       902,
+       903,
+       906,
+       908,
+       909,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       916
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 36.4,
+      "contacts": 7,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       624,
+       625,
+       628
+      ],
+      "resB": [
+       1268,
+       1271,
+       1272,
+       1273
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.5,
+      "contacts": 9,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       807
+      ],
+      "resB": [
+       1045,
+       1046,
+       1086,
+       1087
+      ]
+     }
+    }
+   },
+   {
+    "label": "6C0V \u2014 P-gp nucleotide-bound occluded",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 6C0V",
+    "nres": 1154,
+    "plddt_med": 268.1,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 58.8,
+      "contacts": 11,
+      "cov": [
+       92,
+       100
+      ],
+      "resA": [
+       160,
+       161,
+       164,
+       165,
+       262
+      ],
+      "resB": [
+       401,
+       402,
+       403,
+       443,
+       444,
+       529
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 12.8,
+      "contacts": 225,
+      "cov": [
+       92,
+       100
+      ],
+      "resA": [
+       61,
+       64,
+       65,
+       72,
+       107,
+       111,
+       114,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       129,
+       130,
+       132,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       149,
+       152,
+       153,
+       155,
+       156,
+       157,
+       158,
+       159,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       173,
+       175,
+       176,
+       177,
+       184,
+       188,
+       189,
+       192,
+       195,
+       199,
+       243,
+       247,
+       251,
+       254,
+       255,
+       257,
+       258,
+       259,
+       261,
+       262,
+       265,
+       270,
+       273,
+       274,
+       277,
+       278,
+       281,
+       282,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       308,
+       311,
+       314,
+       315,
+       318,
+       319,
+       321,
+       322,
+       339,
+       340,
+       343,
+       344,
+       347
+      ],
+      "resB": [
+       724,
+       725,
+       728,
+       748,
+       749,
+       752,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       785,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       799,
+       801,
+       804,
+       805,
+       811,
+       812,
+       814,
+       815,
+       816,
+       818,
+       819,
+       823,
+       826,
+       831,
+       832,
+       890,
+       894,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       908,
+       913,
+       916,
+       917,
+       920,
+       921,
+       924,
+       928,
+       931,
+       932,
+       934,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       961,
+       964,
+       965,
+       975,
+       978,
+       982,
+       983,
+       985,
+       986,
+       989,
+       990,
+       993,
+       997
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 61.0,
+      "contacts": 43,
+      "cov": [
+       92,
+       100
+      ],
+      "resA": [
+       164,
+       167,
+       168,
+       255,
+       256,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       272,
+       273
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1087,
+       1107,
+       1110,
+       1115,
+       1117,
+       1121,
+       1123,
+       1124,
+       1132,
+       1133,
+       1134,
+       1135,
+       1136,
+       1171,
+       1175,
+       1188,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 61.1,
+      "contacts": 46,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       438,
+       441,
+       443,
+       444,
+       464,
+       467,
+       468,
+       472,
+       478,
+       479,
+       480,
+       481,
+       482,
+       486,
+       489,
+       490,
+       491,
+       493,
+       526,
+       527,
+       530,
+       543,
+       547
+      ],
+      "resB": [
+       805,
+       810,
+       811,
+       812,
+       899,
+       902,
+       903,
+       905,
+       906,
+       907,
+       908,
+       909,
+       910,
+       911,
+       912,
+       914,
+       915,
+       916,
+       919
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 28.2,
+      "contacts": 68,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       403,
+       404,
+       406,
+       407,
+       427,
+       428,
+       429,
+       430,
+       475,
+       476,
+       477,
+       516,
+       517,
+       522,
+       527,
+       530,
+       531,
+       532,
+       533,
+       534,
+       535,
+       536,
+       538,
+       556,
+       559,
+       560,
+       561,
+       562,
+       563,
+       587,
+       588,
+       624,
+       625,
+       628
+      ],
+      "resB": [
+       1046,
+       1047,
+       1050,
+       1071,
+       1072,
+       1073,
+       1118,
+       1119,
+       1120,
+       1121,
+       1157,
+       1161,
+       1162,
+       1167,
+       1172,
+       1175,
+       1176,
+       1177,
+       1178,
+       1179,
+       1180,
+       1181,
+       1183,
+       1201,
+       1204,
+       1205,
+       1206,
+       1207,
+       1208,
+       1209,
+       1212,
+       1232,
+       1233,
+       1270,
+       1273
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 59.2,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       902,
+       905
+      ],
+      "resB": [
+       1045,
+       1046,
+       1085,
+       1086,
+       1087,
+       1172,
+       1174
+      ]
+     }
+    }
+   },
+   {
+    "label": "9oe2.1.A (64.6% id)",
+    "kind": "swissmodel",
+    "identity": 64.612,
+    "src": "SWISS-MODEL on 9oe2.1.A",
+    "nres": 1247,
+    "plddt_med": 0.8,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 64.3,
+      "contacts": 12,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       161,
+       164,
+       165
+      ],
+      "resB": [
+       401,
+       402,
+       403,
+       438,
+       443,
+       444
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 12.7,
+      "contacts": 253,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       61,
+       64,
+       65,
+       68,
+       69,
+       72,
+       75,
+       76,
+       79,
+       80,
+       83,
+       84,
+       86,
+       87,
+       88,
+       91,
+       95,
+       107,
+       108,
+       111,
+       112,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       129,
+       130,
+       132,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       152,
+       153,
+       155,
+       156,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       175,
+       176,
+       177,
+       180,
+       188,
+       189,
+       192,
+       195,
+       247,
+       251,
+       254,
+       255,
+       257,
+       258,
+       259,
+       261,
+       262,
+       264,
+       265,
+       270,
+       271,
+       273,
+       274,
+       277,
+       278,
+       281,
+       282,
+       284,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       308,
+       310,
+       311,
+       314,
+       315,
+       318,
+       319,
+       321,
+       322,
+       328,
+       332,
+       336
+      ],
+      "resB": [
+       724,
+       725,
+       728,
+       732,
+       735,
+       736,
+       739,
+       740,
+       741,
+       742,
+       743,
+       745,
+       748,
+       749,
+       752,
+       753,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       773,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       799,
+       801,
+       804,
+       805,
+       811,
+       814,
+       815,
+       818,
+       819,
+       879,
+       887,
+       890,
+       896,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       907,
+       908,
+       913,
+       916,
+       917,
+       920,
+       924,
+       928,
+       932,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       949,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       960,
+       961,
+       962,
+       964,
+       965,
+       966,
+       967,
+       971,
+       974,
+       975,
+       983,
+       990,
+       994
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 67.1,
+      "contacts": 42,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       256,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       272,
+       273,
+       276
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1087,
+       1110,
+       1113,
+       1115,
+       1121,
+       1122,
+       1123,
+       1124,
+       1125,
+       1132,
+       1133,
+       1134,
+       1135,
+       1136,
+       1188,
+       1189,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 65.1,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       401,
+       438,
+       441,
+       443,
+       444,
+       464,
+       467,
+       468,
+       470,
+       472,
+       478,
+       480,
+       481,
+       482,
+       486,
+       489,
+       490,
+       491,
+       493,
+       527,
+       543,
+       547
+      ],
+      "resB": [
+       895,
+       899,
+       903,
+       905,
+       906,
+       907,
+       908,
+       909,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       916,
+       919
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 62.2,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 61.6,
+      "contacts": 12,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       806
+      ],
+      "resB": [
+       1044,
+       1045,
+       1046,
+       1081,
+       1086,
+       1087
+      ]
+     }
+    }
+   },
+   {
+    "label": "9ctc.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 9ctc.1.A",
+    "nres": 1243,
+    "plddt_med": 0.8,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 61.8,
+      "contacts": 7,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       161,
+       164
+      ],
+      "resB": [
+       402,
+       403,
+       443,
+       444
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 13.3,
+      "contacts": 277,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       61,
+       64,
+       65,
+       68,
+       69,
+       72,
+       75,
+       76,
+       79,
+       80,
+       83,
+       84,
+       86,
+       87,
+       88,
+       103,
+       104,
+       107,
+       108,
+       111,
+       112,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       127,
+       129,
+       130,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       149,
+       152,
+       153,
+       155,
+       156,
+       158,
+       159,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       175,
+       176,
+       177,
+       180,
+       183,
+       184,
+       189,
+       192,
+       232,
+       236,
+       237,
+       238,
+       239,
+       240,
+       241,
+       242,
+       244,
+       247,
+       251,
+       254,
+       255,
+       257,
+       258,
+       259,
+       261,
+       262,
+       264,
+       265,
+       270,
+       273,
+       274,
+       277,
+       278,
+       281,
+       282,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       310,
+       311,
+       314,
+       315,
+       318,
+       319,
+       321,
+       322,
+       328,
+       332,
+       336,
+       347
+      ],
+      "resB": [
+       725,
+       728,
+       732,
+       735,
+       736,
+       739,
+       740,
+       741,
+       742,
+       745,
+       748,
+       749,
+       752,
+       753,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       773,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       798,
+       799,
+       801,
+       804,
+       805,
+       811,
+       812,
+       814,
+       815,
+       818,
+       819,
+       820,
+       823,
+       876,
+       878,
+       879,
+       880,
+       881,
+       882,
+       884,
+       885,
+       887,
+       890,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       907,
+       908,
+       913,
+       916,
+       917,
+       920,
+       921,
+       924,
+       925,
+       928,
+       932,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       960,
+       961,
+       962,
+       964,
+       965,
+       966,
+       967,
+       971,
+       975,
+       994,
+       995
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 63.9,
+      "contacts": 42,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       256,
+       257,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       271,
+       272,
+       273,
+       276
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1087,
+       1107,
+       1110,
+       1111,
+       1115,
+       1121,
+       1123,
+       1124,
+       1125,
+       1133,
+       1134,
+       1136,
+       1188,
+       1189,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 61.2,
+      "contacts": 44,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       438,
+       441,
+       443,
+       444,
+       464,
+       467,
+       468,
+       472,
+       478,
+       480,
+       481,
+       482,
+       486,
+       490,
+       491,
+       492,
+       493,
+       527,
+       543,
+       547
+      ],
+      "resB": [
+       895,
+       899,
+       903,
+       905,
+       906,
+       907,
+       908,
+       909,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       916,
+       919
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 34.4,
+      "contacts": 15,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       429,
+       560,
+       562,
+       563,
+       587,
+       589,
+       625,
+       628
+      ],
+      "resB": [
+       1072,
+       1204,
+       1205,
+       1206,
+       1207,
+       1208,
+       1212,
+       1232,
+       1233,
+       1270
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 58.3,
+      "contacts": 13,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       806,
+       807
+      ],
+      "resB": [
+       1044,
+       1045,
+       1046,
+       1081,
+       1086,
+       1087
+      ]
+     }
+    }
+   },
+   {
+    "label": "6s7p.1.A (78.1% id)",
+    "kind": "swissmodel",
+    "identity": 78.102,
+    "src": "SWISS-MODEL on 6s7p.1.A",
+    "nres": 1217,
+    "plddt_med": 0.8,
+    "pairs": {
+     "ABC transmembrane type-1 1|ABC transporter 1": {
+      "dist": 61.5,
+      "contacts": 12,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       159,
+       160,
+       161,
+       164,
+       165,
+       259,
+       262
+      ],
+      "resB": [
+       402,
+       403,
+       443,
+       444,
+       526,
+       529
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+      "dist": 11.5,
+      "contacts": 293,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       61,
+       65,
+       69,
+       72,
+       75,
+       76,
+       79,
+       96,
+       97,
+       107,
+       108,
+       111,
+       112,
+       114,
+       115,
+       118,
+       119,
+       121,
+       122,
+       123,
+       125,
+       126,
+       129,
+       130,
+       132,
+       133,
+       134,
+       137,
+       138,
+       141,
+       142,
+       145,
+       148,
+       149,
+       152,
+       153,
+       155,
+       156,
+       160,
+       163,
+       164,
+       168,
+       171,
+       172,
+       173,
+       175,
+       176,
+       177,
+       180,
+       181,
+       188,
+       189,
+       192,
+       195,
+       243,
+       247,
+       254,
+       255,
+       257,
+       258,
+       259,
+       261,
+       262,
+       264,
+       265,
+       270,
+       273,
+       274,
+       277,
+       278,
+       281,
+       282,
+       284,
+       285,
+       288,
+       289,
+       292,
+       293,
+       296,
+       297,
+       299,
+       300,
+       301,
+       303,
+       304,
+       307,
+       308,
+       310,
+       311,
+       312,
+       314,
+       315,
+       318,
+       321,
+       322,
+       328,
+       332,
+       335,
+       336,
+       339,
+       340,
+       343,
+       344,
+       347,
+       350,
+       353
+      ],
+      "resB": [
+       724,
+       725,
+       728,
+       732,
+       735,
+       736,
+       739,
+       745,
+       748,
+       749,
+       752,
+       753,
+       755,
+       756,
+       759,
+       760,
+       762,
+       763,
+       764,
+       766,
+       767,
+       770,
+       771,
+       774,
+       775,
+       778,
+       779,
+       782,
+       783,
+       785,
+       786,
+       789,
+       790,
+       793,
+       794,
+       796,
+       797,
+       799,
+       801,
+       804,
+       805,
+       811,
+       812,
+       814,
+       815,
+       816,
+       818,
+       819,
+       820,
+       823,
+       826,
+       831,
+       832,
+       835,
+       838,
+       839,
+       890,
+       894,
+       896,
+       897,
+       898,
+       900,
+       901,
+       902,
+       904,
+       905,
+       907,
+       908,
+       913,
+       916,
+       917,
+       920,
+       921,
+       924,
+       925,
+       927,
+       928,
+       931,
+       932,
+       934,
+       935,
+       936,
+       938,
+       939,
+       940,
+       942,
+       943,
+       944,
+       946,
+       947,
+       950,
+       951,
+       953,
+       954,
+       957,
+       958,
+       960,
+       961,
+       962,
+       964,
+       965,
+       971,
+       972,
+       974,
+       975,
+       978,
+       979,
+       982,
+       983,
+       986,
+       989,
+       990,
+       993,
+       997
+      ]
+     },
+     "ABC transmembrane type-1 1|ABC transporter 2": {
+      "dist": 61.5,
+      "contacts": 50,
+      "cov": [
+       100,
+       91
+      ],
+      "resA": [
+       164,
+       168,
+       169,
+       256,
+       257,
+       259,
+       260,
+       262,
+       263,
+       264,
+       265,
+       266,
+       267,
+       268,
+       269,
+       270,
+       272,
+       273,
+       276
+      ],
+      "resB": [
+       1081,
+       1084,
+       1086,
+       1087,
+       1107,
+       1110,
+       1115,
+       1117,
+       1121,
+       1123,
+       1124,
+       1125,
+       1133,
+       1134,
+       1136,
+       1171,
+       1172,
+       1174,
+       1175,
+       1188,
+       1189,
+       1192
+      ]
+     },
+     "ABC transporter 1|ABC transmembrane type-1 2": {
+      "dist": 60.2,
+      "contacts": 56,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       438,
+       441,
+       443,
+       444,
+       464,
+       467,
+       468,
+       472,
+       478,
+       479,
+       480,
+       481,
+       482,
+       486,
+       489,
+       490,
+       491,
+       492,
+       493,
+       523,
+       526,
+       527,
+       530,
+       543,
+       547
+      ],
+      "resB": [
+       805,
+       807,
+       810,
+       811,
+       812,
+       895,
+       899,
+       902,
+       903,
+       905,
+       906,
+       907,
+       908,
+       909,
+       910,
+       911,
+       912,
+       913,
+       914,
+       915,
+       916,
+       919
+      ]
+     },
+     "ABC transporter 1|ABC transporter 2": {
+      "dist": 28.0,
+      "contacts": 78,
+      "cov": [
+       100,
+       91
+      ],
+      "resA": [
+       403,
+       404,
+       407,
+       427,
+       428,
+       429,
+       430,
+       475,
+       476,
+       477,
+       515,
+       516,
+       517,
+       522,
+       523,
+       527,
+       530,
+       531,
+       532,
+       533,
+       534,
+       535,
+       536,
+       538,
+       556,
+       559,
+       560,
+       561,
+       562,
+       563,
+       565,
+       566,
+       587,
+       588,
+       625,
+       628
+      ],
+      "resB": [
+       1046,
+       1047,
+       1049,
+       1050,
+       1070,
+       1071,
+       1072,
+       1073,
+       1118,
+       1119,
+       1120,
+       1121,
+       1157,
+       1161,
+       1162,
+       1167,
+       1168,
+       1172,
+       1175,
+       1176,
+       1177,
+       1178,
+       1179,
+       1180,
+       1181,
+       1182,
+       1183,
+       1201,
+       1203,
+       1204,
+       1205,
+       1206,
+       1207,
+       1208,
+       1209,
+       1210,
+       1212,
+       1232
+      ]
+     },
+     "ABC transmembrane type-1 2|ABC transporter 2": {
+      "dist": 56.4,
+      "contacts": 12,
+      "cov": [
+       100,
+       91
+      ],
+      "resA": [
+       800,
+       801,
+       802,
+       805,
+       806,
+       902,
+       905
+      ],
+      "resB": [
+       1045,
+       1046,
+       1086,
+       1087,
+       1171,
+       1172,
+       1174,
+       1175
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "ABC transmembrane type-1 1|ABC transmembrane type-1 2": {
+    "n": 6,
+    "dmin": 11.5,
+    "dmax": 13.3,
+    "spread": 1.8,
+    "cmin": 225,
+    "cmax": 293,
+    "at_min": "6s7p.1.A (78.1% id)",
+    "at_max": "9ctc.1.A (100.0% id)"
+   },
+   "ABC transmembrane type-1 1|ABC transporter 1": {
+    "n": 6,
+    "dmin": 58.8,
+    "dmax": 64.3,
+    "spread": 5.5,
+    "cmin": 7,
+    "cmax": 12,
+    "at_min": "6C0V \u2014 P-gp nucleotide-bound occluded",
+    "at_max": "9oe2.1.A (64.6% id)"
+   },
+   "ABC transmembrane type-1 1|ABC transporter 2": {
+    "n": 6,
+    "dmin": 61.0,
+    "dmax": 67.1,
+    "spread": 6.1,
+    "cmin": 42,
+    "cmax": 50,
+    "at_min": "6C0V \u2014 P-gp nucleotide-bound occluded",
+    "at_max": "9oe2.1.A (64.6% id)"
+   },
+   "ABC transmembrane type-1 2|ABC transporter 2": {
+    "n": 6,
+    "dmin": 56.4,
+    "dmax": 61.6,
+    "spread": 5.2,
+    "cmin": 9,
+    "cmax": 13,
+    "at_min": "6s7p.1.A (78.1% id)",
+    "at_max": "9oe2.1.A (64.6% id)"
+   },
+   "ABC transporter 1|ABC transmembrane type-1 2": {
+    "n": 6,
+    "dmin": 60.2,
+    "dmax": 65.1,
+    "spread": 4.9,
+    "cmin": 36,
+    "cmax": 56,
+    "at_min": "6s7p.1.A (78.1% id)",
+    "at_max": "9oe2.1.A (64.6% id)"
+   },
+   "ABC transporter 1|ABC transporter 2": {
+    "n": 6,
+    "dmin": 28.0,
+    "dmax": 62.2,
+    "spread": 34.2,
+    "cmin": 0,
+    "cmax": 78,
+    "at_min": "6s7p.1.A (78.1% id)",
+    "at_max": "9oe2.1.A (64.6% id)"
+   }
+  }
+ },
+ "Q5S007": {
+  "gene": "LRRK2",
+  "acc": "Q5S007",
+  "why": "Roc-COR-kinase-WD40; G2019S, the commonest genetic cause of Parkinson's",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/Q5S007.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "7LHW \u2014 LRRK2 full-length",
+    "file": "st/Q5S007_7LHW.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 7LHW"
+   },
+   {
+    "label": "9om2.1.A (100.0% id)",
+    "file": "st/Q5S007_sm_9om2-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 9om2.1.A",
+    "ndom": 3
+   },
+   {
+    "label": "8tzh.1.B (100.0% id)",
+    "file": "st/Q5S007_sm_8tzh-1-B.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 8tzh.1.B",
+    "ndom": 3
+   },
+   {
+    "label": "9yqk.1.A (100.0% id)",
+    "file": "st/Q5S007_sm_9yqk-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 9yqk.1.A",
+    "ndom": 2
+   }
+  ],
+  "length": 2527,
+  "name": "Leucine-rich repeat serine/threonine-protein kinase 2",
+  "domains": [
+   [
+    "Roc",
+    1328,
+    1511
+   ],
+   [
+    "COR",
+    1546,
+    1740
+   ],
+   [
+    "Protein kinase",
+    1879,
+    2138
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 2527,
+    "plddt_med": 83.5,
+    "pairs": {
+     "Roc|COR": {
+      "dist": 27.6,
+      "contacts": 78,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1332,
+       1334,
+       1336,
+       1369,
+       1370,
+       1371,
+       1372,
+       1373,
+       1374,
+       1391,
+       1393,
+       1399,
+       1400,
+       1401,
+       1402,
+       1403,
+       1404,
+       1406,
+       1407,
+       1408,
+       1409,
+       1410,
+       1411,
+       1412,
+       1432,
+       1433,
+       1434,
+       1436,
+       1437,
+       1478,
+       1479
+      ],
+      "resB": [
+       1575,
+       1576,
+       1577,
+       1578,
+       1579,
+       1580,
+       1581,
+       1583,
+       1585,
+       1600,
+       1601,
+       1603,
+       1604,
+       1607,
+       1608,
+       1611,
+       1612,
+       1655,
+       1656,
+       1657,
+       1658,
+       1671,
+       1699,
+       1700,
+       1701,
+       1702,
+       1703,
+       1706,
+       1707,
+       1735,
+       1736
+      ]
+     },
+     "Roc|Protein kinase": {
+      "dist": 50.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "COR|Protein kinase": {
+      "dist": 32.6,
+      "contacts": 26,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1567,
+       1587,
+       1588,
+       1589,
+       1590,
+       1591,
+       1654,
+       1655,
+       1661,
+       1710,
+       1711,
+       1714,
+       1719,
+       1720
+      ],
+      "resB": [
+       1925,
+       1926,
+       2025,
+       2026,
+       2027,
+       2028,
+       2045,
+       2048,
+       2049,
+       2050,
+       2051,
+       2120
+      ]
+     }
+    }
+   },
+   {
+    "label": "7LHW \u2014 LRRK2 full-length",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 7LHW",
+    "nres": 1813,
+    "plddt_med": 55.7,
+    "pairs": {
+     "Roc|COR": {
+      "dist": 26.4,
+      "contacts": 73,
+      "cov": [
+       97,
+       88
+      ],
+      "resA": [
+       1332,
+       1334,
+       1336,
+       1369,
+       1370,
+       1371,
+       1372,
+       1373,
+       1391,
+       1393,
+       1400,
+       1401,
+       1402,
+       1403,
+       1404,
+       1405,
+       1406,
+       1407,
+       1408,
+       1410,
+       1412,
+       1432,
+       1433,
+       1434,
+       1436,
+       1437,
+       1440
+      ],
+      "resB": [
+       1575,
+       1576,
+       1577,
+       1578,
+       1579,
+       1580,
+       1581,
+       1583,
+       1601,
+       1603,
+       1604,
+       1605,
+       1607,
+       1608,
+       1609,
+       1611,
+       1612,
+       1656,
+       1657,
+       1658,
+       1671,
+       1698,
+       1699,
+       1700,
+       1701,
+       1702,
+       1703,
+       1706,
+       1707
+      ]
+     },
+     "Roc|Protein kinase": {
+      "dist": 55.4,
+      "contacts": 0,
+      "cov": [
+       97,
+       99
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "COR|Protein kinase": {
+      "dist": 38.6,
+      "contacts": 3,
+      "cov": [
+       88,
+       99
+      ],
+      "resA": [
+       1567
+      ],
+      "resB": [
+       2045,
+       2046,
+       2047
+      ]
+     }
+    }
+   },
+   {
+    "label": "9om2.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 9om2.1.A",
+    "nres": 1988,
+    "plddt_med": 0.8,
+    "pairs": {
+     "Roc|COR": {
+      "dist": 28.0,
+      "contacts": 74,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1332,
+       1334,
+       1335,
+       1336,
+       1369,
+       1370,
+       1371,
+       1372,
+       1373,
+       1391,
+       1393,
+       1398,
+       1400,
+       1401,
+       1402,
+       1403,
+       1404,
+       1405,
+       1406,
+       1407,
+       1408,
+       1409,
+       1410,
+       1429,
+       1432,
+       1433,
+       1434,
+       1436,
+       1437,
+       1440,
+       1479
+      ],
+      "resB": [
+       1575,
+       1577,
+       1578,
+       1579,
+       1580,
+       1581,
+       1583,
+       1600,
+       1601,
+       1604,
+       1605,
+       1607,
+       1608,
+       1609,
+       1611,
+       1612,
+       1655,
+       1656,
+       1657,
+       1658,
+       1671,
+       1698,
+       1699,
+       1700,
+       1701,
+       1702,
+       1703,
+       1706,
+       1707
+      ]
+     },
+     "Roc|Protein kinase": {
+      "dist": 56.1,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "COR|Protein kinase": {
+      "dist": 39.1,
+      "contacts": 3,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1567,
+       1721
+      ],
+      "resB": [
+       1926,
+       2045,
+       2047
+      ]
+     }
+    }
+   },
+   {
+    "label": "8tzh.1.B (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 8tzh.1.B",
+    "nres": 1896,
+    "plddt_med": 0.7,
+    "pairs": {
+     "Roc|COR": {
+      "dist": 28.6,
+      "contacts": 75,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1332,
+       1334,
+       1335,
+       1336,
+       1369,
+       1370,
+       1371,
+       1372,
+       1373,
+       1391,
+       1393,
+       1399,
+       1400,
+       1401,
+       1402,
+       1403,
+       1404,
+       1405,
+       1406,
+       1407,
+       1408,
+       1409,
+       1410,
+       1412,
+       1432,
+       1433,
+       1434,
+       1436,
+       1437,
+       1440,
+       1479
+      ],
+      "resB": [
+       1575,
+       1577,
+       1578,
+       1579,
+       1580,
+       1581,
+       1583,
+       1585,
+       1600,
+       1601,
+       1603,
+       1604,
+       1605,
+       1607,
+       1608,
+       1611,
+       1612,
+       1615,
+       1656,
+       1657,
+       1671,
+       1672,
+       1697,
+       1698,
+       1699,
+       1700,
+       1701,
+       1702,
+       1703,
+       1706,
+       1707,
+       1735
+      ]
+     },
+     "Roc|Protein kinase": {
+      "dist": 55.2,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "COR|Protein kinase": {
+      "dist": 36.6,
+      "contacts": 11,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1566,
+       1567,
+       1570,
+       1586,
+       1588,
+       1589,
+       1591,
+       1718
+      ],
+      "resB": [
+       1922,
+       1926,
+       2024,
+       2047,
+       2048,
+       2050
+      ]
+     }
+    }
+   },
+   {
+    "label": "9yqk.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 9yqk.1.A",
+    "nres": 1192,
+    "plddt_med": 0.7,
+    "pairs": {
+     "Roc|COR": {
+      "dist": 27.4,
+      "contacts": 67,
+      "cov": [
+       98,
+       100
+      ],
+      "resA": [
+       1331,
+       1334,
+       1336,
+       1368,
+       1369,
+       1370,
+       1371,
+       1391,
+       1393,
+       1398,
+       1399,
+       1400,
+       1401,
+       1402,
+       1403,
+       1404,
+       1405,
+       1406,
+       1407,
+       1409,
+       1411,
+       1412,
+       1432,
+       1433,
+       1434,
+       1436,
+       1437,
+       1476,
+       1478,
+       1479
+      ],
+      "resB": [
+       1575,
+       1577,
+       1578,
+       1579,
+       1580,
+       1581,
+       1583,
+       1585,
+       1600,
+       1601,
+       1604,
+       1605,
+       1607,
+       1608,
+       1611,
+       1655,
+       1656,
+       1657,
+       1658,
+       1669,
+       1671,
+       1699,
+       1700,
+       1701,
+       1702,
+       1703,
+       1706,
+       1707
+      ]
+     },
+     "Roc|Protein kinase": {
+      "dist": 50.2,
+      "contacts": 0,
+      "cov": [
+       98,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     },
+     "COR|Protein kinase": {
+      "dist": 34.9,
+      "contacts": 13,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       1586,
+       1587,
+       1588,
+       1589,
+       1591,
+       1593,
+       1719,
+       1720
+      ],
+      "resB": [
+       1925,
+       1926,
+       1928,
+       1989,
+       2050,
+       2051,
+       2052,
+       2120
+      ]
+     }
+    }
+   }
+  ],
+  "movement": {
+   "COR|Protein kinase": {
+    "n": 5,
+    "dmin": 32.6,
+    "dmax": 39.1,
+    "spread": 6.5,
+    "cmin": 3,
+    "cmax": 26,
+    "at_min": "AlphaFold v6",
+    "at_max": "9om2.1.A (100.0% id)"
+   },
+   "Roc|COR": {
+    "n": 5,
+    "dmin": 26.4,
+    "dmax": 28.6,
+    "spread": 2.2,
+    "cmin": 67,
+    "cmax": 78,
+    "at_min": "7LHW \u2014 LRRK2 full-length",
+    "at_max": "8tzh.1.B (100.0% id)"
+   },
+   "Roc|Protein kinase": {
+    "n": 5,
+    "dmin": 50.2,
+    "dmax": 56.1,
+    "spread": 5.9,
+    "cmin": 0,
+    "cmax": 0,
+    "at_min": "9yqk.1.A (100.0% id)",
+    "at_max": "9om2.1.A (100.0% id)"
+   }
+  }
+ },
+ "O00571": {
+  "gene": "DDX3X",
+  "acc": "O00571",
+  "why": "two RecA lobes clamp RNA+ATP; medulloblastoma mutation set",
+  "structures": [
+   {
+    "label": "AlphaFold v6",
+    "file": "af/O00571.pdb",
+    "kind": "prediction",
+    "identity": 100.0,
+    "chain": null,
+    "src": "AlphaFold DB"
+   },
+   {
+    "label": "5E7M \u2014 DDX3X helicase domains",
+    "file": "st/O00571_5E7M.pdb",
+    "kind": "experimental",
+    "identity": null,
+    "chain": "A",
+    "src": "RCSB 5E7M"
+   },
+   {
+    "label": "8ssw.1.A (100.0% id)",
+    "file": "st/O00571_sm_8ssw-1-A.pdb",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "chain": null,
+    "src": "SWISS-MODEL on 8ssw.1.A",
+    "ndom": 2
+   }
+  ],
+  "length": 662,
+  "name": "ATP-dependent RNA helicase DDX3X",
+  "domains": [
+   [
+    "Helicase ATP-binding",
+    211,
+    403
+   ],
+   [
+    "Helicase C-terminal",
+    414,
+    575
+   ]
+  ],
+  "geom_all": [
+   {
+    "label": "AlphaFold v6",
+    "kind": "prediction",
+    "identity": 100.0,
+    "src": "AlphaFold DB",
+    "nres": 662,
+    "plddt_med": 86.3,
+    "pairs": {
+     "Helicase ATP-binding|Helicase C-terminal": {
+      "dist": 31.8,
+      "contacts": 36,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [
+       226,
+       227,
+       275,
+       276,
+       277,
+       278,
+       281,
+       301,
+       302,
+       303,
+       348,
+       350,
+       351,
+       354,
+       355,
+       383,
+       384,
+       386
+      ],
+      "resB": [
+       477,
+       480,
+       481,
+       484,
+       500,
+       503,
+       504,
+       505,
+       506,
+       523,
+       527,
+       530,
+       531,
+       534,
+       535
+      ]
+     }
+    }
+   },
+   {
+    "label": "5E7M \u2014 DDX3X helicase domains",
+    "kind": "experimental",
+    "identity": null,
+    "src": "RCSB 5E7M",
+    "nres": 424,
+    "plddt_med": 88.2,
+    "pairs": {
+     "Helicase ATP-binding|Helicase C-terminal": {
+      "dist": 31.7,
+      "contacts": 25,
+      "cov": [
+       97,
+       100
+      ],
+      "resA": [
+       226,
+       275,
+       276,
+       277,
+       303,
+       351,
+       353,
+       354,
+       355,
+       356,
+       357,
+       388
+      ],
+      "resB": [
+       481,
+       488,
+       502,
+       503,
+       504,
+       505,
+       506,
+       509,
+       526,
+       527,
+       530,
+       531,
+       532,
+       533,
+       535
+      ]
+     }
+    }
+   },
+   {
+    "label": "8ssw.1.A (100.0% id)",
+    "kind": "swissmodel",
+    "identity": 100.0,
+    "src": "SWISS-MODEL on 8ssw.1.A",
+    "nres": 447,
+    "plddt_med": 0.9,
+    "pairs": {
+     "Helicase ATP-binding|Helicase C-terminal": {
+      "dist": 50.7,
+      "contacts": 0,
+      "cov": [
+       100,
+       100
+      ],
+      "resA": [],
+      "resB": []
+     }
+    }
+   }
+  ],
+  "movement": {
+   "Helicase ATP-binding|Helicase C-terminal": {
+    "n": 3,
+    "dmin": 31.7,
+    "dmax": 50.7,
+    "spread": 19.0,
+    "cmin": 0,
+    "cmax": 36,
+    "at_min": "5E7M \u2014 DDX3X helicase domains",
+    "at_max": "8ssw.1.A (100.0% id)"
+   }
+  }
+ }
+}

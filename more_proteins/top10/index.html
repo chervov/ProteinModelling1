@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top ten conformational reports</title>
+
+<style>
+:root{--bg:#fbfaf8;--card:#fff;--fg:#17181a;--fg2:#4a4d52;--mut:#7b7f87;--line:#e2e0dc;--accent:#1f5fa8;--accent2:#b24a0e;--good:#107a46;--bad:#b3261e;--warn:#8a5a00;--chip:#f1efeb;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121316;--card:#1b1d21;--fg:#eceef1;--fg2:#b9bdc4;--mut:#878c95;--line:#2d3036;--accent:#7fb0ef;--accent2:#f0a16a;--good:#5cc48a;--bad:#ef8e86;--warn:#d9ad52;--chip:#24272c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121316;--card:#1b1d21;--fg:#eceef1;--fg2:#b9bdc4;--mut:#878c95;--line:#2d3036;--accent:#7fb0ef;--accent2:#f0a16a;--good:#5cc48a;--bad:#ef8e86;--warn:#d9ad52;--chip:#24272c;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 "Source Serif 4",Georgia,serif;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 72px}
+h1{font:600 30px/1.2 "Source Sans 3",system-ui,sans-serif;margin:0 0 4px;text-wrap:balance}
+h2{font:600 20px/1.3 "Source Sans 3",system-ui,sans-serif;margin:40px 0 10px;padding-top:14px;border-top:1px solid var(--line);text-wrap:balance}
+h3{font:600 15px/1.3 "Source Sans 3",system-ui,sans-serif;margin:22px 0 6px;color:var(--fg2)}
+p,li{color:var(--fg2);max-width:76ch}
+a{color:var(--accent)}
+.sub{color:var(--mut);font:13px/1.5 "Source Sans 3",system-ui,sans-serif;margin:0 0 18px}
+.lede{font-size:16px;color:var(--fg)}
+code,.mono{font:12.5px/1.5 ui-monospace,"SF Mono",Menlo,monospace}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:14px 0}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;font:12.5px/1.45 "Source Sans 3",system-ui,sans-serif;min-width:0}
+th,td{padding:5px 9px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--mut);text-align:right;position:sticky;top:0;background:var(--card)}
+td:first-child,th:first-child{text-align:left}
+tbody tr:hover{background:var(--chip)}
+.chip{display:inline-block;font:600 10.5px/1 "Source Sans 3",system-ui,sans-serif;padding:4px 7px;border-radius:5px;background:var(--chip);color:var(--fg2);margin:1px 2px 1px 0;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle}
+.c-gof{background:#fde8d8;color:#8a3b06}.c-lof{background:#dbe7fa;color:#17457f}.c-res{background:#f5dcf0;color:#7a1764}
+.c-path{background:#fadddb;color:#8f1d16}.c-ben{background:#dcf0e2;color:#0c5c34}.c-vus{background:#eceaf6;color:#443a74}.c-prot{background:#e2f2f6;color:#0b5467}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c-gof{background:#4a2a10;color:#f3b183}:root:not([data-theme="light"]) .c-lof{background:#14294a;color:#9dc2f2}:root:not([data-theme="light"]) .c-res{background:#3d1434;color:#e6a3d7}:root:not([data-theme="light"]) .c-path{background:#471713;color:#f2a39d}:root:not([data-theme="light"]) .c-ben{background:#123a24;color:#8bd6a6}:root:not([data-theme="light"]) .c-vus{background:#262142;color:#b7aee6}:root:not([data-theme="light"]) .c-prot{background:#0e3b45;color:#8fd0de}}
+:root[data-theme="dark"] .c-gof{background:#4a2a10;color:#f3b183}:root[data-theme="dark"] .c-lof{background:#14294a;color:#9dc2f2}:root[data-theme="dark"] .c-res{background:#3d1434;color:#e6a3d7}:root[data-theme="dark"] .c-path{background:#471713;color:#f2a39d}:root[data-theme="dark"] .c-ben{background:#123a24;color:#8bd6a6}:root[data-theme="dark"] .c-vus{background:#262142;color:#b7aee6}:root[data-theme="dark"] .c-prot{background:#0e3b45;color:#8fd0de}
+.pos{color:var(--bad)}.neg{color:var(--good)}
+.dombar{display:flex;height:26px;border-radius:5px;overflow:hidden;border:1px solid var(--line);margin:8px 0 4px;font:600 10px/26px "Source Sans 3",system-ui,sans-serif;color:#fff;text-align:center}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.grid>*{min-width:0}
+.v3d{position:relative;width:100%;aspect-ratio:1/0.82;max-width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.vhead{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;justify-content:space-between;margin-bottom:5px}
+.vttl{font:600 13px "Source Sans 3",system-ui,sans-serif;color:var(--fg)}
+.btn{font:600 11px "Source Sans 3",system-ui,sans-serif;padding:4px 9px;border:1px solid var(--line);background:var(--card);color:var(--fg2);border-radius:5px;cursor:pointer}
+.btn[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.leg{font:11px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:5px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.note{border-left:3px solid var(--warn);background:var(--chip);padding:10px 14px;border-radius:0 7px 7px 0;margin:14px 0;font-size:13.5px}
+.note b{color:var(--fg)}
+.note.ok{border-left-color:var(--good)}
+.refs li{margin-bottom:9px;font-size:13.5px}
+.mech{margin:10px 0;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:13.5px}
+.mech .m-h{font:600 13.5px "Source Sans 3",system-ui,sans-serif;color:var(--fg)}
+svg{max-width:100%;height:auto;display:block}
+.tiny{font-size:12px;color:var(--mut)}
+.nav{font:13px "Source Sans 3",system-ui,sans-serif;margin:0 0 20px}
+.nav a{margin-right:14px;white-space:nowrap}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/3dmol@2.4.2/build/3Dmol-min.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<h1>Ten multi-domain proteins &mdash; deep conformational reports</h1>
+<p class="sub">Selected from the 54 proteins screened in <code>more_proteins/analysis1/</code> &middot; generated 2026-10-29</p>
+<p class="lede">Ten proteins that each have (a) several annotated domains, (b) literature describing more than one inter-domain arrangement, (c) more than one independent structural model spanning at least two of those domains, and (d) characterised mutations in the literature. Each report carries the full Orianne-paper battery: all-pairs inter-domain geometry across every structure, PAE, templates and homologs, the two-cluster split against gnomAD, dual-state &Delta;&Delta;G for every literature mutation, and a per-mutation mechanism.</p>
+<div class="scroll"><table><thead><tr><th>Gene</th><th>Protein</th><th>aa</th><th>Domains</th><th>Structures</th><th>Largest-moving pair</th><th>Spread (&Aring;)</th><th>Muts</th><th>gnomAD depletion</th><th>Report</th></tr></thead><tbody>
+<tr><td><b>TYK2</b></td><td>Non-receptor tyrosine-protein kinase TYK2</td><td>1187</td><td>4</td><td>5</td><td>FERM &harr; Protein kinase 2</td><td>54.5</td><td>6</td><td>1.3&times;</td><td><a href="TYK2_P29597.html">open</a></td></tr>
+<tr><td><b>JAK1</b></td><td>Tyrosine-protein kinase JAK1</td><td>1154</td><td>4</td><td>5</td><td>FERM &harr; Protein kinase 2</td><td>54.7</td><td>2</td><td>2.0&times;</td><td><a href="JAK1_P23458.html">open</a></td></tr>
+<tr><td><b>PTPN11</b></td><td>Tyrosine-protein phosphatase non-receptor type 11</td><td>593</td><td>3</td><td>4</td><td>SH2 1 &harr; Tyrosine-protein phosphatase</td><td>16.2</td><td>6</td><td>1.6&times;</td><td><a href="PTPN11_Q06124.html">open</a></td></tr>
+<tr><td><b>SRC</b></td><td>Proto-oncogene tyrosine-protein kinase Src</td><td>536</td><td>3</td><td>6</td><td>SH2 &harr; Protein kinase</td><td>19.2</td><td>3</td><td>1.8&times;</td><td><a href="SRC_P12931.html">open</a></td></tr>
+<tr><td><b>ABL1</b></td><td>Tyrosine-protein kinase ABL1</td><td>1130</td><td>3</td><td>5</td><td>SH2 &harr; Protein kinase</td><td>21.5</td><td>6</td><td>2.2&times;</td><td><a href="ABL1_P00519.html">open</a></td></tr>
+<tr><td><b>BTK</b></td><td>Tyrosine-protein kinase BTK</td><td>659</td><td>4</td><td>9</td><td>SH3 &harr; Protein kinase</td><td>52.4</td><td>6</td><td>2.3&times;</td><td><a href="BTK_Q06187.html">open</a></td></tr>
+<tr><td><b>LRRK2</b></td><td>Leucine-rich repeat serine/threonine-protein kinase 2</td><td>2527</td><td>3</td><td>5</td><td>COR &harr; Protein kinase</td><td>6.5</td><td>6</td><td>1.3&times;</td><td><a href="LRRK2_Q5S007.html">open</a></td></tr>
+<tr><td><b>CFTR</b></td><td>Cystic fibrosis transmembrane conductance regulator</td><td>1480</td><td>4</td><td>6</td><td>ABC transporter 1 &harr; ABC transporter 2</td><td>20.0</td><td>7</td><td>1.0&times;</td><td><a href="CFTR_P13569.html">open</a></td></tr>
+<tr><td><b>ABCB1</b></td><td>ATP-dependent translocase ABCB1</td><td>1280</td><td>4</td><td>6</td><td>ABC transporter 1 &harr; ABC transporter 2</td><td>34.2</td><td>5</td><td>1.3&times;</td><td><a href="ABCB1_P08183.html">open</a></td></tr>
+<tr><td><b>DDX3X</b></td><td>ATP-dependent RNA helicase DDX3X</td><td>662</td><td>2</td><td>3</td><td>Helicase ATP-binding &harr; Helicase C-terminal</td><td>19.0</td><td>4</td><td>3.7&times;</td><td><a href="DDX3X_O00571.html">open</a></td></tr>
+</tbody></table></div>
+<div class="note">Read section 10 of any report before using a number from it: a minority of the &Delta;&Delta;G values are repulsion-dominated and unusable as free energies, and &ldquo;open/closed&rdquo; here always means the <b>inter-domain</b> arrangement, which is not the sense used in much of the kinase literature.</div>
+<p class="tiny">Part of <a href="https://github.com/chervov/ProteinModelling1">chervov/ProteinModelling1</a></p>
+</div>
+</body>
+</html>

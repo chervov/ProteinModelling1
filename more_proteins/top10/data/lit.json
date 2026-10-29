@@ -1,0 +1,106 @@
+{
+"P29597":{"conf":[
+ {"t":"Lupardus, Ultsch, Wallweber, Bir Kohli, Johnson & Eigenbrot, <i>PNAS</i> 2014, 111:8025–8030 — <b>4OLI</b>, the TYK2 JH2–JH1 autoinhibited crystal at 2.8 Å","u":"https://www.pnas.org/doi/10.1073/pnas.1401180111","v":1,"n":"The only experimental closed structure in the JAK family. 21 interface residues, 1147 Å² buried."},
+ {"t":"Glassman et al., <i>Science</i> 2022 — full-length JAK1–receptor cryo-EM; the autoinhibited model was built by docking 4OLI into the mJAK1 FERM–SH2–PK","u":"https://www.science.org/doi/10.1126/science.abn8933","v":1,"n":"Explains why the FERM–SH2–JH2 block is identical to 0.1 Å across 7T6F and 8EWY — it was rigid-body placed."},
+ {"t":"Earlier electron microscopy of JAK1 reported distinct <b>compact and elongated</b> states","v":1,"n":"The closest literature statement of open/closed in the inter-domain sense."}],
+"mut":[
+ {"t":"Gakovic, Ragimbeau, Francois-Newton, Krolewski & Pellegrini, <i>J Biol Chem</i> 2008, PMID 18456658 — TYK2 <b>V678F</b> raises catalytic activity and gives constitutive STAT3, with no notable effect on IFN-α signalling","u":"https://pubmed.ncbi.nlm.nih.gov/18456658/","v":1},
+ {"t":"Shan, …, Shaw & Hubbard, <i>Nat Struct Mol Biol</i> 2014 — JAK2 V617F relieves autoinhibition by stabilising an α-helix in the SH2–JH2 linker; the π-stacking partner is F595 (<i>Biochemistry</i> 2010, PMID 20958061)","v":1,"n":"The TYK2 equivalent of F595 is <b>Y656</b>, which contacts V678 at 3.25 Å. The DMS shows only aromatic substitutions at 656 are tolerated."},
+ {"t":"ClinVar: V678M is a 1-star VUS filed under Immunodeficiency 35; V678A is a 2-star VUS with two submitters","v":1}],
+"drug":[
+ {"t":"Allosteric TYK2 inhibitors bind the <b>JH2 pseudokinase domain</b> and stabilise the autoinhibited state — deucravacitinib (BMS-986165) and the BMS-986202 series; zasocitinib/NDI-034858","v":1,"n":"This is the therapeutic reason the closed state matters: the drug site <i>is</i> the autoinhibitory module."},
+ {"t":"Howard et al., <i>eLife</i> 2026 — the TYK2 deep mutational scan used throughout this project, 11 arms including two allosteric-inhibitor series","u":"https://doi.org/10.7554/eLife.110149.2","v":1}],
+"dis":[{"t":"Loss of function: autosomal-recessive <b>TYK2 deficiency / Immunodeficiency 35</b> (OMIM 611521). P1104A and I684S are autoimmune-<i>protective</i> hypomorphs","v":1}]},
+
+"P23458":{"conf":[
+ {"t":"Jeanpierre/Debeaupuis JAK1 open and closed models — ModelArchive <b>ma-a1sai</b> (open, FERM–JH1 92.5 Å) and <b>ma-l9b1f</b> (closed, 40.1 Å)","v":1,"n":"The closed state enters no SWISS-MODEL template lineage, which is why a template-only screen reports JAK1 as rigid."},
+ {"t":"Crystal structure of the JAK2 FERM–SH2 module, <i>PLOS ONE</i> 2016 — the FERM and SH2 domains and their linkers form an integrated module","u":"https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0156218","v":1,"n":"Independent support for the rigid FERM–SH2–JH2 block, separate from the cryo-EM rigid-body placement."}],
+"mut":[{"t":"JAK1 <b>V658F</b> is the V617F-equivalent activating position; measured here as a loss of the compact state (0/16 vs 3/5)","v":1}],
+"drug":[{"t":"JAK1-selective inhibitors (upadacitinib, abrocitinib, itacitinib) are ATP-competitive at JH1, not allosteric at JH2 — unlike the TYK2 agents","v":0}],
+"dis":[{"t":"JAK1 GOF causes an autoimmune/autoinflammatory syndrome with eosinophilia; JAK1 LOF contributes to immunodeficiency. PTPN2 dephosphorylates JAK1 and JAK3 (not JAK2)","v":1}]},
+
+"P00519":{"conf":[
+ {"t":"ABL1 is held inactive by an <b>SH3–SH2 clamp</b> on the back of the kinase domain plus a myristoyl group bound in a C-lobe pocket","v":0,"n":"1OPL is the autoinhibited assembly used here as the closed state."},
+ {"t":"Kincore records ABL1 as the most conformationally balanced kinase in the PDB — 44 DFGin / 88 DFGout / 58 DFGinter","v":1,"n":"That intra-domain DFG axis is distinct from the inter-domain clamp measured here."}],
+"mut":[
+ {"t":"<b>T315I</b> is the gatekeeper mutation, found in 2–20% of resistance cases. Imatinib, dasatinib and nilotinib all depend on a hydrogen bond to Thr315; the bulkier isoleucine removes it and adds steric hindrance","u":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11344283/","v":1},
+ {"t":"P-loop (Y253H, E255K) and activation-loop (H396R) substitutions are the other recurrent imatinib-resistance classes","v":0}],
+"drug":[
+ {"t":"<b>Asciminib</b> binds the <b>myristoyl pocket</b> rather than the ATP site and blocks T315I, overcoming resistance to ATP-competitive inhibitors","u":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11344283/","v":1,"n":"The cleanest clinical demonstration that an allosteric site can bypass a gatekeeper mutation."},
+ {"t":"Ponatinib retains moderate activity against T315I at therapeutic concentrations","u":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3928078/","v":1}],
+"dis":[{"t":"BCR-ABL1 fusion drives chronic myeloid leukaemia and Ph+ ALL","v":1}]},
+
+"P12931":{"conf":[
+ {"t":"Xu, Doshi, Lei, Eck & Harrison, <i>Mol Cell</i> 1999 — the autoinhibited c-Src structures and the SH3–SH2 clamp model","u":"https://doi.org/10.1016/S1097-2765(00)80242-5","v":1,"n":"SH2 binds the phosphorylated C-terminal tail (pTyr530 human / 527 chicken); SH3 binds a PxxP motif in the SH2–kinase linker; both assemble on the back of the kinase domain."},
+ {"t":"Kincore labels <b>2SRC</b> as DFGin-<b>BLBplus</b>/Inactive, 1FMK as DFGin-BLBminus and 1Y57 (activated-like) as DFGin-BLAminus","v":1,"n":"Unlike JAK, SRC's inter-domain clamp propagates into the active site — 4OLI by contrast is DFGin-BLAminus, i.e. autoinhibited <i>and</i> active-site-competent."},
+ {"t":"The Src module: an ancient scaffold in the evolution of cytoplasmic tyrosine kinases, <i>Crit Rev Biochem Mol Biol</i> 2018","u":"https://www.tandfonline.com/doi/full/10.1080/10409238.2018.1495173","v":1}],
+"mut":[
+ {"t":"Ahler et al., <i>Mol Cell</i> 2019 — DMS of the SRC catalytic domain: 3,506 variants, <b>403 GOF, 1,288 WT-like, 1,681 LOF</b>, replicate R = 0.91","u":"https://pubmed.ncbi.nlm.nih.gov/30956043/","v":1,"n":"In ProteinGym with three assays; also has experimental SH3 folding ΔG from Tsuboyama in MaveDB. The best-resourced comparator in this project."},
+ {"t":"Profiling drug resistance in Src kinase at scale, <i>Cell Chem Biol</i> 2023 — couples autoinhibition to catalytic-domain dynamics","u":"https://www.cell.com/cell-chemical-biology/fulltext/S2451-9456(23)00277-5","v":1},
+ {"t":"<b>Y530F</b> removes the inhibitory tail phosphosite, so the SH2 latch cannot form — activating by construction","v":0}],
+"drug":[{"t":"Dasatinib and bosutinib inhibit SRC; SRC inhibition is also the off-target basis of dasatinib's activity in CML","v":0}],
+"dis":[{"t":"<b>E527K</b> causes thrombocytopenia with myelofibrosis and bleeding (SRC-related thrombocytopenia)","v":0}]},
+
+"Q06187":{"conf":[
+ {"t":"Conformational heterogeneity of the BTK PHTH domain drives multiple regulatory states","u":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10945472/","v":1},
+ {"t":"The kinome screen found PH↔SH3 spanning 48.0–75.0 Å and SH3↔kinase 64–85 Å, with AlphaFold compact and outside the range in each case","v":1}],
+"mut":[
+ {"t":"<b>C481S</b> abrogates covalent binding of ibrutinib, acalabrutinib and zanubrutinib; reported in <b>50–75%</b> of CLL progressing on covalent BTK inhibitors","u":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11344283/","v":1},
+ {"t":"Gatekeeper variation at <b>T474</b> combined with a C481 substitution causes <b>super-resistance</b> to all three irreversible inhibitors","u":"https://www.nature.com/articles/s41375-021-01123-6","v":1},
+ {"t":"<b>T316A</b> trounces ibrutinib inhibition at a level comparable to C481S","v":1},
+ {"t":"PH-domain LOF (e.g. R28C) causes X-linked agammaglobulinaemia; E41K is constitutively membrane-targeted and transforming","v":0}],
+"drug":[{"t":"Non-covalent BTK inhibitors (pirtobrutinib and others) were examined specifically for C481S/C481T-resistant patients and retain activity","u":"https://www.nature.com/articles/s41375-021-01123-6","v":1}],
+"dis":[{"t":"LOF: X-linked agammaglobulinaemia. Drug target in CLL, MCL and Waldenström's","v":1}]},
+
+"Q06124":{"conf":[
+ {"t":"<b>N-SH2 occludes the PTP active site</b> in the autoinhibited state; measured here on 4DGX as 70 inter-domain contacts for N-SH2↔PTP while SH2-2↔PTP and SH2-1↔SH2-2 have zero — one specific interface, the JAK pattern","v":1},
+ {"t":"SHP2 E76K adopts an <b>open conformation</b> but is restored to the closed, autoinhibited conformation — near-identical to unoccupied wild type — when complexed with SHP099","u":"https://www.nature.com/articles/s41467-018-06814-w","v":1},
+ {"t":"Structural reorganization of SHP2 by oncogenic mutations and implications for oncoprotein resistance to allosteric inhibition","u":"https://www.nature.com/articles/s41467-018-06823-9","v":1}],
+"mut":[
+ {"t":"<b>E76K</b> reduces the inhibitory potency of SHP099 by <b>more than 100-fold</b>","u":"https://www.nature.com/articles/s41467-018-06814-w","v":1,"n":"The proposed mechanism: SHP099 binds by pure conformational selection, associating only with the closed state, so an open-shifting mutation collapses its affinity."},
+ {"t":"D61G, A72V, T42A and N308D are recurrent Noonan-syndrome and leukaemia activating variants at or near the N-SH2/PTP interface","v":0}],
+"drug":[
+ {"t":"SHP099 binds at the <b>interface of the N-SH2, C-SH2 and PTP domains</b> — a tunnel formed only in the closed state","u":"https://www.nature.com/articles/nature18621","v":1},
+ {"t":"Allosteric Inhibition of SHP2: a potent, selective, orally efficacious phosphatase inhibitor","u":"https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b00680","v":1}],
+"dis":[{"t":"GOF: Noonan syndrome, juvenile myelomonocytic leukaemia. LOF: Noonan syndrome with multiple lentigines","v":1}]},
+
+"P13569":{"conf":[
+ {"t":"Cryo-EM of full-length CFTR: the NBDs in the <b>bottom-open apo</b> conformation show dimerisation-related motions, and the bottom-closed apo model indicates NBD opening that <b>differs from transporters</b>","v":1},
+ {"t":"The NBD1–NBD2 cycle is measured here as 26.7 Å / 70 contacts (6MSM, phosphorylated ATP-bound) against 46.7 Å / 0 contacts (5UAK, dephosphorylated)","v":1}],
+"mut":[
+ {"t":"F508del is a deletion, not a substitution, so it is outside the scope of the ΔΔG computations here. G551D is the class III gating archetype","v":1},
+ {"t":"Lumacaftor–ivacaftor improved the primary end point in patients homozygous for F508del","u":"https://pubmed.ncbi.nlm.nih.gov/25981758/","v":1},
+ {"t":"ClinVar holds F508del as variation 7105 with extensive submitter support","u":"https://www.ncbi.nlm.nih.gov/clinvar/variation/7105/","v":1}],
+"drug":[
+ {"t":"<b>Potentiators</b> (ivacaftor) act on gating and are effective for G551D; <b>correctors</b> (lumacaftor, tezacaftor, elexacaftor) act on folding/trafficking and are needed for F508del","v":0,"n":"The split maps onto the mechanism classes computed here: gating mutations at the NBD interface versus folding mutations in the domain cores."},
+ {"t":"Ivacaftor interferes with lumacaftor correction of F508del in vitro","v":1}],
+"dis":[{"t":"Cystic fibrosis. CFTR2 catalogues ~2,000 variants with clinical annotation — among the most heavily characterised human genes","v":0}]},
+
+"P08183":{"conf":[
+ {"t":"Cryo-EM: human P-gp adopts both an <b>open inward-facing</b> and a <b>closed</b> form without substrate or nucleotide, and passes through a fully closed state after hydrolysis before reaching a fully open ADP state","v":1},
+ {"t":"DEER data support locally <b>asymmetric</b> intermediates in the substrate- and ATP-coupled cycle, whereas substrate-free cryo-EM structures look more symmetric","v":1},
+ {"t":"NBD dimerisation, ATP hydrolysis and substrate transport are intimately linked through the X-loop, H-loop and D-loop motifs","v":1}],
+"mut":[{"t":"<b>G185V</b> is the classic substrate-specificity mutant, raising colchicine resistance. ClinVar holds only one pathogenic and one likely-pathogenic missense entry, so the benign entries here act as negative controls","v":0}],
+"drug":[{"t":"P-gp is the archetypal multidrug-efflux pump: it exports a very wide range of chemotherapeutics and is a major cause of acquired <b>multidrug resistance</b>, as well as a determinant of oral bioavailability and blood–brain-barrier penetration","v":0}],
+"dis":[{"t":"Not a Mendelian disease gene; clinically important through drug disposition and tumour multidrug resistance","v":0}]},
+
+"Q5S007":{"conf":[
+ {"t":"The <b>DFG motif is a conformational switch</b> driving LRRK2 activation; Y2018 in the DFGψ motif acts as a brake, and Y2018F is hyperactive, phenocopying G2019S","u":"https://www.pnas.org/doi/10.1073/pnas.1900289116","v":1},
+ {"t":"Molecular dynamics reports that <b>G2019S stabilises the DYGI loop and promotes the closed kinase conformation</b>","v":1,"n":"IMPORTANT: that 'closed' is the <i>intra</i>-domain active-site conformation, not the inter-domain arrangement measured here. The two senses must not be conflated — see <code>open_close/open_close_inf.md</code>."},
+ {"t":"Conformation and dynamics of the kinase domain drive subcellular location and activation of LRRK2","u":"https://www.pnas.org/doi/10.1073/pnas.2100844118","v":1}],
+"mut":[
+ {"t":"<b>G2019S</b> is the commonest genetic cause of Parkinson's disease; I2020T is DFG-adjacent; R1441C/G/H are in the Roc GTPase domain and Y1699C in COR","v":1},
+ {"t":"The G2019S mutation imparts resiliency to kinase inhibition","u":"https://www.researchgate.net/publication/326576226_The_G2019S_mutation_in_LRRK2_imparts_resiliency_to_kinase_inhibition","v":0,"n":"A GOF mutation that also reduces inhibitor sensitivity — the same coupling of activation and resistance seen for SHP2 E76K."}],
+"drug":[{"t":"LRRK2 kinase inhibitors are in clinical development for Parkinson's; a G2019S-selective inhibitor has been reported to abrogate mitochondrial DNA damage","u":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10907374/","v":1}],
+"dis":[{"t":"Autosomal-dominant Parkinson's disease; also associated with Crohn's disease and leprosy susceptibility","v":0}]},
+
+"O00571":{"conf":[
+ {"t":"DEAD-box function depends on the <b>two RecA-like domains (D1 and D2) interacting</b> — they close around RNA and ATP and separate when empty","u":"https://www.sciencedirect.com/science/article/pii/S0022283615001096","v":1},
+ {"t":"Measured here as 31.8 Å / 36 contacts (AlphaFold, closed) against 50.7 Å / 0 contacts (8SSW at 100% identity, open)","v":1}],
+"mut":[
+ {"t":"Cancer mutants <b>G302V and G325E are defective in RNA-stimulated ATP hydrolysis</b>","u":"https://www.sciencedirect.com/science/article/pii/S0022283615001096","v":1},
+ {"t":"Cancer-associated DDX3X mutations drive stress granule assembly and impair global translation","u":"https://www.nature.com/articles/srep25996","v":1},
+ {"t":"Medulloblastoma-associated DDX3X/DED1 mutations cause specific translation defects — 42 sites tested, and the defects <b>vary by mutation</b> rather than following a single enzymatic lesion","u":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7949108/","v":1}],
+"drug":[{"t":"No approved DDX3X-directed drug; RK-33 and related DDX3X inhibitors are preclinical","v":0}],
+"dis":[{"t":"Somatic: medulloblastoma (WNT and SHH subgroups), and other cancers. Germline: DDX3X syndrome, an X-linked intellectual-disability disorder","v":0}]}
+}
