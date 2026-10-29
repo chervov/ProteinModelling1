@@ -415,6 +415,55 @@ Full records in [`data/conf_papers.json`](data/conf_papers.json).
 5. **[A]** Ghosh P et al., *Hum Mol Genet* 2026;35:. [DDX3X syndrome mutations lock DDX3X-RNA conformational states to drive persistent pathological condensation and neuronal death.](https://doi.org/pii: ddag066. 10.1093/hmg/ddag066) · PMID 42497113
    <br>DDX3X syndrome mutations LOCK DDX3X-RNA conformational states - pathogenic variants acting by trapping one state. 2026.
 
+### SRC family — extended set
+
+SRC is the best-resourced protein in this set for the open/closed question, and the evidence is spread
+across the family. **HCK and LCK are SRC's 4th and 5th closest human homologs** (62.6% and 59.9% identity
+at 83–85% coverage), so their conformational measurements transfer directly. The *protein* column names
+what was actually studied.
+
+**A terminology trap specific to this family:** many SRC papers call an **SH3–SH2–kinase construct
+"full-length"** although it omits the N-terminal SH4/unique region, which is disordered, myristoylated
+and membrane-anchored. Only Prakaash 2022 (Lck) and Strelkova 2024 (Src) model the genuinely complete
+protein. And **1Y57 is inhibitor-bound** — its RCSB title is literally *"Structure of unphosphorylated
+c-Src in complex with an inhibitor"* — so it is an open/reassembled active-like arrangement, not a protein
+with all regulatory contacts broken.
+
+| Tier | Protein | Reference | Year | PMID | What it establishes |
+|---|---|---|---|---|---|
+| **A** | HCK | [Sicheri F et al., *Nature* 385:602-9](https://doi.org/10.1038/385602a0) | 1997 | 9024658 | Crystal structure of Hck: the same SH2/SH3-mediated autoinhibitory arrangement in a second family member, published alongside the c-Src structure. PDB 1AD5 (AMP-PNP) and 2HCK (quercetin). |
+| **A** | HCK | [Schindler T et al., *Mol Cell* 3:639-48](https://doi.org/10.1016/S1097-2765(00)80357-3) | 1999 | 10360180 | Hck with a Src-family-selective inhibitor at 2.0 A - the standard autoinhibited HCK reference, PDB 1QCF, with an ordered inhibitory activation segment. |
+| **A** | HCK | [Yang S et al., *Proc Natl Acad Sci U S A* 107:15757-62](https://doi.org/10.1073/pnas.1004569107) | 2010 | 20798061 | SAXS plus coarse-grained simulation and Bayesian population estimation: assembled, partially disassembled, reassembled and EXTENDED arrangements coexist in solution. The strongest argument that two endpoint structures are not enough. |
+| **A** | LCK | [Prakaash D et al., *Sci Rep* 12:21121](https://doi.org/10.1038/s41598-022-25603-6) | 2022 | 36476673 | Genuinely full-length Lck - SH4/unique region, myristoylation and palmitoylation, in a membrane - simulated from open and closed starting models, 100 us each. The closest Src-family analogue of Ayaz 2019 for JAK2. |
+| **B** | SRC | [Strelkova MA et al., *Int J Mol Sci* 25:](https://doi.org/10.3390/ijms252212391) | 2024 | 39596456 | Full-length c-Src models including the disordered N-terminal region, from AlphaFold2 coordinates plus experimental domains, compared across phosphorylation states. |
+| **B** | SRC | [Pakharukova N et al., *Nat Commun* 17:](https://doi.org/10.1038/s41467-026-69884-1) | 2026 | 41720803 | Cryo-EM of beta-arrestin 1 disrupting Src autoinhibition through SH3 engagement - a binding partner opening the clamp. |
+| **A** | HCK | [Moarefi I et al., *Nature* 385:650-3](https://doi.org/10.1038/385650a0) | 1997 | 9024665 | Displacing the SH3 domain with a high-affinity ligand ACTIVATES Hck: the functional proof that the inter-domain clamp, not the active site, holds activity down. Published back-to-back with the two 1997 crystals. |
+| **A** | SRC (chicken) | [Williams JC et al., *J Mol Biol* 274:757-75](https://doi.org/10.1006/jmbi.1997.1426) | 1997 | 9405157 | The 2.35 A inactivated chicken Src, described by its authors as 'a dynamic molecule with multiple regulatory interactions' - a third independent closed structure that already framed the arrangement as an equilibrium, not a fixed state. |
+| **B** | SRC | [Gonfloni S et al., *EMBO J* 16:7261-71](https://doi.org/10.1093/emboj/16.24.7261) | 1997 | 9405355 | The SH2-kinase LINKER is the element the SH3 domain grips; mutagenesis mapping which linker residues hold the clamp. |
+| **B** | SRC | [Gonfloni S et al., *Nat Struct Biol* 6:760-4](https://doi.org/10.1038/11537) | 1999 | 10426955 | Leu255 couples the intramolecular interactions to inhibition of catalysis - a single residue that transmits the inter-domain clamp to the active site. |
+| **A** | SRC | [Yang S et al., *PLoS Comput Biol* 4:e1000047](https://doi.org/10.1371/journal.pcbi.1000047) | 2008 | 18369437 | Thermodynamics, pathways and mechanisms of Src conformational activation - the first systematic free-energy treatment. |
+| **B** | SRC | [Gan W et al., *Biophys J* 97:L8-L10](https://doi.org/10.1016/j.bpj.2009.06.016) | 2009 | 19686639 | String method with swarms of trajectories applied to Src activation; the method Fajer 2017 later builds on. |
+| **A** | SRC | [Shukla D et al., *Nat Commun* 5:3397](https://doi.org/10.1038/ncomms4397) | 2014 | 24584478 | Markov state model of Src activation from massively distributed simulation: the pathway with INTERMEDIATE states, proposed as drug targets. The clearest statement that the transition is not two-state. |
+| **A** | SRC | [Meng Y et al., *Proc Natl Acad Sci U S A* 113:9193-8](https://doi.org/10.1073/pnas.1602790113) | 2016 | 27482115 | Transition path theory analysis of c-Src activation - the committor and the actual reactive flux, not just the endpoints. |
+| **C** | Src family | [Meng Y et al., *Acc Chem Res* 50:1193-1201](https://doi.org/10.1021/acs.accounts.7b00012) | 2017 | 28426203 | The review that makes exactly the distinction this project insists on: inter-domain regulatory arrangement versus the aC-helix/activation-loop state inside the kinase domain. |
+| **A** | HCK | [Huang L et al., *Biochim Biophys Acta Gen Subj* 1864:129604](https://doi.org/10.1016/j.bbagen.2020.129604) | 2020 | 32224253 | A single glycine substitution in the SH3-SH2 connector shifts the POPULATION from assembled to disassembled - a mutation moving the open/closed equilibrium, measured. Directly analogous to what we compute. |
+| **B** | SRC | [Levinson NM et al., *Cell* 134:124-34](https://doi.org/10.1016/j.cell.2008.05.051) | 2008 | 18614016 | Structural basis for recognition of c-Src by Csk, the kinase that creates the closed state by phosphorylating the C-terminal tail. |
+| **A** | SRC | [Boczek EE et al., *J Biol Chem* 294:13186-13197](https://doi.org/10.1074/jbc.RA119.008199) | 2019 | 31331936 | Autophosphorylation activates c-Src through GLOBAL structural rearrangements - the inter-domain change measured rather than inferred. |
+| **A** | SRC | [Cuesta-Hernández HN et al., *Nat Commun* 14:6548](https://doi.org/10.1038/s41467-023-41890-7) | 2023 | 37848415 | An allosteric switch between the activation loop and a C-terminal palindromic phospho-motif controls c-Src function. |
+| **A** | SRC | [Daday C et al., *Biophys J* 121:684-691](https://doi.org/10.1016/j.bpj.2022.01.028) | 2022 | 35120901 | Mechanical force can enhance c-Src activity by IMPAIRING AUTOINHIBITION - a third way of opening the clamp, neither ligand nor phosphorylation. |
+
+**PDB pairing for the inter-domain comparison** — 1FMK (Xu 1997, closed, 1.5 Å, apo) and 2SRC
+(Xu 1999, closed, 1.5 Å, AMP-PNP) against 1Y57 (Cowan-Jacob 2005, open-like, 1.91 Å, inhibitor-bound);
+for HCK, 1AD5/2HCK (Sicheri 1997) and 1QCF (Schindler 1999, 2.0 Å). Every attribution here was checked
+against RCSB. Our own open/closed assignment for SRC is made by contact count across all six structures
+we carry, not by adopting this pair.
+
+**Measure the two structural levels separately**: SH2–tail and SH3–linker contacts and regulatory-domain
+orientation on one side, αC-helix and activation-loop geometry on the other. Conflating them is exactly
+the error caveat 2 warns about — and SRC is the protein where the two genuinely are coupled: Kincore
+labels 2SRC `DFGin-BLBplus`/Inactive, while 4OLI, the autoinhibited TYK2, is `DFGin-BLAminus`, i.e.
+clamped shut yet active-site-competent.
+
 ## Reproducing
 
 ```

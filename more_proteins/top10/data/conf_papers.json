@@ -203,7 +203,7 @@
    "date": "1998 Feb 20",
    "vol": "92",
    "pages": "441-50",
-   "doi": "",
+   "doi": "10.1016/S0092-8674(00)80938-1",
    "authors": [
     "Hof P",
     "Pluskey S",
@@ -347,7 +347,7 @@
    "date": "1997 Feb 13",
    "vol": "385",
    "pages": "595-602",
-   "doi": "",
+   "doi": "10.1038/385595a0",
    "authors": [
     "Xu W",
     "Harrison SC",
@@ -363,7 +363,7 @@
    "date": "1999 May",
    "vol": "3",
    "pages": "629-38",
-   "doi": "",
+   "doi": "10.1016/S1097-2765(00)80356-1",
    "authors": [
     "Xu W",
     "Doshi A",
@@ -381,7 +381,7 @@
    "date": "2005 Jun",
    "vol": "13",
    "pages": "861-71",
-   "doi": "",
+   "doi": "10.1016/j.str.2005.03.012",
    "authors": [
     "Cowan-Jacob SW",
     "Fendrich G",
@@ -1088,6 +1088,400 @@
     "Lupardus PJ",
     "Jude KM",
     "Garcia KC"
+   ]
+  }
+ ],
+ "_src_extended": [
+  {
+   "pmid": "9024658",
+   "tier": "A",
+   "fam": "HCK",
+   "note": "Crystal structure of Hck: the same SH2/SH3-mediated autoinhibitory arrangement in a second family member, published alongside the c-Src structure. PDB 1AD5 (AMP-PNP) and 2HCK (quercetin).",
+   "title": "Crystal structure of the Src family tyrosine kinase Hck.",
+   "j": "Nature",
+   "date": "1997 Feb 13",
+   "vol": "385",
+   "pages": "602-9",
+   "doi": "10.1038/385602a0",
+   "authors": [
+    "Sicheri F",
+    "Moarefi I",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "10360180",
+   "tier": "A",
+   "fam": "HCK",
+   "note": "Hck with a Src-family-selective inhibitor at 2.0 A - the standard autoinhibited HCK reference, PDB 1QCF, with an ordered inhibitory activation segment.",
+   "title": "Crystal structure of Hck in complex with a Src family-selective tyrosine kinase inhibitor.",
+   "j": "Mol Cell",
+   "date": "1999 May",
+   "vol": "3",
+   "pages": "639-48",
+   "doi": "10.1016/S1097-2765(00)80357-3",
+   "authors": [
+    "Schindler T",
+    "Sicheri F",
+    "Pico A",
+    "Gazit A",
+    "Levitzki A",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "20798061",
+   "tier": "A",
+   "fam": "HCK",
+   "note": "SAXS plus coarse-grained simulation and Bayesian population estimation: assembled, partially disassembled, reassembled and EXTENDED arrangements coexist in solution. The strongest argument that two endpoint structures are not enough.",
+   "title": "Multidomain assembled states of Hck tyrosine kinase in solution.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2010 Sep 7",
+   "vol": "107",
+   "pages": "15757-62",
+   "doi": "10.1073/pnas.1004569107",
+   "authors": [
+    "Yang S",
+    "Blachowicz L",
+    "Makowski L",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "36476673",
+   "tier": "A",
+   "fam": "LCK",
+   "note": "Genuinely full-length Lck - SH4/unique region, myristoylation and palmitoylation, in a membrane - simulated from open and closed starting models, 100 us each. The closest Src-family analogue of Ayaz 2019 for JAK2.",
+   "title": "Molecular dynamics simulations reveal membrane lipid interactions of the full-length lymphocyte specific kinase (Lck).",
+   "j": "Sci Rep",
+   "date": "2022 Dec 7",
+   "vol": "12",
+   "pages": "21121",
+   "doi": "10.1038/s41598-022-25603-6",
+   "authors": [
+    "Prakaash D",
+    "Fagnen C",
+    "Cook GP",
+    "Acuto O",
+    "Kalli AC"
+   ]
+  },
+  {
+   "pmid": "39596456",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "Full-length c-Src models including the disordered N-terminal region, from AlphaFold2 coordinates plus experimental domains, compared across phosphorylation states.",
+   "title": "Structure of Full-Length Src Kinase and Its Key Phosphorylated States: Molecular Dynamics Study.",
+   "j": "Int J Mol Sci",
+   "date": "2024 Nov 19",
+   "vol": "25",
+   "pages": "",
+   "doi": "10.3390/ijms252212391",
+   "authors": [
+    "Strelkova MA",
+    "Tolstova AP",
+    "Mitkevich VA",
+    "Petrushanko IY",
+    "Makarov AA"
+   ]
+  },
+  {
+   "pmid": "41720803",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "Cryo-EM of beta-arrestin 1 disrupting Src autoinhibition through SH3 engagement - a binding partner opening the clamp.",
+   "title": "Mechanism of beta-arrestin 1 mediated Src activation via Src SH3 domain revealed by cryo-electron microscopy.",
+   "j": "Nat Commun",
+   "date": "2026 Feb 20",
+   "vol": "17",
+   "pages": "",
+   "doi": "10.1038/s41467-026-69884-1",
+   "authors": [
+    "Pakharukova N",
+    "Thomas BN",
+    "Bansia H",
+    "Li L",
+    "Bassford DK",
+    "Abzalimov RR",
+    "Kim J",
+    "Kahsai AW",
+    "Pani B",
+    "Xiao K",
+    "Ochakovski R",
+    "Liu S",
+    "Zhang X",
+    "Ahn S",
+    "des Georges A",
+    "Lefkowitz RJ"
+   ]
+  },
+  {
+   "pmid": "9024665",
+   "tier": "A",
+   "fam": "HCK",
+   "note": "Displacing the SH3 domain with a high-affinity ligand ACTIVATES Hck: the functional proof that the inter-domain clamp, not the active site, holds activity down. Published back-to-back with the two 1997 crystals.",
+   "title": "Activation of the Src-family tyrosine kinase Hck by SH3 domain displacement.",
+   "j": "Nature",
+   "date": "1997 Feb 13",
+   "vol": "385",
+   "pages": "650-3",
+   "doi": "10.1038/385650a0",
+   "authors": [
+    "Moarefi I",
+    "LaFevre-Bernt M",
+    "Sicheri F",
+    "Huse M",
+    "Lee CH",
+    "Kuriyan J",
+    "Miller WT"
+   ]
+  },
+  {
+   "pmid": "9405157",
+   "tier": "A",
+   "fam": "SRC (chicken)",
+   "note": "The 2.35 A inactivated chicken Src, described by its authors as 'a dynamic molecule with multiple regulatory interactions' - a third independent closed structure that already framed the arrangement as an equilibrium, not a fixed state.",
+   "title": "The 2.35 A crystal structure of the inactivated form of chicken Src: a dynamic molecule with multiple regulatory interactions.",
+   "j": "J Mol Biol",
+   "date": "1997 Dec 19",
+   "vol": "274",
+   "pages": "757-75",
+   "doi": "10.1006/jmbi.1997.1426",
+   "authors": [
+    "Williams JC",
+    "Weijland A",
+    "Gonfloni S",
+    "Thompson A",
+    "Courtneidge SA",
+    "Superti-Furga G",
+    "Wierenga RK"
+   ]
+  },
+  {
+   "pmid": "9405355",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "The SH2-kinase LINKER is the element the SH3 domain grips; mutagenesis mapping which linker residues hold the clamp.",
+   "title": "The role of the linker between the SH2 domain and catalytic domain in the regulation and function of Src.",
+   "j": "EMBO J",
+   "date": "1997 Dec 15",
+   "vol": "16",
+   "pages": "7261-71",
+   "doi": "10.1093/emboj/16.24.7261",
+   "authors": [
+    "Gonfloni S",
+    "Williams JC",
+    "Hattula K",
+    "Weijland A",
+    "Wierenga RK",
+    "Superti-Furga G"
+   ]
+  },
+  {
+   "pmid": "10426955",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "Leu255 couples the intramolecular interactions to inhibition of catalysis - a single residue that transmits the inter-domain clamp to the active site.",
+   "title": "Leucine 255 of Src couples intramolecular interactions to inhibition of catalysis.",
+   "j": "Nat Struct Biol",
+   "date": "1999 Aug",
+   "vol": "6",
+   "pages": "760-4",
+   "doi": "10.1038/11537",
+   "authors": [
+    "Gonfloni S",
+    "Frischknecht F",
+    "Way M",
+    "Superti-Furga G"
+   ]
+  },
+  {
+   "pmid": "18369437",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "Thermodynamics, pathways and mechanisms of Src conformational activation - the first systematic free-energy treatment.",
+   "title": "Src kinase conformational activation: thermodynamics, pathways, and mechanisms.",
+   "j": "PLoS Comput Biol",
+   "date": "2008 Mar 28",
+   "vol": "4",
+   "pages": "e1000047",
+   "doi": "10.1371/journal.pcbi.1000047",
+   "authors": [
+    "Yang S",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "19686639",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "String method with swarms of trajectories applied to Src activation; the method Fajer 2017 later builds on.",
+   "title": "Atomistic view of the conformational activation of Src kinase using the string method with swarms-of-trajectories.",
+   "j": "Biophys J",
+   "date": "2009 Aug 19",
+   "vol": "97",
+   "pages": "L8-L10",
+   "doi": "10.1016/j.bpj.2009.06.016",
+   "authors": [
+    "Gan W",
+    "Yang S",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "24584478",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "Markov state model of Src activation from massively distributed simulation: the pathway with INTERMEDIATE states, proposed as drug targets. The clearest statement that the transition is not two-state.",
+   "title": "Activation pathway of Src kinase reveals intermediate states as targets for drug design.",
+   "j": "Nat Commun",
+   "date": "2014 Mar 3",
+   "vol": "5",
+   "pages": "3397",
+   "doi": "10.1038/ncomms4397",
+   "authors": [
+    "Shukla D",
+    "Meng Y",
+    "Roux B",
+    "Pande VS"
+   ]
+  },
+  {
+   "pmid": "27482115",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "Transition path theory analysis of c-Src activation - the committor and the actual reactive flux, not just the endpoints.",
+   "title": "Transition path theory analysis of c-Src kinase activation.",
+   "j": "Proc Natl Acad Sci U S A",
+   "date": "2016 Aug 16",
+   "vol": "113",
+   "pages": "9193-8",
+   "doi": "10.1073/pnas.1602790113",
+   "authors": [
+    "Meng Y",
+    "Shukla D",
+    "Pande VS",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "28426203",
+   "tier": "C",
+   "fam": "Src family",
+   "note": "The review that makes exactly the distinction this project insists on: inter-domain regulatory arrangement versus the aC-helix/activation-loop state inside the kinase domain.",
+   "title": "Tyrosine Kinase Activation and Conformational Flexibility: Lessons from Src-Family Tyrosine Kinases.",
+   "j": "Acc Chem Res",
+   "date": "2017 May 16",
+   "vol": "50",
+   "pages": "1193-1201",
+   "doi": "10.1021/acs.accounts.7b00012",
+   "authors": [
+    "Meng Y",
+    "Pond MP",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "32224253",
+   "tier": "A",
+   "fam": "HCK",
+   "note": "A single glycine substitution in the SH3-SH2 connector shifts the POPULATION from assembled to disassembled - a mutation moving the open/closed equilibrium, measured. Directly analogous to what we compute.",
+   "title": "Glycine substitution in SH3-SH2 connector of Hck tyrosine kinase causes population shift from assembled to disassembled state.",
+   "j": "Biochim Biophys Acta Gen Subj",
+   "date": "2020 Jul",
+   "vol": "1864",
+   "pages": "129604",
+   "doi": "10.1016/j.bbagen.2020.129604",
+   "authors": [
+    "Huang L",
+    "Wright M",
+    "Yang S",
+    "Blachowicz L",
+    "Makowski L",
+    "Roux B"
+   ]
+  },
+  {
+   "pmid": "18614016",
+   "tier": "B",
+   "fam": "SRC",
+   "note": "Structural basis for recognition of c-Src by Csk, the kinase that creates the closed state by phosphorylating the C-terminal tail.",
+   "title": "Structural basis for the recognition of c-Src by its inactivator Csk.",
+   "j": "Cell",
+   "date": "2008 Jul 11",
+   "vol": "134",
+   "pages": "124-34",
+   "doi": "10.1016/j.cell.2008.05.051",
+   "authors": [
+    "Levinson NM",
+    "Seeliger MA",
+    "Cole PA",
+    "Kuriyan J"
+   ]
+  },
+  {
+   "pmid": "31331936",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "Autophosphorylation activates c-Src through GLOBAL structural rearrangements - the inter-domain change measured rather than inferred.",
+   "title": "Autophosphorylation activates c-Src kinase through global structural rearrangements.",
+   "j": "J Biol Chem",
+   "date": "2019 Aug 30",
+   "vol": "294",
+   "pages": "13186-13197",
+   "doi": "10.1074/jbc.RA119.008199",
+   "authors": [
+    "Boczek EE",
+    "Luo Q",
+    "Dehling M",
+    "R\u00f6pke M",
+    "Mader SL",
+    "Seidl A",
+    "Kaila VRI",
+    "Buchner J"
+   ]
+  },
+  {
+   "pmid": "37848415",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "An allosteric switch between the activation loop and a C-terminal palindromic phospho-motif controls c-Src function.",
+   "title": "An allosteric switch between the activation loop and a c-terminal palindromic phospho-motif controls c-Src function.",
+   "j": "Nat Commun",
+   "date": "2023 Oct 17",
+   "vol": "14",
+   "pages": "6548",
+   "doi": "10.1038/s41467-023-41890-7",
+   "authors": [
+    "Cuesta-Hern\u00e1ndez HN",
+    "Contreras J",
+    "Soriano-Maldonado P",
+    "S\u00e1nchez-Wandelmer J",
+    "Yeung W",
+    "Mart\u00edn-Hurtado A",
+    "Mu\u00f1oz IG",
+    "Kannan N",
+    "Llimargas M",
+    "Mu\u00f1oz J",
+    "Plaza-Menacho I"
+   ]
+  },
+  {
+   "pmid": "35120901",
+   "tier": "A",
+   "fam": "SRC",
+   "note": "Mechanical force can enhance c-Src activity by IMPAIRING AUTOINHIBITION - a third way of opening the clamp, neither ligand nor phosphorylation.",
+   "title": "Mechanical force can enhance c-Src kinase activity by impairing autoinhibition.",
+   "j": "Biophys J",
+   "date": "2022 Mar 1",
+   "vol": "121",
+   "pages": "684-691",
+   "doi": "10.1016/j.bpj.2022.01.028",
+   "authors": [
+    "Daday C",
+    "de Buhr S",
+    "Mercadante D",
+    "Gr\u00e4ter F"
    ]
   }
  ]

@@ -31,7 +31,7 @@
 "dis":[{"t":"BCR-ABL1 fusion drives chronic myeloid leukaemia and Ph+ ALL","v":1}]},
 
 "P12931":{"conf":[
- {"t":"Xu, Doshi, Lei, Eck & Harrison, <i>Mol Cell</i> 1999 — the autoinhibited c-Src structures and the SH3–SH2 clamp model","u":"https://doi.org/10.1016/S1097-2765(00)80242-5","v":1,"n":"SH2 binds the phosphorylated C-terminal tail (pTyr530 human / 527 chicken); SH3 binds a PxxP motif in the SH2–kinase linker; both assemble on the back of the kinase domain."},
+ {"t":"Xu, Doshi, Lei, Eck & Harrison, <i>Mol Cell</i> 1999 — the autoinhibited c-Src structures and the SH3–SH2 clamp model","u":"https://doi.org/10.1016/S1097-2765(00)80356-1","v":1,"n":"SH2 binds the phosphorylated C-terminal tail (pTyr530 human / 527 chicken); SH3 binds a PxxP motif in the SH2–kinase linker; both assemble on the back of the kinase domain."},
  {"t":"Kincore labels <b>2SRC</b> as DFGin-<b>BLBplus</b>/Inactive, 1FMK as DFGin-BLBminus and 1Y57 (activated-like) as DFGin-BLAminus","v":1,"n":"Unlike JAK, SRC's inter-domain clamp propagates into the active site — 4OLI by contrast is DFGin-BLAminus, i.e. autoinhibited <i>and</i> active-site-competent."},
  {"t":"The Src module: an ancient scaffold in the evolution of cytoplasmic tyrosine kinases, <i>Crit Rev Biochem Mol Biol</i> 2018","u":"https://www.tandfonline.com/doi/full/10.1080/10409238.2018.1495173","v":1}],
 "mut":[
