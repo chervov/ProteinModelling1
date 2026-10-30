@@ -8,8 +8,11 @@ WHAT THIS DOES
   2. Looks each variant up in two precomputed saturation-mutagenesis tables:
        - ThermoMPNN  (external_data/thermompnn_jak_src.csv)  -> ddG_pred
        - ProtVar FoldX v5.0 on AlphaFold2 (external_data/protvar_foldx_jak_src.csv) -> foldx_ddg
-     Both already contain the COMPLETE 1132 x 19 = 21,508 JAK2 substitution set, so no
-     new inference is required. Recompute from scratch only if you change the structure.
+     ThermoMPNN covers the COMPLETE 1132 x 19 = 21,508 JAK2 substitution set.
+     ProtVar FoldX covers 20,349 rows = 94.6%: 61 of 1132 positions are absent entirely
+     (median pLDDT 31.8; only 4 of them above pLDDT 70), so low-confidence regions -- the
+     N-terminus and the inter-domain linkers -- have no FoldX value. No new inference is
+     required for either; recompute only if you change the input structure.
   3. Places each variant in the percentile of JAK2's own 21,508-variant distribution,
      which is the only way to say whether a ddG is large *for this protein*.
 
