@@ -157,7 +157,67 @@ where RSA does arbitrate.</li>
 and with an allosteric rather than structural mechanism.</li>
 </ul>
 
-<h2>4. What survives all four methods</h2>
+<h2>4. RSALOR &mdash; a conservation-based fifth column</h2>
+<p>The four methods above are all physics- or structure-learned stability predictors. RSALOR (<a
+href="https://doi.org/10.1093/bioinformatics/btaf322">10.1093/bioinformatics/btaf322</a>, Tsishyn, Hermans,
+Pucci &amp; Rooman, ULB Brussels &mdash; the same group behind PoPMuSiC) is a different axis: an
+independent-site evolutionary <b>log-odds ratio (LOR)</b> of wild-type versus mutant residue frequency in
+homologues, scaled by relative solvent accessibility. Higher = more deleterious. It is unsupervised with no
+training set, so it cannot have memorised these variants.</p>
+
+<div class="box warn"><b>Read this before using the LOR numbers.</b> RSALOR needs a multiple sequence
+alignment, which it does not build. I assembled one from the UniRef50 clusters of all four JAK-family
+kinases (JAK2 O60674, JAK1 P23458, JAK3 P52333, TYK2 P29597), MAFFT-aligned: 902 sequences, 877 after
+redundancy removal. But the <b>effective depth is only Neff&nbsp;=&nbsp;30.2</b> &mdash; the clusters are
+dominated by vertebrate orthologues above 80% identity, which collapse into few independent observations.
+Adding the three paralogues raised Neff only from 23.9 to 30.2. Residue frequencies estimated from ~30
+effective sequences are noisy, so these values are <b>substantially weaker than the published benchmark</b>,
+which used ProteinGym's deep alignments. A jackhmmer or HHblits search against UniRef90/BFD would fix it
+but needs a ~25&nbsp;GB database not available here.</div>
+
+<h3>4.1 Does it agree with the stability predictors?</h3>
+<table><tr><th>Method</th><th>Spearman &rho; vs LOR</th><th>Spearman &rho; vs RSA&times;LOR</th></tr><tr><td>ThermoMPNN</td><td class='n'>+0.420</td><td class='n'>+0.494</td></tr><tr><td>FoldX 5.0</td><td class='n'>+0.241</td><td class='n'>+0.281</td></tr><tr><td>mCSM-Stability</td><td class='n'>+0.121</td><td class='n'>+0.324</td></tr><tr><td>DDMut</td><td class='n'>-0.077</td><td class='n'>+0.154</td></tr></table>
+<p class="cap">Only ThermoMPNN vs LOR reaches nominal significance (&rho; = +0.420, p = 0.046, n = 23);
+none would survive correction for four tests. Scaling by RSA improves agreement with every one of the four,
+which is the paper's central claim reproduced here on an independent variant set. Positive &rho; confirms
+the sign convention: higher LOR means more deleterious, matching positive = destabilising.</p>
+
+<h3>4.2 Scores for the 23 computable variants</h3>
+<table><tr><th>Variant</th><th>LOR</th><th>RSA&times;LOR</th><th>CI</th><th>RSA&nbsp;%</th></tr><tr><td class="v">V578I</td><td class="n">11.02</td><td class="n">11.02</td><td class="n">0.669</td><td class="n">0.0</td></tr>
+<tr><td class="v">V625F</td><td class="n">10.69</td><td class="n">10.69</td><td class="n">0.660</td><td class="n">0.0</td></tr>
+<tr><td class="v">H608N</td><td class="n">10.51</td><td class="n">10.40</td><td class="n">0.672</td><td class="n">1.5</td></tr>
+<tr><td class="v">R867Q</td><td class="n">9.92</td><td class="n">7.58</td><td class="n">0.627</td><td class="n">30.6</td></tr>
+<tr><td class="v">E846D</td><td class="n">8.76</td><td class="n">7.42</td><td class="n">0.513</td><td class="n">21.1</td></tr>
+<tr><td class="v">I1065T</td><td class="n">7.02</td><td class="n">6.46</td><td class="n">0.355</td><td class="n">3.8</td></tr>
+<tr><td class="v">L611S</td><td class="n">9.43</td><td class="n">5.98</td><td class="n">0.559</td><td class="n">60.0</td></tr>
+<tr><td class="v">H345L</td><td class="n">6.10</td><td class="n">5.65</td><td class="n">0.383</td><td class="n">9.5</td></tr>
+<tr><td class="v">V617F</td><td class="n">8.94</td><td class="n">5.14</td><td class="n">0.558</td><td class="n">44.3</td></tr>
+<tr><td class="v">R938Q</td><td class="n">7.84</td><td class="n">4.87</td><td class="n">0.572</td><td class="n">48.8</td></tr>
+<tr><td class="v">L805I</td><td class="n">4.28</td><td class="n">4.28</td><td class="n">0.568</td><td class="n">0.0</td></tr>
+<tr><td class="v">H380Y</td><td class="n">4.80</td><td class="n">3.98</td><td class="n">0.569</td><td class="n">17.7</td></tr>
+<tr><td class="v">Y317H</td><td class="n">4.35</td><td class="n">3.81</td><td class="n">0.397</td><td class="n">12.6</td></tr>
+<tr><td class="v">G571R</td><td class="n">8.67</td><td class="n">3.79</td><td class="n">0.507</td><td class="n">73.9</td></tr>
+<tr><td class="v">T875N</td><td class="n">10.49</td><td class="n">3.78</td><td class="n">0.664</td><td class="n">79.8</td></tr>
+<tr><td class="v">S755R</td><td class="n">7.23</td><td class="n">3.66</td><td class="n">0.318</td><td class="n">41.1</td></tr>
+<tr><td class="v">V1110E</td><td class="n">4.52</td><td class="n">3.16</td><td class="n">0.367</td><td class="n">40.9</td></tr>
+<tr><td class="v">V617I</td><td class="n">4.85</td><td class="n">2.79</td><td class="n">0.558</td><td class="n">44.3</td></tr>
+<tr><td class="v">F240V</td><td class="n">4.33</td><td class="n">2.61</td><td class="n">0.531</td><td class="n">55.2</td></tr>
+<tr><td class="v">R1063H</td><td class="n">4.82</td><td class="n">2.03</td><td class="n">0.231</td><td class="n">70.8</td></tr>
+<tr><td class="v">C427R</td><td class="n">1.85</td><td class="n">1.62</td><td class="n">0.382</td><td class="n">19.4</td></tr>
+<tr><td class="v">P37A</td><td class="n">0.55</td><td class="n">0.43</td><td class="n">0.186</td><td class="n">30.9</td></tr>
+<tr><td class="v">T108A</td><td class="n">-0.51</td><td class="n">-0.37</td><td class="n">0.272</td><td class="n">47.1</td></tr></table>
+<p class="cap">LOR is a log-odds ratio, not an energy &mdash; it is not in kcal/mol and must not be averaged
+with the &Delta;&Delta;G columns. CI is RSALOR's conservation index.</p>
+
+<p><b>What it adds.</b> RSALOR ranks <b>V578I, V625F and H608N</b> highest &mdash; all buried, all called
+destabilising by the stability methods, so conservation and physics agree there. It disagrees informatively
+on two. <b>T875N</b> has the fourth-highest LOR (10.49) but near-zero &Delta;&Delta;G on all four stability
+methods, and its RSA&times;LOR collapses to 3.78 because the residue is 79.8% exposed &mdash; a conserved
+surface position, which is the signature of a functional site rather than a structural one. <b>T108A</b> is
+the only variant with a <i>negative</i> LOR (&minus;0.51): alanine is more common than threonine at that
+position across the family.</p>
+
+<h2>5. What survives all four methods</h2>
 <ul>
 <li><b>Seven variants clear +0.5 kcal/mol on all four methods</b> &mdash; in descending ThermoMPNN order:
 <b>I1065T</b> (range 0.82&ndash;3.15), <b>Y317H</b> (1.19&ndash;2.72), <b>V625F</b> (1.42&ndash;5.33),
@@ -176,7 +236,7 @@ outside any annotated domain.</li>
 characteristic of that tool, so its agreement with others is partly structural.</li>
 </ul>
 
-<h2>5. Expected Rosetta reliability, by mutation category</h2>
+<h2>6. Expected Rosetta reliability, by mutation category</h2>
 <p>Frenz et al. 2020 (<i>Front. Bioeng. Biotechnol.</i>, <a
 href="https://doi.org/10.3389/fbioe.2020.558247">10.3389/fbioe.2020.558247</a>) benchmark Cartesian
 &Delta;&Delta;G over 767 entries and report accuracy per mutation category. Overall Pearson r = 0.49;
@@ -214,7 +274,7 @@ categories (C427R, S755R, E846D) are all ones where the four methods split on di
 23 the relationship is null (Pearson r = &minus;0.03, p = 0.90; Fisher exact on the binary split p = 0.068,
 n = 3). Treat the category as a flag worth checking, not as a predictor of disagreement.</div>
 
-<h2>6. Interpretation floors</h2>
+<h2>7. Interpretation floors</h2>
 <table><tr><th>Threshold</th><th>Value</th><th>Meaning</th><th>Flags</th></tr>
 <tr><td>Experimental noise floor</td><td class="n">&plusmn;0.50</td>
 <td>reproducibility limit of &Delta;&Delta;G measurement itself (<a
@@ -236,7 +296,7 @@ pathogenicity (best reported AUC &asymp; 0.66). Gain-of-function and dominant-ne
 characteristically mild in |&Delta;&Delta;G|, which is precisely the pattern here. These numbers describe
 folding stability only.</div>
 
-<h2>7. Reproducing this</h2>
+<h2>8. Reproducing this</h2>
 <p>Script: <code>data/ddg/compute_jak2_ddg.py</code> (ThermoMPNN + FoldX columns, percentile, floors).
 Structure: <code>AF-O60674-F1-model_v6.pdb</code>, chain A, residues 1&ndash;1132 &mdash; AlphaFold numbering
 equals UniProt numbering, and all 23 wild-type residues were verified against the structure before
