@@ -1,0 +1,25 @@
+AVI_rank,Variant,Group,Domain,GRCh38_variant,HGVS_c,AVI_Phred,AVI_percentile,AVI_top_modality,Above_benign_max_24.17,Vs_benign_median,Pathogenic_calls_all21,Pathogenic_percent_all21,n_interface_models_hit,ClinVar,gnomAD_AF,AVI_top3_features
+1,R426X,this study,SH2; atypical,chr9:5066739:C>T,c.1276C>T,46.82,Top 0.00208%,Protein Termination,YES,25.74,2/2,100,0,not in ClinVar,4.119E-06,Protein Termination +1.5406; Cactus +0.5698; Splicing +0.3253
+2,V625F,prior GOF,Protein kinase 1,chr9:5077461:G>T,c.1873G>T,44.61,Top 0.003463%,Splicing,YES,23.53,19/20,95,0,-,-,Splicing +1.0102; AlphaMissense +0.8160; Cactus +0.4287
+3,T875N,prior GOF,Protein kinase 2,chr9:5089726:C>A,c.2624C>A,28.8,Top 0.13%,AlphaMissense,YES,7.72,19/21,90,4,-,0.00E+000,AlphaMissense +0.7383; Cactus +0.5316; PhastCons 470 +0.2153
+4,R938Q,prior GOF,Protein kinase 2,chr9:5090497:G>A,c.2813G>A,26.29,Top 0.23%,AlphaMissense,YES,5.21,19/21,90,0,Likely pathogenic,1.89E-006,AlphaMissense +0.5939; Cactus +0.5255; PhastCons 470 +0.2097
+5,F240V,this study,FERM,chr9:5054666:T>G,c.718T>G,25.83,Top 0.26%,AlphaMissense,YES,4.75,5/9,56,0,not in ClinVar,-,AlphaMissense +0.6295; Cactus +0.3809; PhastCons 470 +0.2139
+6,L611S,prior GOF,Protein kinase 1,chr9:5073753:T>C,c.1832T>C,25.45,Top 0.28%,AlphaMissense,YES,4.37,9/9,100,3,not in ClinVar,-,AlphaMissense +0.4763; Cactus +0.3781; PhastCons 470 +0.1923
+7,I1065T,this study,Protein kinase 2,chr9:5126349:T>C,c.3194T>C,24.36,Top 0.37%,Cactus,YES,3.28,18/21,86,0,-,1.38E-006,Cactus +0.3802; AlphaMissense +0.3698; PhastCons 470 +0.1760
+8,V617F,prior GOF,Protein kinase 1,chr9:5073770:G>T,c.1849G>T,24.19,Top 0.38%,Cactus,YES,3.11,16/19,84,0,Pathogenic/Likely pathogenic,2.93E-004,Cactus +0.5248; AlphaMissense +0.2654; PhastCons 470 +0.1753
+9,R867Q,prior GOF,Protein kinase 2,chr9:5089702:G>A,c.2600G>A,23.98,Top 0.40%,Cactus,no,2.9,17/21,81,3,Likely pathogenic,2.27E-006,Cactus +0.5252; AlphaMissense +0.2120; PhastCons 470 +0.1653
+10,H608N,prior GOF,Protein kinase 1,chr9:5073743:C>A,c.1822C>A,23.74,Top 0.42%,Cactus,no,2.66,7/9,78,0,not in ClinVar,-,Cactus +0.4229; AlphaMissense +0.2593; PhastCons 470 +0.1829
+11,G571R,this study,Protein kinase 1,chr9:5072561:G>C,c.1711G>C,23.6,Top 0.44%,Cactus,no,2.52,17/20,85,0,-,6.58E-006,Cactus +0.5253; AlphaMissense +0.2123; PhastCons 470 +0.1658
+12,H380Y,this study,FERM,chr9:5064964:C>T,c.1138C>T,23.44,Top 0.45%,Cactus,no,2.36,17/20,85,0,Uncertain significance,-,Cactus +0.5332; PhastCons 470 +0.1562; AlphaMissense +0.1365
+13,V578I,this study,Protein kinase 1,chr9:5072582:G>A,c.1732G>A,23.43,Top 0.45%,Cactus,no,2.35,17/20,85,0,-,6.86E-007,Cactus +0.5250; AlphaMissense +0.1883; PhastCons 470 +0.1578
+14,C427R,this study,SH2; atypical,chr9:5066742:T>C,c.1279T>C,23.08,Top 0.49%,Cactus,no,2.0,8/20,40,0,Uncertain significance,3.74E-006,Cactus +0.3812; AlphaMissense +0.1934; PhastCons 470 +0.1547
+15,L805I,this study,Protein kinase 1,chr9:5080662:C>A,c.2413C>A,23.02,Top 0.50%,Cactus,no,1.94,12/20,60,0,-,1.04E-005,Cactus +0.5311; PhastCons 470 +0.1481; AlphaMissense +0.1194
+16,V617I,prior GOF,Protein kinase 1,chr9:5073770:G>A,c.1849G>A,23.01,Top 0.50%,Cactus,no,1.93,14/20,70,0,Pathogenic,-,Cactus +0.5256; PhastCons 470 +0.1478; AlphaMissense +0.0923
+17,S755R,prior GOF,Protein kinase 1,chr9:5080362:T>A,c.2265T>A,22.76,Top 0.53%,AlphaMissense,no,1.68,8/19,42,0,Uncertain significance,-,AlphaMissense +0.4369; PhastCons 470 +0.2068; Cactus +0.1375
+18,V1110E,this study,Protein kinase 2,chr9:5126721:T>A,c.3329T>A,22.67,Top 0.54%,Cactus,no,1.59,8/20,40,0,-,-,Cactus +0.2830; AlphaMissense +0.2279; PhastCons 470 +0.1873
+19,Y317H,prior GOF,FERM,chr9:5055681:T>C,c.949T>C,22.58,Top 0.55%,Cactus,no,1.5,13/19,68,0,Uncertain significance,1.21E-005,Cactus +0.3800; AlphaMissense +0.2126; PhastCons 470 +0.1795
+20,R1063H,prior GOF,Protein kinase 2,chr9:5126343:G>A,c.3188G>A,22.38,Top 0.58%,Cactus,no,1.3,6/20,30,0,Benign/Likely benign,5.39E-003,Cactus +0.4206; PhastCons 470 +0.1609; AlphaMissense +0.0861
+21,H345L,prior GOF,FERM,chr9:5055766:A>T,c.1034A>T,21.08,Top 0.78%,Cactus,no,0.0,2/9,22,0,not in ClinVar,-,Cactus +0.3766; PhastCons 470 +0.1548; AlphaMissense +0.1234
+22,E846D,prior GOF,linker/other,chr9:5081828:G>C,c.2538G>C,20.88,Top 0.82%,AlphaMissense,no,-0.2,10/18,56,0,Conflicting classifications of pathogenicity,8.55E-004,AlphaMissense +0.3429; PhastCons 470 +0.1931; Cactus +0.1050
+23,P37A,this study,FERM,chr9:5022096:C>G,c.109C>G,15.38,Top 2.90%,PhastCons 470,no,-5.7,3/20,15,0,-,-,PhastCons 470 +0.1387; Cactus +0.1185; AlphaMissense +0.0513
+24,T108A,prior GOF,FERM,chr9:5029878:A>G,c.322A>G,14.34,Top 3.68%,PhastCons 470,no,-6.74,1/20,5,0,Uncertain significance,1.18E-005,PhastCons 470 +0.1364; AlphaMissense +0.0513; ATAC-seq +0.0499

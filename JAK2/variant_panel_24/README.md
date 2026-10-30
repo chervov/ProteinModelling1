@@ -102,6 +102,65 @@ them** (Jaccard 0.06–0.07), placing JH2–JH1 on a different surface entirely 
 602–607/666–687). For the JAK2 inter-domain arrangement the AlphaFold model should **not** be used as the
 closed state; the Shan JAK2 model should, being native-numbered, 4OLI-consistent and carrying 42 contacts.
 
+## Is there an AVI threshold for pathogenicity? No — and here is why it matters
+
+**DeepMind publishes none.** The tool documents only a percentile ladder (Phred >=40/30/20/15/10 =
+top 0.01/0.1/1/3.16/10% of all genome-wide SNVs) and uses `--min_phred 15.0` purely as a
+candidate-prioritisation filter. The AlphaGenome paper sets no pathogenicity cutoff; its thresholds
+concern regulatory effects. A third-party report
+([VariantGrid issue 2561](https://github.com/SACGF/variantgrid/issues/2561)) states the authors
+advise ranking-based prioritisation rather than hard cutoffs, which matches what the primary
+documentation does and does not say.
+
+**We tested whether a threshold works anyway.** Twelve ClinVar-benign JAK2 missense variants with
+gnomAD AF > 1e-5 were scored as an in-gene background
+([`JAK2_benign_AVI_background.csv`](JAK2_benign_AVI_background.csv)):
+
+| set | n | min | median | max | mean |
+|---|---|---|---|---|---|
+| ClinVar-benign JAK2 missense | 12 | 15.22 | 21.08 | **24.17** | 20.61 |
+| this panel (missense, excl. V625F/R426X) | 22 | 14.34 | 23.25 | 28.80 | 22.92 |
+
+The ranges overlap almost completely. The best cutoff achievable on this data is Phred >= 20.88, at
+**76% accuracy while falsely calling 6 of 12 known-benign variants pathogenic**. Benign Y1021F (24.17)
+and L383V (24.14) are tied with V617F (24.19); benign R1063H (22.38) outranks nine panel variants.
+
+The reason is structural: the genome-wide SNV distribution is dominated by non-coding positions, so
+any missense change in a deeply conserved kinase lands in the top 1% by construction. A genome-wide
+percentile cannot discriminate within a pre-selected set of conserved coding variants.
+
+**Use AVI as a rank and a mechanism flag, not a classifier.** The two findings that survive without any
+cutoff are the ones where the modality changes: V625F on Splicing and R426X on Protein Termination,
+both far above the benign maximum. The `Above_benign_max_24.17` and `Vs_benign_median` columns in
+[`JAK2_24_AVI_in_listed_order.csv`](JAK2_24_AVI_in_listed_order.csv) carry this calibration; only 8 of
+24 clear the benign ceiling.
+
+### Reading the conservation modalities
+
+`PhastCons 470` (Zoonomia 470-way mammalian alignment) and `Cactus` (241-way) are both evolutionary
+conservation, and both are properties of the **position**, not of the substitution - identical for all
+three alternate alleles at a site. PhastCons is a two-state phylogenetic HMM giving the posterior
+probability that a base lies inside a conserved element, so it borrows strength from neighbouring bases
+and is smoothed along the sequence.
+
+PhastCons 470 is the leading attribution for exactly two variants - **T108A (14.34, rank 24/24)** and
+**P37A (15.38, rank 23/24)**, the two lowest in the panel. That is diagnostic: when the top modality is
+PhastCons, no specific mechanism is driving the score, only weak regional conservation. Both are FERM
+domain, both are at the bottom of every independent measure here, and both fall below the benign median
+of 21.08. For T108A, listed as a previously reported GOF, this is a third independent line of evidence
+pointing the other way.
+
+## Files
+
+| file | contents |
+|---|---|
+| [`JAK2_24_variants_full.csv`](JAK2_24_variants_full.csv) | master table, 82 columns, section headers + blank separator |
+| [`JAK2_24_AVI_in_listed_order.csv`](JAK2_24_AVI_in_listed_order.csv) | compact view in the order supplied, with the benign calibration columns |
+| [`JAK2_24_sorted_by_AVI.csv`](JAK2_24_sorted_by_AVI.csv) | same, ranked by AVI Phred descending |
+| [`JAK2_benign_AVI_background.csv`](JAK2_benign_AVI_background.csv) | the 12 ClinVar-benign controls used to calibrate |
+| [`JAK2_S755R.csv`](JAK2_S755R.csv) | the single corrected variant, full column set |
+| [`alphagenome_avi_raw_output.md`](alphagenome_avi_raw_output.md) | raw AVI tool output incl. per-variant feature attributions |
+
 ## Provenance
 
 - 18 of 24 variants were already covered by [`../../external_data/JAK2/jak2_variants_inf_predict_ext.csv`](../../external_data/JAK2/jak2_variants_inf_predict_ext.csv)
