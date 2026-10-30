@@ -1,0 +1,26 @@
+variant,input_order,group,wt,pos,mt,uniprot_residue,domain,note,thermompnn,foldx,pct_in_JAK2,below_noise_floor,below_antisym_bias
+T108A,1,previously_reported_GOF,T,108,A,T,FERM,,0.332396984100342,0.322038,32.3,True,True
+Y317H,2,previously_reported_GOF,Y,317,H,Y,FERM,,1.68285036087036,2.60668,76.5,False,False
+H345L,3,previously_reported_GOF,H,345,L,H,FERM,,0.315104007720947,-1.09347,31.4,True,True
+H608N,4,previously_reported_GOF,H,608,N,H,Protein kinase 1,,0.957077145576477,1.3315,57.4,False,False
+L611S,5,previously_reported_GOF,L,611,S,L,Protein kinase 1,,0.200745224952698,0.997542,24.7,True,True
+V617I,6,previously_reported_GOF,V,617,I,V,Protein kinase 1,,-0.06934654712677,-0.948218,9.1,True,True
+V617F,7,previously_reported_GOF,V,617,F,V,Protein kinase 1,,0.430187523365021,0.637259,36.9,True,True
+V625F,8,previously_reported_GOF,V,625,F,V,Protein kinase 1,,1.42136490345001,5.33386,70.6,False,False
+E846D,9,previously_reported_GOF,E,846,D,E,-,,1.39136946201324,-0.761053,69.7,False,False
+R867Q,10,previously_reported_GOF,R,867,Q,R,Protein kinase 2,,0.469484865665436,0.640674,38.9,True,True
+T875N,11,previously_reported_GOF,T,875,N,T,Protein kinase 2,,0.343511044979095,-0.302011,32.8,True,True
+R755S,12,previously_reported_GOF,R,755,S,S,Protein kinase 1,"WILD-TYPE MISMATCH: position 755 is S in O60674, not R. Check numbering/isoform; S755R may be intended (wt/mut transposed).",,,,,
+S755R,13,previously_reported_GOF,S,755,R,S,Protein kinase 1,,-0.246453166007996,-0.82036,3.8,True,True
+R938Q,14,previously_reported_GOF,R,938,Q,R,Protein kinase 2,,0.170624792575836,1.15007,23.0,True,True
+R1063H,15,previously_reported_GOF,R,1063,H,R,Protein kinase 2,,0.987015843391418,1.04289,58.4,False,False
+P37A,16,this_study,P,37,A,P,FERM,no FoldX row (ProtVar omits some low-confidence positions despite its README),-0.0884308815002441,,8.2,True,True
+F240V,17,this_study,F,240,V,F,FERM,,0.680341124534607,0.975041,47.7,False,True
+H380Y,18,this_study,H,380,Y,H,FERM,,-0.069865345954895,-0.907836,9.1,True,True
+R426X,19,this_study,R,426,X,R,SH2; atypical,"nonsense (stop) - no folded mutant state, ddG undefined",,,,,
+C427R,20,this_study,C,427,R,C,SH2; atypical,,-0.397324562072754,0.701038,2.1,True,True
+G571R,21,this_study,G,571,R,G,Protein kinase 1,,1.14581823348999,2.44011,63.1,False,False
+V578I,22,this_study,V,578,I,V,Protein kinase 1,,1.03401041030884,0.937018,59.7,False,False
+L805I,23,this_study,L,805,I,L,Protein kinase 1,,0.191961288452148,0.504067,24.1,True,True
+I1065T,24,this_study,I,1065,T,I,Protein kinase 2,,2.32113552093506,3.15359,88.3,False,False
+V1110E,25,this_study,V,1110,E,V,Protein kinase 2,,0.213147819042206,-0.491087,25.4,True,True
