@@ -1,0 +1,3 @@
+protein,n_total,pct_abs_gt10,pct_abs_gt100,median_closed,n_surviving,pct_surviving,median_delta_kept,sd_delta_kept,pct_pos_full_cov
+JAK1,21926,27.8,11.0,-3.79,16298,74.3,-0.011,2.42,61.6
+TYK2,22536,27.6,10.6,-3.95,16740,74.3,0.058,2.44,61.0
