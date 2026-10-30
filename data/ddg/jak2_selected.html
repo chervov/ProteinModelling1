@@ -28,7 +28,8 @@ All methods signed so that <b>positive = destabilising</b>.</p>
 typical JAK2 substitution (median 0.34 vs background 0.74 kcal/mol, 33rd percentile), which is the
 expected signature of gain-of-function through release of JH2 autoinhibition rather than unfolding.
 The four predictors agree with each other only at r&nbsp;=&nbsp;0.46&ndash;0.67, so individual values
-carry large uncertainty.</div>
+carry large uncertainty; seven variants are called destabilising above the noise floor by all four, but
+only I1065T clears the per-variant error bar.</div>
 
 <h2>1. Methods obtained, and methods not obtained</h2>
 <table><tr><th>Method</th><th>Coverage</th><th>Route</th></tr>
@@ -53,8 +54,9 @@ distribution (median +0.74 over 20,349 JAK2 rows).</div>
 <p class="cap"><b>Figure 1.</b> Left: each variant scored by four predictors; grey band is the
 &plusmn;0.5 kcal/mol experimental noise floor; the black rule separates previously reported
 gain-of-function variants from those identified in this study. Right: pairwise agreement between methods.
-The between-method spread on a single variant routinely exceeds 2 kcal/mol &mdash; larger than most of the
-signal being measured.</p>
+The between-method spread on a single variant has a median of 1.15 kcal/mol (mean 1.42, max 3.91) and
+reaches 2 kcal/mol or more in 5 of 23 variants &mdash; comparable to the magnitude of the signal itself,
+since 14 of 23 variants fall inside the &plusmn;0.5 kcal/mol noise floor on at least one method.</p>
 
 <h3>2.1 Full table, in the order supplied</h3>
 <table><tr><th>Variant</th><th>#</th><th>Domain</th><th>RSA&nbsp;%</th>
@@ -156,9 +158,14 @@ and with an allosteric rather than structural mechanism.</li>
 
 <h2>4. What survives all four methods</h2>
 <ul>
-<li><b>Y317H</b> (1.68 / 2.61 / 1.19 / 2.72) and <b>V625F</b> (1.42 / 5.33 / 1.43 / 2.24) destabilise on
-every method &mdash; the only two with unanimous, substantial support.</li>
-<li><b>H380Y</b> is the only unanimous <i>stabilising</i> call (&minus;0.07 / &minus;0.91 / &minus;1.13 / &minus;0.79).</li>
+<li><b>Seven variants clear +0.5 kcal/mol on all four methods</b> &mdash; in descending ThermoMPNN order:
+<b>I1065T</b> (range 0.82&ndash;3.15), <b>Y317H</b> (1.19&ndash;2.72), <b>V625F</b> (1.42&ndash;5.33),
+<b>V578I</b> (0.51&ndash;1.03), <b>R1063H</b> (0.65&ndash;1.04), <b>H608N</b> (0.96&ndash;2.11) and
+<b>F240V</b> (0.68&ndash;1.62). Of these only I1065T also clears the &plusmn;1.47 kcal/mol per-variant error
+bar (section 6), so unanimity across methods is necessary but not sufficient for confidence.</li>
+<li><b>H380Y</b> is the only variant all four methods score negative (&minus;0.07 / &minus;0.91 /
+&minus;1.13 / &minus;0.79), but <i>no</i> variant is unanimously stabilising beyond the noise floor:
+ThermoMPNN's &minus;0.07 sits well inside &plusmn;0.5, so three methods carry that call, not four.</li>
 <li><b>V617F stays small on every method</b> (0.09&ndash;1.05), at the 37th percentile of JAK2's own
 distribution. The canonical driver mutation is not a destabilising one.</li>
 <li><b>E846D</b> remains the clearest disagreement: +1.39 ThermoMPNN against &minus;0.76 FoldX. mCSM (+1.15)
