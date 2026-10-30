@@ -1,0 +1,24 @@
+variant,input_order,group,domain,rsa_pct,thermompnn,foldx,mcsm_stability,ddmut,pct_in_JAK2,note,wt,mt,rosetta_category,cartesian_r,sign_split,low
+T108A,1,previously_reported_GOF,FERM,47.1,0.332396984100342,0.322038,0.625,0.45,32.3,,T,A,non-charged polar to hydrophobic,0.74,False,False
+Y317H,2,previously_reported_GOF,FERM,12.6,1.68285036087036,2.60668,1.188,2.72,76.5,,Y,H,non-charged polar to non-charged polar,0.52,False,False
+H345L,3,previously_reported_GOF,FERM,9.5,0.315104007720947,-1.09347,0.43,1.28,31.4,,H,L,non-charged polar to hydrophobic,0.74,True,False
+H608N,4,previously_reported_GOF,Protein kinase 1,1.5,0.957077145576477,1.3315,2.106,1.46,57.4,,H,N,non-charged polar to non-charged polar,0.52,False,False
+L611S,5,previously_reported_GOF,Protein kinase 1,60.0,0.200745224952698,0.997542,1.475,1.07,24.7,,L,S,hydrophobic to non-charged polar,0.57,False,False
+V617I,6,previously_reported_GOF,Protein kinase 1,44.3,-0.06934654712677,-0.948218,0.545,0.05,9.1,,V,I,hydrophobic to hydrophobic,0.61,True,False
+V617F,7,previously_reported_GOF,Protein kinase 1,44.3,0.430187523365021,0.637259,1.054,0.09,36.9,,V,F,hydrophobic to hydrophobic,0.61,False,False
+V625F,8,previously_reported_GOF,Protein kinase 1,0.0,1.42136490345001,5.33386,1.428,2.24,70.6,,V,F,hydrophobic to hydrophobic,0.61,False,False
+E846D,9,previously_reported_GOF,-,21.1,1.39136946201324,-0.761053,1.147,0.29,69.7,,E,D,like to like charge,0.32,True,True
+R867Q,10,previously_reported_GOF,Protein kinase 2,30.6,0.469484865665436,0.640674,1.368,-0.44,38.9,,R,Q,positive to non-charged polar,0.43,True,False
+T875N,11,previously_reported_GOF,Protein kinase 2,79.8,0.343511044979095,-0.302011,0.102,-0.02,32.8,,T,N,non-charged polar to non-charged polar,0.52,True,False
+S755R,13,previously_reported_GOF,Protein kinase 1,41.1,-0.246453166007996,-0.82036,0.247,-0.06,3.8,,S,R,non-charged polar to positive,0.28,True,True
+R938Q,14,previously_reported_GOF,Protein kinase 2,48.8,0.170624792575836,1.15007,0.843,0.11,23.0,,R,Q,positive to non-charged polar,0.43,False,False
+R1063H,15,previously_reported_GOF,Protein kinase 2,70.8,0.987015843391418,1.04289,0.959,0.65,58.4,,R,H,positive to non-charged polar,0.43,False,False
+P37A,16,this_study,FERM,30.9,-0.0884308815002441,,0.928,0.13,8.2,no FoldX row (ProtVar omits some low-confidence positions despite its README),P,A,involves proline,0.51,True,False
+F240V,17,this_study,FERM,55.2,0.680341124534607,0.975041,1.316,1.62,47.7,,F,V,hydrophobic to hydrophobic,0.61,False,False
+H380Y,18,this_study,FERM,17.7,-0.069865345954895,-0.907836,-1.129,-0.79,9.1,,H,Y,non-charged polar to non-charged polar,0.52,False,False
+C427R,20,this_study,SH2; atypical,19.4,-0.397324562072754,0.701038,1.44,0.71,2.1,,C,R,involves cysteine,0.07,True,True
+G571R,21,this_study,Protein kinase 1,73.9,1.14581823348999,2.44011,0.354,-0.05,63.1,,G,R,hydrophobic to positive,0.51,True,False
+V578I,22,this_study,Protein kinase 1,0.0,1.03401041030884,0.937018,0.758,0.51,59.7,,V,I,hydrophobic to hydrophobic,0.61,False,False
+L805I,23,this_study,Protein kinase 1,0.0,0.191961288452148,0.504067,0.923,0.46,24.1,,L,I,hydrophobic to hydrophobic,0.61,False,False
+I1065T,24,this_study,Protein kinase 2,3.8,2.32113552093506,3.15359,2.056,0.82,88.3,,I,T,hydrophobic to non-charged polar,0.57,False,False
+V1110E,25,this_study,Protein kinase 2,40.9,0.213147819042206,-0.491087,1.073,0.98,25.4,,V,E,hydrophobic to negative,0.73,True,False
