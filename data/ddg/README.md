@@ -35,13 +35,18 @@ the table**: `R755S` flagged as a mismatch with no value, and `S755R` computed. 
 
 ## Method
 
-ΔΔG came from two independent precomputed saturation-mutagenesis tables, not from new inference —
-both already cover the **complete 1,132 × 19 = 21,508** JAK2 substitution set:
+ΔΔG came from two independent precomputed saturation-mutagenesis tables, not from new inference.
+Their coverage of JAK2 is **not** the same:
 
-| source | method | file |
-|---|---|---|
-| ThermoMPNN | graph network on an AlphaFold2 model | `external_data/thermompnn_jak_src.csv` (21,508 JAK2 rows) |
-| ProtVar (EBI) | FoldX v5.0 on AlphaFold2 models | `external_data/protvar_foldx_jak_src.csv` (20,349 JAK2 rows) |
+| source | method | file | JAK2 coverage |
+|---|---|---|---|
+| ThermoMPNN | graph network on an AlphaFold2 model | `external_data/thermompnn_jak_src.csv` | **21,508 rows — complete** (1,132 × 19) |
+| ProtVar (EBI) | FoldX v5.0 on AlphaFold2 models | `external_data/protvar_foldx_jak_src.csv` | 20,349 rows — **94.6%**, short by 1,159 |
+
+The FoldX gap is structured, not random: **61 of 1,132 positions are missing entirely**, at median
+pLDDT 31.8 against 93.1 for positions present, and only 4 of the 61 are above pLDDT 70. These are
+the disordered N-terminus and inter-domain linkers. Where a position is present, all 19
+substitutions are present — there are no partially covered positions.
 
 **Sign convention: positive = destabilising** in both, verified empirically rather than assumed.
 
