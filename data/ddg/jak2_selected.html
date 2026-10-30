@@ -86,8 +86,7 @@ signal being measured.</p>
 <tr><td class="v">I1065T</td><td>24</td><td>Protein kinase 2</td><td class="n">3.8</td><td class="n">+2.32</td><td class="n">+3.15</td><td class="n">+2.06</td><td class="n">+0.82</td><td class="n">88</td><td class="note"></td></tr>
 <tr><td class="v">V1110E</td><td>25</td><td>Protein kinase 2</td><td class="n">40.9</td><td class="n">+0.21</td><td class="n">-0.49</td><td class="n">+1.07</td><td class="n">+0.98</td><td class="n">25</td><td class="note"></td></tr>
 </table>
-<p class="cap">&Delta;&Delta;G in kcal/mol, positive = destabilising. <b>RSA</b> = relative solvent
-accessibility from mCSM. <b>pct in JAK2</b> = percentile of this variant within JAK2's own complete
+<p class="cap">&Delta;&Delta;G in kcal/mol, positive = destabilising. <b>RSA</b> = relative solvent accessibility of the wild-type residue, percent of its maximum exposure, measured from the structure by mCSM; 0 = fully buried (see section 3). <b>pct in JAK2</b> = percentile of this variant within JAK2's own complete
 21,508-substitution ThermoMPNN distribution; an ordinal rank, not a probability, and not a pathogenicity
 score. Rows greyed out are not computable: R426X is a nonsense variant with no folded mutant state, and
 R755S has a wild-type mismatch (position 755 is S in O60674) &mdash; the transposed form S755R is scored on
@@ -100,7 +99,62 @@ the following row and both are kept.</p>
 <tr><th>DDMut</th><td class="n cc" style="background:rgba(84,39,143,0.36);color:#000">0.48</td><td class="n cc" style="background:rgba(84,39,143,0.42);color:#000">0.56</td><td class="n cc" style="background:rgba(84,39,143,0.42);color:#000">0.56</td><td class="n cc" style="background:rgba(84,39,143,0.75);color:#fff">1.00</td></tr></table>
 <p class="cap">Pearson r over the 22&ndash;23 variants each pair has in common.</p>
 
-<h2>3. What survives all four methods</h2>
+<h2>3. Solvent accessibility (RSA) &mdash; and why it does not rescue the predictions here</h2>
+<p><b>RSA (relative solvent accessibility)</b> is the solvent-exposed surface area of the wild-type
+residue in the folded structure, divided by the maximum that residue type could expose if fully extended
+and isolated, expressed as a percentage. It is <i>measured</i> from the AlphaFold model geometry, not
+predicted, and it depends only on the wild-type residue &mdash; not on what you mutate to. mCSM returns it
+alongside each prediction. 0% is fully buried in the core; above ~50% is surface.</p>
+
+<p>It is in this table for two reasons. First, burial is normally the dominant physical determinant of
+substitution cost: a buried residue is packed against neighbours with no solvent to absorb a change, while
+a surface residue has room to accommodate almost anything. Second, RSA is a strong baseline in its own
+right &mdash; RSA alone reaches Spearman 0.480 on the ProteinGym stability slice, and RSA combined with
+conservation log-odds reaches 0.551, above ESM2-650M at 0.496 (<a
+href="https://doi.org/10.1093/bioinformatics/btaf322">10.1093/bioinformatics/btaf322</a>). A method that
+cannot beat RSA is not earning its complexity.</p>
+
+<h3>3.1 Burial distribution of this variant set</h3>
+<table><tr><th>Burial class</th><th>n</th><th>Median RSA&nbsp;%</th><th>Median &Delta;&Delta;G<br>(mean of four methods)</th><th>Variants</th></tr>
+<tr><td>Buried (&lt;10%)</td><td class="n">6</td><td class="n">0.8</td><td class="n">+1.14</td>
+<td>H345L, H608N, V625F, V578I, L805I, I1065T</td></tr>
+<tr><td>Partially buried (10&ndash;50%)</td><td class="n">12</td><td class="n">35.9</td><td class="n">+0.48</td>
+<td>T108A, Y317H, V617I, V617F, E846D, R867Q, S755R, R938Q, P37A, H380Y, C427R, V1110E</td></tr>
+<tr><td>Exposed (&gt;50%)</td><td class="n">5</td><td class="n">70.8</td><td class="n">+0.94</td>
+<td>L611S, T875N, R1063H, F240V, G571R</td></tr>
+</table>
+<p class="cap">Median RSA across the set is 30.9%; only 6 of 23 variants are buried below 10%.</p>
+
+<div class="box warn"><b>The expected RSA&ndash;&Delta;&Delta;G relationship is absent in this set.</b>
+Spearman correlation between RSA and each method: ThermoMPNN &minus;0.18 (p=0.41), FoldX &minus;0.08
+(p=0.72), mCSM &minus;0.29 (p=0.17), DDMut &minus;0.36 (p=0.10); mean of the four &minus;0.20 (p=0.37).
+None reaches significance. The burial ordering is not even monotonic &mdash; the <i>exposed</i> group
+(+0.94) scores higher than the <i>partially buried</i> group (+0.48). With n=23 this is weak evidence
+either way, but it means RSA cannot be used here to adjudicate between methods that disagree.</div>
+
+<p>Two readings are consistent with that. The benign one: 23 variants is too small, and the set is
+deliberately non-random &mdash; these are variants selected for a phenotype, not sampled from the protein.
+The substantive one: a gain-of-function set is <i>expected</i> to avoid the core, because unfolding the
+kinase would destroy the activity the phenotype depends on. The absence of a burial signal is then a
+property of the biology, not a failure of the measurement.</p>
+
+<h3>3.2 Where burial does corroborate a prediction</h3>
+<ul>
+<li><b>I1065T</b> &mdash; RSA 3.8%, buried, and the largest &Delta;&Delta;G in the set (+2.32 ThermoMPNN,
++3.15 FoldX). Internally coherent, and the one variant that clears the &plusmn;1.47 error bar.</li>
+<li><b>H608N</b> &mdash; RSA 1.5%, the most deeply buried residue here, and all four methods agree it
+destabilises (+0.96 to +2.11). Physically consistent even though it does not clear the error bar.</li>
+<li><b>T875N</b> &mdash; RSA 79.8%, fully exposed, and uniformly near zero (&minus;0.02 to +0.34).
+Coherent in the opposite direction.</li>
+<li><b>G571R</b> &mdash; RSA 73.9%, yet ThermoMPNN (+1.15) and FoldX (+2.44) call it substantially
+destabilising while mCSM (+0.35) and DDMut (&minus;0.05) call it nothing. At that exposure an arginine has
+somewhere to go, so the low values are the more physically plausible pair &mdash; the one case in this set
+where RSA does arbitrate.</li>
+<li><b>V617F</b> &mdash; RSA 44.3%, partly exposed, consistent with its uniformly small &Delta;&Delta;G
+and with an allosteric rather than structural mechanism.</li>
+</ul>
+
+<h2>4. What survives all four methods</h2>
 <ul>
 <li><b>Y317H</b> (1.68 / 2.61 / 1.19 / 2.72) and <b>V625F</b> (1.42 / 5.33 / 1.43 / 2.24) destabilise on
 every method &mdash; the only two with unanimous, substantial support.</li>
@@ -114,7 +168,7 @@ outside any annotated domain.</li>
 characteristic of that tool, so its agreement with others is partly structural.</li>
 </ul>
 
-<h2>4. Expected Rosetta reliability, by mutation category</h2>
+<h2>5. Expected Rosetta reliability, by mutation category</h2>
 <p>Frenz et al. 2020 (<i>Front. Bioeng. Biotechnol.</i>, <a
 href="https://doi.org/10.3389/fbioe.2020.558247">10.3389/fbioe.2020.558247</a>) benchmark Cartesian
 &Delta;&Delta;G over 767 entries and report accuracy per mutation category. Overall Pearson r = 0.49;
@@ -152,7 +206,7 @@ categories (C427R, S755R, E846D) are all ones where the four methods split on di
 23 the relationship is null (Pearson r = &minus;0.03, p = 0.90; Fisher exact on the binary split p = 0.068,
 n = 3). Treat the category as a flag worth checking, not as a predictor of disagreement.</div>
 
-<h2>5. Interpretation floors</h2>
+<h2>6. Interpretation floors</h2>
 <table><tr><th>Threshold</th><th>Value</th><th>Meaning</th><th>Flags</th></tr>
 <tr><td>Experimental noise floor</td><td class="n">&plusmn;0.50</td>
 <td>reproducibility limit of &Delta;&Delta;G measurement itself (<a
@@ -174,7 +228,7 @@ pathogenicity (best reported AUC &asymp; 0.66). Gain-of-function and dominant-ne
 characteristically mild in |&Delta;&Delta;G|, which is precisely the pattern here. These numbers describe
 folding stability only.</div>
 
-<h2>6. Reproducing this</h2>
+<h2>7. Reproducing this</h2>
 <p>Script: <code>data/ddg/compute_jak2_ddg.py</code> (ThermoMPNN + FoldX columns, percentile, floors).
 Structure: <code>AF-O60674-F1-model_v6.pdb</code>, chain A, residues 1&ndash;1132 &mdash; AlphaFold numbering
 equals UniProt numbering, and all 23 wild-type residues were verified against the structure before
