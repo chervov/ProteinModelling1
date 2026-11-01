@@ -1,5 +1,11 @@
 # Theoretical $\Delta\Delta G$ Biophysical Approximation Methodology
 
+> **Reviewed 1 November 2026 - do not use this model for ranking.** The table in section 5 does not
+> reproduce from the code in section 4 (1 of 8 values), the model cannot return a stabilising value,
+> and its rank correlation with ThermoMPNN, FoldX, mCSM-Stability and DDMut on this repository's own
+> JAK2 set is zero within noise. Section 6 is withdrawn. See
+> [`ddg_approximation_review.md`](ddg_approximation_review.md).
+
 ## 1. Introduction & Theoretical Motivation
 
 When evaluating the impact of protein missense variants, running full-atom Monte Carlo conformational sampling (such as **Rosetta `cartesian_ddg`**) or high-resolution crystallographic rotamer minimization (such as **FoldX 5.0**) on every variant can require significant computational resources (e.g., 20–45 CPU minutes per variant for Rosetta).
