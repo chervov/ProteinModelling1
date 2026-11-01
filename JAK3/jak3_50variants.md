@@ -42,14 +42,14 @@
 | 23 | LOF — Experimentally Reduced Function | **`D169E`** | `c.507C>A` | Exon 5 | FERM Domain (receptor gamma-c tethering) | `chr19:17843086:G>T` | 1.556 / 99.9% / 29.8 | **+0.7 kcal/mol** *(est)* | **LOF (Partial)** | FERM domain; altered carboxylate geometry reduces downstream STAT5 signaling efficiency. |
 | 24 | LOF — Experimentally Reduced Function | **`R402H`** | `c.1205G>A` | Exon 9 | SH2 Domain (phosphotyrosine recognition) | `chr19:17840279:C>T` | 1.010 / 99.6% / 24.4 | **+1.7 kcal/mol** *(est)* | **LOF** | FERM-SH2 junction; loss of positive charge impairs interdomain stability and receptor tethering. |
 | 25 | LOF — Experimentally Reduced Function | **`R431P`** | `c.1292G>C` | Exon 10 | SH2 Domain (phosphotyrosine recognition) | `chr19:17839626:C>G` | 0.772 / 99.5% / 22.7 | **+3.9 kcal/mol** *(est)* | **LOF** | SH2 domain core; proline insertion breaks secondary structure, causing protein misfolding. |
-| 26 | LOF — Experimentally Reduced Function | **`E481G`** | `c.1441_1443delins` | Exon 10 | SH2 Domain (phosphotyrosine recognition) | `chr19:17839477:C>A` | 2.749 / 100.0% / 48.8 | **+1.8 kcal/mol** *(est)* | **LOF** | SH2 domain phosphotyrosine binding pocket; loss of charge prevents receptor recruitment. |
+| 26 | LOF — Experimentally Reduced Function | **`E481G`** | `c.1442A>G` | Exon 10 | SH2 Domain (phosphotyrosine recognition) | `chr19:17838390:T>C` | 1.013 / 99.6% / 24.4 | **+1.8 kcal/mol** *(est)* | **LOF** | SH2 domain phosphotyrosine binding pocket; loss of charge prevents receptor recruitment. |
 | 27 | LOF — Experimentally Reduced Function | **`G589S`** | `c.1765G>A` | Exon 13 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17837150:C>T` | 1.431 / 99.8% / 27.7 | **+4.4 kcal/mol** *(est)* | **LOF** | JH2 beta-turn; serine substitution in tight turn causes pseudokinase structural collapse. |
 | 28 | LOF — Experimentally Reduced Function | **`C759R`** | `c.2275T>C` | Exon 17 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834646:A>G` | 1.460 / 99.9% / 28.3 | **+5.2 kcal/mol** *(est)* | **LOF** | JH2 pseudokinase core; basic arginine insertion causes severe steric collapse & misfolding. |
 | 29 | LOF — Experimentally Reduced Function | **`C1066R`** | `c.3196T>C` | Exon 23 | JH1 Tyrosine Kinase Domain (catalytic engine) | `chr19:17830119:A>G` | 1.405 / 99.8% / 27.3 | **+8.0 kcal/mol** *(est)* | **LOF** | JH1 catalytic domain; charge insertion destroys the kinase catalytic core (T-B+NK- SCID). |
 | 30 | LOF — Experimentally Reduced Function | **`I688F`** | `c.2062A>T` | Exon 16 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834989:T>A` | 1.326 / 99.8% / 26.4 | **+0.8 kcal/mol** *(est)* | **LOF** | JH2 beta-strand; steric crowding disrupts required pseudokinase scaffolding. |
 | 31 | LOF — Experimentally Reduced Function | **`L129F`** | `c.385C>T` | Exon 4 | FERM Domain (receptor gamma-c tethering) | `chr19:17843415:G>A` | 0.393 / 97.9% / 16.7 | **+0.6 kcal/mol** *(est)* | **LOF (Reduced / VUS)** | FERM domain; reduces STAT5 signaling in patient cells; clinical significance uncertain. |
-| 32 | Likely LOF — Deficiency-Associated Candidates | **`R103C`** | `c.307_309delins` | Exon 3 | FERM Domain (receptor gamma-c tethering) | `chr19:17843778:G>A` | 1.438 / 99.8% / 27.9 | **+2.4 kcal/mol** *(est)* | **Likely LOF** | FERM domain; loss of conserved arginine impairs common gamma-chain binding (SCID candidate). |
-| 33 | Likely LOF — Deficiency-Associated Candidates | **`R103H`** | `c.307_309delins` | Exon 3 | FERM Domain (receptor gamma-c tethering) | `chr19:17843778:G>A` | 1.438 / 99.8% / 27.9 | **+1.7 kcal/mol** *(est)* | **Likely LOF** | FERM domain; histidine mutation destroys receptor tethering salt bridge. |
+| 32 | Likely LOF — Deficiency-Associated Candidates | **`R103C`** | `c.307C>T` | Exon 3 | FERM Domain (receptor gamma-c tethering) | `chr19:17843778:G>A` | 1.438 / 99.8% / 27.9 | **+2.4 kcal/mol** *(est)* | **Likely LOF** | FERM domain; loss of conserved arginine impairs common gamma-chain binding (SCID candidate). |
+| 33 | Likely LOF — Deficiency-Associated Candidates | **`R103H`** | `c.308G>A` | Exon 3 | FERM Domain (receptor gamma-c tethering) | `chr19:17843777:C>T` | 1.980 / 100.0% / 34.7 | **+1.7 kcal/mol** *(est)* | **Likely LOF** | FERM domain; histidine mutation destroys receptor tethering salt bridge. |
 | 34 | Likely LOF — Deficiency-Associated Candidates | **`D144V`** | `c.431A>T` | Exon 5 | FERM Domain (receptor gamma-c tethering) | `chr19:17843162:T>A` | 1.165 / 99.7% / 25.3 | **+1.4 kcal/mol** *(est)* | **Likely LOF** | FERM F1 lobe; loss of coordinating aspartate disrupts domain fold. |
 | 35 | Likely LOF — Deficiency-Associated Candidates | **`C193Y`** | `c.578G>A` | Exon 6 | FERM Domain (receptor gamma-c tethering) | `chr19:17842599:C>T` | 1.401 / 99.8% / 27.2 | **+2.0 kcal/mol** *(est)* | **Likely LOF** | FERM domain core; bulky tyrosine destroys conserved disulfide / hydrophobic core. |
 | 36 | Likely LOF — Deficiency-Associated Candidates | **`A343P`** | `c.1027G>C` | Exon 8 | FERM Domain (receptor gamma-c tethering) | `chr19:17841504:C>G` | 1.475 / 99.9% / 28.6 | **+2.2 kcal/mol** *(est)* | **Likely LOF** | FERM F3 lobe; proline breaks an alpha-helix essential for receptor docking. |
@@ -65,7 +65,7 @@
 | 46 | Likely LOF — Deficiency-Associated Candidates | **`R651W`** | `c.1951C>T` | Exon 15 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17835179:G>A` | 0.671 / 99.3% / 21.6 | **+2.6 kcal/mol** *(est)* | **Likely LOF** | JH2 alphaC-helix; tryptophan disruption causes pseudokinase domain collapse. |
 | 47 | Likely LOF — Deficiency-Associated Candidates | **`T714M`** | `c.2141C>T` | Exon 16 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834910:G>A` | 0.914 / 99.6% / 23.8 | **+1.6 kcal/mol** *(est)* | **Likely LOF** | JH2 beta-sheet; methionine insertion destabilizes the pseudokinase core. |
 | 48 | Likely LOF — Deficiency-Associated Candidates | **`R775H`** | `c.2324G>A` | Exon 17 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834597:C>T` | 1.227 / 99.7% / 25.7 | **+4.0 kcal/mol** *(est)* | **Likely LOF** | JH2 C-lobe; histidine substitution impairs essential interdomain contacts. |
-| 49 | Likely LOF — Deficiency-Associated Candidates | **`D784N`** | `c.2350_2352delins` | Exon 17 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834571:C>A` | 2.096 / 100.0% / 35.6 | **+2.6 kcal/mol** *(est)* | **Likely LOF** | JH2 catalytic-like loop; loss of aspartate carboxylate impairs domain stability. |
+| 49 | Likely LOF — Deficiency-Associated Candidates | **`D784N`** | `c.2350G>A` | Exon 17 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp) | `chr19:17834571:C>T` | 1.732 / 99.9% / 32.5 | **+2.6 kcal/mol** *(est)* | **Likely LOF** | JH2 catalytic-like loop; loss of aspartate carboxylate impairs domain stability. |
 | 50 | Likely LOF — Deficiency-Associated Candidates | **`E1019K`** | `c.3055G>A` | Exon 22 | JH1 Tyrosine Kinase Domain (catalytic engine) | `chr19:17830544:C>T` | 1.568 / 99.9% / 30.0 | **+5.0 kcal/mol** *(est)* | **Likely LOF** | JH1 catalytic domain; charge reversal disrupts catalytic core active fold (SCID driver). |
 
 ---
@@ -362,10 +362,10 @@ Receptor gamma-c tether    Phos-Tyr binding                    Negative Autoinhi
 * **Biophysical Mechanism & Disease:** SH2 domain core; proline insertion breaks secondary structure, causing protein misfolding.
 
 #### 26. `E481G` (SH2 Domain (phosphotyrosine recognition))
-* **Transcript & cDNA:** `NM_000215.4`: `c.1441_1443delins` (Exon 10)
-* **Genomic Coordinate (GRCh38):** `chr19:17839477:C>A` (Negative strand)
+* **Transcript & cDNA:** `NM_000215.4`: `c.1442A>G` (Exon 10)
+* **Genomic Coordinate (GRCh38):** `chr19:17838390:T>C` (Negative strand)
 * **Protein Location:** Residue 481 | SH2 Domain (phosphotyrosine recognition)
-* **AlphaGenome Functional Impact:** `2.749 / 100.0% / 48.8`
+* **AlphaGenome Functional Impact:** `1.013 / 99.6% / 24.4`
 * **Thermodynamic Perturbation:** $\Delta\Delta G_{\text{est}} = \mathbf{+1.8\text{ kcal/mol}}$ *(Biophysical estimate)*
   - **Breakdown:** Cavity void (+1.1) + Electrostatic/Born (+0.7)
 * **Functional Status:** $\mathbf{LOF}$
@@ -424,7 +424,7 @@ Receptor gamma-c tether    Phos-Tyr binding                    Negative Autoinhi
 ### Category: Likely LOF — Deficiency-Associated Candidates
 
 #### 32. `R103C` (FERM Domain (receptor gamma-c tethering))
-* **Transcript & cDNA:** `NM_000215.4`: `c.307_309delins` (Exon 3)
+* **Transcript & cDNA:** `NM_000215.4`: `c.307C>T` (Exon 3)
 * **Genomic Coordinate (GRCh38):** `chr19:17843778:G>A` (Negative strand)
 * **Protein Location:** Residue 103 | FERM Domain (receptor gamma-c tethering)
 * **AlphaGenome Functional Impact:** `1.438 / 99.8% / 27.9`
@@ -434,10 +434,10 @@ Receptor gamma-c tether    Phos-Tyr binding                    Negative Autoinhi
 * **Biophysical Mechanism & Disease:** FERM domain; loss of conserved arginine impairs common gamma-chain binding (SCID candidate).
 
 #### 33. `R103H` (FERM Domain (receptor gamma-c tethering))
-* **Transcript & cDNA:** `NM_000215.4`: `c.307_309delins` (Exon 3)
-* **Genomic Coordinate (GRCh38):** `chr19:17843778:G>A` (Negative strand)
+* **Transcript & cDNA:** `NM_000215.4`: `c.308G>A` (Exon 3)
+* **Genomic Coordinate (GRCh38):** `chr19:17843777:C>T` (Negative strand)
 * **Protein Location:** Residue 103 | FERM Domain (receptor gamma-c tethering)
-* **AlphaGenome Functional Impact:** `1.438 / 99.8% / 27.9`
+* **AlphaGenome Functional Impact:** `1.980 / 100.0% / 34.7`
 * **Thermodynamic Perturbation:** $\Delta\Delta G_{\text{est}} = \mathbf{+1.7\text{ kcal/mol}}$ *(Biophysical estimate)*
   - **Breakdown:** Cavity void (+1.0) + Electrostatic/Born (+0.7)
 * **Functional Status:** $\mathbf{Likely LOF}$
@@ -594,10 +594,10 @@ Receptor gamma-c tether    Phos-Tyr binding                    Negative Autoinhi
 * **Biophysical Mechanism & Disease:** JH2 C-lobe; histidine substitution impairs essential interdomain contacts.
 
 #### 49. `D784N` (JH2 Pseudokinase Domain (regulatory autoinhibitory clamp))
-* **Transcript & cDNA:** `NM_000215.4`: `c.2350_2352delins` (Exon 17)
-* **Genomic Coordinate (GRCh38):** `chr19:17834571:C>A` (Negative strand)
+* **Transcript & cDNA:** `NM_000215.4`: `c.2350G>A` (Exon 17)
+* **Genomic Coordinate (GRCh38):** `chr19:17834571:C>T` (Negative strand)
 * **Protein Location:** Residue 784 | JH2 Pseudokinase Domain (regulatory autoinhibitory clamp)
-* **AlphaGenome Functional Impact:** `2.096 / 100.0% / 35.6`
+* **AlphaGenome Functional Impact:** `1.732 / 99.9% / 32.5`
 * **Thermodynamic Perturbation:** $\Delta\Delta G_{\text{est}} = \mathbf{+2.6\text{ kcal/mol}}$ *(Biophysical estimate)*
   - **Breakdown:** Steric clash (+0.1) + Electrostatic/Born (+2.5)
 * **Functional Status:** $\mathbf{Likely LOF}$
