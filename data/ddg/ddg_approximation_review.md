@@ -11,6 +11,20 @@ established methods. It should not be used to rank or prioritise variants.**
 
 Nothing in the repository currently depends on it — see §5.
 
+> **Status, updated 1 November 2026.** This review was written against the document as first
+> published. `ddg_approximation.md` has since been **formally retracted** by its author: it now
+> carries a `[!CAUTION]` audit block, its §5 has been replaced by a claimed-vs-computed audit table,
+> the invented "AlphaGenome AVI Phred" integration has been removed, the volume table has been
+> relabelled as whole-residue volumes and re-sorted, and `ddg_approximator.py` carries a deprecation
+> warning in both of its locations. The findings below stand as written and are the evidence behind
+> that retraction; the section numbers refer to the **original** document, which is quoted in the
+> audit block rather than preserved intact. Corrections applied to the audit block itself: the RSA
+> values are from the AlphaFold model AF-O60674-F1 via mCSM, not from a crystal structure (no
+> full-length experimental JAK2 structure exists); the independent reimplementation was PowerShell
+> only; and TYK2 H667 is not "strictly LOF" — every substitution reduces signalling, but the mildest
+> (H667C, −0.13 ± 0.28) is indistinguishable from wild type, while JAK3 Y581C has no functional
+> measurement and is therefore not evidence either way.
+
 ---
 
 ## 1. Section 5 was not produced by the code in section 4
