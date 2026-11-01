@@ -2,6 +2,11 @@
 
 ## 1. Executive Summary & Core Principle
 
+> [!IMPORTANT]
+> **Implementation Note:**
+> In the current pipeline, AlphaGenome AVI scores and Ensembl coordinates are queried live via API. The $\Delta\Delta G$ values used in the decision rules represent **theoretical biophysical estimations** parameterized from structural literature and electrostatic rules, rather than local executions of FoldX or Rosetta.
+
+
 Determining whether a genetic variant produces a **Gain-of-Function (GOF)**, **Loss-of-Function (LOF)**, or **Neutral** phenotype is one of the most critical challenges in variant interpretation. 
 
 Standard machine learning tools (e.g., **AlphaMissense**, **SIFT**, **PolyPhen-2**) and thermodynamic forcefields (e.g., **FoldX**, **Rosetta**) are trained to detect **structural disruption** or **evolutionary conservation**. **They cannot inherently differentiate between activation and inactivation** because:
