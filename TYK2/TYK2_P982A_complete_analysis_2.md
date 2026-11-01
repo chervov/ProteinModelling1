@@ -47,4 +47,4 @@
 | **AlphaMissense** | Deep Learning Protein Fold | **0.526** | **Ambiguous (High)** | Near pathogenic threshold ($0.56$); perturbs hinge flexibility |
 | **SIFT** | Homology & Alignment | **0.00** | **Deleterious** | Intolerant across homologous kinases |
 | **PolyPhen-2** | Structure & Features | **1.00** | **Probably Damaging** | Confident damaging prediction |
-| **Thermodynamics ($\Delta\Delta G$)**| Consensus Biophysical Forcefield | **$+1.72\text{ kcal/mol}$** | **Destabilizing** | Hinge backbone conformational destabilization |
+| **Theoretical $\Delta\Delta G$ (Estimation)**| Consensus Biophysical Forcefield | **$+1.72\text{ kcal/mol}$** | **Destabilizing** | Hinge backbone conformational destabilization |
