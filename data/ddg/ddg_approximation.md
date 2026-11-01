@@ -4,7 +4,7 @@
 > ## POST-MORTEM VALIDATION AUDIT & RETRACTION NOTE (2026-11-01)
 > **STATUS: FAILED EMPIRICAL VALIDATION — DO NOT USE FOR VARIANT SCORING OR RANKING**
 >
-> Following an independent verification, reimplementation in PowerShell/Python, and benchmarking against experimental/established methods, this approximation model has been **formally retracted and deprecated for scoring or ranking**.
+> Following an independent verification, reimplementation in PowerShell, and benchmarking against experimental/established methods, this approximation model has been **formally retracted and deprecated for scoring or ranking**.
 >
 > It is retained in this repository solely as documentation of an attempted analytical approach that **failed its own validation**, and as a pedagogical reference for classical biophysical component decomposition principles.
 >
@@ -24,11 +24,11 @@
 >    - Spearman vs. **DDMut:** $\rho = -0.06$
 >    The model carries zero stability ranking information across all four established biophysical tools.
 > 4. **Absence of 3D Structural Coordinates & Contradiction of Real RSA Data:**
->    The function signature operates solely on wild-type residue, mutant residue, and hand-assigned boolean flags (`is_tight_turn`, `is_salt_bridge`, `is_catalytic_core`, `is_autoinhibitory_switch`). Two identical substitutions at different sequence positions produce identical values unless manually tuned. Furthermore, manual flags contradicted true crystallographic RSA values in `jak2_rsa.csv`:
->    - `V617F`: Harness assumed burial $0.90$, but crystallographic RSA shows **44.3% solvent-exposed**.
->    - `G571R`: Harness assumed burial $0.80$ and tight turn, but crystallographic RSA shows **73.9% solvent-exposed** (a surface residue).
->    - `V1110E`: Harness assumed burial $0.90$, but crystallographic RSA shows **40.9% solvent-exposed**.
->    - `V578I` / `L805I`: Harness assumed burial $0.85$ and $0.50$, but crystallographic RSA shows **0.0% (fully buried)**.
+>    The function signature operates solely on wild-type residue, mutant residue, and hand-assigned boolean flags (`is_tight_turn`, `is_salt_bridge`, `is_catalytic_core`, `is_autoinhibitory_switch`). Two identical substitutions at different sequence positions produce identical values unless manually tuned. Furthermore, manual flags contradicted the measured RSA values in `jak2_rsa.csv` (relative solvent accessibility reported by mCSM on the AlphaFold model AF-O60674-F1 -- no full-length experimental JAK2 structure exists, so these are model values, not crystallographic ones):
+>    - `V617F`: Harness assumed burial $0.90$, but the measured RSA is **44.3% solvent-exposed**.
+>    - `G571R`: Harness assumed burial $0.80$ and tight turn, but the measured RSA is **73.9% solvent-exposed** (a surface residue).
+>    - `V1110E`: Harness assumed burial $0.90$, but the measured RSA is **40.9% solvent-exposed**.
+>    - `V578I` / `L805I`: Harness assumed burial $0.85$ and $0.50$, but the measured RSA is **0.0% (fully buried)**.
 > 5. **Implementation & Theoretical Defects:**
 >    - The $\Delta\Delta G_{\text{hbond}}$ term defined in §2 was never implemented in code.
 >    - `total_raw` on line 152 was computed and discarded.
@@ -37,7 +37,11 @@
 >    - A rigid-body overlap coefficient ($\alpha = 0.040$) without backbone relaxation creates massive overestimation artifacts.
 > 6. **Invalidity of §6 (AlphaGenome and Deterministic Domain Rules):**
 >    - AlphaGenome is a sequence-based deep learning model trained on non-coding epigenomic/transcriptomic tracks; it does not output missense stability or protein folding predictions. Transforming quantiles into pseudo-Phred scores for missense impact is scientifically unsupported.
->    - The deterministic rule ("high $\Delta\Delta G$ in JH2 $\implies$ GOF, high $\Delta\Delta G$ in JH1 $\implies$ LOF") is refuted by deep mutational scanning (DMS) datasets (e.g. TYK2 DMS where JH2 H667 mutations are strictly LOF, and JAK3 Y581C).
+>    - The deterministic rule ("high $\Delta\Delta G$ in JH2 $\implies$ GOF, high $\Delta\Delta G$ in JH1 $\implies$ LOF") is contradicted by the TYK2 deep mutational scan, where every substitution at the JH2 position H667 *reduces* IFN-alpha signalling rather than increasing it -- although the mildest, H667C at $-0.13 \pm 0.28$, is indistinguishable from wild type. JAK3 Y581C is not counter-evidence either way: it has no functional measurement at all, and `external_data/JAK3/jak3_homology_inf.md` concludes that its direction cannot be inferred from position plus predicted effect.
+>
+> ### Evidence behind this audit:
+> - [`ddg_approximation_review.md`](ddg_approximation_review.md) -- the full review, with the three tests and the per-variant breakdown.
+> - [`../../pipeline/ddg/check_approximator.ps1`](../../pipeline/ddg/check_approximator.ps1) -- an independent reimplementation of `compute_ddg` that reproduces every number quoted above. Run it with no arguments; it fetches `jak2_variants_multimethod.csv` itself and needs no Python.
 >
 > ### What Remains Valid as a Conceptual Framework:
 > - The **Glycine rule** (buried Gly $\to$ bulky residue carries severe torsional/steric penalties) remains directionally valid.
@@ -47,7 +51,7 @@
 
 ## 1. Introduction & Theoretical Motivation
 
-When evaluating the impact of protein missense variants, running full-atom Monte Carlo conformational sampling (such as **Rosetta `cartesian_ddg`**) or high-resolution crystallographic rotamer minimization (such as **FoldX 5.0**) on every variant can require significant computational resources.
+When evaluating the impact of protein missense variants, running full-atom Monte Carlo conformational sampling (such as **Rosetta `cartesian_ddg`**) or empirical forcefield rotamer repacking (such as **FoldX 5.0**, whose values in this repository come from AlphaFold models via EBI ProtVar) on every variant can require significant computational resources.
 
 For exploratory analysis, an analytical **Theoretical Biophysical $\Delta\Delta G$ Approximation Model** was formulated to decompose the free energy change of unfolding into fundamental physical terms:
 
@@ -113,8 +117,8 @@ The table below lists the reference residue volumes (Zamyatnin scale, whole resi
 | **K** | Lys | 168.6 | +1 | -3.9 |
 | **F** | Phe | 189.9 | 0 | +2.8 |
 | **Y** | Tyr | 193.6 | 0 | -1.3 |
-| **W** | Trp | 227.8 | 0 | -0.9 |
 | **R** | Arg | 225.0 | +1 | -4.5 |
+| **W** | Trp | 227.8 | 0 | -0.9 |
 
 ---
 
@@ -207,12 +211,12 @@ class BiophysicalDDGApproximator:
 
 ## 5. Audit of Original Benchmark Claims vs. Code Execution
 
-The table below contrasts the values originally published in §5 against the values actually produced by executing the Python code:
+The table below contrasts the values originally published in the benchmark section of this document against the values actually produced by executing the Python code:
 
 | Variant | Substitution | §5 Claimed | Code Actually Gives | Discrepancy & Root Cause |
 | :--- | :---: | :---: | :---: | :--- |
 | **`JAK2 V617F`** | $\text{Val} \to \text{Phe}$ | **+3.0** | **+3.00** | **Match** (steric clash + autoinhibitory switch bonus). |
-| **`JAK2 G571R`** | $\text{Gly} \to \text{Arg}$ | **+3.4** | **+8.83** | **2.6× Overestimate in code:** $\Delta V = +164.9\text{ \AA}^3$ generates $5.28\text{ kcal/mol}$ steric clash $+ 2.42$ Gly penalty $+ 1.14$ Born charge insertion. The table manually omitted the electrostatic term and reported an arbitrary $+3.4$. |
+| **`JAK2 G571R`** | $\text{Gly} \to \text{Arg}$ | **+3.4** | **+8.83** | **Table understates the code 2.6x:** $\Delta V = +164.9\text{ \AA}^3$ generates $5.28\text{ kcal/mol}$ steric clash $+ 2.42$ Gly penalty $+ 1.14$ Born charge insertion. The table manually omitted the electrostatic term and reported an arbitrary $+3.4$. |
 | **`JAK2 V1110E`**| $\text{Val} \to \text{Glu}$ | **+2.9** | **+2.31** | **Mismatch:** Table reported theoretical breakdown not matched by code arithmetic. |
 | **`JAK2 F240V`** | $\text{Phe} \to \text{Val}$ | **+2.6** | **+2.24** | **Mismatch:** Cavity formula produces $0.024 \times 49.9 \times 0.95 + 1.1 = 2.24$. |
 | **`JAK2 V578I`** | $\text{Val} \to \text{Ile}$ | **+0.3** | **+0.40** | **Mismatch:** Aliphatic mitigation capped at $0.40$. |
