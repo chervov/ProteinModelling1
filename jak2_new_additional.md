@@ -34,13 +34,13 @@
 The 9 variants analyzed in this report represent the two most famous hotspots of non-`V617F` constitutive activation in `JAK2`:
 
 ### A. The Exon 12 Hotspot Cluster (`K539L`, `N542_E543del`, `F537_K539delinsL`, `H538Q`, `in cis` combinations)
-* **Structural Role:** Residues 536–544 encode an amphipathic regulatory $lpha$-helix located within the linker connecting the SH2 domain and the JH2 pseudokinase domain.
+* **Structural Role:** Residues 536–544 encode an amphipathic regulatory $\alpha$-helix located within the linker connecting the SH2 domain and the JH2 pseudokinase domain.
 * **Normal Function:** In wild-type JAK2, this helix packs tightly against the JH2 pseudokinase domain, holding the JH2 autoinhibitory clamp in place over the JH1 kinase catalytic domain.
-* **Pathogenic Mechanism:** Mutations in this cluster (deletions, indels, or hydrophobic replacements) distort or truncate the linker $lpha$-helix. This disruption relieves the autoinhibitory restraint imposed by JH2, driving cytokine-independent homodimerization and constitutive trans-phosphorylation of the downstream STAT5 transcriptional pathway.
+* **Pathogenic Mechanism:** Mutations in this cluster (deletions, indels, or hydrophobic replacements) distort or truncate the linker $\alpha$-helix. This disruption relieves the autoinhibitory restraint imposed by JH2, driving cytokine-independent homodimerization and constitutive trans-phosphorylation of the downstream STAT5 transcriptional pathway.
 * **Clinical Phenotype:** These mutations account for ~3–5% of all Polycythemia Vera (PV) cases, representing virtually **100% of `JAK2 V617F`-negative PV**. Patients typically present with isolated erythrocytosis, lower leukocyte and platelet counts, and significantly younger age at diagnosis.
 
 ### B. The JH2 Pseudokinase Clamp Hotspots (`R683S`, `R683G`, `R564Q`)
-* **Structural Role:** Arg683 is situated in the $eta7-eta8$ loop of the JH2 pseudokinase domain, forming a key electrostatic anchor directly at the autoinhibitory interface with the JH1 kinase domain.
+* **Structural Role:** Arg683 is situated in the $\beta7-\beta8$ loop of the JH2 pseudokinase domain, forming a key electrostatic anchor directly at the autoinhibitory interface with the JH1 kinase domain.
 * **Pathogenic Mechanism:** Substituting the large, positively charged Arg683 with smaller residues (Serine or Glycine) disrupts this critical inter-domain contact. This releases the autoinhibitory clamp, converting the JH1 kinase domain into a constitutively hyperactive engine.
 * **Clinical Phenotype:** Unlike exon 12 mutations which drive myeloproliferative neoplasms (PV), `JAK2 R683S` and `R683G` are the hallmark oncogenic drivers of **B-cell precursor Acute Lymphoblastic Leukemia (B-ALL)**, particularly in children with Down syndrome (DS-ALL, where JAK2 mutations occur in ~60% of cases) and high-risk Ph-like ALL.
 
@@ -213,11 +213,11 @@ The 9 variants analyzed in this report represent the two most famous hotspots of
 
 | Feature | Exon 12 Hotspot (`K539L`, `N542_E543del`, `F537_K539delinsL`) | JH2 Pseudokinase Hotspot (`R683S`, `R683G`) | JH2 N-lobe (`R564Q`) |
 | :--- | :--- | :--- | :--- |
-| **Domain** | SH2-JH2 Linker regulatory helix | JH2 $eta7-eta8$ loop autoinhibitory interface | JH2 N-lobe ($eta1-eta2$ hinge) |
+| **Domain** | SH2-JH2 Linker regulatory $\alpha$-helix | JH2 $\beta7-\beta8$ loop autoinhibitory interface | JH2 N-lobe ($\beta1-\beta2$ hinge) |
 | **Primary Disease** | Polycythemia Vera (PV) | B-cell Acute Lymphoblastic Leukemia (B-ALL) | MPN / Atypical MPD |
 | **Patient Age Group** | Adults (typically 40–60 years) | Pediatric (DS-ALL, high-risk B-ALL) | Adults |
 | **Cell Lineage Bias** | Predominantly Erythroid lineage | B-lymphoid precursor lineage | Myeloid lineage |
-| **Molecular Switch** | Disruption of linker $lpha$-helix prevents autoinhibitory latching | Disruption of direct salt bridge contact with JH1 kinase domain | Weakens inter-domain hinge flexibility |
+| **Molecular Switch** | Disruption of linker $\alpha$-helix prevents autoinhibitory latching | Disruption of direct salt bridge contact with JH1 kinase domain | Weakens inter-domain hinge flexibility |
 | **Constitutive Dimerization** | Robust spontaneous homodimerization with EpoR | Cytokine receptor-dependent (CRLF2 / TSLPR) hyperactivation | Mild spontaneous dimerization |
 
 ---
