@@ -1,0 +1,49 @@
+gene	index_url	page_length_if_accessible	same_site_leads
+BRAF	https://sugi.bio/variant/gene/BRAF	2020	R701G,I714V
+RAF1	https://sugi.bio/variant/gene/RAF1	0	
+MAP2K1	https://sugi.bio/variant/gene/MAP2K1	1474	M94V,P346=
+AKT1	https://sugi.bio/variant/gene/AKT1	1634	Y176=
+PRKACA	https://sugi.bio/variant/gene/PRKACA	183	Y70C,Y70H
+CDK2	https://sugi.bio/variant/gene/CDK2	53	
+MAPK1	https://sugi.bio/variant/gene/MAPK1	0	
+MAPK14	https://sugi.bio/variant/gene/MAPK14	80	
+AURKA	https://sugi.bio/variant/gene/AURKA	106	
+STK11	https://sugi.bio/variant/gene/STK11	3134	E70Q,V77=,E70=,E70G
+MAP2K2	https://sugi.bio/variant/gene/MAP2K2	0	
+CDK4	https://sugi.bio/variant/gene/CDK4	2002	C215S,C215R,V32=,C215=,G18=
+PTPN11	https://sugi.bio/variant/gene/PTPN11	2186	E139D,R138*,E139G,R32=
+PTPN6	https://sugi.bio/variant/gene/PTPN6	149	
+GRB2	https://sugi.bio/variant/gene/GRB2	0	
+SH2D1A	https://sugi.bio/variant/gene/SH2D1A	0	
+BRAF	https://www.jcga-scc.jp/en/gene/BRAF	124	
+RAF1	https://www.jcga-scc.jp/en/gene/RAF1	101	
+MAP2K1	https://www.jcga-scc.jp/en/gene/MAP2K1	107	
+AKT1	https://www.jcga-scc.jp/en/gene/AKT1	100	
+PRKACA	https://www.jcga-scc.jp/en/gene/PRKACA	0	
+CDK2	https://www.jcga-scc.jp/en/gene/CDK2	0	
+MAPK1	https://www.jcga-scc.jp/en/gene/MAPK1	98	
+MAPK14	https://www.jcga-scc.jp/en/gene/MAPK14	0	
+AURKA	https://www.jcga-scc.jp/en/gene/AURKA	87	
+STK11	https://www.jcga-scc.jp/en/gene/STK11	112	
+MAP2K2	https://www.jcga-scc.jp/en/gene/MAP2K2	100	
+CDK4	https://www.jcga-scc.jp/en/gene/CDK4	94	
+PTPN11	https://www.jcga-scc.jp/en/gene/PTPN11	94	
+PTPN6	https://www.jcga-scc.jp/en/gene/PTPN6	0	
+GRB2	https://www.jcga-scc.jp/en/gene/GRB2	0	
+SH2D1A	https://www.jcga-scc.jp/en/gene/SH2D1A	90	
+BRAF	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=BRAF	0	
+RAF1	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RAF1	162	
+MAP2K1	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=MAP2K1	142	
+AKT1	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=AKT1	152	
+PRKACA	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PRKACA	0	
+CDK2	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=CDK2	0	
+MAPK1	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=MAPK1	0	
+MAPK14	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=MAPK14	0	
+AURKA	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=AURKA	0	
+STK11	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=STK11	0	
+MAP2K2	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=MAP2K2	88	
+CDK4	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=CDK4	12	
+PTPN11	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PTPN11	326	P33L
+PTPN6	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PTPN6	0	
+GRB2	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=GRB2	0	
+SH2D1A	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=SH2D1A	0	

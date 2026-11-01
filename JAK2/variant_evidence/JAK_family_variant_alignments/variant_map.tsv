@@ -1,0 +1,25 @@
+JAK2_variant	figure_group	JAK1_projected	JAK3_projected	TYK2_projected	evidence_note	sources
+P37A	study	P34A	P31A	G27A / gap	No exact JAK3 or TYK2 primary report verified in this search.	
+F240V	study	F251V	V224 (already WT)	F245V	No exact JAK3 or TYK2 primary report verified in this search.	
+H380Y	study	H420Y	Q356Y	S431Y	TYK2 S431G was reported in a B-ALL patient; impaired activity in a biochemical assay. The projected substitution is S431Y.	https://pubmed.ncbi.nlm.nih.gov/33260630/
+R426*	study	R466*	R402*	H474*	JAK3 R402H occurred in trans with Q1007Ter in suspected SCID and reduced STAT5 signaling. R402H differs from the projected stop.	https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1624523/full
+C427R	study	W467R	R403 (already WT)	W475R	Wild-type JAK3 already carries Arg403. A case report cites JAK3 R403C in SCID (reverse change; secondary citation).	https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1472957/full
+G571R	study	G610R / S612R	G546R	G634R	No exact JAK3 or TYK2 primary report verified in this search.	
+V578I	study	V619I	V553I	V639I	No exact JAK3 or TYK2 primary report verified in this search.	
+L805I	study	I845 (already WT)	L777I	L866I	No exact JAK3 or TYK2 primary report verified in this search.	
+I1065T	study	I1092T	M1038T	I1112T	No exact JAK3 or TYK2 primary report verified in this search.	
+V1110E	study	P1136E	P1082E	A1156E	No exact JAK3 or TYK2 primary report verified in this search.	
+T108A	previous	M101A	S94A	A97 (already WT)	No exact JAK3 or TYK2 primary report verified in this search.	
+Y317H	previous	F366H	F292H	Y376H / F377H	JAK3 F292V reported in a compound heterozygous SCID patient; different substitution.	https://pubmed.ncbi.nlm.nih.gov/30032486/
+H345L	previous	N385L	T321L	H396L	No exact JAK3 or TYK2 primary report verified in this search.	
+H608N	previous	H649N	H583N	H669N	No exact JAK3 or TYK2 primary report verified in this search.	
+L611S	previous	Y652S	L586S	F672S	JAK3 L586S is an exact counterpart recovered in growth-factor-independent murine TS1 and TS2 clones; human numbering.	https://www.sciencedirect.com/science/article/pii/S0006497120395586 https://pmc.ncbi.nlm.nih.gov/articles/PMC11108519/
+V617I	previous	V658I	M592I	V678I	JAK1 V658I reported in a patient with MPN. No verified JAK3 M592I or TYK2 V678I primary study.	https://haematologica.org/article/view/8178
+V617F	previous	V658F	M592F	V678F	JAK1 V658F and engineered TYK2 V678F activate signaling. JAK3 M592F did not activate in the original assay. JAK3 M592F + L570F could activate STAT5 with JAK1 present.	https://pubmed.ncbi.nlm.nih.gov/16239216/ https://pmc.ncbi.nlm.nih.gov/articles/PMC7016850/ https://www.nature.com/articles/nsmb.2673
+V625F	previous	V666F	V599F	V686F	JAK3 V599G reported with W709R in compound heterozygous SCID; different substitution, genotype-level evidence.	https://pubmed.ncbi.nlm.nih.gov/30032486/
+E846D	previous	K872D	E819D	K894D	No exact JAK3 or TYK2 primary report verified in this search.	
+R867Q	previous	R893Q	R840Q	C915Q	JAK3 R840C reported with CTLA4 haploinsufficiency; activating in functional studies. Different substitution.	https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2017.01824/full
+T875N	previous	T901N	T848N	T923N	JAK3 T848A recovered in growth-factor-independent murine clones; different substitution.	https://www.sciencedirect.com/science/article/pii/S0006497120395586 https://pmc.ncbi.nlm.nih.gov/articles/PMC11108519/
+S755R	previous	K795R	S727R	Q816R	Component of JAK2 S755R/R938Q in cis.	https://doi.org/10.1182/blood-2013-05-504555
+R938Q	previous	K965Q	R911Q	R987Q	TYK2 R987Q appears in a patent describing R987Q and D988N editing in Jurkat cells. No isolated R987Q functional conclusion. JAK2 R938Q originally in cis with S755R.	https://patents.google.com/patent/WO2022175674A1/en https://doi.org/10.1182/blood-2013-05-504555
+R1063H	previous	K1090H	R1036H	E1110H	No exact JAK3 or TYK2 primary report verified in this search.	

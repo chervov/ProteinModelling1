@@ -1,0 +1,743 @@
+gene	projection	search_type	query	candidate_text_matches
+TNK2	I332T	cv	"TNK2 ""Ile332Thr"" ClinVar ""TNK2"""	0
+TNK2	I332T	lit	"""TNK2"" ""I332T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	P372E	cv	"TNK2 ""Pro372Glu"" ClinVar ""TNK2"""	0
+TNK2	P372E	lit	"""TNK2"" ""P372E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	E123D	cv	"TNK2 ""Glu123Asp"" ClinVar ""TNK2"""	0
+TNK2	E123D	lit	"""TNK2"" ""E123D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	E144Q	cv	"TNK2 ""Glu144Gln"" ClinVar ""TNK2"""	0
+TNK2	E144Q	lit	"""TNK2"" ""E144Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	T152N	cv	"TNK2 ""Thr152Asn"" ClinVar ""TNK2"""	0
+TNK2	T152N	lit	"""TNK2"" ""T152N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	L214Q	cv	"TNK2 ""Leu214Gln"" ClinVar ""TNK2"""	0
+TNK2	L214Q	lit	"""TNK2"" ""L214Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	P148R	cv	"TNK2 ""Pro148Arg"" ClinVar ""TNK2"""	0
+TNK2	P148R	lit	"""TNK2"" ""P148R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	V155I	cv	"TNK2 ""Val155Ile"" ClinVar ""TNK2"""	0
+TNK2	V155I	lit	"""TNK2"" ""V155I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	M393I	cv	"TNK2 ""Met393Ile"" ClinVar ""TNK2"""	0
+TNK2	M393I	lit	"""TNK2"" ""M393I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	3
+TNK2	R191S	cv	"TNK2 ""Arg191Ser"" ClinVar ""TNK2"""	0
+TNK2	R191S	lit	"""TNK2"" ""R191S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	V196I	cv	"TNK2 ""Val196Ile"" ClinVar ""TNK2"""	0
+TNK2	V196I	lit	"""TNK2"" ""V196I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	V196F	cv	"TNK2 ""Val196Phe"" ClinVar ""TNK2"""	0
+TNK2	V196F	lit	"""TNK2"" ""V196F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	V204F	cv	"TNK2 ""Val204Phe"" ClinVar ""TNK2"""	0
+TNK2	V204F	lit	"""TNK2"" ""V204F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TNK2	I332R	cv	"TNK2 ""Ile332Arg"" ClinVar ""TNK2"""	0
+TNK2	I332R	lit	"""TNK2"" ""I332R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	P474E	cv	"FRK ""Pro474Glu"" ClinVar ""FRK"""	0
+FRK	P474E	lit	"""FRK"" ""P474E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	R231D	cv	"FRK ""Arg231Asp"" ClinVar ""FRK"""	0
+FRK	R231D	lit	"""FRK"" ""R231D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	T256N	cv	"FRK ""Thr256Asn"" ClinVar ""FRK"""	0
+FRK	T256N	lit	"""FRK"" ""T256N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	G436H	cv	"FRK ""Gly436His"" ClinVar ""FRK"""	0
+FRK	G436H	lit	"""FRK"" ""G436H"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	V259I	cv	"FRK ""Val259Ile"" ClinVar ""FRK"""	0
+FRK	V259I	lit	"""FRK"" ""V259I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	L487I	cv	"FRK ""Leu487Ile"" ClinVar ""FRK"""	0
+FRK	L487I	lit	"""FRK"" ""L487I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	K288N	cv	"FRK ""Lys288Asn"" ClinVar ""FRK"""	0
+FRK	K288N	lit	"""FRK"" ""K288N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	Q291S	cv	"FRK ""Gln291Ser"" ClinVar ""FRK"""	0
+FRK	Q291S	lit	"""FRK"" ""Q291S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	T297I	cv	"FRK ""Thr297Ile"" ClinVar ""FRK"""	0
+FRK	T297I	lit	"""FRK"" ""T297I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	T297F	cv	"FRK ""Thr297Phe"" ClinVar ""FRK"""	0
+FRK	T297F	lit	"""FRK"" ""T297F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	I305F	cv	"FRK ""Ile305Phe"" ClinVar ""FRK"""	0
+FRK	I305F	lit	"""FRK"" ""I305F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	S435R	cv	"FRK ""Ser435Arg"" ClinVar ""FRK"""	0
+FRK	S435R	lit	"""FRK"" ""S435R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	R143*	cv	"FRK ""Arg143Ter"" ClinVar ""FRK"""	0
+FRK	R143*	lit	"""FRK"" ""R143X"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FRK	E144R	cv	"FRK ""Glu144Arg"" ClinVar ""FRK"""	0
+FRK	E144R	lit	"""FRK"" ""E144R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	P480E	cv	"ABL1 ""Pro480Glu"" ClinVar ""ABL1"""	0
+ABL1	P480E	lit	"""ABL1"" ""P480E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	R239D	cv	"ABL1 ""Arg239Asp"" ClinVar ""ABL1"""	0
+ABL1	R239D	lit	"""ABL1"" ""R239D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	Y264N	cv	"ABL1 ""Tyr264Asn"" ClinVar ""ABL1"""	0
+ABL1	Y264N	lit	"""ABL1"" ""Y264N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	L324Q	cv	"ABL1 ""Leu324Gln"" ClinVar ""ABL1"""	0
+ABL1	L324Q	lit	"""ABL1"" ""L324Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	10
+ABL1	V268I	cv	"ABL1 ""Val268Ile"" ClinVar ""ABL1"""	0
+ABL1	V268I	lit	"""ABL1"" ""V268I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	F493I	cv	"ABL1 ""Phe493Ile"" ClinVar ""ABL1"""	0
+ABL1	F493I	lit	"""ABL1"" ""F493I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	Q300S	cv	"ABL1 ""Gln300Ser"" ClinVar ""ABL1"""	0
+ABL1	Q300S	lit	"""ABL1"" ""Q300S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	T306I	cv	"ABL1 ""Thr306Ile"" ClinVar ""ABL1"""	1
+ABL1	T306I	lit	"""ABL1"" ""T306I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	6
+ABL1	T306F	cv	"ABL1 ""Thr306Phe"" ClinVar ""ABL1"""	0
+ABL1	T306F	lit	"""ABL1"" ""T306F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	I314F	cv	"ABL1 ""Ile314Phe"" ClinVar ""ABL1"""	0
+ABL1	I314F	lit	"""ABL1"" ""I314F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	P441R	cv	"ABL1 ""Pro441Arg"" ClinVar ""ABL1"""	0
+ABL1	P441R	lit	"""ABL1"" ""P441R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	R152*	cv	"ABL1 ""Arg152Ter"" ClinVar ""ABL1"""	0
+ABL1	R152*	lit	"""ABL1"" ""R152X"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL1	E153R	cv	"ABL1 ""Glu153Arg"" ClinVar ""ABL1"""	0
+ABL1	E153R	lit	"""ABL1"" ""E153R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	P768E	cv	"NTRK1 ""Pro768Glu"" ClinVar ""NTRK1"""	0
+NTRK1	P768E	lit	"""NTRK1"" ""P768E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	R507D	cv	"NTRK1 ""Arg507Asp"" ClinVar ""NTRK1"""	0
+NTRK1	R507D	lit	"""NTRK1"" ""R507D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	E528Q	cv	"NTRK1 ""Glu528Gln"" ClinVar ""NTRK1"""	0
+NTRK1	E528Q	lit	"""NTRK1"" ""E528Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+NTRK1	D537N	cv	"NTRK1 ""Asp537Asn"" ClinVar ""NTRK1"""	0
+NTRK1	D537N	lit	"""NTRK1"" ""D537N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	N598Q	cv	"NTRK1 ""Asn598Gln"" ClinVar ""NTRK1"""	0
+NTRK1	N598Q	lit	"""NTRK1"" ""N598Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	V541I	cv	"NTRK1 ""Val541Ile"" ClinVar ""NTRK1"""	0
+NTRK1	V541I	lit	"""NTRK1"" ""V541I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	L781I	cv	"NTRK1 ""Leu781Ile"" ClinVar ""NTRK1"""	0
+NTRK1	L781I	lit	"""NTRK1"" ""L781I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	H571N	cv	"NTRK1 ""His571Asn"" ClinVar ""NTRK1"""	0
+NTRK1	H571N	lit	"""NTRK1"" ""H571N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	R574S	cv	"NTRK1 ""Arg574Ser"" ClinVar ""NTRK1"""	0
+NTRK1	R574S	lit	"""NTRK1"" ""R574S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	T580I	cv	"NTRK1 ""Thr580Ile"" ClinVar ""NTRK1"""	0
+NTRK1	T580I	lit	"""NTRK1"" ""T580I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	T580F	cv	"NTRK1 ""Thr580Phe"" ClinVar ""NTRK1"""	0
+NTRK1	T580F	lit	"""NTRK1"" ""T580F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	V588F	cv	"NTRK1 ""Val588Phe"" ClinVar ""NTRK1"""	0
+NTRK1	V588F	lit	"""NTRK1"" ""V588F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK1	Y729R	cv	"NTRK1 ""Tyr729Arg"" ClinVar ""NTRK1"""	0
+NTRK1	Y729R	lit	"""NTRK1"" ""Y729R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	L696T	cv	"FGFR1 ""Leu696Thr"" ClinVar ""FGFR1"""	0
+FGFR1	L696T	lit	"""FGFR1"" ""L696T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	P741E	cv	"FGFR1 ""Pro741Glu"" ClinVar ""FGFR1"""	0
+FGFR1	P741E	lit	"""FGFR1"" ""P741E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	R475D	cv	"FGFR1 ""Arg475Asp"" ClinVar ""FGFR1"""	0
+FGFR1	R475D	lit	"""FGFR1"" ""R475D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	G499Q	cv	"FGFR1 ""Gly499Gln"" ClinVar ""FGFR1"""	0
+FGFR1	G499Q	lit	"""FGFR1"" ""G499Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	R507N	cv	"FGFR1 ""Arg507Asn"" ClinVar ""FGFR1"""	0
+FGFR1	R507N	lit	"""FGFR1"" ""R507N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	R570Q	cv	"FGFR1 ""Arg570Gln"" ClinVar ""FGFR1"""	0
+FGFR1	R570Q	lit	"""FGFR1"" ""R570Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	D503R	cv	"FGFR1 ""Asp503Arg"" ClinVar ""FGFR1"""	0
+FGFR1	D503R	lit	"""FGFR1"" ""D503R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	V511I	cv	"FGFR1 ""Val511Ile"" ClinVar ""FGFR1"""	0
+FGFR1	V511I	lit	"""FGFR1"" ""V511I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	L754I	cv	"FGFR1 ""Leu754Ile"" ClinVar ""FGFR1"""	0
+FGFR1	L754I	lit	"""FGFR1"" ""L754I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	N546S	cv	"FGFR1 ""Asn546Ser"" ClinVar ""FGFR1"""	5
+FGFR1	N546S	lit	"""FGFR1"" ""N546S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	10
+FGFR1	T552I	cv	"FGFR1 ""Thr552Ile"" ClinVar ""FGFR1"""	0
+FGFR1	T552I	lit	"""FGFR1"" ""T552I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	T552F	cv	"FGFR1 ""Thr552Phe"" ClinVar ""FGFR1"""	0
+FGFR1	T552F	lit	"""FGFR1"" ""T552F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	I560F	cv	"FGFR1 ""Ile560Phe"" ClinVar ""FGFR1"""	0
+FGFR1	I560F	lit	"""FGFR1"" ""I560F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR1	P702R	cv	"FGFR1 ""Pro702Arg"" ClinVar ""FGFR1"""	0
+FGFR1	P702R	lit	"""FGFR1"" ""P702R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+DDR2	T836E	cv	"DDR2 ""Thr836Glu"" ClinVar ""DDR2"""	0
+DDR2	T836E	lit	"""DDR2"" ""T836E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	R560D	cv	"DDR2 ""Arg560Asp"" ClinVar ""DDR2"""	0
+DDR2	R560D	lit	"""DDR2"" ""R560D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	E581Q	cv	"DDR2 ""Glu581Gln"" ClinVar ""DDR2"""	0
+DDR2	E581Q	lit	"""DDR2"" ""E581Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	Q601N	cv	"DDR2 ""Gln601Asn"" ClinVar ""DDR2"""	0
+DDR2	Q601N	lit	"""DDR2"" ""Q601N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	N663Q	cv	"DDR2 ""Asn663Gln"" ClinVar ""DDR2"""	0
+DDR2	N663Q	lit	"""DDR2"" ""N663Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	G575R	cv	"DDR2 ""Gly575Arg"" ClinVar ""DDR2"""	0
+DDR2	G575R	lit	"""DDR2"" ""G575R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	V605I	cv	"DDR2 ""Val605Ile"" ClinVar ""DDR2"""	0
+DDR2	V605I	lit	"""DDR2"" ""V605I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	H639S	cv	"DDR2 ""His639Ser"" ClinVar ""DDR2"""	0
+DDR2	H639S	lit	"""DDR2"" ""H639S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	I645F	cv	"DDR2 ""Ile645Phe"" ClinVar ""DDR2"""	0
+DDR2	I645F	lit	"""DDR2"" ""I645F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	I653F	cv	"DDR2 ""Ile653Phe"" ClinVar ""DDR2"""	0
+DDR2	I653F	lit	"""DDR2"" ""I653F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+DDR2	S790R	cv	"DDR2 ""Ser790Arg"" ClinVar ""DDR2"""	0
+DDR2	S790R	lit	"""DDR2"" ""S790R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+NTRK3	P811E	cv	"NTRK3 ""Pro811Glu"" ClinVar ""NTRK3"""	0
+NTRK3	P811E	lit	"""NTRK3"" ""P811E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	R535D	cv	"NTRK3 ""Arg535Asp"" ClinVar ""NTRK3"""	0
+NTRK3	R535D	lit	"""NTRK3"" ""R535D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	N559Q	cv	"NTRK3 ""Asn559Gln"" ClinVar ""NTRK3"""	0
+NTRK3	N559Q	lit	"""NTRK3"" ""N559Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	M567N	cv	"NTRK3 ""Met567Asn"" ClinVar ""NTRK3"""	0
+NTRK3	M567N	lit	"""NTRK3"" ""M567N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	N626Q	cv	"NTRK3 ""Asn626Gln"" ClinVar ""NTRK3"""	0
+NTRK3	N626Q	lit	"""NTRK3"" ""N626Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	Y558R	cv	"NTRK3 ""Tyr558Arg"" ClinVar ""NTRK3"""	0
+NTRK3	Y558R	lit	"""NTRK3"" ""Y558R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	V569I	cv	"NTRK3 ""Val569Ile"" ClinVar ""NTRK3"""	0
+NTRK3	V569I	lit	"""NTRK3"" ""V569I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+NTRK3	L824I	cv	"NTRK3 ""Leu824Ile"" ClinVar ""NTRK3"""	0
+NTRK3	L824I	lit	"""NTRK3"" ""L824I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	H599N	cv	"NTRK3 ""His599Asn"" ClinVar ""NTRK3"""	0
+NTRK3	H599N	lit	"""NTRK3"" ""H599N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	K602S	cv	"NTRK3 ""Lys602Ser"" ClinVar ""NTRK3"""	0
+NTRK3	K602S	lit	"""NTRK3"" ""K602S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	G608I	cv	"NTRK3 ""Gly608Ile"" ClinVar ""NTRK3"""	0
+NTRK3	G608I	lit	"""NTRK3"" ""G608I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	G608F	cv	"NTRK3 ""Gly608Phe"" ClinVar ""NTRK3"""	0
+NTRK3	G608F	lit	"""NTRK3"" ""G608F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	V616F	cv	"NTRK3 ""Val616Phe"" ClinVar ""NTRK3"""	0
+NTRK3	V616F	lit	"""NTRK3"" ""V616F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK3	F772R	cv	"NTRK3 ""Phe772Arg"" ClinVar ""NTRK3"""	0
+NTRK3	F772R	lit	"""NTRK3"" ""F772R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	L699T	cv	"FGFR2 ""Leu699Thr"" ClinVar ""FGFR2"""	0
+FGFR2	L699T	lit	"""FGFR2"" ""L699T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	P744E	cv	"FGFR2 ""Pro744Glu"" ClinVar ""FGFR2"""	0
+FGFR2	P744E	lit	"""FGFR2"" ""P744E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	R478D	cv	"FGFR2 ""Arg478Asp"" ClinVar ""FGFR2"""	0
+FGFR2	R478D	lit	"""FGFR2"" ""R478D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	E499Q	cv	"FGFR2 ""Glu499Gln"" ClinVar ""FGFR2"""	0
+FGFR2	E499Q	lit	"""FGFR2"" ""E499Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+FGFR2	E510N	cv	"FGFR2 ""Glu510Asn"" ClinVar ""FGFR2"""	0
+FGFR2	E510N	lit	"""FGFR2"" ""E510N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	R573Q	cv	"FGFR2 ""Arg573Gln"" ClinVar ""FGFR2"""	0
+FGFR2	R573Q	lit	"""FGFR2"" ""R573Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+FGFR2	D506R	cv	"FGFR2 ""Asp506Arg"" ClinVar ""FGFR2"""	0
+FGFR2	D506R	lit	"""FGFR2"" ""D506R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	V514I	cv	"FGFR2 ""Val514Ile"" ClinVar ""FGFR2"""	0
+FGFR2	V514I	lit	"""FGFR2"" ""V514I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	L757I	cv	"FGFR2 ""Leu757Ile"" ClinVar ""FGFR2"""	0
+FGFR2	L757I	lit	"""FGFR2"" ""L757I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	N549S	cv	"FGFR2 ""Asn549Ser"" ClinVar ""FGFR2"""	7
+FGFR2	N549S	lit	"""FGFR2"" ""N549S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	T555I	cv	"FGFR2 ""Thr555Ile"" ClinVar ""FGFR2"""	0
+FGFR2	T555I	lit	"""FGFR2"" ""T555I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	T555F	cv	"FGFR2 ""Thr555Phe"" ClinVar ""FGFR2"""	0
+FGFR2	T555F	lit	"""FGFR2"" ""T555F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	I563F	cv	"FGFR2 ""Ile563Phe"" ClinVar ""FGFR2"""	0
+FGFR2	I563F	lit	"""FGFR2"" ""I563F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR2	P705R	cv	"FGFR2 ""Pro705Arg"" ClinVar ""FGFR2"""	0
+FGFR2	P705R	lit	"""FGFR2"" ""P705R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	2
+NTRK2	S758T	cv	"NTRK2 ""Ser758Thr"" ClinVar ""NTRK2"""	0
+NTRK2	S758T	lit	"""NTRK2"" ""S758T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	P794E	cv	"NTRK2 ""Pro794Glu"" ClinVar ""NTRK2"""	0
+NTRK2	P794E	lit	"""NTRK2"" ""P794E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	K534D	cv	"NTRK2 ""Lys534Asp"" ClinVar ""NTRK2"""	0
+NTRK2	K534D	lit	"""NTRK2"" ""K534D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	I567N	cv	"NTRK2 ""Ile567Asn"" ClinVar ""NTRK2"""	0
+NTRK2	I567N	lit	"""NTRK2"" ""I567N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	N626Q	cv	"NTRK2 ""Asn626Gln"" ClinVar ""NTRK2"""	0
+NTRK2	N626Q	lit	"""NTRK2"" ""N626Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	Q756H	cv	"NTRK2 ""Gln756His"" ClinVar ""NTRK2"""	0
+NTRK2	Q756H	lit	"""NTRK2"" ""Q756H"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	N559R	cv	"NTRK2 ""Asn559Arg"" ClinVar ""NTRK2"""	0
+NTRK2	N559R	lit	"""NTRK2"" ""N559R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	V569I	cv	"NTRK2 ""Val569Ile"" ClinVar ""NTRK2"""	0
+NTRK2	V569I	lit	"""NTRK2"" ""V569I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	L810I	cv	"NTRK2 ""Leu810Ile"" ClinVar ""NTRK2"""	0
+NTRK2	L810I	lit	"""NTRK2"" ""L810I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	H599N	cv	"NTRK2 ""His599Asn"" ClinVar ""NTRK2"""	0
+NTRK2	H599N	lit	"""NTRK2"" ""H599N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	K602S	cv	"NTRK2 ""Lys602Ser"" ClinVar ""NTRK2"""	0
+NTRK2	K602S	lit	"""NTRK2"" ""K602S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	V608I	cv	"NTRK2 ""Val608Ile"" ClinVar ""NTRK2"""	0
+NTRK2	V608I	lit	"""NTRK2"" ""V608I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	V608F	cv	"NTRK2 ""Val608Phe"" ClinVar ""NTRK2"""	0
+NTRK2	V608F	lit	"""NTRK2"" ""V608F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	V616F	cv	"NTRK2 ""Val616Phe"" ClinVar ""NTRK2"""	0
+NTRK2	V616F	lit	"""NTRK2"" ""V616F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+NTRK2	Y755R	cv	"NTRK2 ""Tyr755Arg"" ClinVar ""NTRK2"""	0
+NTRK2	Y755R	lit	"""NTRK2"" ""Y755R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	A961E	cv	"ERBB4 ""Ala961Glu"" ClinVar ""ERBB4"""	0
+ERBB4	A961E	lit	"""ERBB4"" ""A961E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	E715D	cv	"ERBB4 ""Glu715Asp"" ClinVar ""ERBB4"""	0
+ERBB4	E715D	lit	"""ERBB4"" ""E715D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	I736Q	cv	"ERBB4 ""Ile736Gln"" ClinVar ""ERBB4"""	0
+ERBB4	I736Q	lit	"""ERBB4"" ""I736Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	V744N	cv	"ERBB4 ""Val744Asn"" ClinVar ""ERBB4"""	0
+ERBB4	V744N	lit	"""ERBB4"" ""V744N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	L805Q	cv	"ERBB4 ""Leu805Gln"" ClinVar ""ERBB4"""	0
+ERBB4	L805Q	lit	"""ERBB4"" ""L805Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	V744R	cv	"ERBB4 ""Val744Arg"" ClinVar ""ERBB4"""	0
+ERBB4	V744R	lit	"""ERBB4"" ""V744R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	V748I	cv	"ERBB4 ""Val748Ile"" ClinVar ""ERBB4"""	0
+ERBB4	V748I	lit	"""ERBB4"" ""V748I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+ERBB4	F974I	cv	"ERBB4 ""Phe974Ile"" ClinVar ""ERBB4"""	0
+ERBB4	F974I	lit	"""ERBB4"" ""F974I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	H779N	cv	"ERBB4 ""His779Asn"" ClinVar ""ERBB4"""	0
+ERBB4	H779N	lit	"""ERBB4"" ""H779N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	R782S	cv	"ERBB4 ""Arg782Ser"" ClinVar ""ERBB4"""	0
+ERBB4	R782S	lit	"""ERBB4"" ""R782S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	L788I	cv	"ERBB4 ""Leu788Ile"" ClinVar ""ERBB4"""	0
+ERBB4	L788I	lit	"""ERBB4"" ""L788I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+ERBB4	L788F	cv	"ERBB4 ""Leu788Phe"" ClinVar ""ERBB4"""	0
+ERBB4	L788F	lit	"""ERBB4"" ""L788F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	V795F	cv	"ERBB4 ""Val795Phe"" ClinVar ""ERBB4"""	0
+ERBB4	V795F	lit	"""ERBB4"" ""V795F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ERBB4	D922R	cv	"ERBB4 ""Asp922Arg"" ClinVar ""ERBB4"""	0
+ERBB4	D922R	lit	"""ERBB4"" ""D922R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	P1048E	cv	"PTK7 ""Pro1048Glu"" ClinVar ""PTK7"""	0
+PTK7	P1048E	lit	"""PTK7"" ""P1048E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	R793D	cv	"PTK7 ""Arg793Asp"" ClinVar ""PTK7"""	0
+PTK7	R793D	lit	"""PTK7"" ""R793D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	K814Q	cv	"PTK7 ""Lys814Gln"" ClinVar ""PTK7"""	0
+PTK7	K814Q	lit	"""PTK7"" ""K814Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	V822N	cv	"PTK7 ""Val822Asn"" ClinVar ""PTK7"""	0
+PTK7	V822N	lit	"""PTK7"" ""V822N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	K884Q	cv	"PTK7 ""Lys884Gln"" ClinVar ""PTK7"""	0
+PTK7	K884Q	lit	"""PTK7"" ""K884Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	V827I	cv	"PTK7 ""Val827Ile"" ClinVar ""PTK7"""	0
+PTK7	V827I	lit	"""PTK7"" ""V827I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	L1061I	cv	"PTK7 ""Leu1061Ile"" ClinVar ""PTK7"""	0
+PTK7	L1061I	lit	"""PTK7"" ""L1061I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	R860S	cv	"PTK7 ""Arg860Ser"" ClinVar ""PTK7"""	0
+PTK7	R860S	lit	"""PTK7"" ""R860S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	R866I	cv	"PTK7 ""Arg866Ile"" ClinVar ""PTK7"""	0
+PTK7	R866I	lit	"""PTK7"" ""R866I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	R866F	cv	"PTK7 ""Arg866Phe"" ClinVar ""PTK7"""	0
+PTK7	R866F	lit	"""PTK7"" ""R866F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	V874F	cv	"PTK7 ""Val874Phe"" ClinVar ""PTK7"""	0
+PTK7	V874F	lit	"""PTK7"" ""V874F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK7	G1008R	cv	"PTK7 ""Gly1008Arg"" ClinVar ""PTK7"""	0
+PTK7	G1008R	lit	"""PTK7"" ""G1008R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	P526E	cv	"ABL2 ""Pro526Glu"" ClinVar ""ABL2"""	0
+ABL2	P526E	lit	"""ABL2"" ""P526E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	R285D	cv	"ABL2 ""Arg285Asp"" ClinVar ""ABL2"""	0
+ABL2	R285D	lit	"""ABL2"" ""R285D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	Y310N	cv	"ABL2 ""Tyr310Asn"" ClinVar ""ABL2"""	0
+ABL2	Y310N	lit	"""ABL2"" ""Y310N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	L370Q	cv	"ABL2 ""Leu370Gln"" ClinVar ""ABL2"""	0
+ABL2	L370Q	lit	"""ABL2"" ""L370Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	V314I	cv	"ABL2 ""Val314Ile"" ClinVar ""ABL2"""	0
+ABL2	V314I	lit	"""ABL2"" ""V314I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	F539I	cv	"ABL2 ""Phe539Ile"" ClinVar ""ABL2"""	0
+ABL2	F539I	lit	"""ABL2"" ""F539I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	Q346S	cv	"ABL2 ""Gln346Ser"" ClinVar ""ABL2"""	0
+ABL2	Q346S	lit	"""ABL2"" ""Q346S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	T352I	cv	"ABL2 ""Thr352Ile"" ClinVar ""ABL2"""	0
+ABL2	T352I	lit	"""ABL2"" ""T352I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	T352F	cv	"ABL2 ""Thr352Phe"" ClinVar ""ABL2"""	0
+ABL2	T352F	lit	"""ABL2"" ""T352F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	V360F	cv	"ABL2 ""Val360Phe"" ClinVar ""ABL2"""	0
+ABL2	V360F	lit	"""ABL2"" ""V360F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	P487R	cv	"ABL2 ""Pro487Arg"" ClinVar ""ABL2"""	0
+ABL2	P487R	lit	"""ABL2"" ""P487R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	R198*	cv	"ABL2 ""Arg198Ter"" ClinVar ""ABL2"""	0
+ABL2	R198*	lit	"""ABL2"" ""R198X"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ABL2	E199R	cv	"ABL2 ""Glu199Arg"" ClinVar ""ABL2"""	0
+ABL2	E199R	lit	"""ABL2"" ""E199R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	K577T	cv	"SYK ""Lys577Thr"" ClinVar ""SYK"""	0
+SYK	K577T	lit	"""SYK"" ""K577T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	V613E	cv	"SYK ""Val613Glu"" ClinVar ""SYK"""	0
+SYK	V613E	lit	"""SYK"" ""V613E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	Y389Q	cv	"SYK ""Tyr389Gln"" ClinVar ""SYK"""	0
+SYK	Y389Q	lit	"""SYK"" ""Y389Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	V395N	cv	"SYK ""Val395Asn"" ClinVar ""SYK"""	0
+SYK	V395N	lit	"""SYK"" ""V395N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	N457Q	cv	"SYK ""Asn457Gln"" ClinVar ""SYK"""	0
+SYK	N457Q	lit	"""SYK"" ""N457Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	G575H	cv	"SYK ""Gly575His"" ClinVar ""SYK"""	0
+SYK	G575H	lit	"""SYK"" ""G575H"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	Y390R	cv	"SYK ""Tyr390Arg"" ClinVar ""SYK"""	0
+SYK	Y390R	lit	"""SYK"" ""Y390R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	V399I	cv	"SYK ""Val399Ile"" ClinVar ""SYK"""	0
+SYK	V399I	lit	"""SYK"" ""V399I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	L626I	cv	"SYK ""Leu626Ile"" ClinVar ""SYK"""	0
+SYK	L626I	lit	"""SYK"" ""L626I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	Y431N	cv	"SYK ""Tyr431Asn"" ClinVar ""SYK"""	0
+SYK	Y431N	lit	"""SYK"" ""Y431N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	R434S	cv	"SYK ""Arg434Ser"" ClinVar ""SYK"""	0
+SYK	R434S	lit	"""SYK"" ""R434S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	E440I	cv	"SYK ""Glu440Ile"" ClinVar ""SYK"""	0
+SYK	E440I	lit	"""SYK"" ""E440I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	E440F	cv	"SYK ""Glu440Phe"" ClinVar ""SYK"""	0
+SYK	E440F	lit	"""SYK"" ""E440F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+SYK	V447F	cv	"SYK ""Val447Phe"" ClinVar ""SYK"""	0
+SYK	V447F	lit	"""SYK"" ""V447F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	R42*	cv	"SYK ""Arg42Ter"" ClinVar ""SYK"""	0
+SYK	R42*	lit	"""SYK"" ""R42X"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+SYK	Q43R	cv	"SYK ""Gln43Arg"" ClinVar ""SYK"""	0
+SYK	Q43R	lit	"""SYK"" ""Q43R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	L690T	cv	"FGFR3 ""Leu690Thr"" ClinVar ""FGFR3"""	0
+FGFR3	L690T	lit	"""FGFR3"" ""L690T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	P735E	cv	"FGFR3 ""Pro735Glu"" ClinVar ""FGFR3"""	0
+FGFR3	P735E	lit	"""FGFR3"" ""P735E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	R469D	cv	"FGFR3 ""Arg469Asp"" ClinVar ""FGFR3"""	0
+FGFR3	R469D	lit	"""FGFR3"" ""R469D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	E490Q	cv	"FGFR3 ""Glu490Gln"" ClinVar ""FGFR3"""	0
+FGFR3	E490Q	lit	"""FGFR3"" ""E490Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	A499N	cv	"FGFR3 ""Ala499Asn"" ClinVar ""FGFR3"""	0
+FGFR3	A499N	lit	"""FGFR3"" ""A499N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	R564Q	cv	"FGFR3 ""Arg564Gln"" ClinVar ""FGFR3"""	0
+FGFR3	R564Q	lit	"""FGFR3"" ""R564Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	V505I	cv	"FGFR3 ""Val505Ile"" ClinVar ""FGFR3"""	0
+FGFR3	V505I	lit	"""FGFR3"" ""V505I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	7
+FGFR3	L748I	cv	"FGFR3 ""Leu748Ile"" ClinVar ""FGFR3"""	0
+FGFR3	L748I	lit	"""FGFR3"" ""L748I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	N540S	cv	"FGFR3 ""Asn540Ser"" ClinVar ""FGFR3"""	18
+FGFR3	N540S	lit	"""FGFR3"" ""N540S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	16
+FGFR3	T546I	cv	"FGFR3 ""Thr546Ile"" ClinVar ""FGFR3"""	0
+FGFR3	T546I	lit	"""FGFR3"" ""T546I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	T546F	cv	"FGFR3 ""Thr546Phe"" ClinVar ""FGFR3"""	0
+FGFR3	T546F	lit	"""FGFR3"" ""T546F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	L554F	cv	"FGFR3 ""Leu554Phe"" ClinVar ""FGFR3"""	2
+FGFR3	L554F	lit	"""FGFR3"" ""L554F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR3	P696R	cv	"FGFR3 ""Pro696Arg"" ClinVar ""FGFR3"""	0
+FGFR3	P696R	lit	"""FGFR3"" ""P696R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	L947T	cv	"RET ""Leu947Thr"" ClinVar ""RET"""	0
+RET	L947T	lit	"""RET"" ""L947T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+RET	P992E	cv	"RET ""Pro992Glu"" ClinVar ""RET"""	0
+RET	P992E	lit	"""RET"" ""P992E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	R721D	cv	"RET ""Arg721Asp"" ClinVar ""RET"""	0
+RET	R721D	lit	"""RET"" ""R721D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	T742Q	cv	"RET ""Thr742Gln"" ClinVar ""RET"""	0
+RET	T742Q	lit	"""RET"" ""T742Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	A750N	cv	"RET ""Ala750Asn"" ClinVar ""RET"""	0
+RET	A750N	lit	"""RET"" ""A750N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	R813Q	cv	"RET ""Arg813Gln"" ClinVar ""RET"""	0
+RET	R813Q	lit	"""RET"" ""R813Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	15
+RET	G748R	cv	"RET ""Gly748Arg"" ClinVar ""RET"""	0
+RET	G748R	lit	"""RET"" ""G748R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	V755I	cv	"RET ""Val755Ile"" ClinVar ""RET"""	0
+RET	V755I	lit	"""RET"" ""V755I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	L1005I	cv	"RET ""Leu1005Ile"" ClinVar ""RET"""	0
+RET	L1005I	lit	"""RET"" ""L1005I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	H786N	cv	"RET ""His786Asn"" ClinVar ""RET"""	0
+RET	H786N	lit	"""RET"" ""H786N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	K789S	cv	"RET ""Lys789Ser"" ClinVar ""RET"""	0
+RET	K789S	lit	"""RET"" ""K789S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	S795I	cv	"RET ""Ser795Ile"" ClinVar ""RET"""	0
+RET	S795I	lit	"""RET"" ""S795I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	2
+RET	S795F	cv	"RET ""Ser795Phe"" ClinVar ""RET"""	0
+RET	S795F	lit	"""RET"" ""S795F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+RET	I803F	cv	"RET ""Ile803Phe"" ClinVar ""RET"""	0
+RET	I803F	lit	"""RET"" ""I803F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+RET	P953R	cv	"RET ""Pro953Arg"" ClinVar ""RET"""	0
+RET	P953R	lit	"""RET"" ""P953R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+TIE1	L1049T	cv	"TIE1 ""Leu1049Thr"" ClinVar ""TIE1"""	0
+TIE1	L1049T	lit	"""TIE1"" ""L1049T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	P1094E	cv	"TIE1 ""Pro1094Glu"" ClinVar ""TIE1"""	0
+TIE1	P1094E	lit	"""TIE1"" ""P1094E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	W836D	cv	"TIE1 ""Trp836Asp"" ClinVar ""TIE1"""	0
+TIE1	W836D	lit	"""TIE1"" ""W836D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	K859Q	cv	"TIE1 ""Lys859Gln"" ClinVar ""TIE1"""	0
+TIE1	K859Q	lit	"""TIE1"" ""K859Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	L926Q	cv	"TIE1 ""Leu926Gln"" ClinVar ""TIE1"""	0
+TIE1	L926Q	lit	"""TIE1"" ""L926Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	A867I	cv	"TIE1 ""Ala867Ile"" ClinVar ""TIE1"""	0
+TIE1	A867I	lit	"""TIE1"" ""A867I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	L1107I	cv	"TIE1 ""Leu1107Ile"" ClinVar ""TIE1"""	0
+TIE1	L1107I	lit	"""TIE1"" ""L1107I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	P898N	cv	"TIE1 ""Pro898Asn"" ClinVar ""TIE1"""	0
+TIE1	P898N	lit	"""TIE1"" ""P898N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	I901S	cv	"TIE1 ""Ile901Ser"" ClinVar ""TIE1"""	0
+TIE1	I901S	lit	"""TIE1"" ""I901S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	K908I	cv	"TIE1 ""Lys908Ile"" ClinVar ""TIE1"""	0
+TIE1	K908I	lit	"""TIE1"" ""K908I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	K908F	cv	"TIE1 ""Lys908Phe"" ClinVar ""TIE1"""	0
+TIE1	K908F	lit	"""TIE1"" ""K908F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	A916F	cv	"TIE1 ""Ala916Phe"" ClinVar ""TIE1"""	0
+TIE1	A916F	lit	"""TIE1"" ""A916F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TIE1	C1055R	cv	"TIE1 ""Cys1055Arg"" ClinVar ""TIE1"""	0
+TIE1	C1055R	lit	"""TIE1"" ""C1055R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	A955E	cv	"EGFR ""Ala955Glu"" ClinVar ""EGFR"""	0
+EGFR	A955E	lit	"""EGFR"" ""A955E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	E709D	cv	"EGFR ""Glu709Asp"" ClinVar ""EGFR"""	3
+EGFR	E709D	lit	"""EGFR"" ""E709D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	L730Q	cv	"EGFR ""Leu730Gln"" ClinVar ""EGFR"""	0
+EGFR	L730Q	lit	"""EGFR"" ""L730Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	V738N	cv	"EGFR ""Val738Asn"" ClinVar ""EGFR"""	0
+EGFR	V738N	lit	"""EGFR"" ""V738N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	L799Q	cv	"EGFR ""Leu799Gln"" ClinVar ""EGFR"""	0
+EGFR	L799Q	lit	"""EGFR"" ""L799Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	V738R	cv	"EGFR ""Val738Arg"" ClinVar ""EGFR"""	0
+EGFR	V738R	lit	"""EGFR"" ""V738R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	V742I	cv	"EGFR ""Val742Ile"" ClinVar ""EGFR"""	3
+EGFR	V742I	lit	"""EGFR"" ""V742I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	F968I	cv	"EGFR ""Phe968Ile"" ClinVar ""EGFR"""	0
+EGFR	F968I	lit	"""EGFR"" ""F968I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	H773N	cv	"EGFR ""His773Asn"" ClinVar ""EGFR"""	1
+EGFR	H773N	lit	"""EGFR"" ""H773N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	9
+EGFR	R776S	cv	"EGFR ""Arg776Ser"" ClinVar ""EGFR"""	0
+EGFR	R776S	lit	"""EGFR"" ""R776S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	15
+EGFR	L782I	cv	"EGFR ""Leu782Ile"" ClinVar ""EGFR"""	0
+EGFR	L782I	lit	"""EGFR"" ""L782I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	L782F	cv	"EGFR ""Leu782Phe"" ClinVar ""EGFR"""	0
+EGFR	L782F	lit	"""EGFR"" ""L782F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	I789F	cv	"EGFR ""Ile789Phe"" ClinVar ""EGFR"""	0
+EGFR	I789F	lit	"""EGFR"" ""I789F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EGFR	D916R	cv	"EGFR ""Asp916Arg"" ClinVar ""EGFR"""	0
+EGFR	D916R	lit	"""EGFR"" ""D916R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	A427E	cv	"CSK ""Ala427Glu"" ClinVar ""CSK"""	0
+CSK	A427E	lit	"""CSK"" ""A427E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	M192D	cv	"CSK ""Met192Asp"" ClinVar ""CSK"""	0
+CSK	M192D	lit	"""CSK"" ""M192D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	R215N	cv	"CSK ""Arg215Asn"" ClinVar ""CSK"""	0
+CSK	R215N	lit	"""CSK"" ""R215N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	V275Q	cv	"CSK ""Val275Gln"" ClinVar ""CSK"""	0
+CSK	V275Q	lit	"""CSK"" ""V275Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	V219I	cv	"CSK ""Val219Ile"" ClinVar ""CSK"""	0
+CSK	V219I	lit	"""CSK"" ""V219I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	L440I	cv	"CSK ""Leu440Ile"" ClinVar ""CSK"""	0
+CSK	L440I	lit	"""CSK"" ""L440I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	Q250S	cv	"CSK ""Gln250Ser"" ClinVar ""CSK"""	0
+CSK	Q250S	lit	"""CSK"" ""Q250S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	V256I	cv	"CSK ""Val256Ile"" ClinVar ""CSK"""	0
+CSK	V256I	lit	"""CSK"" ""V256I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	V256F	cv	"CSK ""Val256Phe"" ClinVar ""CSK"""	0
+CSK	V256F	lit	"""CSK"" ""V256F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	V265F	cv	"CSK ""Val265Phe"" ClinVar ""CSK"""	0
+CSK	V265F	lit	"""CSK"" ""V265F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	P388R	cv	"CSK ""Pro388Arg"" ClinVar ""CSK"""	0
+CSK	P388R	lit	"""CSK"" ""P388R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	R107*	cv	"CSK ""Arg107Ter"" ClinVar ""CSK"""	0
+CSK	R107*	lit	"""CSK"" ""R107X"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+CSK	E108R	cv	"CSK ""Glu108Arg"" ClinVar ""CSK"""	0
+CSK	E108R	lit	"""CSK"" ""E108R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	L685T	cv	"FGFR4 ""Leu685Thr"" ClinVar ""FGFR4"""	0
+FGFR4	L685T	lit	"""FGFR4"" ""L685T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	P730E	cv	"FGFR4 ""Pro730Glu"" ClinVar ""FGFR4"""	0
+FGFR4	P730E	lit	"""FGFR4"" ""P730E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	R464D	cv	"FGFR4 ""Arg464Asp"" ClinVar ""FGFR4"""	0
+FGFR4	R464D	lit	"""FGFR4"" ""R464D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	G488Q	cv	"FGFR4 ""Gly488Gln"" ClinVar ""FGFR4"""	0
+FGFR4	G488Q	lit	"""FGFR4"" ""G488Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	Q496N	cv	"FGFR4 ""Gln496Asn"" ClinVar ""FGFR4"""	0
+FGFR4	Q496N	lit	"""FGFR4"" ""Q496N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	R559Q	cv	"FGFR4 ""Arg559Gln"" ClinVar ""FGFR4"""	5
+FGFR4	R559Q	lit	"""FGFR4"" ""R559Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+FGFR4	G488R	cv	"FGFR4 ""Gly488Arg"" ClinVar ""FGFR4"""	0
+FGFR4	G488R	lit	"""FGFR4"" ""G488R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+FGFR4	V500I	cv	"FGFR4 ""Val500Ile"" ClinVar ""FGFR4"""	0
+FGFR4	V500I	lit	"""FGFR4"" ""V500I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	L743I	cv	"FGFR4 ""Leu743Ile"" ClinVar ""FGFR4"""	0
+FGFR4	L743I	lit	"""FGFR4"" ""L743I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	N535S	cv	"FGFR4 ""Asn535Ser"" ClinVar ""FGFR4"""	0
+FGFR4	N535S	lit	"""FGFR4"" ""N535S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	2
+FGFR4	T541I	cv	"FGFR4 ""Thr541Ile"" ClinVar ""FGFR4"""	0
+FGFR4	T541I	lit	"""FGFR4"" ""T541I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	T541F	cv	"FGFR4 ""Thr541Phe"" ClinVar ""FGFR4"""	0
+FGFR4	T541F	lit	"""FGFR4"" ""T541F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	I549F	cv	"FGFR4 ""Ile549Phe"" ClinVar ""FGFR4"""	0
+FGFR4	I549F	lit	"""FGFR4"" ""I549F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FGFR4	P691R	cv	"FGFR4 ""Pro691Arg"" ClinVar ""FGFR4"""	0
+FGFR4	P691R	lit	"""FGFR4"" ""P691R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	K627T	cv	"PTK2 ""Lys627Thr"" ClinVar ""PTK2"""	0
+PTK2	K627T	lit	"""PTK2"" ""K627T"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	P663E	cv	"PTK2 ""Pro663Glu"" ClinVar ""PTK2"""	0
+PTK2	P663E	lit	"""PTK2"" ""P663E"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	R419D	cv	"PTK2 ""Arg419Asp"" ClinVar ""PTK2"""	0
+PTK2	R419D	lit	"""PTK2"" ""R419D"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	I440Q	cv	"PTK2 ""Ile440Gln"" ClinVar ""PTK2"""	0
+PTK2	I440Q	lit	"""PTK2"" ""I440Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	P447N	cv	"PTK2 ""Pro447Asn"" ClinVar ""PTK2"""	0
+PTK2	P447N	lit	"""PTK2"" ""P447N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	R508Q	cv	"PTK2 ""Arg508Gln"" ClinVar ""PTK2"""	0
+PTK2	R508Q	lit	"""PTK2"" ""R508Q"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	G625H	cv	"PTK2 ""Gly625His"" ClinVar ""PTK2"""	0
+PTK2	G625H	lit	"""PTK2"" ""G625H"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	P444R	cv	"PTK2 ""Pro444Arg"" ClinVar ""PTK2"""	0
+PTK2	P444R	lit	"""PTK2"" ""P444R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	V451I	cv	"PTK2 ""Val451Ile"" ClinVar ""PTK2"""	0
+PTK2	V451I	lit	"""PTK2"" ""V451I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	L676I	cv	"PTK2 ""Leu676Ile"" ClinVar ""PTK2"""	0
+PTK2	L676I	lit	"""PTK2"" ""L676I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	H482N	cv	"PTK2 ""His482Asn"" ClinVar ""PTK2"""	0
+PTK2	H482N	lit	"""PTK2"" ""H482N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	K485S	cv	"PTK2 ""Lys485Ser"" ClinVar ""PTK2"""	0
+PTK2	K485S	lit	"""PTK2"" ""K485S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	T491I	cv	"PTK2 ""Thr491Ile"" ClinVar ""PTK2"""	0
+PTK2	T491I	lit	"""PTK2"" ""T491I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	T491F	cv	"PTK2 ""Thr491Phe"" ClinVar ""PTK2"""	0
+PTK2	T491F	lit	"""PTK2"" ""T491F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	I498F	cv	"PTK2 ""Ile498Phe"" ClinVar ""PTK2"""	0
+PTK2	I498F	lit	"""PTK2"" ""I498F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2	Q624R	cv	"PTK2 ""Gln624Arg"" ClinVar ""PTK2"""	0
+PTK2	Q624R	lit	"""PTK2"" ""Q624R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	V454I	cv	"PTK2B ""Val454Ile"" ClinVar ""PTK2B"""	0
+PTK2B	V454I	lit	"""PTK2B"" ""V454I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	L679I	cv	"PTK2B ""Leu679Ile"" ClinVar ""PTK2B"""	0
+PTK2B	L679I	lit	"""PTK2B"" ""L679I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	H485N	cv	"PTK2B ""His485Asn"" ClinVar ""PTK2B"""	0
+PTK2B	H485N	lit	"""PTK2B"" ""H485N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	K488S	cv	"PTK2B ""Lys488Ser"" ClinVar ""PTK2B"""	0
+PTK2B	K488S	lit	"""PTK2B"" ""K488S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	I493F	cv	"PTK2B ""Ile493Phe"" ClinVar ""PTK2B"""	0
+PTK2B	I493F	lit	"""PTK2B"" ""I493F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	I501F	cv	"PTK2B ""Ile501Phe"" ClinVar ""PTK2B"""	0
+PTK2B	I501F	lit	"""PTK2B"" ""I501F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+PTK2B	F627R	cv	"PTK2B ""Phe627Arg"" ClinVar ""PTK2B"""	0
+PTK2B	F627R	lit	"""PTK2B"" ""F627R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	V366I	cv	"ZAP70 ""Val366Ile"" ClinVar ""ZAP70"""	0
+ZAP70	V366I	lit	"""ZAP70"" ""V366I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	L600I	cv	"ZAP70 ""Leu600Ile"" ClinVar ""ZAP70"""	0
+ZAP70	L600I	lit	"""ZAP70"" ""L600I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	Y397N	cv	"ZAP70 ""Tyr397Asn"" ClinVar ""ZAP70"""	0
+ZAP70	Y397N	lit	"""ZAP70"" ""Y397N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	R400S	cv	"ZAP70 ""Arg400Ser"" ClinVar ""ZAP70"""	0
+ZAP70	R400S	lit	"""ZAP70"" ""R400S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	Q406I	cv	"ZAP70 ""Gln406Ile"" ClinVar ""ZAP70"""	0
+ZAP70	Q406I	lit	"""ZAP70"" ""Q406I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	Q406F	cv	"ZAP70 ""Gln406Phe"" ClinVar ""ZAP70"""	0
+ZAP70	Q406F	lit	"""ZAP70"" ""Q406F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	V413F	cv	"ZAP70 ""Val413Phe"" ClinVar ""ZAP70"""	0
+ZAP70	V413F	lit	"""ZAP70"" ""V413F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ZAP70	K541R	cv	"ZAP70 ""Lys541Arg"" ClinVar ""ZAP70"""	0
+ZAP70	K541R	lit	"""ZAP70"" ""K541R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	V704I	cv	"EPHA5 ""Val704Ile"" ClinVar ""EPHA5"""	0
+EPHA5	V704I	lit	"""EPHA5"" ""V704I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	P939I	cv	"EPHA5 ""Pro939Ile"" ClinVar ""EPHA5"""	0
+EPHA5	P939I	lit	"""EPHA5"" ""P939I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	H738S	cv	"EPHA5 ""His738Ser"" ClinVar ""EPHA5"""	0
+EPHA5	H738S	lit	"""EPHA5"" ""H738S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	T744I	cv	"EPHA5 ""Thr744Ile"" ClinVar ""EPHA5"""	0
+EPHA5	T744I	lit	"""EPHA5"" ""T744I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	T744F	cv	"EPHA5 ""Thr744Phe"" ClinVar ""EPHA5"""	0
+EPHA5	T744F	lit	"""EPHA5"" ""T744F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	V752F	cv	"EPHA5 ""Val752Phe"" ClinVar ""EPHA5"""	0
+EPHA5	V752F	lit	"""EPHA5"" ""V752F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA5	W880R	cv	"EPHA5 ""Trp880Arg"" ClinVar ""EPHA5"""	0
+EPHA5	W880R	lit	"""EPHA5"" ""W880R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	V427I	cv	"BTK ""Val427Ile"" ClinVar ""BTK"""	0
+BTK	V427I	lit	"""BTK"" ""V427I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	L652I	cv	"BTK ""Leu652Ile"" ClinVar ""BTK"""	0
+BTK	L652I	lit	"""BTK"" ""L652I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	K456N	cv	"BTK ""Lys456Asn"" ClinVar ""BTK"""	0
+BTK	K456N	lit	"""BTK"" ""K456N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	Q459S	cv	"BTK ""Gln459Ser"" ClinVar ""BTK"""	0
+BTK	Q459S	lit	"""BTK"" ""Q459S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	T465I	cv	"BTK ""Thr465Ile"" ClinVar ""BTK"""	0
+BTK	T465I	lit	"""BTK"" ""T465I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+BTK	T465F	cv	"BTK ""Thr465Phe"" ClinVar ""BTK"""	0
+BTK	T465F	lit	"""BTK"" ""T465F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+BTK	I473F	cv	"BTK ""Ile473Phe"" ClinVar ""BTK"""	0
+BTK	I473F	lit	"""BTK"" ""I473F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+BTK	E599R	cv	"BTK ""Glu599Arg"" ClinVar ""BTK"""	0
+BTK	E599R	lit	"""BTK"" ""E599R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	K1023R	cv	"IGF1R ""Lys1023Arg"" ClinVar ""IGF1R"""	0
+IGF1R	K1023R	lit	"""IGF1R"" ""K1023R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	V1030I	cv	"IGF1R ""Val1030Ile"" ClinVar ""IGF1R"""	0
+IGF1R	V1030I	lit	"""IGF1R"" ""V1030I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	H1061N	cv	"IGF1R ""His1061Asn"" ClinVar ""IGF1R"""	0
+IGF1R	H1061N	lit	"""IGF1R"" ""H1061N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	R1064S	cv	"IGF1R ""Arg1064Ser"" ClinVar ""IGF1R"""	0
+IGF1R	R1064S	lit	"""IGF1R"" ""R1064S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	S1070I	cv	"IGF1R ""Ser1070Ile"" ClinVar ""IGF1R"""	0
+IGF1R	S1070I	lit	"""IGF1R"" ""S1070I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	S1070F	cv	"IGF1R ""Ser1070Phe"" ClinVar ""IGF1R"""	0
+IGF1R	S1070F	lit	"""IGF1R"" ""S1070F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	I1078F	cv	"IGF1R ""Ile1078Phe"" ClinVar ""IGF1R"""	0
+IGF1R	I1078F	lit	"""IGF1R"" ""I1078F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+IGF1R	Q1214R	cv	"IGF1R ""Gln1214Arg"" ClinVar ""IGF1R"""	0
+IGF1R	Q1214R	lit	"""IGF1R"" ""Q1214R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	V662I	cv	"EPHA7 ""Val662Ile"" ClinVar ""EPHA7"""	0
+EPHA7	V662I	lit	"""EPHA7"" ""V662I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+EPHA7	P897I	cv	"EPHA7 ""Pro897Ile"" ClinVar ""EPHA7"""	0
+EPHA7	P897I	lit	"""EPHA7"" ""P897I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	H696S	cv	"EPHA7 ""His696Ser"" ClinVar ""EPHA7"""	0
+EPHA7	H696S	lit	"""EPHA7"" ""H696S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	T702I	cv	"EPHA7 ""Thr702Ile"" ClinVar ""EPHA7"""	0
+EPHA7	T702I	lit	"""EPHA7"" ""T702I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	T702F	cv	"EPHA7 ""Thr702Phe"" ClinVar ""EPHA7"""	0
+EPHA7	T702F	lit	"""EPHA7"" ""T702F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	V710F	cv	"EPHA7 ""Val710Phe"" ClinVar ""EPHA7"""	0
+EPHA7	V710F	lit	"""EPHA7"" ""V710F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA7	W838R	cv	"EPHA7 ""Trp838Arg"" ClinVar ""EPHA7"""	0
+EPHA7	W838R	lit	"""EPHA7"" ""W838R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	V587I	cv	"FES ""Val587Ile"" ClinVar ""FES"""	0
+FES	V587I	lit	"""FES"" ""V587I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	L814I	cv	"FES ""Leu814Ile"" ClinVar ""FES"""	0
+FES	L814I	lit	"""FES"" ""L814I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	R621S	cv	"FES ""Arg621Ser"" ClinVar ""FES"""	0
+FES	R621S	lit	"""FES"" ""R621S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	T627I	cv	"FES ""Thr627Ile"" ClinVar ""FES"""	0
+FES	T627I	lit	"""FES"" ""T627I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	1
+FES	T627F	cv	"FES ""Thr627Phe"" ClinVar ""FES"""	0
+FES	T627F	lit	"""FES"" ""T627F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	V635F	cv	"FES ""Val635Phe"" ClinVar ""FES"""	0
+FES	V635F	lit	"""FES"" ""V635F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FES	P762R	cv	"FES ""Pro762Arg"" ClinVar ""FES"""	0
+FES	P762R	lit	"""FES"" ""P762R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	V296I	cv	"TXK ""Val296Ile"" ClinVar ""TXK"""	0
+TXK	V296I	lit	"""TXK"" ""V296I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	V520I	cv	"TXK ""Val520Ile"" ClinVar ""TXK"""	0
+TXK	V520I	lit	"""TXK"" ""V520I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	K325N	cv	"TXK ""Lys325Asn"" ClinVar ""TXK"""	1
+TXK	K325N	lit	"""TXK"" ""K325N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	Q328S	cv	"TXK ""Gln328Ser"" ClinVar ""TXK"""	0
+TXK	Q328S	lit	"""TXK"" ""Q328S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	I334F	cv	"TXK ""Ile334Phe"" ClinVar ""TXK"""	0
+TXK	I334F	lit	"""TXK"" ""I334F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	V342F	cv	"TXK ""Val342Phe"" ClinVar ""TXK"""	0
+TXK	V342F	lit	"""TXK"" ""V342F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TXK	E468R	cv	"TXK ""Glu468Arg"" ClinVar ""TXK"""	0
+TXK	E468R	lit	"""TXK"" ""E468R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	V648I	cv	"EPHB1 ""Val648Ile"" ClinVar ""EPHB1"""	0
+EPHB1	V648I	lit	"""EPHB1"" ""V648I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	L878I	cv	"EPHB1 ""Leu878Ile"" ClinVar ""EPHB1"""	0
+EPHB1	L878I	lit	"""EPHB1"" ""L878I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	R682S	cv	"EPHB1 ""Arg682Ser"" ClinVar ""EPHB1"""	0
+EPHB1	R682S	lit	"""EPHB1"" ""R682S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	T688I	cv	"EPHB1 ""Thr688Ile"" ClinVar ""EPHB1"""	0
+EPHB1	T688I	lit	"""EPHB1"" ""T688I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	T688F	cv	"EPHB1 ""Thr688Phe"" ClinVar ""EPHB1"""	0
+EPHB1	T688F	lit	"""EPHB1"" ""T688F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	I696F	cv	"EPHB1 ""Ile696Phe"" ClinVar ""EPHB1"""	0
+EPHB1	I696F	lit	"""EPHB1"" ""I696F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHB1	W826R	cv	"EPHB1 ""Trp826Arg"" ClinVar ""EPHB1"""	0
+EPHB1	W826R	lit	"""EPHB1"" ""W826R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	G1971R	cv	"ROS1 ""Gly1971Arg"" ClinVar ""ROS1"""	0
+ROS1	G1971R	lit	"""ROS1"" ""G1971R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	V1977I	cv	"ROS1 ""Val1977Ile"" ClinVar ""ROS1"""	0
+ROS1	V1977I	lit	"""ROS1"" ""V1977I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	L2215I	cv	"ROS1 ""Leu2215Ile"" ClinVar ""ROS1"""	0
+ROS1	L2215I	lit	"""ROS1"" ""L2215I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	K2011S	cv	"ROS1 ""Lys2011Ser"" ClinVar ""ROS1"""	0
+ROS1	K2011S	lit	"""ROS1"" ""K2011S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	L2017I	cv	"ROS1 ""Leu2017Ile"" ClinVar ""ROS1"""	0
+ROS1	L2017I	lit	"""ROS1"" ""L2017I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	L2017F	cv	"ROS1 ""Leu2017Phe"" ClinVar ""ROS1"""	0
+ROS1	L2017F	lit	"""ROS1"" ""L2017F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	I2025F	cv	"ROS1 ""Ile2025Phe"" ClinVar ""ROS1"""	0
+ROS1	I2025F	lit	"""ROS1"" ""I2025F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+ROS1	P2163R	cv	"ROS1 ""Pro2163Arg"" ClinVar ""ROS1"""	0
+ROS1	P2163R	lit	"""ROS1"" ""P2163R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	V588I	cv	"FER ""Val588Ile"" ClinVar ""FER"""	0
+FER	V588I	lit	"""FER"" ""V588I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	L814I	cv	"FER ""Leu814Ile"" ClinVar ""FER"""	0
+FER	L814I	lit	"""FER"" ""L814I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	K622S	cv	"FER ""Lys622Ser"" ClinVar ""FER"""	0
+FER	K622S	lit	"""FER"" ""K622S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	T628I	cv	"FER ""Thr628Ile"" ClinVar ""FER"""	0
+FER	T628I	lit	"""FER"" ""T628I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	T628F	cv	"FER ""Thr628Phe"" ClinVar ""FER"""	0
+FER	T628F	lit	"""FER"" ""T628F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	I636F	cv	"FER ""Ile636Phe"" ClinVar ""FER"""	0
+FER	I636F	lit	"""FER"" ""I636F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+FER	P762R	cv	"FER ""Pro762Arg"" ClinVar ""FER"""	0
+FER	P762R	lit	"""FER"" ""P762R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	V395I	cv	"TEC ""Val395Ile"" ClinVar ""TEC"""	0
+TEC	V395I	lit	"""TEC"" ""V395I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	K424N	cv	"TEC ""Lys424Asn"" ClinVar ""TEC"""	0
+TEC	K424N	lit	"""TEC"" ""K424N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	Q427S	cv	"TEC ""Gln427Ser"" ClinVar ""TEC"""	0
+TEC	Q427S	lit	"""TEC"" ""Q427S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	T433I	cv	"TEC ""Thr433Ile"" ClinVar ""TEC"""	1
+TEC	T433I	lit	"""TEC"" ""T433I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	T433F	cv	"TEC ""Thr433Phe"" ClinVar ""TEC"""	0
+TEC	T433F	lit	"""TEC"" ""T433F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	V441F	cv	"TEC ""Val441Phe"" ClinVar ""TEC"""	0
+TEC	V441F	lit	"""TEC"" ""V441F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+TEC	E567R	cv	"TEC ""Glu567Arg"" ClinVar ""TEC"""	3
+TEC	E567R	lit	"""TEC"" ""E567R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	2
+EPHA1	V653I	cv	"EPHA1 ""Val653Ile"" ClinVar ""EPHA1"""	0
+EPHA1	V653I	lit	"""EPHA1"" ""V653I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	L880I	cv	"EPHA1 ""Leu880Ile"" ClinVar ""EPHA1"""	0
+EPHA1	L880I	lit	"""EPHA1"" ""L880I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	H684N	cv	"EPHA1 ""His684Asn"" ClinVar ""EPHA1"""	0
+EPHA1	H684N	lit	"""EPHA1"" ""H684N"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	H687S	cv	"EPHA1 ""His687Ser"" ClinVar ""EPHA1"""	0
+EPHA1	H687S	lit	"""EPHA1"" ""H687S"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	T693I	cv	"EPHA1 ""Thr693Ile"" ClinVar ""EPHA1"""	0
+EPHA1	T693I	lit	"""EPHA1"" ""T693I"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	T693F	cv	"EPHA1 ""Thr693Phe"" ClinVar ""EPHA1"""	0
+EPHA1	T693F	lit	"""EPHA1"" ""T693F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	I701F	cv	"EPHA1 ""Ile701Phe"" ClinVar ""EPHA1"""	0
+EPHA1	I701F	lit	"""EPHA1"" ""I701F"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0
+EPHA1	G828R	cv	"EPHA1 ""Gly828Arg"" ClinVar ""EPHA1"""	0
+EPHA1	G828R	lit	"""EPHA1"" ""G828R"" kinase mutation variant study cancer gnomAD COSMIC OncoKB"	0

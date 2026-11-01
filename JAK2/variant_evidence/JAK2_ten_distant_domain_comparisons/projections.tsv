@@ -1,0 +1,88 @@
+JAK2_input	protein	domain	raw_projected_change	all_8_positions	assessment
+I1065T	BRAF	JH1	I659T	659,656,659,656,659,656,659,656	depends on alignment or anchor; see positions
+V1110E	BRAF	JH1	R701E	701,701,701,701,701,701,701,701	eight settings agree
+G571R	BRAF	JH2		-,-,-,483,-,-,-,-	no numerical mapping
+V578I	BRAF	JH2	V480I	480,480,480,490,480,480,480,480	depends on alignment or anchor; see positions
+L805I	BRAF	JH2	I714I	714,714,714,714,714,714,714,714	eight settings agree; endpoint already present
+I1065T	RAF1	JH1	I551T	551,551,561,-,551,551,561,-	depends on alignment or anchor; see positions
+V1110E	RAF1	JH1	K593E	593,593,593,-,593,593,593,-	depends on alignment or anchor; see positions
+G571R	RAF1	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+V578I	RAF1	JH2	V372I	375,375,375,375,372,372,372,372	depends on alignment or anchor; see positions
+L805I	RAF1	JH2	I606I	606,606,606,-,606,606,606,-	depends on alignment or anchor; see positions; endpoint already present
+I1065T	MAP2K1	JH1	M274T	274,274,300,-,274,274,300,-	depends on alignment or anchor; see positions
+V1110E	MAP2K1	JH1	P346E	346,346,346,-,346,346,346,-	depends on alignment or anchor; see positions
+G571R	MAP2K1	JH2		-,91,91,-,-,-,-,-	no numerical mapping
+V578I	MAP2K1	JH2	M94I	97,98,98,-,94,94,94,94	depends on alignment or anchor; see positions
+L805I	MAP2K1	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	MAP2K2	JH1	H308T	308,308,283,-,308,308,283,-	depends on alignment or anchor; see positions
+V1110E	MAP2K2	JH1	P354E	354,354,-,-,354,354,-,-	depends on alignment or anchor; see positions
+G571R	MAP2K2	JH2		95,-,95,-,-,-,-,-	no numerical mapping
+V578I	MAP2K2	JH2	M98I	102,-,102,-,98,98,-,-	depends on alignment or anchor; see positions
+L805I	MAP2K2	JH2	L322I	322,-,-,-,322,-,-,-	depends on alignment or anchor; see positions
+I1065T	AKT1	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+V1110E	AKT1	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	AKT1	JH2		178,-,-,-,-,-,-,-	no numerical mapping
+V578I	AKT1	JH2	Y176I	185,180,180,180,176,176,176,176	depends on alignment or anchor; see positions
+L805I	AKT1	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	PRKACA	JH1	F262T	262,262,-,-,262,262,-,-	depends on alignment or anchor; see positions
+V1110E	PRKACA	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	PRKACA	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+V578I	PRKACA	JH2	Y70I	70,70,70,70,70,70,70,70	eight settings agree
+L805I	PRKACA	JH2	V289I	289,-,-,-,289,-,-,-	depends on alignment or anchor; see positions
+I1065T	CDK2	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+V1110E	CDK2	JH1	P234E	234,-,-,-,234,-,-,-	depends on alignment or anchor; see positions
+G571R	CDK2	JH2		-,-,-,30,-,-,-,-	no numerical mapping
+V578I	CDK2	JH2	V30I	31,31,31,-,30,30,30,30	depends on alignment or anchor; see positions
+L805I	CDK2	JH2	F248I	248,-,248,-,248,-,248,-	depends on alignment or anchor; see positions
+I1065T	CDK4	JH1	C215T	215,-,215,-,215,-,215,-	depends on alignment or anchor; see positions
+V1110E	CDK4	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	CDK4	JH2	G18R	32,-,-,-,18,18,18,18	depends on alignment or anchor; see positions
+V578I	CDK4	JH2	V32I	39,-,-,-,32,32,32,32	depends on alignment or anchor; see positions
+L805I	CDK4	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	MAPK1	JH1	I255T	255,-,-,-,255,-,-,-	depends on alignment or anchor; see positions
+V1110E	MAPK1	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	MAPK1	JH2	D44R	44,44,44,-,44,44,44,44	depends on alignment or anchor; see positions
+V578I	MAPK1	JH2	V51I	51,51,51,-,51,51,51,51	depends on alignment or anchor; see positions
+L805I	MAPK1	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	MAPK14	JH1	I250T	250,250,250,-,250,250,250,-	depends on alignment or anchor; see positions
+V1110E	MAPK14	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	MAPK14	JH2		36,-,-,-,-,-,-,-	no numerical mapping
+V578I	MAPK14	JH2	V50I	46,-,-,-,50,50,50,50	depends on alignment or anchor; see positions
+L805I	MAPK14	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	AURKA	JH1		-,335,-,-,-,335,-,-	no numerical mapping
+V1110E	AURKA	JH1	P368E	368,368,368,-,368,368,368,-	depends on alignment or anchor; see positions
+G571R	AURKA	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+V578I	AURKA	JH2	L159I	159,159,159,159,159,159,159,159	eight settings agree
+L805I	AURKA	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+I1065T	STK11	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+V1110E	STK11	JH1		-,-,-,-,-,-,-,-	no numerical mapping
+G571R	STK11	JH2	E70R	70,70,70,-,70,70,70,70	depends on alignment or anchor; see positions
+V578I	STK11	JH2	V77I	77,77,77,-,77,77,77,77	depends on alignment or anchor; see positions
+L805I	STK11	JH2		-,-,-,-,-,-,-,-	no numerical mapping
+R426*	PTPN11	SH2-1	R32*	35,35,35,-,32,32,32,32	depends on alignment or anchor; see positions
+C427R	PTPN11	SH2-1	P33R	36,36,36,-,33,33,-,-	depends on alignment or anchor; see positions
+R426*	PTPN11	SH2-2	R138*	138,138,138,-,138,138,138,138	depends on alignment or anchor; see positions
+C427R	PTPN11	SH2-2	E139R	139,139,139,-,139,139,139,139	depends on alignment or anchor; see positions
+R426*	PTPN6	SH2-1	R30*	30,30,30,-,30,30,30,30	depends on alignment or anchor; see positions
+C427R	PTPN6	SH2-1	P31R	31,31,31,-,31,31,31,31	depends on alignment or anchor; see positions
+R426*	PTPN6	SH2-2	R136*	-,-,-,-,136,136,136,136	depends on alignment or anchor; see positions
+C427R	PTPN6	SH2-2	E137R	-,-,-,-,137,137,137,137	depends on alignment or anchor; see positions
+R426*	GRB2	SH2-1	R86*	86,86,86,-,86,86,86,86	depends on alignment or anchor; see positions
+C427R	GRB2	SH2-1	S90R	90,90,90,-,90,90,90,90	depends on alignment or anchor; see positions
+R426*	SH2D1A	SH2-1	R32*	32,32,32,-,32,32,32,32	depends on alignment or anchor; see positions
+C427R	SH2D1A	SH2-1	C42R	42,42,33,-,42,42,33,33	depends on alignment or anchor; see positions
+P37A	NF2	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+F240V	NF2	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+H380Y	NF2	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+P37A	EZR	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+F240V	EZR	FERM	A177V	177,302,177,-,177,302,177,-	unresolved FERM; suppress residue transfer
+H380Y	EZR	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+P37A	MSN	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+F240V	MSN	FERM	V302V	302,-,-,-,302,-,-,-	unresolved FERM; suppress residue transfer; endpoint already present
+H380Y	MSN	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+P37A	RDX	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+F240V	RDX	FERM	V302V	302,-,-,-,302,-,-,-	unresolved FERM; suppress residue transfer; endpoint already present
+H380Y	RDX	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+P37A	EPB41	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer
+F240V	EPB41	FERM	Y289V	289,-,-,-,289,-,-,-	unresolved FERM; suppress residue transfer
+H380Y	EPB41	FERM		-,-,-,-,-,-,-,-	unresolved FERM; suppress residue transfer

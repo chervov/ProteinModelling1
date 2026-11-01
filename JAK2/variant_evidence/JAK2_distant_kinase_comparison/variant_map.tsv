@@ -1,0 +1,97 @@
+group	JAK2	domain	target_gene	unconstrained_sites_4_penalties	anchored_site	projected_change	interpretation	verified_evidence	sources
+study	P37A	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	P37A	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	P37A	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	P37A	FERM	PTK2	-			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+study	F240V	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	F240V	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	F240V	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	F240V	FERM	PTK2	-/F231/F137			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+study	H380Y	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	H380Y	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	H380Y	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	H380Y	FERM	PTK2	-			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+study	R426*	SH2	SRC	R178		R178*	sequence projection; not a structural superposition	Human R178 in SH2 FLVRES corresponds to R175 in traditional chicken Src numbering. R175L impaired phosphotyrosine binding. The JAK2 input is a stop.	https://pubmed.ncbi.nlm.nih.gov/7504171/ https://pmc.ncbi.nlm.nih.gov/articles/PMC4881981/
+study	R426*	SH2	ABL1	R152/-		R152*	gap-penalty sensitive	Conserved FLVRES motif; motif-supported R152 although some local alignments exclude it. Abl SH2 motif mutagenesis affected binding and transforming activity; not an exact stop assay.	https://pubmed.ncbi.nlm.nih.gov/1370711/
+study	R426*	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	R426*	N-terminal	PTK2				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	C427R	SH2	SRC	E179		E179R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	C427R	SH2	ABL1	E153/-		E153R	gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+study	C427R	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	C427R	N-terminal	PTK2				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+study	G571R	JH2	SRC	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+study	G571R	JH2	ABL1	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+study	G571R	JH2	EGFR	V738	V738	V738R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	G571R	JH2	PTK2	-	P444	P444R	anchor-corrected; inspect locally	No verified record or paper entered; not a database-wide negative.	
+study	V578I	JH2	SRC	V295	V295	V295I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V578I	JH2	ABL1	V268	V268	V268I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V578I	JH2	EGFR	V742	V742	V742I	sequence projection; not a structural superposition	Exact chemical change V742I; conflicting germline submissions (2 VUS, 2 likely benign); no somatic oncogenicity submitted. Computational drug binding study; no isolated gain-of-function assay verified.	https://www.ncbi.nlm.nih.gov/clinvar/variation/134026/ https://www.jto.org/article/S1556086418300042/pdf
+study	V578I	JH2	PTK2	P447	V451	V451I	anchor-corrected; inspect locally	No verified record or paper entered; not a database-wide negative.	
+study	L805I	JH2	SRC	L519	L519	L519I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	L805I	JH2	ABL1	F493	F493	F493I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	L805I	JH2	EGFR	F968	F968	F968I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	L805I	JH2	PTK2	L676	L676	L676I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	I1065T	JH1	SRC	V470/-	V470	V470T	gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+study	I1065T	JH1	ABL1	-/P441	-		gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+study	I1065T	JH1	EGFR	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+study	I1065T	JH1	PTK2	K627	K627	K627T	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V1110E	JH1	SRC	P506	P506	P506E	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V1110E	JH1	ABL1	P480	P480	P480E	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V1110E	JH1	EGFR	A955	A955	A955E	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+study	V1110E	JH1	PTK2	P663	P663	P663E	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	T108A	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	T108A	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	T108A	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	T108A	FERM	PTK2	V107/-			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+previous	Y317H	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	Y317H	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	Y317H	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	Y317H	FERM	PTK2	-			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+previous	H345L	N-terminal	SRC				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	H345L	N-terminal	ABL1				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	H345L	N-terminal	EGFR				no corresponding domain in this comparison	No verified record or paper entered; not a database-wide negative.	
+previous	H345L	FERM	PTK2	-			unresolved; do not transfer	No verified record or paper entered; not a database-wide negative.	
+previous	H608N	JH2	SRC	K324	K324	K324N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	H608N	JH2	ABL1	N297	N297	N297 (target already has endpoint)	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	H608N	JH2	EGFR	H773	H773	H773N	sequence projection; not a structural superposition	Exact chemical change H773N; germline VUS, one submitter.	https://www.ncbi.nlm.nih.gov/clinvar/variation/4247349/
+previous	H608N	JH2	PTK2	H482	H482	H482N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	L611S	JH2	SRC	Q327	Q327	Q327S	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	L611S	JH2	ABL1	Q300	Q300	Q300S	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	L611S	JH2	EGFR	R776	R776	R776S	sequence projection; not a structural superposition	R776H has clinical submissions and dimer-dependent activation demonstrated experimentally. Different residue change from projected R776S.	https://www.ncbi.nlm.nih.gov/clinvar/variation/126515/ https://pmc.ncbi.nlm.nih.gov/articles/PMC5937138/
+previous	L611S	JH2	PTK2	K485	K485	K485S	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617I	JH2	SRC	V332	V332	V332I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617I	JH2	ABL1	T306	T306	T306I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617I	JH2	EGFR	L782	L782	L782I	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617I	JH2	PTK2	T491/I490	T491	T491I	gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+previous	V617F	JH2	SRC	V332	V332	V332F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617F	JH2	ABL1	T306	T306	T306F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617F	JH2	EGFR	L782	L782	L782F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V617F	JH2	PTK2	T491/I490	T491	T491F	gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+previous	V625F	JH2	SRC	V340	V340	V340F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V625F	JH2	ABL1	I314	I314	I314F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	V625F	JH2	EGFR	T790	I789	I789F	anchor-corrected; inspect locally	Anchor-corrected site I789. Same-site I789L and I789V in ClinVar; no exact I789F VCV verified.	https://www.ncbi.nlm.nih.gov/clinvar/variation/1380650/ https://www.ncbi.nlm.nih.gov/clinvar/variation/3224656/
+previous	V625F	JH2	PTK2	I498	I498	I498F	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	E846D	JH1	SRC	R267	R267	R267D	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	E846D	JH1	ABL1	R239	R239	R239D	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	E846D	JH1	EGFR	E709	E709	E709D	sequence projection; not a structural superposition	E709D c.2127A>C, germline VUS as indexed by Sugi (not independently verified on NCBI). Domain-edge correspondence. Do not conflate with E709_T710delinsD.	https://www.ncbi.nlm.nih.gov/clinvar/variation/1393019/ https://sugi.bio/variant/egfr-p-glu709asp
+previous	E846D	JH1	PTK2	R419	R419	R419D	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R867Q	JH1	SRC	T288	T288	T288Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R867Q	JH1	ABL1	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+previous	R867Q	JH1	EGFR	L730	L730	L730Q	sequence projection; not a structural superposition	Site-only: L730R in ClinVar (germline VUS submission). N-lobe loop projection.	https://www.ncbi.nlm.nih.gov/clinvar/variation/962310/
+previous	R867Q	JH1	PTK2	I440	I440	I440Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	T875N	JH1	SRC	G291	G291	G291N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	T875N	JH1	ABL1	Y264	Y264	Y264N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	T875N	JH1	EGFR	V738	V738	V738N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	T875N	JH1	PTK2	P447	P447	P447N	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	S755R	JH2	SRC	P467	P467	P467R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	S755R	JH2	ABL1	P441	P441	P441R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	S755R	JH2	EGFR	D916	D916	D916R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	S755R	JH2	PTK2	Q624	Q624	Q624R	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R938Q	JH1	SRC	L350	L350	L350Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R938Q	JH1	ABL1	L324	L324	L324Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R938Q	JH1	EGFR	L799	L799	L799Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R938Q	JH1	PTK2	R508	R508	R508Q	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	
+previous	R1063H	JH1	SRC	G468/-	G468	G468H	gap-penalty sensitive	No verified record or paper entered; not a database-wide negative.	
+previous	R1063H	JH1	ABL1	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+previous	R1063H	JH1	EGFR	-	-		unmapped	No verified record or paper entered; not a database-wide negative.	
+previous	R1063H	JH1	PTK2	G625	G625	G625H	sequence projection; not a structural superposition	No verified record or paper entered; not a database-wide negative.	

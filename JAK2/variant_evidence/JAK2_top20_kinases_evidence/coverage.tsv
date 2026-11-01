@@ -1,0 +1,120 @@
+gene	resource	reference	lines_retrieved	available_page_lines	matched_rows_before_dedup
+TNK2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/TNK2/significance/any	0	0	0
+FRK	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FRK/significance/any	0	0	0
+ABL1	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/ABL1/significance/any	0	0	0
+NTRK1	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/NTRK1/significance/any	0	0	0
+FGFR1	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR1/significance/any	191	1137	3
+DDR2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/DDR2/significance/any	0	0	0
+NTRK3	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/NTRK3/significance/any	0	0	0
+FGFR2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR2/significance/any	0	0	0
+NTRK2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/NTRK2/significance/any	0	0	0
+ERBB4	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/ERBB4/significance/any	0	0	0
+PTK7	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/PTK7/significance/any	0	0	0
+ABL2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/ABL2/significance/any	0	0	0
+SYK	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/SYK/significance/any	0	0	0
+FGFR3	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR3/significance/any	0	0	0
+RET	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/RET/significance/any	0	0	0
+TIE1	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/TIE1/significance/any	0	0	0
+EGFR	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/EGFR/significance/any	0	0	0
+CSK	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/CSK/significance/any	0	0	0
+FGFR4	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR4/significance/any	0	0	0
+PTK2	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/PTK2/significance/any	0	0	0
+TNK2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	715	715	7
+FRK	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FRK	115	115	4
+ABL1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	1369	1369	10
+NTRK1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	2208	2208	16
+FGFR1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	2022	2022	27
+DDR2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/DDR2	0	0	0
+NTRK3	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK3	213	213	0
+FGFR2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR2	0	0	0
+NTRK2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK2	1180	1180	0
+ERBB4	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ERBB4	0	0	0
+PTK7	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK7	267	267	6
+ABL2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL2	262	262	0
+SYK	Sugi (ClinVar index)	https://sugi.bio/variant/gene/SYK	222	222	6
+FGFR3	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	1679	1679	25
+RET	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	3138	3138	21
+TIE1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TIE1	373	373	2
+EGFR	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	2985	2985	19
+CSK	Sugi (ClinVar index)	https://sugi.bio/variant/gene/CSK	91	91	2
+FGFR4	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR4	254	254	2
+PTK2	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK2	247	247	0
+TNK2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=TNK2	114	114	0
+FRK	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FRK	0	0	0
+ABL1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ABL1	0	0	0
+NTRK1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK1	226	237	3
+FGFR1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR1	0	0	0
+DDR2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=DDR2	0	0	0
+NTRK3	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	315	315	7
+FGFR2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	353	353	11
+NTRK2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK2	75	75	0
+ERBB4	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ERBB4	115	115	0
+PTK7	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PTK7	0	0	0
+ABL2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ABL2	0	0	0
+SYK	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=SYK	148	148	1
+FGFR3	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR3	0	0	0
+RET	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	493	493	6
+TIE1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=TIE1	0	0	0
+EGFR	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=EGFR	0	0	0
+CSK	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=CSK	0	0	0
+FGFR4	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR4	0	0	0
+PTK2	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PTK2	0	0	0
+TNK2	JCGA	https://www.jcga-scc.jp/en/gene/TNK2	89	89	0
+FRK	JCGA	https://www.jcga-scc.jp/en/gene/FRK	0	0	0
+ABL1	JCGA	https://www.jcga-scc.jp/en/gene/ABL1	87	87	0
+NTRK1	JCGA	https://www.jcga-scc.jp/en/gene/NTRK1	92	92	0
+FGFR1	JCGA	https://www.jcga-scc.jp/en/gene/FGFR1	93	93	0
+DDR2	JCGA	https://www.jcga-scc.jp/en/gene/DDR2	99	99	0
+NTRK3	JCGA	https://www.jcga-scc.jp/en/gene/NTRK3	93	93	0
+FGFR2	JCGA	https://www.jcga-scc.jp/en/gene/FGFR2	106	106	4
+NTRK2	JCGA	https://www.jcga-scc.jp/en/gene/NTRK2	93	93	0
+ERBB4	JCGA	https://www.jcga-scc.jp/en/gene/ERBB4	100	100	0
+PTK7	JCGA	https://www.jcga-scc.jp/en/gene/PTK7	0	0	0
+ABL2	JCGA	https://www.jcga-scc.jp/en/gene/ABL2	85	85	0
+SYK	JCGA	https://www.jcga-scc.jp/en/gene/SYK	85	85	0
+FGFR3	JCGA	https://www.jcga-scc.jp/en/gene/FGFR3	101	101	0
+RET	JCGA	https://www.jcga-scc.jp/en/gene/RET	99	99	0
+TIE1	JCGA	https://www.jcga-scc.jp/en/gene/TIE1	0	0	0
+EGFR	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	147	147	6
+CSK	JCGA	https://www.jcga-scc.jp/en/gene/CSK	0	0	0
+FGFR4	JCGA	https://www.jcga-scc.jp/en/gene/FGFR4	100	100	1
+PTK2	JCGA	https://www.jcga-scc.jp/en/gene/PTK2	0	0	0
+PTK2B	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK2B	0	0	0
+ZAP70	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ZAP70	0	0	0
+EPHA5	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EPHA5	0	0	0
+BTK	Sugi (ClinVar index)	https://sugi.bio/variant/gene/BTK	0	0	0
+IGF1R	Sugi (ClinVar index)	https://sugi.bio/variant/gene/IGF1R	1440	1440	1
+EPHA7	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EPHA7	226	226	0
+FES	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FES	274	274	2
+TXK	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TXK	159	159	2
+EPHB1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EPHB1	240	240	0
+ROS1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ROS1	505	578	0
+FER	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FER	0	0	0
+TEC	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TEC	124	124	2
+EPHA1	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EPHA1	370	370	0
+PTK2B	JCGA	https://www.jcga-scc.jp/en/gene/PTK2B	0	0	0
+ZAP70	JCGA	https://www.jcga-scc.jp/en/gene/ZAP70	0	0	0
+EPHA5	JCGA	https://www.jcga-scc.jp/en/gene/EPHA5	0	0	0
+BTK	JCGA	https://www.jcga-scc.jp/en/gene/BTK	88	88	0
+IGF1R	JCGA	https://www.jcga-scc.jp/en/gene/IGF1R	94	94	0
+EPHA7	JCGA	https://www.jcga-scc.jp/en/gene/EPHA7	0	0	0
+FES	JCGA	https://www.jcga-scc.jp/en/gene/FES	0	0	0
+TXK	JCGA	https://www.jcga-scc.jp/en/gene/TXK	0	0	0
+EPHB1	JCGA	https://www.jcga-scc.jp/en/gene/EPHB1	90	90	0
+ROS1	JCGA	https://www.jcga-scc.jp/en/gene/ROS1	93	93	0
+FER	JCGA	https://www.jcga-scc.jp/en/gene/FER	0	0	0
+TEC	JCGA	https://www.jcga-scc.jp/en/gene/TEC	0	0	0
+EPHA1	JCGA	https://www.jcga-scc.jp/en/gene/EPHA1	0	0	0
+PTK2B	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=PTK2B	0	0	0
+ZAP70	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ZAP70	0	0	0
+EPHA5	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=EPHA5	0	0	0
+BTK	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=BTK	0	0	0
+IGF1R	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=IGF1R	114	114	0
+EPHA7	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=EPHA7	0	0	0
+FES	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FES	0	0	0
+TXK	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=TXK	0	0	0
+EPHB1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=EPHB1	0	0	0
+ROS1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ROS1	542	544	1
+FER	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FER	72	72	0
+TEC	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=TEC	71	71	0
+EPHA1	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=EPHA1	0	0	0

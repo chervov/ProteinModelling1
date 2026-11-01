@@ -1,0 +1,598 @@
+JAK2_variant	figure_group	domain	target_gene	JH1_rank	JH2_rank	projected_target_change	reference_residue_conserved	all_four_local_positions	alignment_status	curated_notes	matched_exact_database_alleles	other_alleles_at_site
+I1065T	study	JH1	TNK2	1	35	I332T	1	332,335	sensitive: do not treat as established			
+V1110E	study	JH1	TNK2	1	35	P372E	0	372	agreement of all settings			
+E846D	previous	JH1	TNK2	1	35	E123D	1	123	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	TNK2	1	35	E144Q	0	144	agreement of all settings			
+T875N	previous	JH1	TNK2	1	35	T152N	1	152	agreement of all settings			T152M Sugi (ClinVar index)
+R938Q	previous	JH1	TNK2	1	35	L214Q	0	214	agreement of all settings			
+R1063H	previous	JH1	TNK2	1	35			gap,333	gap/outside local aligned core			
+G571R	study	JH2	TNK2	1	35	P148R	0	148	agreement of all settings			P148= Sugi (ClinVar index); P148H Sugi (ClinVar index)
+V578I	study	JH2	TNK2	1	35	V155I	1	155	agreement of all settings			
+L805I	study	JH2	TNK2	1	35	M393I	0	gap	sensitive: do not treat as established			
+H608N	previous	JH2	TNK2	1	35	N188N	0	188	agreement of all settings; already WT			
+L611S	previous	JH2	TNK2	1	35	R191S	0	191	agreement of all settings			R191P Sugi (ClinVar index); R191H Sugi (ClinVar index)
+V617I	previous	JH2	TNK2	1	35	V196I	1	196	agreement of all settings			
+V617F	previous	JH2	TNK2	1	35	V196F	1	196	agreement of all settings			
+V625F	previous	JH2	TNK2	1	35	V204F	1	204	agreement of all settings			
+S755R	previous	JH2	TNK2	1	35	I332R	0	332	agreement of all settings			
+R426*	study	SH2	TNK2	1	35				absent domain or not applicable			
+C427R	study	SH2	TNK2	1	35				absent domain or not applicable			
+P37A	study	FERM	TNK2	1	35				absent domain or not applicable			
+F240V	study	FERM	TNK2	1	35				absent domain or not applicable			
+H380Y	study	FERM	TNK2	1	35				absent domain or not applicable			
+T108A	previous	FERM	TNK2	1	35				absent domain or not applicable			
+Y317H	previous	FERM	TNK2	1	35				absent domain or not applicable			
+H345L	previous	FERM	TNK2	1	35				absent domain or not applicable			
+I1065T	study	JH1	FRK	2	3	T438T	0	438,gap	sensitive: do not treat as established; already WT			
+V1110E	study	JH1	FRK	2	3	P474E	0	474	agreement of all settings			
+E846D	previous	JH1	FRK	2	3	R231D	0	231	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	FRK	2	3			gap	gap/outside local aligned core			
+T875N	previous	JH1	FRK	2	3	T256N	1	256	agreement of all settings			
+R938Q	previous	JH1	FRK	2	3	Q315Q	0	315	agreement of all settings; already WT			
+R1063H	previous	JH1	FRK	2	3	G436H	0	436,gap	sensitive: do not treat as established			
+G571R	study	JH2	FRK	2	3			gap	gap/outside local aligned core			
+V578I	study	JH2	FRK	2	3	V259I	1	259	agreement of all settings			
+L805I	study	JH2	FRK	2	3	L487I	1	487	agreement of all settings			
+H608N	previous	JH2	FRK	2	3	K288N	0	288	agreement of all settings			
+L611S	previous	JH2	FRK	2	3	Q291S	0	291	agreement of all settings			
+V617I	previous	JH2	FRK	2	3	T297I	0	297	agreement of all settings			T297S Sugi (ClinVar index)
+V617F	previous	JH2	FRK	2	3	T297F	0	297	agreement of all settings			T297S Sugi (ClinVar index)
+V625F	previous	JH2	FRK	2	3	I305F	0	305	agreement of all settings			
+S755R	previous	JH2	FRK	2	3	S435R	1	435	agreement of all settings			
+R426*	study	SH2	FRK	2	3	R143*	1	143	agreement of all settings			R143G Sugi (ClinVar index)
+C427R	study	SH2	FRK	2	3	E144R	0	144	agreement of all settings			
+P37A	study	FERM	FRK	2	3				absent domain or not applicable			
+F240V	study	FERM	FRK	2	3				absent domain or not applicable			
+H380Y	study	FERM	FRK	2	3				absent domain or not applicable			
+T108A	previous	FERM	FRK	2	3				absent domain or not applicable			
+Y317H	previous	FERM	FRK	2	3				absent domain or not applicable			
+H345L	previous	FERM	FRK	2	3				absent domain or not applicable			
+I1065T	study	JH1	ABL1	3	4			gap,441	gap/outside local aligned core			
+V1110E	study	JH1	ABL1	3	4	P480E	0	480	agreement of all settings			P480= Sugi (ClinVar index)
+E846D	previous	JH1	ABL1	3	4	R239D	0	239	agreement of all settings; N-terminal extension/domain edge			R239C Sugi (ClinVar index); R239H Sugi (ClinVar index)
+R867Q	previous	JH1	ABL1	3	4			gap	gap/outside local aligned core			
+T875N	previous	JH1	ABL1	3	4	Y264N	0	264	agreement of all settings			
+R938Q	previous	JH1	ABL1	3	4	L324Q	0	324	agreement of all settings	L324Q: A small BCR::ABL1-mutant clone was detected in a chronic-phase CML patient before imatinib, without an isolated biochemical result inferred.		
+R1063H	previous	JH1	ABL1	3	4			gap	gap/outside local aligned core			
+G571R	study	JH2	ABL1	3	4			gap	gap/outside local aligned core			
+V578I	study	JH2	ABL1	3	4	V268I	1	268	agreement of all settings			
+L805I	study	JH2	ABL1	3	4	F493I	0	493	agreement of all settings			
+H608N	previous	JH2	ABL1	3	4	N297N	0	297	agreement of all settings; already WT			
+L611S	previous	JH2	ABL1	3	4	Q300S	0	300	agreement of all settings			
+V617I	previous	JH2	ABL1	3	4	T306I	0	306	agreement of all settings	T306I: BCR::ABL1 T306I reported in patient 29. Thesis-level evidence only.		
+V617F	previous	JH2	ABL1	3	4	T306F	0	306	agreement of all settings			
+V625F	previous	JH2	ABL1	3	4	I314F	0	314	agreement of all settings			
+S755R	previous	JH2	ABL1	3	4	P441R	0	441	agreement of all settings			P441= Sugi (ClinVar index)
+R426*	study	SH2	ABL1	3	4	R152*	1	152,gap	sensitive: do not treat as established			R152H Sugi (ClinVar index)
+C427R	study	SH2	ABL1	3	4	E153R	0	153,gap	sensitive: do not treat as established			E153Q Sugi (ClinVar index)
+P37A	study	FERM	ABL1	3	4				absent domain or not applicable			
+F240V	study	FERM	ABL1	3	4				absent domain or not applicable			
+H380Y	study	FERM	ABL1	3	4				absent domain or not applicable			
+T108A	previous	FERM	ABL1	3	4				absent domain or not applicable			
+Y317H	previous	FERM	ABL1	3	4				absent domain or not applicable			
+H345L	previous	FERM	ABL1	3	4				absent domain or not applicable			
+I1065T	study	JH1	NTRK1	4	17			gap	gap/outside local aligned core			
+V1110E	study	JH1	NTRK1	4	17	P768E	0	768	agreement of all settings			P768H Sugi (ClinVar index); P768L Sugi (ClinVar index); P768S CanProVar
+E846D	previous	JH1	NTRK1	4	17	R507D	0	507	agreement of all settings; N-terminal extension/domain edge			R507C Sugi (ClinVar index); R507C CanProVar
+R867Q	previous	JH1	NTRK1	4	17	E528Q	0	528	agreement of all settings			E528* Sugi (ClinVar index)
+T875N	previous	JH1	NTRK1	4	17	D537N	0	537	agreement of all settings			D537E Sugi (ClinVar index); D537E CanProVar
+R938Q	previous	JH1	NTRK1	4	17	N598Q	0	598	agreement of all settings			
+R1063H	previous	JH1	NTRK1	4	17			gap	gap/outside local aligned core			
+G571R	study	JH2	NTRK1	4	17			gap,534	gap/outside local aligned core			
+V578I	study	JH2	NTRK1	4	17	V541I	1	541	agreement of all settings	V541L: Sugi indexes a germline VUS at the same codon for Val-to-Leu. It is not Val-to-Ile.		V541L Sugi (ClinVar index)
+L805I	study	JH2	NTRK1	4	17	L781I	1	781	agreement of all settings			
+H608N	previous	JH2	NTRK1	4	17	H571N	1	571	agreement of all settings			H571Q Sugi (ClinVar index)
+L611S	previous	JH2	NTRK1	4	17	R574S	0	574	agreement of all settings	R574S: VUS in a ClinVar-derived index; distinct from the differently numbered alternative NTRK1 alleles.	R574S Sugi (ClinVar index)	R574H Sugi (ClinVar index); R574C Sugi (ClinVar index)
+V617I	previous	JH2	NTRK1	4	17	T580I	0	580	agreement of all settings			
+V617F	previous	JH2	NTRK1	4	17	T580F	0	580	agreement of all settings			
+V625F	previous	JH2	NTRK1	4	17	V588F	1	588	agreement of all settings			
+S755R	previous	JH2	NTRK1	4	17	Y729R	0	729	agreement of all settings			
+R426*	study	SH2	NTRK1	4	17				absent domain or not applicable			
+C427R	study	SH2	NTRK1	4	17				absent domain or not applicable			
+P37A	study	FERM	NTRK1	4	17				absent domain or not applicable			
+F240V	study	FERM	NTRK1	4	17				absent domain or not applicable			
+H380Y	study	FERM	NTRK1	4	17				absent domain or not applicable			
+T108A	previous	FERM	NTRK1	4	17				absent domain or not applicable			
+Y317H	previous	FERM	NTRK1	4	17				absent domain or not applicable			
+H345L	previous	FERM	NTRK1	4	17				absent domain or not applicable			
+I1065T	study	JH1	FGFR1	5	57	L696T	0	696	agreement of all settings			L696= Sugi (ClinVar index)
+V1110E	study	JH1	FGFR1	5	57	P741E	0	741	agreement of all settings			
+E846D	previous	JH1	FGFR1	5	57	R475D	0	gap	sensitive: do not treat as established; N-terminal extension/domain edge			R475Q Sugi (ClinVar index); R475W Sugi (ClinVar index)
+R867Q	previous	JH1	FGFR1	5	57	G499Q	0	499	agreement of all settings			G499R Sugi (ClinVar index)
+T875N	previous	JH1	FGFR1	5	57	R507N	0	507	agreement of all settings			R507H ClinVar Miner (index); R507L Sugi (ClinVar index); R507C Sugi (ClinVar index); R507H Sugi (ClinVar index)
+R938Q	previous	JH1	FGFR1	5	57	R570Q	1	570	agreement of all settings	R570Q: Indexed as VUS (VCV2580728); reported rare in gnomAD v4.1, not a functional assay.	R570Q Sugi (ClinVar index)	R570W Sugi (ClinVar index); R570= Sugi (ClinVar index)
+R1063H	previous	JH1	FGFR1	5	57			gap	gap/outside local aligned core			
+G571R	study	JH2	FGFR1	5	57	D503R	0	503,504	sensitive: do not treat as established			D503E Sugi (ClinVar index); D503= Sugi (ClinVar index)
+V578I	study	JH2	FGFR1	5	57	V511I	1	511	agreement of all settings			
+L805I	study	JH2	FGFR1	5	57	L754I	1	754	agreement of all settings			L754= ClinVar Miner (index); L754= Sugi (ClinVar index)
+H608N	previous	JH2	FGFR1	5	57	N543N	0	543	agreement of all settings; already WT			N543D Sugi (ClinVar index)
+L611S	previous	JH2	FGFR1	5	57	N546S	0	546	agreement of all settings	N546S: Reported in a pediatric spinal glioblastoma together with FGFR1 K656E. This observation alone cannot isolate the effect.		N546K Sugi (ClinVar index)
+V617I	previous	JH2	FGFR1	5	57	T552I	0	552	agreement of all settings			
+V617F	previous	JH2	FGFR1	5	57	T552F	0	552	agreement of all settings			
+V625F	previous	JH2	FGFR1	5	57	I560F	0	560	agreement of all settings			I560= Sugi (ClinVar index)
+S755R	previous	JH2	FGFR1	5	57	P702R	0	702	agreement of all settings			P702= ClinVar Miner (index); P702= Sugi (ClinVar index)
+R426*	study	SH2	FGFR1	5	57				absent domain or not applicable			
+C427R	study	SH2	FGFR1	5	57				absent domain or not applicable			
+P37A	study	FERM	FGFR1	5	57				absent domain or not applicable			
+F240V	study	FERM	FGFR1	5	57				absent domain or not applicable			
+H380Y	study	FERM	FGFR1	5	57				absent domain or not applicable			
+T108A	previous	FERM	FGFR1	5	57				absent domain or not applicable			
+Y317H	previous	FERM	FGFR1	5	57				absent domain or not applicable			
+H345L	previous	FERM	FGFR1	5	57				absent domain or not applicable			
+I1065T	study	JH1	DDR2	6	59			gap	gap/outside local aligned core			
+V1110E	study	JH1	DDR2	6	59	T836E	0	836	agreement of all settings			
+E846D	previous	JH1	DDR2	6	59	R560D	0	560	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	DDR2	6	59	E581Q	0	581	agreement of all settings			
+T875N	previous	JH1	DDR2	6	59	Q601N	0	601	agreement of all settings			
+R938Q	previous	JH1	DDR2	6	59	N663Q	0	663	agreement of all settings			
+R1063H	previous	JH1	DDR2	6	59			gap	gap/outside local aligned core			
+G571R	study	JH2	DDR2	6	59	G575R	1	575,598	sensitive: do not treat as established			
+V578I	study	JH2	DDR2	6	59	V605I	1	584,605	sensitive: do not treat as established			
+L805I	study	JH2	DDR2	6	59	I845I	0	gap	sensitive: do not treat as established; already WT			
+H608N	previous	JH2	DDR2	6	59	N636N	0	636	agreement of all settings; already WT			
+L611S	previous	JH2	DDR2	6	59	H639S	0	639	agreement of all settings			
+V617I	previous	JH2	DDR2	6	59	I645I	0	645	agreement of all settings; already WT			
+V617F	previous	JH2	DDR2	6	59	I645F	0	645	agreement of all settings			
+V625F	previous	JH2	DDR2	6	59	I653F	0	653	agreement of all settings			
+S755R	previous	JH2	DDR2	6	59	S790R	1	790	agreement of all settings			
+R426*	study	SH2	DDR2	6	59				absent domain or not applicable			
+C427R	study	SH2	DDR2	6	59				absent domain or not applicable			
+P37A	study	FERM	DDR2	6	59				absent domain or not applicable			
+F240V	study	FERM	DDR2	6	59				absent domain or not applicable			
+H380Y	study	FERM	DDR2	6	59				absent domain or not applicable			
+T108A	previous	FERM	DDR2	6	59				absent domain or not applicable			
+Y317H	previous	FERM	DDR2	6	59				absent domain or not applicable			
+H345L	previous	FERM	DDR2	6	59				absent domain or not applicable			
+I1065T	study	JH1	NTRK3	7	13			gap	gap/outside local aligned core			
+V1110E	study	JH1	NTRK3	7	13	P811E	0	811	agreement of all settings			
+E846D	previous	JH1	NTRK3	7	13	R535D	0	535	agreement of all settings; N-terminal extension/domain edge			R535M CanProVar
+R867Q	previous	JH1	NTRK3	7	13	N559Q	0	559	agreement of all settings			
+T875N	previous	JH1	NTRK3	7	13	M567N	0	567	agreement of all settings			
+R938Q	previous	JH1	NTRK3	7	13	N626Q	0	626	agreement of all settings			
+R1063H	previous	JH1	NTRK3	7	13			gap	gap/outside local aligned core			
+G571R	study	JH2	NTRK3	7	13	Y558R	0	558	agreement of all settings			
+V578I	study	JH2	NTRK3	7	13	V569I	1	565	sensitive: do not treat as established			
+L805I	study	JH2	NTRK3	7	13	L824I	1	824	agreement of all settings			
+H608N	previous	JH2	NTRK3	7	13	H599N	1	599	agreement of all settings			H599Y CanProVar
+L611S	previous	JH2	NTRK3	7	13	K602S	0	602	agreement of all settings			K602R CanProVar; K602T CanProVar
+V617I	previous	JH2	NTRK3	7	13	G608I	0	608	agreement of all settings	G608S: Colorectal cancer mutant retained the ability to induce apoptosis when transfected into RKO cells. No phenylalanine result inferred.		G608S CanProVar; G608C CanProVar
+V617F	previous	JH2	NTRK3	7	13	G608F	0	608	agreement of all settings	G608S: Colorectal cancer mutant retained the ability to induce apoptosis when transfected into RKO cells. No phenylalanine result inferred.		G608S CanProVar; G608C CanProVar
+V625F	previous	JH2	NTRK3	7	13	V616F	1	616	agreement of all settings			
+S755R	previous	JH2	NTRK3	7	13	F772R	0	772	agreement of all settings			
+R426*	study	SH2	NTRK3	7	13				absent domain or not applicable			
+C427R	study	SH2	NTRK3	7	13				absent domain or not applicable			
+P37A	study	FERM	NTRK3	7	13				absent domain or not applicable			
+F240V	study	FERM	NTRK3	7	13				absent domain or not applicable			
+H380Y	study	FERM	NTRK3	7	13				absent domain or not applicable			
+T108A	previous	FERM	NTRK3	7	13				absent domain or not applicable			
+Y317H	previous	FERM	NTRK3	7	13				absent domain or not applicable			
+H345L	previous	FERM	NTRK3	7	13				absent domain or not applicable			
+I1065T	study	JH1	FGFR2	8	62	L699T	0	699	agreement of all settings			
+V1110E	study	JH1	FGFR2	8	62	P744E	0	744	agreement of all settings			
+E846D	previous	JH1	FGFR2	8	62	R478D	0	478	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	FGFR2	8	62	E499Q	0	499	agreement of all settings			
+T875N	previous	JH1	FGFR2	8	62	E510N	0	510	agreement of all settings			
+R938Q	previous	JH1	FGFR2	8	62	R573Q	1	573	agreement of all settings			
+R1063H	previous	JH1	FGFR2	8	62			gap	gap/outside local aligned core			
+G571R	study	JH2	FGFR2	8	62	D506R	0	506,507	sensitive: do not treat as established			
+V578I	study	JH2	FGFR2	8	62	V514I	1	514	agreement of all settings			
+L805I	study	JH2	FGFR2	8	62	L757I	1	757	agreement of all settings			
+H608N	previous	JH2	FGFR2	8	62	N546N	0	546	agreement of all settings; already WT			N546K CanProVar; N546D CanProVar; N546S CanProVar
+L611S	previous	JH2	FGFR2	8	62	N549S	0	549	agreement of all settings	N549S: JCGA lists this somatic allele as COSV60645338; CKB traces increased transforming activity and growth factor independence to experimental studies. p.N550S is the same genomic allele on an alternative transcript.	N549S CanProVar; N549S JCGA	N549K CanProVar; N549H CanProVar; N549K JCGA; N549H JCGA
+V617I	previous	JH2	FGFR2	8	62	T555I	0	555	agreement of all settings			
+V617F	previous	JH2	FGFR2	8	62	T555F	0	555	agreement of all settings			
+V625F	previous	JH2	FGFR2	8	62	I563F	0	563	agreement of all settings			
+S755R	previous	JH2	FGFR2	8	62	P705R	0	705	agreement of all settings			
+R426*	study	SH2	FGFR2	8	62				absent domain or not applicable			
+C427R	study	SH2	FGFR2	8	62				absent domain or not applicable			
+P37A	study	FERM	FGFR2	8	62				absent domain or not applicable			
+F240V	study	FERM	FGFR2	8	62				absent domain or not applicable			
+H380Y	study	FERM	FGFR2	8	62				absent domain or not applicable			
+T108A	previous	FERM	FGFR2	8	62				absent domain or not applicable			
+Y317H	previous	FERM	FGFR2	8	62				absent domain or not applicable			
+H345L	previous	FERM	FGFR2	8	62				absent domain or not applicable			
+I1065T	study	JH1	NTRK2	9	6	S758T	0	758,gap	sensitive: do not treat as established			
+V1110E	study	JH1	NTRK2	9	6	P794E	0	794	agreement of all settings			
+E846D	previous	JH1	NTRK2	9	6	K534D	0	534,gap	sensitive: do not treat as established; N-terminal extension/domain edge			
+R867Q	previous	JH1	NTRK2	9	6			gap,559,556	gap/outside local aligned core			
+T875N	previous	JH1	NTRK2	9	6	I567N	0	567,565	sensitive: do not treat as established			
+R938Q	previous	JH1	NTRK2	9	6	N626Q	0	626	agreement of all settings			
+R1063H	previous	JH1	NTRK2	9	6	Q756H	0	756,gap	sensitive: do not treat as established			
+G571R	study	JH2	NTRK2	9	6	N559R	0	559,562	sensitive: do not treat as established			
+V578I	study	JH2	NTRK2	9	6	V569I	1	569	agreement of all settings			
+L805I	study	JH2	NTRK2	9	6	L810I	1	807	sensitive: do not treat as established			
+H608N	previous	JH2	NTRK2	9	6	H599N	1	599	agreement of all settings			
+L611S	previous	JH2	NTRK2	9	6	K602S	0	602	agreement of all settings			
+V617I	previous	JH2	NTRK2	9	6	V608I	1	608	agreement of all settings			
+V617F	previous	JH2	NTRK2	9	6	V608F	1	608	agreement of all settings			
+V625F	previous	JH2	NTRK2	9	6	V616F	1	616	agreement of all settings			
+S755R	previous	JH2	NTRK2	9	6	Y755R	0	755	agreement of all settings			
+R426*	study	SH2	NTRK2	9	6				absent domain or not applicable			
+C427R	study	SH2	NTRK2	9	6				absent domain or not applicable			
+P37A	study	FERM	NTRK2	9	6				absent domain or not applicable			
+F240V	study	FERM	NTRK2	9	6				absent domain or not applicable			
+H380Y	study	FERM	NTRK2	9	6				absent domain or not applicable			
+T108A	previous	FERM	NTRK2	9	6				absent domain or not applicable			
+Y317H	previous	FERM	NTRK2	9	6				absent domain or not applicable			
+H345L	previous	FERM	NTRK2	9	6				absent domain or not applicable			
+I1065T	study	JH1	ERBB4	10	28			gap	gap/outside local aligned core			
+V1110E	study	JH1	ERBB4	10	28	A961E	0	961	agreement of all settings			
+E846D	previous	JH1	ERBB4	10	28	E715D	1	715	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	ERBB4	10	28	I736Q	0	736	agreement of all settings			
+T875N	previous	JH1	ERBB4	10	28	V744N	0	744	agreement of all settings			
+R938Q	previous	JH1	ERBB4	10	28	L805Q	0	805	agreement of all settings			
+R1063H	previous	JH1	ERBB4	10	28			gap	gap/outside local aligned core			
+G571R	study	JH2	ERBB4	10	28	V744R	0	744	agreement of all settings			
+V578I	study	JH2	ERBB4	10	28	V748I	1	748	agreement of all settings			
+L805I	study	JH2	ERBB4	10	28	F974I	0	974	agreement of all settings			
+H608N	previous	JH2	ERBB4	10	28	H779N	1	779	agreement of all settings			
+L611S	previous	JH2	ERBB4	10	28	R782S	0	782	agreement of all settings			
+V617I	previous	JH2	ERBB4	10	28	L788I	0	788	agreement of all settings			
+V617F	previous	JH2	ERBB4	10	28	L788F	0	788	agreement of all settings			
+V625F	previous	JH2	ERBB4	10	28	V795F	1	795	agreement of all settings			
+S755R	previous	JH2	ERBB4	10	28	D922R	0	922	agreement of all settings			
+R426*	study	SH2	ERBB4	10	28				absent domain or not applicable			
+C427R	study	SH2	ERBB4	10	28				absent domain or not applicable			
+P37A	study	FERM	ERBB4	10	28				absent domain or not applicable			
+F240V	study	FERM	ERBB4	10	28				absent domain or not applicable			
+H380Y	study	FERM	ERBB4	10	28				absent domain or not applicable			
+T108A	previous	FERM	ERBB4	10	28				absent domain or not applicable			
+Y317H	previous	FERM	ERBB4	10	28				absent domain or not applicable			
+H345L	previous	FERM	ERBB4	10	28				absent domain or not applicable			
+I1065T	study	JH1	PTK7	11	46			gap	gap/outside local aligned core			
+V1110E	study	JH1	PTK7	11	46	P1048E	0	1048	agreement of all settings			P1048L Sugi (ClinVar index)
+E846D	previous	JH1	PTK7	11	46	R793D	0	793	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	PTK7	11	46	K814Q	0	814	agreement of all settings			
+T875N	previous	JH1	PTK7	11	46	V822N	0	822	agreement of all settings			
+R938Q	previous	JH1	PTK7	11	46	K884Q	0	884	agreement of all settings			
+R1063H	previous	JH1	PTK7	11	46			gap	gap/outside local aligned core			
+G571R	study	JH2	PTK7	11	46			gap,820	gap/outside local aligned core			
+V578I	study	JH2	PTK7	11	46	V827I	1	827	agreement of all settings			
+L805I	study	JH2	PTK7	11	46	L1061I	1	gap	sensitive: do not treat as established			
+H608N	previous	JH2	PTK7	11	46	N857N	0	857	agreement of all settings; already WT			
+L611S	previous	JH2	PTK7	11	46	R860S	0	860	agreement of all settings			R860Q Sugi (ClinVar index)
+V617I	previous	JH2	PTK7	11	46	R866I	0	866	agreement of all settings			R866Q Sugi (ClinVar index)
+V617F	previous	JH2	PTK7	11	46	R866F	0	866	agreement of all settings			R866Q Sugi (ClinVar index)
+V625F	previous	JH2	PTK7	11	46	V874F	1	874	agreement of all settings			
+S755R	previous	JH2	PTK7	11	46	G1008R	0	1008	agreement of all settings			
+R426*	study	SH2	PTK7	11	46				absent domain or not applicable			
+C427R	study	SH2	PTK7	11	46				absent domain or not applicable			
+P37A	study	FERM	PTK7	11	46				absent domain or not applicable			
+F240V	study	FERM	PTK7	11	46				absent domain or not applicable			
+H380Y	study	FERM	PTK7	11	46				absent domain or not applicable			
+T108A	previous	FERM	PTK7	11	46				absent domain or not applicable			
+Y317H	previous	FERM	PTK7	11	46				absent domain or not applicable			
+H345L	previous	FERM	PTK7	11	46				absent domain or not applicable			
+I1065T	study	JH1	ABL2	12	21			gap,487	gap/outside local aligned core			
+V1110E	study	JH1	ABL2	12	21	P526E	0	526	agreement of all settings			
+E846D	previous	JH1	ABL2	12	21	R285D	0	285	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	ABL2	12	21			gap	gap/outside local aligned core			
+T875N	previous	JH1	ABL2	12	21	Y310N	0	310	agreement of all settings			
+R938Q	previous	JH1	ABL2	12	21	L370Q	0	370	agreement of all settings			
+R1063H	previous	JH1	ABL2	12	21			gap	gap/outside local aligned core			
+G571R	study	JH2	ABL2	12	21			gap	gap/outside local aligned core			
+V578I	study	JH2	ABL2	12	21	V314I	1	314	agreement of all settings			
+L805I	study	JH2	ABL2	12	21	F539I	0	539	agreement of all settings			
+H608N	previous	JH2	ABL2	12	21	N343N	0	343	agreement of all settings; already WT			
+L611S	previous	JH2	ABL2	12	21	Q346S	0	346	agreement of all settings			
+V617I	previous	JH2	ABL2	12	21	T352I	0	352	agreement of all settings			
+V617F	previous	JH2	ABL2	12	21	T352F	0	352	agreement of all settings			
+V625F	previous	JH2	ABL2	12	21	V360F	1	360	agreement of all settings			
+S755R	previous	JH2	ABL2	12	21	P487R	0	487	agreement of all settings			
+R426*	study	SH2	ABL2	12	21	R198*	1	198,gap	sensitive: do not treat as established			
+C427R	study	SH2	ABL2	12	21	E199R	0	199,gap	sensitive: do not treat as established			
+P37A	study	FERM	ABL2	12	21				absent domain or not applicable			
+F240V	study	FERM	ABL2	12	21				absent domain or not applicable			
+H380Y	study	FERM	ABL2	12	21				absent domain or not applicable			
+T108A	previous	FERM	ABL2	12	21				absent domain or not applicable			
+Y317H	previous	FERM	ABL2	12	21				absent domain or not applicable			
+H345L	previous	FERM	ABL2	12	21				absent domain or not applicable			
+I1065T	study	JH1	SYK	13	10	K577T	0	577	agreement of all settings			
+V1110E	study	JH1	SYK	13	10	V613E	1	613	agreement of all settings			
+E846D	previous	JH1	SYK	13	10	D366D	0	366,gap	sensitive: do not treat as established; N-terminal extension/domain edge; already WT			
+R867Q	previous	JH1	SYK	13	10	Y389Q	0	389	agreement of all settings			
+T875N	previous	JH1	SYK	13	10	V395N	0	395	agreement of all settings			
+R938Q	previous	JH1	SYK	13	10	N457Q	0	457	agreement of all settings			
+R1063H	previous	JH1	SYK	13	10	G575H	0	575	agreement of all settings			
+G571R	study	JH2	SYK	13	10	Y390R	0	390	agreement of all settings			
+V578I	study	JH2	SYK	13	10	V399I	1	399	agreement of all settings			
+L805I	study	JH2	SYK	13	10	L626I	1	gap	sensitive: do not treat as established			
+H608N	previous	JH2	SYK	13	10	Y431N	0	431	agreement of all settings			
+L611S	previous	JH2	SYK	13	10	R434S	0	434	agreement of all settings			R434Q Sugi (ClinVar index); R434= Sugi (ClinVar index)
+V617I	previous	JH2	SYK	13	10	E440I	0	440	agreement of all settings			
+V617F	previous	JH2	SYK	13	10	E440F	0	440	agreement of all settings			
+V625F	previous	JH2	SYK	13	10	V447F	1	447	agreement of all settings			V447I Sugi (ClinVar index)
+S755R	previous	JH2	SYK	13	10	R574R	0	574	agreement of all settings; already WT			
+R426*	study	SH2	SYK	13	10	R42*	1	42	agreement of all settings; tandem SH2; best local match only			R42H CanProVar
+C427R	study	SH2	SYK	13	10	Q43R	0	43	agreement of all settings; tandem SH2; best local match only			Q43= Sugi (ClinVar index)
+P37A	study	FERM	SYK	13	10				absent domain or not applicable			
+F240V	study	FERM	SYK	13	10				absent domain or not applicable			
+H380Y	study	FERM	SYK	13	10				absent domain or not applicable			
+T108A	previous	FERM	SYK	13	10				absent domain or not applicable			
+Y317H	previous	FERM	SYK	13	10				absent domain or not applicable			
+H345L	previous	FERM	SYK	13	10				absent domain or not applicable			
+I1065T	study	JH1	FGFR3	14	61	L690T	0	690	agreement of all settings			
+V1110E	study	JH1	FGFR3	14	61	P735E	0	735	agreement of all settings			P735= Sugi (ClinVar index)
+E846D	previous	JH1	FGFR3	14	61	R469D	0	gap	sensitive: do not treat as established; N-terminal extension/domain edge			
+R867Q	previous	JH1	FGFR3	14	61	E490Q	0	490	agreement of all settings			
+T875N	previous	JH1	FGFR3	14	61	A499N	0	499,498	sensitive: do not treat as established			A499P Sugi (ClinVar index); A499= Sugi (ClinVar index)
+R938Q	previous	JH1	FGFR3	14	61	R564Q	1	564	agreement of all settings	R564Q: Single-submitter VUS indexed by Sugi.	R564Q Sugi (ClinVar index)	R564W Sugi (ClinVar index)
+R1063H	previous	JH1	FGFR3	14	61			gap	gap/outside local aligned core			
+G571R	study	JH2	FGFR3	14	61	R498R	0	498	agreement of all settings; already WT			R498Q Sugi (ClinVar index); R498W Sugi (ClinVar index); R498= Sugi (ClinVar index)
+V578I	study	JH2	FGFR3	14	61	V505I	1	505	agreement of all settings	V505I: An MCF10A proliferation assay failed to validate the predicted gain of function. The ClinVar condition record has conflicting germline classifications.	V505I Sugi (ClinVar index)	
+L805I	study	JH2	FGFR3	14	61	L748I	1	748	agreement of all settings			
+H608N	previous	JH2	FGFR3	14	61	N537N	0	537	agreement of all settings; already WT			N537= Sugi (ClinVar index)
+L611S	previous	JH2	FGFR3	14	61	N540S	0	540	agreement of all settings	N540S: Pathogenic/likely pathogenic in ClinVar; reported in hypochondroplasia families. Experimentally activating, with weaker activation than N540K in the cited assay.	N540S Sugi (ClinVar index)	N540K Sugi (ClinVar index); N540D Sugi (ClinVar index); N540T Sugi (ClinVar index); N540H Sugi (ClinVar index); N540= Sugi (ClinVar index)
+V617I	previous	JH2	FGFR3	14	61	T546I	0	546	agreement of all settings			T546K Sugi (ClinVar index)
+V617F	previous	JH2	FGFR3	14	61	T546F	0	546	agreement of all settings			T546K Sugi (ClinVar index)
+V625F	previous	JH2	FGFR3	14	61	L554F	0	554	agreement of all settings			
+S755R	previous	JH2	FGFR3	14	61	P696R	0	696	agreement of all settings			P696= Sugi (ClinVar index)
+R426*	study	SH2	FGFR3	14	61				absent domain or not applicable			
+C427R	study	SH2	FGFR3	14	61				absent domain or not applicable			
+P37A	study	FERM	FGFR3	14	61				absent domain or not applicable			
+F240V	study	FERM	FGFR3	14	61				absent domain or not applicable			
+H380Y	study	FERM	FGFR3	14	61				absent domain or not applicable			
+T108A	previous	FERM	FGFR3	14	61				absent domain or not applicable			
+Y317H	previous	FERM	FGFR3	14	61				absent domain or not applicable			
+H345L	previous	FERM	FGFR3	14	61				absent domain or not applicable			
+I1065T	study	JH1	RET	15	7	L947T	0	947	agreement of all settings			L947= Sugi (ClinVar index)
+V1110E	study	JH1	RET	15	7	P992E	0	992	agreement of all settings			P992L CanProVar
+E846D	previous	JH1	RET	15	7	R721D	0	721	agreement of all settings; N-terminal extension/domain edge			R721Q Sugi (ClinVar index); R721W CanProVar; R721Q CanProVar
+R867Q	previous	JH1	RET	15	7	T742Q	0	742	agreement of all settings			T742= Sugi (ClinVar index)
+T875N	previous	JH1	RET	15	7	A750N	0	750	agreement of all settings			A750G Sugi (ClinVar index); A750V CanProVar
+R938Q	previous	JH1	RET	15	7	R813Q	1	813	agreement of all settings	R813Q: Reduced RET signaling, migration and colony formation versus wild type in cell assays. Reported in Hirschsprung disease. The cited MEN2 ClinVar record is VUS. JAK2 R938Q was inherited in cis with S755R.	R813Q Sugi (ClinVar index)	R813G Sugi (ClinVar index); R813W Sugi (ClinVar index); R813= Sugi (ClinVar index)
+R1063H	previous	JH1	RET	15	7			gap	gap/outside local aligned core			
+G571R	study	JH2	RET	15	7	G748R	1	748	agreement of all settings	G748D: Hirschsprung disease index lists Gly-to-Asp as uncertain significance, rs1314127008. JH2 beta2-beta3 loop site is a sequence projection.		G748D Sugi (ClinVar index); G748C CanProVar
+V578I	study	JH2	RET	15	7	V755I	1	755	agreement of all settings			
+L805I	study	JH2	RET	15	7	L1005I	1	1005	agreement of all settings			L1005= Sugi (ClinVar index)
+H608N	previous	JH2	RET	15	7	H786N	1	786	agreement of all settings			H786Y Sugi (ClinVar index); H786= Sugi (ClinVar index)
+L611S	previous	JH2	RET	15	7	K789S	0	789	agreement of all settings			K789E Sugi (ClinVar index); K789E CanProVar
+V617I	previous	JH2	RET	15	7	S795I	0	795	agreement of all settings			S795= Sugi (ClinVar index)
+V617F	previous	JH2	RET	15	7	S795F	0	795	agreement of all settings			S795= Sugi (ClinVar index)
+V625F	previous	JH2	RET	15	7	I803F	0	803	agreement of all settings			I803= Sugi (ClinVar index)
+S755R	previous	JH2	RET	15	7	P953R	0	953	agreement of all settings			
+R426*	study	SH2	RET	15	7				absent domain or not applicable			
+C427R	study	SH2	RET	15	7				absent domain or not applicable			
+P37A	study	FERM	RET	15	7				absent domain or not applicable			
+F240V	study	FERM	RET	15	7				absent domain or not applicable			
+H380Y	study	FERM	RET	15	7				absent domain or not applicable			
+T108A	previous	FERM	RET	15	7				absent domain or not applicable			
+Y317H	previous	FERM	RET	15	7				absent domain or not applicable			
+H345L	previous	FERM	RET	15	7				absent domain or not applicable			
+I1065T	study	JH1	TIE1	16	77	L1049T	0	1049	agreement of all settings			
+V1110E	study	JH1	TIE1	16	77	P1094E	0	1094	agreement of all settings			
+E846D	previous	JH1	TIE1	16	77	W836D	0	836	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	TIE1	16	77	K859Q	0	859	agreement of all settings			K859N Sugi (ClinVar index)
+T875N	previous	JH1	TIE1	16	77			gap	gap/outside local aligned core			
+R938Q	previous	JH1	TIE1	16	77	L926Q	0	926	agreement of all settings			
+R1063H	previous	JH1	TIE1	16	77			gap	gap/outside local aligned core			
+G571R	study	JH2	TIE1	16	77			gap	gap/outside local aligned core			
+V578I	study	JH2	TIE1	16	77	A867I	0	868	sensitive: do not treat as established			
+L805I	study	JH2	TIE1	16	77	L1107I	1	1107	agreement of all settings			
+H608N	previous	JH2	TIE1	16	77	P898N	0	898	agreement of all settings			
+L611S	previous	JH2	TIE1	16	77	I901S	0	901	agreement of all settings			
+V617I	previous	JH2	TIE1	16	77	K908I	0	908	agreement of all settings			
+V617F	previous	JH2	TIE1	16	77	K908F	0	908	agreement of all settings			
+V625F	previous	JH2	TIE1	16	77	A916F	0	916	agreement of all settings			
+S755R	previous	JH2	TIE1	16	77	C1055R	0	1055	agreement of all settings			
+R426*	study	SH2	TIE1	16	77				absent domain or not applicable			
+C427R	study	SH2	TIE1	16	77				absent domain or not applicable			
+P37A	study	FERM	TIE1	16	77				absent domain or not applicable			
+F240V	study	FERM	TIE1	16	77				absent domain or not applicable			
+H380Y	study	FERM	TIE1	16	77				absent domain or not applicable			
+T108A	previous	FERM	TIE1	16	77				absent domain or not applicable			
+Y317H	previous	FERM	TIE1	16	77				absent domain or not applicable			
+H345L	previous	FERM	TIE1	16	77				absent domain or not applicable			
+I1065T	study	JH1	EGFR	17	40			gap	gap/outside local aligned core			
+V1110E	study	JH1	EGFR	17	40	A955E	0	955	agreement of all settings			A955T Sugi (ClinVar index)
+E846D	previous	JH1	EGFR	17	40	E709D	1	709	agreement of all settings; N-terminal extension/domain edge	E709D: c.2127A>C indexed as germline VUS. Different allele from E709_T710delinsD.	E709D Sugi (ClinVar index)	E709K JCGA; E709A JCGA; E709V JCGA; E709G JCGA
+R867Q	previous	JH1	EGFR	17	40	L730Q	0	730	agreement of all settings			L730R Sugi (ClinVar index)
+T875N	previous	JH1	EGFR	17	40	V738N	0	738	agreement of all settings			
+R938Q	previous	JH1	EGFR	17	40	L799Q	0	799	agreement of all settings			L799= Sugi (ClinVar index)
+R1063H	previous	JH1	EGFR	17	40			gap	gap/outside local aligned core			
+G571R	study	JH2	EGFR	17	40	V738R	0	738	agreement of all settings			
+V578I	study	JH2	EGFR	17	40	V742I	1	742	agreement of all settings	V742I: Conflicting germline submissions (VUS and likely benign). No somatic oncogenicity submission in the cited record.	V742I Sugi (ClinVar index)	V742= Sugi (ClinVar index)
+L805I	study	JH2	EGFR	17	40	F968I	0	968	agreement of all settings			
+H608N	previous	JH2	EGFR	17	40	H773N	1	773	agreement of all settings	H773N: Single-submitter uncertain significance.		H773= Sugi (ClinVar index); H773L JCGA
+L611S	previous	JH2	EGFR	17	40	R776S	0	776	agreement of all settings	R776S: Table 1 reports G719A+R776S. Clinical observation of compound mutations; do not attribute a single-mutant phenotype. | R776H: Dimer-dependent activation; mutants preferentially occupied the acceptor position. Germline classifications conflict.		R776H Sugi (ClinVar index); R776C Sugi (ClinVar index); R776= Sugi (ClinVar index); R776H JCGA
+V617I	previous	JH2	EGFR	17	40	L782I	0	782	agreement of all settings			L782= Sugi (ClinVar index)
+V617F	previous	JH2	EGFR	17	40	L782F	0	782	agreement of all settings			L782= Sugi (ClinVar index)
+V625F	previous	JH2	EGFR	17	40	I789F	0	790	sensitive: do not treat as established	I789L / I789V: Anchored site lies immediately before gatekeeper T790. ClinVar records for Leu and Val. Do not count T790M.		
+S755R	previous	JH2	EGFR	17	40	D916R	0	916	agreement of all settings			D916= Sugi (ClinVar index); D916N Sugi (ClinVar index)
+R426*	study	SH2	EGFR	17	40				absent domain or not applicable			
+C427R	study	SH2	EGFR	17	40				absent domain or not applicable			
+P37A	study	FERM	EGFR	17	40				absent domain or not applicable			
+F240V	study	FERM	EGFR	17	40				absent domain or not applicable			
+H380Y	study	FERM	EGFR	17	40				absent domain or not applicable			
+T108A	previous	FERM	EGFR	17	40				absent domain or not applicable			
+Y317H	previous	FERM	EGFR	17	40				absent domain or not applicable			
+H345L	previous	FERM	EGFR	17	40				absent domain or not applicable			
+I1065T	study	JH1	CSK	18	49			gap	gap/outside local aligned core			
+V1110E	study	JH1	CSK	18	49	A427E	0	427	agreement of all settings			
+E846D	previous	JH1	CSK	18	49	M192D	0	gap	sensitive: do not treat as established; N-terminal extension/domain edge			M192T Sugi (ClinVar index)
+R867Q	previous	JH1	CSK	18	49			gap	gap/outside local aligned core			
+T875N	previous	JH1	CSK	18	49	R215N	0	215	agreement of all settings			
+R938Q	previous	JH1	CSK	18	49	V275Q	0	275	agreement of all settings			
+R1063H	previous	JH1	CSK	18	49			gap	gap/outside local aligned core			
+G571R	study	JH2	CSK	18	49			216,gap	gap/outside local aligned core			
+V578I	study	JH2	CSK	18	49	V219I	1	gap	sensitive: do not treat as established			
+L805I	study	JH2	CSK	18	49	L440I	1	440	agreement of all settings			
+H608N	previous	JH2	CSK	18	49	N247N	0	247	agreement of all settings; already WT			
+L611S	previous	JH2	CSK	18	49	Q250S	0	250	agreement of all settings			
+V617I	previous	JH2	CSK	18	49	V256I	1	256	agreement of all settings			
+V617F	previous	JH2	CSK	18	49	V256F	1	256	agreement of all settings			
+V625F	previous	JH2	CSK	18	49	V265F	1	265	agreement of all settings			
+S755R	previous	JH2	CSK	18	49	P388R	0	388	agreement of all settings			
+R426*	study	SH2	CSK	18	49	R107*	1	107	agreement of all settings			
+C427R	study	SH2	CSK	18	49	E108R	0	108,gap	sensitive: do not treat as established			
+P37A	study	FERM	CSK	18	49				absent domain or not applicable			
+F240V	study	FERM	CSK	18	49				absent domain or not applicable			
+H380Y	study	FERM	CSK	18	49				absent domain or not applicable			
+T108A	previous	FERM	CSK	18	49				absent domain or not applicable			
+Y317H	previous	FERM	CSK	18	49				absent domain or not applicable			
+H345L	previous	FERM	CSK	18	49				absent domain or not applicable			
+I1065T	study	JH1	FGFR4	19	70	L685T	0	685	agreement of all settings			
+V1110E	study	JH1	FGFR4	19	70	P730E	0	730	agreement of all settings			
+E846D	previous	JH1	FGFR4	19	70	R464D	0	464	agreement of all settings; N-terminal extension/domain edge			R464P Sugi (ClinVar index)
+R867Q	previous	JH1	FGFR4	19	70	G488Q	0	488	agreement of all settings			
+T875N	previous	JH1	FGFR4	19	70	Q496N	0	496	agreement of all settings			
+R938Q	previous	JH1	FGFR4	19	70	R559Q	1	559	agreement of all settings			
+R1063H	previous	JH1	FGFR4	19	70			gap	gap/outside local aligned core			
+G571R	study	JH2	FGFR4	19	70	G488R	1	488,490,493	sensitive: do not treat as established			
+V578I	study	JH2	FGFR4	19	70	V500I	1	500,497	sensitive: do not treat as established			
+L805I	study	JH2	FGFR4	19	70	L743I	1	743	agreement of all settings			
+H608N	previous	JH2	FGFR4	19	70	N532N	0	532	agreement of all settings; already WT			
+L611S	previous	JH2	FGFR4	19	70	N535S	0	535	agreement of all settings	N535K: JCGA lists a somatic Lys change at the same site. No quantitative isolated Ser result verified here.		N535K JCGA
+V617I	previous	JH2	FGFR4	19	70	T541I	0	541	agreement of all settings			
+V617F	previous	JH2	FGFR4	19	70	T541F	0	541	agreement of all settings			
+V625F	previous	JH2	FGFR4	19	70	I549F	0	549	agreement of all settings			
+S755R	previous	JH2	FGFR4	19	70	P691R	0	691	agreement of all settings			
+R426*	study	SH2	FGFR4	19	70				absent domain or not applicable			
+C427R	study	SH2	FGFR4	19	70				absent domain or not applicable			
+P37A	study	FERM	FGFR4	19	70				absent domain or not applicable			
+F240V	study	FERM	FGFR4	19	70				absent domain or not applicable			
+H380Y	study	FERM	FGFR4	19	70				absent domain or not applicable			
+T108A	previous	FERM	FGFR4	19	70				absent domain or not applicable			
+Y317H	previous	FERM	FGFR4	19	70				absent domain or not applicable			
+H345L	previous	FERM	FGFR4	19	70				absent domain or not applicable			
+I1065T	study	JH1	PTK2	20	32	K627T	0	627	agreement of all settings			
+V1110E	study	JH1	PTK2	20	32	P663E	0	663	agreement of all settings			
+E846D	previous	JH1	PTK2	20	32	R419D	0	419	agreement of all settings; N-terminal extension/domain edge			
+R867Q	previous	JH1	PTK2	20	32	I440Q	0	440	agreement of all settings			
+T875N	previous	JH1	PTK2	20	32	P447N	0	447	agreement of all settings			
+R938Q	previous	JH1	PTK2	20	32	R508Q	1	508	agreement of all settings			
+R1063H	previous	JH1	PTK2	20	32	G625H	0	625	agreement of all settings			
+G571R	study	JH2	PTK2	20	32	P444R	0	gap	sensitive: do not treat as established			
+V578I	study	JH2	PTK2	20	32	V451I	1	447	sensitive: do not treat as established			
+L805I	study	JH2	PTK2	20	32	L676I	1	676	agreement of all settings			
+H608N	previous	JH2	PTK2	20	32	H482N	1	482	agreement of all settings			
+L611S	previous	JH2	PTK2	20	32	K485S	0	485	agreement of all settings			
+V617I	previous	JH2	PTK2	20	32	T491I	0	491,490	sensitive: do not treat as established			
+V617F	previous	JH2	PTK2	20	32	T491F	0	491,490	sensitive: do not treat as established			
+V625F	previous	JH2	PTK2	20	32	I498F	0	498	agreement of all settings			
+S755R	previous	JH2	PTK2	20	32	Q624R	0	624	agreement of all settings			
+R426*	study	SH2	PTK2	20	32				absent domain or not applicable			
+C427R	study	SH2	PTK2	20	32				absent domain or not applicable			
+P37A	study	FERM	PTK2	20	32			gap	unresolved FERM			
+F240V	study	FERM	PTK2	20	32			gap,231,137	unresolved FERM			
+H380Y	study	FERM	PTK2	20	32			gap	unresolved FERM			
+T108A	previous	FERM	PTK2	20	32			107,gap	unresolved FERM			
+Y317H	previous	FERM	PTK2	20	32			gap	unresolved FERM			
+H345L	previous	FERM	PTK2	20	32			gap	unresolved FERM			
+G571R	study	JH2	PTK2B	22	1			gap,449,447	gap/outside local aligned core			
+V578I	study	JH2	PTK2B	22	1	V454I	1	454	agreement of all settings			
+L805I	study	JH2	PTK2B	22	1	L679I	1	679	agreement of all settings			
+H608N	previous	JH2	PTK2B	22	1	H485N	1	485	agreement of all settings			
+L611S	previous	JH2	PTK2B	22	1	K488S	0	488	agreement of all settings			
+V617I	previous	JH2	PTK2B	22	1	I493I	0	493	agreement of all settings; already WT			
+V617F	previous	JH2	PTK2B	22	1	I493F	0	493	agreement of all settings			
+V625F	previous	JH2	PTK2B	22	1	I501F	0	501	agreement of all settings			
+S755R	previous	JH2	PTK2B	22	1	F627R	0	627	agreement of all settings			
+G571R	study	JH2	ZAP70	27	15			gap	gap/outside local aligned core			
+V578I	study	JH2	ZAP70	27	15	V366I	1	366	agreement of all settings			
+L805I	study	JH2	ZAP70	27	15	L600I	1	593	sensitive: do not treat as established			
+H608N	previous	JH2	ZAP70	27	15	Y397N	0	397	agreement of all settings			
+L611S	previous	JH2	ZAP70	27	15	R400S	0	400	agreement of all settings			
+V617I	previous	JH2	ZAP70	27	15	Q406I	0	406	agreement of all settings			
+V617F	previous	JH2	ZAP70	27	15	Q406F	0	406	agreement of all settings			
+V625F	previous	JH2	ZAP70	27	15	V413F	1	413	agreement of all settings			
+S755R	previous	JH2	ZAP70	27	15	K541R	0	541	agreement of all settings			
+G571R	study	JH2	EPHA5	31	18			gap	gap/outside local aligned core			
+V578I	study	JH2	EPHA5	31	18	V704I	1	704	agreement of all settings			
+L805I	study	JH2	EPHA5	31	18	P939I	0	932	sensitive: do not treat as established			
+H608N	previous	JH2	EPHA5	31	18	N735N	0	735	agreement of all settings; already WT			
+L611S	previous	JH2	EPHA5	31	18	H738S	0	738	agreement of all settings			
+V617I	previous	JH2	EPHA5	31	18	T744I	0	744	agreement of all settings			
+V617F	previous	JH2	EPHA5	31	18	T744F	0	744	agreement of all settings			
+V625F	previous	JH2	EPHA5	31	18	V752F	1	752	agreement of all settings			
+S755R	previous	JH2	EPHA5	31	18	W880R	0	880	agreement of all settings			
+G571R	study	JH2	BTK	36	20			gap	gap/outside local aligned core			
+V578I	study	JH2	BTK	36	20	V427I	1	427	agreement of all settings			
+L805I	study	JH2	BTK	36	20	L652I	1	651	sensitive: do not treat as established			
+H608N	previous	JH2	BTK	36	20	K456N	0	456	agreement of all settings			
+L611S	previous	JH2	BTK	36	20	Q459S	0	459	agreement of all settings			
+V617I	previous	JH2	BTK	36	20	T465I	0	465	agreement of all settings			
+V617F	previous	JH2	BTK	36	20	T465F	0	465	agreement of all settings			
+V625F	previous	JH2	BTK	36	20	I473F	0	473	agreement of all settings	I473N: VUS, VCV000835039. Codon 473 precedes the BTK gatekeeper.		
+S755R	previous	JH2	BTK	36	20	E599R	0	599	agreement of all settings			
+G571R	study	JH2	IGF1R	40	19	K1023R	0	1023	agreement of all settings			
+V578I	study	JH2	IGF1R	40	19	V1030I	1	1030	agreement of all settings			
+L805I	study	JH2	IGF1R	40	19	I1266I	0	1266	agreement of all settings; already WT			
+H608N	previous	JH2	IGF1R	40	19	H1061N	1	1061	agreement of all settings			
+L611S	previous	JH2	IGF1R	40	19	R1064S	0	1064	agreement of all settings			R1064* Sugi (ClinVar index)
+V617I	previous	JH2	IGF1R	40	19	S1070I	0	1070	agreement of all settings			
+V617F	previous	JH2	IGF1R	40	19	S1070F	0	1070	agreement of all settings			
+V625F	previous	JH2	IGF1R	40	19	I1078F	0	1078	agreement of all settings			
+S755R	previous	JH2	IGF1R	40	19	Q1214R	0	1214	agreement of all settings			
+G571R	study	JH2	EPHA7	41	16			gap	gap/outside local aligned core			
+V578I	study	JH2	EPHA7	41	16	V662I	1	662	agreement of all settings			
+L805I	study	JH2	EPHA7	41	16	P897I	0	897,890	sensitive: do not treat as established			
+H608N	previous	JH2	EPHA7	41	16	N693N	0	693	agreement of all settings; already WT			
+L611S	previous	JH2	EPHA7	41	16	H696S	0	696	agreement of all settings			
+V617I	previous	JH2	EPHA7	41	16	T702I	0	702	agreement of all settings			
+V617F	previous	JH2	EPHA7	41	16	T702F	0	702	agreement of all settings			
+V625F	previous	JH2	EPHA7	41	16	V710F	1	710	agreement of all settings			
+S755R	previous	JH2	EPHA7	41	16	W838R	0	838	agreement of all settings			
+G571R	study	JH2	FES	44	2			578,gap,587	gap/outside local aligned core			
+V578I	study	JH2	FES	44	2	V587I	1	585,587,594	sensitive: do not treat as established			
+L805I	study	JH2	FES	44	2	L814I	1	814	agreement of all settings			
+H608N	previous	JH2	FES	44	2	N618N	0	618	agreement of all settings; already WT			
+L611S	previous	JH2	FES	44	2	R621S	0	621	agreement of all settings			R621H Sugi (ClinVar index)
+V617I	previous	JH2	FES	44	2	T627I	0	627	agreement of all settings			
+V617F	previous	JH2	FES	44	2	T627F	0	627	agreement of all settings			
+V625F	previous	JH2	FES	44	2	V635F	1	635	agreement of all settings			
+S755R	previous	JH2	FES	44	2	P762R	0	762	agreement of all settings			
+G571R	study	JH2	TXK	45	5			gap	gap/outside local aligned core			
+V578I	study	JH2	TXK	45	5	V296I	1	296	agreement of all settings			
+L805I	study	JH2	TXK	45	5	V520I	0	520	agreement of all settings			V520D Sugi (ClinVar index)
+H608N	previous	JH2	TXK	45	5	K325N	0	325	agreement of all settings			
+L611S	previous	JH2	TXK	45	5	Q328S	0	328	agreement of all settings			
+V617I	previous	JH2	TXK	45	5	I334I	0	334	agreement of all settings; already WT			
+V617F	previous	JH2	TXK	45	5	I334F	0	334	agreement of all settings			
+V625F	previous	JH2	TXK	45	5	V342F	1	342	agreement of all settings			
+S755R	previous	JH2	TXK	45	5	E468R	0	468	agreement of all settings			
+G571R	study	JH2	EPHB1	47	12			gap	gap/outside local aligned core			
+V578I	study	JH2	EPHB1	47	12	V648I	1	648	agreement of all settings			
+L805I	study	JH2	EPHB1	47	12	L878I	1	878	agreement of all settings			
+H608N	previous	JH2	EPHB1	47	12	N679N	0	679	agreement of all settings; already WT			
+L611S	previous	JH2	EPHB1	47	12	R682S	0	682	agreement of all settings			
+V617I	previous	JH2	EPHB1	47	12	T688I	0	688	agreement of all settings			
+V617F	previous	JH2	EPHB1	47	12	T688F	0	688	agreement of all settings			
+V625F	previous	JH2	EPHB1	47	12	I696F	0	696	agreement of all settings			
+S755R	previous	JH2	EPHB1	47	12	W826R	0	826	agreement of all settings			
+G571R	study	JH2	ROS1	51	11	G1971R	1	1971	agreement of all settings			
+V578I	study	JH2	ROS1	51	11	V1977I	1	1977	agreement of all settings			V1977A CanProVar
+L805I	study	JH2	ROS1	51	11	L2215I	1	2214,gap	sensitive: do not treat as established			
+H608N	previous	JH2	ROS1	51	11	N2008N	0	2008	agreement of all settings; already WT			
+L611S	previous	JH2	ROS1	51	11	K2011S	0	2011	agreement of all settings			
+V617I	previous	JH2	ROS1	51	11	L2017I	0	2017	agreement of all settings			
+V617F	previous	JH2	ROS1	51	11	L2017F	0	2017	agreement of all settings			
+V625F	previous	JH2	ROS1	51	11	I2025F	0	2025	agreement of all settings			
+S755R	previous	JH2	ROS1	51	11	P2163R	0	2163	agreement of all settings			
+G571R	study	JH2	FER	53	8			gap	gap/outside local aligned core			
+V578I	study	JH2	FER	53	8	V588I	1	588	agreement of all settings			
+L805I	study	JH2	FER	53	8	L814I	1	814	agreement of all settings			
+H608N	previous	JH2	FER	53	8	N619N	0	619	agreement of all settings; already WT			
+L611S	previous	JH2	FER	53	8	K622S	0	622	agreement of all settings			
+V617I	previous	JH2	FER	53	8	T628I	0	628	agreement of all settings			
+V617F	previous	JH2	FER	53	8	T628F	0	628	agreement of all settings			
+V625F	previous	JH2	FER	53	8	I636F	0	636	agreement of all settings			
+S755R	previous	JH2	FER	53	8	P762R	0	762	agreement of all settings			
+G571R	study	JH2	TEC	57	9			gap	gap/outside local aligned core			
+V578I	study	JH2	TEC	57	9	V395I	1	391,395	sensitive: do not treat as established			
+L805I	study	JH2	TEC	57	9	I619I	0	619	agreement of all settings; already WT			I619M Sugi (ClinVar index)
+H608N	previous	JH2	TEC	57	9	K424N	0	424	agreement of all settings			
+L611S	previous	JH2	TEC	57	9	Q427S	0	427	agreement of all settings			
+V617I	previous	JH2	TEC	57	9	T433I	0	433	agreement of all settings			
+V617F	previous	JH2	TEC	57	9	T433F	0	433	agreement of all settings			
+V625F	previous	JH2	TEC	57	9	V441F	1	441	agreement of all settings			
+S755R	previous	JH2	TEC	57	9	E567R	0	567	agreement of all settings			
+G571R	study	JH2	EPHA1	63	14			647	gap/outside local aligned core			
+V578I	study	JH2	EPHA1	63	14	V653I	1	654	sensitive: do not treat as established			
+L805I	study	JH2	EPHA1	63	14	L880I	1	880	agreement of all settings			
+H608N	previous	JH2	EPHA1	63	14	H684N	1	684	agreement of all settings			
+L611S	previous	JH2	EPHA1	63	14	H687S	0	687	agreement of all settings			
+V617I	previous	JH2	EPHA1	63	14	T693I	0	693	agreement of all settings			
+V617F	previous	JH2	EPHA1	63	14	T693F	0	693	agreement of all settings			
+V625F	previous	JH2	EPHA1	63	14	I701F	0	701	agreement of all settings			
+S755R	previous	JH2	EPHA1	63	14	G828R	0	828	agreement of all settings			

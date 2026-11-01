@@ -1,0 +1,137 @@
+target_gene	observed_variant	resource	source_URL	example_record	relationship_to_JAK2
+ABL1	E153Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	ABL1 p.Glu153Gln Uncertain significance Single submitter	C427R same site
+ABL1	P441=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	p.Pro441= Single submitter	S755R same site
+ABL1	P480=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	p.Pro480= Multiple submitters	V1110E same site
+ABL1	R152H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	ABL1 p.Arg152His Uncertain significance Single submitter	R426* same site
+ABL1	R239C	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	ABL1 p.Arg239Cys Uncertain significance Single submitter	E846D same site
+ABL1	R239H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/ABL1	ABL1 p.Arg239His Uncertain significance Single submitter	E846D same site
+CSK	M192T	Sugi (ClinVar index)	https://sugi.bio/variant/gene/CSK	CSK p.Met192Thr Uncertain significance Single submitter	E846D same site
+EGFR	A955T	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	EGFR p.Ala955Thr Uncertain significance Multiple submitters	V1110E same site
+EGFR	D916=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Asp916= Multiple submitters lung cancer	S755R same site
+EGFR	D916N	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Asp916Asn Multiple submitters EGFR-related lung cancer	S755R same site
+EGFR	E709A	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55241678 | A | C | 18 / 28 | p.E709A | c.2126A>C | COSV51772956 | Tier1 | 2 / 355	E846D same site
+EGFR	E709D	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	EGFR p.Glu709Asp Uncertain significance Multiple submitters	E846D projected allele
+EGFR	E709G	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55241678 | A | G | 18 / 28 | p.E709G | c.2126A>G | COSV51765252 | Tier2 | 3 / 355	E846D same site
+EGFR	E709K	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55241677 | G | A | 18 / 28 | p.E709K | c.2125G>A | COSV51767260 | Tier1 | 4 / 355	E846D same site
+EGFR	E709V	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55241678 | A | T | 18 / 28 | p.E709V | c.2126A>T | COSV51766584 | Tier2 | 1 / 355	E846D same site
+EGFR	H773=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.His773= Multiple submitters hereditary neoplastic syndrome	H608N same site
+EGFR	H773L	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55249020 | A | T | 20 / 28 | p.H773L | c.2318A>T | COSV51792805 | Tier1 | 1 / 355	H608N same site
+EGFR	L730R	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	EGFR p.Leu730Arg Conflicting Single submitter	R867Q same site
+EGFR	L782=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Leu782= Multiple submitters lung cancer	V617I same site; V617F same site
+EGFR	L799=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Leu799= Single submitter lung cancer	R938Q same site
+EGFR	R776=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Arg776= Multiple submitters EGFR-related lung cancer	L611S same site
+EGFR	R776C	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	EGFR p.Arg776Cys Uncertain significance Multiple submitters	L611S same site
+EGFR	R776H	JCGA	https://www.jcga-scc.jp/en/gene/EGFR	chr7:55249029 | G | A | 20 / 28 | p.R776H | c.2327G>A | COSV51780730 | Tier2 | 1 / 355	L611S same site
+EGFR	R776H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	EGFR p.Arg776His Conflicting Single submitter	L611S same site
+EGFR	V742=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Val742= Multiple submitters hereditary neoplastic syndrome	V578I same site
+EGFR	V742I	Sugi (ClinVar index)	https://sugi.bio/variant/gene/EGFR	p.Val742Ile Single submitter diffuse midline glioma, H3 K27-altered ⚠	V578I projected allele
+FES	R621H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FES	FES p.Arg621His Uncertain significance Single submitter	L611S same site
+FGFR1	D503=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Asp503= Single submitter Pfeiffer syndrome	G571R same site
+FGFR1	D503E	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Asp503Glu Uncertain significance Single submitter	G571R same site
+FGFR1	G499R	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Gly499Arg Uncertain significance Multiple submitters	R867Q same site
+FGFR1	I560=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Ile560= Single submitter Pfeiffer syndrome	V625F same site
+FGFR1	L696=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Leu696= Single submitter Pfeiffer syndrome	I1065T same site
+FGFR1	L754=	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR1/significance/any	 NM_023110. 3 (FGFR1) : c. 2262G>A (p. Leu754=) rs56341011 0.00711	L805I same site
+FGFR1	L754=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Leu754= Multiple submitters osteoglophonic dysplasia	L805I same site
+FGFR1	N543D	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Asn543Asp Uncertain significance Single submitter	H608N same site
+FGFR1	N546K	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Asn546Lys Multiple submitters encephalocraniocutaneous lipomatosis	L611S same site
+FGFR1	P702=	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR1/significance/any	 NM_023110. 3 (FGFR1) : c. 2106C>T (p. Pro702=) rs777061347 0.00003	S755R same site
+FGFR1	P702=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Pro702= Multiple submitters hypogonadotropic hypogonadism 2 with or without anosmia	S755R same site
+FGFR1	R475Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg475Gln Uncertain significance Multiple submitters	E846D same site
+FGFR1	R475W	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg475Trp Uncertain significance Multiple submitters	E846D same site
+FGFR1	R507C	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg507Cys Uncertain significance Single submitter	T875N same site
+FGFR1	R507H	ClinVar Miner (index)	https://clinvarminer.genetics.utah.edu/variants-by-gene/FGFR1/significance/any	 NM_023110. 3 (FGFR1) : c. 1520G>A (p. Arg507His) rs369356672 0.00007	T875N same site
+FGFR1	R507H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg507His Conflicting Single submitter	T875N same site
+FGFR1	R507L	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg507Leu Uncertain significance Multiple submitters	T875N same site
+FGFR1	R570=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	p.Arg570= Single submitter Jackson-Weiss syndrome	R938Q same site
+FGFR1	R570Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg570Gln Uncertain significance Single submitter	R938Q projected allele
+FGFR1	R570W	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR1	FGFR1 p.Arg570Trp Uncertain significance Multiple submitters	R938Q same site
+FGFR2	N546D	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	172 | cs40009 | N546D | 1 | PF07714 PF00069 | Gastric Cancer | | COSMIC |	H608N same site
+FGFR2	N546K	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	171 | cs12323 | N546K | 0 | PF07714 PF00069 | Head and Neck Cancer | 25252913 | COSMIC |	H608N same site
+FGFR2	N546S	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	173 | cs76992 | N546S | 1 | PF07714 PF00069 | Intestines Cancer | | COSMIC |	H608N same site
+FGFR2	N549H	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	180 | cs52069 | N549H | 1 | PF07714 PF00069 | Uterine Cancer | 22383975†www.ncbi.nlm.nih.gov | COSMIC |	L611S same site
+FGFR2	N549H	JCGA	https://www.jcga-scc.jp/en/gene/FGFR2	chr10:123258036 | T | G | 12 / 18 | p.N549H | c.1645A>C | COSV60640393 | Tier1 | 2 / 86	L611S same site
+FGFR2	N549K	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	181 | cs27634 | N549K | 0 | PF07714 PF00069 | Breast Cancer | | COSMIC |	L611S same site
+FGFR2	N549K	JCGA	https://www.jcga-scc.jp/en/gene/FGFR2	chr10:123258034 | A | T | 12 / 18 | p.N549K | c.1647T>A | COSV60639738 | Tier1 | 1 / 86	L611S same site
+FGFR2	N549S	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=FGFR2	182 | cs36071 | N549S | 1 | PF07714 PF00069 | Liver Cancer | | COSMIC |	L611S projected allele
+FGFR2	N549S	JCGA	https://www.jcga-scc.jp/en/gene/FGFR2	chr10:123258035 | T | C | 12 / 18 | p.N549S | c.1646A>G | COSV60645338 | Tier1 | 1 / 86	L611S projected allele
+FGFR3	A499=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Ala499= Single submitter	T875N same site
+FGFR3	A499P	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Ala499Pro Uncertain significance Single submitter	T875N same site
+FGFR3	N537=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn537= Single submitter	H608N same site
+FGFR3	N540=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn540= Multiple submitters	L611S same site
+FGFR3	N540D	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn540Asp Multiple submitters camptodactyly-tall stature-scoliosis-hearing loss syndrome	L611S same site
+FGFR3	N540H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn540His Single submitter Short stature	L611S same site
+FGFR3	N540K	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn540Lys Multiple submitters FGFR3-related chondrodysplasia	L611S same site
+FGFR3	N540S	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Asn540Ser Pathogenic/Likely pathogenic Multiple submitters	L611S projected allele
+FGFR3	N540T	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Asn540Thr Multiple submitters FGFR3-related disorder	L611S same site
+FGFR3	P696=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Pro696= Multiple submitters	S755R same site
+FGFR3	P735=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Pro735= Multiple submitters	V1110E same site
+FGFR3	R498=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Arg498= Single submitter	G571R same site
+FGFR3	R498Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Arg498Gln Uncertain significance Single submitter	G571R same site
+FGFR3	R498W	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Arg498Trp Uncertain significance Multiple submitters	G571R same site
+FGFR3	R564Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Arg564Gln Uncertain significance Single submitter	R938Q projected allele
+FGFR3	R564W	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Arg564Trp Uncertain significance Single submitter	R938Q same site
+FGFR3	T546K	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	p.Thr546Lys Single submitter FGFR3-related chondrodysplasia	V617I same site; V617F same site
+FGFR3	V505I	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR3	FGFR3 p.Val505Ile Conflicting Single submitter	V578I projected allele
+FGFR4	N535K	JCGA	https://www.jcga-scc.jp/en/gene/FGFR4	chr5:176522416 | C | A | 12 / 18 | p.N535K | c.1605C>A | COSV52801581 | Tier1 | 1 / 81	L611S same site
+FGFR4	R464P	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FGFR4	FGFR4 p.Arg464Pro Uncertain significance Single submitter	E846D same site
+FRK	R143G	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FRK	FRK p.Arg143Gly Uncertain significance Single submitter	R426* same site
+FRK	T297S	Sugi (ClinVar index)	https://sugi.bio/variant/gene/FRK	FRK p.Thr297Ser Uncertain significance Single submitter	V617I same site; V617F same site
+IGF1R	R1064*	Sugi (ClinVar index)	https://sugi.bio/variant/gene/IGF1R	p.Arg1064Ter Single submitter	L611S same site
+NTRK1	D537E	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK1	91 cs26426 D537E 2PF00069†pfam.sanger.ac.uk PF07714†pfam.sanger.ac.uk Ovarian Cancer21720365†www.ncbi.nlm.nih.gov COSMIC†cancer.sanger.ac.ukSHC1, SHC2, PLCG1, GRB2,	T875N same site
+NTRK1	D537E	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Asp537Glu Uncertain significance Single submitter	T875N same site
+NTRK1	E528*	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	p.Glu528Ter Single submitter hereditary sensory and autonomic neuropathy type 4	R867Q same site
+NTRK1	H571Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	p.His571Gln Single submitter hereditary sensory and autonomic neuropathy type 4 ⚠	H608N same site
+NTRK1	P768H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Pro768His Uncertain significance Single submitter	V1110E same site
+NTRK1	P768L	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	p.Pro768Leu Multiple submitters hereditary sensory and autonomic neuropathy type 4	V1110E same site
+NTRK1	P768S	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK1	136 | cs17994 | P768S | -1 | PF00069†pfam.sanger.ac.uk PF07714†pfam.sanger.ac.uk | Uterine Cancer | 23104009†www.ncbi.nlm.nih.gov | COSMIC†cancer.sanger.ac.uk | SHC1, SHC2, PLCG1, GRB2,	V1110E same site
+NTRK1	R507C	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK1	84 cs43779 R507C-3 Urinary Bladder Cancer COSMIC†cancer.sanger.ac.uk	E846D same site
+NTRK1	R507C	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Arg507Cys Uncertain significance Multiple submitters	E846D same site
+NTRK1	R574C	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Arg574Cys Uncertain significance Single submitter	L611S same site
+NTRK1	R574H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Arg574His Uncertain significance Multiple submitters	L611S same site
+NTRK1	R574S	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Arg574Ser Uncertain significance Single submitter	L611S projected allele
+NTRK1	V541L	Sugi (ClinVar index)	https://sugi.bio/variant/gene/NTRK1	NTRK1 p.Val541Leu Uncertain significance Multiple submitters	V578I same site
+NTRK3	G608C	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	172 | cs76628 | G608C | -3 | PF07714†pfam.sanger.ac.uk PF00069†pfam.sanger.ac.uk | Lung Cancer | | COSMIC†cancer.sanger.ac.uk | MAPK1	V617I same site; V617F same site
+NTRK3	G608S	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	170 | cs11530 | G608S | 0 | PF07714†pfam.sanger.ac.uk PF00069†pfam.sanger.ac.uk | Intestines Cancer | 12738854†www.ncbi.nlm.nih.gov | COSMIC†cancer.sanger.ac.uk | MAPK1	V617I same site; V617F same site
+NTRK3	H599Y	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	166 | cs50987 | H599Y | 2 | PF07714†pfam.sanger.ac.uk PF00069†pfam.sanger.ac.uk | Pancreatic Cancer | 16941478†www.ncbi.nlm.nih.gov | COSMIC†cancer.sanger.ac.uk | MAPK1	H608N same site
+NTRK3	K602R	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	167 | cs93242 | K602R | 2 | PF07714†pfam.sanger.ac.uk PF00069†pfam.sanger.ac.uk | Intestines Cancer | 22895193†www.ncbi.nlm.nih.gov | COSMIC†cancer.sanger.ac.uk | MAPK1	L611S same site
+NTRK3	K602T	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	168 | cs34357 | K602T | -1 | PF07714†pfam.sanger.ac.uk PF00069†pfam.sanger.ac.uk | Skin Cancer(Melanoma) | 22842228†www.ncbi.nlm.nih.gov | COSMIC†cancer.sanger.ac.uk | MAPK1	L611S same site
+NTRK3	R535M	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=NTRK3	145 | cs95025 | R535M | -1 | | Lung Cancer | | COSMIC†cancer.sanger.ac.uk |	E846D same site
+PTK7	P1048L	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK7	PTK7 p.Pro1048Leu Uncertain significance Single submitter	V1110E same site
+PTK7	R860Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK7	PTK7 p.Arg860Gln Uncertain significance Single submitter	L611S same site
+PTK7	R866Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/PTK7	PTK7 p.Arg866Gln Uncertain significance Single submitter	V617I same site; V617F same site
+RET	A750G	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Ala750Gly Uncertain significance Multiple submitters	T875N same site
+RET	A750V	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	183 | cs64164 | A750V | 0 | PF07714 PF00069 | Ovarian Cancer | | COSMIC | STAT3, SHC1, GRB10, RET,	T875N same site
+RET	G748C	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	182 | cs1409 | G748C | -3 | PF07714 PF00069 | Thyroid Carcinoma | 10622534 | COSMIC | STAT3, SHC1, GRB10, RET,	G571R same site
+RET	G748D	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Gly748Asp Uncertain significance Multiple submitters	G571R same site
+RET	H786=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.His786= Multiple submitters hereditary neoplastic syndrome	H608N same site
+RET	H786Y	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.His786Tyr Uncertain significance Multiple submitters	H608N same site
+RET	I803=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Ile803= Multiple submitters hereditary neoplastic syndrome	V625F same site
+RET	K789E	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	196 | cs37412 | K789E | 1 | PF07714 PF00069 | Intestines Cancer | | COSMIC | STAT3, SHC1, GRB10, RET,	L611S same site
+RET	K789E	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Lys789Glu Conflicting Single submitter	L611S same site
+RET	L1005=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Leu1005= Multiple submitters multiple endocrine neoplasia type 2	L805I same site
+RET	L947=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Leu947= Multiple submitters hereditary neoplastic syndrome	I1065T same site
+RET	P992L	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	276 | cs89530 | P992L | -3 | PF07714 PF00069 | Liver Cancer | | COSMIC | STAT3, SHC1, GRB10, RET,	V1110E same site
+RET	R721Q	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	178 | cs18851 | R721Q | 1 | | Gastric Cancer | | COSMIC |	E846D same site
+RET	R721Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Arg721Gln Uncertain significance Multiple submitters	E846D same site
+RET	R721W	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=RET	177 | cs10517 | R721W | -3 | | Uterine Cancer | | COSMIC |	E846D same site
+RET	R813=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Arg813= Multiple submitters hereditary neoplastic syndrome	R938Q same site
+RET	R813G	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Arg813Gly Uncertain significance Multiple submitters	R938Q same site
+RET	R813Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Arg813Gln Uncertain significance Multiple submitters	R938Q projected allele
+RET	R813W	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	RET p.Arg813Trp Uncertain significance Multiple submitters	R938Q same site
+RET	S795=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Ser795= Multiple submitters multiple endocrine neoplasia type 2A	V617I same site; V617F same site
+RET	T742=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/RET	p.Thr742= Multiple submitters hereditary neoplastic syndrome	R867Q same site
+ROS1	V1977A	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=ROS1	75 | rs145889490 | V1977A | Cluster,1000Genome	V578I same site
+SYK	Q43=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/SYK	p.Gln43= Multiple submitters	C427R same site
+SYK	R42H	CanProVar	https://lilab.life.sjtu.edu.cn/canprovar2/inforprotein.php?display%5B1%5D=snp&display%5B2%5D=DEP&display%5B3%5D=COSMIC&display%5B4%5D=TCGA&display%5B5%5D=HPI&display%5B6%5D=OMIM&display%5B7%5D=Biomart&id=SYK	3 | cs16557 | R42H | 0 | PF00017†pfam.sanger.ac.uk | Prostate Cancer | | COSMIC†cancer.sanger.ac.uk | PTK2, STAT3, SHC1, PLCG2,	R426* same site
+SYK	R434=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/SYK	p.Arg434= Multiple submitters	L611S same site
+SYK	R434Q	Sugi (ClinVar index)	https://sugi.bio/variant/gene/SYK	SYK p.Arg434Gln Uncertain significance Single submitter	L611S same site
+SYK	V447I	Sugi (ClinVar index)	https://sugi.bio/variant/gene/SYK	SYK p.Val447Ile Uncertain significance Single submitter	V625F same site
+TEC	I619M	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TEC	TEC p.Ile619Met Uncertain significance Single submitter	L805I same site
+TIE1	K859N	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TIE1	TIE1 p.Lys859Asn Uncertain significance Single submitter	R867Q same site
+TNK2	P148=	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	p.Pro148= Single submitter	G571R same site
+TNK2	P148H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	p.Pro148His Single submitter ⚠	G571R same site
+TNK2	R191H	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	TNK2 p.Arg191His Uncertain significance Single submitter	L611S same site
+TNK2	R191P	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	TNK2 p.Arg191Pro Uncertain significance Multiple submitters	L611S same site
+TNK2	T152M	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TNK2	p.Thr152Met Single submitter ⚠	T875N same site
+TXK	V520D	Sugi (ClinVar index)	https://sugi.bio/variant/gene/TXK	TXK p.Val520Asp Uncertain significance Single submitter	L805I same site
