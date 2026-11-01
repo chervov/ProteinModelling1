@@ -60,12 +60,17 @@ The AVI model calculates the exact contribution (importance weight) of each biol
 | **AlphaMissense** | Deep Learning Protein Fold | **0.2686** | **Ambiguous / Tolerated** | Under-scores GOF allosteric mutations that retain folding competence |
 | **SIFT** | Homology & Alignment | **0.00** | **Deleterious** | Invariant glycine across evolutionary kinase homologs |
 | **PolyPhen-2** | Structure & Features | **1.00** | **Probably Damaging** | Highest confidence damaging prediction due to severe steric clash |
-| **Thermodynamics ($\Delta\Delta G$)**| Consensus Biophysical Forcefield | **$+3.85\text{ kcal/mol}$** | **Severely Destabilizing** | Massive steric clash and charge insertion ($\Delta\Delta G \gg 2.5$) |
+| **Theoretical $\Delta\Delta G$ (Estimation)**| Consensus Biophysical Forcefield | **$+3.85\text{ kcal/mol}$** | **Severely Destabilizing** | Massive steric clash and charge insertion ($\Delta\Delta G \gg 2.5$) |
 | **ClinVar / Literature** | Clinical Genomics | *Documented in MPNs* | **Pathogenic / Driver** | Documented in chronic myeloproliferative neoplasms and erythrocytosis |
 
 ---
 
-## 5. Thermodynamic Stability ($\Delta\Delta G$): Multi-Tool Comparison
+## 5. Theoretical Thermodynamic Stability (Estimation)
+
+> [!IMPORTANT]
+> **Methodological Note on Thermodynamic Values ($\Delta\Delta G$):**
+> The thermodynamic free energy stability values presented below represent **theoretical biophysical estimations** derived from structural rules (steric clash volumes, buried charge penalties, cavity formation). They are **NOT** live local executions of FoldX or Rosetta software binaries or external web servers. AlphaGenome AVI scores and Ensembl genomic coordinates, in contrast, are verified and queried directly from live APIs.
+ ($\Delta\Delta G$): Multi-Tool Comparison
 
 $$\Delta\Delta G = \Delta G_{\text{mutant}} - \Delta G_{\text{wild-type}}$$
 
