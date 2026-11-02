@@ -1,0 +1,56 @@
+{
+  "seeds_cluster1": [
+    "S383G",
+    "I62V",
+    "I878V",
+    "T138H",
+    "S512L"
+  ],
+  "seeds_cluster2": [
+    "S703I",
+    "A634D",
+    "C787F",
+    "H596D",
+    "V985I"
+  ],
+  "features": [
+    "esm1b",
+    "alphamissense",
+    "ddg_closed",
+    "ddg_open",
+    "ddg_delta",
+    "cadd",
+    "foldx",
+    "sift",
+    "polyphen2",
+    "blosum62",
+    "clinpred"
+  ],
+  "clip": {
+    "ddg_closed": [
+      -10,
+      10
+    ],
+    "ddg_open": [
+      -10,
+      10
+    ],
+    "ddg_delta": [
+      -10,
+      10
+    ]
+  },
+  "ranges": {
+    "esm1b": 28.553,
+    "alphamissense": 0.9579,
+    "ddg_closed": 20.0,
+    "ddg_open": 20.0,
+    "ddg_delta": 20.0,
+    "cadd": 34.999,
+    "foldx": 78.8119,
+    "sift": 1.0,
+    "polyphen2": 1.0,
+    "blosum62": 7.0,
+    "clinpred": 0.9965
+  }
+}
