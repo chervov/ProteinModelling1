@@ -1,0 +1,5 @@
+variant_id,mutfunc_pathogenicity,mutfunc_stability_ddg,mutfunc_pdockq,mutfunc_note,mapped,retrieved,source
+A1005E,1.00,5.02,0.97,,yes,2026-11-02,mutfunc.com build 26.06-8cf8db4
+I617T,0.19,2.39,,monomer: P23458,yes,2026-11-02,mutfunc.com build 26.06-8cf8db4
+A1005D,,,,,no,2026-11-02,mutfunc.com build 26.06-8cf8db4
+H647Q,,,,,no,2026-11-02,mutfunc.com build 26.06-8cf8db4
