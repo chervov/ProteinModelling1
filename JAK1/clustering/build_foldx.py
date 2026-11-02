@@ -1,31 +1,32 @@
-"""FoldX ddG for JAK1 in EV1 order, from the ProtVar extract already in this repository.
+"""Precomputed FoldX ddG for JAK1, in EV1 order.
 
-The paper's "MutFunc score" is ambiguous - today's mutfunc returns four columns
-(Pathogenicity, Stability ddG, pDockQ, Pocket score) - but its Stability column is FoldX,
-and mutfunc covers only ~8% of variants because it needs structural coverage.
+Not computed here. EBI ProtVar publishes FoldX v5.0 ddG on AlphaFold2 models across the human
+proteome; external_data/protvar_foldx_jak_src.csv is the extract for the four JAKs plus SRC,
+and this reshapes JAK1 (P23458) onto the Dataset EV1 row set.
 
-external_data/protvar_foldx_jak_src.csv already holds FoldX v5 ddG computed on AlphaFold2
-models for all four JAKs, with JAK1 (P23458) at 20,805 substitutions. That is the same
-quantity at roughly twelve times the coverage, so it is used instead.
+The 2025.02.10 ProtVar release no longer applies the pLDDT >= 70 filter that earlier releases
+did, so a `high_confidence` flag is added: low-pLDDT rows are biased toward ddG near zero,
+which reads as "tolerated" when the model simply has no structure to judge.
 """
 import pathlib
 
 import pandas as pd
 
 HERE = pathlib.Path(__file__).parent
-SRC = "https://raw.githubusercontent.com/chervov/ProteinModelling1/main/external_data/protvar_foldx_jak_src.csv"
+SRC = ("https://raw.githubusercontent.com/chervov/ProteinModelling1/main/"
+       "external_data/protvar_foldx_jak_src.csv")
+OUT = HERE / "jak1_ddg_foldx_precomputed.csv"
 
 d = pd.read_csv(SRC)
 j = d[d.uniprot_accession == "P23458"].copy()
-print(f"ProtVar FoldX rows for JAK1 (P23458): {len(j):,}")
 j["variant_id"] = j.wild_type + j.uniprot_position.astype(str) + j.mutated_type
 j = j[j.wild_type != j.mutated_type]
-print(f"after dropping self-substitutions: {len(j):,}; distinct: {j.variant_id.nunique():,}")
+print(f"ProtVar FoldX rows for JAK1 (P23458): {len(j):,}; "
+      f"distinct substitutions: {j.variant_id.nunique():,}")
 
-# one value per substitution; check there is no ambiguity to resolve
 g = j.groupby("variant_id").foldx_ddg
-print(f"substitutions with >1 row: {(g.size() > 1).sum():,}; "
-      f"max spread {(g.max() - g.min()).max():.4f}")
+print(f"substitutions appearing more than once: {(g.size() > 1).sum():,} "
+      f"(max spread {(g.max() - g.min()).max():.4f}) - nothing to aggregate")
 
 agg = j.groupby("variant_id").agg(foldx_ddg=("foldx_ddg", "max"),
                                   plddt=("plddt", "max"))
@@ -33,27 +34,23 @@ agg = j.groupby("variant_id").agg(foldx_ddg=("foldx_ddg", "max"),
 base = pd.read_csv(HERE / "jak1_blosum62.csv")[["variant_id", "wt", "pos", "alt", "cluster"]]
 out = base.copy()
 out["foldx_ddg"] = out.variant_id.map(agg.foldx_ddg).round(4)
-out["plddt"] = out.variant_id.map(agg.plddt)
-out.to_csv(HERE / "jak1_foldx.csv", index=False)
+out["plddt"] = out.variant_id.map(agg.plddt).round(2)
+# 1 where the AlphaFold model is confident enough to trust the ddG, 0 where it is not,
+# blank where there is no value at all
+out["high_confidence"] = out.plddt.ge(70).astype("Int64").where(out.plddt.notna())
+out.to_csv(OUT, index=False)
 
 real = (base.wt != base.alt).sum()
 n = out.foldx_ddg.notna().sum()
-print(f"\nwrote jak1_foldx.csv: {len(out):,} rows in EV1 order; "
-      f"{n:,} of {real:,} ({n / real:.1%})")
-print(f"   ddG range {out.foldx_ddg.min():.2f} .. {out.foldx_ddg.max():.2f} kcal/mol, "
+hi = (out.high_confidence == 1).sum()
+print(f"\nwrote {OUT.name}: {len(out):,} rows in EV1 order")
+print(f"   populated       {n:,} of {real:,} ({n / real:.1%})")
+print(f"   high_confidence {hi:,} ({hi / n:.1%} of populated); "
+      f"low {int((out.high_confidence == 0).sum()):,}")
+print(f"   ddG range {out.foldx_ddg.min():.2f} .. {out.foldx_ddg.max():.2f}, "
       f"median {out.foldx_ddg.median():.3f}")
-print(f"   positions covered: {out.loc[out.foldx_ddg.notna(), 'pos'].nunique():,} of 1,154")
-
-# which positions are missing, and why
-missing_pos = sorted(set(range(1, 1155)) - set(out.loc[out.foldx_ddg.notna(), "pos"]))
-print(f"   positions with no FoldX at all: {len(missing_pos)}")
-if missing_pos:
-    print(f"      {missing_pos[:20]}{' ...' if len(missing_pos) > 20 else ''}")
-have = out.dropna(subset=["foldx_ddg"])
-print(f"   pLDDT where covered: median {have.plddt.median():.1f}, "
-      f"min {have.plddt.min():.1f}")
-
-# sign convention check against a few known destabilising changes
-print("\nsample (FoldX convention: positive = destabilising):")
-print(out[out.variant_id.isin(["A1005E", "I617T", "H647Q", "P815S", "G571R"])]
-      [["variant_id", "foldx_ddg", "plddt"]].to_string(index=False))
+print(f"   median ddG: high-confidence {out.loc[out.high_confidence == 1, 'foldx_ddg'].median():.3f}"
+      f", low {out.loc[out.high_confidence == 0, 'foldx_ddg'].median():.3f}")
+print(f"   positions covered {out.loc[out.foldx_ddg.notna(), 'pos'].nunique():,} of 1,154")
+print("\nhead:")
+print(out.head(4).to_string(index=False))
