@@ -26,6 +26,31 @@ responds, and there is a Swagger UI at `/ProtVar/api/swagger-ui/index.html` for 
 guessed endpoints `/api/mapping/{acc}/accession` and `/api/download/stream` both 404 — use the
 Swagger listing rather than inventing paths.)
 
+## 1b. mutfunc's ddG is this same number — verified across the range
+
+mutfunc returns a `pred_ddg` column. It is the same FoldX computation, checked on a spread of
+variants chosen from low, middling and extreme ddG plus some low-pLDDT positions
+([`verify_mutfunc_ddg.py`](verify_mutfunc_ddg.py)):
+
+| variant | pLDDT | ProtVar FoldX | mutfunc `pred_ddg` |
+|---|--:|--:|--:|
+| G1068W | 97.8 | **72.5022** | **72.5022** |
+| E667M | 96.4 | −6.1182 | −6.1182 |
+| A1005G | 96.2 | 1.1230 | 1.1230 |
+| A1005S | 96.2 | 0.9601 | 0.9601 |
+| A146E | 67.3 | 0.8096 | 0.8096 |
+
+**Maximum absolute difference 0.000050** over the five comparable — identical to four decimals, and
+agreeing even on the +72.50 clash artefact. So mutfunc and ProtVar are serving the same FoldX output
+(whether one sources the other, or both ran FoldX on the same AlphaFold2 model, is not visible from
+outside and does not matter in use).
+
+**But mutfunc mapped only 6 of the 12 requested**, and the misses are not explained by model
+confidence: `G1068Y` and `G1068F` are absent at pLDDT 97.8 while `G1068W` at the same position is
+present. Coverage is patchy per *substitution*, not merely per position, for reasons not visible
+externally. Which is the practical argument for taking FoldX from ProtVar: **94.9% against roughly
+8%, for numbers that are bit-for-bit the same where both exist.**
+
 ## 2. Coverage, and what the gaps are
 
 | | |
