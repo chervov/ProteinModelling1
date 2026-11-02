@@ -183,10 +183,34 @@ themselves. Our PolyPhen-2 run reaching 100% shows a full native run gives compl
 their 56.3% was a partial one. The mechanism remains unknown, but it is a question about their
 pipeline, not a shortfall in this one.
 
-## Clustering
+## Clustering — done
 
-Once the matrix is assembled the clustering itself is **semi-supervised K-means on Gower
-distance, seeded with 10 labelled variants**, per the paper's Appendix S3. The comparison that is
-currently missing from this project is a **per-variant** agreement measure — Adjusted Rand Index
-and a confusion matrix against the EV1 labels — rather than only cluster sizes and marginal
-statistics.
+**Semi-supervised K-means on Gower distance, seeded with the 10 labelled variants** named in
+Appendix §2.2, run on all 21,926 substitutions and compared with EV1 variant by variant. Full
+write-up: **[`clustering_jak1_results.md`](clustering_jak1_results.md)**. Scripts
+[`cluster_jak1.py`](cluster_jak1.py) and [`compare_clustering.py`](compare_clustering.py); output
+[`jak1_clustering_rebuilt.csv`](jak1_clustering_rebuilt.csv) (both labels on every row) and
+[`jak1_clustering_comparison.json`](jak1_clustering_comparison.json).
+
+| | |
+|---|--:|
+| same label as EV1 | **18,608 / 21,926 — 84.87%** |
+| **Adjusted Rand Index** | **0.4836** |
+| Cohen's κ | 0.6737 |
+| cluster sizes, paper → rebuilt | 7,559 / 14,367 → **8,401 / 13,525** |
+| label-permutation null | 53.6% |
+
+So the two-cluster structure reproduces in outline, well beyond chance, but **ARI 0.48 is moderate**
+— one variant in seven is assigned differently, concentrated in the intermediate band where no
+feature is decisive. Four headline findings:
+
+1. **`T138H`, one of the ten published seeds, is not a JAK1 variant** — position 138 is Tyr. The
+   clustering necessarily ran on 4 + 5 anchors. `Y138H` is the likely intent and changes nothing.
+2. **The seeds do not matter.** 25 random 5 + 5 draws from the EV1 clusters give ARI 0.4833–0.4839,
+   indistinguishable from the named seeds. The supervision only *orients* the result (which pole is
+   "Cluster 1"); the structure is unsupervised.
+3. **PolyPhen-2 dominates** (leave-one-out ΔARI −0.090, twice the next five combined), which makes
+   the paper's silence on HumDiv vs HumVar the most consequential ambiguity in reproducing it.
+4. **The ΔΔG features subtract.** `ddg_delta` is inert to four decimals; dropping all three ΔΔG
+   features gives the *closest* agreement with the paper of anything tried (ARI 0.4917, sizes
+   7,868 / 14,058). Consistent with the clash contamination in `build_rosetta_ddg_jak1_info.md` §3.
