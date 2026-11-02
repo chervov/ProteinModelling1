@@ -115,7 +115,36 @@ PyRosetta does, and the diagnosis in `conclusions_ddG_difference_feature.md` §�
 folding free energy approaches 72 kcal/mol. The median of 1.135 is the honest scale. Rank these
 values; do not read the tail as kcal/mol.
 
-## 6. Where this leaves the paper's feature list
+## 6. What was and was not obtained — be clear about this
+
+**No mutfunc data was collected at scale, and there is no mutfunc fetching script in this
+repository.** What exists:
+
+| | |
+|---|---|
+| [`jak1_foldx.csv`](jak1_foldx.csv) | the **substitute** — FoldX ΔΔG at 94.9%, the same quantity as mutfunc's Stability column |
+| [`build_foldx.py`](build_foldx.py) | builds that file. It is **not** mutfunc code |
+| [`jak1_mutfunc_observed.csv`](jak1_mutfunc_observed.csv) | the **four** variants actually queried on the site, including the two that failed to map — the evidence behind §2 and §3 |
+| this file | the reasoning |
+
+### Why no bulk collection
+
+1. **No API and no download.** The `/about` route 404s despite being linked from the navigation;
+   there is no downloads page. The site is a **Dash** application whose only backend is
+   `POST /_dash-update-component`, an undocumented internal endpoint that requires the exact
+   callback signatures from `/_dash-dependencies` plus session state. Driving it would mean
+   reverse-engineering a private interface of an academic service.
+2. **~8% coverage.** Structure-limited, as §3 shows.
+3. **It could not reproduce the paper's values anyway** — build 26.06 postdates the 2018 resource,
+   and pDockQ and the pocket score did not exist then (§2).
+4. **The one substitutable column is already superseded** — FoldX at 94.9% versus 7.9%, numerically
+   matched (§4).
+
+So the judgement is that collecting it is not worth doing. If someone disagrees, the route is the
+Dash endpoint above, and the scores to target would be **Pathogenicity** (the column the paper most
+likely meant) and **pDockQ**, since Stability is covered.
+
+## 7. Where this leaves the paper's feature list
 
 | feature | paper | here |
 |---|--:|--:|
