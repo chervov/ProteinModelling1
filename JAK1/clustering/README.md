@@ -107,7 +107,7 @@ gaps. Computing it locally gives 100%, as here.
 | REVEL | 31.3%, dbNSFP only |
 | CADD | not obtained; the earlier attempt is recorded in `mutations_clustering.md` |
 | MutFunc | not obtained (92.07% missing in the paper itself) |
-| ddG closed / open / open−closed | only 500 variants (2.3%) exist, in `data/orianne/jak1_cluster_ddg.json` |
+| ddG closed / open / open−closed | **done, 100%** — `jak1_ddg_rosetta_dualstate.csv`, from `data/ddg/ddg_JAK1_all.json` (complete 21,926 saturation on Jeanpierre's own models). The 500-variant `data/orianne/jak1_cluster_ddg.json` is a test subset, not the dataset |
 
 ## PolyPhen-2 at 100% coverage — how, and what it shows
 
