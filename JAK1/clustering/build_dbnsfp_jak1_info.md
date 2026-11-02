@@ -212,7 +212,83 @@ is more recent than dbNSFP 4.8a's snapshot. Cross-checked eight JAK1 variants ag
 Worth knowing because it needs no dbNSFP dependency, is native hg38, and returns a value per
 alternate allele directly. It does **not** improve coverage — it is the same genomic-SNV data.
 
-## 8. Comparison with the paper
+## 8. SIFT specifically — every route, tested
+
+SIFT is the one feature where the paper beats this reproduction (56.3% against 31.3%), and the one
+dbNSFP-sourced score that *could* in principle reach 100%, because it is genuinely protein-level
+(§4, spread exactly 0.000000). So every route was checked.
+
+| route | coverage | status | notes |
+|---|--:|---|---|
+| **dbNSFP via MyVariant** | **31.3%** (6,873) | **working, in use** | reproduces the repo exactly, max diff 0.000000 |
+| Ensembl VEP REST | ~31% | working, tested | returns `sift_score` + `sift_prediction`; input is a nucleotide change, so the same ceiling |
+| EBI Proteins variation API | 8.8% (1,935) | working, tested | protein-keyed, but see below |
+| SIFT web server (A*STAR BII) | 100% in principle | **down — HTTP 502** | "Hosting Server Connect Timeout" behind Sucuri |
+| PROVEAN | — | **retired** | redirects to `sitedown.jcvi.org` |
+| **`sift4g` locally** | **100%** | possible, not done | the only route to full coverage; Linux + a protein database |
+
+### Ensembl VEP works but cannot exceed the ceiling
+
+```
+GET rest.ensembl.org/vep/human/hgvs/ENST00000342505.7:c.3116A>T
+    -> sift_score 0, sift_prediction "deleterious", polyphen_score 0.997
+```
+
+Live, free, no key, batchable by POST. But the input is a *nucleotide* change, so it reaches exactly
+the substitutions a genomic index reaches — no gain over dbNSFP. Useful as an independent second
+opinion, or if a newer SIFT version matters.
+
+### The EBI Proteins API is protein-keyed, and still does not help
+
+`www.ebi.ac.uk/proteins/api/variation/P23458` returns 2,132 variation features, 2,030 with a SIFT
+score, keyed on protein position — so unlike dbNSFP it *can* carry multi-nucleotide substitutions.
+Measured against our dbNSFP set:
+
+| | n |
+|---|--:|
+| EBI distinct substitutions with SIFT | 1,935 (8.8%) |
+| dbNSFP | 6,873 (31.3%) |
+| overlap | 1,822 |
+| **EBI only — genuinely new** | **113** |
+| union | 6,986 (**31.9%**) |
+
+So it adds **113 substitutions, +0.6 percentage points** — and on the 1,822 shared it agrees poorly:
+only **15.9% identical**, median absolute difference 0.018, worst 0.98. It is a *different SIFT run*
+with a different alignment. Merging the two would create one column with two provenances for a
+0.6-point gain. **Not worth it**, though it does prove the protein-keyed route can in principle pass
+the SNV ceiling.
+
+### A real ambiguity: dbNSFP carries two different SIFTs
+
+`dbnsfp.sift` and `dbnsfp.sift4g` are separate implementations — original SIFT and SIFT4G
+(Vaser et al. 2016) — and they do not agree:
+
+| | |
+|---|--:|
+| Pearson / Spearman | 0.8975 / 0.9394 |
+| identical values | 884 (12.9%) |
+| median absolute difference | 0.017 (max 0.955) |
+| called damaging (≤ 0.05) | SIFT **57.5%** vs SIFT4G **48.8%** |
+| **disagree on the damaging call** | **730 (10.6%)** |
+
+One in ten substitutions gets a different verdict depending on which column you take. The paper
+cites **Sim et al. 2012**, which is the original SIFT web server, so `dbnsfp.sift` is the correct
+choice — and it is what `jak1_sift.csv` uses as the `sift` column, with `sift4g` carried alongside
+for comparison rather than mixed in.
+
+### Recommendation
+
+**Keep dbNSFP's 31.3%.** It reproduces the existing reproduction exactly, so it is certainly the
+right values; the only question was quantity. No live service improves on it, EBI adds 0.6 points of
+inconsistent data, and local `sift4g` means a Linux box plus a large protein database.
+
+If full coverage is ever wanted, note the opportunity cost: on the TYK2 deep mutational scan in
+`data/orianne/auc.json`, **ESM-1b outperforms SIFT on every column** (abundance 0.796 vs 0.760,
+IFN-α 100 U/mL 0.823 vs 0.787, both doses 0.766 vs 0.743) — and ESM-1b is already at 100% coverage.
+Running `sift4g` would buy a weaker feature than one already in hand, justified only by
+faithfulness to the paper's 11-feature list.
+
+## 9. Comparison with the paper
 
 | feature | paper | here |
 |---|--:|--:|
@@ -224,7 +300,7 @@ ClinPred is a feature where this project is **2.2× ahead** of the paper. SIFT i
 behind, and `build_polyphen_jak1_info.md` §1 explains why the paper's number cannot have come from
 dbNSFP either.
 
-## 9. Files
+## 10. Files
 
 | file | contents |
 |---|---|
