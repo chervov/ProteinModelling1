@@ -126,6 +126,35 @@ internally consistent (one tool version, one sequence database, one structure sn
 **2011_12**. Fifteen years old, not a choice we made, and worth weighing when comparing this feature
 against ESM-1b or AlphaMissense.
 
+## The paper's SIFT/PolyPhen coverage did not come from dbNSFP
+
+`mutations_clustering.md` §3 documents SIFT, PolyPhen-2, REVEL, AlphaMissense and ClinPred as all
+coming from one MyVariant/dbNSFP query (`q=dbnsfp.genename:JAK1`), at ~33%. It does not address why
+the paper reports SIFT and PolyPhen-2 at **43.74% missing = 56.3% present**, nearly double.
+
+Tested directly ([`test_sift_coverage.py`](test_sift_coverage.py)) — querying by **genomic region**
+instead of gene name:
+
+| query | dbNSFP records | SIFT | SIFT4G | PolyPhen-2 | ClinPred |
+|---|--:|--:|--:|--:|--:|
+| `dbnsfp.genename:JAK1` | 8,501 | **6,873** | 6,873 | 6,873 | 6,873 |
+| `chr1:65,298,912-65,432,187` (GRCh37) | 8,501 | **6,873** | 6,873 | 6,873 | 6,873 |
+
+**Identical — 0 variants unique to either query.** Query strategy is not the explanation. All four
+predictors share exactly the same 6,873, so 31.3% is a uniform property of the data, not of how it
+is fetched.
+
+The reason is structural: dbNSFP is built from all possible **single**-nucleotide changes. Nine SNVs
+per codon (3 positions × 3 alternates) yield at most ~6 distinct amino-acid changes out of 19, so
+~31% is dbNSFP's ceiling by construction and **no query can exceed it**.
+
+Therefore the paper's 56.3% **cannot have come from dbNSFP**. Combined with its ClinPred at only
+14.25% — *below* what dbNSFP offers — its SIFT, PolyPhen-2 and BLOSUM62 (all three at exactly
+43.74% missing) must have been produced by a separate route, most likely running the tools
+themselves. Our PolyPhen-2 run reaching 100% shows a full native run gives complete coverage, so
+their 56.3% was a partial one. The mechanism remains unknown, but it is a question about their
+pipeline, not a shortfall in this one.
+
 ## Clustering
 
 Once the matrix is assembled the clustering itself is **semi-supervised K-means on Gower
