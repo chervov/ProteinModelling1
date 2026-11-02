@@ -94,7 +94,17 @@ a proxy for folding stability, though a degron or aggregation would look the sam
 | **why not more** | dbNSFP is keyed on **genomic** variants, so it contains only substitutions reachable by a **single nucleotide change**. Two-nucleotide substitutions are absent entirely - including **V678F**, this project's headline variant |
 | ClinPred note | returned as a nested object `{pred, rankscore, score}`, not a bare float; the `score` field is used |
 
-### 4. CADD - attempted and unavailable
+### 4. CADD - attempted and unavailable (SUPERSEDED 2026-11-02)
+
+> **Correction.** CADD *is* available, free, in one query. MyVariant serves it as its own source
+> document at `cadd.phred`, not inside `dbnsfp`: `_exists_:dbnsfp.cadd.phred` returns 0 records
+> while `_exists_:cadd.phred` returns 8,229 for JAK1. The original attempt used the dbnsfp path,
+> and a wrong field path returns an empty result rather than an error. JAK1 CADD is now in
+> [`JAK1/clustering/jak1_cadd.csv`](JAK1/clustering/jak1_cadd.csv) at 31.3% - the same
+> single-nucleotide ceiling as the other dbNSFP-sourced features - validating 423/423 against the
+> `CADD phred` column already in `external_data/JAK1/`. Details and the alternative 81 GB
+> tabix route: [`JAK1/clustering/build_cadd_jak1_info.md`](JAK1/clustering/build_cadd_jak1_info.md).
+> The paragraph below is kept as the original record.
 
 Requested as `dbnsfp.cadd.phred` and `cadd.phred`; MyVariant returned **0 of 9,205** records with a
 value. CADD is licence-restricted in the academic dbNSFP build. Obtaining it needs either the CADD
