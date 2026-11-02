@@ -22,7 +22,35 @@ by row position as well as by `variant_id`.
 | `jak1_pph2_hum{var,div}_raw.txt.gz`, [`pph2_input_jak1.txt`](pph2_input_jak1.txt), [`pph2_sessions.txt`](pph2_sessions.txt) | raw server output, the batch input, and the session ids |
 | [`build_features.py`](build_features.py), [`build_blosum.py`](build_blosum.py), [`seq_info.py`](seq_info.py) | reproduce the above, including the checks |
 
-Common columns: `variant_id, wt, pos, alt, cluster, <feature>`.
+## File conventions — the same for every feature file here
+
+**Index column: `variant_id`**, first column, the EV1 identifier (`A1005E` = wild type, position,
+mutant). `wt`, `pos` and `alt` are the same thing parsed out, and `cluster` carries the paper's EV1
+label. Then one or more feature columns.
+
+**Row set: all 23,080 EV1 rows, in EV1 order** — not the 21,926 real substitutions. EV1 includes
+1,154 self-substitutions (`A1005A`), and keeping them means every file here has identical row count
+and order, so any two can be joined **either** on `variant_id` **or** by row position. First row
+`A1005A`, last `Y999Y`.
+
+**Missing values are empty fields** — `A1005A,A,1005,A,1,,` — never `NA`, `NaN`, `null`, `.`, `-1`
+or `0`. This matters because **0 is a real value for several of these features**: a SIFT score of
+`0.0` means maximally intolerant, and BLOSUM62 is routinely 0. Any numeric sentinel would collide
+with genuine data; an empty field cannot. `pandas.read_csv` gives `NaN` and R's `read.csv` gives
+`NA` with no extra arguments.
+
+**Blankness is informative, not random.** It marks either a self-substitution or a substitution
+needing two or three nucleotide changes, which genomic-indexed sources cannot reach. Those
+unreachable substitutions are systematically **more severe** (BLOSUM62 mean −1.76 against −0.54 for
+the reachable ones), so imputing them would bias the result.
+
+| feature file | populated | blank |
+|---|--:|--:|
+| `jak1_blosum62.csv` | 23,080 (**all**) | 0 |
+| `jak1_esm1b.csv`, `jak1_alphamissense.csv` | 21,926 | 1,154 |
+| `jak1_polyphen2_humvar.csv`, `..._humdiv.csv` | 21,926 | 1,154 |
+| `jak1_sift.csv`, `jak1_clinpred.csv`, `jak1_revel.csv` | 6,873 | 16,207 |
+
 
 ## The sequence
 
