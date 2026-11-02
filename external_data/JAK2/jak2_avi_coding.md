@@ -146,12 +146,61 @@ AlphaMissense in different units, but the variants the project excluded by const
 intronic, UTR and splice-region. The same pull over the full 145.6 kb locus is 436,683 SNVs and
 about **six minutes**.
 
+## 5. Genome-wide Phred, added by calibration
+
+The API returns the raw AVI only — `scorer_metadata()` offers `AVI_SCORE`,
+`AVI_SCORE_FEATURE_IMPORTANCE` and `AVI_SCORE_MODEL_FEATURES`, and no phred, quantile or
+percentile scorer exists. The Phred scale (−10·log₁₀ of the genome-wide tail quantile) used in
+`variant_panel_24` therefore has to be reconstructed.
+
+Two sets of paired (raw, Phred) observations exist in this repository, giving **35 knots** spanning
+raw **0.296–2.632** and Phred **14.34–46.82**:
+
+| source | n |
+|---|--:|
+| [`../../JAK2/variant_panel_24/alphagenome_avi_raw_output.md`](../../JAK2/variant_panel_24/alphagenome_avi_raw_output.md) (both columns present) | 24 |
+| [`../../JAK2/variant_panel_24/JAK2_benign_AVI_background.csv`](../../JAK2/variant_panel_24/JAK2_benign_AVI_background.csv) (Phred given; raw fetched from the Atlas) | 12 |
+
+The mapping is **monotone cubic (PCHIP) interpolation** over those knots, published as
+[`../jak_avi_phred_calibration.json`](../jak_avi_phred_calibration.json) with every knot listed.
+Zero non-monotone knots, as Phred must be monotone in raw by construction.
+
+**Accuracy, by leave-one-out** (each knot predicted from the other 34 — agreement *at* the knots is
+guaranteed and proves nothing):
+
+| | Phred |
+|---|--:|
+| median absolute error | **0.004** |
+| mean | 0.038 |
+| 90th percentile | 0.061 |
+| worst case | 0.623 |
+
+**Why fit shapes were rejected.** A linear fit gives max residual 2.41 Phred, a quadratic 2.07, and
+linear-in-log(raw) 8.80. An earlier quadratic fitted on the 12 benign points alone appeared
+excellent (residual 0.07) but only because those points span a narrow range where the curve is
+locally straight; extended, it curves, and a quadratic on that subset turns over and would
+*decrease* Phred for high scores.
+
+**Applied only where it covers the data.** The calibration starts at raw 0.296, while intronic AVI
+averages ~0.04:
+
+| dataset | rows in calibrated range |
+|---|--:|
+| `jak2_cds_avi_protein.csv` | **96.7%** |
+| `jak2_cds_avi_snv.csv` | **83.6%** |
+| whole-locus files (all four genes) | 5–12% |
+
+So `avi_phred` and `avi_top_pct` columns are added to the two coding files and **not** to the
+locus files, where a 90%-blank column would be worse than none. Anyone needing Phred there can
+apply the published calibration. Values outside the knot range are left blank rather than
+extrapolated.
+
 ## Caveats
 
-1. **Raw scores only.** The API returns the raw AVI; the Phred scale (−10·log₁₀ quantile) and
-   genome-wide percentiles used in `variant_panel_24` need the genome-wide quantile mapping, which is
-   not in the API response. Percentiles in §3 are **within JAK2**, not genome-wide. Validation: the
-   raw score for `chr9:5073770:G>T` is 0.98103 here and 0.981 in
+1. **Phred is reconstructed, not served.** See §5 — median leave-one-out error 0.004 Phred, but it
+   is an interpolation of 35 observations, not the server's own number. Percentiles in §3 remain
+   **within JAK2**; `avi_top_pct` in the CSVs is genome-wide. Validation of the raw score itself:
+   `chr9:5073770:G>T` is 0.98103 here and 0.981 in
    [`../../JAK2/variant_panel_24/alphagenome_avi_raw_output.md`](../../JAK2/variant_panel_24/alphagenome_avi_raw_output.md).
 2. **AVI is a damage detector.** It does not model gain of function — see §3.
 3. **Aggregation choice.** `avi_max` is used for the protein-level scores where several codon changes
