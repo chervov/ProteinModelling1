@@ -1,6 +1,6 @@
 # FoldX ΔΔG for JAK1 — provenance and the caveats that come with it
 
-Covers [`jak1_foldx.csv`](jak1_foldx.csv). Written 2 November 2026.
+Covers [`jak1_ddg_foldx_precomputed.csv`](jak1_ddg_foldx_precomputed.csv). Written 2 November 2026.
 
 ---
 
@@ -115,12 +115,28 @@ pLDDT does not remove them and should not be expected to.
 ## 6. The file
 
 ```csv
-variant_id,wt,pos,alt,cluster,foldx_ddg,plddt
+variant_id,wt,pos,alt,cluster,foldx_ddg,plddt,high_confidence
 ```
 
 23,080 rows, EV1 order, conventions as in the [README](README.md): `variant_id` index, empty field
 for missing. One value per substitution — **zero duplicates**, so unlike ClinPred, REVEL and CADD
 there is no aggregation choice to document.
+
+| column | meaning |
+|---|---|
+| `foldx_ddg` | FoldX v5 ddG, kcal/mol, **positive = destabilising** |
+| `plddt` | AlphaFold per-position confidence at that residue |
+| `high_confidence` | **1** where `plddt >= 70`, **0** below, blank where there is no ddG — the filter the 2025 ProtVar release stopped applying (§3) |
+
+| | n |
+|---|--:|
+| populated | 20,805 (94.9% of real substitutions) |
+| `high_confidence = 1` | **19,133** (92.0% of populated) |
+| `high_confidence = 0` | 1,672 |
+| blank | 2,275 (1,154 self-substitutions + 1,121 positions with no model) |
+
+Median ddG is **1.278** among high-confidence rows against **0.208** among low — the bias toward
+false tolerance, in one line. Filtering on `high_confidence == 1` is the recommended default.
 
 ## 7. Related data already in the repository
 
