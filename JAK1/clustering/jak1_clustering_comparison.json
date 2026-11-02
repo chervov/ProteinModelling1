@@ -1,0 +1,48 @@
+{
+  "n": 21926,
+  "ari": 0.4836,
+  "same_label": 18608,
+  "same_label_frac": 0.8487,
+  "confusion": {
+    "1.0": {
+      "1": 6321,
+      "2": 2080
+    },
+    "2.0": {
+      "1": 1238,
+      "2": 12287
+    }
+  },
+  "sizes_paper": [
+    7559,
+    14367
+  ],
+  "sizes_rebuilt": [
+    8401,
+    13525
+  ],
+  "leave_one_out": {
+    "(all 11)": 0.4836,
+    "-esm1b": 0.4782,
+    "-alphamissense": 0.4718,
+    "-ddg_closed": 0.4886,
+    "-ddg_open": 0.4911,
+    "-ddg_delta": 0.4836,
+    "-cadd": 0.4803,
+    "-foldx": 0.4886,
+    "-sift": 0.4722,
+    "-polyphen2": 0.3934,
+    "-blosum62": 0.4821,
+    "-clinpred": 0.46
+  },
+  "sensitivity": {
+    "baseline (HumVar, FoldX in, ddG clipped +/-10)": 0.4836,
+    "without ddG delta (AUC 0.50, p=0.89)": 0.4836,
+    "without all three ddG": 0.4917,
+    "only the 100%-coverage features": 0.4335,
+    "only the 31.3% genomic features": 0.3989,
+    "ESM-1b + AlphaMissense alone": 0.3487,
+    "ESM-1b alone": 0.2105
+  },
+  "seed_T138H": "absent - position 138 is Tyr in P23458, not Thr"
+}
