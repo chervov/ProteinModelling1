@@ -159,5 +159,7 @@ obtained. With this file, the gap is closed at the paper's own coverage level:
 | ESM-1b | 100% | 100% |
 | BLOSUM62 | 56.3% | **100%** |
 
-Still missing: MutFunc (92.07% missing in the paper itself) and the three ddG features, which exist
-for only 500 variants.
+Still missing: only MutFunc itself (92.07% missing in the paper too, and see
+`build_mutfunc_jak1_info.md` — its scores turn out to be AlphaMissense, ESM-1b and FoldX, all of
+which are present). The three PyRosetta ΔΔG features are at **100%** in
+`jak1_ddg_rosetta_dualstate.csv`.
