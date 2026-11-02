@@ -1,0 +1,237 @@
+{
+  "what": "raw AVI -> AVI Phred, interpolated from paired observations",
+  "why": "the Atlas API exposes AVI_SCORE only; no phred/quantile scorer exists",
+  "method": "PCHIP monotone cubic interpolation over the knots below; no extrapolation",
+  "phred_definition": "phred = -10 * log10(tail quantile); percentile = 10^(-phred/10) * 100",
+  "valid_raw_range": [
+    0.2961,
+    2.6321
+  ],
+  "valid_phred_range": [
+    14.34,
+    46.82
+  ],
+  "n_knots": 35,
+  "max_residual_at_knots": 0.0,
+  "caution": "outside valid_raw_range the mapping is left blank rather than extrapolated. A quadratic fit on the benign set alone turns over at raw -7.99 and must not be used.",
+  "knots": [
+    {
+      "variant": "chr9:5029878:A>G",
+      "raw": 0.2961,
+      "phred": 14.34,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5126443:T>G",
+      "raw": 0.32973384857177734,
+      "phred": 15.22,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5022096:C>G",
+      "raw": 0.336,
+      "phred": 15.38,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5055741:A>G",
+      "raw": 0.43832170963287354,
+      "phred": 17.71,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5044417:G>A",
+      "raw": 0.45263275504112244,
+      "phred": 17.97,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5054679:A>G",
+      "raw": 0.4545016288757324,
+      "phred": 18.0,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5022007:C>T",
+      "raw": 0.48540475964546204,
+      "phred": 18.55,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5089776:C>G",
+      "raw": 0.6080805659294128,
+      "phred": 20.69,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5081828:G>C",
+      "raw": 0.6234,
+      "phred": 20.88,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5055766:A>T",
+      "raw": 0.6382,
+      "phred": 21.08,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5065000:G>A",
+      "raw": 0.6617168188095093,
+      "phred": 21.46,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5126343:G>A",
+      "raw": 0.7407,
+      "phred": 22.38,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5055681:T>C",
+      "raw": 0.761,
+      "phred": 22.58,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5126721:T>A",
+      "raw": 0.7701,
+      "phred": 22.67,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5080362:T>A",
+      "raw": 0.7798,
+      "phred": 22.76,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5073770:G>A",
+      "raw": 0.8093,
+      "phred": 23.01,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5080662:C>A",
+      "raw": 0.81,
+      "phred": 23.02,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5066742:T>C",
+      "raw": 0.8176,
+      "phred": 23.08,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5044432:G>A",
+      "raw": 0.8472673296928406,
+      "phred": 23.31,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5072582:G>A",
+      "raw": 0.863,
+      "phred": 23.43,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5064964:C>T",
+      "raw": 0.8644,
+      "phred": 23.44,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5072561:G>C",
+      "raw": 0.8883,
+      "phred": 23.6,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5069134:G>T",
+      "raw": 0.8989951014518738,
+      "phred": 23.68,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5073743:C>A",
+      "raw": 0.9081,
+      "phred": 23.74,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5089702:G>A",
+      "raw": 0.9472,
+      "phred": 23.98,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5064973:C>G",
+      "raw": 0.9730760455131531,
+      "phred": 24.14,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5123006:A>T",
+      "raw": 0.978222668170929,
+      "phred": 24.17,
+      "source": "benign_background"
+    },
+    {
+      "variant": "chr9:5073770:G>T",
+      "raw": 0.981,
+      "phred": 24.19,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5126349:T>C",
+      "raw": 1.0104,
+      "phred": 24.36,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5073753:T>C",
+      "raw": 1.1925,
+      "phred": 25.45,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5054666:T>G",
+      "raw": 1.2494,
+      "phred": 25.83,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5090497:G>A",
+      "raw": 1.3112,
+      "phred": 26.29,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5089726:C>A",
+      "raw": 1.491,
+      "phred": 28.8,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5077461:G>T",
+      "raw": 2.5148,
+      "phred": 44.61,
+      "source": "panel_24"
+    },
+    {
+      "variant": "chr9:5066739:C>T",
+      "raw": 2.6321,
+      "phred": 46.82,
+      "source": "panel_24"
+    }
+  ],
+  "leave_one_out": {
+    "n": 33,
+    "mean_abs_error_phred": 0.038,
+    "median_abs_error_phred": 0.004,
+    "p90_abs_error_phred": 0.061,
+    "max_abs_error_phred": 0.623,
+    "note": "endpoints excluded; PCHIP cannot interpolate outside the knot range"
+  }
+}
