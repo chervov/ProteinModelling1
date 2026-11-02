@@ -202,7 +202,11 @@ likely meant) and **pDockQ**, since Stability is covered.
 | SIFT | 56.3% | 31.3% |
 | CADD | not stated | 31.3% |
 | ClinPred | 14.25% | 31.3% |
-| ΔΔG closed / open / difference | 100% | 2.3% (500 variants) |
+| ΔΔG closed / open / difference | 100% | **100%** |
 
-The three PyRosetta ΔΔG features remain the real gap: 500 variants exist against the paper's claimed
-100%, and recomputing them is the one genuinely expensive item left.
+**Correction (2 November 2026):** an earlier version of this note said the three PyRosetta ΔΔG
+features existed for only 500 variants. That was wrong — it described the test subset in
+`data/orianne/jak1_cluster_ddg.json`. The complete saturation is in `data/ddg/ddg_JAK1_all.json`
+(21,926 variants, all 1,154 positions, computed on Jeanpierre's own open and closed models) and is
+now in `jak1_ddg_rosetta_dualstate.csv` at **100%**. With that, every feature the paper names is
+present except MutFunc itself.
