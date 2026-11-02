@@ -115,6 +115,52 @@ PyRosetta does, and the diagnosis in `conclusions_ddG_difference_feature.md` §�
 folding free energy approaches 72 kcal/mol. The median of 1.135 is the honest scale. Rank these
 values; do not read the tail as kcal/mol.
 
+## 5b. The endpoint works — and settles the question completely
+
+mutfunc has no public API, but it is a Dash app, so `POST /_dash-update-component` is callable.
+`/_dash-dependencies` gives the callback graph; two steps are needed:
+
+```
+go-btn.n_clicks + state user-input.value  ->  redirect.href + variant-list.data
+variant-list.data                         ->  variants.rowData + variants.selectedRows
+```
+
+Working implementation: [`fetch_mutfunc.py`](fetch_mutfunc.py). It returns the full row, not the
+four columns the web table displays:
+
+```
+ESM1b_LLR, ESM1b_is_pathogenic, am_pathogenicity, am_class, pred_ddg, plddt,
+pocket_id, pocket_resid, pocket_score_combined_scaled, ifresid, pdockq, interaction_id, chain
+```
+
+**Those column names are the answer.** `am_pathogenicity` is **AlphaMissense**; `ESM1b_LLR` is
+**ESM-1b**; `pred_ddg` is **FoldX**. Checked against the files already in this directory:
+
+| variant | field | mutfunc | our file | |
+|---|---|--:|--:|:-:|
+| A1005E | AlphaMissense | 0.9993 | 0.9993 | ✔ |
+| A1005E | ESM-1b | −15.6480 | −15.6480 | ✔ |
+| A1005E | FoldX ΔΔG | 5.0164 | 5.0164 | ✔ |
+| I617T | AlphaMissense | 0.1915 | 0.1915 | ✔ |
+| I617T | ESM-1b | −5.6060 | −5.6060 | ✔ |
+| I617T | FoldX ΔΔG | 2.3933 | 2.3933 | ✔ |
+
+**Exact matches on all six.** So today's mutfunc is a front end over AlphaMissense, ESM-1b and
+FoldX — three features this project already holds at **100%, 100% and 94.9%** — plus two of its own,
+`pocket_score_combined_scaled` and `pdockq`.
+
+And its coverage is strictly worse. `A1005D` failed to map at mutfunc, yet we hold all three scores
+for it: AlphaMissense **0.9997**, ESM-1b **−18.736**, FoldX **6.4731**.
+
+**Conclusion: there is nothing to collect.** The only mutfunc-unique features are the pocket score
+and pDockQ, both of which **postdate the 2018 paper**, so neither can be the "MutFunc score" the
+appendix cites. Scraping 21,926 variants through an undocumented internal endpoint, for two features
+at ~8% coverage that the paper could not have used, is not a reasonable use of someone else's
+server.
+
+The script is kept because it is the documented way in should the pocket or interface features ever
+be wanted — for a short list, not a proteome.
+
 ## 6. What was and was not obtained — be clear about this
 
 **No mutfunc data was collected at scale, and there is no mutfunc fetching script in this
