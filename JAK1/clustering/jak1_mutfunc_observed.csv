@@ -1,5 +1,5 @@
-variant_id,mutfunc_pathogenicity,mutfunc_stability_ddg,mutfunc_pdockq,mutfunc_note,mapped,retrieved,source
-A1005E,1.00,5.02,0.97,,yes,2026-11-02,mutfunc.com build 26.06-8cf8db4
-I617T,0.19,2.39,,monomer: P23458,yes,2026-11-02,mutfunc.com build 26.06-8cf8db4
-A1005D,,,,,no,2026-11-02,mutfunc.com build 26.06-8cf8db4
-H647Q,,,,,no,2026-11-02,mutfunc.com build 26.06-8cf8db4
+variant_id,ESM1b_LLR,ESM1b_is_pathogenic,am_pathogenicity,am_class,pred_ddg,plddt,pocket_id,pocket_resid,pocket_score_combined_scaled,pdockq,mapped,retrieved,source
+P23458/A1005E,-15.64799976348877,pathogenic,0.9993000030517578,pathogenic,5.016419887542725,96.16000366210938,3.0,1005,0.9746935469156376,,yes,2026-11-02,mutfunc.com 26.06-8cf8db4 via _dash-update-component
+P23458/I617T,-5.605999946594238,benign,0.1914999932050705,benign,2.393320083618164,91.91000366210938,,,,,yes,2026-11-02,mutfunc.com 26.06-8cf8db4 via _dash-update-component
+P23458/A1005D,,,,,,,,,,,no,2026-11-02,mutfunc.com 26.06-8cf8db4 via _dash-update-component
+P23458/H647Q,,,,,,,,,,,no,2026-11-02,mutfunc.com 26.06 web form
