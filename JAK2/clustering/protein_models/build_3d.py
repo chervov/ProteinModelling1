@@ -214,7 +214,11 @@ that agreement, not quality.</div>
 
 <h2>6. AlphaFold DB PAE</h2>
 <p>Our OpenFold runs use <code>model_1</code>, which emits no PAE. The AlphaFold&nbsp;DB download
-includes it, and it is the most important caveat on this page.</p>
+includes it, and it is the most important caveat on this page. PAE at (<i>i</i>,&nbsp;<i>j</i>) is
+the error AlphaFold expects in residue <i>j</i>'s position when the prediction is aligned on
+residue <i>i</i> &mdash; so the off-diagonal blocks measure confidence in the <b>relative placement
+of two domains</b>, which per-residue pLDDT cannot express.</p>
+__FIG5__
 <div class="scroll" style="max-width:520px"><table><thead><tr><th>block</th>
 <th class="n">mean PAE (&Aring;)</th><th>&nbsp;</th></tr></thead><tbody>__PAE__</tbody></table></div>
 <div class="key">Within domains AlphaFold is confident (2.4&ndash;5.4&nbsp;&Aring;). Between FERM
@@ -281,6 +285,10 @@ FIGS = {"__FIG1__": ("models_overview",
         "__FIG2__": ("open_vs_closed",
          "Pair 1: closed in colour, open in grey, both fitted on JH2. JH1 moves 81.9 A."),
         "__FIG3__": ("plddt", "Confidence along the chain: high inside domains, collapsing in the linkers."),
+        "__FIG5__": ("pae",
+         "Left: the full 1,132 x 1,132 PAE matrix, dark green = confident. The four domains are "
+         "boxed; the dashed box is the FERM-JH1 block. Right: mean PAE per block against the "
+         "31 A ceiling."),
         "__FIG4__": ("metrics",
          "Left: centroid distances, only the three JH1 pairs change. Middle: JH1 RMSD after JH2 "
          "fit between every pair. Right: AlphaFold DB PAE, confident within domains, not between.")}

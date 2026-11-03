@@ -9,7 +9,7 @@ dual-state ΔΔG work has a fixed, documented starting point instead of a path i
 | [`pair2/`](pair2/) | the templated pair — closed from `JAK2_20261015_082903`, open from `JAK2_20261014_095758` |
 | [`AFmodel/`](AFmodel/) | AlphaFold DB `AF-O60674-F1` v6, downloaded from EBI, **with its PAE matrix** |
 
-3D views: **[`jak2_models_3d.html`](jak2_models_3d.html)** — one self-contained file, 3.2 MB.
+3D views: **[`jak2_models_3d.html`](jak2_models_3d.html)** — one self-contained file, 4.2 MB.
 Cα cartoon traces via 3Dmol.js with domain/pLDDT toggles, a JH2-superposed open-vs-closed overlay,
 the static figures, and every table below.
 All numbers below come from [`analyse_models.py`](analyse_models.py) → `model_analysis.json`.
@@ -133,6 +133,17 @@ inter-domain linkers.
 
 ### The PAE problem, now quantified
 
+![AlphaFold DB PAE for JAK2](figs/pae.png)
+
+*Left: the full 1,132 × 1,132 matrix, dark green = confident, with the four domains boxed and the
+FERM–JH1 block dashed. Right: mean PAE per block against the 31 Å ceiling.*
+
+PAE at (*i*, *j*) is the error AlphaFold expects in residue *j*'s position when the prediction is
+aligned on residue *i*, so the off-diagonal blocks measure confidence in the **relative placement
+of two domains** — something per-residue pLDDT cannot express. The four bright squares along the
+diagonal are the domains; the pale off-diagonal corners are the arrangement.
+
+
 Our OpenFold runs use `config_preset: model_1`, which emits no PAE, so there is no direct measure
 of confidence in *where JH1 sits* — exactly the quantity the dual-state feature depends on. The
 AlphaFold DB download includes PAE, and it is sobering. Mean PAE per block, Å (ceiling 31.0):
@@ -190,15 +201,15 @@ the feature is reporting on the model rather than on the protein.
 | `analyse_models.py` | all the geometry: centroids, superpositions, PAE blocks → `model_analysis.json` |
 | `build_3d.py` | builds the 3Dmol viewer from that JSON |
 | `plot_models.py` | the static matplotlib views → `figs/*.png` |
-| `jak2_models_3d.html` | the viewer, **3.2 MB, self-contained** |
-| `figs/*.png` | the four static figures, also embedded in the html |
+| `jak2_models_3d.html` | the viewer, **4.2 MB, self-contained** |
+| `figs/*.png` | the five static figures, also embedded in the html |
 | `model_analysis.json` | every number on this page, machine-readable |
 
 ### The viewer: 3Dmol.js, inlined
 
 Built on **3Dmol.js**, the same library as `more_proteins/top10/*.html`, so the structural pages
 in this repository all behave the same way: cartoon trace, click to toggle domain or pLDDT
-colouring, drag to rotate. 3Dmol is **inlined** (0.5 MB), as are all four PNGs — **copy the file
+colouring, drag to rotate. 3Dmol is **inlined** (0.5 MB), as are all five PNGs — **copy the file
 anywhere and it still works**, with no network, no sibling directory and no CDN.
 
 It took three attempts to get there, which is worth recording:

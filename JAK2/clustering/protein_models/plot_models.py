@@ -165,4 +165,47 @@ ax.text(S["afdb_pae_max"], -.8, f" ceiling {S['afdb_pae_max']}", fontsize=6.5, v
 ax.set_yticks(range(len(ks))); ax.set_yticklabels(ks, fontsize=6.5); ax.invert_yaxis()
 ax.set_xlabel("mean PAE (A)"); ax.set_title("AlphaFold DB PAE: confident within,\nnot between", fontsize=9)
 fig.tight_layout(); fig.savefig(FIG / "metrics.png"); plt.close(fig); print("  figs/metrics.png")
+
+# ---- 5. the full AlphaFold DB PAE matrix ----
+pae_f = HERE / "AFmodel" / "AF-O60674-F1-predicted_aligned_error_v6.json"
+if pae_f.exists():
+    raw = json.load(open(pae_f))
+    P = np.array((raw[0] if isinstance(raw, list) else raw)["predicted_aligned_error"], float)
+    fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.9),
+                             gridspec_kw={"width_ratios": [1.12, 1]})
+    ax = axes[0]
+    im = ax.imshow(P, cmap="Greens_r", vmin=0, vmax=P.max(), origin="upper",
+                   extent=[1, P.shape[0], P.shape[0], 1])
+    for d, (a, b) in DOM.items():
+        for v in (a, b):
+            ax.axhline(v, color="#333", lw=.4, alpha=.6); ax.axvline(v, color="#333", lw=.4, alpha=.6)
+        ax.add_patch(plt.Rectangle((a, a), b - a, b - a, fill=False, ec=DCOL[d], lw=1.6))
+        ax.text(b + 8, (a + b) / 2, d, color=DCOL[d], fontsize=7.5, va="center", rotation=90)
+    # mark the block that matters
+    fa, fb = DOM["FERM"]; ja, jb = DOM["JH1"]
+    ax.add_patch(plt.Rectangle((ja, fa), jb - ja, fb - fa, fill=False, ec="#c0152f", lw=1.6, ls="--"))
+    ax.text((ja + jb) / 2, fa - 14, "FERM-JH1", color="#c0152f", fontsize=7.5, ha="center")
+    ax.set_xlabel("scored residue"); ax.set_ylabel("aligned residue")
+    ax.set_title("AlphaFold DB PAE, AF-O60674-F1 v6", fontsize=9.5)
+    fig.colorbar(im, ax=ax, shrink=.82, label="expected position error (A)")
+
+    ax = axes[1]
+    blocks = ["SH2-SH2", "JH2-JH2", "JH1-JH1", "FERM-FERM", "FERM-SH2", "SH2-JH2",
+              "FERM-JH2", "JH2-JH1", "SH2-JH1", "FERM-JH1"]
+    vals = [S["afdb_pae"][b] for b in blocks]
+    cols = ["#6acc64" if b.split("-")[0] == b.split("-")[1] else
+            ("#c0152f" if b == "FERM-JH1" else "#ee854a") for b in blocks]
+    ax.barh(range(len(blocks)), vals, color=cols)
+    ax.axvline(S["afdb_pae_max"], color="#555", ls="--", lw=1)
+    ax.text(S["afdb_pae_max"] - .4, len(blocks) - .4, f"ceiling {S['afdb_pae_max']} A",
+            fontsize=7, ha="right", va="center")
+    for i, v in enumerate(vals):
+        ax.text(v + .4, i, f"{v:.1f}", fontsize=7, va="center")
+    ax.set_yticks(range(len(blocks))); ax.set_yticklabels(blocks, fontsize=8); ax.invert_yaxis()
+    ax.set_xlim(0, S["afdb_pae_max"] * 1.12); ax.set_xlabel("mean PAE (A)")
+    ax.set_title("Mean PAE per block: confident within domains,\nnot between FERM and JH1",
+                 fontsize=9.5)
+    fig.tight_layout(); fig.savefig(FIG / "pae.png"); plt.close(fig); print("  figs/pae.png")
+else:
+    print("  (no PAE json, skipping figs/pae.png)")
 print("done")
