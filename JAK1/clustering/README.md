@@ -6,6 +6,33 @@ at a time, with every step checked before the next is added. Started 2 November 
 Each feature file holds **all 23,080 Dataset EV1 rows in EV1 order**, so any two can be joined
 by row position as well as by `variant_id`.
 
+## → The final results file
+
+**[`jak1_clustering_rebuilt.csv`](jak1_clustering_rebuilt.csv)** — one row per substitution
+(21,926), every feature, and **both cluster labels side by side**. This is the file to open first.
+
+| column | contents |
+|---|---|
+| 1–4 | `variant_id`, `wt`, `pos`, `alt` |
+| **5** | **`cluster`** — the **paper's** label, from Dataset EV1 |
+| 6–16 | the 11 features: `esm1b`, `alphamissense`, `ddg_closed`, `ddg_open`, `ddg_delta`, `cadd`, `foldx`, `sift`, `polyphen2`, `blosum62`, `clinpred` |
+| **17** | **`my_cluster`** — the **rebuilt** label |
+
+`cluster` **1 = tolerant** (AlphaMissense median 0.166), **2 = damaging** (median 0.953).
+Agreement 84.87%, ARI 0.4836. Supporting files:
+[`jak1_clustering_config.json`](jak1_clustering_config.json) (seeds, features, clipping, ranges),
+[`jak1_clustering_comparison.json`](jak1_clustering_comparison.json) (confusion matrix,
+leave-one-out, sensitivity), and the write-up
+[`clustering_jak1_results.md`](clustering_jak1_results.md).
+
+> **Read the headline ARI with care.** The 0.4836 averages over two regimes that behave very
+> differently. Restricted to variants where both clusterings actually have the data to decide —
+> ≥10 of 11 features present *and* an unambiguous AlphaMissense score — agreement is **94.3%,
+> ARI 0.786** (n=4,931). On the opposite subset — ≤8 features *and* an intermediate score — it is
+> **68.0%, ARI 0.130** (n=4,976), barely above chance. Disagreement is concentrated in the
+> intermediate band (3.0×) *and*, independently, where features are missing (2.1×). See
+> [§ Where the two clusterings disagree](#where-the-two-clusterings-disagree).
+
 ## Files so far
 
 | file | contents |
@@ -214,3 +241,71 @@ feature is decisive. Four headline findings:
 4. **The ΔΔG features subtract.** `ddg_delta` is inert to four decimals; dropping all three ΔΔG
    features gives the *closest* agreement with the paper of anything tried (ARI 0.4917, sizes
    7,868 / 14,058). Consistent with the clash contamination in `build_rosetta_ddg_jak1_info.md` §3.
+
+## Where the two clusterings disagree
+
+*Added 3 November 2026, computed from `jak1_clustering_rebuilt.csv`.*
+
+The 3,318 disagreements (15.13%) are not spread evenly. Two independent effects concentrate them.
+
+**1. They sit in the intermediate band.** C1 is the tolerant cluster, C2 the damaging one, and the
+variants that move are exactly those between the poles:
+
+| group | n | AlphaMissense median |
+|---|--:|--:|
+| paper C1, agreed | 6,321 | **0.166** |
+| paper C2 → rebuilt C1 | 2,080 | 0.323 |
+| paper C1 → rebuilt C2 | 1,238 | 0.745 |
+| paper C2, agreed | 12,287 | **0.953** |
+
+**2. They concentrate where features are missing.** Disagreement rises monotonically as coverage
+falls, and the three 31.3%-coverage features are present in 33.7% of agreements but only 18.2% of
+disagreements:
+
+| features present | n | disagreement |
+|--:|--:|--:|
+| 7 | 765 | **25.5%** |
+| 8 | 14,288 | 17.6% |
+| 10 | 356 | 11.2% |
+| 11 | 6,517 | **8.7%** |
+
+**The two effects are independent and multiply.** Within every AlphaMissense band, coverage still
+costs 6.8 to 16.1 percentage points:
+
+| AlphaMissense band | n | overall | ≤8 features | ≥10 features |
+|---|--:|--:|--:|--:|
+| confident tolerant (<0.25) | 5,416 | 14.5% | 19.8% | 9.3% |
+| intermediate-low (0.25–0.55) | 4,068 | **31.8%** | **36.5%** | 20.4% |
+| intermediate-high (0.55–0.80) | 2,850 | 21.8% | 25.7% | 10.8% |
+| confident damaging (≥0.80) | 9,592 | **6.4%** | 8.0% | **1.2%** |
+
+### What this does to the headline number
+
+| subset | n | agreement | **ARI** |
+|---|--:|--:|--:|
+| ALL — the published headline | 21,926 | 84.9% | **0.484** |
+| high coverage (≥10 of 11 features) | 6,873 | 91.2% | 0.679 |
+| confident AlphaMissense | 15,008 | 90.6% | 0.657 |
+| **both: high coverage AND confident AM** | 4,931 | **94.3%** | **0.786** |
+| **neither: ≤8 features AND intermediate AM** | 4,976 | **68.0%** | **0.130** |
+
+**The reproduction is substantially better than ARI 0.484 suggests.** Where both clusterings have
+the data to decide they agree 94.3% at ARI 0.786, and the best cell — confident-damaging at high
+coverage — disagrees on 1.2% of variants. The headline is dragged down by 4,976 variants with
+sparse features *and* intermediate scores, which disagree 68% of the time at ARI 0.130: barely
+above chance. Those are substitutions needing 2–3 nucleotide changes, so CADD, SIFT and ClinPred
+are all absent, leaving Gower distance over 7–8 dimensions on a variant that is ambiguous anyway.
+**Neither label is trustworthy there**, so scoring the disagreement against the rebuild overstates
+the gap.
+
+### Consequence for the open question
+
+The gap was previously attributed to one of: ΔΔG contamination, the HumDiv/HumVar ambiguity, or
+something unknown in the paper's pipeline. Those explain little by comparison — dropping all three
+ΔΔG features moves ARI 0.484 → 0.492. Stratifying by data quality moves it 0.484 → 0.786, an order
+of magnitude more. **The dominant cause is missingness interacting with the Gower distance**, not a
+methodological difference.
+
+This also means the published EV1 assignment carries very different confidence per variant, and
+nothing in EV1 marks which. A per-variant confidence field — feature count plus distance to the
+decision boundary — would be more useful than further tuning of the clustering.
