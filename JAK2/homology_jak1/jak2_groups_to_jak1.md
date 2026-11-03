@@ -70,6 +70,52 @@ swap. `L611S` maps to `Y652S`. These are positional homologies, not substitution
 `EV1` is the paper's cluster label for the JAK1 equivalent, `new` the rebuild in
 `JAK1/clustering/`. **Cluster 1 = the gnomAD-common pole, Cluster 2 = the reported-GOF pole.**
 
+### 2.1 Group 2 on its own — the study's variants, in the order given
+
+| JAK2 | → JAK1 | JAK1 wt | equivalent | wt cons. | local id | unanim. | domain | **EV1** | **new** | AlphaMiss. | ESM-1b | PolyPhen-2 | SIFT | CADD | ClinPred | BLOSUM62 | FoldX | mapping |
+|---|--:|:-:|---|:-:|--:|:-:|---|:-:|:-:|--:|--:|--:|--:|--:|--:|--:|--:|---|
+| **P37A** | 34 | P | P34A | yes | **0.18** | yes | FERM | 1 | 1 | **0.058** | −3.00 | **0.007** | 0.080 | **6.8** | **0.093** | −1 | — | weak alignment |
+| **F240V** | 251 | F | F251V | yes | **0.18** | yes | FERM | **2** | **2** | **0.993** | −10.22 | 0.996 | 0.003 | 27.6 | 0.992 | −1 | 3.71 | weak alignment (4 gaps) |
+| **H380Y** | 420 | H | H420Y | **yes** | **0.91** | yes | FERM | **2** | **2** | 0.830 | −9.17 | 0.982 | 0.003 | 27.5 | 0.985 | +2 | −0.20 | **best in the set** |
+| **R426X** | 466 | R | **R466X** | yes | 0.64 | yes | SH2-like | **—** | **—** | — | — | — | — | — | — | — | — | **nonsense — see §1** |
+| **C427R** | 467 | **W** | W467R | **no** | 0.64 | yes | SH2-like | **2** | **2** | **0.996** | −7.54 | **1.000** | 0.069 | **30.0** | 0.990 | −3 | 4.11 | position only |
+| **G571R** | **610/612** | G or S | G610R / S612R | ambig. | **0.09** | **no** | JH2 | 1 / 1 | **2 / 1** | 0.130 | −3.29 | 0.263 | — | — | — | −1 | 1.36 | **unusable** |
+| **V578I** | 619 | V | V619I | **yes** | 0.45 | yes | JH2 | 1 | **2** | 0.355 | −7.56 | 0.970 | — | — | — | **+3** | 1.25 | good |
+| **L805I** | 845 | **I** | **I845I** | no | 0.55 | yes | JH2 | **—** | **—** | — | — | — | — | — | — | — | — | **self-substitution** |
+| **I1065T** | 1092 | I | I1092T | **yes** | 0.36 | yes | JH1 | 1 | **2** | **0.204** | −7.22 | 0.861 | **0.001** | **33.0** | 0.974 | −1 | 2.87 | moderate |
+| **V1110E** | 1136 | **P** | P1136E | no | 0.36 | yes | JH1 | 1 | 1 | 0.690 | −7.53 | **0.246** | — | — | — | −1 | 2.17 | position only |
+
+Blank cells are genuinely absent, not zero: SIFT, CADD and ClinPred exist only for substitutions
+reachable by a single nucleotide change (the 31.3% dbNSFP ceiling), and `R426X` / `L805I` have no
+missense scores at all for the reasons in §1.
+
+Reading down the "mapping" column first, before any score:
+
+- **`H380Y` is the one Group-2 variant with a genuinely reliable mapping** — 0.91 local identity,
+  wild type conserved, unanimous. Cluster 2 in both clusterings and every predictor agrees it is
+  damaging. If any Group-2 result should be trusted, it is this one.
+- **`P37A` is consistently benign across independent predictors** — AlphaMissense 0.058,
+  PolyPhen-2 0.007, CADD **6.8** (unusually low; the JAK1 median is 24.8), ClinPred 0.093. Cluster 1
+  in both. The caveat is the 0.18 local identity, so the *mapping* is weak even though the scores
+  are unanimous.
+- **`C427R` and `V1110E` map to a different residue** (Trp and Pro respectively). Both are
+  positional homologies only, and for `C427R` this matters mechanistically — losing a cysteine may
+  break a disulphide or a structural contact, which substituting into a tryptophan position does
+  not model at all.
+- **`I1065T` is where AlphaMissense disagrees with everything else**: 0.204 (benign-looking) against
+  SIFT 0.001, CADD **33.0** (top ~0.05% of all human SNVs), ClinPred 0.974, PolyPhen-2 0.861. It
+  also moves from Cluster 1 to Cluster 2 between the two clusterings. Worth a second look.
+- **`F240V`** scores strongly damaging on everything, but sits in a window with 0.18 identity and
+  four gaps — so the JAK1 label supports it only weakly.
+- **`V578I`** has BLOSUM62 **+3**, the most conservative substitution in the group, yet PolyPhen-2
+  0.970; and it is a clustering disagreement case.
+- **`G571R`** remains unusable from JAK1 homology (§5).
+
+Three of the ten (`R426X`, `L805I`, `G571R`) cannot be argued from the JAK1 clustering at all, and
+four more (`P37A`, `F240V`, `C427R`, `V1110E`) rest on mappings I would not lean on. That leaves
+**`H380Y`, `V578I` and `I1065T`** as the ones where this analysis contributes something — and of
+those, two are clustering disagreement cases.
+
 ## 3. Does the JAK1 clustering recognise the known GOF variants?
 
 **On all mapped variants, no.** Cluster 2 holds 61.7% of JAK1 substitutions in the rebuild and
