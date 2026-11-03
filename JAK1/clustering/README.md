@@ -12,14 +12,15 @@ by row position as well as by `variant_id`.
 figures: feature histograms by cluster, the correlation matrix, per-feature AUC against both
 clusterings, **gnomAD r4 enrichment**, the disagreement analysis and the stratified ARI. Open it in a
 browser (GitHub will not render it; use `htmlpreview.github.io` or download). Figures also in
-[`figs/`](figs); built by `fetch_gnomad.py` → `analyse.py` → `plots.py` / `plots2.py` →
-`build_html.py`, with numbers in `stats.json`.
+[`figs/`](figs); built by `build_gnomad.py` → `analyse.py` → `plots.py` / `plots2.py` /
+`plots3.py` / `plots4.py` → `build_html.py`, with numbers in `stats.json`. gnomAD provenance and its
+two exclusions are documented in [`build_gnomad_jak1_info.md`](build_gnomad_jak1_info.md).
 
 > **Two headlines from it.** (1) Both clusterings deplete the damaging cluster of gnomAD-observed
-> variants — **stratified OR 2.34** (paper) and **2.42** (rebuilt), p ≈ 1e-33 within the informative
+> variants — **stratified OR 2.32** (paper) and **2.40** (rebuilt), p ≈ 1e-32 within the informative
 > stratum. They are *indistinguishable* on this external criterion despite disagreeing on one variant
 > in seven, so ARI 0.484 does not mean one is right and the other wrong. The pooled odds ratios
-> (2.89 / 2.84) are inflated by a dbNSFP confound and should not be quoted — see the report.
+> (2.87 / 2.83) are inflated by a dbNSFP confound and should not be quoted — see the report.
 > (2) **Scored on matched subsets, AlphaMissense is the best single feature** (AUC 0.9470), not
 > ClinPred (0.9463); ClinPred's and CADD's apparent lead is an artefact of being scored only on the
 > easier 31.3% that dbNSFP reaches. On the harder complement, **ESM-1b is best** (0.8884).
@@ -65,7 +66,8 @@ leave-one-out, sensitivity), and the write-up
 | [`jak1_polyphen2_humvar.csv`](jak1_polyphen2_humvar.csv) | PolyPhen-2 **HumVar**, 21,926 of 21,926 — **100%** |
 | [`jak1_polyphen2_humdiv.csv`](jak1_polyphen2_humdiv.csv) | PolyPhen-2 **HumDiv**, 21,926 of 21,926 — **100%** |
 | `jak1_pph2_hum{var,div}_raw.txt.gz`, [`pph2_input_jak1.txt`](pph2_input_jak1.txt), [`pph2_sessions.txt`](pph2_sessions.txt) | raw server output, the batch input, and the session ids |
-| [`build_features.py`](build_features.py), [`build_blosum.py`](build_blosum.py), [`seq_info.py`](seq_info.py) | reproduce the above, including the checks |
+| [`jak1_gnomad.csv`](jak1_gnomad.csv) | gnomAD r4 allele frequencies, 934 of 23,080 observed — see [`build_gnomad_jak1_info.md`](build_gnomad_jak1_info.md) |
+| [`build_features.py`](build_features.py), [`build_blosum.py`](build_blosum.py), [`build_gnomad.py`](build_gnomad.py), [`seq_info.py`](seq_info.py) | reproduce the above, including the checks |
 
 ## File conventions — the same for every feature file here
 

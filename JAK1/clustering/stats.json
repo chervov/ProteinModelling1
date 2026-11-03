@@ -1,7 +1,7 @@
 {
  "n": 21926,
- "n_gnomad": 939,
- "gnomad_total": 939,
+ "n_gnomad": 934,
+ "gnomad_total": 934,
  "auc": {
   "esm1b": {
    "paper": 0.8922,
@@ -71,65 +71,65 @@
   }
  },
  "auc_gnomad": {
-  "esm1b": 0.6996,
-  "alphamissense": 0.7356,
-  "ddg_closed": 0.6055,
-  "ddg_open": 0.6001,
-  "ddg_delta": 0.5069,
-  "cadd": 0.6066,
-  "foldx": 0.5898,
-  "sift": 0.6109,
-  "polyphen2": 0.6638,
-  "blosum62": 0.7298,
-  "clinpred": 0.6629
+  "esm1b": 0.699,
+  "alphamissense": 0.7349,
+  "ddg_closed": 0.605,
+  "ddg_open": 0.5997,
+  "ddg_delta": 0.5079,
+  "cadd": 0.6052,
+  "foldx": 0.5895,
+  "sift": 0.6102,
+  "polyphen2": 0.6633,
+  "blosum62": 0.7304,
+  "clinpred": 0.6621
  },
  "gnomad": {
   "paper": {
    "1": {
     "n": 7559,
-    "gn": 555,
-    "frac": 7.34
+    "gn": 551,
+    "frac": 7.29
    },
    "2": {
     "n": 14367,
-    "gn": 384,
+    "gn": 383,
     "frac": 2.67
    },
-   "depletion_C2_vs_C1": 2.75,
-   "odds_ratio": 2.89,
-   "p": 1.0066329125481608e-55
+   "depletion_C2_vs_C1": 2.73,
+   "odds_ratio": 2.87,
+   "p": 5.638810252358773e-55
   },
   "rebuilt": {
    "1": {
     "n": 8401,
-    "gn": 589,
-    "frac": 7.01
+    "gn": 585,
+    "frac": 6.96
    },
    "2": {
     "n": 13525,
-    "gn": 350,
-    "frac": 2.59
+    "gn": 349,
+    "frac": 2.58
    },
-   "depletion_C2_vs_C1": 2.71,
-   "odds_ratio": 2.84,
-   "p": 8.11301682621607e-54
+   "depletion_C2_vs_C1": 2.7,
+   "odds_ratio": 2.83,
+   "p": 3.964113395502233e-53
   }
  },
  "gnomad_by_af": {
   "AF < 1e-5": {
-   "n": 864,
-   "pct_in_C2_paper": 41.6,
-   "pct_in_C2_rebuilt": 38.2
+   "n": 819,
+   "pct_in_C2_paper": 42.5,
+   "pct_in_C2_rebuilt": 38.8
   },
   "1e-5 - 1e-4": {
-   "n": 66,
-   "pct_in_C2_paper": 34.8,
-   "pct_in_C2_rebuilt": 28.8
+   "n": 103,
+   "pct_in_C2_paper": 30.1,
+   "pct_in_C2_rebuilt": 27.2
   },
   "1e-4 - 1e-3": {
-   "n": 8,
-   "pct_in_C2_paper": 12.5,
-   "pct_in_C2_rebuilt": 0.0
+   "n": 11,
+   "pct_in_C2_paper": 27.3,
+   "pct_in_C2_rebuilt": 18.2
   },
   "AF > 1e-3": {
    "n": 1,
@@ -137,24 +137,160 @@
    "pct_in_C2_rebuilt": 100.0
   },
   "not in gnomAD": {
-   "n": 20987,
+   "n": 20992,
    "pct_in_C2_paper": 66.6,
    "pct_in_C2_rebuilt": 62.8
   }
  },
+ "auc_subsets": {
+  "esm1b": {
+   "all variants": 0.8922,
+   "dbNSFP-defined (all 11 features)": 0.8964,
+   "dbNSFP-missing (8 features)": 0.8884,
+   "in gnomAD r4": 0.874
+  },
+  "alphamissense": {
+   "all variants": 0.8858,
+   "dbNSFP-defined (all 11 features)": 0.947,
+   "dbNSFP-missing (8 features)": 0.8551,
+   "in gnomAD r4": 0.9262
+  },
+  "ddg_closed": {
+   "all variants": 0.7409,
+   "dbNSFP-defined (all 11 features)": 0.733,
+   "dbNSFP-missing (8 features)": 0.7412,
+   "in gnomAD r4": 0.6989
+  },
+  "ddg_open": {
+   "all variants": 0.7388,
+   "dbNSFP-defined (all 11 features)": 0.7345,
+   "dbNSFP-missing (8 features)": 0.7377,
+   "in gnomAD r4": 0.6963
+  },
+  "ddg_delta": {
+   "all variants": 0.4966,
+   "dbNSFP-defined (all 11 features)": 0.5001,
+   "dbNSFP-missing (8 features)": 0.4951,
+   "in gnomAD r4": 0.4908
+  },
+  "cadd": {
+   "all variants": 0.9284,
+   "dbNSFP-defined (all 11 features)": 0.9284,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.9146
+  },
+  "foldx": {
+   "all variants": 0.7187,
+   "dbNSFP-defined (all 11 features)": 0.7367,
+   "dbNSFP-missing (8 features)": 0.7094,
+   "in gnomAD r4": 0.7067
+  },
+  "sift": {
+   "all variants": 0.8582,
+   "dbNSFP-defined (all 11 features)": 0.8582,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.8353
+  },
+  "polyphen2": {
+   "all variants": 0.8848,
+   "dbNSFP-defined (all 11 features)": 0.9423,
+   "dbNSFP-missing (8 features)": 0.8515,
+   "in gnomAD r4": 0.9372
+  },
+  "blosum62": {
+   "all variants": 0.6317,
+   "dbNSFP-defined (all 11 features)": 0.6538,
+   "dbNSFP-missing (8 features)": 0.6056,
+   "in gnomAD r4": 0.6144
+  },
+  "clinpred": {
+   "all variants": 0.9463,
+   "dbNSFP-defined (all 11 features)": 0.9463,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.9223
+  }
+ },
+ "auc_n": {
+  "esm1b": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "alphamissense": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "ddg_closed": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "ddg_open": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "ddg_delta": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "cadd": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 934
+  },
+  "foldx": {
+   "all variants": 20805,
+   "dbNSFP-defined (all 11 features)": 6517,
+   "dbNSFP-missing (8 features)": 14288,
+   "in gnomAD r4": 875
+  },
+  "sift": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 934
+  },
+  "polyphen2": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "blosum62": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 934
+  },
+  "clinpred": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 934
+  }
+ },
  "gnomad_strat": {
   "paper": {
-   "pooled_or": 2.89,
-   "mh_or": 2.34,
-   "within_dbnsfp_p": 5.205111121530778e-33,
+   "pooled_or": 2.87,
+   "mh_or": 2.32,
+   "within_dbnsfp_p": 2.1311910510359117e-32,
    "strata": [
     {
      "stratum": "dbNSFP-defined",
-     "c1_obs": 555,
+     "c1_obs": 551,
      "c1_n": 2823,
-     "c2_obs": 384,
+     "c2_obs": 383,
      "c2_n": 4050,
-     "or": 2.34
+     "or": 2.32
     },
     {
      "stratum": "dbNSFP-missing",
@@ -167,17 +303,17 @@
    ]
   },
   "rebuilt": {
-   "pooled_or": 2.84,
-   "mh_or": 2.42,
-   "within_dbnsfp_p": 3.7971138794885905e-35,
+   "pooled_or": 2.83,
+   "mh_or": 2.4,
+   "within_dbnsfp_p": 1.0659595288448839e-34,
    "strata": [
     {
      "stratum": "dbNSFP-defined",
-     "c1_obs": 589,
+     "c1_obs": 585,
      "c1_n": 3025,
-     "c2_obs": 350,
+     "c2_obs": 349,
      "c2_n": 3848,
-     "or": 2.42
+     "or": 2.4
     },
     {
      "stratum": "dbNSFP-missing",
@@ -197,182 +333,9 @@
   "pct_C2_dbnsfp": 28.2
  },
  "gnomad_excluded": {
-  "n": 45,
+  "wt_mismatch": 89,
   "range": "665-708",
-  "reason": "wild-type residue disagrees with P23458 under any constant offset"
- },
- "strat_external": [
-  {
-   "name": "all variants",
-   "n": 21926,
-   "agree": 84.9,
-   "ari": 0.484
-  },
-  {
-   "name": "observed in gnomAD",
-   "n": 939,
-   "agree": 90.0,
-   "ari": 0.639
-  },
-  {
-   "name": "absent from gnomAD",
-   "n": 20987,
-   "agree": 84.6,
-   "ari": 0.476
-  },
-  {
-   "name": "high coverage (\u226510 feats)",
-   "n": 6873,
-   "agree": 91.2,
-   "ari": 0.679
-  },
-  {
-   "name": "low coverage (\u22648 feats)",
-   "n": 15053,
-   "agree": 82.0,
-   "ari": 0.402
-  }
- ],
- "auc_subsets": {
-  "esm1b": {
-   "all variants": 0.8922,
-   "dbNSFP-defined (all 11 features)": 0.8964,
-   "dbNSFP-missing (8 features)": 0.8884,
-   "in gnomAD r4": 0.8745
-  },
-  "alphamissense": {
-   "all variants": 0.8858,
-   "dbNSFP-defined (all 11 features)": 0.947,
-   "dbNSFP-missing (8 features)": 0.8551,
-   "in gnomAD r4": 0.9268
-  },
-  "ddg_closed": {
-   "all variants": 0.7409,
-   "dbNSFP-defined (all 11 features)": 0.733,
-   "dbNSFP-missing (8 features)": 0.7412,
-   "in gnomAD r4": 0.7005
-  },
-  "ddg_open": {
-   "all variants": 0.7388,
-   "dbNSFP-defined (all 11 features)": 0.7345,
-   "dbNSFP-missing (8 features)": 0.7377,
-   "in gnomAD r4": 0.6978
-  },
-  "ddg_delta": {
-   "all variants": 0.4966,
-   "dbNSFP-defined (all 11 features)": 0.5001,
-   "dbNSFP-missing (8 features)": 0.4951,
-   "in gnomAD r4": 0.4914
-  },
-  "cadd": {
-   "all variants": 0.9284,
-   "dbNSFP-defined (all 11 features)": 0.9284,
-   "dbNSFP-missing (8 features)": null,
-   "in gnomAD r4": 0.915
-  },
-  "foldx": {
-   "all variants": 0.7187,
-   "dbNSFP-defined (all 11 features)": 0.7367,
-   "dbNSFP-missing (8 features)": 0.7094,
-   "in gnomAD r4": 0.7045
-  },
-  "sift": {
-   "all variants": 0.8582,
-   "dbNSFP-defined (all 11 features)": 0.8582,
-   "dbNSFP-missing (8 features)": null,
-   "in gnomAD r4": 0.8353
-  },
-  "polyphen2": {
-   "all variants": 0.8848,
-   "dbNSFP-defined (all 11 features)": 0.9423,
-   "dbNSFP-missing (8 features)": 0.8515,
-   "in gnomAD r4": 0.9376
-  },
-  "blosum62": {
-   "all variants": 0.6317,
-   "dbNSFP-defined (all 11 features)": 0.6538,
-   "dbNSFP-missing (8 features)": 0.6056,
-   "in gnomAD r4": 0.6124
-  },
-  "clinpred": {
-   "all variants": 0.9463,
-   "dbNSFP-defined (all 11 features)": 0.9463,
-   "dbNSFP-missing (8 features)": null,
-   "in gnomAD r4": 0.9228
-  }
- },
- "auc_n": {
-  "esm1b": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "alphamissense": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "ddg_closed": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "ddg_open": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "ddg_delta": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "cadd": {
-   "all variants": 6873,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 0,
-   "in gnomAD r4": 939
-  },
-  "foldx": {
-   "all variants": 20805,
-   "dbNSFP-defined (all 11 features)": 6517,
-   "dbNSFP-missing (8 features)": 14288,
-   "in gnomAD r4": 877
-  },
-  "sift": {
-   "all variants": 6873,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 0,
-   "in gnomAD r4": 939
-  },
-  "polyphen2": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "blosum62": {
-   "all variants": 21926,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 15053,
-   "in gnomAD r4": 939
-  },
-  "clinpred": {
-   "all variants": 6873,
-   "dbNSFP-defined (all 11 features)": 6873,
-   "dbNSFP-missing (8 features)": 0,
-   "in gnomAD r4": 939
-  }
- },
- "window_anticorr": {
-  "rho": -0.549,
-  "p": 6.556381994856949e-05,
-  "n_windows": 47
+  "zero_ac": 100
  },
  "strat": [
   {
@@ -404,6 +367,38 @@
    "n": 4976,
    "agree": 68.0,
    "ari": 0.13
+  }
+ ],
+ "strat_external": [
+  {
+   "name": "all variants",
+   "n": 21926,
+   "agree": 84.9,
+   "ari": 0.484
+  },
+  {
+   "name": "observed in gnomAD",
+   "n": 934,
+   "agree": 89.9,
+   "ari": 0.637
+  },
+  {
+   "name": "absent from gnomAD",
+   "n": 20992,
+   "agree": 84.6,
+   "ari": 0.476
+  },
+  {
+   "name": "high coverage (\u226510 feats)",
+   "n": 6873,
+   "agree": 91.2,
+   "ari": 0.679
+  },
+  {
+   "name": "low coverage (\u22648 feats)",
+   "n": 15053,
+   "agree": 82.0,
+   "ari": 0.402
   }
  ],
  "cov_table": [
@@ -457,5 +452,10 @@
    "lo": 8.0,
    "hi": 1.2
   }
- ]
+ ],
+ "window_anticorr": {
+  "rho": -0.546,
+  "p": 7.247970108849295e-05,
+  "n_windows": 47
+ }
 }
