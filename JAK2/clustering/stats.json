@@ -1,0 +1,319 @@
+{
+ "n": 21508,
+ "sizes": [
+  7746,
+  13762
+ ],
+ "damaging_cluster": 2,
+ "means": {
+  "esm1b": {
+   "c1_mean": -6.1369,
+   "c1_median": -5.8995,
+   "c1_sd": 2.6855,
+   "c1_n": 7746,
+   "c2_mean": -12.4164,
+   "c2_median": -12.372,
+   "c2_sd": 3.5289,
+   "c2_n": 13762,
+   "diff": -6.2795,
+   "cohens_d": -1.932,
+   "mwu_p": 0.0,
+   "auc": 0.9193,
+   "coverage": 100.0
+  },
+  "alphamissense": {
+   "c1_mean": 0.2315,
+   "c1_median": 0.177,
+   "c1_sd": 0.1707,
+   "c1_n": 7746,
+   "c2_mean": 0.7709,
+   "c2_median": 0.8863,
+   "c2_sd": 0.2552,
+   "c2_n": 13762,
+   "diff": 0.5394,
+   "cohens_d": 2.362,
+   "mwu_p": 0.0,
+   "auc": 0.9391,
+   "coverage": 100.0
+  },
+  "cadd": {
+   "c1_mean": 16.8586,
+   "c1_median": 17.8,
+   "c1_sd": 6.6997,
+   "c1_n": 2893,
+   "c2_mean": 27.2364,
+   "c2_median": 27.2,
+   "c2_sd": 3.0728,
+   "c2_n": 3804,
+   "diff": 10.3778,
+   "cohens_d": 2.086,
+   "mwu_p": 0.0,
+   "auc": 0.9555,
+   "coverage": 31.1
+  },
+  "foldx": {
+   "c1_mean": 0.6402,
+   "c1_median": 0.3664,
+   "c1_sd": 1.4219,
+   "c1_n": 6754,
+   "c2_mean": 2.9246,
+   "c2_median": 2.0612,
+   "c2_sd": 4.1579,
+   "c2_n": 13595,
+   "diff": 2.2844,
+   "cohens_d": 0.653,
+   "mwu_p": 0.0,
+   "auc": 0.7401,
+   "coverage": 94.6
+  },
+  "sift": {
+   "c1_mean": 0.3284,
+   "c1_median": 0.244,
+   "c1_sd": 0.3037,
+   "c1_n": 2893,
+   "c2_mean": 0.0384,
+   "c2_median": 0.002,
+   "c2_sd": 0.103,
+   "c2_n": 3804,
+   "diff": -0.29,
+   "cohens_d": -1.354,
+   "mwu_p": 0.0,
+   "auc": 0.8969,
+   "coverage": 31.1
+  },
+  "polyphen2": {
+   "c1_mean": 0.213,
+   "c1_median": 0.086,
+   "c1_sd": 0.2646,
+   "c1_n": 7746,
+   "c2_mean": 0.9128,
+   "c2_median": 0.988,
+   "c2_sd": 0.1656,
+   "c2_n": 13762,
+   "diff": 0.6998,
+   "cohens_d": 3.384,
+   "mwu_p": 0.0,
+   "auc": 0.9679,
+   "coverage": 100.0
+  },
+  "blosum62": {
+   "c1_mean": -0.8091,
+   "c1_median": -1.0,
+   "c1_sd": 1.5599,
+   "c1_n": 7746,
+   "c2_mean": -1.7099,
+   "c2_median": -2.0,
+   "c2_sd": 1.4078,
+   "c2_n": 13762,
+   "diff": -0.9008,
+   "cohens_d": -0.615,
+   "mwu_p": 0.0,
+   "auc": 0.6669,
+   "coverage": 100.0
+  },
+  "clinpred": {
+   "c1_mean": 0.5976,
+   "c1_median": 0.6673,
+   "c1_sd": 0.295,
+   "c1_n": 2893,
+   "c2_mean": 0.9683,
+   "c2_median": 0.9911,
+   "c2_sd": 0.06,
+   "c2_n": 3804,
+   "diff": 0.3707,
+   "cohens_d": 1.862,
+   "mwu_p": 0.0,
+   "auc": 0.9508,
+   "coverage": 31.1
+  }
+ },
+ "gnomad_pooled": {
+  "c1_obs": 768,
+  "c1_n": 7746,
+  "c2_obs": 730,
+  "c2_n": 13762,
+  "c1_pct": 9.91,
+  "c2_pct": 5.3,
+  "odds_ratio": 1.96,
+  "p": 8.547434789766575e-36
+ },
+ "gnomad_strata": {
+  "dbNSFP-defined": {
+   "c1_obs": 768,
+   "c1_n": 2893,
+   "c2_obs": 730,
+   "c2_n": 3804,
+   "c1_pct": 26.55,
+   "c2_pct": 19.19,
+   "odds_ratio": 1.52,
+   "p": 1.1121370799866984e-12
+  },
+  "dbNSFP-missing": {
+   "c1_obs": 0,
+   "c1_n": 4853,
+   "c2_obs": 0,
+   "c2_n": 9958,
+   "c1_pct": 0.0,
+   "c2_pct": 0.0,
+   "odds_ratio": NaN,
+   "p": 1.0
+  }
+ },
+ "gnomad_mh_or": 1.52,
+ "gnomad_confound": {
+  "pct_gnomad_in_dbnsfp": 100.0,
+  "pct_all_dbnsfp": 31.1,
+  "pct_C1_dbnsfp": 37.3,
+  "pct_C2_dbnsfp": 27.6
+ },
+ "clinvar": {
+  "pathogenic": [
+   [
+    "K539L",
+    2
+   ],
+   [
+    "K607N",
+    2
+   ],
+   [
+    "V617F",
+    2
+   ],
+   [
+    "V617I",
+    2
+   ],
+   [
+    "R867Q",
+    2
+   ],
+   [
+    "R938Q",
+    2
+   ],
+   [
+    "P1095L",
+    2
+   ]
+  ],
+  "benign": [
+   [
+    "T7M",
+    1
+   ],
+   [
+    "G13V",
+    1
+   ],
+   [
+    "R122H",
+    1
+   ],
+   [
+    "G127D",
+    1
+   ],
+   [
+    "K244R",
+    1
+   ],
+   [
+    "N337D",
+    1
+   ],
+   [
+    "L383V",
+    2
+   ],
+   [
+    "V392M",
+    1
+   ],
+   [
+    "C480F",
+    1
+   ],
+   [
+    "N490S",
+    1
+   ],
+   [
+    "L892V",
+    1
+   ],
+   [
+    "Y1021F",
+    2
+   ],
+   [
+    "R1063H",
+    1
+   ],
+   [
+    "D1096E",
+    1
+   ]
+  ],
+  "correct": [
+   7,
+   7,
+   12,
+   14
+  ]
+ },
+ "domains": [
+  {
+   "domain": "FERM",
+   "n": 6536,
+   "pct_damaging": 50.5,
+   "pct_gnomad": 6.79
+  },
+  {
+   "domain": "SH2",
+   "n": 1558,
+   "pct_damaging": 60.7,
+   "pct_gnomad": 7.38
+  },
+  {
+   "domain": "JH2 pseudokinase",
+   "n": 5035,
+   "pct_damaging": 78.2,
+   "pct_gnomad": 6.81
+  },
+  {
+   "domain": "JH1 kinase",
+   "n": 5244,
+   "pct_damaging": 83.6,
+   "pct_gnomad": 6.6
+  },
+  {
+   "domain": "linker / other",
+   "n": 3135,
+   "pct_damaging": 38.1,
+   "pct_gnomad": 7.97
+  }
+ ],
+ "cov_table": [
+  {
+   "k": 4,
+   "n": 797,
+   "pct_damaging": 15.4
+  },
+  {
+   "k": 5,
+   "n": 14014,
+   "pct_damaging": 70.2
+  },
+  {
+   "k": 7,
+   "n": 362,
+   "pct_damaging": 12.2
+  },
+  {
+   "k": 8,
+   "n": 6335,
+   "pct_damaging": 59.4
+  }
+ ]
+}

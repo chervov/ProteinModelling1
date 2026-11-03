@@ -10,6 +10,21 @@ produced and then **validated externally**, against data no feature saw — gnom
 frequencies and ClinVar classifications. JAK2 is unusually well supplied with both, thanks to
 V617F and the myeloproliferative-neoplasm literature.
 
+## The result
+
+**[`jak2_clustering_v1_wo_ddg_oc.html`](jak2_clustering_v1_wo_ddg_oc.html) — the analysis
+report.** Open it first: per-cluster averages of every feature, the gnomAD enrichment, the
+ClinVar spot check, and the five figures. Self-contained, no `figs/` needed.
+
+Underlying data: **[`jak2_clustering_v1.csv`](jak2_clustering_v1.csv)** — 21,508 rows, all 8
+features plus the `cluster` column. Config and every reported number:
+[`jak2_clustering_v1_config.json`](jak2_clustering_v1_config.json),
+[`stats.json`](stats.json).
+
+**Headline:** C1 (tolerant) 7,746 / C2 (damaging) 13,762, converged in 13 iterations.
+Validated against data no feature saw — gnomAD **Mantel–Haenszel OR 1.52** (pooled 1.96 is
+confounded), and **19 of 21** usable ClinVar labels placed correctly, V617F among them.
+
 ## Status
 
 | step | state |
@@ -17,8 +32,8 @@ V617F and the myeloproliferative-neoplasm literature.
 | 1. sequence pinned, variant universe | **done** |
 | 2. **eight of the paper's eleven features** | **done** |
 | 3. gnomAD and ClinVar as external validation | **done** |
-| 4. the clustering | next |
-| 5. analysis report | |
+| 4. the clustering | **done** |
+| 5. analysis report | **done** |
 | — | |
 | ΔΔG closed / open / delta | deferred; see *Differences from JAK1* |
 
@@ -156,3 +171,23 @@ no closed-versus-open ΔΔG — the one feature that carries conformational info
 worth an overnight molab run is a decision for after step 5; if it is, the Shan JAK2 model is the
 closed state to use, and **not** AlphaFold, which places JH2–JH1 on a different surface entirely
 (4–5 shared interface residues out of ~32).
+
+
+## The clustering and the report
+
+| script | what | document |
+|---|---|---|
+| `cluster_jak2.py` | Gower + semi-supervised K-means, 8 features, 1.6 s | [info](cluster_jak2_v1_info.md) |
+| `analyse.py` → `plots.py` → `build_html.py` | statistics, figures, the HTML report | [info](build_report_jak2_info.md) |
+
+`cluster_jak2_v1_info.md` documents the **seed rule** — JAK2 has no published seeds, so they were
+derived from the 5 highest-AF ClinVar benign and the 5 best-reviewed ClinVar pathogenic variants —
+and shows the choice barely matters (15 random draws reproduce 0.9998–1.0000 of the labels).
+
+### Why `v1_wo_ddg_oc`
+
+Three of the paper's eleven features are ΔΔG in the **c**losed state, the **o**pen state, and
+their difference. Those need a dual-state Rosetta run on JAK2, which does not exist — so this
+version has eight features and **no conformational axis**. On JAK1 those three were the weakest
+of the set (`ddg_delta` AUC 0.4966, and dropping all three *improved* ARI, 0.484 → 0.492), so the
+loss is real but probably small. A v2 carrying them is the obvious next step.

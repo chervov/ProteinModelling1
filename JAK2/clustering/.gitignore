@@ -1,0 +1,9 @@
+# regenerable intermediates: analyse.py rewrites all of these in ~1.3 s
+X.npy
+cl.npy
+ing.npy
+ncov.npy
+pos.npy
+merged.csv
+pph2_humvar/
+pph2_humdiv/

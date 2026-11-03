@@ -1,0 +1,68 @@
+{
+ "version": "v1_wo_ddg_oc",
+ "features": [
+  "esm1b",
+  "alphamissense",
+  "cadd",
+  "foldx",
+  "sift",
+  "polyphen2",
+  "blosum62",
+  "clinpred"
+ ],
+ "n": 21508,
+ "seeds_cluster1_tolerant": [
+  "R1063H",
+  "D1096E",
+  "C480F",
+  "N337D",
+  "K244R"
+ ],
+ "seeds_cluster2_damaging": [
+  "V617F",
+  "R867Q",
+  "R938Q",
+  "P1095L",
+  "K539L"
+ ],
+ "seed_rule_c1": "5 ClinVar benign/likely-benign with highest gnomAD AF (all 2-star)",
+ "seed_rule_c2": "5 ClinVar pathogenic/likely-pathogenic by review stars",
+ "excluded_features": [
+  "ddg_closed",
+  "ddg_open",
+  "ddg_delta"
+ ],
+ "excluded_reason": "no dual-state Rosetta run exists for JAK2",
+ "iterations": 13,
+ "sizes": [
+  7746,
+  13762
+ ],
+ "ranges": {
+  "esm1b": 27.538,
+  "alphamissense": 0.9638,
+  "cadd": 34.999,
+  "foldx": 74.02059999999999,
+  "sift": 1.0,
+  "polyphen2": 1.0,
+  "blosum62": 7.0,
+  "clinpred": 0.99463891
+ },
+ "seed_sensitivity_label_agreement": [
+  0.9998,
+  0.9998,
+  1.0,
+  1.0,
+  0.9998,
+  1.0,
+  1.0,
+  1.0,
+  0.9999,
+  0.9999,
+  0.9998,
+  0.9998,
+  0.9998,
+  0.9998,
+  0.9998
+ ]
+}
