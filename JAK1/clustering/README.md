@@ -68,6 +68,7 @@ leave-one-out, sensitivity), and the write-up
 | [`jak1_polyphen2_humvar.csv`](jak1_polyphen2_humvar.csv) | PolyPhen-2 **HumVar**, 21,926 of 21,926 — **100%** |
 | [`jak1_polyphen2_humdiv.csv`](jak1_polyphen2_humdiv.csv) | PolyPhen-2 **HumDiv**, 21,926 of 21,926 — **100%** |
 | `jak1_pph2_hum{var,div}_raw.txt.gz`, [`pph2_input_jak1.txt`](pph2_input_jak1.txt), [`pph2_sessions.txt`](pph2_sessions.txt) | raw server output, the batch input, and the session ids |
+| [`ddg_rosetta_computations.md`](ddg_rosetta_computations.md) | where the Rosetta ΔΔG came from — signpost to the computation, its scripts and its caveats |
 | [`jak1_gnomad.csv`](jak1_gnomad.csv) | gnomAD r4 allele frequencies, 934 of 23,080 observed — see [`build_gnomad_jak1_info.md`](build_gnomad_jak1_info.md) |
 | [`build_features.py`](build_features.py), [`build_blosum.py`](build_blosum.py), [`build_gnomad.py`](build_gnomad.py), [`seq_info.py`](seq_info.py) | reproduce the above, including the checks |
 

@@ -2,6 +2,9 @@
 
 Covers [`jak1_ddg_rosetta_dualstate.csv`](jak1_ddg_rosetta_dualstate.csv). Written 2 November 2026.
 
+> Where the numbers came from: [`ddg_rosetta_computations.md`](ddg_rosetta_computations.md), and in full
+> [`data/ddg/DDG_COMPUTATION_REPORT.md`](../../data/ddg/DDG_COMPUTATION_REPORT.md).
+
 **Correction first.** Earlier notes in this directory said these features existed for only 500
 variants (2.3%). That was wrong: it described the *test subset* in
 `data/orianne/jak1_cluster_ddg.json`, used for the section-56 comparison against the paper's
