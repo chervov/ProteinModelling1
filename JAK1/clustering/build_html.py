@@ -12,11 +12,14 @@ def G(src,c,k):
     d=g[src]; return (d[str(c)] if str(c) in d else d[c])[k]
 KA="all variants"; KD="dbNSFP-defined (all 11 features)"; KM="dbNSFP-missing (8 features)"; KG="in gnomAD r4"
 A=S["auc_subsets"]
+N=S["auc_n"]
+def cell(f,k,bold=False):
+    v=A[f][k]
+    if v is None: return "<td class='n'>&mdash;</td>"
+    t=f"<b>{v:.4f}</b>" if bold else f"{v:.4f}"
+    return f"<td class='n'>{t}<br><span style='color:var(--mut);font-size:11px'>n={N[f][k]:,}</span></td>"
 sub_rows="".join(
-  f"<tr><td>{LAB[f]}</td><td class='n'>{A[f][KA]:.4f}</td>"
-  f"<td class='n'><b>{A[f][KD]:.4f}</b></td>"
-  f"<td class='n'>{'&mdash;' if A[f][KM] is None else format(A[f][KM],'.4f')}</td>"
-  f"<td class='n'>{A[f][KG]:.4f}</td></tr>"
+  f"<tr><td>{LAB[f]}</td>"+cell(f,KA)+cell(f,KD,True)+cell(f,KM)+cell(f,KG)+"</tr>"
   for f in sorted(A, key=lambda f:-(A[f][KD] or 0)))
 auc_rows="".join(
   f"<tr><td>{LAB[f]}</td><td>{S['auc'][f]['cov']:.1f}%</td>"
@@ -121,7 +124,9 @@ other and weakly with everything else, which is expected: they measure thermodyn
 while the rest measure evolutionary or clinical pathogenicity. These are different quantities.</div>
 
 <h2>3. How well does each feature separate the clusters?</h2>
-<p>AUC for discriminating cluster 2 (damaging), computed on each feature's own coverage. The third
+<p>AUC for discriminating cluster 2 (damaging), <b>computed on each feature's own coverage</b> — so
+the rows are <i>not</i> directly comparable, since ClinPred, CADD and SIFT are scored on 6,873
+variants and the rest on 21,926. The next subsection fixes that. The third
 column asks a different question: can the feature tell a variant that is <i>observed in gnomAD</i>
 from one that is not? That is an external check, since no clustering used gnomAD.</p>
 {img("auc","Per-feature AUC against both clusterings. Coverage in parentheses.")}
@@ -134,9 +139,17 @@ from one that is not? That is an external check, since no clustering used gnomAD
 the ones reachable by a single nucleotide change — while AlphaMissense, PolyPhen-2 and ESM-1b are
 scored on all of them. Restricting every feature to the <b>same</b> variants changes the ranking.</p>
 {img("auc_subsets","Left: each feature on all variants (grey) against the matched dbNSFP subset (blue). Right: the easier dbNSFP-defined subset against the harder complement.")}
-<div class="scroll"><table><thead><tr><th>Feature</th><th class="n">all (21,926)</th>
-<th class="n">dbNSFP-defined (6,873)</th><th class="n">dbNSFP-missing (15,053)</th>
-<th class="n">in gnomAD (982)</th></tr></thead><tbody>{sub_rows}</tbody></table></div>
+<div class="scroll"><table><thead><tr><th>Feature</th>
+<th class="n">own coverage<br><span style="font-weight:400">(subset 21,926)</span></th>
+<th class="n">dbNSFP-defined<br><span style="font-weight:400">(subset 6,873)</span></th>
+<th class="n">dbNSFP-missing<br><span style="font-weight:400">(subset 15,053)</span></th>
+<th class="n">in gnomAD<br><span style="font-weight:400">(subset 982)</span></th></tr></thead>
+<tbody>{sub_rows}</tbody></table></div>
+<p style="font-size:13.5px"><b>Read the first column carefully.</b> AUC is computed on each feature's
+own non-missing rows, so "own coverage" is <i>not</i> 21,926 for every feature — it is 6,873 for
+ClinPred, CADD and SIFT and 20,805 for FoldX. The <code>n=</code> under each value is what was
+actually used. That silent mismatch is precisely why the matched columns are needed: only there is
+every feature scored on identical variants.</p>
 <div class="key"><b>On equal footing, AlphaMissense is the best feature</b> — 0.9470 against ClinPred's
 0.9463 — and PolyPhen-2 (0.9423) overtakes CADD (0.9284). The apparent lead of ClinPred and CADD in
 the previous table is an artefact of <i>which</i> variants they are scored on, not of how well they

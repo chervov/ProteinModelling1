@@ -298,5 +298,73 @@
    "dbNSFP-missing (8 features)": 0.4951,
    "in gnomAD r4": 0.4892
   }
+ },
+ "auc_n": {
+  "esm1b": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "alphamissense": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "ddg_closed": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "ddg_open": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "ddg_delta": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "cadd": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 950
+  },
+  "foldx": {
+   "all variants": 20805,
+   "dbNSFP-defined (all 11 features)": 6517,
+   "dbNSFP-missing (8 features)": 14288,
+   "in gnomAD r4": 920
+  },
+  "sift": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 950
+  },
+  "polyphen2": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "blosum62": {
+   "all variants": 21926,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 15053,
+   "in gnomAD r4": 982
+  },
+  "clinpred": {
+   "all variants": 6873,
+   "dbNSFP-defined (all 11 features)": 6873,
+   "dbNSFP-missing (8 features)": 0,
+   "in gnomAD r4": 950
+  }
  }
 }
