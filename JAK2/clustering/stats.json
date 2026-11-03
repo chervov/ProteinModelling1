@@ -315,5 +315,517 @@
    "n": 6335,
    "pct_damaging": 59.4
   }
+ ],
+ "panel_thresholds": {
+  "esm1b": {
+   "op": "lt",
+   "light": -7.5,
+   "intense": null
+  },
+  "alphamissense": {
+   "op": "gt",
+   "light": 0.564,
+   "intense": null
+  },
+  "polyphen2": {
+   "op": "ge",
+   "light": 0.447,
+   "intense": 0.909
+  },
+  "sift": {
+   "op": "le",
+   "light": 0.05,
+   "intense": null
+  },
+  "clinpred": {
+   "op": "ge",
+   "light": 0.5,
+   "intense": null
+  },
+  "cadd": {
+   "op": "ge",
+   "light": 25.0,
+   "intense": 30.0
+  }
+ },
+ "panel": [
+  {
+   "group": "GOF variants previously reported",
+   "rows": [
+    {
+     "variant": "T108A",
+     "pos": 108,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -4.626,
+      "alphamissense": 0.0637,
+      "cadd": 8.617,
+      "foldx": 0.322,
+      "sift": 0.637,
+      "polyphen2": 0.0,
+      "blosum62": 0.0,
+      "clinpred": 0.0738427
+     }
+    },
+    {
+     "variant": "Y317H",
+     "pos": 317,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.835,
+      "alphamissense": 0.2697,
+      "cadd": 26.9,
+      "foldx": 2.6067,
+      "sift": 0.0,
+      "polyphen2": 0.975,
+      "blosum62": 2.0,
+      "clinpred": 0.901888
+     }
+    },
+    {
+     "variant": "H345L",
+     "pos": 345,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -9.094,
+      "alphamissense": 0.1546,
+      "cadd": 19.44,
+      "foldx": -1.0935,
+      "sift": 0.036,
+      "polyphen2": 0.009,
+      "blosum62": -3.0,
+      "clinpred": 0.850238
+     }
+    },
+    {
+     "variant": "H608N",
+     "pos": 608,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -8.919,
+      "alphamissense": 0.3284,
+      "cadd": 29.9,
+      "foldx": 1.3315,
+      "sift": 0.008,
+      "polyphen2": 0.965,
+      "blosum62": 1.0,
+      "clinpred": 0.988532
+     }
+    },
+    {
+     "variant": "L611S",
+     "pos": 611,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -10.913,
+      "alphamissense": 0.5799,
+      "cadd": 28.6,
+      "foldx": 0.9975,
+      "sift": 0.001,
+      "polyphen2": 0.991,
+      "blosum62": -2.0,
+      "clinpred": 0.995443
+     }
+    },
+    {
+     "variant": "V617I",
+     "pos": 617,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -7.032,
+      "alphamissense": 0.1158,
+      "cadd": 31.0,
+      "foldx": -0.9482,
+      "sift": 0.006,
+      "polyphen2": 0.654,
+      "blosum62": 3.0,
+      "clinpred": 0.953511
+     }
+    },
+    {
+     "variant": "V617F",
+     "pos": 617,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -10.287,
+      "alphamissense": 0.3342,
+      "cadd": 33.0,
+      "foldx": 0.6373,
+      "sift": 0.002,
+      "polyphen2": 0.934,
+      "blosum62": -1.0,
+      "clinpred": 0.924498
+     }
+    },
+    {
+     "variant": "V625F",
+     "pos": 625,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -16.741,
+      "alphamissense": 0.954,
+      "cadd": 32.0,
+      "foldx": 5.3339,
+      "sift": 0.0,
+      "polyphen2": 1.0,
+      "blosum62": -1.0,
+      "clinpred": 0.999818
+     }
+    },
+    {
+     "variant": "E846D",
+     "pos": 846,
+     "domain": "linker / other",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -8.941,
+      "alphamissense": 0.4314,
+      "cadd": 23.2,
+      "foldx": -0.7611,
+      "sift": 0.019,
+      "polyphen2": 0.241,
+      "blosum62": 2.0,
+      "clinpred": 0.848529
+     }
+    },
+    {
+     "variant": "R867Q",
+     "pos": 867,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.214,
+      "alphamissense": 0.2669,
+      "cadd": 35.0,
+      "foldx": 0.6407,
+      "sift": 0.108,
+      "polyphen2": 0.95,
+      "blosum62": 1.0,
+      "clinpred": 0.968544
+     }
+    },
+    {
+     "variant": "T875N",
+     "pos": 875,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -8.933,
+      "alphamissense": 0.8816,
+      "cadd": 29.7,
+      "foldx": -0.302,
+      "sift": 0.001,
+      "polyphen2": 0.979,
+      "blosum62": 0.0,
+      "clinpred": 0.995498
+     }
+    },
+    {
+     "variant": "S755R",
+     "pos": 755,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -5.137,
+      "alphamissense": 0.5464,
+      "cadd": 19.54,
+      "foldx": -0.8204,
+      "sift": 0.242,
+      "polyphen2": 0.401,
+      "blosum62": -1.0,
+      "clinpred": 0.882177
+     }
+    },
+    {
+     "variant": "R938Q",
+     "pos": 938,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -10.022,
+      "alphamissense": 0.7334,
+      "cadd": 29.1,
+      "foldx": 1.1501,
+      "sift": 0.023,
+      "polyphen2": 0.983,
+      "blosum62": 1.0,
+      "clinpred": 0.990114
+     }
+    },
+    {
+     "variant": "R1063H",
+     "pos": 1063,
+     "domain": "JH1 kinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.308,
+      "alphamissense": 0.1088,
+      "cadd": 26.4,
+      "foldx": 1.0429,
+      "sift": 0.058,
+      "polyphen2": 0.064,
+      "blosum62": 0.0,
+      "clinpred": 0.0184645
+     }
+    }
+   ]
+  },
+  {
+   "group": "New selected 4 variants",
+   "rows": [
+    {
+     "variant": "V1110E",
+     "pos": 1110,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -1.22,
+      "alphamissense": 0.2891,
+      "cadd": 23.0,
+      "foldx": -0.4911,
+      "sift": 0.023,
+      "polyphen2": 0.857,
+      "blosum62": -2.0,
+      "clinpred": 0.686658
+     }
+    },
+    {
+     "variant": "G571R",
+     "pos": 571,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.501,
+      "alphamissense": 0.2686,
+      "cadd": 33.0,
+      "foldx": 2.4401,
+      "sift": 0.002,
+      "polyphen2": 0.966,
+      "blosum62": -2.0,
+      "clinpred": 0.994163
+     }
+    },
+    {
+     "variant": "V578I",
+     "pos": 578,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.816,
+      "alphamissense": 0.2368,
+      "cadd": 29.3,
+      "foldx": 0.937,
+      "sift": 0.0,
+      "polyphen2": 0.999,
+      "blosum62": 3.0,
+      "clinpred": 0.961641
+     }
+    },
+    {
+     "variant": "L805I",
+     "pos": 805,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.668,
+      "alphamissense": 0.1504,
+      "cadd": 25.6,
+      "foldx": 0.5041,
+      "sift": 0.317,
+      "polyphen2": 0.773,
+      "blosum62": 2.0,
+      "clinpred": 0.933512
+     }
+    }
+   ]
+  },
+  {
+   "group": "Variants identified in this study",
+   "rows": [
+    {
+     "variant": "P37A",
+     "pos": 37,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -2.065,
+      "alphamissense": 0.065,
+      "cadd": 1.133,
+      "foldx": null,
+      "sift": 0.187,
+      "polyphen2": 0.003,
+      "blosum62": -1.0,
+      "clinpred": 0.189644
+     }
+    },
+    {
+     "variant": "F240V",
+     "pos": 240,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -9.664,
+      "alphamissense": 0.7681,
+      "cadd": 23.5,
+      "foldx": 0.975,
+      "sift": 0.173,
+      "polyphen2": 0.043,
+      "blosum62": -1.0,
+      "clinpred": 0.868502
+     }
+    },
+    {
+     "variant": "H380Y",
+     "pos": 380,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -10.026,
+      "alphamissense": 0.1722,
+      "cadd": 24.0,
+      "foldx": -0.9078,
+      "sift": 0.008,
+      "polyphen2": 0.955,
+      "blosum62": 2.0,
+      "clinpred": 0.988807
+     }
+    },
+    {
+     "variant": "R426X",
+     "note": "nonsense (p.Arg426*) - outside the missense universe"
+    },
+    {
+     "variant": "C427R",
+     "pos": 427,
+     "domain": "SH2",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -0.302,
+      "alphamissense": 0.2386,
+      "cadd": 13.05,
+      "foldx": 0.701,
+      "sift": 1.0,
+      "polyphen2": 0.014,
+      "blosum62": -3.0,
+      "clinpred": 0.76014
+     }
+    },
+    {
+     "variant": "G571R",
+     "pos": 571,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.501,
+      "alphamissense": 0.2686,
+      "cadd": 33.0,
+      "foldx": 2.4401,
+      "sift": 0.002,
+      "polyphen2": 0.966,
+      "blosum62": -2.0,
+      "clinpred": 0.994163
+     }
+    },
+    {
+     "variant": "V578I",
+     "pos": 578,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.816,
+      "alphamissense": 0.2368,
+      "cadd": 29.3,
+      "foldx": 0.937,
+      "sift": 0.0,
+      "polyphen2": 0.999,
+      "blosum62": 3.0,
+      "clinpred": 0.961641
+     }
+    },
+    {
+     "variant": "L805I",
+     "pos": 805,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.668,
+      "alphamissense": 0.1504,
+      "cadd": 25.6,
+      "foldx": 0.5041,
+      "sift": 0.317,
+      "polyphen2": 0.773,
+      "blosum62": 2.0,
+      "clinpred": 0.933512
+     }
+    },
+    {
+     "variant": "I1065T",
+     "pos": 1065,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.685,
+      "alphamissense": 0.4611,
+      "cadd": 23.5,
+      "foldx": 3.1536,
+      "sift": 0.001,
+      "polyphen2": 0.96,
+      "blosum62": -1.0,
+      "clinpred": 0.976645
+     }
+    },
+    {
+     "variant": "V1110E",
+     "pos": 1110,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -1.22,
+      "alphamissense": 0.2891,
+      "cadd": 23.0,
+      "foldx": -0.4911,
+      "sift": 0.023,
+      "polyphen2": 0.857,
+      "blosum62": -2.0,
+      "clinpred": 0.686658
+     }
+    }
+   ]
+  }
  ]
 }

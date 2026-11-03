@@ -31,6 +31,76 @@ st="".join(f"<tr><td>{k}</td><td class='n'>{v['c1_obs']}/{v['c1_n']:,}</td>"
            f"<td class='n'>{v['c2_obs']}/{v['c2_n']:,}</td><td class='n'>{v['odds_ratio']}</td></tr>"
            for k,v in S["gnomad_strata"].items())
 
+PLAB={"esm1b":"ESM-1b","alphamissense":"AlphaMissense","cadd":"CADD","sift":"SIFT",
+      "polyphen2":"PolyPhen-2","clinpred":"ClinPred","foldx":"FoldX","blosum62":"BLOSUM62"}
+PORDER=["esm1b","alphamissense","cadd","polyphen2","sift","clinpred","foldx","blosum62"]
+THR=S["panel_thresholds"]
+FMT={"esm1b":"{:.2f}","alphamissense":"{:.3f}","cadd":"{:.1f}","sift":"{:.3f}",
+     "polyphen2":"{:.3f}","clinpred":"{:.3f}","foldx":"{:.2f}","blosum62":"{:.0f}"}
+def tier(n,v):
+    """'' | 'hl' (light) | 'hl2' (intense) for one feature value."""
+    if v is None or n not in THR: return ""
+    o,a,b=THR[n]["op"],THR[n]["light"],THR[n]["intense"]
+    hit=lambda c: (v<c) if o=="lt" else (v>c) if o=="gt" else (v<=c) if o=="le" else (v>=c)
+    if b is not None and hit(b): return "hl2"
+    return "hl" if hit(a) else ""
+def panel_html():
+    hdr=("<tr><th>variant</th><th>domain</th><th class='n'>cluster</th>"
+         +"".join(f"<th class='n'>{PLAB[n]}</th>" for n in PORDER)
+         +"<th class='n'>flagged</th><th class='n'>gnomAD</th></tr>")
+    out=[]
+    for g in S["panel"]:
+        nd=sum(1 for r in g["rows"] if r.get("cluster")==S["damaging_cluster"])
+        nn=sum(1 for r in g["rows"] if "cluster" in r)
+        out.append(f"<tr class='grp'><td colspan='{3+len(PORDER)+2}'>{g['group']}"
+                   f"<span class='gc'>{nd}/{nn} in the damaging cluster</span></td></tr>")
+        for r in g["rows"]:
+            if "note" in r:
+                out.append(f"<tr><td><b>{r['variant']}</b></td>"
+                           f"<td colspan='{2+len(PORDER)+2}' class='tiny'>{r['note']}</td></tr>")
+                continue
+            dmg=r["cluster"]==S["damaging_cluster"]
+            cells=""
+            nflag=nscored=0
+            for n in PORDER:
+                v=r["feat"][n]; k=tier(n,v)
+                if n in THR and v is not None:
+                    nscored+=1; nflag+= (k!="")
+                cells+=(f"<td class='n {k}'>{FMT[n].format(v)}</td>" if v is not None
+                        else "<td class='n na'>&mdash;</td>")
+            out.append(f"<tr><td><b>{r['variant']}</b></td><td class='tiny'>{r['domain']}</td>"
+                       f"<td class='n'><span class='cl{r['cluster']}'>C{r['cluster']}"
+                       f"{' dmg' if dmg else ''}</span></td>{cells}"
+                       f"<td class='n'>{nflag}/{nscored}</td>"
+                       f"<td class='n tiny'>{'yes' if r['gnomad'] else '&mdash;'}</td></tr>")
+    return f"<table class='panel'><thead>{hdr}</thead><tbody>{''.join(out)}</tbody></table>"
+def disagree():
+    """Rows where the per-feature flag count and the cluster point opposite ways."""
+    seen={}
+    for g in S["panel"]:
+        for r in g["rows"]:
+            if "note" in r or r["variant"] in seen: continue
+            nf=sum(1 for n in THR if r["feat"][n] is not None and tier(n,r["feat"][n]))
+            ns=sum(1 for n in THR if r["feat"][n] is not None)
+            seen[r["variant"]]=(nf,ns,r["cluster"]==S["damaging_cluster"])
+    lo=[(v,a,b) for v,(a,b,d) in seen.items() if not d and a>=3]
+    hi=[(v,a,b) for v,(a,b,d) in seen.items() if d and a<=2]
+    f=lambda L: ", ".join(f"<b>{v}</b> ({a}/{b})" for v,a,b in sorted(L,key=lambda x:-x[1]))
+    out=[]
+    if lo: out.append(f"{len(lo)} variants carry {min(a for _,a,_ in lo)} or more flags yet sit in "
+                      f"the <b>tolerant</b> cluster: {f(lo)}")
+    out.append(f"{len(hi)} damaging-cluster variant{'s' if len(hi)!=1 else ''} carr{'y' if len(hi)!=1 else 'ies'}"
+               f" two flags or fewer{': '+f(hi) if hi else ''}" if hi else
+               "no damaging-cluster variant carries fewer than three flags")
+    return "; and ".join(out)+"."
+def thr_html():
+    o={"lt":"&lt;","gt":"&gt;","le":"&le;","ge":"&ge;"}
+    return "".join(
+      f"<tr><td>{PLAB[n]}</td><td class='n'><span class='hl'>{o[THR[n]['op']]} {THR[n]['light']}</span></td>"
+      f"<td class='n'>{('<span class=hl2>'+o[THR[n]['op']]+' '+str(THR[n]['intense'])+'</span>') if THR[n]['intense'] is not None else '&mdash;'}</td></tr>"
+      for n in PORDER if n in THR)
+
+
 HTML=f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JAK2 clustering v1</title><style>
@@ -66,6 +136,19 @@ border-radius:0 9px 9px 0;padding:12px 16px;margin:16px 0;font-size:14px}}.key b
 border-radius:5px;margin:2px 3px 2px 0;background:var(--chip)}}
 .chip.ok{{background:rgba(26,122,60,.16);color:var(--good)}}
 .chip.bad{{background:rgba(176,32,32,.16);color:var(--bad)}}
+td.hl{{background:rgba(250,204,21,.34)}}td.hl2{{background:rgba(234,179,8,.78);font-weight:600}}
+@media(prefers-color-scheme:dark){{:root:not([data-theme=light]) td.hl{{background:rgba(250,204,21,.22)}}
+:root:not([data-theme=light]) td.hl2{{background:rgba(250,204,21,.52);color:#17181a}}}}
+:root[data-theme=dark] td.hl{{background:rgba(250,204,21,.22)}}
+:root[data-theme=dark] td.hl2{{background:rgba(250,204,21,.52);color:#17181a}}
+span.hl{{background:rgba(250,204,21,.34);padding:1px 5px;border-radius:3px}}
+span.hl2{{background:rgba(234,179,8,.78);color:#17181a;padding:1px 5px;border-radius:3px;font-weight:600}}
+td.na{{color:var(--mut)}}table.panel td{{white-space:nowrap}}
+tr.grp td{{background:var(--chip);font-weight:700;padding-top:9px}}
+.gc{{float:right;font-weight:400;color:var(--mut)}}
+.cl1,.cl2{{font-weight:600;font-size:11px;padding:2px 6px;border-radius:4px}}
+.cl1{{background:rgba(26,122,60,.16);color:var(--good)}}
+.cl2{{background:rgba(176,32,32,.16);color:var(--bad)}}
 code{{font:12.5px ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 </head><body><div class="wrap">
@@ -125,9 +208,35 @@ and CADD (+2.09); BLOSUM62 least (−0.62), which is what a position-blind looku
 {img("distributions","Per-feature distributions by cluster. AlphaMissense, PolyPhen-2 and ClinPred are strongly bimodal; BLOSUM62 and FoldX overlap heavily.")}
 {img("auc","Per-feature AUC for separating the damaging cluster.")}
 <div class="key"><b>These AUCs are circular</b> — these are the features the clustering was built
-from, so they describe the split rather than validate it. The validation is section 3.</div>
+from, so they describe the split rather than validate it. The validation is sections 4 and 5.</div>
 
-<h2>3. gnomAD — the external test</h2>
+<h2>3. The literature panel — 28 variants of interest</h2>
+<p>The variants supplied as a reading list: previously reported gain-of-function alleles, the four
+newly selected ones, and those identified in the study. <b>Each cell is highlighted when that
+feature crosses its damaging threshold</b> — <span class="hl">light</span> for the first
+threshold, <span class="hl2">strong</span> for the more stringent second one where a predictor
+defines two. FoldX and BLOSUM62 carry no cutoff of this kind and are shown for reference only.</p>
+<div class="scroll">{panel_html()}</div>
+<div class="scroll" style="max-width:420px"><table><thead><tr><th>Predictor</th>
+<th class="n">damaging</th><th class="n">stringent</th></tr></thead><tbody>{thr_html()}</tbody></table></div>
+<div class="key"><p><b>Read this against the clustering, not instead of it.</b> The clustering used
+these same eight features, so a variant with every cell highlighted landing in the damaging
+cluster is not independent confirmation — it is the same evidence twice. What the table is good
+for is the <b>disagreements</b>: a row whose highlighting and whose cluster point opposite ways is
+where the per-feature thresholds and the multivariate distance part company, and those are the
+rows worth looking at by hand. Here, {disagree()} The asymmetry is the point: a handful of
+flags is not enough to move a variant across the Gower boundary, because the clustering weighs
+<i>how far</i> past a threshold a value sits, not merely <i>that</i> it is past one. <b>L805I</b>
+is the clearest case — four of six predictors flag it, but none strongly, and it is observed in
+gnomAD.</p>
+<p style="max-width:none">Three caveats specific to this panel. <b>{S['panel'][0]['rows'][11]['variant']}</b> is the
+corrected form of a variant listed elsewhere as R755S — position 755 in O60674 is already S, so
+only S755R exists; all 27 missense entries here were checked residue by residue against the
+canonical sequence. <b>R426X</b> is nonsense and has no row: the universe is missense only, and
+no predictor in this set scores a stop-gain. And the last two groups <b>overlap on four
+variants</b> (G571R, V578I, L805I, V1110E), which are listed in both, as supplied.</div>
+
+<h2>4. gnomAD — the external test</h2>
 <p>gnomAD r4 holds <b>{gp['c1_obs'] + gp['c2_obs']:,}</b> of these substitutions as observed human
 variation. No feature saw it.</p>
 {img("gnomad","Left: percentage of each cluster observed in gnomAD. Right: the pooled odds ratio against the stratified one.")}
@@ -144,7 +253,7 @@ inside it ({gc['pct_C1_dbnsfp']}% against {gc['pct_C2_dbnsfp']}%). Stratifying g
 clustering has no ΔΔG features, and JAK2's gnomAD coverage, while better in absolute terms, is
 concentrated differently. It is not controlled for CpG mutability.</p>
 
-<h2>4. ClinVar — the spot check</h2>
+<h2>5. ClinVar — the spot check</h2>
 <p>ClinVar has 347 JAK2 missense records but 305 are "Uncertain significance", leaving
 <b>21 usable labels</b>. Too few for an odds ratio; enough to catch a clustering that has gone
 wrong.</p>
@@ -157,19 +266,19 @@ cluster</b> — the canonical JAK2 gain-of-function mutation, and the one result
 invalidated the whole exercise had it come out the other way. Note that five of these 21 were
 seeds, so the honest score on unseen labels is <b>14 of 16</b>.</div>
 
-<h2>5. Where the damaging variants are</h2>
+<h2>6. Where the damaging variants are</h2>
 {img("along_protein","Damaging fraction (red) and gnomAD observation rate (green) in 25-residue windows, with domains shaded and V617F marked.")}
 <div class="scroll"><table><thead><tr><th>Domain</th><th class="n">n</th>
 <th class="n">% damaging</th><th class="n">% in gnomAD</th></tr></thead><tbody>{dom}</tbody></table></div>
 
-<h2>6. Coverage, and where to be careful</h2>
+<h2>7. Coverage, and where to be careful</h2>
 <p>Three features sit at 31.1% because dbNSFP indexes only single-nucleotide changes. Gower handles
 that by comparing on what exists, but on JAK1 the variants with fewest features were where two
 clusterings disagreed most.</p>
 <div class="scroll" style="max-width:460px"><table><thead><tr><th class="n">Features present</th>
 <th class="n">n</th><th class="n">% damaging</th></tr></thead><tbody>{cov}</tbody></table></div>
 
-<h2>7. What this is, and what it is not</h2>
+<h2>8. What this is, and what it is not</h2>
 <ul>
 <li><b>Not a reproduction.</b> There is no published JAK2 clustering. Nothing here is an ARI
 against anyone.</li>

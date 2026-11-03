@@ -41,6 +41,10 @@ in 1.3 s, so there is no reason to version 2 MB of float arrays.
   (pooled 2.89 → MH 2.32), so it is computed both ways here from the start.
 - **ClinVar spot check** — 19/21 usable labels placed correctly, with the honest
   14/16 figure after removing the 5 variants that were seeds.
+- **The 28-variant literature panel** (`S["panel"]`) — the supplied reading list in its three
+  groups, each variant's cluster, all 8 feature values, domain, and gnomAD status. Every WT
+  residue is asserted against `JAK2_O60674_1132aa.txt` at build time, so a mislabelled variant
+  fails the build rather than printing a wrong row.
 - **Per-domain and per-coverage breakdowns**, and damaging fraction in 25-residue
   windows along the protein.
 
@@ -56,6 +60,33 @@ in 1.3 s, so there is no reason to version 2 MB of float arrays.
 
 matplotlib only, `Agg` backend, no seaborn — one less pinned dependency, and the
 figures are simple enough not to need it.
+
+### The panel's threshold highlighting
+
+`S["panel_thresholds"]` holds the damaging-direction cutoffs, and `build_html.py` turns each cell
+into one of three states — plain, light yellow, strong yellow:
+
+| predictor | damaging | stringent |
+|---|--:|--:|
+| ESM-1b | < −7.5 | — |
+| AlphaMissense | > 0.564 | — |
+| CADD phred | ≥ 25 | ≥ 30 (top 0.1%) |
+| PolyPhen-2 | ≥ 0.447 (possibly damaging) | ≥ 0.909 (probably damaging) |
+| SIFT | ≤ 0.05 | — |
+| ClinPred | ≥ 0.5 | — |
+| FoldX, BLOSUM62 | — | — |
+
+The thresholds live in `analyse.py` and reach the template through `stats.json`, so they are
+recorded with the numbers they coloured rather than buried in CSS. The comparison operator is
+stored per predictor (`lt`/`gt`/`le`/`ge`) because the damaging direction is not uniform — ESM-1b
+and SIFT go down, the rest go up, and hard-coding `>` is the obvious way to silently invert half
+the table. FoldX and BLOSUM62 are deliberately uncoloured: neither has a cutoff of this kind,
+and inventing one would make the table look more decided than the evidence is.
+
+Two tiers are shown only where the predictor itself defines two. The yellows are set in `rgba`
+over the surface token rather than as flat hex, so they stay legible in both themes; the strong
+tier also pins dark text, since a 78%-opacity yellow under dark mode would otherwise carry the
+light-mode foreground.
 
 ## What `build_html.py` does
 

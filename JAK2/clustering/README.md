@@ -14,7 +14,8 @@ V617F and the myeloproliferative-neoplasm literature.
 
 **[`jak2_clustering_v1_wo_ddg_oc.html`](jak2_clustering_v1_wo_ddg_oc.html) — the analysis
 report.** Open it first: per-cluster averages of every feature, the gnomAD enrichment, the
-ClinVar spot check, and the five figures. Self-contained, no `figs/` needed.
+ClinVar spot check, the **28-variant literature panel** with threshold highlighting, and the
+five figures. Self-contained, no `figs/` needed.
 
 Underlying data: **[`jak2_clustering_v1.csv`](jak2_clustering_v1.csv)** — 21,508 rows, all 8
 features plus the `cluster` column. Config and every reported number:

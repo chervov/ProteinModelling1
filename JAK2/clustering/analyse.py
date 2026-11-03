@@ -3,6 +3,7 @@ import csv, json, math, pathlib
 import numpy as np, pandas as pd
 from scipy import stats as sps
 C = pathlib.Path("/Users/chervov/ProteinModelling1/JAK2/clustering")
+SEQ = open("JAK2_O60674_1132aa.txt").read().splitlines()[1]
 NAMES = ["esm1b","alphamissense","cadd","foldx","sift","polyphen2","blosum62","clinpred"]
 LAB = {"esm1b":"ESM-1b","alphamissense":"AlphaMissense","cadd":"CADD","foldx":"FoldX ddG",
        "sift":"SIFT","polyphen2":"PolyPhen-2 HumVar","blosum62":"BLOSUM62","clinpred":"ClinPred"}
@@ -105,6 +106,48 @@ for nm,a,b in DOM+[("linker / other",0,0)]:
         "pct_gnomad":round(100*ing[m].mean(),2)})
 S["cov_table"]=[{"k":int(k),"n":int((ncov==k).sum()),
                  "pct_damaging":round(100*(cl[ncov==k]==dam).mean(),1)} for k in sorted(set(ncov))]
+
+# ---- the 28-variant literature panel ---------------------------------------
+# Three groups as supplied: previously reported GOF, the four newly selected,
+# and those identified in the study. The last two overlap on four variants;
+# the grouping is kept as given rather than de-duplicated.
+PANEL=[("GOF variants previously reported",
+        "T108A Y317H H345L H608N L611S V617I V617F V625F E846D R867Q T875N S755R R938Q R1063H".split()),
+       ("New selected 4 variants", "V1110E G571R V578I L805I".split()),
+       ("Variants identified in this study",
+        "P37A F240V H380Y R426X C427R G571R V578I L805I I1065T V1110E".split())]
+# damaging-direction thresholds, as specified. (light, intense) - None = no second tier.
+# FoldX and BLOSUM62 have no published cutoff of this kind, so they are shown unhighlighted.
+THR={"esm1b":("lt",-7.5,None),"alphamissense":("gt",0.564,None),"polyphen2":("ge",0.447,0.909),
+     "sift":("le",0.05,None),"clinpred":("ge",0.5,None),"cadd":("ge",25.0,30.0)}
+S["panel_thresholds"]={k:{"op":o,"light":a,"intense":b} for k,(o,a,b) in THR.items()}
+dmap=dict((nm,(a,b)) for nm,a,b in DOM)
+def domain_of(q):
+    for nm,a,b in DOM:
+        if a<=q<=b: return nm
+    return "linker / other"
+idx=df.set_index("variant")
+S["panel"]=[]
+for gname,vs in PANEL:
+    rows=[]
+    for v in vs:
+        if v[-1]=="X":
+            rows.append({"variant":v,"note":"nonsense (p.Arg426*) - outside the missense universe"})
+            continue
+        r=idx.loc[v]; q=int(r.pos)
+        assert SEQ[q-1]==v[0], f"{v} does not match O60674"
+        rows.append({"variant":v,"pos":q,"domain":domain_of(q),"cluster":int(r.cluster),
+                     "gnomad":bool(r.in_gnomad),
+                     "feat":{n:(None if pd.isna(r[n]) else float(r[n])) for n in NAMES}})
+    S["panel"].append({"group":gname,"rows":rows})
+npanel=sum(len(g["rows"]) for g in S["panel"])
+nmiss=sum(1 for g in S["panel"] for x in g["rows"] if "note" in x)
+print(f"\npanel: {npanel} listed, {npanel-nmiss} with features, {nmiss} excluded")
+for g in S["panel"]:
+    dd=sum(1 for x in g["rows"] if x.get("cluster")==dam)
+    nn=sum(1 for x in g["rows"] if "cluster" in x)
+    print(f"   {g['group']:<36}{dd}/{nn} in the damaging cluster")
+
 np.save("X.npy",X); np.save("cl.npy",cl); np.save("ing.npy",ing); np.save("ncov.npy",ncov)
 np.save("pos.npy",pos)
 df.to_csv("merged.csv",index=False)
