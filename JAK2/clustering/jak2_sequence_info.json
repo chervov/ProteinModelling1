@@ -1,0 +1,33 @@
+{
+ "accession": "O60674",
+ "entry_name": "JAK2_HUMAN",
+ "protein": "Tyrosine-protein kinase JAK2",
+ "length": 1132,
+ "uniprot_entry_version": 251,
+ "sequence_version": 2,
+ "last_modified": "2001-01-24",
+ "md5": "06a47ffcc300b3340ae364cbdaf040be",
+ "sha256": "21017319c2c8714bf0b97157e13f2184664d2d13b899b37276195af86ca0720a",
+ "domains": [
+  [
+   "FERM",
+   37,
+   380
+  ],
+  [
+   "SH2; atypical",
+   401,
+   482
+  ],
+  [
+   "Protein kinase 1",
+   545,
+   809
+  ],
+  [
+   "Protein kinase 2",
+   849,
+   1124
+  ]
+ ]
+}
