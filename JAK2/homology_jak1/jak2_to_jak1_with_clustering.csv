@@ -1,6 +1,7 @@
-JAK2,JAK1_pos,JAK1_wt,JAK1_equivalent,wt_conserved,is_self_sub,domain(JAK1),local_id_11,gaps_11,local_id_41,gaps_41,EV1_cluster,rebuilt_cluster,esm1b,alphamissense,polyphen2_humvar_prob,sift,cadd_phred,clinpred,blosum62,foldx_ddg,ddg_closed,ddg_open,within_15
-V1110E,1136,P,P1136E,False,False,JH1 kinase,0.36,0,0.32,4,1.0,1.0,-7.531,0.6898,0.246,,,,-1.0,2.1711,-6.9423,-7.2795,1.0
-G571R,612,S,S612R,False,False,JH2 pseudokinase,0.09,3,0.37,3,1.0,1.0,-3.288,0.1298,0.263,,,,-1.0,1.3621,-0.902,-1.0591,1.0
-V578I,619,V,V619I,True,False,JH2 pseudokinase,0.45,0,0.39,3,1.0,2.0,-7.563,0.355,0.97,,,,3.0,1.2535,-5.0247,-7.2035,1.0
-L805I,845,I,I845I,False,True,JH2 pseudokinase,0.55,0,0.39,2,,,,,,,,,,,,,
-V617F,658,V,V658F,True,False,JH2 pseudokinase,0.64,0,0.61,0,2.0,2.0,-9.47,0.4396,0.997,0.005,28.2,0.990117967128754,-1.0,0.8661,-3.9795,-5.338,1.0
+JAK2,mapping,JAK1_pos,JAK1_wt,JAK1_equivalent,wt_conserved,is_self_sub,domain(JAK1),local_id_11,gaps_11,local_id_41,gaps_41,EV1_cluster,rebuilt_cluster,esm1b,alphamissense,polyphen2_humvar_prob,sift,cadd_phred,clinpred,blosum62,foldx_ddg,ddg_closed,ddg_open,within_15
+V1110E,primary,1136,P,P1136E,False,False,JH1 kinase,0.36,0,0.32,4,1.0,1.0,-7.531,0.6898,0.246,,,,-1.0,2.1711,-6.9423,-7.2795,1.0
+G571R,primary,612,S,S612R,False,False,JH2 pseudokinase,0.09,3,0.37,3,1.0,1.0,-3.288,0.1298,0.263,,,,-1.0,1.3621,-0.902,-1.0591,1.0
+V578I,primary,619,V,V619I,True,False,JH2 pseudokinase,0.45,0,0.39,3,1.0,2.0,-7.563,0.355,0.97,,,,3.0,1.2535,-5.0247,-7.2035,1.0
+L805I,primary,845,I,I845I,False,True,JH2 pseudokinase,0.55,0,0.39,2,,,,,,,,,,,,,
+V617F,primary,658,V,V658F,True,False,JH2 pseudokinase,0.64,0,0.61,0,2.0,2.0,-9.47,0.4396,0.997,0.005,28.2,0.990117967128754,-1.0,0.8661,-3.9795,-5.338,1.0
+G571R,alternative,610,G,G610R,True,False,JH2 pseudokinase,0.09,3,0.37,3,1.0,2.0,-5.162,0.1418,0.955,0.076,24.5,0.851545605762775,-2.0,1.7101,-7.4317,-2.3445,1.0
