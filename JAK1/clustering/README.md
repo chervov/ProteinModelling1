@@ -12,9 +12,11 @@ by row position as well as by `variant_id`.
 figures: feature histograms by cluster, the correlation matrix, per-feature AUC against both
 clusterings, **gnomAD r4 enrichment**, the disagreement analysis and the stratified ARI. Open it in a
 browser (GitHub will not render it; use `htmlpreview.github.io` or download). Figures also in
-[`figs/`](figs); built by `build_gnomad.py` → `analyse.py` → `plots.py` / `plots2.py` /
-`plots3.py` / `plots4.py` → `build_html.py`, with numbers in `stats.json`. gnomAD provenance and its
-two exclusions are documented in [`build_gnomad_jak1_info.md`](build_gnomad_jak1_info.md).
+[`figs/`](figs); regenerate the whole thing with
+**`python3 build_report.py`** (add `--no-fetch` to skip the gnomAD request); the pipeline and its one
+ordering trap are documented in [`build_report_jak1_info.md`](build_report_jak1_info.md), and the
+gnomAD feature with its two exclusions in
+[`build_gnomad_jak1_info.md`](build_gnomad_jak1_info.md). Numbers in `stats.json`.
 
 > **Two headlines from it.** (1) Both clusterings deplete the damaging cluster of gnomAD-observed
 > variants — **stratified OR 2.32** (paper) and **2.40** (rebuilt), p ≈ 1e-32 within the informative
