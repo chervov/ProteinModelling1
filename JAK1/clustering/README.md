@@ -6,6 +6,20 @@ at a time, with every step checked before the next is added. Started 2 November 
 Each feature file holds **all 23,080 Dataset EV1 rows in EV1 order**, so any two can be joined
 by row position as well as by `variant_id`.
 
+## → The analysis report (plots)
+
+**[`jak1_clustering_analysis.html`](jak1_clustering_analysis.html)** — exploratory analysis with
+figures: feature histograms by cluster, the correlation matrix, per-feature AUC against both
+clusterings, **gnomAD r4 enrichment**, the disagreement analysis and the stratified ARI. Open it in a
+browser (GitHub will not render it; use `htmlpreview.github.io` or download). Figures also in
+[`figs/`](figs); built by `fetch_gnomad.py` → `analyse.py` → `plots.py` / `plots2.py` →
+`build_html.py`, with numbers in `stats.json`.
+
+> **Headline from it:** both clusterings deplete the damaging cluster of gnomAD-observed variants by
+> **~2.5×** (paper 7.46% → 2.91%, p = 5e-51; rebuilt 7.15% → 2.82%, p = 1e-49). They are
+> *indistinguishable* on this external criterion despite disagreeing on one variant in seven, so
+> ARI 0.484 does not mean one is right and the other wrong.
+
 ## → The final results file
 
 **[`jak1_clustering_rebuilt.csv`](jak1_clustering_rebuilt.csv)** — one row per substitution
@@ -238,9 +252,13 @@ feature is decisive. Four headline findings:
    "Cluster 1"); the structure is unsupervised.
 3. **PolyPhen-2 dominates** (leave-one-out ΔARI −0.090, twice the next five combined), which makes
    the paper's silence on HumDiv vs HumVar the most consequential ambiguity in reproducing it.
-4. **The ΔΔG features subtract.** `ddg_delta` is inert to four decimals; dropping all three ΔΔG
-   features gives the *closest* agreement with the paper of anything tried (ARI 0.4917, sizes
-   7,868 / 14,058). Consistent with the clash contamination in `build_rosetta_ddg_jak1_info.md` §3.
+4. **The ΔΔG features subtract, though they are not uninformative.** `ddg_delta` is inert to four
+   decimals; dropping all three ΔΔG features gives the *closest* agreement with the paper of anything
+   tried (ARI 0.4917, sizes 7,868 / 14,058). Consistent with the clash contamination in
+   `build_rosetta_ddg_jak1_info.md` §3. Note that oriented correctly — these columns are
+   ΔΔG = ΔG_WT − ΔG_mut, so **negative = destabilising**, the opposite of FoldX in the same table —
+   `ddg_closed` and `ddg_open` reach AUC 0.74 against the EV1 clusters, on a par with FoldX at 0.72.
+   They are redundant with FoldX rather than blank.
 
 ## Where the two clusterings disagree
 
