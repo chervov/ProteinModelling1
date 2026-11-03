@@ -16,12 +16,13 @@ browser (GitHub will not render it; use `htmlpreview.github.io` or download). Fi
 `build_html.py`, with numbers in `stats.json`.
 
 > **Two headlines from it.** (1) Both clusterings deplete the damaging cluster of gnomAD-observed
-> variants by **~2.5×** (paper 7.46% → 2.91%, p = 5e-51; rebuilt 7.15% → 2.82%, p = 1e-49). They are
-> *indistinguishable* on this external criterion despite disagreeing on one variant in seven, so
-> ARI 0.484 does not mean one is right and the other wrong. (2) **Scored on matched subsets,
-> AlphaMissense is the best single feature** (AUC 0.9470), not ClinPred (0.9463) — ClinPred's and
-> CADD's apparent lead on the all-variant table is an artefact of being scored only on the easier
-> 31.3% that dbNSFP reaches. On the harder complement, **ESM-1b is best** (0.8884).
+> variants — **stratified OR 2.34** (paper) and **2.42** (rebuilt), p ≈ 1e-33 within the informative
+> stratum. They are *indistinguishable* on this external criterion despite disagreeing on one variant
+> in seven, so ARI 0.484 does not mean one is right and the other wrong. The pooled odds ratios
+> (2.89 / 2.84) are inflated by a dbNSFP confound and should not be quoted — see the report.
+> (2) **Scored on matched subsets, AlphaMissense is the best single feature** (AUC 0.9470), not
+> ClinPred (0.9463); ClinPred's and CADD's apparent lead is an artefact of being scored only on the
+> easier 31.3% that dbNSFP reaches. On the harder complement, **ESM-1b is best** (0.8884).
 
 ## → The final results file
 

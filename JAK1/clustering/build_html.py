@@ -91,8 +91,8 @@ whether either agrees with population genetics.</p>
 <div class="grid">
 <div class="stat"><div class="v">{S['n']:,}</div><div class="l">substitutions, 19 × 1,154</div></div>
 <div class="stat"><div class="v">0.484</div><div class="l">ARI, all variants</div></div>
-<div class="stat"><div class="v" style="color:var(--good)">0.786</div><div class="l">ARI where data is complete</div></div>
-<div class="stat"><div class="v">{G('paper',1,'frac')/G('paper',2,'frac'):.2f}&times;</div><div class="l">gnomAD depletion, damaging cluster</div></div>
+<div class="stat"><div class="v" style="color:var(--good)">0.679</div><div class="l">ARI at high feature coverage</div></div>
+<div class="stat"><div class="v">{S['gnomad_strat']['paper']['mh_or']}&times;</div><div class="l">gnomAD depletion, stratified OR</div></div>
 </div>
 
 <div class="key"><b>Cluster identity.</b> Nothing in Dataset EV1 states which label means what.
@@ -126,12 +126,14 @@ while the rest measure evolutionary or clinical pathogenicity. These are differe
 <h2>3. How well does each feature separate the clusters?</h2>
 <p>AUC for discriminating cluster 2 (damaging), <b>computed on each feature's own coverage</b> — so
 the rows are <i>not</i> directly comparable, since ClinPred, CADD and SIFT are scored on 6,873
-variants and the rest on 21,926. The next subsection fixes that. The third
-column asks a different question: can the feature tell a variant that is <i>observed in gnomAD</i>
+variants and the rest on 21,926. The next subsection fixes that. <b>The &ldquo;vs rebuilt&rdquo; column is
+self-referential</b> — these features built that clustering, so it describes rather than validates.
+The fourth column asks a different question: can the feature tell a variant that is <i>observed in gnomAD</i>
 from one that is not? That is an external check, since no clustering used gnomAD.</p>
 {img("auc","Per-feature AUC against both clusterings. Coverage in parentheses.")}
 <div class="scroll"><table><thead><tr><th>Feature</th><th class="n">Coverage</th>
-<th class="n">AUC vs paper</th><th class="n">AUC vs rebuilt</th><th class="n">AUC vs gnomAD</th></tr></thead>
+<th class="n">AUC vs paper</th><th class="n">AUC vs rebuilt<br><span style="font-weight:400">(self-referential)</span></th>
+<th class="n">AUC vs gnomAD</th></tr></thead>
 <tbody>{auc_rows}</tbody></table></div>
 
 <h3>The same comparison on matched subsets</h3>
@@ -170,12 +172,39 @@ substitution in this dataset. Neither clustering used gnomAD, so the extent to w
 variation avoids the damaging cluster is an independent test of both.</p>
 {img("gnomad_enrich","Percentage of each cluster observed in gnomAD r4. Both clusterings deplete the damaging cluster by about 2.5-fold.")}
 <div class="key"><b>Both clusterings pass, and they pass equally.</b> The paper's damaging cluster is
-<b>{G('paper',1,'frac')/G('paper',2,'frac'):.2f}&times; depleted</b> of gnomAD-observed variants
-(7.46% vs 2.91%, Fisher p = {g['paper']['p']:.1e}); the rebuild gives
-<b>{G('rebuilt',1,'frac')/G('rebuilt',2,'frac'):.2f}&times;</b> (7.15% vs 2.82%, p = {g['rebuilt']['p']:.1e}).
-Purifying selection is recovered by an unsupervised split that never saw population data. Critically,
-<b>the two clusterings are indistinguishable on this criterion</b> despite disagreeing on one variant
-in seven — so ARI 0.484 does not mean one is right and the other wrong.</div>
+depleted of gnomAD-observed variants ({G('paper',1,'frac'):.2f}% vs {G('paper',2,'frac'):.2f}%,
+Fisher p = {g['paper']['p']:.1e}); the rebuild gives {G('rebuilt',1,'frac'):.2f}% vs
+{G('rebuilt',2,'frac'):.2f}% (p = {g['rebuilt']['p']:.1e}). Purifying selection is recovered by an
+unsupervised split that never saw population data, and <b>the two clusterings are indistinguishable
+on this criterion</b> despite disagreeing on one variant in seven — so ARI 0.484 does not mean one
+is right and the other wrong.</div>
+
+<h3>The pooled figure is confounded — use the stratified one</h3>
+<p><b>{S['gnomad_confound']['pct_gnomad_in_dbnsfp']}% of gnomAD-matched variants fall in the
+dbNSFP-defined subset</b>, which is only {S['gnomad_confound']['pct_all_dbnsfp']}% of all variants.
+That is structural rather than coincidental: gnomAD holds observed SNVs and dbNSFP indexes exactly
+the single-nucleotide-reachable substitutions, so the two sets nearly coincide. And the tolerant
+cluster is disproportionately inside it — {S['gnomad_confound']['pct_C1_dbnsfp']}% of C1 against
+{S['gnomad_confound']['pct_C2_dbnsfp']}% of C2. Pooling across the two strata therefore inflates the
+association: a textbook Simpson's paradox.</p>
+{img("gnomad_strat","Left: pooled vs Mantel–Haenszel odds ratio. Right: ARI stratified on external variables only.")}
+<div class="scroll"><table><thead><tr><th>Clustering</th><th class="n">pooled OR</th>
+<th class="n">Mantel–Haenszel OR</th><th class="n">within dbNSFP, p</th></tr></thead><tbody>
+<tr><td>Paper (EV1)</td><td class="n">{S['gnomad_strat']['paper']['pooled_or']}</td>
+<td class="n"><b>{S['gnomad_strat']['paper']['mh_or']}</b></td>
+<td class="n">{S['gnomad_strat']['paper']['within_dbnsfp_p']:.1e}</td></tr>
+<tr><td>Rebuilt</td><td class="n">{S['gnomad_strat']['rebuilt']['pooled_or']}</td>
+<td class="n"><b>{S['gnomad_strat']['rebuilt']['mh_or']}</b></td>
+<td class="n">{S['gnomad_strat']['rebuilt']['within_dbnsfp_p']:.1e}</td></tr>
+</tbody></table></div>
+<p><b>The finding survives the correction.</b> Within the dbNSFP stratum alone the depletion is
+OR {S['gnomad_strat']['paper']['mh_or']} at p = {S['gnomad_strat']['paper']['within_dbnsfp_p']:.1e},
+and the two clusterings stay indistinguishable
+({S['gnomad_strat']['paper']['mh_or']} vs {S['gnomad_strat']['rebuilt']['mh_or']}). The honest
+headline is the stratified odds ratio, not the pooled one. The second stratum carries only
+{S['gnomad_strat']['paper']['strata'][1]['c1_obs']+S['gnomad_strat']['paper']['strata'][1]['c2_obs']}
+gnomAD hits among {S['gnomad_strat']['paper']['strata'][1]['c1_n']+S['gnomad_strat']['paper']['strata'][1]['c2_n']:,}
+variants, so its apparent reversal is noise.</p>
 
 <h3>Does allele frequency track the call?</h3>
 {img("gnomad_af","Percentage assigned to the damaging cluster, by gnomAD allele-frequency band.")}
@@ -218,6 +247,15 @@ with sparse features <i>and</i> an intermediate score, which disagree 68% of the
 barely above the 53.6% permutation null. Those are substitutions needing two or three nucleotide
 changes, so CADD, SIFT and ClinPred are absent by construction, leaving Gower distance over 7–8
 dimensions on a variant that is ambiguous anyway. <b>Neither label is trustworthy there.</b></div>
+<div class="key"><b>That 0.786 is partly circular, and the honest figure is lower.</b> The
+&ldquo;confident&rdquo; subset was defined using AlphaMissense, which is itself one of the eleven
+clustering features — selecting variants where a strong feature is decisive naturally selects
+variants both clusterings agree on. Stratifying instead on variables <i>external</i> to the feature
+set gives a smaller but trustworthy effect: <b>ARI 0.639 for variants observed in gnomAD</b>
+(n = 939) against 0.476 for those absent, and <b>0.679 at high coverage</b> against 0.402 at low.
+Coverage is determined by codon reachability rather than by any feature's value, so it is not
+circular; the AlphaMissense split is. The direction of the conclusion holds either way, but the
+magnitude is 0.64&ndash;0.68, not 0.79.</div>
 <p>This reorders the candidate explanations for the gap. Dropping all three ΔΔG features moves ARI
 0.484 → 0.492; the HumDiv/HumVar choice is worth about ΔARI 0.090. Stratifying by data quality moves
 it 0.484 → 0.786 — an order of magnitude more explanatory power than either. The dominant cause is
@@ -226,11 +264,15 @@ two pipelines.</p>
 
 <h2>7. What follows</h2>
 <ul>
-<li><b>Both clusterings are externally valid and equally so.</b> 2.5× gnomAD depletion each,
-p ≈ 10<sup>−50</sup>, from a split that never saw population data.</li>
+<li><b>Both clusterings are externally valid and equally so.</b> Stratified odds ratio
+{S['gnomad_strat']['paper']['mh_or']} (paper) and {S['gnomad_strat']['rebuilt']['mh_or']} (rebuilt)
+for gnomAD depletion of the damaging cluster, p ≈ 10<sup>−33</sup> within the informative stratum,
+from a split that never saw population data. The pooled figures
+({S['gnomad_strat']['paper']['pooled_or']} / {S['gnomad_strat']['rebuilt']['pooled_or']}) are
+inflated by the dbNSFP confound and should not be quoted.</li>
 <li><b>The published assignment carries very different per-variant confidence, and EV1 does not mark
-which.</b> A variant in the well-determined set (n = 4,931) is solid; one in the ill-determined set
-(n = 4,976) is close to arbitrary. A confidence field — feature count plus distance to the decision
+which.</b> On the non-circular coverage split, agreement is ARI 0.679 at ≥10 features against 0.402
+at ≤8; on the fully external gnomAD split, 0.639 against 0.476. A confidence field — feature count plus distance to the decision
 boundary — would be more useful than further tuning of the clustering.</li>
 <li><b>The ΔΔG features discriminate, but do not help.</b> Oriented correctly, ΔΔG closed and open
 reach AUC 0.74 — on a par with FoldX at 0.72 — so they are not uninformative. Yet dropping all
@@ -242,10 +284,28 @@ the clustering is least certain. Running SIFT and CADD natively, as PolyPhen-2 a
 close most of the ill-determined set.</li>
 </ul>
 
+<h2>Caveats</h2>
+<ul>
+<li><b>45 gnomAD records were excluded.</b> Their wild-type residue disagrees with P23458 and no
+constant offset reconciles them; all fall in <b>positions 665&ndash;708</b>, so gnomAD annotation
+there evidently follows a different transcript. That leaves a localised blind spot in one
+44-residue window — which sits inside the JH2 pseudokinase domain, so it is not a neutral region.</li>
+<li><b>gnomAD observation is not controlled for mutability.</b> CpG sites mutate roughly an order of
+magnitude faster, so part of the C1/C2 difference in &ldquo;seen in gnomAD&rdquo; could be mutational
+opportunity rather than selection. A mutability-matched expectation would settle it; this report does
+not compute one.</li>
+<li><b>The EV1 labels are not ground truth</b> — they are the paper's clustering output, so ARI
+measures agreement between two unsupervised partitions, not accuracy.</li>
+<li><b>Equal feature weights</b> throughout; the paper's weights are not published.</li>
+</ul>
+
 <h2>Methods</h2>
 <p>Source <code>JAK1/clustering/jak1_clustering_rebuilt.csv</code> (21,926 rows, 11 features, both
-cluster labels). gnomAD r4 missense variants fetched from the GraphQL API by gene symbol and matched
-on (position, alternate residue); {S['n_gnomad']} of {S['gnomad_total']} matched. AUC computed as the
+cluster labels). gnomAD r4 missense variants fetched from the GraphQL API by gene symbol and matched on
+(position, alternate residue) <b>with the wild-type residue verified against P23458</b>;
+{S['n_gnomad']} of {S['gnomad_total']} matched after 45 records were excluded on wild-type
+mismatch. Enrichment is reported both pooled and stratified by dbNSFP reachability
+(Mantel&ndash;Haenszel). AUC computed as the
 rank-sum statistic on each feature's own coverage, with features oriented so larger = more damaging.
 Enrichment tested by Fisher's exact test. ARI is the standard adjusted Rand index. Scripts:
 <code>fetch_gnomad.py</code>, <code>analyse.py</code>, <code>plots.py</code>, <code>plots2.py</code>,

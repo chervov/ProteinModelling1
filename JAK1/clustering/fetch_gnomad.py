@@ -22,6 +22,6 @@ for v in (d["data"]["gene"]["variants"] or []):
     af=ex.get("af") or ge.get("af"); ac=(ex.get("ac") or 0)+(ge.get("ac") or 0)
     k=f"{pos}{AA3[alt3]}"
     if af is None: continue
-    if k not in out or af>out[k]["af"]: out[k]={"af":af,"ac":ac,"wt":AA3[wt3]}
+    if k not in out or af>out[k]["af"]: out[k]={"af":af,"ac":ac,"wt":AA3[wt3],"pos":int(pos)}
 print(f"gnomAD r4 JAK1: {nmis} missense records -> {len(out)} unique (pos,alt) with AF")
 json.dump(out, open("jak1_gnomad.json","w"))
