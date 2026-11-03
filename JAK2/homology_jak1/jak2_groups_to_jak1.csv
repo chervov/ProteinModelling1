@@ -1,0 +1,25 @@
+group,JAK2,JAK2_pos,is_nonsense,JAK2_wt_ok,JAK2_actual_wt,JAK1_pos,unanimous,positions_seen,local_id_11,gaps_11,domain(JAK1),JAK1_wt,wt_conserved,is_self_sub,JAK1_equivalent,EV1_cluster,new_cluster,esm1b,alphamissense,polyphen2_humvar_prob,sift,cadd_phred,clinpred,blosum62,foldx_ddg
+1 reported GOF,T108A,108,False,True,T,101,True,101,0.09,0,FERM,M,False,False,M101A,1.0,1.0,-1.565,0.1064,0.006,,,,-1.0,2.117
+1 reported GOF,Y317H,317,False,True,Y,366,True,366,0.18,0,FERM,F,False,False,F366H,2.0,2.0,-7.184,0.9705,1.0,,,,-1.0,3.929
+1 reported GOF,H345L,345,False,True,H,385,True,385,0.64,1,FERM,N,False,False,N385L,1.0,1.0,-6.802,0.2278,0.076,,,,-3.0,-1.6113
+1 reported GOF,H608N,608,False,True,H,649,True,649,0.55,0,JH2 pseudokinase,H,True,False,H649N,2.0,2.0,-7.796,0.4354,1.0,0.009,31.0,0.96948077917774,1.0,0.397
+1 reported GOF,L611S,611,False,True,L,652,True,652,0.73,0,JH2 pseudokinase,Y,False,False,Y652S,1.0,1.0,-7.402,0.1802,0.15,0.004,24.7,0.794548749923706,-2.0,1.0248
+1 reported GOF,V617I,617,False,True,V,658,True,658,0.64,0,JH2 pseudokinase,V,True,False,V658I,2.0,2.0,-6.286,0.1951,0.938,0.004,27.4,0.909430921077728,3.0,-1.041
+1 reported GOF,V617F,617,False,True,V,658,True,658,0.64,0,JH2 pseudokinase,V,True,False,V658F,2.0,2.0,-9.47,0.4396,0.997,0.005,28.2,0.990117967128754,-1.0,0.8661
+1 reported GOF,V625F,625,False,True,V,666,True,666,0.64,0,JH2 pseudokinase,V,True,False,V666F,2.0,2.0,-16.526,0.9858,0.999,,,,-1.0,9.969
+1 reported GOF,E846D,846,False,True,E,872,True,872,0.64,0,linker / terminus,K,False,False,K872D,2.0,2.0,-11.694,0.898,0.965,,,,-1.0,0.9712
+1 reported GOF,R867Q,867,False,True,R,893,True,893,0.64,0,JH1 kinase,R,True,False,R893Q,2.0,1.0,-8.86,0.2208,0.999,,,,1.0,-0.0977
+1 reported GOF,T875N,875,False,True,T,901,True,901,0.73,0,JH1 kinase,T,True,False,T901N,2.0,2.0,-9.304,0.7125,1.0,,,,0.0,-0.1425
+1 reported GOF,S755R,755,False,True,S,795,True,795,0.27,0,JH2 pseudokinase,K,False,False,K795R,2.0,2.0,-6.217,0.0837,0.996,0.06,25.2,0.870303750038147,2.0,-0.4622
+1 reported GOF,R938Q,938,False,True,R,965,True,965,0.64,0,JH1 kinase,K,False,False,K965Q,2.0,2.0,-7.055,0.8197,1.0,0.037,26.1,0.936544954776764,1.0,0.1228
+1 reported GOF,R1063H,1063,False,True,R,1090,True,1090,0.45,1,JH1 kinase,K,False,False,K1090H,1.0,1.0,-7.501,0.2042,0.99,,,,-1.0,0.6773
+2 this study,P37A,37,False,True,P,34,True,34,0.18,0,FERM,P,True,False,P34A,1.0,1.0,-2.998,0.0583,0.007,0.08,6.822,0.0931380320408776,-1.0,
+2 this study,F240V,240,False,True,F,251,True,251,0.18,4,FERM,F,True,False,F251V,2.0,2.0,-10.216,0.9929,0.996,0.003,27.6,0.991819108226543,-1.0,3.7061
+2 this study,H380Y,380,False,True,H,420,True,420,0.91,0,FERM,H,True,False,H420Y,2.0,2.0,-9.169,0.8299,0.982,0.003,27.5,0.984759470849299,2.0,-0.1996
+2 this study,R426X,426,True,True,R,466,True,466,0.64,0,SH2-like,R,True,False,R466X,,,,,,,,,,
+2 this study,C427R,427,False,True,C,467,True,467,0.64,0,SH2-like,W,False,False,W467R,2.0,2.0,-7.544,0.9959,1.0,0.069,30.0,0.989890575408936,-3.0,4.108
+2 this study,G571R,571,False,True,G,612,False,610/612,0.09,3,JH2 pseudokinase,S,False,False,S612R,1.0,1.0,-3.288,0.1298,0.263,,,,-1.0,1.3621
+2 this study,V578I,578,False,True,V,619,True,619,0.45,0,JH2 pseudokinase,V,True,False,V619I,1.0,2.0,-7.563,0.355,0.97,,,,3.0,1.2535
+2 this study,L805I,805,False,True,L,845,True,845,0.55,0,JH2 pseudokinase,I,False,True,I845I,,,,,,,,,,
+2 this study,I1065T,1065,False,True,I,1092,True,1092,0.36,1,JH1 kinase,I,True,False,I1092T,1.0,2.0,-7.216,0.2042,0.861,0.001,33.0,0.974358379840851,-1.0,2.8686
+2 this study,V1110E,1110,False,True,V,1136,True,1136,0.36,0,JH1 kinase,P,False,False,P1136E,1.0,1.0,-7.531,0.6898,0.246,,,,-1.0,2.1711
