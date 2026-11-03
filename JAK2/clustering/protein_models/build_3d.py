@@ -4,7 +4,7 @@ Plotly from cdnjs, data inlined as JSON, so the page is one self-contained file.
 Backbone Ca traces only: 1,132 residues x 5 models is plenty to see the domain
 arrangement, and full atoms would be ~70x the data for no gain at this scale.
 """
-import json, os, pathlib
+import base64, json, os, pathlib, sys
 
 HERE = pathlib.Path(__file__).parent
 S = json.load(open(HERE / "model_analysis.json"))
@@ -39,6 +39,23 @@ meta = {k: {"label": LAB[k], "template": TMPL[k], "plddt": PL[k],
             "jh2jh1": S["centroids"][k]["JH2-JH1"],
             "shan": S["vs_shan"][k]["jh1_rmsd"]} for k in LAB}
 
+PLOTLY_URL = "https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"
+PLOTLY = HERE / "vendor" / "plotly-2.27.0.min.js"
+# The output is ONE self-contained file: Plotly and every figure are inlined. An earlier
+# version referenced vendor/plotly-*.js relatively, which broke the moment the html was
+# copied anywhere on its own - the common case, since the point of the page is to be shared.
+# vendor/ is only a build-time cache and is gitignored.
+LINK_VENDOR = "--link-vendor" in sys.argv
+
+
+def b64img(name, cap):
+    f = HERE / "figs" / f"{name}.png"
+    if not f.exists():
+        return ""
+    return (f'<figure><img src="data:image/png;base64,{base64.b64encode(f.read_bytes()).decode()}"'
+            f' alt="{cap}"><figcaption>{cap}</figcaption></figure>')
+
+
 HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JAK2 Model Viewer</title>
@@ -67,10 +84,15 @@ border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:point
 button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 .plot{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:8px;
 margin:14px 0;min-width:0}
+.cap{font:12.5px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:8px}
 .leg{display:flex;flex-wrap:wrap;gap:12px;font:12px "Source Sans 3",system-ui,sans-serif;
 color:var(--mut);margin:8px 2px}
 .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;
 vertical-align:-1px}
+figure{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:11px;
+padding:10px;min-width:0}
+figure img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
+figcaption{font:12.5px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:9px}
 .scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;
 font:12.6px "Source Sans 3",system-ui,sans-serif}
 th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left}
@@ -87,17 +109,27 @@ a rigid body in all five structures, and every per-domain RMSD across these mode
 0.10&ndash;0.66&nbsp;&Aring;. Rotate the first panel and the ~50&nbsp;&Aring; swing of the red
 JH1 domain is the whole story.</p>
 
-<h2>1. All five models, coloured by domain</h2>
+<h2>1. Static views &mdash; these always work</h2>
+<p>Rendered with matplotlib and embedded in this file, so they need no network, no WebGL and no
+other file beside this one. <b>All panels share one scale</b>, so the compact closed state and
+the extended open state are directly comparable; scaling each to its own extent would hide the
+very thing these figures exist to show.</p>
+__FIG1__
+__FIG2__
+__FIG3__
+__FIG4__
+
+<h2>2. Interactive &mdash; all five models, coloured by domain</h2>
 <div class="ctl" id="pick"></div>
 <div class="leg" id="leg"></div>
 <div class="plot"><div id="g1" style="height:560px"></div></div>
 
-<h2>2. Open against closed, superposed on JH2</h2>
+<h2>3. Open against closed, superposed on JH2</h2>
 <p>Both models of pair&nbsp;1 fitted on their JH2 domains, so the JH1 displacement is shown in
 its own frame. JH1 moves 81.9&nbsp;&Aring; between the two states.</p>
 <div class="plot"><div id="g2" style="height:540px"></div></div>
 
-<h2>3. Coloured by pLDDT</h2>
+<h2>4. Coloured by pLDDT</h2>
 <p>Confidence is high inside domains and collapses in the linkers. For the AlphaFold DB model we
 also have PAE, which puts the FERM&ndash;JH1 block at <b>21.0&nbsp;&Aring;</b> against a
 31&nbsp;&Aring; ceiling &mdash; the network is confident about each domain and close to
@@ -119,10 +151,9 @@ second opinion. Full write-up in <code>README.md</code>.</div>
 if(typeof Plotly==='undefined'){
   document.querySelectorAll('.plot').forEach(d=>{d.style.height='auto';
     d.innerHTML='<p style="padding:22px;margin:0;color:var(--mut)">The 3D viewer needs '+
-    'Plotly from <code>vendor/plotly-2.27.0.min.js</code>, which did not load. Keep that '+
-    'file next to this page, or load the structures directly from '+
-    '<code>pair1/</code>, <code>pair2/</code> and <code>AFmodel/</code> in PyMOL or ChimeraX. '+
-    'Every number in the tables below is already in the page and unaffected.</p>';
+    'Plotly, which did not load. <b>The static views in section 1 and every number below '+
+    'are unaffected.</b> This page normally has Plotly inlined, so if you are seeing this '+
+    'the file was built with <code>--link-vendor</code> and <code>vendor/</code> is missing.</p>';
     d.querySelectorAll('div[id]').forEach(x=>x.remove())})}
 const DATA=__DATA__, META=__META__, DOM=__DOM__, DCOL=__DCOL__;
 const dark=()=>document.documentElement.dataset.theme==='dark'||
@@ -191,9 +222,34 @@ if(typeof Plotly!=='undefined')matchMedia('(prefers-color-scheme: dark)').addEve
   draw1();fitJH2();draw3(Object.keys(DATA)[[...p3.children].findIndex(c=>c.className==='on')]||'pair1_closed')});
 </script></div></body></html>"""
 
+FIGS = {
+    "__FIG1__": ("models_overview",
+        "The five models, two viewing angles each. Closed is compact, open is extended; "
+        "only JH1 (red) changes position."),
+    "__FIG2__": ("open_vs_closed",
+        "Pair 1: closed in colour, open in grey, both fitted on JH2. JH1 moves 81.9 A."),
+    "__FIG3__": ("plddt", "Confidence along the chain: high inside domains, collapsing in the linkers."),
+    "__FIG4__": ("metrics",
+        "Left: centroid distances - only the three JH1 pairs change. Middle: JH1 RMSD after JH2 fit "
+        "between every pair of models. Right: AlphaFold DB PAE, confident within domains and not between."),
+}
+for tok, (name, cap) in FIGS.items():
+    HTML = HTML.replace(tok, b64img(name, cap))
+
+if not LINK_VENDOR:
+    if not PLOTLY.exists():
+        import urllib.request
+        PLOTLY.parent.mkdir(exist_ok=True)
+        print(f"fetching {PLOTLY_URL}")
+        urllib.request.urlretrieve(PLOTLY_URL, PLOTLY)
+    HTML = HTML.replace('<script src="vendor/plotly-2.27.0.min.js"></script>',
+                        "<script>" + PLOTLY.read_text() + "</script>")
+
 out = (HTML.replace("__DATA__", json.dumps(data, separators=(",", ":")))
            .replace("__META__", json.dumps(meta, separators=(",", ":")))
            .replace("__DOM__", json.dumps(S["domains"], separators=(",", ":")))
            .replace("__DCOL__", json.dumps(DCOL, separators=(",", ":"))))
 (HERE / "jak2_models_3d.html").write_text(out)
-print(f"wrote jak2_models_3d.html  {len(out)/1e6:.2f} MB")
+print(f"wrote jak2_models_3d.html  {len(out)/1e6:.2f} MB"
+      + ("  (links vendor/ - not self-contained)" if LINK_VENDOR
+         else "  (self-contained: Plotly and all figures inlined)"))

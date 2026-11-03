@@ -9,7 +9,8 @@ dual-state ΔΔG work has a fixed, documented starting point instead of a path i
 | [`pair2/`](pair2/) | the templated pair — closed from `JAK2_20261015_082903`, open from `JAK2_20261014_095758` |
 | [`AFmodel/`](AFmodel/) | AlphaFold DB `AF-O60674-F1` v6, downloaded from EBI, **with its PAE matrix** |
 
-Interactive 3D: **[`jak2_models_3d.html`](jak2_models_3d.html)**.
+3D views: **[`jak2_models_3d.html`](jak2_models_3d.html)** — one self-contained file. Static PNG
+panels first (they always render), then interactive versions of the same three views.
 All numbers below come from [`analyse_models.py`](analyse_models.py) → `model_analysis.json`.
 
 ---
@@ -187,14 +188,27 @@ the feature is reporting on the model rather than on the protein.
 |---|---|
 | `analyse_models.py` | all the geometry: centroids, superpositions, PAE blocks → `model_analysis.json` |
 | `build_3d.py` | builds the viewer from that JSON |
-| `jak2_models_3d.html` | the viewer, 0.18 MB |
-| `vendor/plotly-2.27.0.min.js` | Plotly, **vendored deliberately** (3.6 MB) |
+| `plot_models.py` | the static matplotlib views → `figs/*.png` |
+| `jak2_models_3d.html` | the viewer, **5.8 MB, self-contained** |
+| `figs/*.png` | the four static figures, also embedded in the html |
 | `model_analysis.json` | every number on this page, machine-readable |
 
-Plotly is vendored rather than loaded from a CDN so the viewer keeps working offline and after
-any CDN change — these pages are meant to be readable from the repository years from now. It also
-caught a real bug: the first version pinned `plotly.js/2.35.2` on cdnjs, which **does not exist**
-there (their mirror stops earlier) and silently produced a blank page.
+### Why the html is 5.8 MB
+
+Because it contains everything: Plotly inlined, and all four PNGs as base64. **Copy it anywhere
+and it still works** — no network, no sibling directory, no CDN.
+
+It took two tries to get there. The first version loaded Plotly from `cdnjs` pinned at
+`plotly.js/2.35.2`, a version that **does not exist on cdnjs** (their mirror stops earlier), so
+the page rendered blank with nothing but a console error. The second referenced a vendored
+`vendor/plotly-2.27.0.min.js` by relative path — which broke the moment the html was copied
+somewhere on its own, which is the normal way to share it. A page whose whole purpose is to be
+passed around should not have a sibling dependency. `vendor/` is now only a build-time cache,
+downloaded on demand and gitignored.
+
+The static PNG section exists for the same reason: WebGL can be unavailable (headless browsers,
+remote desktops, locked-down machines), and the figures and numbers should survive that. Build
+with `--link-vendor` if you want the small linked version instead.
 
 The superposition for panel 2 is computed in `build_3d.py` with numpy and the fitted coordinates
 are inlined. An earlier version did the Kabsch fit in JavaScript in the browser; that is exactly
