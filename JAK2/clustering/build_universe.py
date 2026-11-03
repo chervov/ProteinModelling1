@@ -13,7 +13,8 @@ ThermoMPNN) ships a lexicographic sort of the variant string, which puts positio
 rather than amino-acid substitutions. Every join in this directory is therefore on `variant`,
 never on row position.
 
-Writes JAK2_O60674.fasta, jak2_sequence_info.json, jak2_variant_universe.csv.
+Writes JAK2_O60674.fasta, JAK2_O60674_1132aa.txt, jak2_sequence_info.json,
+jak2_variant_universe.csv.
 """
 import hashlib
 import json
@@ -38,6 +39,13 @@ def main():
     (HERE / f"JAK2_{ACC}.fasta").write_text(fasta)
     seq = "".join(l.strip() for l in fasta.splitlines() if not l.startswith(">"))
 
+    # plain text as well as FASTA: one comment line, then the whole sequence unwrapped on a
+    # single line, so it can be pasted into a web form or read with one readline(). The length
+    # is in the filename too, which makes a truncated copy obvious at a glance.
+    plain = HERE / f"JAK2_{ACC}_{len(seq)}aa.txt"
+    plain.write_text(f"# UniProt {ACC} JAK2_HUMAN | {len(seq)} aa | "
+                     f"md5 {hashlib.md5(seq.encode()).hexdigest()}\n{seq}\n")
+
     info = {
         "accession": ACC,
         "entry_name": meta.get("uniProtkbId"),
@@ -53,6 +61,7 @@ def main():
                     for f in meta["features"] if f["type"] == "Domain"],
     }
     json.dump(info, open(HERE / "jak2_sequence_info.json", "w"), indent=1)
+    print(f"wrote {plain.name}: comment line + {len(seq)} residues on one line")
     print(f"{info['entry_name']} ({ACC}), {len(seq)} aa, "
           f"entry version {info['uniprot_entry_version']}, md5 {info['md5'][:12]}...")
     for nm, s, e in info["domains"]:

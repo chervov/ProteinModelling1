@@ -25,7 +25,8 @@ V617F and the myeloproliferative-neoplasm literature.
 
 | file | contents |
 |---|---|
-| [`JAK2_O60674.fasta`](JAK2_O60674.fasta) | UniProt O60674 canonical sequence, 1,132 aa |
+| [`JAK2_O60674.fasta`](JAK2_O60674.fasta) | UniProt O60674 canonical sequence, 1,132 aa, standard FASTA |
+| [`JAK2_O60674_1132aa.txt`](JAK2_O60674_1132aa.txt) | the same sequence as **plain text, unwrapped on a single line**, after one `#` comment line carrying the accession, length and md5. For pasting into a web form, or reading with one `readline()`. Accession and length are in the filename too, so a truncated copy is obvious. |
 | [`jak2_sequence_info.json`](jak2_sequence_info.json) | accession, entry version, md5/sha256, domain bounds — so the numbering is pinned to one sequence version |
 | [`jak2_variant_universe.csv`](jak2_variant_universe.csv) | **the canonical index**: `index`, `variant`, 21,508 rows |
 | [`build_universe.py`](build_universe.py) | reproduces all three, with the checks |
