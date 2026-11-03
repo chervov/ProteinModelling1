@@ -1,92 +1,155 @@
-"""Interactive 3D viewer for the five JAK2 models -> jak2_models_3d.html.
+"""Self-contained 3D viewer for the five JAK2 models -> jak2_models_3d.html.
 
-Plotly from cdnjs, data inlined as JSON, so the page is one self-contained file.
-Backbone Ca traces only: 1,132 residues x 5 models is plenty to see the domain
-arrangement, and full atoms would be ~70x the data for no gain at this scale.
+Uses 3Dmol.js with a cartoon trace, matching more_proteins/top10/*.html, which is the
+pattern already proven in this project. 3Dmol is inlined (0.5 MB) rather than loaded from a
+CDN, so the page works offline and keeps working when copied anywhere on its own. Structures
+are inlined as Ca-only PDB with pLDDT in the B-factor column: cartoon style 'trace' needs
+nothing more, and full-atom records would be ~8x the bytes for no visible gain.
+
+Earlier versions of this file used Plotly. Replaced because 3Dmol gives a real molecular
+cartoon, costs a seventh of the bytes, and is what the rest of the repository already uses.
 """
-import base64, json, os, pathlib, sys
+import base64, json, pathlib, sys, urllib.request
+
+import numpy as np
 
 HERE = pathlib.Path(__file__).parent
 S = json.load(open(HERE / "model_analysis.json"))
-LAB = {m["key"]: m["label"] for m in S["models"]}
-TMPL = {m["key"]: m["template"] for m in S["models"]}
-PL = {m["key"]: m["plddt"] for m in S["models"]}
-DCOL = {"FERM": "#4878d0", "SH2": "#6acc64", "JH2": "#ee854a", "JH1": "#d65f5f", "linker": "#b0b0b0"}
+LIB_URL = "https://cdn.jsdelivr.net/npm/3dmol@2.4.2/build/3Dmol-min.js"
+LIB = HERE / "vendor" / "3Dmol-2.4.2-min.js"
 
-# Panel 2 needs pair1_closed expressed in pair1_open's JH2 frame. Done here with numpy
-# rather than in the browser: a hand-rolled Kabsch in JS is exactly the kind of thing that
-# silently produces a plausible-looking wrong rotation.
-import numpy as np
+DCOL = {"FERM": "#4878d0", "SH2": "#6acc64", "JH2": "#ee854a", "JH1": "#d65f5f"}
+DOM = S["domains"]
+ORDER = ["pair1_closed", "pair1_open", "pair2_closed", "pair2_open", "afdb"]
+LAB = {m["key"]: m["label"] for m in S["models"]}
+MET = {m["key"]: m for m in S["models"]}
+AA3 = "ALA"  # residue name is irrelevant to a trace; keep the records minimal and uniform
+
+
+def ca_pdb(key, coords=None):
+    """Ca-only PDB text, B-factor = pLDDT."""
+    t = S["traces"][key]
+    xyz = coords if coords is not None else np.array(t["xyz"], float)
+    out = []
+    for i, (r, p) in enumerate(zip(t["res"], t["plddt"]), 1):
+        x, y, z = xyz[i - 1]
+        out.append(f"ATOM  {i:5d}  CA  {AA3} A{r:4d}    "
+                   f"{x:8.3f}{y:8.3f}{z:8.3f}  1.00{p:6.2f}           C")
+    return "\n".join(out)
+
+
+# pair1_closed expressed in pair1_open's JH2 frame, for the overlay panel.
 A, B = S["traces"]["pair1_closed"], S["traces"]["pair1_open"]
 bi = {r: i for i, r in enumerate(B["res"])}
-lo, hi = S["domains"]["JH2"]
+lo, hi = DOM["JH2"]
 sh = [(i, bi[r]) for i, r in enumerate(A["res"]) if lo <= r <= hi and r in bi]
 P = np.array([A["xyz"][i] for i, _ in sh], float)
 Q = np.array([B["xyz"][j] for _, j in sh], float)
 pm, qm = P.mean(0), Q.mean(0)
 V, _, W = np.linalg.svd((P - pm).T @ (Q - qm))
 R = V @ np.diag([1, 1, np.sign(np.linalg.det(V @ W))]) @ W
-fitted = ((np.array(A["xyz"], float) - pm) @ R + qm)
-fit_rmsd = float(np.sqrt((((P - pm) @ R + qm - Q) ** 2).sum(1).mean()))
-print(f"panel 2 JH2 fit RMSD {fit_rmsd:.2f} A over {len(sh)} residues")
+fitted = (np.array(A["xyz"], float) - pm) @ R + qm
+print(f"JH2 fit RMSD {np.sqrt((((P - pm) @ R + qm - Q) ** 2).sum(1).mean()):.2f} A "
+      f"over {len(sh)} residues")
 
-data = {k: {"res": S["traces"][k]["res"], "xyz": S["traces"][k]["xyz"],
-            "plddt": S["traces"][k]["plddt"]} for k in LAB}
-data["pair1_closed"]["fitted"] = [[round(float(c), 1) for c in p] for p in fitted]
-meta = {k: {"label": LAB[k], "template": TMPL[k], "plddt": PL[k],
-            "state": "closed" if S["centroids"][k]["FERM-JH1"] < 60 else "open",
-            "fermjh1": S["centroids"][k]["FERM-JH1"],
-            "jh2jh1": S["centroids"][k]["JH2-JH1"],
-            "shan": S["vs_shan"][k]["jh1_rmsd"]} for k in LAB}
-
-PLOTLY_URL = "https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"
-PLOTLY = HERE / "vendor" / "plotly-2.27.0.min.js"
-# The output is ONE self-contained file: Plotly and every figure are inlined. An earlier
-# version referenced vendor/plotly-*.js relatively, which broke the moment the html was
-# copied anywhere on its own - the common case, since the point of the page is to be shared.
-# vendor/ is only a build-time cache and is gitignored.
-LINK_VENDOR = "--link-vendor" in sys.argv
+MODELS = [{"id": f"v{i}", "key": k, "pdb": ca_pdb(k)} for i, k in enumerate(ORDER)]
+OVERLAY = {"closed": ca_pdb("pair1_closed", fitted), "open": ca_pdb("pair1_open")}
 
 
 def b64img(name, cap):
     f = HERE / "figs" / f"{name}.png"
-    if not f.exists():
-        return ""
-    return (f'<figure><img src="data:image/png;base64,{base64.b64encode(f.read_bytes()).decode()}"'
-            f' alt="{cap}"><figcaption>{cap}</figcaption></figure>')
+    return "" if not f.exists() else (
+        f'<figure><img src="data:image/png;base64,{base64.b64encode(f.read_bytes()).decode()}"'
+        f' alt="{cap}"><figcaption>{cap}</figcaption></figure>')
+
+
+def cards():
+    out = []
+    for m in MODELS:
+        k = m["key"]; c = S["centroids"][k]
+        st = "closed" if c["FERM-JH1"] < 60 else "open"
+        out.append(f"""<div class="card"><div class="hd"><b>{LAB[k]}</b>
+<span class="pill {st}">{st}</span></div>
+<div class="v3d" id="{m['id']}"></div>
+<div class="btns"><button class="btn on" onclick="setmode('{m['id']}','dom',this)">domain</button>
+<button class="btn" onclick="setmode('{m['id']}','plddt',this)">pLDDT</button></div>
+<div class="facts">FERM&ndash;JH1 <b>{c['FERM-JH1']:.0f}</b> &middot;
+JH2&ndash;JH1 {c['JH2-JH1']:.0f} &middot; JH1 vs Shan {S['vs_shan'][k]['jh1_rmsd']:.1f} &middot;
+pLDDT {MET[k]['plddt']:.1f}<br><span class="tmpl">template: {MET[k]['template']}</span></div>
+</div>""")
+    return "".join(out)
+
+
+def rows():
+    return "".join(
+        f"<tr><td>{LAB[k]}</td><td>{MET[k]['template']}</td>"
+        f"<td><b>{'closed' if S['centroids'][k]['FERM-JH1'] < 60 else 'open'}</b></td>"
+        + "".join(f"<td class='n'>{S['centroids'][k][p]:.1f}</td>" for p in S["domain_pairs"])
+        + f"<td class='n'>{S['vs_shan'][k]['jh1_rmsd']:.1f}</td>"
+          f"<td class='n'>{MET[k]['plddt']:.1f}</td></tr>" for k in ORDER)
+
+
+def pair_rows():
+    out = []
+    for kk, v in S["pairwise"].items():
+        a, b = kk.split("|")
+        out.append(f"<tr><td>{LAB[a]}</td><td>{LAB[b]}</td><td class='n'>{v['global_rmsd']:.2f}</td>"
+                   f"<td class='n'><b>{v['jh1_after_jh2_fit']:.2f}</b></td>"
+                   + "".join(f"<td class='n'>{v['per_domain_rmsd'][d]:.2f}</td>"
+                             for d in ("FERM", "SH2", "JH2", "JH1")) + "</tr>")
+    return "".join(out)
+
+
+def pae_rows():
+    p = S["afdb_pae"]
+    ks = ["SH2-SH2", "JH2-JH2", "JH1-JH1", "FERM-FERM", "FERM-SH2", "SH2-JH2", "FERM-JH2",
+          "JH2-JH1", "SH2-JH1", "FERM-JH1"]
+    return "".join(f"<tr><td>{k}</td><td class='n'>{p[k]:.1f}</td>"
+                   f"<td><span class='bar' style='width:{100*p[k]/S['afdb_pae_max']:.0f}%'></span></td>"
+                   f"</tr>" for k in ks)
 
 
 HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JAK2 Model Viewer</title>
-<script src="vendor/plotly-2.27.0.min.js"></script>
 <style>
 :root{--bg:#fbfaf8;--card:#fff;--fg:#17181a;--fg2:#4a4d52;--mut:#7b7f87;--line:#e3e1dd;
---accent:#1f5fa8;--chip:#f1efeb;color-scheme:light}
+--accent:#1f5fa8;--chip:#f1efeb;--good:#1a7a3c;--bad:#b02020;color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121316;--card:#1b1d21;
 --fg:#eceef1;--fg2:#b9bdc4;--mut:#878c95;--line:#2d3036;--accent:#7fb0ef;--chip:#24272c;
-color-scheme:dark}}
+--good:#5cc48a;--bad:#ef8e86;color-scheme:dark}}
 :root[data-theme=dark]{--bg:#121316;--card:#1b1d21;--fg:#eceef1;--fg2:#b9bdc4;--mut:#878c95;
---line:#2d3036;--accent:#7fb0ef;--chip:#24272c;color-scheme:dark}
+--line:#2d3036;--accent:#7fb0ef;--chip:#24272c;--good:#5cc48a;--bad:#ef8e86;color-scheme:dark}
 *{box-sizing:border-box}body{background:var(--bg);color:var(--fg);margin:0;
-font:15px/1.6 "Source Serif 4",Georgia,serif}
+font:15px/1.62 "Source Serif 4",Georgia,serif}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));
-padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 70px}
+padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 72px}
 h1{font:600 27px/1.2 "Source Sans 3",system-ui,sans-serif;margin:0 0 5px;text-wrap:balance}
-h2{font:600 19px "Source Sans 3",system-ui,sans-serif;margin:34px 0 10px;padding-top:13px;
+h2{font:600 19px "Source Sans 3",system-ui,sans-serif;margin:36px 0 10px;padding-top:13px;
 border-top:1px solid var(--line)}
-p{color:var(--fg2);max-width:74ch}a{color:var(--accent)}
+p,li{color:var(--fg2);max-width:74ch}a{color:var(--accent)}
 .sub{color:var(--mut);font:13px "Source Sans 3",system-ui,sans-serif;margin:0 0 18px}
-.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0;
-font:13px "Source Sans 3",system-ui,sans-serif}
-button{font:600 12.5px "Source Sans 3",system-ui,sans-serif;padding:7px 12px;border-radius:7px;
-border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-.plot{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:8px;
-margin:14px 0;min-width:0}
-.cap{font:12.5px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:8px}
-.leg{display:flex;flex-wrap:wrap;gap:12px;font:12px "Source Sans 3",system-ui,sans-serif;
-color:var(--mut);margin:8px 2px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px;
+min-width:0}
+.hd{font:13.5px "Source Sans 3",system-ui,sans-serif;display:flex;justify-content:space-between;
+align-items:center;gap:8px;margin-bottom:7px}
+.pill{font:600 10.5px "Source Sans 3",system-ui,sans-serif;padding:2px 7px;border-radius:5px}
+.pill.closed{background:rgba(176,32,32,.16);color:var(--bad)}
+.pill.open{background:rgba(26,122,60,.16);color:var(--good)}
+.v3d{position:relative;width:100%;height:250px;border-radius:7px;background:var(--chip);
+overflow:hidden}
+.v3d canvas{border-radius:7px}
+#big{height:470px}
+.btns{display:flex;gap:6px;margin-top:8px}
+.btn{font:600 11.5px "Source Sans 3",system-ui,sans-serif;padding:5px 11px;border-radius:6px;
+border:1px solid var(--line);background:transparent;color:var(--fg2);cursor:pointer}
+.btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.facts{font:11.5px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:8px;
+line-height:1.5}
+.tmpl{font-size:11px}
+.leg{display:flex;flex-wrap:wrap;gap:13px;font:12px "Source Sans 3",system-ui,sans-serif;
+color:var(--mut);margin:10px 2px}
 .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;
 vertical-align:-1px}
 figure{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:11px;
@@ -95,161 +158,149 @@ figure img{display:block;width:100%;height:auto;border-radius:6px;background:#ff
 figcaption{font:12.5px "Source Sans 3",system-ui,sans-serif;color:var(--mut);margin-top:9px}
 .scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;
 font:12.6px "Source Sans 3",system-ui,sans-serif}
-th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left}
+th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
 th{color:var(--mut);font-weight:600}td.n,th.n{text-align:right}
+.bar{display:inline-block;height:8px;border-radius:4px;background:var(--accent);min-width:2px}
 .key{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
 border-radius:0 9px 9px 0;padding:12px 16px;margin:15px 0;font-size:14px}
 .key b{color:var(--fg)}
 </style></head><body><div class="wrap">
-<h1>JAK2 full-length models</h1>
-<p class="sub">Five models of O60674, 1,132 residues &middot; C&alpha; backbone &middot;
-drag to rotate, scroll to zoom</p>
-<p>The open&rarr;closed transition moves <b>JH1 and nothing else</b>: FERM&ndash;SH2&ndash;JH2 is
-a rigid body in all five structures, and every per-domain RMSD across these models is
-0.10&ndash;0.66&nbsp;&Aring;. Rotate the first panel and the ~50&nbsp;&Aring; swing of the red
-JH1 domain is the whole story.</p>
 
-<h2>1. Static views &mdash; these always work</h2>
-<p>Rendered with matplotlib and embedded in this file, so they need no network, no WebGL and no
-other file beside this one. <b>All panels share one scale</b>, so the compact closed state and
-the extended open state are directly comparable; scaling each to its own extent would hide the
-very thing these figures exist to show.</p>
+<h1>JAK2 full-length models</h1>
+<p class="sub">Five models of O60674, 1,132 residues &middot; C&alpha; cartoon trace via 3Dmol.js
+&middot; drag to rotate, scroll to zoom</p>
+<p>The open&rarr;closed transition moves <b>JH1 and nothing else</b>. FERM&ndash;SH2&ndash;JH2 is a
+rigid body in all five structures and every per-domain RMSD between them is
+0.10&ndash;0.66&nbsp;&Aring;; the whole difference is where the red JH1 domain sits.</p>
+
+<h2>1. The five models</h2>
+<div class="leg">__LEG__</div>
+<div class="grid">__CARDS__</div>
+
+<h2>2. Open against closed, superposed on JH2</h2>
+<p>Both models of pair&nbsp;1 fitted on their JH2 domains, so JH1's displacement is shown in its
+own frame. <b>Closed in colour, open in grey.</b> JH1 moves 81.9&nbsp;&Aring; between the two.</p>
+<div class="card"><div class="v3d" id="big"></div>
+<div class="btns"><button class="btn on" onclick="ovmode('dom',this)">domain</button>
+<button class="btn" onclick="ovmode('plddt',this)">pLDDT</button>
+<button class="btn" onclick="ovmode('both',this)">both in colour</button></div></div>
+
+<h2>3. Static views</h2>
+<p>The same comparisons as figures, embedded in this file. They need no WebGL, so they survive a
+browser or remote session where the viewers above do not. <b>All 3D panels share one scale</b>, so
+the compact closed state and the extended open state are directly comparable.</p>
 __FIG1__
 __FIG2__
 __FIG3__
 __FIG4__
 
-<h2>2. Interactive &mdash; all five models, coloured by domain</h2>
-<div class="ctl" id="pick"></div>
-<div class="leg" id="leg"></div>
-<div class="plot"><div id="g1" style="height:560px"></div></div>
-
-<h2>3. Open against closed, superposed on JH2</h2>
-<p>Both models of pair&nbsp;1 fitted on their JH2 domains, so the JH1 displacement is shown in
-its own frame. JH1 moves 81.9&nbsp;&Aring; between the two states.</p>
-<div class="plot"><div id="g2" style="height:540px"></div></div>
-
-<h2>4. Coloured by pLDDT</h2>
-<p>Confidence is high inside domains and collapses in the linkers. For the AlphaFold DB model we
-also have PAE, which puts the FERM&ndash;JH1 block at <b>21.0&nbsp;&Aring;</b> against a
-31&nbsp;&Aring; ceiling &mdash; the network is confident about each domain and close to
-uninformative about where JH1 sits.</p>
-<div class="ctl" id="pick3"></div>
-<div class="plot"><div id="g3" style="height:540px"></div></div>
-
-<h2>Models</h2>
+<h2>4. Domain centroid distances</h2>
 <div class="scroll"><table><thead><tr><th>model</th><th>template</th><th>state</th>
-<th class="n">FERM&ndash;JH1</th><th class="n">JH2&ndash;JH1</th><th class="n">JH1 vs Shan</th>
-<th class="n">pLDDT</th></tr></thead><tbody id="tb"></tbody></table></div>
-<div class="key"><b>Pair 1 is the recommended dual-state pair</b> &mdash; both states from one
-untemplated run, so nothing differs between them but the conformation. Pair 2's open model sits
-0.33&nbsp;&Aring; from the AlphaFold DB model it was templated on, so it is a control, not a
-second opinion. Full write-up in <code>README.md</code>.</div>
-<p class="sub">Part of <a href="https://github.com/chervov/ProteinModelling1">chervov/ProteinModelling1</a></p>
+__PH__<th class="n">JH1 vs Shan</th><th class="n">pLDDT</th></tr></thead>
+<tbody>__ROWS__</tbody></table></div>
+<p><b>Only the three JH1 columns change.</b> FERM&ndash;SH2 is 35.7&ndash;35.9 in every model,
+SH2&ndash;JH2 39.4&ndash;39.8, FERM&ndash;JH2 47.9&ndash;49.0.</p>
 
+<h2>5. Mutual superposition</h2>
+<div class="scroll"><table><thead><tr><th>A</th><th>B</th><th class="n">global RMSD</th>
+<th class="n">JH1 after JH2 fit</th><th class="n">FERM</th><th class="n">SH2</th>
+<th class="n">JH2</th><th class="n">JH1</th></tr></thead><tbody>__PAIRS__</tbody></table></div>
+<div class="key"><b>The two closed models agree to 1.53&nbsp;&Aring;</b> although one had no
+template and the other was built from the mapped JAK1 closed model &mdash; the strongest evidence
+here that the closed state is real rather than a template artefact. Conversely <b>pair&nbsp;2's
+open model sits 0.33&nbsp;&Aring; from the AlphaFold&nbsp;DB model it was templated on</b>: it
+reproduced its own template, so it is a control, not a second opinion. Its pLDDT of 94.8 reflects
+that agreement, not quality.</div>
+
+<h2>6. AlphaFold DB PAE</h2>
+<p>Our OpenFold runs use <code>model_1</code>, which emits no PAE. The AlphaFold&nbsp;DB download
+includes it, and it is the most important caveat on this page.</p>
+<div class="scroll" style="max-width:520px"><table><thead><tr><th>block</th>
+<th class="n">mean PAE (&Aring;)</th><th>&nbsp;</th></tr></thead><tbody>__PAE__</tbody></table></div>
+<div class="key">Within domains AlphaFold is confident (2.4&ndash;5.4&nbsp;&Aring;). Between FERM
+and JH1 it is at <b>21.0&nbsp;&Aring;, 68% of the 31&nbsp;&Aring; ceiling</b> &mdash; it has
+essentially no idea where JH1 sits. That does not invalidate a dual-state &Delta;&Delta;G, since
+&Delta;&Delta;G is local and the domains themselves are confidently modelled, but the
+<b>interface</b> residues that generate the difference between states are in the least certain
+part of the model.</div>
+
+<p class="sub">Full write-up in <code>README.md</code> &middot; part of
+<a href="https://github.com/chervov/ProteinModelling1">chervov/ProteinModelling1</a></p>
+
+<script>__LIB__</script>
 <script>
-if(typeof Plotly==='undefined'){
-  document.querySelectorAll('.plot').forEach(d=>{d.style.height='auto';
-    d.innerHTML='<p style="padding:22px;margin:0;color:var(--mut)">The 3D viewer needs '+
-    'Plotly, which did not load. <b>The static views in section 1 and every number below '+
-    'are unaffected.</b> This page normally has Plotly inlined, so if you are seeing this '+
-    'the file was built with <code>--link-vendor</code> and <code>vendor/</code> is missing.</p>';
-    d.querySelectorAll('div[id]').forEach(x=>x.remove())})}
-const DATA=__DATA__, META=__META__, DOM=__DOM__, DCOL=__DCOL__;
-const dark=()=>document.documentElement.dataset.theme==='dark'||
-  (!document.documentElement.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);
-const domOf=r=>{for(const d in DOM){if(r>=DOM[d][0]&&r<=DOM[d][1])return d}return 'linker'};
-function segs(m){ // split the chain into runs of one domain so each is a separate line
-  const d=DATA[m],out=[];let cur=null;
-  d.res.forEach((r,i)=>{const dm=domOf(r);
-    if(!cur||cur.dm!==dm){cur={dm,x:[],y:[],z:[],t:[]};out.push(cur)}
-    cur.x.push(d.xyz[i][0]);cur.y.push(d.xyz[i][1]);cur.z.push(d.xyz[i][2]);
-    cur.t.push(`${r} ${dm}`)});
-  return out}
-const layout=t=>({margin:{l:0,r:0,t:t?28:0,b:0},title:t?{text:t,font:{size:13}}:undefined,
-  paper_bgcolor:'rgba(0,0,0,0)',showlegend:false,
-  font:{color:dark()?'#b9bdc4':'#4a4d52',family:'Source Sans 3,system-ui,sans-serif',size:10},
-  scene:{aspectmode:'data',xaxis:{visible:false},yaxis:{visible:false},zaxis:{visible:false},
-    bgcolor:'rgba(0,0,0,0)'}});
-const CFG={displayModeBar:false,responsive:true};
-// start with pair 1 only: five overlaid models is ~45 WebGL traces and a slow first
-// paint. The other three are one click away.
-let shown=['pair1_closed','pair1_open'];
-function draw1(){
-  const tr=[];
-  shown.forEach(m=>segs(m).forEach(s=>tr.push({type:'scatter3d',mode:'lines',x:s.x,y:s.y,z:s.z,
-    text:s.t,hovertemplate:`<b>${META[m].label}</b><br>%{text}<extra></extra>`,
-    line:{color:DCOL[s.dm],width:shown.length>2?2.5:4},
-    opacity:shown.length>2?0.75:1})));
-  Plotly.react('g1',tr,layout(null),CFG)}
-function draw3(m){
-  const d=DATA[m];
-  Plotly.react('g3',[{type:'scatter3d',mode:'lines',x:d.xyz.map(p=>p[0]),y:d.xyz.map(p=>p[1]),
-    z:d.xyz.map(p=>p[2]),line:{width:5,color:d.plddt,colorscale:[[0,'#d65f5f'],[0.5,'#f4e04d'],
-    [0.7,'#8ec7e8'],[1,'#2b5fa5']],cmin:50,cmax:100,colorbar:{title:{text:'pLDDT',font:{size:10}},
-    thickness:11,len:.6}},text:d.res.map((r,i)=>`${r} ${domOf(r)} pLDDT ${d.plddt[i]}`),
-    hovertemplate:'%{text}<extra></extra>'}],layout(META[m].label),CFG)}
-// panel 2: pair1 closed (pre-fitted on JH2 in analyse/build, not here) vs open
-function fitJH2(){
-  const A=DATA.pair1_closed,B=DATA.pair1_open,tr=[];
-  [[A.fitted,A.res,'pair1_closed'],[B.xyz,B.res,'pair1_open']].forEach(([xyz,res,m])=>{
-    const by={};res.forEach((r,i)=>{const d=domOf(r);(by[d]=by[d]||[]).push(xyz[i])});
-    for(const d in by)tr.push({type:'scatter3d',mode:'lines',
-      x:by[d].map(p=>p[0]),y:by[d].map(p=>p[1]),z:by[d].map(p=>p[2]),
-      line:{color:m==='pair1_closed'?DCOL[d]:'#9aa0a6',width:m==='pair1_closed'?4:2.5},
-      opacity:m==='pair1_closed'?1:.55,
-      hovertemplate:`<b>${META[m].label}</b><br>${d}<extra></extra>`})});
-  Plotly.react('g2',tr,layout('closed in colour, open in grey, both in the JH2 frame'),CFG)}
-// controls
-const pick=document.getElementById('pick');
-Object.keys(DATA).forEach(m=>{const b=document.createElement('button');
-  b.textContent=META[m].label;b.className=shown.includes(m)?'on':'';
-  b.onclick=()=>{shown=shown.includes(m)?shown.filter(x=>x!==m):[...shown,m];
-    b.className=shown.includes(m)?'on':'';draw1()};pick.appendChild(b)});
-document.getElementById('leg').innerHTML=Object.entries(DCOL).map(([d,c])=>
-  `<span><span class="sw" style="background:${c}"></span>${d}</span>`).join('');
-const p3=document.getElementById('pick3');
-Object.keys(DATA).forEach((m,i)=>{const b=document.createElement('button');
-  b.textContent=META[m].label;b.className=i===0?'on':'';
-  b.onclick=()=>{[...p3.children].forEach(c=>c.className='');b.className='on';draw3(m)};
-  p3.appendChild(b)});
-document.getElementById('tb').innerHTML=Object.keys(META).map(m=>{const v=META[m];
-  return `<tr><td>${v.label}</td><td>${v.template}</td><td><b>${v.state}</b></td>
-  <td class="n">${v.fermjh1.toFixed(1)}</td><td class="n">${v.jh2jh1.toFixed(1)}</td>
-  <td class="n">${v.shan.toFixed(1)}</td><td class="n">${v.plddt.toFixed(1)}</td></tr>`}).join('');
-if(typeof Plotly!=='undefined'){draw1();fitJH2();draw3('pair1_closed');}
-if(typeof Plotly!=='undefined')matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{
-  draw1();fitJH2();draw3(Object.keys(DATA)[[...p3.children].findIndex(c=>c.className==='on')]||'pair1_closed')});
+var MODELS=__MODELS__, OVERLAY=__OVERLAY__, DOMS=__DOMS__;
+function domcol(p){for(var d in DOMS){if(p>=DOMS[d][0]&&p<=DOMS[d][1])return DOMS[d][2];}
+  return '#9aa0a8';}
+function plcol(b){return b>=90?'#0053d6':b>=70?'#65cbf3':b>=50?'#ffdb13':'#ff7d45';}
+var VW={};
+function paint(id,mode){var v=VW[id];if(!v)return;
+  v.setStyle({},{cartoon:{style:'trace',thickness:0.75,colorfunc:function(a){
+    return mode==='plddt'?plcol(a.b):domcol(a.resi);}}});
+  v.render();}
+function setmode(id,mode,btn){var g=btn.parentNode.querySelectorAll('.btn');
+  for(var i=0;i<g.length;i++)g[i].className='btn';btn.className='btn on';paint(id,mode);}
+var OV=null;
+function ovpaint(mode){if(!OV)return;
+  OV.setStyle({model:0},{cartoon:{style:'trace',thickness:0.85,colorfunc:function(a){
+    return mode==='plddt'?plcol(a.b):domcol(a.resi);}}});
+  OV.setStyle({model:1},{cartoon:{style:'trace',thickness:0.6,colorfunc:function(a){
+    return mode==='plddt'?plcol(a.b):(mode==='both'?domcol(a.resi):'#9aa0a6');}}});
+  OV.render();}
+function ovmode(mode,btn){var g=btn.parentNode.querySelectorAll('.btn');
+  for(var i=0;i<g.length;i++)g[i].className='btn';btn.className='btn on';ovpaint(mode);}
+(function(){
+  if(typeof $3Dmol==='undefined'){
+    document.querySelectorAll('.v3d').forEach(function(e){
+      e.innerHTML='<p style="padding:14px;font:12px/1.5 system-ui;color:#888">3Dmol.js did not '+
+      'load, so the interactive views are unavailable. The static figures in section 3 and every '+
+      'number on this page are unaffected.</p>';});
+    return;}
+  MODELS.forEach(function(m){var el=document.getElementById(m.id);if(!el)return;
+    var v=$3Dmol.createViewer(el,{backgroundAlpha:0});VW[m.id]=v;
+    v.addModel(m.pdb,'pdb');paint(m.id,'dom');v.zoomTo();v.render();});
+  var el=document.getElementById('big');
+  if(el){OV=$3Dmol.createViewer(el,{backgroundAlpha:0});
+    OV.addModel(OVERLAY.closed,'pdb');OV.addModel(OVERLAY.open,'pdb');
+    ovpaint('dom');OV.zoomTo();OV.render();}
+})();
 </script></div></body></html>"""
 
-FIGS = {
-    "__FIG1__": ("models_overview",
-        "The five models, two viewing angles each. Closed is compact, open is extended; "
-        "only JH1 (red) changes position."),
-    "__FIG2__": ("open_vs_closed",
-        "Pair 1: closed in colour, open in grey, both fitted on JH2. JH1 moves 81.9 A."),
-    "__FIG3__": ("plddt", "Confidence along the chain: high inside domains, collapsing in the linkers."),
-    "__FIG4__": ("metrics",
-        "Left: centroid distances - only the three JH1 pairs change. Middle: JH1 RMSD after JH2 fit "
-        "between every pair of models. Right: AlphaFold DB PAE, confident within domains and not between."),
-}
-for tok, (name, cap) in FIGS.items():
-    HTML = HTML.replace(tok, b64img(name, cap))
+if "--link-lib" in sys.argv:
+    lib = f'</script><script src="{LIB_URL}">'
+else:
+    if not LIB.exists():
+        LIB.parent.mkdir(exist_ok=True)
+        print(f"fetching {LIB_URL}")
+        urllib.request.urlretrieve(LIB_URL, LIB)
+    lib = LIB.read_text()
 
-if not LINK_VENDOR:
-    if not PLOTLY.exists():
-        import urllib.request
-        PLOTLY.parent.mkdir(exist_ok=True)
-        print(f"fetching {PLOTLY_URL}")
-        urllib.request.urlretrieve(PLOTLY_URL, PLOTLY)
-    HTML = HTML.replace('<script src="vendor/plotly-2.27.0.min.js"></script>',
-                        "<script>" + PLOTLY.read_text() + "</script>")
+FIGS = {"__FIG1__": ("models_overview",
+         "The five models, two viewing angles each. Closed is compact, open extended; only JH1 "
+         "(red) changes position."),
+        "__FIG2__": ("open_vs_closed",
+         "Pair 1: closed in colour, open in grey, both fitted on JH2. JH1 moves 81.9 A."),
+        "__FIG3__": ("plddt", "Confidence along the chain: high inside domains, collapsing in the linkers."),
+        "__FIG4__": ("metrics",
+         "Left: centroid distances, only the three JH1 pairs change. Middle: JH1 RMSD after JH2 "
+         "fit between every pair. Right: AlphaFold DB PAE, confident within domains, not between.")}
+for tok, (n, c) in FIGS.items():
+    HTML = HTML.replace(tok, b64img(n, c))
 
-out = (HTML.replace("__DATA__", json.dumps(data, separators=(",", ":")))
-           .replace("__META__", json.dumps(meta, separators=(",", ":")))
-           .replace("__DOM__", json.dumps(S["domains"], separators=(",", ":")))
-           .replace("__DCOL__", json.dumps(DCOL, separators=(",", ":"))))
+out = (HTML
+       .replace("__LIB__", lib)
+       .replace("__MODELS__", json.dumps(MODELS, separators=(",", ":")))
+       .replace("__OVERLAY__", json.dumps(OVERLAY, separators=(",", ":")))
+       .replace("__DOMS__", json.dumps({d: [DOM[d][0], DOM[d][1], DCOL[d]] for d in DCOL},
+                                       separators=(",", ":")))
+       .replace("__LEG__", "".join(f'<span><span class="sw" style="background:{c}"></span>{d}'
+                                   f'</span>' for d, c in DCOL.items())
+                + '<span><span class="sw" style="background:#9aa0a8"></span>linker</span>')
+       .replace("__CARDS__", cards())
+       .replace("__PH__", "".join(f'<th class="n">{p}</th>' for p in S["domain_pairs"]))
+       .replace("__ROWS__", rows()).replace("__PAIRS__", pair_rows()).replace("__PAE__", pae_rows()))
+
 (HERE / "jak2_models_3d.html").write_text(out)
 print(f"wrote jak2_models_3d.html  {len(out)/1e6:.2f} MB"
-      + ("  (links vendor/ - not self-contained)" if LINK_VENDOR
-         else "  (self-contained: Plotly and all figures inlined)"))
+      + ("  (links 3Dmol from CDN)" if "--link-lib" in sys.argv
+         else "  (self-contained: 3Dmol and all figures inlined)"))

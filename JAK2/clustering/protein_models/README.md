@@ -9,8 +9,9 @@ dual-state ΔΔG work has a fixed, documented starting point instead of a path i
 | [`pair2/`](pair2/) | the templated pair — closed from `JAK2_20261015_082903`, open from `JAK2_20261014_095758` |
 | [`AFmodel/`](AFmodel/) | AlphaFold DB `AF-O60674-F1` v6, downloaded from EBI, **with its PAE matrix** |
 
-3D views: **[`jak2_models_3d.html`](jak2_models_3d.html)** — one self-contained file. Static PNG
-panels first (they always render), then interactive versions of the same three views.
+3D views: **[`jak2_models_3d.html`](jak2_models_3d.html)** — one self-contained file, 3.2 MB.
+Cα cartoon traces via 3Dmol.js with domain/pLDDT toggles, a JH2-superposed open-vs-closed overlay,
+the static figures, and every table below.
 All numbers below come from [`analyse_models.py`](analyse_models.py) → `model_analysis.json`.
 
 ---
@@ -187,28 +188,33 @@ the feature is reporting on the model rather than on the protein.
 | file | what |
 |---|---|
 | `analyse_models.py` | all the geometry: centroids, superpositions, PAE blocks → `model_analysis.json` |
-| `build_3d.py` | builds the viewer from that JSON |
+| `build_3d.py` | builds the 3Dmol viewer from that JSON |
 | `plot_models.py` | the static matplotlib views → `figs/*.png` |
-| `jak2_models_3d.html` | the viewer, **5.8 MB, self-contained** |
+| `jak2_models_3d.html` | the viewer, **3.2 MB, self-contained** |
 | `figs/*.png` | the four static figures, also embedded in the html |
 | `model_analysis.json` | every number on this page, machine-readable |
 
-### Why the html is 5.8 MB
+### The viewer: 3Dmol.js, inlined
 
-Because it contains everything: Plotly inlined, and all four PNGs as base64. **Copy it anywhere
-and it still works** — no network, no sibling directory, no CDN.
+Built on **3Dmol.js**, the same library as `more_proteins/top10/*.html`, so the structural pages
+in this repository all behave the same way: cartoon trace, click to toggle domain or pLDDT
+colouring, drag to rotate. 3Dmol is **inlined** (0.5 MB), as are all four PNGs — **copy the file
+anywhere and it still works**, with no network, no sibling directory and no CDN.
 
-It took two tries to get there. The first version loaded Plotly from `cdnjs` pinned at
-`plotly.js/2.35.2`, a version that **does not exist on cdnjs** (their mirror stops earlier), so
-the page rendered blank with nothing but a console error. The second referenced a vendored
-`vendor/plotly-2.27.0.min.js` by relative path — which broke the moment the html was copied
-somewhere on its own, which is the normal way to share it. A page whose whole purpose is to be
-passed around should not have a sibling dependency. `vendor/` is now only a build-time cache,
-downloaded on demand and gitignored.
+It took three attempts to get there, which is worth recording:
 
-The static PNG section exists for the same reason: WebGL can be unavailable (headless browsers,
+1. **Plotly from cdnjs pinned at `plotly.js/2.35.2`** — a version that *does not exist on cdnjs*
+   (their mirror stops earlier). The page rendered blank with nothing but a console error.
+2. **A vendored Plotly referenced by relative path** — which broke the moment the html was copied
+   somewhere on its own, which is the normal way to share it. A page whose purpose is to be passed
+   around must not have a sibling dependency.
+3. **3Dmol inlined** — a real molecular cartoon instead of a line plot, a seventh of Plotly's
+   bytes, and consistent with the rest of the repository.
+
+The static PNG section stays for a separate reason: WebGL can be unavailable (headless browsers,
 remote desktops, locked-down machines), and the figures and numbers should survive that. Build
-with `--link-vendor` if you want the small linked version instead.
+with `--link-lib` for the small CDN-linked version instead. `vendor/` is only a build-time cache,
+fetched on demand and gitignored.
 
 The superposition for panel 2 is computed in `build_3d.py` with numpy and the fitted coordinates
 are inlined. An earlier version did the Kabsch fit in JavaScript in the browser; that is exactly
