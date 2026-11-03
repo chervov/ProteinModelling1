@@ -174,6 +174,14 @@ closed state to use, and **not** AlphaFold, which places JH2–JH1 on a differen
 (4–5 shared interface residues out of ~32).
 
 
+## Structural models for the dual-state ΔΔG
+
+[`protein_models/`](protein_models/) holds the open and closed full-length JAK2 models, with
+[`protein_models/README.md`](protein_models/README.md) (geometry, superpositions, PAE) and an
+interactive 3D viewer, [`protein_models/jak2_models_3d.html`](protein_models/jak2_models_3d.html).
+The recommended dual-state pair is `pair1/`: closed and open from one untemplated run, so nothing
+differs between them but the conformation.
+
 ## The clustering and the report
 
 | script | what | document |
