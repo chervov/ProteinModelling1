@@ -15,7 +15,8 @@ V617F and the myeloproliferative-neoplasm literature.
 | step | state |
 |---|---|
 | 1. sequence pinned, variant universe | **done** |
-| 2. complete features — AlphaMissense, ESM-1v, ThermoMPNN, BLOSUM62 | next |
+| 2a. **ESM-1b** and **AlphaMissense**, both from source | **done — 100% each** |
+| 2b. BLOSUM62, computed locally | next |
 | 3. FoldX, dbNSFP block, PolyPhen-2 native run | |
 | 4. gnomAD and ClinVar as external validation | |
 | 5. the clustering | |
@@ -29,7 +30,10 @@ V617F and the myeloproliferative-neoplasm literature.
 | [`JAK2_O60674_1132aa.txt`](JAK2_O60674_1132aa.txt) | the same sequence as **plain text, unwrapped on a single line**, after one `#` comment line carrying the accession, length and md5. For pasting into a web form, or reading with one `readline()`. Accession and length are in the filename too, so a truncated copy is obvious. |
 | [`jak2_sequence_info.json`](jak2_sequence_info.json) | accession, entry version, md5/sha256, domain bounds — so the numbering is pinned to one sequence version |
 | [`jak2_variant_universe.csv`](jak2_variant_universe.csv) | **the canonical index**: `index`, `variant`, 21,508 rows |
-| [`build_universe.py`](build_universe.py) | reproduces all three, with the checks |
+| [`build_universe.py`](build_universe.py) | reproduces all four, with the checks |
+| [`jak2_esm1b.csv`](jak2_esm1b.csv) | ESM-1b LLR, **21,508 / 21,508** — [`build_esm1b_jak2_info.md`](build_esm1b_jak2_info.md) |
+| [`jak2_alphamissense.csv`](jak2_alphamissense.csv) | AlphaMissense + class, **21,508 / 21,508** — [`build_alphamissense_jak2_info.md`](build_alphamissense_jak2_info.md) |
+| [`build_esm1b.py`](build_esm1b.py), [`build_alphamissense.py`](build_alphamissense.py) | fetch both from source, for any accession |
 
 ## The sequence
 
@@ -96,11 +100,25 @@ to be the readable one.
 | validation | ARI against the paper | gnomAD + ClinVar, external |
 | rows | 23,080 incl. self-substitutions | **21,508**, excluded |
 | order | EV1's lexicographic | **by position** |
-| language model | ESM-1b | **ESM-1v** (what the Liao & Lehner release carries) |
+| language model | ESM-1b, from a project-supplied JSON | **ESM-1b, fetched from the Brandes release** — matching JAK1, not the ESM-1v the local file holds |
 | dual-state Rosetta ΔΔG | complete, on Jeanpierre's own models | **not computed** — see [`../../data/ddg/DDG_COMPUTATION_REPORT.md`](../../data/ddg/DDG_COMPUTATION_REPORT.md) |
 
-The last two matter for interpretation. ESM-1b and ESM-1v are different models, so that feature is
-not comparable between the two proteins. And without a Rosetta run JAK2 has ThermoMPNN and FoldX but
+### Features are fetched from source, not copied
+
+JAK1 read ESM-1b and AlphaMissense out of `sources/orianne/jak1_features.json`, a file supplied
+with the project. No such file exists for JAK2 or for the next protein, so both are fetched here
+from the original releases, keyed only on a UniProt accession:
+
+| feature | source | archive | what is actually transferred |
+|---|---|--:|---|
+| ESM-1b | [HuggingFace, Brandes 2023](https://huggingface.co/spaces/ntranoslab/esm_variants) | 1.34 GB zip, 42,289 members | **175 KB** — one member, by HTTP range request, ~3 s |
+| AlphaMissense | [Zenodo, DeepMind](https://zenodo.org/records/10813168) | 1.21 GB gz, 71 M rows | streamed, stops early at the accession, ~28 s, nothing stored |
+
+Two validations came out of that. AlphaMissense from source is **identical to four decimal places**
+to the cached Liao & Lehner copy on all 21,508 variants. ESM-1b is **not** the same as the ESM-1v in
+that file — Pearson r = +0.652 — so using the local copy would have broken comparability with JAK1.
+
+And without a Rosetta run JAK2 has ThermoMPNN and FoldX but
 no closed-versus-open ΔΔG — the one feature that carries conformational information. Whether that is
 worth an overnight molab run is a decision for after step 5; if it is, the Shan JAK2 model is the
 closed state to use, and **not** AlphaFold, which places JH2–JH1 on a different surface entirely
