@@ -15,12 +15,29 @@ V617F and the myeloproliferative-neoplasm literature.
 | step | state |
 |---|---|
 | 1. sequence pinned, variant universe | **done** |
-| 2a. **ESM-1b** and **AlphaMissense**, both from source | **done — 100% each** |
-| 2b. BLOSUM62, computed locally | next |
-| 3. FoldX, dbNSFP block, PolyPhen-2 native run | |
-| 4. gnomAD and ClinVar as external validation | |
-| 5. the clustering | |
-| 6. analysis report | |
+| 2. **eight of the paper's eleven features** | **done** |
+| 3. gnomAD and ClinVar as external validation | next |
+| 4. the clustering | |
+| 5. analysis report | |
+| — | |
+| ΔΔG closed / open / delta | deferred; see *Differences from JAK1* |
+
+### Features built
+
+| feature | coverage | source | time | document |
+|---|--:|---|--:|---|
+| **ESM-1b** | **100%** | HuggingFace zip, one member by range request | 3 s | [info](build_esm1b_jak2_info.md) |
+| **AlphaMissense** | **100%** | DeepMind Zenodo, streamed with early stop | 28 s | [info](build_alphamissense_jak2_info.md) |
+| **BLOSUM62** | **100%** | computed, matrix cross-checked | 0.2 s | [info](build_blosum62_jak2_info.md) |
+| **PolyPhen-2 HumVar** | **100%** | PolyPhen-2 server, batch submission | 2 min | [info](build_polyphen_jak2_info.md) |
+| **PolyPhen-2 HumDiv** | **100%** | same | 2 min | [info](build_polyphen_jak2_info.md) |
+| FoldX (for "MutFunc") | 94.6% | ProtVar; **EBI host blocked**, committed extract used | < 1 s | [info](build_foldx_jak2_info.md) |
+| CADD | 31.1% | dbNSFP via myvariant | 48 s | [info](build_dbnsfp_jak2_info.md) |
+| SIFT | 31.1% | same | — | same |
+| ClinPred | 31.1% | same | — | same |
+
+Every feature file has the same shape: 21,508 rows in the canonical order, `index, variant, wt,
+pos, alt, <feature>`, joined on `variant`. Blank means **not available**, never 0.
 
 ## Files
 
