@@ -222,5 +222,14 @@ for c in ("alphamissense", "esm1b", "polyphen2_humvar_prob", "foldx_ddg"):
         print(f"    {c:24s} G1 median {x.median():8.3f}   G2 median {y.median():8.3f}   "
               f"Mann-Whitney p = {mannwhitneyu(x, y).pvalue:.3f}")
 
+print("\n=== 8. Group 2 on its own, in the order given ===")
+g2 = T[T.group == "2 this study"].copy()           # GROUP2's own order is preserved throughout
+g2cols = ["JAK2", "JAK1_pos", "JAK1_wt", "JAK1_equivalent", "wt_conserved", "is_self_sub",
+          "is_nonsense", "local_id_11", "gaps_11", "unanimous", "positions_seen",
+          "domain(JAK1)", "EV1_cluster", "new_cluster", "alphamissense", "esm1b",
+          "polyphen2_humvar_prob", "sift", "cadd_phred", "clinpred", "blosum62", "foldx_ddg"]
+print(g2[g2cols].to_string(index=False))
+g2[g2cols].to_csv(HERE / "jak2_group2_to_jak1.csv", index=False)
+
 T.to_csv(HERE / "jak2_groups_to_jak1.csv", index=False)
-print("\nwrote jak2_groups_to_jak1.csv")
+print("\nwrote jak2_groups_to_jak1.csv and jak2_group2_to_jak1.csv")
