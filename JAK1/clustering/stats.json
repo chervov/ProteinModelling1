@@ -230,5 +230,73 @@
    "lo": 8.0,
    "hi": 1.2
   }
- ]
+ ],
+ "auc_subsets": {
+  "alphamissense": {
+   "all variants": 0.8858,
+   "dbNSFP-defined (all 11 features)": 0.947,
+   "dbNSFP-missing (8 features)": 0.8551,
+   "in gnomAD r4": 0.9298
+  },
+  "clinpred": {
+   "all variants": 0.9463,
+   "dbNSFP-defined (all 11 features)": 0.9463,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.9242
+  },
+  "polyphen2": {
+   "all variants": 0.8848,
+   "dbNSFP-defined (all 11 features)": 0.9423,
+   "dbNSFP-missing (8 features)": 0.8515,
+   "in gnomAD r4": 0.9394
+  },
+  "cadd": {
+   "all variants": 0.9284,
+   "dbNSFP-defined (all 11 features)": 0.9284,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.915
+  },
+  "esm1b": {
+   "all variants": 0.8922,
+   "dbNSFP-defined (all 11 features)": 0.8964,
+   "dbNSFP-missing (8 features)": 0.8884,
+   "in gnomAD r4": 0.879
+  },
+  "sift": {
+   "all variants": 0.8582,
+   "dbNSFP-defined (all 11 features)": 0.8582,
+   "dbNSFP-missing (8 features)": null,
+   "in gnomAD r4": 0.8368
+  },
+  "foldx": {
+   "all variants": 0.7187,
+   "dbNSFP-defined (all 11 features)": 0.7367,
+   "dbNSFP-missing (8 features)": 0.7094,
+   "in gnomAD r4": 0.707
+  },
+  "ddg_open": {
+   "all variants": 0.7388,
+   "dbNSFP-defined (all 11 features)": 0.7345,
+   "dbNSFP-missing (8 features)": 0.7377,
+   "in gnomAD r4": 0.7003
+  },
+  "ddg_closed": {
+   "all variants": 0.7409,
+   "dbNSFP-defined (all 11 features)": 0.733,
+   "dbNSFP-missing (8 features)": 0.7412,
+   "in gnomAD r4": 0.7047
+  },
+  "blosum62": {
+   "all variants": 0.6317,
+   "dbNSFP-defined (all 11 features)": 0.6538,
+   "dbNSFP-missing (8 features)": 0.6056,
+   "in gnomAD r4": 0.6246
+  },
+  "ddg_delta": {
+   "all variants": 0.4966,
+   "dbNSFP-defined (all 11 features)": 0.5001,
+   "dbNSFP-missing (8 features)": 0.4951,
+   "in gnomAD r4": 0.4892
+  }
+ }
 }

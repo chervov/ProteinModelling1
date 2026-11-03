@@ -10,6 +10,14 @@ def img(n, cap):
 g=S["gnomad"]
 def G(src,c,k): 
     d=g[src]; return (d[str(c)] if str(c) in d else d[c])[k]
+KA="all variants"; KD="dbNSFP-defined (all 11 features)"; KM="dbNSFP-missing (8 features)"; KG="in gnomAD r4"
+A=S["auc_subsets"]
+sub_rows="".join(
+  f"<tr><td>{LAB[f]}</td><td class='n'>{A[f][KA]:.4f}</td>"
+  f"<td class='n'><b>{A[f][KD]:.4f}</b></td>"
+  f"<td class='n'>{'&mdash;' if A[f][KM] is None else format(A[f][KM],'.4f')}</td>"
+  f"<td class='n'>{A[f][KG]:.4f}</td></tr>"
+  for f in sorted(A, key=lambda f:-(A[f][KD] or 0)))
 auc_rows="".join(
   f"<tr><td>{LAB[f]}</td><td>{S['auc'][f]['cov']:.1f}%</td>"
   f"<td class='n'>{S['auc'][f]['paper']:.4f}</td><td class='n'>{S['auc'][f]['rebuilt']:.4f}</td>"
@@ -120,6 +128,28 @@ from one that is not? That is an external check, since no clustering used gnomAD
 <div class="scroll"><table><thead><tr><th>Feature</th><th class="n">Coverage</th>
 <th class="n">AUC vs paper</th><th class="n">AUC vs rebuilt</th><th class="n">AUC vs gnomAD</th></tr></thead>
 <tbody>{auc_rows}</tbody></table></div>
+
+<h3>The same comparison on matched subsets</h3>
+<p>The table above is not a fair race. ClinPred, CADD and SIFT are scored on only 31.3% of variants —
+the ones reachable by a single nucleotide change — while AlphaMissense, PolyPhen-2 and ESM-1b are
+scored on all of them. Restricting every feature to the <b>same</b> variants changes the ranking.</p>
+{img("auc_subsets","Left: each feature on all variants (grey) against the matched dbNSFP subset (blue). Right: the easier dbNSFP-defined subset against the harder complement.")}
+<div class="scroll"><table><thead><tr><th>Feature</th><th class="n">all (21,926)</th>
+<th class="n">dbNSFP-defined (6,873)</th><th class="n">dbNSFP-missing (15,053)</th>
+<th class="n">in gnomAD (982)</th></tr></thead><tbody>{sub_rows}</tbody></table></div>
+<div class="key"><b>On equal footing, AlphaMissense is the best feature</b> — 0.9470 against ClinPred's
+0.9463 — and PolyPhen-2 (0.9423) overtakes CADD (0.9284). The apparent lead of ClinPred and CADD in
+the previous table is an artefact of <i>which</i> variants they are scored on, not of how well they
+score them.<br><br>
+<b>The dbNSFP subset is intrinsically easier.</b> Every feature with full coverage gains on it:
+AlphaMissense +0.061, PolyPhen-2 +0.058, BLOSUM62 +0.022, FoldX +0.018. Single-nucleotide-reachable
+substitutions are the milder, better-characterised ones, so a clustering evaluated only there looks
+better than it is.<br><br>
+<b>ESM-1b is the most robust.</b> It is the only strong feature that barely moves between the two
+halves (0.8964 → 0.8884) and it is the <b>best feature on the harder half</b>, ahead of AlphaMissense
+(0.8551) and PolyPhen-2 (0.8515). Where the genomic predictors cannot go at all, the protein language
+model still works — which is the argument for weighting it more heavily than its all-variant AUC
+suggests.</div>
 
 <h2>4. gnomAD enrichment — the external validation</h2>
 <p>gnomAD r4 holds {S['gnomad_total']} missense variants for JAK1, {S['n_gnomad']} of which match a
