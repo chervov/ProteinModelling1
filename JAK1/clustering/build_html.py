@@ -145,7 +145,7 @@ scored on all of them. Restricting every feature to the <b>same</b> variants cha
 <th class="n">own coverage<br><span style="font-weight:400">(subset 21,926)</span></th>
 <th class="n">dbNSFP-defined<br><span style="font-weight:400">(subset 6,873)</span></th>
 <th class="n">dbNSFP-missing<br><span style="font-weight:400">(subset 15,053)</span></th>
-<th class="n">in gnomAD<br><span style="font-weight:400">(subset 982)</span></th></tr></thead>
+<th class="n">in gnomAD<br><span style="font-weight:400">(subset {S['n_gnomad']:,})</span></th></tr></thead>
 <tbody>{sub_rows}</tbody></table></div>
 <p style="font-size:13.5px"><b>Read the first column carefully.</b> AUC is computed on each feature's
 own non-missing rows, so "own coverage" is <i>not</i> 21,926 for every feature — it is 6,873 for
@@ -240,14 +240,16 @@ damaging at high coverage, 1.2%) to the worst (intermediate-low at low coverage,
 {img("ari_strat","ARI against the paper's clustering, restricted to progressively better-determined subsets.")}
 <div class="scroll"><table><thead><tr><th>Subset</th><th class="n">n</th>
 <th class="n">Agreement</th><th class="n">ARI</th></tr></thead><tbody>{strat_rows}</tbody></table></div>
-<div class="key"><b>The reproduction is substantially better than ARI 0.484 suggests.</b> Where both
-clusterings have the data to decide — at least 10 of 11 features and an unambiguous AlphaMissense
-score — they agree <b>94.3%</b> at <b>ARI 0.786</b>. The headline is dragged down by 4,976 variants
+<div class="key"><b>The reproduction is better than ARI 0.484 suggests — but by less than the table
+implies.</b> The bottom two rows stratify partly on AlphaMissense, which is itself a clustering
+feature, so 0.786 is a circular upper bound. The defensible figures use variables outside the feature
+set: <b>ARI 0.679 at ≥10 features</b> (coverage is fixed by codon reachability, not by any score) and
+<b>0.639 for variants observed in gnomAD</b>. The headline is dragged down by 4,976 variants
 with sparse features <i>and</i> an intermediate score, which disagree 68% of the time at ARI 0.130,
 barely above the 53.6% permutation null. Those are substitutions needing two or three nucleotide
 changes, so CADD, SIFT and ClinPred are absent by construction, leaving Gower distance over 7–8
 dimensions on a variant that is ambiguous anyway. <b>Neither label is trustworthy there.</b></div>
-<div class="key"><b>That 0.786 is partly circular, and the honest figure is lower.</b> The
+<div class="key"><b>Why 0.786 is not the number to quote.</b> The
 &ldquo;confident&rdquo; subset was defined using AlphaMissense, which is itself one of the eleven
 clustering features — selecting variants where a strong feature is decisive naturally selects
 variants both clusterings agree on. Stratifying instead on variables <i>external</i> to the feature
@@ -258,7 +260,8 @@ circular; the AlphaMissense split is. The direction of the conclusion holds eith
 magnitude is 0.64&ndash;0.68, not 0.79.</div>
 <p>This reorders the candidate explanations for the gap. Dropping all three ΔΔG features moves ARI
 0.484 → 0.492; the HumDiv/HumVar choice is worth about ΔARI 0.090. Stratifying by data quality moves
-it 0.484 → 0.786 — an order of magnitude more explanatory power than either. The dominant cause is
+it 0.484 → 0.679 on the non-circular coverage split — still several times more explanatory power than
+either. The dominant cause is
 <b>missingness interacting with the Gower distance</b>, not a methodological difference between the
 two pipelines.</p>
 
@@ -303,8 +306,8 @@ measures agreement between two unsupervised partitions, not accuracy.</li>
 <p>Source <code>JAK1/clustering/jak1_clustering_rebuilt.csv</code> (21,926 rows, 11 features, both
 cluster labels). gnomAD r4 missense variants fetched from the GraphQL API by gene symbol and matched on
 (position, alternate residue) <b>with the wild-type residue verified against P23458</b>;
-{S['n_gnomad']} of {S['gnomad_total']} matched after 45 records were excluded on wild-type
-mismatch. Enrichment is reported both pooled and stratified by dbNSFP reachability
+984 raw records were retrieved, 45 excluded on wild-type mismatch, and
+{S['n_gnomad']} of the remaining 939 matched a substitution in the dataset. Enrichment is reported both pooled and stratified by dbNSFP reachability
 (Mantel&ndash;Haenszel). AUC computed as the
 rank-sum statistic on each feature's own coverage, with features oriented so larger = more damaging.
 Enrichment tested by Fisher's exact test. ARI is the standard adjusted Rand index. Scripts:
