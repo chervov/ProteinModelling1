@@ -125,6 +125,61 @@ should be most cautious.
 And `ddg_delta` is the one feature showing **no** difference (p = 0.25), consistent with its AUC of
 0.5035 (`build_rosetta_ddg_jak1_info.md` §4).
 
+### And, independently, where features are missing
+
+*Added 3 November 2026.* The band effect above is only half of it. Disagreement also rises
+monotonically as **coverage** falls, and the two effects are independent.
+
+| features present | n | disagreement |
+|--:|--:|--:|
+| 7 | 765 | **25.5%** |
+| 8 | 14,288 | 17.6% |
+| 10 | 356 | 11.2% |
+| 11 | 6,517 | **8.7%** |
+
+The three 31.3%-coverage features (CADD, SIFT, ClinPred) are present in 33.7% of agreements but
+only **18.2%** of disagreements. Crossing the two effects shows neither is a proxy for the other —
+within *every* AlphaMissense band, coverage still costs 6.8 to 16.1 percentage points:
+
+| AlphaMissense band | n | overall | ≤8 features | ≥10 features | gap |
+|---|--:|--:|--:|--:|--:|
+| confident tolerant (<0.25) | 5,416 | 14.5% | 19.8% | 9.3% | 10.5 |
+| intermediate-low (0.25–0.55) | 4,068 | **31.8%** | **36.5%** | 20.4% | 16.1 |
+| intermediate-high (0.55–0.80) | 2,850 | 21.8% | 25.7% | 10.8% | 14.9 |
+| confident damaging (≥0.80) | 9,592 | **6.4%** | 8.0% | **1.2%** | 6.8 |
+
+Band effect 3.0×, coverage effect 2.1×, and they multiply: the spread from best cell to worst is
+1.2% → 36.5%, a factor of 30.
+
+### What this does to the headline ARI
+
+| subset | n | agreement | **ARI** |
+|---|--:|--:|--:|
+| ALL — the figure reported in §4 | 21,926 | 84.9% | **0.484** |
+| high coverage (≥10 of 11 features) | 6,873 | 91.2% | 0.679 |
+| confident AlphaMissense | 15,008 | 90.6% | 0.657 |
+| **both: high coverage AND confident AM** | 4,931 | **94.3%** | **0.786** |
+| **neither: ≤8 features AND intermediate AM** | 4,976 | **68.0%** | **0.130** |
+
+**The reproduction is substantially better than ARI 0.484 suggests.** Where both clusterings have
+the data to decide they agree 94.3% at ARI 0.786. The headline is dragged down by 4,976 variants
+carrying sparse features *and* an intermediate score, which disagree 68% of the time at ARI 0.130 —
+barely above the 53.6% permutation null. Those are substitutions needing two or three nucleotide
+changes, so CADD, SIFT and ClinPred are all absent by construction (README § *The paper's
+SIFT/PolyPhen coverage did not come from dbNSFP*), leaving Gower distance over 7–8 dimensions on a
+variant that is ambiguous anyway. **Neither label is trustworthy there**, so counting that
+disagreement against the rebuild overstates the gap.
+
+This also changes what §6 and §8 attribute the gap to. Dropping all three ΔΔG features moves ARI
+0.484 → 0.492; the HumDiv/HumVar choice is worth about ΔARI 0.090. Stratifying by data quality
+moves it 0.484 → 0.786 — an order of magnitude more explanatory power than either. **The dominant
+cause is missingness interacting with the Gower distance**, not a methodological difference between
+the two pipelines.
+
+One consequence for downstream use: the published EV1 assignment carries very different confidence
+per variant and nothing in EV1 marks which. A per-variant confidence field — feature count plus
+distance to the decision boundary — would be more useful than further tuning of the clustering.
+
 ## 5. Which features actually carry the clustering
 
 Leave one feature out, recluster, re-measure against EV1:
