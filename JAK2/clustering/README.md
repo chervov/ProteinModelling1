@@ -182,6 +182,13 @@ interactive 3D viewer, [`protein_models/jak2_models_3d.html`](protein_models/jak
 The recommended dual-state pair is `pair1/`: closed and open from one untemplated run, so nothing
 differs between them but the conformation.
 
+## Building the reports
+
+[`jak2_build_html.md`](jak2_build_html.md) — how the HTML reports are built, and the seven ways
+it went wrong here first (a CDN version that did not exist, a sibling dependency that broke on
+copy, maths in the browser, panels that autoscaled away the effect they existed to show). Read it
+before writing the next report.
+
 ## The clustering and the report
 
 | script | what | document |

@@ -1,3 +1,6 @@
+> General guidance for all reports in this project, including the mistakes worth avoiding, is in
+> [`jak2_build_html.md`](jak2_build_html.md). This file documents this report specifically.
+
 # The JAK2 clustering report — `analyse.py` → `plots.py` → `build_html.py`
 
 Human-readable companion to the three scripts that turn `jak2_clustering_v1.csv`
