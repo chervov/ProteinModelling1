@@ -247,16 +247,31 @@ the clustering is least certain. Running SIFT and CADD natively, as PolyPhen-2 a
 close most of the ill-determined set.</li>
 </ul>
 
+<h2>Open items</h2>
+<p>Two things this report flags but does not resolve. Both could change a number that is currently
+quoted, so they are listed as work outstanding rather than as caveats to be noted and forgotten.</p>
+<div class="scroll"><table><thead><tr><th>Item</th><th>Why it matters</th><th>What would settle it</th></tr></thead>
+<tbody>
+<tr><td><b>gnomAD depletion is not mutability-controlled</b></td>
+<td>CpG dinucleotides mutate roughly 10&times; faster than other sites. If the tolerant cluster is
+enriched for CpG positions, part of the stratified OR of
+2.34 is mutational opportunity rather than purifying selection.
+This is the one remaining route by which the headline could be materially wrong.</td>
+<td>Compute a trinucleotide-context mutability expectation per variant and test observed against
+expected, rather than observed against the other cluster.</td></tr>
+<tr><td><b>gnomAD annotation gap at positions 665&ndash;708</b></td>
+<td>45 records were excluded because their wild-type residue disagrees with P23458 under any constant
+offset. The window sits <b>inside the JH2 pseudokinase domain</b> — the region this project cares
+about most, and the one containing the V658F-equivalent position — so the gap is not in neutral
+territory.</td>
+<td>Identify which transcript gnomAD annotates there, map those records onto the canonical isoform,
+and restore them.</td></tr>
+</tbody></table></div>
+
 <h2>Caveats</h2>
 <ul>
-<li><b>45 gnomAD records were excluded.</b> Their wild-type residue disagrees with P23458 and no
-constant offset reconciles them; all fall in <b>positions 665&ndash;708</b>, so gnomAD annotation
-there evidently follows a different transcript. That leaves a localised blind spot in one
-44-residue window — which sits inside the JH2 pseudokinase domain, so it is not a neutral region.</li>
-<li><b>gnomAD observation is not controlled for mutability.</b> CpG sites mutate roughly an order of
-magnitude faster, so part of the C1/C2 difference in &ldquo;seen in gnomAD&rdquo; could be mutational
-opportunity rather than selection. A mutability-matched expectation would settle it; this report does
-not compute one.</li>
+
+
 <li><b>The EV1 labels are not ground truth</b> — they are the paper's clustering output, so ARI
 measures agreement between two unsupervised partitions, not accuracy.</li>
 <li><b>Equal feature weights</b> throughout; the paper's weights are not published.</li>

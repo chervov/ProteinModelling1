@@ -152,6 +152,8 @@ gaps. Computing it locally gives 100%, as here.
 | REVEL | 31.3%, dbNSFP only |
 | CADD | not obtained; the earlier attempt is recorded in `mutations_clustering.md` |
 | MutFunc | not obtained (92.07% missing in the paper itself) |
+| **gnomAD mutability control** | **open** — the stratified depletion (OR 2.34) is not controlled for CpG hypermutability, so part of it may be mutational opportunity rather than selection. Needs a trinucleotide-context expectation per variant. This is the one route by which the gnomAD headline could be materially wrong. |
+| **gnomAD gap at positions 665–708** | **open** — 45 records excluded because their wild-type residue disagrees with P23458 under any constant offset; gnomAD evidently annotates a different transcript there. The window is **inside the JH2 pseudokinase domain**, which is the region of interest, so the gap is not neutral. Needs the transcript identified and the records remapped. |
 | ddG closed / open / open−closed | **done, 100%** — `jak1_ddg_rosetta_dualstate.csv`, from `data/ddg/ddg_JAK1_all.json` (complete 21,926 saturation on Jeanpierre's own models). The 500-variant `data/orianne/jak1_cluster_ddg.json` is a test subset, not the dataset |
 
 ## PolyPhen-2 at 100% coverage — how, and what it shows
