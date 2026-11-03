@@ -8,8 +8,8 @@ into `jak2_clustering_v1_wo_ddg_oc.html`. Mirrors
 
 | script | reads | writes | time |
 |---|---|---|---|
-| `analyse.py` | `jak2_clustering_v1.csv`, `jak2_gnomad.csv`, `jak2_clinvar.csv` | `stats.json` (4.5 KB) + 5 `.npy` arrays | 1.3 s |
-| `plots.py` | the `.npy` arrays + `stats.json` | `figs/*.png` (5 files, 324 KB) | 1.0 s |
+| `analyse.py` | `jak2_clustering_v1.csv`, `jak2_gnomad.csv`, `jak2_clinvar.csv` | `stats.json` + 7 `.npy` arrays | 1.3 s |
+| `plots.py` | the `.npy` arrays + `stats.json` | `figs/*.png` (6 files, 440 KB) | 1.3 s |
 | `build_html.py` | `stats.json`, `figs/*.png`, `jak2_clustering_v1_config.json` | `jak2_clustering_v1_wo_ddg_oc.html` (436 KB) | 0.02 s |
 
 Split this way for one reason: **every number in the report comes out of
@@ -20,7 +20,7 @@ printed numbers were affected without re-reading the whole template. Now
 `stats.json` is the single auditable record, and it is committed alongside the
 report.
 
-The `.npy` intermediates (`X`, `cl`, `ing`, `ncov`, `pos`) let `plots.py` be
+The `.npy` intermediates (`X`, `cl`, `ing`, `ncov`, `pos`, `corr_rho`, `corr_n`) let `plots.py` be
 re-run — restyling a figure, changing a bin width — without redoing the
 statistics. They are **not committed** (`.gitignore`): `analyse.py` rewrites them
 in 1.3 s, so there is no reason to version 2 MB of float arrays.
@@ -41,6 +41,12 @@ in 1.3 s, so there is no reason to version 2 MB of float arrays.
   (pooled 2.89 → MH 2.32), so it is computed both ways here from the start.
 - **ClinVar spot check** — 19/21 usable labels placed correctly, with the honest
   14/16 figure after removing the 5 variants that were seeds.
+- **Feature–feature correlation**, Spearman, pairwise-complete. Every feature is multiplied by a
+  stored sign (`S["corr"]["sign"]`) first, so that positive always means "agrees this is
+  damaging"; ESM-1b, SIFT and BLOSUM62 run downward and would otherwise show large negative
+  correlations that are pure sign convention. The **pairwise n matrix is computed and plotted
+  alongside**, because with coverage from 31.1% to 100% the correlations rest on very different
+  subsets — 6,335 variants for a dbNSFP feature against FoldX, 21,508 among the complete ones.
 - **The 28-variant literature panel** (`S["panel"]`) — the supplied reading list in its three
   groups, each variant's cluster, all 8 feature values, domain, and gnomAD status. Every WT
   residue is asserted against `JAK2_O60674_1132aa.txt` at build time, so a mislabelled variant
@@ -52,6 +58,7 @@ in 1.3 s, so there is no reason to version 2 MB of float arrays.
 
 | figure | what it shows |
 |---|---|
+| `corr.png` | two panels: the oriented Spearman matrix, and the number of variants carrying both features. The second panel exists because a correlation at n = 6,335 and one at n = 21,508 are not comparable, and showing only the first invites reading them as if they were. |
 | `cluster_means.png` | per-cluster means, **standardised**, so 8 features on 8 different scales are comparable on one axis. The headline figure — it is what "how do the clusters differ" looks like. |
 | `distributions.png` | per-feature histograms by cluster, which is where the bimodality of AlphaMissense/PolyPhen-2/ClinPred and the heavy overlap of BLOSUM62/FoldX become visible. |
 | `auc.png` | per-feature AUC, ranked. |

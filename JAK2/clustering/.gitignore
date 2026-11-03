@@ -7,3 +7,5 @@ pos.npy
 merged.csv
 pph2_humvar/
 pph2_humdiv/
+corr_rho.npy
+corr_n.npy

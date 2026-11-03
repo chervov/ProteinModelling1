@@ -11,6 +11,38 @@ S=json.load(open("stats.json")); X=np.load("X.npy"); cl=np.load("cl.npy")
 ing=np.load("ing.npy"); ncov=np.load("ncov.npy"); pos=np.load("pos.npy")
 sv=lambda f,n:(f.savefig(f"figs/{n}.png"),plt.close(f),print("  figs/"+n+".png"))
 
+from matplotlib.colors import LinearSegmentedColormap
+rho=np.load("corr_rho.npy"); pairn=np.load("corr_n.npy")
+
+# 0 correlation heatmap + the pairwise n it rests on
+fig,axes=plt.subplots(1,2,figsize=(13.2,5.6),gridspec_kw={"width_ratios":[1,1]})
+cmap=LinearSegmentedColormap.from_list("bwr2",["#2166ac","#f7f7f7","#b2182b"])
+k=len(NAMES); labs=[LAB[n] for n in NAMES]
+ax=axes[0]
+im=ax.imshow(rho,cmap=cmap,vmin=-1,vmax=1)
+for i in range(k):
+    for j in range(k):
+        if not np.isnan(rho[i,j]):
+            ax.text(j,i,f"{rho[i,j]:.2f}",ha="center",va="center",fontsize=7,
+                    color="white" if abs(rho[i,j])>.55 else "#333")
+ax.set_title("Spearman $\\rho$, all oriented so + = more damaging",fontsize=10)
+fig.colorbar(im,ax=ax,shrink=.78,label="$\\rho$")
+ax=axes[1]
+nlog=np.log10(np.maximum(pairn,1))
+im2=ax.imshow(nlog,cmap="YlGnBu",vmin=3.5,vmax=np.log10(21508))
+for i in range(k):
+    for j in range(k):
+        v=pairn[i,j]
+        ax.text(j,i,f"{v/1000:.1f}k",ha="center",va="center",fontsize=7,
+                color="white" if nlog[i,j]>4.15 else "#333")
+ax.set_title("variants with BOTH features present",fontsize=10)
+cb=fig.colorbar(im2,ax=ax,shrink=.78,label="n (log scale)")
+cb.set_ticks([np.log10(x) for x in (6335,10000,21508)]); cb.set_ticklabels(["6.3k","10k","21.5k"])
+for ax in axes:
+    ax.set_xticks(range(k)); ax.set_xticklabels(labs,rotation=45,ha="right")
+    ax.set_yticks(range(k)); ax.set_yticklabels(labs); ax.grid(False)
+sv(fig,"corr")
+
 # 1 standardised cluster means - the headline "how do clusters differ" figure
 fig,ax=plt.subplots(figsize=(8.6,4.6))
 z1,z2=[],[]

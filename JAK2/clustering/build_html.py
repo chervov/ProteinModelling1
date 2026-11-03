@@ -101,6 +101,16 @@ def thr_html():
       for n in PORDER if n in THR)
 
 
+def corr_bits():
+    c=S["corr"]; hi=c["highest"][0]; lo=c["lowest"][0]
+    SHORT=dict(LAB, foldx="FoldX", polyphen2="PolyPhen-2")
+    f=lambda x: f"{SHORT[x[1]]}/{SHORT[x[2]]} ({x[0]:.2f})"
+    return (f(hi), f(lo), c["mean_abs"], f"{c['min_pair_n']:,}",
+            ", ".join(f(x) for x in c["highest"]), ", ".join(f(x) for x in c["lowest"]),
+            min(v for r in c["rho"] for v in r if v is not None))
+
+
+CHI,CLO,CMA,CMN,CHI3,CLO3,CRMIN = corr_bits()
 HTML=f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JAK2 clustering v1</title><style>
@@ -208,9 +218,40 @@ and CADD (+2.09); BLOSUM62 least (−0.62), which is what a position-blind looku
 {img("distributions","Per-feature distributions by cluster. AlphaMissense, PolyPhen-2 and ClinPred are strongly bimodal; BLOSUM62 and FoldX overlap heavily.")}
 {img("auc","Per-feature AUC for separating the damaging cluster.")}
 <div class="key"><b>These AUCs are circular</b> — these are the features the clustering was built
-from, so they describe the split rather than validate it. The validation is sections 4 and 5.</div>
+from, so they describe the split rather than validate it. The validation is sections 5 and 6.</div>
 
-<h2>3. The literature panel — 28 variants of interest</h2>
+<h2>3. How the features relate to each other</h2>
+{img("corr","Left: Spearman correlation between features, every one oriented so that positive means more damaging. Right: the number of variants carrying both features, which is what each correlation actually rests on.")}
+<div class="key"><b>Every feature is oriented before correlating</b> — ESM-1b, SIFT and BLOSUM62
+are multiplied by −1 — so that <b>positive always means "agrees that this is damaging"</b>.
+Without that step the matrix shows large negative correlations that are an artefact of sign
+convention, not disagreement. After orienting, <b>the lowest correlation in the whole matrix is
+{CRMIN:+.2f}</b>: no pair of these eight features disagrees in direction at all.</div>
+<p>Mean |ρ| across the {len(S["corr"]["highest"])*0+28} off-diagonal pairs is <b>{CMA}</b> —
+these features are <b>not independent evidence</b>. The tightest pairs are {CHI3}; the loosest
+are {CLO3}.</p>
+<p>Two readings matter for the clustering:</p>
+<ul>
+<li><b>The redundancy is concentrated.</b> CADD, ClinPred, PolyPhen-2 and SIFT form a block that
+correlates at 0.75–0.84, which is unsurprising: ClinPred is a meta-predictor trained partly on the
+others, and all four lean heavily on conservation. Giving each of them weight 1, as the paper's
+method does, effectively weights that one signal four times. This is the strongest argument for
+the feature weights the paper does not publish.</li>
+<li><b>BLOSUM62 and FoldX are the genuinely independent columns.</b> BLOSUM62 correlates with
+everything else at 0.24–0.41 and FoldX at 0.39–0.50, against 0.64–0.84 among the rest. They are also the two weakest discriminators in section 2
+(AUC 0.667 and 0.740). That is not a contradiction — they contribute information the others lack,
+which is exactly what a distance over mixed features should use them for, even though neither
+would be a good classifier alone.</li>
+</ul>
+<p>The right-hand panel is the caveat. Pairwise coverage ranges from <b>{CMN}</b> variants — a
+dbNSFP feature against FoldX, the two incomplete sources intersected — through 6,697 for any two
+dbNSFP features, up to the full 21,508 among ESM-1b, AlphaMissense, PolyPhen-2 and BLOSUM62. The correlations
+in the dbNSFP block are therefore computed on a <b>different, smaller and non-random</b> subset
+than the ones among the complete features — the single-nucleotide-reachable 31.1% — so they are
+not strictly comparable to each other. The same asymmetry is what makes the gnomAD stratification
+in section 5 necessary.</p>
+
+<h2>4. The literature panel — 28 variants of interest</h2>
 <p>The variants supplied as a reading list: previously reported gain-of-function alleles, the four
 newly selected ones, and those identified in the study. <b>Each cell is highlighted when that
 feature crosses its damaging threshold</b> — <span class="hl">light</span> for the first
@@ -236,7 +277,7 @@ canonical sequence. <b>R426X</b> is nonsense and has no row: the universe is mis
 no predictor in this set scores a stop-gain. And the last two groups <b>overlap on four
 variants</b> (G571R, V578I, L805I, V1110E), which are listed in both, as supplied.</div>
 
-<h2>4. gnomAD — the external test</h2>
+<h2>5. gnomAD — the external test</h2>
 <p>gnomAD r4 holds <b>{gp['c1_obs'] + gp['c2_obs']:,}</b> of these substitutions as observed human
 variation. No feature saw it.</p>
 {img("gnomad","Left: percentage of each cluster observed in gnomAD. Right: the pooled odds ratio against the stratified one.")}
@@ -253,7 +294,7 @@ inside it ({gc['pct_C1_dbnsfp']}% against {gc['pct_C2_dbnsfp']}%). Stratifying g
 clustering has no ΔΔG features, and JAK2's gnomAD coverage, while better in absolute terms, is
 concentrated differently. It is not controlled for CpG mutability.</p>
 
-<h2>5. ClinVar — the spot check</h2>
+<h2>6. ClinVar — the spot check</h2>
 <p>ClinVar has 347 JAK2 missense records but 305 are "Uncertain significance", leaving
 <b>21 usable labels</b>. Too few for an odds ratio; enough to catch a clustering that has gone
 wrong.</p>
@@ -266,19 +307,19 @@ cluster</b> — the canonical JAK2 gain-of-function mutation, and the one result
 invalidated the whole exercise had it come out the other way. Note that five of these 21 were
 seeds, so the honest score on unseen labels is <b>14 of 16</b>.</div>
 
-<h2>6. Where the damaging variants are</h2>
+<h2>7. Where the damaging variants are</h2>
 {img("along_protein","Damaging fraction (red) and gnomAD observation rate (green) in 25-residue windows, with domains shaded and V617F marked.")}
 <div class="scroll"><table><thead><tr><th>Domain</th><th class="n">n</th>
 <th class="n">% damaging</th><th class="n">% in gnomAD</th></tr></thead><tbody>{dom}</tbody></table></div>
 
-<h2>7. Coverage, and where to be careful</h2>
+<h2>8. Coverage, and where to be careful</h2>
 <p>Three features sit at 31.1% because dbNSFP indexes only single-nucleotide changes. Gower handles
 that by comparing on what exists, but on JAK1 the variants with fewest features were where two
 clusterings disagreed most.</p>
 <div class="scroll" style="max-width:460px"><table><thead><tr><th class="n">Features present</th>
 <th class="n">n</th><th class="n">% damaging</th></tr></thead><tbody>{cov}</tbody></table></div>
 
-<h2>8. What this is, and what it is not</h2>
+<h2>9. What this is, and what it is not</h2>
 <ul>
 <li><b>Not a reproduction.</b> There is no published JAK2 clustering. Nothing here is an ARI
 against anyone.</li>

@@ -107,6 +107,33 @@ for nm,a,b in DOM+[("linker / other",0,0)]:
 S["cov_table"]=[{"k":int(k),"n":int((ncov==k).sum()),
                  "pct_damaging":round(100*(cl[ncov==k]==dam).mean(),1)} for k in sorted(set(ncov))]
 
+# ---- feature-feature correlation ------------------------------------------
+# Oriented so that + always means "more damaging", otherwise ESM-1b and SIFT would
+# show spurious negative correlations with everything else purely by sign convention.
+SIGN={"esm1b":-1,"alphamissense":1,"cadd":1,"foldx":1,"sift":-1,"polyphen2":1,
+      "blosum62":-1,"clinpred":1}
+Xo = X*np.array([SIGN[n] for n in NAMES])
+k=len(NAMES)
+rho=np.full((k,k),np.nan); pairn=np.zeros((k,k),dtype=int)
+for i in range(k):
+    for j in range(k):
+        m=~np.isnan(Xo[:,i])&~np.isnan(Xo[:,j]); pairn[i,j]=m.sum()
+        if m.sum()>50: rho[i,j]=sps.spearmanr(Xo[m,i],Xo[m,j]).statistic
+S["corr"]={"names":NAMES,"sign":SIGN,
+           "rho":[[None if np.isnan(v) else round(float(v),3) for v in r] for r in rho],
+           "pair_n":pairn.tolist()}
+off=[(round(float(rho[i,j]),3),NAMES[i],NAMES[j]) for i in range(k) for j in range(i+1,k)
+     if not np.isnan(rho[i,j])]
+S["corr"]["highest"]=sorted(off,reverse=True)[:3]
+S["corr"]["lowest"]=sorted(off)[:3]
+S["corr"]["mean_abs"]=round(float(np.mean([abs(a) for a,_,_ in off])),3)
+S["corr"]["min_pair_n"]=int(min(pairn[i,j] for i in range(k) for j in range(i+1,k)))
+np.save("corr_rho.npy",rho); np.save("corr_n.npy",pairn)
+print(f"\ncorrelation: mean |rho| over {len(off)} pairs = {S['corr']['mean_abs']}, "
+      f"smallest pairwise n = {S['corr']['min_pair_n']:,}")
+print("   highest:", ", ".join(f"{a} {b}/{c}" for a,b,c in S["corr"]["highest"]))
+print("   lowest: ", ", ".join(f"{a} {b}/{c}" for a,b,c in S["corr"]["lowest"]))
+
 # ---- the 28-variant literature panel ---------------------------------------
 # Three groups as supplied: previously reported GOF, the four newly selected,
 # and those identified in the study. The last two overlap on four variants;
