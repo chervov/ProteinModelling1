@@ -16,8 +16,8 @@ V617F and the myeloproliferative-neoplasm literature.
 |---|---|
 | 1. sequence pinned, variant universe | **done** |
 | 2. **eight of the paper's eleven features** | **done** |
-| 3. gnomAD and ClinVar as external validation | next |
-| 4. the clustering | |
+| 3. gnomAD and ClinVar as external validation | **done** |
+| 4. the clustering | next |
 | 5. analysis report | |
 | — | |
 | ΔΔG closed / open / delta | deferred; see *Differences from JAK1* |
@@ -38,6 +38,22 @@ V617F and the myeloproliferative-neoplasm literature.
 
 Every feature file has the same shape: 21,508 rows in the canonical order, `index, variant, wt,
 pos, alt, <feature>`, joined on `variant`. Blank means **not available**, never 0.
+
+### External validation data — seen by no feature
+
+| | coverage | source | time | document |
+|---|--:|---|--:|---|
+| **gnomAD r4** | 1,498 (6.96%) | GraphQL by gene symbol | 9 s | [info](build_gnomad_jak2_info.md) |
+| **ClinVar** | 347 (1.61%) | NCBI E-utilities | 15 s | [info](build_clinvar_jak2_info.md) |
+
+**gnomAD is the primary criterion; ClinVar is a spot-check.** 305 of JAK2's 347 ClinVar records are
+"Uncertain significance", leaving only **21 usable labels** — 7 pathogenic (including V617F,
+2 stars) and 14 benign. That will not support an odds ratio, but it will catch a clustering that
+puts V617F in the tolerant pole, and it is where seed variants can be drawn from, JAK2 having no
+published seed list.
+
+ClinVar is also the less independent of the two: AlphaMissense and ESM-1b are trained on data
+overlapping it, whereas an allele frequency is an observation rather than a prediction.
 
 ## Files
 
