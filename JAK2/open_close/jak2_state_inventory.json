@@ -1,0 +1,985 @@
+[
+ {
+  "run": "JAK2_20261013_173657",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 45.61799053728261,
+  "jh2_jh1": 51.01599436077229,
+  "plddt": 83.28805653710249,
+  "jh1_rmsd_to_shan": 30.174113954469313,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261013_173657",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 47.759406588074356,
+  "jh2_jh1": 63.300026589221034,
+  "plddt": 82.316148409894,
+  "jh1_rmsd_to_shan": 73.76108567493476,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261013_182632",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 47.64114474322271,
+  "jh2_jh1": 51.80746637487717,
+  "plddt": 83.17349823321555,
+  "jh1_rmsd_to_shan": 71.40770301786023,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261013_182632",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.65957200285684,
+  "jh2_jh1": 57.92284179640454,
+  "plddt": 82.70209363957596,
+  "jh1_rmsd_to_shan": 76.9534913791743,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261013_191807",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.046952202005585,
+  "jh2_jh1": 59.392345338069724,
+  "plddt": 83.22328621908127,
+  "jh1_rmsd_to_shan": 61.822199190836656,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261013_191807",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 41.49678087699617,
+  "jh2_jh1": 63.80792213669088,
+  "plddt": 78.87009717314488,
+  "jh1_rmsd_to_shan": 72.14309213731725,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261014_095758",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "af-o60674-f1.cif",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 93.41997706565678,
+  "jh2_jh1": 45.70320970203228,
+  "plddt": 94.71613074204947,
+  "jh1_rmsd_to_shan": 83.13848644215042,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261014_095758",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "af-o60674-f1.cif",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 93.61122935242851,
+  "jh2_jh1": 45.849732782969944,
+  "plddt": 94.74501766784454,
+  "jh1_rmsd_to_shan": 83.22487779420007,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261014_115511",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.324155121904646,
+  "jh2_jh1": 39.2848954655709,
+  "plddt": 86.59113957597172,
+  "jh1_rmsd_to_shan": 6.658454889584724,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261014_115511",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.68229399296778,
+  "jh2_jh1": 39.35315236009799,
+  "plddt": 86.63158127208482,
+  "jh1_rmsd_to_shan": 6.727053319977617,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_082903",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 45.01266376824155,
+  "jh2_jh1": 38.963071102574204,
+  "plddt": 85.56143992932861,
+  "jh1_rmsd_to_shan": 6.009768964416325,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_082903",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 45.029705778283976,
+  "jh2_jh1": 39.311893129246954,
+  "plddt": 85.99606890459363,
+  "jh1_rmsd_to_shan": 6.912427049173147,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_105613",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 45.09910952157501,
+  "jh2_jh1": 39.03813783441368,
+  "plddt": 85.60512367491167,
+  "jh1_rmsd_to_shan": 6.168248815455078,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_105613",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.169248507814416,
+  "jh2_jh1": 39.31533952559897,
+  "plddt": 85.69338339222615,
+  "jh1_rmsd_to_shan": 6.5081610002358605,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_105858",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 43.65275462713896,
+  "jh2_jh1": 39.28074272083519,
+  "plddt": 86.70838339222615,
+  "jh1_rmsd_to_shan": 6.950410211761637,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_105858",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 43.58133172551959,
+  "jh2_jh1": 39.43902912235558,
+  "plddt": 86.74336572438162,
+  "jh1_rmsd_to_shan": 7.272549585440209,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_111048",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.10276324339975,
+  "jh2_jh1": 38.984718338150124,
+  "plddt": 85.95686395759718,
+  "jh1_rmsd_to_shan": 6.684227222439921,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_111048",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "ma-l9b1f",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.031049421626335,
+  "jh2_jh1": 39.497366477720774,
+  "plddt": 85.94757950530035,
+  "jh1_rmsd_to_shan": 7.323223177701852,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_120253",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 41.920980426801535,
+  "jh2_jh1": 39.50946527895403,
+  "plddt": 86.15330388692578,
+  "jh1_rmsd_to_shan": 7.892559957653522,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_120253",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 41.83859246992695,
+  "jh2_jh1": 39.625445602966764,
+  "plddt": 86.0666519434629,
+  "jh1_rmsd_to_shan": 8.071074743238118,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_124433",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 41.61529931685209,
+  "jh2_jh1": 39.88525178893802,
+  "plddt": 86.50865724381624,
+  "jh1_rmsd_to_shan": 7.23224908418948,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_124433",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "['pdb:4OLI:A', 'shan', 'pdb:6E2Q:A', 'ma-l9b1f']",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 41.41303499417112,
+  "jh2_jh1": 40.20352272572902,
+  "plddt": 85.96052120141343,
+  "jh1_rmsd_to_shan": 7.010616929066457,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_134222",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.52203964997909,
+  "jh2_jh1": 46.220021311408594,
+  "plddt": 85.51179328621909,
+  "jh1_rmsd_to_shan": 83.45625900715389,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_134222",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 69.42988143745904,
+  "jh2_jh1": 58.21695610121588,
+  "plddt": 85.02440812720849,
+  "jh1_rmsd_to_shan": 97.501055460194,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_20261015_134643",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 45.61412381099075,
+  "jh2_jh1": 39.46778319638454,
+  "plddt": 84.9976855123675,
+  "jh1_rmsd_to_shan": 6.888773100127426,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_134643",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 95.0528904836199,
+  "jh2_jh1": 46.40338891922027,
+  "plddt": 86.3510070671378,
+  "jh1_rmsd_to_shan": 83.23390662782673,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_134817",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.49580366372271,
+  "jh2_jh1": 46.02602069242456,
+  "plddt": 86.11078621908128,
+  "jh1_rmsd_to_shan": 83.38848704699151,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_134817",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.83673327623305,
+  "jh2_jh1": 46.3429020801872,
+  "plddt": 86.50143109540636,
+  "jh1_rmsd_to_shan": 83.66227759246446,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_134839",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 68.00204148084049,
+  "jh2_jh1": 53.43393597573324,
+  "plddt": 83.94880742049472,
+  "jh1_rmsd_to_shan": 93.00607999774134,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_20261015_134839",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 60.43226978007728,
+  "jh2_jh1": 60.92604031192651,
+  "plddt": 83.79708480565371,
+  "jh1_rmsd_to_shan": 96.55210693187485,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_20261015_161033",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 44.79305106419012,
+  "jh2_jh1": 39.28319452584715,
+  "plddt": 85.32421378091874,
+  "jh1_rmsd_to_shan": 6.869149620427868,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_20261015_161033",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 95.27200598070596,
+  "jh2_jh1": 46.394835908784415,
+  "plddt": 86.33276501766785,
+  "jh1_rmsd_to_shan": 83.24210845319998,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_172727",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 47.974238993615856,
+  "jh2_jh1": 47.41431205858727,
+  "plddt": 84.30944346289753,
+  "jh1_rmsd_to_shan": 21.521536098169282,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261015_172727",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 60.79974146562973,
+  "jh2_jh1": 59.20782531482028,
+  "plddt": 84.49212897526502,
+  "jh1_rmsd_to_shan": 92.40100724296845,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_20261015_201144",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.3932208009757,
+  "jh2_jh1": 45.96534726047908,
+  "plddt": 86.33826855123675,
+  "jh1_rmsd_to_shan": 83.20396841344197,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261015_201144",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.971488725763,
+  "jh2_jh1": 46.438722248624735,
+  "plddt": 86.03831272084805,
+  "jh1_rmsd_to_shan": 83.40295125446636,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_20261016_053140",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 49.5272975314463,
+  "jh2_jh1": 51.4180217962079,
+  "plddt": 83.93475265017669,
+  "jh1_rmsd_to_shan": 38.94294037766306,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_20261016_053140",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 60.32883971425522,
+  "jh2_jh1": 60.78185444644981,
+  "plddt": 84.29232332155478,
+  "jh1_rmsd_to_shan": 92.30286587330558,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_G571R_20261019_150214",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "G571R"
+  ],
+  "ferm_jh1": 52.12910603472265,
+  "jh2_jh1": 44.413747971394116,
+  "plddt": 84.99212897526502,
+  "jh1_rmsd_to_shan": 15.48158030434417,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_G571R_20261019_150214",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "G571R"
+  ],
+  "ferm_jh1": 48.16613173678224,
+  "jh2_jh1": 46.93075062498369,
+  "plddt": 85.21372791519435,
+  "jh1_rmsd_to_shan": 23.63395955844007,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_G571R_20261019_164703",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "G571R"
+  ],
+  "ferm_jh1": 94.75982450610422,
+  "jh2_jh1": 46.17046177962071,
+  "plddt": 86.5268551236749,
+  "jh1_rmsd_to_shan": 83.06280815588033,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_G571R_20261019_164703",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "G571R"
+  ],
+  "ferm_jh1": 95.19416031190129,
+  "jh2_jh1": 46.52219180347834,
+  "plddt": 86.50062720848055,
+  "jh1_rmsd_to_shan": 83.63729727976848,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_L805I_20261020_231428",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 49.71948781886164,
+  "jh2_jh1": 44.933914691541844,
+  "plddt": 85.07412544169611,
+  "jh1_rmsd_to_shan": 18.323377741174358,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_L805I_20261020_231428",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 94.92422738238426,
+  "jh2_jh1": 46.45622557123743,
+  "plddt": 86.41097173144877,
+  "jh1_rmsd_to_shan": 83.53272356956721,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_L805I_20261020_231707",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 47.475956569523504,
+  "jh2_jh1": 41.60646344786794,
+  "plddt": 85.10186395759717,
+  "jh1_rmsd_to_shan": 11.215473314980544,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_L805I_20261020_231707",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 94.94305331262699,
+  "jh2_jh1": 46.37764974520674,
+  "plddt": 86.24508833922262,
+  "jh1_rmsd_to_shan": 83.3716825416816,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_L805I_20261021_010904",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 49.71948781886164,
+  "jh2_jh1": 44.933914691541844,
+  "plddt": 85.07412544169611,
+  "jh1_rmsd_to_shan": 18.323377741174358,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_L805I_20261021_010904",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "L805I"
+  ],
+  "ferm_jh1": 94.92422738238426,
+  "jh2_jh1": 46.45622557123743,
+  "plddt": 86.41097173144877,
+  "jh1_rmsd_to_shan": 83.53272356956721,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V1110E_20261020_105626",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V1110E"
+  ],
+  "ferm_jh1": 50.16597216660062,
+  "jh2_jh1": 44.17888948939611,
+  "plddt": 84.89535335689047,
+  "jh1_rmsd_to_shan": 15.236901948578582,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V1110E_20261020_105626",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V1110E"
+  ],
+  "ferm_jh1": 95.13028895061638,
+  "jh2_jh1": 46.4669562617648,
+  "plddt": 86.43735865724382,
+  "jh1_rmsd_to_shan": 83.51742730942672,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V1110E_20261020_145655",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V1110E"
+  ],
+  "ferm_jh1": 45.56386860227258,
+  "jh2_jh1": 39.647489509503565,
+  "plddt": 85.13893109540638,
+  "jh1_rmsd_to_shan": 7.607255563010531,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_V1110E_20261020_145655",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V1110E"
+  ],
+  "ferm_jh1": 95.2487750983366,
+  "jh2_jh1": 46.429683328836866,
+  "plddt": 86.42008833922262,
+  "jh1_rmsd_to_shan": 83.59078135879275,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V578I_20261020_165924",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V578I"
+  ],
+  "ferm_jh1": 45.006676159584565,
+  "jh2_jh1": 39.18817314048046,
+  "plddt": 85.35368374558304,
+  "jh1_rmsd_to_shan": 6.807786058548457,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_V578I_20261020_165924",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V578I"
+  ],
+  "ferm_jh1": 94.82917858565808,
+  "jh2_jh1": 46.29364085345804,
+  "plddt": 86.45742932862191,
+  "jh1_rmsd_to_shan": 82.92291001846056,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V578I_20261020_200552",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V578I"
+  ],
+  "ferm_jh1": 46.619316341774045,
+  "jh2_jh1": 40.322719104729835,
+  "plddt": 84.98894876325087,
+  "jh1_rmsd_to_shan": 8.687436832939666,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_V578I_20261020_200552",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V578I"
+  ],
+  "ferm_jh1": 51.56573606658887,
+  "jh2_jh1": 47.0582574580091,
+  "plddt": 85.07129858657242,
+  "jh1_rmsd_to_shan": 22.6706067791988,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261015_161914",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 94.8587692951398,
+  "jh2_jh1": 46.15837422645081,
+  "plddt": 86.60803886925795,
+  "jh1_rmsd_to_shan": 82.89020166434081,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V617F_20261015_161914",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 95.15003018911328,
+  "jh2_jh1": 46.477137580627094,
+  "plddt": 86.5963339222615,
+  "jh1_rmsd_to_shan": 83.46558905341291,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V617F_20261015_162017",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 94.19652337563109,
+  "jh2_jh1": 45.9523610107203,
+  "plddt": 85.31069787985867,
+  "jh1_rmsd_to_shan": 82.78114857493804,
+  "state": "open"
+ },
+ {
+  "run": "JAK2_V617F_20261015_162017",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 58.41147535257343,
+  "jh2_jh1": 52.78332290763836,
+  "plddt": 84.60329505300354,
+  "jh1_rmsd_to_shan": 46.63253585120041,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261015_215648",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 49.511808651126316,
+  "jh2_jh1": 45.742505419367575,
+  "plddt": 84.94886042402827,
+  "jh1_rmsd_to_shan": 19.49444264033013,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261015_215648",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 47.591194284146,
+  "jh2_jh1": 49.47386281061218,
+  "plddt": 85.07147526501767,
+  "jh1_rmsd_to_shan": 29.374788575824738,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261016_023713",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 56.047849438903285,
+  "jh2_jh1": 47.32759203400036,
+  "plddt": 84.30803886925796,
+  "jh1_rmsd_to_shan": 82.03925167494958,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261016_023713",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 67.61209318808423,
+  "jh2_jh1": 59.98417267136499,
+  "plddt": 83.86412544169612,
+  "jh1_rmsd_to_shan": 98.06341159224397,
+  "state": "intermediate"
+ },
+ {
+  "run": "JAK2_V617F_20261016_055453",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 45.15737083325535,
+  "jh2_jh1": 44.942993903070565,
+  "plddt": 83.99047703180211,
+  "jh1_rmsd_to_shan": 17.154223848710807,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261016_055453",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 59.28135393753115,
+  "jh2_jh1": 62.066664011111015,
+  "plddt": 84.25884275618375,
+  "jh1_rmsd_to_shan": 95.74584452877055,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "JAK2_V617F_20261018_201552",
+  "file": "selected_closed.pdb",
+  "label_in_filename": "closed",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 47.14555651210749,
+  "jh2_jh1": 41.83002809428389,
+  "plddt": 84.64934628975264,
+  "jh1_rmsd_to_shan": 11.700734032012656,
+  "state": "closed"
+ },
+ {
+  "run": "JAK2_V617F_20261018_201552",
+  "file": "selected_open.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": false,
+  "mutations": [
+   "V617F"
+  ],
+  "ferm_jh1": 49.80536420679112,
+  "jh2_jh1": 46.890881103375975,
+  "plddt": 85.11991166077738,
+  "jh1_rmsd_to_shan": 22.319789852710606,
+  "state": "compact, NOT Shan"
+ },
+ {
+  "run": "af3_template",
+  "file": "jak2_af3_template_open_model0.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 94.39366070369998,
+  "jh2_jh1": 46.265306271194895,
+  "plddt": 85.8557332155477,
+  "jh1_rmsd_to_shan": 84.70255609275999,
+  "state": "open"
+ },
+ {
+  "run": "af3_notemplate",
+  "file": "jak2_af3_notemplate_open_model0.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 93.868753851456,
+  "jh2_jh1": 46.15507235785121,
+  "plddt": 84.70885159010601,
+  "jh1_rmsd_to_shan": 84.62352741997846,
+  "state": "open"
+ },
+ {
+  "run": "AFDB",
+  "file": "JAK2_afdb_O60674.pdb",
+  "label_in_filename": "open",
+  "template": "none",
+  "wt": true,
+  "mutations": [],
+  "ferm_jh1": 93.8208418899088,
+  "jh2_jh1": 45.90352538277694,
+  "plddt": 86.88294169611306,
+  "jh1_rmsd_to_shan": 83.41036567801422,
+  "state": "open"
+ }
+]
