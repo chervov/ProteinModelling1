@@ -1,5 +1,8 @@
 # ddG pipeline — how to reproduce
 
+> Narrative companion: **[`data/ddg/DDG_COMPUTATION_REPORT.md`](../../data/ddg/DDG_COMPUTATION_REPORT.md)**
+> — the method, the sign convention, the clash contamination and the FPWY finding.
+
 Everything needed to recompute the dual-state PyRosetta ddG results in this repository.
 
 **The molab notebooks are not the artifact.** Each sandbox's `notebook.py` is an empty 81-byte

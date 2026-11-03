@@ -1,5 +1,9 @@
 # JAK2 variant ΔΔG — results, method and how to rerun
 
+> **Start here: [`DDG_COMPUTATION_REPORT.md`](DDG_COMPUTATION_REPORT.md)** — how the dual-state
+> PyRosetta ΔΔG was computed, the scripts that did it, why the raw values are not free
+> energies, and links to every analysis of them.
+
 **Protein: JAK2 only — UniProt O60674, 1,132 aa.** Not JAK1/JAK3/TYK2. Every position below was
 verified against the canonical O60674 sequence before any number was computed.
 
