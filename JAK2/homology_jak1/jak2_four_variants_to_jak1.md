@@ -15,13 +15,27 @@ sound where the sequences align well.
 
 ## 1. The mapping
 
-| JAK2 | → JAK1 | JAK1 wt | equivalent | wt conserved? | JAK1 domain | local identity (±5) | robust? |
-|---|--:|:-:|---|:-:|---|--:|:-:|
-| **V617F** *(control)* | 658 | V | **V658F** | **yes** | JH2 pseudokinase | **0.64** | **yes** |
-| **V578I** | 619 | V | **V619I** | **yes** | JH2 pseudokinase | 0.45 | **yes** |
-| **L805I** | 845 | **I** | **I845I** | no | JH2 pseudokinase | 0.55 | **yes** |
-| **V1110E** | 1136 | **P** | **P1136E** | no | JH1 kinase | 0.36 | yes |
-| **G571R** | **610 or 612** | **G or S** | **G610R / S612R** | ambiguous | JH2 pseudokinase | **0.09** | **no** |
+| JAK2 | → JAK1 | JAK1 wt | equivalent | wt conserved? | JAK1 domain | local identity (±5) | robust? | **EV1 cluster** | **new cluster** |
+|---|--:|:-:|---|:-:|---|--:|:-:|:-:|:-:|
+| **V617F** *(control)* | 658 | V | **V658F** | **yes** | JH2 pseudokinase | **0.64** | **yes** | **2** | **2** |
+| **V578I** | 619 | V | **V619I** | **yes** | JH2 pseudokinase | 0.45 | **yes** | **1** | **2** |
+| **L805I** | 845 | **I** | **I845I** | no | JH2 pseudokinase | 0.55 | **yes** | — | — |
+| **V1110E** | 1136 | **P** | **P1136E** | no | JH1 kinase | 0.36 | yes | 1 | 1 |
+| **G571R** | **610 or 612** | **G or S** | **G610R / S612R** | ambiguous | JH2 pseudokinase | **0.09** | **no** | 1 / 1 | **2 / 1** |
+
+The two cluster columns are **where the homologous JAK1 variant lands**: `EV1 cluster` is the
+paper's own label from Dataset EV1, `new cluster` the rebuild in `JAK1/clustering/`. In both,
+**Cluster 1 is the pole anchored on variants common in gnomAD** and **Cluster 2 the pole anchored on
+reported gain-of-function** variants. Reading them:
+
+- **`L805I` has no label in either**, because its equivalent `I845I` is a self-substitution — JAK1
+  already carries the residue the variant introduces (§2). Blank here means "no predictor scores a
+  residue against itself", not "missing".
+- **`V578I` is the one case where the two clusterings disagree** (1 → 2), so the label is not
+  dependable (§4).
+- **`G571R` shows both candidate mappings**, `G610R / S612R`. They agree on the EV1 label but *not*
+  on the rebuilt one, which is part of why this variant's homology is unusable (§3).
+- Cluster 2 contains **65%** of all JAK1 substitutions, so landing in it is weak evidence on its own.
 
 "Robust" means the mapping does not move when the gap penalties change. Tested at five settings
 (open/extend −11/−1, −10/−0.5, −12/−2, −8/−2, −14/−1): four of the five positions are identical at
