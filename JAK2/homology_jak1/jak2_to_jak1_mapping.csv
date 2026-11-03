@@ -1,0 +1,6 @@
+JAK2_variant,JAK2_wt_ok,repo_JAK1_pos,indep_JAK1_pos,agree,JAK1_aa,conserved,JAK1_equivalent
+V1110E,True,1136,1136,True,P,False,P1136E
+G571R,True,612,612,True,S,False,S612R
+V578I,True,619,619,True,V,True,V619I
+L805I,True,845,845,True,I,False,I845I
+V617F,True,658,658,True,V,True,V658F
