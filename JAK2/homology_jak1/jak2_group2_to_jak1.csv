@@ -1,0 +1,11 @@
+JAK2,JAK1_pos,JAK1_wt,JAK1_equivalent,wt_conserved,is_self_sub,is_nonsense,local_id_11,gaps_11,unanimous,positions_seen,domain(JAK1),EV1_cluster,new_cluster,alphamissense,esm1b,polyphen2_humvar_prob,sift,cadd_phred,clinpred,blosum62,foldx_ddg
+P37A,34,P,P34A,True,False,False,0.18,0,True,34,FERM,1.0,1.0,0.0583,-2.998,0.007,0.08,6.822,0.0931380320408776,-1.0,
+F240V,251,F,F251V,True,False,False,0.18,4,True,251,FERM,2.0,2.0,0.9929,-10.216,0.996,0.003,27.6,0.991819108226543,-1.0,3.7061
+H380Y,420,H,H420Y,True,False,False,0.91,0,True,420,FERM,2.0,2.0,0.8299,-9.169,0.982,0.003,27.5,0.984759470849299,2.0,-0.1996
+R426X,466,R,R466X,True,False,True,0.64,0,True,466,SH2-like,,,,,,,,,,
+C427R,467,W,W467R,False,False,False,0.64,0,True,467,SH2-like,2.0,2.0,0.9959,-7.544,1.0,0.069,30.0,0.989890575408936,-3.0,4.108
+G571R,612,S,S612R,False,False,False,0.09,3,False,610/612,JH2 pseudokinase,1.0,1.0,0.1298,-3.288,0.263,,,,-1.0,1.3621
+V578I,619,V,V619I,True,False,False,0.45,0,True,619,JH2 pseudokinase,1.0,2.0,0.355,-7.563,0.97,,,,3.0,1.2535
+L805I,845,I,I845I,False,True,False,0.55,0,True,845,JH2 pseudokinase,,,,,,,,,,
+I1065T,1092,I,I1092T,True,False,False,0.36,1,True,1092,JH1 kinase,1.0,2.0,0.2042,-7.216,0.861,0.001,33.0,0.974358379840851,-1.0,2.8686
+V1110E,1136,P,P1136E,False,False,False,0.36,0,True,1136,JH1 kinase,1.0,1.0,0.6898,-7.531,0.246,,,,-1.0,2.1711
