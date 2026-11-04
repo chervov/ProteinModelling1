@@ -1,0 +1,33 @@
+{
+ "accession": "P52333",
+ "entry_name": "JAK3_HUMAN",
+ "protein": "Tyrosine-protein kinase JAK3",
+ "length": 1124,
+ "uniprot_entry_version": 248,
+ "sequence_version": 2,
+ "last_modified": "2004-07-19",
+ "md5": "298eb2b0a64ce9a00143db9fa208db71",
+ "sha256": "18a68eca96f64db10c5b38e1f1bf1b013e7dd5091fad780578010a93474da833",
+ "domains": [
+  [
+   "FERM",
+   24,
+   356
+  ],
+  [
+   "SH2; atypical",
+   375,
+   475
+  ],
+  [
+   "Protein kinase 1",
+   521,
+   781
+  ],
+  [
+   "Protein kinase 2",
+   822,
+   1111
+  ]
+ ]
+}

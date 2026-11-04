@@ -1,0 +1,70 @@
+{
+ "version": "jak3_v1_with_ddg",
+ "features": [
+  "esm1b",
+  "alphamissense",
+  "cadd",
+  "foldx",
+  "sift",
+  "polyphen2",
+  "blosum62",
+  "clinpred",
+  "ddg_closed",
+  "ddg_open",
+  "ddg_delta"
+ ],
+ "n": 21356,
+ "seeds_cluster1_tolerant": [
+  "P132T",
+  "V722I",
+  "P151R",
+  "A1090T",
+  "R925S"
+ ],
+ "seeds_cluster2_damaging": [
+  "D784N",
+  "R403C",
+  "R582W",
+  "R103C",
+  "C193Y"
+ ],
+ "seed_rule_c1": "5 highest-AF ClinVar benign/likely-benign, all 3-star",
+ "seed_rule_c2": "5 ClinVar Pathogenic/Likely-pathogenic by review stars, all 3-star (SCID, loss of function)",
+ "excluded_features": [],
+ "excluded_reason": "none - ddG reused from the 2026-10-22 overnight JAK3 run",
+ "iterations": 10,
+ "sizes": [
+  9436,
+  11920
+ ],
+ "ranges": {
+  "esm1b": 27.322000000000003,
+  "alphamissense": 0.9587,
+  "cadd": 34.999,
+  "foldx": 77.4541,
+  "sift": 1.0,
+  "polyphen2": 1.0,
+  "blosum62": 7.0,
+  "clinpred": 0.9989184200000001,
+  "ddg_closed": 4234.2559,
+  "ddg_open": 3666.5148,
+  "ddg_delta": 4582.8207999999995
+ },
+ "seed_sensitivity_label_agreement": [
+  0.9996,
+  0.9996,
+  0.9999,
+  0.9999,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9996,
+  0.9999,
+  0.9996,
+  0.9996
+ ]
+}

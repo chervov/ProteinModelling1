@@ -1,0 +1,14 @@
+X_j.npy
+cl_j.npy
+ing_j.npy
+ncov_j.npy
+pos_j.npy
+corr_rho_j.npy
+corr_n_j.npy
+merged_jak3.csv
+__pycache__/
+pph2_humvar/
+pph2_humdiv/
+*.log
+protein_models/vendor/
+protein_models/*.npy
