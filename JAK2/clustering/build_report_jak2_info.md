@@ -43,7 +43,10 @@ in 1.3 s, so there is no reason to version 2 MB of float arrays.
   is the one to quote. This is the exact defect found by self-audit on JAK1
   (pooled 2.89 → MH 2.32), so it is computed both ways here from the start.
 - **ClinVar spot check** — 19/21 usable labels placed correctly, with the honest
-  14/16 figure after removing the 5 variants that were seeds.
+  9/11 figure after removing the 10 labels that were seeds. (All ten seeds are ClinVar-labelled
+  by construction, so the unseen set is 11 labels; an earlier version of this file said 5 seeds
+  and 14/16, which was wrong. Both counts are now computed in `build_html.py`, not written by
+  hand.)
 - **Feature–feature correlation**, Spearman, pairwise-complete. Every feature is multiplied by a
   stored sign (`S["corr"]["sign"]`) first, so that positive always means "agrees this is
   damaging"; ESM-1b, SIFT and BLOSUM62 run downward and would otherwise show large negative

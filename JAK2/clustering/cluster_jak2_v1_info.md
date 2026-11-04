@@ -95,8 +95,8 @@ A v2 with the conformational axis remains the obvious next step.
 - **ClinVar**: 347 JAK2 missense records, of which 305 are "Uncertain
   significance", leaving 21 usable labels. **19/21 placed correctly** — 7/7
   pathogenic in C2, 12/14 benign in C1 (the two misplaced are `L383V` and
-  `Y1021F`). Five of the 21 were seeds, so the honest score on unseen labels is
-  **14/16**. Critically **V617F lands in the damaging cluster** — the canonical
+  `Y1021F`). **10 of the 21 are seeds** — they were chosen from ClinVar, as the 5 highest-AF
+  benign and the 5 best-reviewed pathogenic — so the honest score on unseen labels is **9/11**. Critically **V617F lands in the damaging cluster** — the canonical
   JAK2 gain-of-function mutation, and the one result that would have invalidated
   the exercise had it come out the other way.
 

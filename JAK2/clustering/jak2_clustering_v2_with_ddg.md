@@ -92,8 +92,8 @@ CADD / ClinPred / PolyPhen-2 / SIFT block.
   confounded — 100% of gnomAD-matched variants sit in the 31.1% dbNSFP-reachable subset and C1 is
   over-represented there — so the figure to quote is the **Mantel–Haenszel OR of 1.54**.
 - **ClinVar**: **20 of 21** usable labels placed correctly, 7/7 pathogenic in the damaging cluster
-  and 13/14 benign in the tolerant one. Five of the 21 were seeds, so the honest score on unseen
-  labels is 15/16. **V617F is in the damaging cluster.**
+  and 13/14 benign in the tolerant one. **10 of the 21 are seeds** — they were chosen from ClinVar — so the
+  honest score on unseen labels is **10/11**. **V617F is in the damaging cluster.**
 
 ## 5. Seeds
 

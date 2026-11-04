@@ -111,6 +111,19 @@ def corr_bits():
 
 
 CHI,CLO,CMA,CMN,CHI3,CLO3,CRMIN = corr_bits()
+# computed, not hard-coded: an earlier version of this file claimed "five of these 21 were
+# seeds ... 14 of 16" on unseen labels. All ten seeds are ClinVar-labelled by construction
+# (they were chosen as the 5 highest-AF benign and 5 best-reviewed pathogenic), so the
+# unseen set is 11 labels, not 16.
+CV_OK = S["clinvar"]["correct"][0] + S["clinvar"]["correct"][2]
+CV_N  = S["clinvar"]["correct"][1] + S["clinvar"]["correct"][3]
+_SEEDS = set(C["seeds_cluster1_tolerant"] + C["seeds_cluster2_damaging"])
+_LAB = ([(v, c, True) for v, c in S["clinvar"]["pathogenic"]]
+        + [(v, c, False) for v, c in S["clinvar"]["benign"]])
+CV_SEEDS = sum(1 for v, _, _ in _LAB if v in _SEEDS)
+CV_U_OK = sum(1 for v, c, pa in _LAB
+              if v not in _SEEDS and (c == S["damaging_cluster"]) == pa)
+CV_U_N = len(_LAB) - CV_SEEDS
 HTML=f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JAK2 clustering v1</title><style>
@@ -176,7 +189,7 @@ classifications.</p>
 <div class="stat"><div class="v">{S['n']:,}</div><div class="l">substitutions, 19 × 1,132</div></div>
 <div class="stat"><div class="v">{S['sizes'][0]:,} / {S['sizes'][1]:,}</div><div class="l">C1 tolerant / C2 damaging</div></div>
 <div class="stat"><div class="v" style="color:var(--good)">{S['gnomad_mh_or']}&times;</div><div class="l">gnomAD depletion, stratified OR</div></div>
-<div class="stat"><div class="v" style="color:var(--good)">19/21</div><div class="l">ClinVar labels placed correctly</div></div>
+<div class="stat"><div class="v" style="color:var(--good)">{CV_OK}/{CV_N}</div><div class="l">ClinVar labels placed correctly</div></div>
 </div>
 
 <div class="key"><b>Why "wo_ddg_oc".</b> Three of the paper's eleven features are ΔΔG in the closed
@@ -302,10 +315,11 @@ wrong.</p>
 cluster):</b><br>{pth}</p>
 <p><b>Benign ({S['clinvar']['correct'][2]}/{S['clinvar']['correct'][3]} in the tolerant
 cluster):</b><br>{bn}</p>
-<div class="key"><b>19 of 21 placed correctly</b>, and critically <b>V617F is in the damaging
+<div class="key"><b>{CV_OK} of {CV_N} placed correctly</b>, and critically <b>V617F is in the damaging
 cluster</b> — the canonical JAK2 gain-of-function mutation, and the one result that would have
-invalidated the whole exercise had it come out the other way. Note that five of these 21 were
-seeds, so the honest score on unseen labels is <b>14 of 16</b>.</div>
+invalidated the whole exercise had it come out the other way. Note that <b>{CV_SEEDS} of these {CV_N} are seeds</b> —
+they were chosen from ClinVar — so the honest score on unseen labels is
+<b>{CV_U_OK} of {CV_U_N}</b>.</div>
 
 <h2>7. Where the damaging variants are</h2>
 {img("along_protein","Damaging fraction (red) and gnomAD observation rate (green) in 25-residue windows, with domains shaded and V617F marked.")}
