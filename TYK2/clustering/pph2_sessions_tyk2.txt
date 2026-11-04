@@ -1,0 +1,2 @@
+3a56a0685abc24138aff11d1b8b44d2b9e437ca7 HumVar batch1
+584f21ec260700e7e2b2b0c66b322ada3514d08a HumDiv batch1

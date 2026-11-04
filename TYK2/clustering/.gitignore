@@ -1,0 +1,14 @@
+X_t.npy
+cl_t.npy
+ing_t.npy
+ncov_t.npy
+pos_t.npy
+corr_rho_t.npy
+corr_n_t.npy
+merged_tyk2.csv
+__pycache__/
+pph2_humvar/
+pph2_humdiv/
+*.log
+protein_models/vendor/
+protein_models/*.npy

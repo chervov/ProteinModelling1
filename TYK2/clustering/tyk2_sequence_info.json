@@ -1,0 +1,33 @@
+{
+ "accession": "P29597",
+ "entry_name": "TYK2_HUMAN",
+ "protein": "Non-receptor tyrosine-protein kinase TYK2",
+ "length": 1187,
+ "uniprot_entry_version": 246,
+ "sequence_version": 3,
+ "last_modified": "2004-12-07",
+ "md5": "281176f6331d962dc37690a120e0acd1",
+ "sha256": "3f6b27ef15f1a0769f6d67bc2e74c379d3b7bd9e36093cb9bb74486a4a241890",
+ "domains": [
+  [
+   "FERM",
+   26,
+   431
+  ],
+  [
+   "SH2; atypical",
+   450,
+   529
+  ],
+  [
+   "Protein kinase 1",
+   589,
+   875
+  ],
+  [
+   "Protein kinase 2",
+   897,
+   1176
+  ]
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "version": "tyk2_v1_with_ddg",
+ "features": [
+  "esm1b",
+  "alphamissense",
+  "cadd",
+  "foldx",
+  "sift",
+  "polyphen2",
+  "blosum62",
+  "clinpred",
+  "ddg_closed",
+  "ddg_open",
+  "ddg_delta"
+ ],
+ "n": 22553,
+ "seeds_cluster1_tolerant": [
+  "V362F",
+  "I684S",
+  "G363S",
+  "A53T",
+  "R197H"
+ ],
+ "seeds_cluster2_damaging": [
+  "L757V",
+  "L1014P"
+ ],
+ "seed_rule_c1": "5 highest-AF ClinVar benign/likely-benign, all 2-star; P1104A excluded as a known LOF allele",
+ "seed_rule_c2": "the only 2 ClinVar Pathogenic missense records (both 0-star)",
+ "excluded_features": [],
+ "excluded_reason": "none - ddG reused from the 2026-10-22 overnight TYK2 run",
+ "iterations": 8,
+ "sizes": [
+  9144,
+  13409
+ ],
+ "ranges": {
+  "esm1b": 29.049,
+  "alphamissense": 0.9762,
+  "cadd": 34.999,
+  "foldx": 71.12870000000001,
+  "sift": 1.0,
+  "polyphen2": 1.0,
+  "blosum62": 7.0,
+  "clinpred": 0.9984502799999999,
+  "ddg_closed": 3587.9199,
+  "ddg_open": 3536.0517,
+  "ddg_delta": 4151.709699999999
+ },
+ "seed_sensitivity_label_agreement": [
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999,
+  0.9999
+ ]
+}
