@@ -1,0 +1,11 @@
+{
+ "updated": "2026-11-04 11:18:36",
+ "lines": [
+  "JAK2P1: 7,372/21,508 variants (34.3%), 388/1132 positions, mean|delta| 18.993",
+  "JAK2P2: nothing yet"
+ ],
+ "pairs": {
+  "JAK2P1": "pair1 (untemplated, JAK2_20261015_161033)",
+  "JAK2P2": "pair2 (templated: ma-l9b1f closed / AF2 open)"
+ }
+}
