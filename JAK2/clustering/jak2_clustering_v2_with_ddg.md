@@ -59,7 +59,63 @@ So `ddg_delta` is not a weak feature. **It is not measuring a property of the pr
 states from one untemplated run, so only the conformation differs, and pair 2's open model sits
 0.33 Å from the AlphaFold DB model it was templated on.
 
-## 3. Per-feature summary
+## 3. The 28 listed variants — does adding ΔΔG move any of them?
+
+**No. Not one.** All 27 missense variants in the supplied list keep the cluster they had in v1.
+`R426X` is nonsense and has no row in either version — the universe is missense only, and no
+predictor in this set scores a stop-gain.
+
+Listed in the order given, with the two groups and the four variants that appear in both Group-2
+blocks (`G571R`, `V578I`, `L805I`, `V1110E`) repeated as supplied.
+
+| group | variant | v1, no ΔΔG | **v2, with ΔΔG** | changed | ΔΔG closed | ΔΔG open | ΔΔG delta |
+|---|---|:-:|:-:|:-:|--:|--:|--:|
+| **GROUP 1 — GOF variants previously reported** | | | | | | | |
+| GROUP 1 | **T108A** | C1 | **C1** | no | -2.1 | -2.2 | -0.10 |
+| GROUP 1 | **Y317H** | C2 | **C2** | no | 2.4 | 1.7 | -0.78 |
+| GROUP 1 | **H345L** | C1 | **C1** | no | -4.6 | -4.3 | +0.31 |
+| GROUP 1 | **H608N** | C2 | **C2** | no | -0.3 | 0.8 | +1.18 |
+| GROUP 1 | **L611S** | C2 | **C2** | no | -4.6 | -1.8 | +2.85 |
+| GROUP 1 | **V617I** | C2 | **C2** | no | 0.9 | -0.2 | -1.15 |
+| GROUP 1 | **V617F** | C2 | **C2** | no | -6.6 | -7.4 | -0.75 |
+| GROUP 1 | **V625F** | C2 | **C2** | no | -180.3 | -186.6 | -6.29 |
+| GROUP 1 | **E846D** | C1 | **C1** | no | -1.0 | -0.1 | +0.89 |
+| GROUP 1 | **R867Q** | C2 | **C2** | no | 0.9 | 1.7 | +0.88 |
+| GROUP 1 | **T875N** | C2 | **C2** | no | -6.2 | -0.2 | +6.04 |
+| GROUP 1 | **S755R** | C1 | **C1** | no | -1.6 | -1.5 | +0.03 |
+| GROUP 1 | **R938Q** | C2 | **C2** | no | -0.8 | -1.0 | -0.26 |
+| GROUP 1 | **R1063H** | C1 | **C1** | no | 0.6 | 0.1 | -0.50 |
+| **GROUP 2 — variants identified in this study** | | | | | | | |
+| GROUP 2 | **V1110E** | C2 | **C2** | no | 2.4 | 2.6 | +0.23 |
+| GROUP 2 | **G571R** | C2 | **C2** | no | -16.5 | -14.7 | +1.82 |
+| GROUP 2 | **V578I** | C2 | **C2** | no | -38.2 | -33.9 | +4.35 |
+| GROUP 2 | **L805I** | C1 | **C1** | no | -3.5 | -2.6 | +0.86 |
+| **GROUP 2 — variants identified in this study** | | | | | | | |
+| GROUP 2 | **P37A** | C1 | **C1** | no | -2.2 | 1.0 | +3.22 |
+| GROUP 2 | **F240V** | C2 | **C2** | no | -0.9 | -2.4 | -1.56 |
+| GROUP 2 | **H380Y** | C2 | **C2** | no | -10.1 | -16.8 | -6.79 |
+| GROUP 2 | **R426X** | — | — | — | — | — | — |
+| GROUP 2 | **C427R** | C1 | **C1** | no | 0.6 | -0.0 | -0.64 |
+| GROUP 2 | **G571R** | C2 | **C2** | no | -16.5 | -14.7 | +1.82 |
+| GROUP 2 | **V578I** | C2 | **C2** | no | -38.2 | -33.9 | +4.35 |
+| GROUP 2 | **L805I** | C1 | **C1** | no | -3.5 | -2.6 | +0.86 |
+| GROUP 2 | **I1065T** | C2 | **C2** | no | -6.5 | -6.5 | -0.05 |
+| GROUP 2 | **V1110E** | C2 | **C2** | no | 2.4 | 2.6 | +0.23 |
+
+ΔΔG sign: `ΔΔG = ΔG_WT − ΔG_mut`, **negative = destabilising** (opposite to FoldX).
+`delta = open − closed`.
+
+**Reading it.** The ΔΔG columns vary a good deal across these variants — `V625F` is far more
+destabilising than `T108A` — yet none of that variation is enough to move a single one across the
+cluster boundary. That is the panel-level version of the global result: 192 of 21,508 variants
+move, and none of them are these.
+
+Note also how small the `delta` column is: `V617F` is −0.75, `V617I` −1.15, most of the rest under
+1 kcal/mol in absolute value. These are the variants with the strongest claim to acting *through*
+the autoinhibitory interface, and the open/closed difference still barely separates them from the
+rest — consistent with `ddg_delta` carrying no usable signal (section 2).
+
+## 4. Per-feature summary
 
 ΔΔG sign convention: `ΔΔG = ΔG_WT − ΔG_mut`, **negative = destabilising** (opposite to FoldX).
 AUC is computed on the damaging direction.
@@ -86,7 +142,7 @@ effectively one feature, a general destabilisation term, which FoldX already sup
 0.742. Giving both weight 1 double-counts that signal — the same objection that applies to the
 CADD / ClinPred / PolyPhen-2 / SIFT block.
 
-## 4. External validation (unchanged from v1)
+## 5. External validation (unchanged from v1)
 
 - **gnomAD**: C1 9.87% observed vs C2 5.27%, pooled OR 1.97, p = 4.3 × 10⁻³⁶. The pooled figure is
   confounded — 100% of gnomAD-matched variants sit in the 31.1% dbNSFP-reachable subset and C1 is
@@ -95,12 +151,12 @@ CADD / ClinPred / PolyPhen-2 / SIFT block.
   and 13/14 benign in the tolerant one. **10 of the 21 are seeds** — they were chosen from ClinVar — so the
   honest score on unseen labels is **10/11**. **V617F is in the damaging cluster.**
 
-## 5. Seeds
+## 6. Seeds
 
 Unchanged from v1, and still barely consequential: 15 random 5+5 draws reproduce
 **0.9996–1.0000** of the labels. The supervision orients the result rather than determining it.
 
-## 6. What this is, and what it is not
+## 7. What this is, and what it is not
 
 - **Not a reproduction.** There is no published JAK2 clustering to measure against.
 - **The conformational axis is present but inert.** `ddg_delta` carries no signal and does not

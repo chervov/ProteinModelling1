@@ -45,6 +45,33 @@ def tier(n,v):
     hit=lambda c: (v<c) if o=="lt" else (v>c) if o=="gt" else (v<=c) if o=="le" else (v>=c)
     if b is not None and hit(b): return "hl2"
     return "hl" if hit(a) else ""
+def v1v2_table():
+    """The supplied 28-row list, in the order given, v1 against v2."""
+    rows = json.load(open(HERE / "panel_v1v2.json"))
+    out = []
+    nch = 0
+    for g, v, a, b, c, o, d, note in rows:
+        if g == "SECTION":
+            out.append(f"<tr class='grp'><td colspan='8'>{v}</td></tr>"); continue
+        if note:
+            out.append(f"<tr><td class='tiny'>{g}</td><td><b>{v}</b></td>"
+                       f"<td colspan='6' class='tiny'>{note}</td></tr>"); continue
+        nch += (a != b)
+        ch = ("<b style='color:var(--bad)'>YES</b>" if a != b
+              else "<span class='tiny'>no</span>")
+        out.append(f"<tr><td class='tiny'>{g}</td><td><b>{v}</b></td>"
+                   f"<td class='n'><span class='cl{a}'>C{a}</span></td>"
+                   f"<td class='n'><span class='cl{b}'>C{b}</span></td>"
+                   f"<td class='n'>{ch}</td>"
+                   f"<td class='n'>{c:.1f}</td><td class='n'>{o:.1f}</td>"
+                   f"<td class='n'>{d:+.2f}</td></tr>")
+    hdr = ("<tr><th>group</th><th>variant</th><th class='n'>v1, no &Delta;&Delta;G</th>"
+           "<th class='n'>v2, with &Delta;&Delta;G</th><th class='n'>changed</th>"
+           "<th class='n'>&Delta;&Delta;G closed</th><th class='n'>&Delta;&Delta;G open</th>"
+           "<th class='n'>&Delta;&Delta;G delta</th></tr>")
+    return f"<table class='panel'><thead>{hdr}</thead><tbody>{''.join(out)}</tbody></table>", nch
+
+
 def panel_html():
     hdr=("<tr><th>variant</th><th>domain</th><th class='n'>cluster</th>"
          +"".join(f"<th class='n'>{PLAB[n]}</th>" for n in PORDER)
@@ -112,6 +139,7 @@ def corr_bits():
 
 
 CHI,CLO,CMA,CMN,CHI3,CLO3,CRMIN = corr_bits()
+V1V2_TBL, V1V2_NCH = v1v2_table()
 CV_OK = S["clinvar"]["correct"][0] + S["clinvar"]["correct"][2]
 CV_N  = S["clinvar"]["correct"][1] + S["clinvar"]["correct"][3]
 CV_SEEDS = len([v for v,_ in S["clinvar"]["pathogenic"]+S["clinvar"]["benign"]
@@ -230,7 +258,7 @@ and CADD (+2.09); BLOSUM62 least (−0.62), which is what a position-blind looku
 {img("distributions","Per-feature distributions by cluster. AlphaMissense, PolyPhen-2 and ClinPred are strongly bimodal; BLOSUM62 and FoldX overlap heavily.")}
 {img("auc","Per-feature AUC for separating the damaging cluster.")}
 <div class="key"><b>These AUCs are circular</b> — these are the features the clustering was built
-from, so they describe the split rather than validate it. The validation is sections 6 and 7.</div>
+from, so they describe the split rather than validate it. The validation is sections 7 and 8.</div>
 
 <h2>3. The dual-state ΔΔG features, and why one of them is unusable</h2>
 <p>PyRosetta, <code>ΔΔG = ΔG<sub>WT</sub> − ΔG<sub>mut</sub></code>, so <b>negative means
@@ -299,9 +327,26 @@ dbNSFP features, up to the full 21,508 among ESM-1b, AlphaMissense, PolyPhen-2 a
 in the dbNSFP block are therefore computed on a <b>different, smaller and non-random</b> subset
 than the ones among the complete features — the single-nucleotide-reachable 31.1% — so they are
 not strictly comparable to each other. The same asymmetry is what makes the gnomAD stratification
-in section 6 necessary.</p>
+in section 7 necessary.</p>
 
-<h2>5. The literature panel — 28 variants of interest</h2>
+<h2>5. The 28 listed variants — does adding ΔΔG move any of them?</h2>
+<p><b>No. Not one.</b> All 27 missense variants in the supplied list keep the cluster they had in
+<a href="jak2_clustering_v1_wo_ddg_oc.html">v1</a>. <code>R426X</code> is nonsense and has no row
+in either version. Listed in the order given, with the four variants appearing in both Group-2
+blocks repeated as supplied.</p>
+<div class="scroll">{V1V2_TBL}</div>
+<div class="key"><p><b>{V1V2_NCH} of 27 changed.</b> The ΔΔG columns vary a great deal across
+these variants — <code>V625F</code> is far more destabilising than <code>T108A</code> — and none
+of that variation is enough to move a single one across the cluster boundary. This is the
+panel-level version of the global result: 192 of 21,508 variants move, and none of them are
+these.</p>
+<p>Note also how small the <code>delta</code> column is: <code>V617F</code> is −0.75,
+<code>V617I</code> −1.15, most of the rest under 1 kcal/mol. These are the variants with the
+strongest claim to acting <i>through</i> the autoinhibitory interface, and the open/closed
+difference still barely distinguishes them — consistent with <code>ddg_delta</code> carrying no
+usable signal (section 3).</p></div>
+
+<h2>6. The literature panel — 28 variants of interest</h2>
 <p>The variants supplied as a reading list: previously reported gain-of-function alleles, the four
 newly selected ones, and those identified in the study. <b>Each cell is highlighted when that
 feature crosses its damaging threshold</b> — <span class="hl">light</span> for the first
@@ -327,7 +372,7 @@ canonical sequence. <b>R426X</b> is nonsense and has no row: the universe is mis
 no predictor in this set scores a stop-gain. And the last two groups <b>overlap on four
 variants</b> (G571R, V578I, L805I, V1110E), which are listed in both, as supplied.</div>
 
-<h2>6. gnomAD — the external test</h2>
+<h2>7. gnomAD — the external test</h2>
 <p>gnomAD r4 holds <b>{gp['c1_obs'] + gp['c2_obs']:,}</b> of these substitutions as observed human
 variation. No feature saw it.</p>
 {img("gnomad","Left: percentage of each cluster observed in gnomAD. Right: the pooled odds ratio against the stratified one.")}
@@ -344,7 +389,7 @@ inside it ({gc['pct_C1_dbnsfp']}% against {gc['pct_C2_dbnsfp']}%). Stratifying g
 clustering has no ΔΔG features, and JAK2's gnomAD coverage, while better in absolute terms, is
 concentrated differently. It is not controlled for CpG mutability.</p>
 
-<h2>7. ClinVar — the spot check</h2>
+<h2>8. ClinVar — the spot check</h2>
 <p>ClinVar has 347 JAK2 missense records but 305 are "Uncertain significance", leaving
 <b>21 usable labels</b>. Too few for an odds ratio; enough to catch a clustering that has gone
 wrong.</p>
@@ -357,19 +402,19 @@ cluster</b> — the canonical JAK2 gain-of-function mutation, and the one result
 invalidated the whole exercise had it come out the other way. Note that {CV_SEEDS} of these {CV_N} were
 seeds, so the honest score on unseen labels is <b>{CV_OK-CV_SEEDS} of {CV_N-CV_SEEDS}</b>.</div>
 
-<h2>8. Where the damaging variants are</h2>
+<h2>9. Where the damaging variants are</h2>
 {img("along_protein","Damaging fraction (red) and gnomAD observation rate (green) in 25-residue windows, with domains shaded and V617F marked.")}
 <div class="scroll"><table><thead><tr><th>Domain</th><th class="n">n</th>
 <th class="n">% damaging</th><th class="n">% in gnomAD</th></tr></thead><tbody>{dom}</tbody></table></div>
 
-<h2>9. Coverage, and where to be careful</h2>
+<h2>10. Coverage, and where to be careful</h2>
 <p>Three features sit at 31.1% because dbNSFP indexes only single-nucleotide changes. Gower handles
 that by comparing on what exists, but on JAK1 the variants with fewest features were where two
 clusterings disagreed most.</p>
 <div class="scroll" style="max-width:460px"><table><thead><tr><th class="n">Features present</th>
 <th class="n">n</th><th class="n">% damaging</th></tr></thead><tbody>{cov}</tbody></table></div>
 
-<h2>10. What this is, and what it is not</h2>
+<h2>11. What this is, and what it is not</h2>
 <ul>
 <li><b>Not a reproduction.</b> There is no published JAK2 clustering. Nothing here is an ARI
 against anyone.</li>
