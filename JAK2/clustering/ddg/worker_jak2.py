@@ -54,6 +54,22 @@ def load_state(job, tag):
     log(f"{gene} {tag}: {p.total_residue()} res, baseline {SF(p):.1f} REU")
     return p
 
+def child_init(gene):
+    """Re-initialise Rosetta and load the cached relaxed poses IN EACH CHILD.
+
+    macOS spawns worker processes instead of forking, so module-level globals set by the
+    parent (POSE, SF) are NOT inherited - every position raised KeyError: 'closed' and the
+    first run produced 0 variants from 2,264 positions. On Linux, where the molab boxes ran
+    and where fork is the default, the globals came across and this was never exercised.
+    Loading per child is portable and cheap: the relax is already cached, so it is a plain
+    pose_from_pdb (~0.4 s) plus Rosetta init.
+    """
+    from pyrosetta import pose_from_pdb
+    init_rosetta()
+    for tag in ("closed", "open"):
+        POSE[tag] = pose_from_pdb(os.path.join(W, f"{gene}_relaxed_{tag}.pdb"))
+
+
 def one_position(args):
     """All variants at one position, both states. The WT repack is computed ONCE per position
     per state and reused across that position's substitutions - a ~19x saving."""
@@ -106,7 +122,8 @@ def run_job(job):
     log(f"{gene}: {len(shard)} positions in shard, {len(done)} done, {len(todo)} to go, "
         f"{sum(len(v) for _, v in todo)} variants, {NPROC} workers")
     t0 = time.time(); nv = 0
-    with open(out, "a") as fh, mp.Pool(NPROC) as pool:
+    with open(out, "a") as fh, mp.Pool(NPROC, initializer=child_init,
+                                     initargs=(gene,)) as pool:
         for i, recs in enumerate(pool.imap_unordered(one_position, todo, chunksize=1), 1):
             for r in recs:
                 fh.write(json.dumps(r) + "\n")
@@ -116,6 +133,9 @@ def run_job(job):
                 el = time.time() - t0
                 log(f"{gene} progress {i}/{len(todo)} pos, {nv} variants, "
                     f"{el/60:.1f} min, {nv/max(el,1)*3600:.0f} var/h")
+    if nv == 0 and todo:
+        log(f"{gene}_PRODUCED_NOTHING from {len(todo)} positions - NOT marking done")
+        return
     open(done_flag, "w").write(str(nv))
     log(f"{gene}_COMPLETE {nv} variants in {(time.time()-t0)/60:.1f} min")
 

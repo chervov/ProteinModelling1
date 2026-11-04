@@ -58,9 +58,17 @@ def main():
                         "JAK2 dual-state ddG: incremental results\n\n" + "\n".join(summary)
                         + "\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>"],
                        cwd=REPO, check=False)
-        r = subprocess.run(["git", "push", "-q", "origin", "main"], cwd=REPO,
+        # another Claude session pushes to this repo too, so a plain push can be rejected.
+        # Rebase and retry rather than leaving results uncommitted.
+        for attempt in range(3):
+            r = subprocess.run(["git", "push", "-q", "origin", "main"], cwd=REPO,
+                               capture_output=True, text=True)
+            if r.returncode == 0:
+                print("pushed", flush=True); break
+            subprocess.run(["git", "pull", "--rebase", "-q", "origin", "main"], cwd=REPO,
                            capture_output=True, text=True)
-        print("pushed" if r.returncode == 0 else f"push failed: {r.stderr[:200]}", flush=True)
+        else:
+            print(f"push failed after retries: {r.stderr[:200]}", flush=True)
 
 
 if __name__ == "__main__":
