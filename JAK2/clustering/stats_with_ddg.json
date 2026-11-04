@@ -1,0 +1,1311 @@
+{
+ "n": 21508,
+ "sizes": [
+  7910,
+  13598
+ ],
+ "damaging_cluster": 2,
+ "means": {
+  "esm1b": {
+   "c1_mean": -6.1708,
+   "c1_median": -5.941,
+   "c1_sd": 2.6976,
+   "c1_n": 7910,
+   "c2_mean": -12.4725,
+   "c2_median": -12.413,
+   "c2_sd": 3.4995,
+   "c2_n": 13598,
+   "diff": -6.3017,
+   "cohens_d": -1.952,
+   "mwu_p": 0.0,
+   "auc": 0.9209,
+   "coverage": 100.0
+  },
+  "alphamissense": {
+   "c1_mean": 0.233,
+   "c1_median": 0.1786,
+   "c1_sd": 0.1712,
+   "c1_n": 7910,
+   "c2_mean": 0.7765,
+   "c2_median": 0.8896,
+   "c2_sd": 0.2507,
+   "c2_n": 13598,
+   "diff": 0.5435,
+   "cohens_d": 2.418,
+   "mwu_p": 0.0,
+   "auc": 0.9419,
+   "coverage": 100.0
+  },
+  "cadd": {
+   "c1_mean": 16.9545,
+   "c1_median": 18.015,
+   "c1_sd": 6.7125,
+   "c1_n": 2932,
+   "c2_mean": 27.2692,
+   "c2_median": 27.2,
+   "c2_sd": 3.0606,
+   "c2_n": 3765,
+   "diff": 10.3147,
+   "cohens_d": 2.063,
+   "mwu_p": 0.0,
+   "auc": 0.9546,
+   "coverage": 31.1
+  },
+  "foldx": {
+   "c1_mean": 0.6363,
+   "c1_median": 0.3701,
+   "c1_sd": 1.3936,
+   "c1_n": 6912,
+   "c2_mean": 2.9534,
+   "c2_median": 2.0936,
+   "c2_sd": 4.1758,
+   "c2_n": 13437,
+   "diff": 2.3171,
+   "cohens_d": 0.664,
+   "mwu_p": 0.0,
+   "auc": 0.7424,
+   "coverage": 94.6
+  },
+  "sift": {
+   "c1_mean": 0.3263,
+   "c1_median": 0.2405,
+   "c1_sd": 0.3032,
+   "c1_n": 2932,
+   "c2_mean": 0.037,
+   "c2_median": 0.002,
+   "c2_sd": 0.1003,
+   "c2_n": 3765,
+   "diff": -0.2893,
+   "cohens_d": -1.35,
+   "mwu_p": 0.0,
+   "auc": 0.8977,
+   "coverage": 31.1
+  },
+  "polyphen2": {
+   "c1_mean": 0.2245,
+   "c1_median": 0.094,
+   "c1_sd": 0.2752,
+   "c1_n": 7910,
+   "c2_mean": 0.9146,
+   "c2_median": 0.989,
+   "c2_sd": 0.1642,
+   "c2_n": 13598,
+   "diff": 0.6901,
+   "cohens_d": 3.257,
+   "mwu_p": 0.0,
+   "auc": 0.9644,
+   "coverage": 100.0
+  },
+  "blosum62": {
+   "c1_mean": -0.8223,
+   "c1_median": -1.0,
+   "c1_sd": 1.5649,
+   "c1_n": 7910,
+   "c2_mean": -1.7131,
+   "c2_median": -2.0,
+   "c2_sd": 1.404,
+   "c2_n": 13598,
+   "diff": -0.8908,
+   "cohens_d": -0.608,
+   "mwu_p": 0.0,
+   "auc": 0.6647,
+   "coverage": 100.0
+  },
+  "clinpred": {
+   "c1_mean": 0.6012,
+   "c1_median": 0.6719,
+   "c1_sd": 0.2952,
+   "c1_n": 2932,
+   "c2_mean": 0.9693,
+   "c2_median": 0.9914,
+   "c2_sd": 0.0577,
+   "c2_n": 3765,
+   "diff": 0.3681,
+   "cohens_d": 1.839,
+   "mwu_p": 0.0,
+   "auc": 0.9508,
+   "coverage": 31.1
+  },
+  "ddg_closed": {
+   "c1_mean": -19.2663,
+   "c1_median": -2.029,
+   "c1_sd": 102.8393,
+   "c1_n": 7910,
+   "c2_mean": -75.7392,
+   "c2_median": -6.1958,
+   "c2_sd": 235.583,
+   "c2_n": 13598,
+   "diff": -56.4729,
+   "cohens_d": -0.286,
+   "mwu_p": 0.0,
+   "auc": 0.7132,
+   "coverage": 100.0
+  },
+  "ddg_open": {
+   "c1_mean": -17.9656,
+   "c1_median": -1.9771,
+   "c1_sd": 88.9728,
+   "c1_n": 7910,
+   "c2_mean": -76.0949,
+   "c2_median": -6.1994,
+   "c2_sd": 234.7161,
+   "c2_n": 13598,
+   "diff": -58.1293,
+   "cohens_d": -0.299,
+   "mwu_p": 0.0,
+   "auc": 0.7169,
+   "coverage": 100.0
+  },
+  "ddg_delta": {
+   "c1_mean": 1.3007,
+   "c1_median": -0.0012,
+   "c1_sd": 81.6234,
+   "c1_n": 7910,
+   "c2_mean": -0.3557,
+   "c2_median": -0.0039,
+   "c2_sd": 108.7176,
+   "c2_n": 13598,
+   "diff": -1.6564,
+   "cohens_d": -0.017,
+   "mwu_p": 0.8952568004893217,
+   "auc": 0.4995,
+   "coverage": 100.0
+  }
+ },
+ "gnomad_pooled": {
+  "c1_obs": 781,
+  "c1_n": 7910,
+  "c2_obs": 717,
+  "c2_n": 13598,
+  "c1_pct": 9.87,
+  "c2_pct": 5.27,
+  "odds_ratio": 1.97,
+  "p": 4.297957597031826e-36
+ },
+ "gnomad_strata": {
+  "dbNSFP-defined": {
+   "c1_obs": 781,
+   "c1_n": 2932,
+   "c2_obs": 717,
+   "c2_n": 3765,
+   "c1_pct": 26.64,
+   "c2_pct": 19.04,
+   "odds_ratio": 1.54,
+   "p": 1.7005954464334903e-13
+  },
+  "dbNSFP-missing": {
+   "c1_obs": 0,
+   "c1_n": 4978,
+   "c2_obs": 0,
+   "c2_n": 9833,
+   "c1_pct": 0.0,
+   "c2_pct": 0.0,
+   "odds_ratio": NaN,
+   "p": 1.0
+  }
+ },
+ "gnomad_mh_or": 1.54,
+ "gnomad_confound": {
+  "pct_gnomad_in_dbnsfp": 100.0,
+  "pct_all_dbnsfp": 31.1,
+  "pct_C1_dbnsfp": 37.1,
+  "pct_C2_dbnsfp": 27.7
+ },
+ "clinvar": {
+  "pathogenic": [
+   [
+    "K539L",
+    2
+   ],
+   [
+    "K607N",
+    2
+   ],
+   [
+    "V617F",
+    2
+   ],
+   [
+    "V617I",
+    2
+   ],
+   [
+    "R867Q",
+    2
+   ],
+   [
+    "R938Q",
+    2
+   ],
+   [
+    "P1095L",
+    2
+   ]
+  ],
+  "benign": [
+   [
+    "T7M",
+    1
+   ],
+   [
+    "G13V",
+    1
+   ],
+   [
+    "R122H",
+    1
+   ],
+   [
+    "G127D",
+    1
+   ],
+   [
+    "K244R",
+    1
+   ],
+   [
+    "N337D",
+    1
+   ],
+   [
+    "L383V",
+    1
+   ],
+   [
+    "V392M",
+    1
+   ],
+   [
+    "C480F",
+    1
+   ],
+   [
+    "N490S",
+    1
+   ],
+   [
+    "L892V",
+    1
+   ],
+   [
+    "Y1021F",
+    2
+   ],
+   [
+    "R1063H",
+    1
+   ],
+   [
+    "D1096E",
+    1
+   ]
+  ],
+  "correct": [
+   7,
+   7,
+   13,
+   14
+  ]
+ },
+ "domains": [
+  {
+   "domain": "FERM",
+   "n": 6536,
+   "pct_damaging": 49.8,
+   "pct_gnomad": 6.79
+  },
+  {
+   "domain": "SH2",
+   "n": 1558,
+   "pct_damaging": 59.6,
+   "pct_gnomad": 7.38
+  },
+  {
+   "domain": "JH2 pseudokinase",
+   "n": 5035,
+   "pct_damaging": 77.3,
+   "pct_gnomad": 6.81
+  },
+  {
+   "domain": "JH1 kinase",
+   "n": 5244,
+   "pct_damaging": 82.8,
+   "pct_gnomad": 6.6
+  },
+  {
+   "domain": "linker / other",
+   "n": 3135,
+   "pct_damaging": 37.5,
+   "pct_gnomad": 7.97
+  }
+ ],
+ "cov_table": [
+  {
+   "k": 7,
+   "n": 797,
+   "pct_damaging": 14.8
+  },
+  {
+   "k": 8,
+   "n": 14014,
+   "pct_damaging": 69.3
+  },
+  {
+   "k": 10,
+   "n": 362,
+   "pct_damaging": 11.9
+  },
+  {
+   "k": 11,
+   "n": 6335,
+   "pct_damaging": 58.8
+  }
+ ],
+ "corr": {
+  "names": [
+   "esm1b",
+   "alphamissense",
+   "cadd",
+   "foldx",
+   "sift",
+   "polyphen2",
+   "blosum62",
+   "clinpred",
+   "ddg_closed",
+   "ddg_open",
+   "ddg_delta"
+  ],
+  "sign": {
+   "ddg_closed": -1,
+   "ddg_open": -1,
+   "ddg_delta": -1,
+   "esm1b": -1,
+   "alphamissense": 1,
+   "cadd": 1,
+   "foldx": 1,
+   "sift": -1,
+   "polyphen2": 1,
+   "blosum62": -1,
+   "clinpred": 1
+  },
+  "rho": [
+   [
+    1.0,
+    0.801,
+    0.713,
+    0.445,
+    0.693,
+    0.678,
+    0.351,
+    0.759,
+    0.418,
+    0.417,
+    -0.03
+   ],
+   [
+    0.801,
+    1.0,
+    0.728,
+    0.501,
+    0.695,
+    0.721,
+    0.355,
+    0.78,
+    0.45,
+    0.456,
+    -0.006
+   ],
+   [
+    0.713,
+    0.728,
+    1.0,
+    0.387,
+    0.748,
+    0.787,
+    0.355,
+    0.841,
+    0.377,
+    0.388,
+    0.011
+   ],
+   [
+    0.445,
+    0.501,
+    0.387,
+    1.0,
+    0.455,
+    0.415,
+    0.238,
+    0.478,
+    0.544,
+    0.559,
+    0.016
+   ],
+   [
+    0.693,
+    0.695,
+    0.748,
+    0.455,
+    1.0,
+    0.639,
+    0.362,
+    0.787,
+    0.411,
+    0.417,
+    0.009
+   ],
+   [
+    0.678,
+    0.721,
+    0.787,
+    0.415,
+    0.639,
+    1.0,
+    0.256,
+    0.789,
+    0.325,
+    0.336,
+    0.006
+   ],
+   [
+    0.351,
+    0.355,
+    0.355,
+    0.238,
+    0.362,
+    0.256,
+    1.0,
+    0.407,
+    0.256,
+    0.264,
+    0.012
+   ],
+   [
+    0.759,
+    0.78,
+    0.841,
+    0.478,
+    0.787,
+    0.789,
+    0.407,
+    1.0,
+    0.41,
+    0.42,
+    0.007
+   ],
+   [
+    0.418,
+    0.45,
+    0.377,
+    0.544,
+    0.411,
+    0.325,
+    0.256,
+    0.41,
+    1.0,
+    0.896,
+    -0.144
+   ],
+   [
+    0.417,
+    0.456,
+    0.388,
+    0.559,
+    0.417,
+    0.336,
+    0.264,
+    0.42,
+    0.896,
+    1.0,
+    0.133
+   ],
+   [
+    -0.03,
+    -0.006,
+    0.011,
+    0.016,
+    0.009,
+    0.006,
+    0.012,
+    0.007,
+    -0.144,
+    0.133,
+    1.0
+   ]
+  ],
+  "pair_n": [
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    6697,
+    6697,
+    6697,
+    6335,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697
+   ],
+   [
+    20349,
+    20349,
+    6335,
+    20349,
+    6335,
+    20349,
+    20349,
+    6335,
+    20349,
+    20349,
+    20349
+   ],
+   [
+    6697,
+    6697,
+    6697,
+    6335,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    6697,
+    6697,
+    6697,
+    6335,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697,
+    6697
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ],
+   [
+    21508,
+    21508,
+    6697,
+    20349,
+    6697,
+    21508,
+    21508,
+    6697,
+    21508,
+    21508,
+    21508
+   ]
+  ],
+  "highest": [
+   [
+    0.896,
+    "ddg_closed",
+    "ddg_open"
+   ],
+   [
+    0.841,
+    "cadd",
+    "clinpred"
+   ],
+   [
+    0.801,
+    "esm1b",
+    "alphamissense"
+   ]
+  ],
+  "lowest": [
+   [
+    -0.144,
+    "ddg_closed",
+    "ddg_delta"
+   ],
+   [
+    -0.03,
+    "esm1b",
+    "ddg_delta"
+   ],
+   [
+    -0.006,
+    "alphamissense",
+    "ddg_delta"
+   ]
+  ],
+  "mean_abs": 0.434,
+  "min_pair_n": 6335
+ },
+ "panel_thresholds": {
+  "esm1b": {
+   "op": "lt",
+   "light": -7.5,
+   "intense": null
+  },
+  "alphamissense": {
+   "op": "gt",
+   "light": 0.564,
+   "intense": null
+  },
+  "polyphen2": {
+   "op": "ge",
+   "light": 0.447,
+   "intense": 0.909
+  },
+  "sift": {
+   "op": "le",
+   "light": 0.05,
+   "intense": null
+  },
+  "clinpred": {
+   "op": "ge",
+   "light": 0.5,
+   "intense": null
+  },
+  "cadd": {
+   "op": "ge",
+   "light": 25.0,
+   "intense": 30.0
+  }
+ },
+ "panel": [
+  {
+   "group": "GOF variants previously reported",
+   "rows": [
+    {
+     "variant": "T108A",
+     "pos": 108,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -4.626,
+      "alphamissense": 0.0637,
+      "cadd": 8.617,
+      "foldx": 0.322,
+      "sift": 0.637,
+      "polyphen2": 0.0,
+      "blosum62": 0.0,
+      "clinpred": 0.0738427,
+      "ddg_closed": -2.1031,
+      "ddg_open": -2.207,
+      "ddg_delta": -0.1039
+     }
+    },
+    {
+     "variant": "Y317H",
+     "pos": 317,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.835,
+      "alphamissense": 0.2697,
+      "cadd": 26.9,
+      "foldx": 2.6067,
+      "sift": 0.0,
+      "polyphen2": 0.975,
+      "blosum62": 2.0,
+      "clinpred": 0.901888,
+      "ddg_closed": 2.4364,
+      "ddg_open": 1.6571,
+      "ddg_delta": -0.7793
+     }
+    },
+    {
+     "variant": "H345L",
+     "pos": 345,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -9.094,
+      "alphamissense": 0.1546,
+      "cadd": 19.44,
+      "foldx": -1.0935,
+      "sift": 0.036,
+      "polyphen2": 0.009,
+      "blosum62": -3.0,
+      "clinpred": 0.850238,
+      "ddg_closed": -4.6328,
+      "ddg_open": -4.3214,
+      "ddg_delta": 0.3114
+     }
+    },
+    {
+     "variant": "H608N",
+     "pos": 608,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -8.919,
+      "alphamissense": 0.3284,
+      "cadd": 29.9,
+      "foldx": 1.3315,
+      "sift": 0.008,
+      "polyphen2": 0.965,
+      "blosum62": 1.0,
+      "clinpred": 0.988532,
+      "ddg_closed": -0.3478,
+      "ddg_open": 0.8277,
+      "ddg_delta": 1.1755
+     }
+    },
+    {
+     "variant": "L611S",
+     "pos": 611,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -10.913,
+      "alphamissense": 0.5799,
+      "cadd": 28.6,
+      "foldx": 0.9975,
+      "sift": 0.001,
+      "polyphen2": 0.991,
+      "blosum62": -2.0,
+      "clinpred": 0.995443,
+      "ddg_closed": -4.6055,
+      "ddg_open": -1.7594,
+      "ddg_delta": 2.8461
+     }
+    },
+    {
+     "variant": "V617I",
+     "pos": 617,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -7.032,
+      "alphamissense": 0.1158,
+      "cadd": 31.0,
+      "foldx": -0.9482,
+      "sift": 0.006,
+      "polyphen2": 0.654,
+      "blosum62": 3.0,
+      "clinpred": 0.953511,
+      "ddg_closed": 0.9085,
+      "ddg_open": -0.2425,
+      "ddg_delta": -1.151
+     }
+    },
+    {
+     "variant": "V617F",
+     "pos": 617,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -10.287,
+      "alphamissense": 0.3342,
+      "cadd": 33.0,
+      "foldx": 0.6373,
+      "sift": 0.002,
+      "polyphen2": 0.934,
+      "blosum62": -1.0,
+      "clinpred": 0.924498,
+      "ddg_closed": -6.6078,
+      "ddg_open": -7.353,
+      "ddg_delta": -0.7452
+     }
+    },
+    {
+     "variant": "V625F",
+     "pos": 625,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -16.741,
+      "alphamissense": 0.954,
+      "cadd": 32.0,
+      "foldx": 5.3339,
+      "sift": 0.0,
+      "polyphen2": 1.0,
+      "blosum62": -1.0,
+      "clinpred": 0.999818,
+      "ddg_closed": -180.2724,
+      "ddg_open": -186.5593,
+      "ddg_delta": -6.2869
+     }
+    },
+    {
+     "variant": "E846D",
+     "pos": 846,
+     "domain": "linker / other",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -8.941,
+      "alphamissense": 0.4314,
+      "cadd": 23.2,
+      "foldx": -0.7611,
+      "sift": 0.019,
+      "polyphen2": 0.241,
+      "blosum62": 2.0,
+      "clinpred": 0.848529,
+      "ddg_closed": -1.0001,
+      "ddg_open": -0.1151,
+      "ddg_delta": 0.885
+     }
+    },
+    {
+     "variant": "R867Q",
+     "pos": 867,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.214,
+      "alphamissense": 0.2669,
+      "cadd": 35.0,
+      "foldx": 0.6407,
+      "sift": 0.108,
+      "polyphen2": 0.95,
+      "blosum62": 1.0,
+      "clinpred": 0.968544,
+      "ddg_closed": 0.855,
+      "ddg_open": 1.7351,
+      "ddg_delta": 0.8801
+     }
+    },
+    {
+     "variant": "T875N",
+     "pos": 875,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -8.933,
+      "alphamissense": 0.8816,
+      "cadd": 29.7,
+      "foldx": -0.302,
+      "sift": 0.001,
+      "polyphen2": 0.979,
+      "blosum62": 0.0,
+      "clinpred": 0.995498,
+      "ddg_closed": -6.2241,
+      "ddg_open": -0.1863,
+      "ddg_delta": 6.0378
+     }
+    },
+    {
+     "variant": "S755R",
+     "pos": 755,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -5.137,
+      "alphamissense": 0.5464,
+      "cadd": 19.54,
+      "foldx": -0.8204,
+      "sift": 0.242,
+      "polyphen2": 0.401,
+      "blosum62": -1.0,
+      "clinpred": 0.882177,
+      "ddg_closed": -1.5686,
+      "ddg_open": -1.5415,
+      "ddg_delta": 0.0271
+     }
+    },
+    {
+     "variant": "R938Q",
+     "pos": 938,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -10.022,
+      "alphamissense": 0.7334,
+      "cadd": 29.1,
+      "foldx": 1.1501,
+      "sift": 0.023,
+      "polyphen2": 0.983,
+      "blosum62": 1.0,
+      "clinpred": 0.990114,
+      "ddg_closed": -0.7648,
+      "ddg_open": -1.0273,
+      "ddg_delta": -0.2625
+     }
+    },
+    {
+     "variant": "R1063H",
+     "pos": 1063,
+     "domain": "JH1 kinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.308,
+      "alphamissense": 0.1088,
+      "cadd": 26.4,
+      "foldx": 1.0429,
+      "sift": 0.058,
+      "polyphen2": 0.064,
+      "blosum62": 0.0,
+      "clinpred": 0.0184645,
+      "ddg_closed": 0.5953,
+      "ddg_open": 0.0907,
+      "ddg_delta": -0.5046
+     }
+    }
+   ]
+  },
+  {
+   "group": "New selected 4 variants",
+   "rows": [
+    {
+     "variant": "V1110E",
+     "pos": 1110,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -1.22,
+      "alphamissense": 0.2891,
+      "cadd": 23.0,
+      "foldx": -0.4911,
+      "sift": 0.023,
+      "polyphen2": 0.857,
+      "blosum62": -2.0,
+      "clinpred": 0.686658,
+      "ddg_closed": 2.3881,
+      "ddg_open": 2.6206,
+      "ddg_delta": 0.2325
+     }
+    },
+    {
+     "variant": "G571R",
+     "pos": 571,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.501,
+      "alphamissense": 0.2686,
+      "cadd": 33.0,
+      "foldx": 2.4401,
+      "sift": 0.002,
+      "polyphen2": 0.966,
+      "blosum62": -2.0,
+      "clinpred": 0.994163,
+      "ddg_closed": -16.4971,
+      "ddg_open": -14.6738,
+      "ddg_delta": 1.8233
+     }
+    },
+    {
+     "variant": "V578I",
+     "pos": 578,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.816,
+      "alphamissense": 0.2368,
+      "cadd": 29.3,
+      "foldx": 0.937,
+      "sift": 0.0,
+      "polyphen2": 0.999,
+      "blosum62": 3.0,
+      "clinpred": 0.961641,
+      "ddg_closed": -38.2397,
+      "ddg_open": -33.8943,
+      "ddg_delta": 4.3454
+     }
+    },
+    {
+     "variant": "L805I",
+     "pos": 805,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.668,
+      "alphamissense": 0.1504,
+      "cadd": 25.6,
+      "foldx": 0.5041,
+      "sift": 0.317,
+      "polyphen2": 0.773,
+      "blosum62": 2.0,
+      "clinpred": 0.933512,
+      "ddg_closed": -3.4871,
+      "ddg_open": -2.6319,
+      "ddg_delta": 0.8552
+     }
+    }
+   ]
+  },
+  {
+   "group": "Variants identified in this study",
+   "rows": [
+    {
+     "variant": "P37A",
+     "pos": 37,
+     "domain": "FERM",
+     "cluster": 1,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -2.065,
+      "alphamissense": 0.065,
+      "cadd": 1.133,
+      "foldx": null,
+      "sift": 0.187,
+      "polyphen2": 0.003,
+      "blosum62": -1.0,
+      "clinpred": 0.189644,
+      "ddg_closed": -2.1892,
+      "ddg_open": 1.0275,
+      "ddg_delta": 3.2167
+     }
+    },
+    {
+     "variant": "F240V",
+     "pos": 240,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -9.664,
+      "alphamissense": 0.7681,
+      "cadd": 23.5,
+      "foldx": 0.975,
+      "sift": 0.173,
+      "polyphen2": 0.043,
+      "blosum62": -1.0,
+      "clinpred": 0.868502,
+      "ddg_closed": -0.8612,
+      "ddg_open": -2.4201,
+      "ddg_delta": -1.5589
+     }
+    },
+    {
+     "variant": "H380Y",
+     "pos": 380,
+     "domain": "FERM",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -10.026,
+      "alphamissense": 0.1722,
+      "cadd": 24.0,
+      "foldx": -0.9078,
+      "sift": 0.008,
+      "polyphen2": 0.955,
+      "blosum62": 2.0,
+      "clinpred": 0.988807,
+      "ddg_closed": -10.054,
+      "ddg_open": -16.8488,
+      "ddg_delta": -6.7948
+     }
+    },
+    {
+     "variant": "R426X",
+     "note": "nonsense (p.Arg426*) - outside the missense universe"
+    },
+    {
+     "variant": "C427R",
+     "pos": 427,
+     "domain": "SH2",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -0.302,
+      "alphamissense": 0.2386,
+      "cadd": 13.05,
+      "foldx": 0.701,
+      "sift": 1.0,
+      "polyphen2": 0.014,
+      "blosum62": -3.0,
+      "clinpred": 0.76014,
+      "ddg_closed": 0.6188,
+      "ddg_open": -0.0193,
+      "ddg_delta": -0.6381
+     }
+    },
+    {
+     "variant": "G571R",
+     "pos": 571,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.501,
+      "alphamissense": 0.2686,
+      "cadd": 33.0,
+      "foldx": 2.4401,
+      "sift": 0.002,
+      "polyphen2": 0.966,
+      "blosum62": -2.0,
+      "clinpred": 0.994163,
+      "ddg_closed": -16.4971,
+      "ddg_open": -14.6738,
+      "ddg_delta": 1.8233
+     }
+    },
+    {
+     "variant": "V578I",
+     "pos": 578,
+     "domain": "JH2 pseudokinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.816,
+      "alphamissense": 0.2368,
+      "cadd": 29.3,
+      "foldx": 0.937,
+      "sift": 0.0,
+      "polyphen2": 0.999,
+      "blosum62": 3.0,
+      "clinpred": 0.961641,
+      "ddg_closed": -38.2397,
+      "ddg_open": -33.8943,
+      "ddg_delta": 4.3454
+     }
+    },
+    {
+     "variant": "L805I",
+     "pos": 805,
+     "domain": "JH2 pseudokinase",
+     "cluster": 1,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -7.668,
+      "alphamissense": 0.1504,
+      "cadd": 25.6,
+      "foldx": 0.5041,
+      "sift": 0.317,
+      "polyphen2": 0.773,
+      "blosum62": 2.0,
+      "clinpred": 0.933512,
+      "ddg_closed": -3.4871,
+      "ddg_open": -2.6319,
+      "ddg_delta": 0.8552
+     }
+    },
+    {
+     "variant": "I1065T",
+     "pos": 1065,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": true,
+     "feat": {
+      "esm1b": -9.685,
+      "alphamissense": 0.4611,
+      "cadd": 23.5,
+      "foldx": 3.1536,
+      "sift": 0.001,
+      "polyphen2": 0.96,
+      "blosum62": -1.0,
+      "clinpred": 0.976645,
+      "ddg_closed": -6.4522,
+      "ddg_open": -6.5059,
+      "ddg_delta": -0.0537
+     }
+    },
+    {
+     "variant": "V1110E",
+     "pos": 1110,
+     "domain": "JH1 kinase",
+     "cluster": 2,
+     "gnomad": false,
+     "feat": {
+      "esm1b": -1.22,
+      "alphamissense": 0.2891,
+      "cadd": 23.0,
+      "foldx": -0.4911,
+      "sift": 0.023,
+      "polyphen2": 0.857,
+      "blosum62": -2.0,
+      "clinpred": 0.686658,
+      "ddg_closed": 2.3881,
+      "ddg_open": 2.6206,
+      "ddg_delta": 0.2325
+     }
+    }
+   ]
+  }
+ ]
+}

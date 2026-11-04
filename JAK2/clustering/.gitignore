@@ -9,3 +9,12 @@ pph2_humvar/
 pph2_humdiv/
 corr_rho.npy
 corr_n.npy
+X_wd.npy
+cl_wd.npy
+ing_wd.npy
+ncov_wd.npy
+pos_wd.npy
+corr_rho_wd.npy
+corr_n_wd.npy
+merged_with_ddg.csv
+__pycache__/
