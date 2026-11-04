@@ -117,7 +117,7 @@ for a in range(1,1133,W):
 ax.fill_between(ctr,dmg,color=C2,alpha=.35); ax.plot(ctr,dmg,color=C2,lw=1.2)
 ax2=ax.twinx(); ax2.plot(ctr,gno,color="#1a7a3c",lw=1.3); ax2.grid(False)
 ax2.set_ylabel("% seen in gnomAD",color="#1a7a3c")
-for s,e,nm in [(37,380,"FERM"),(401,482,"SH2"),(545,809,"JH2 pseudokinase"),(849,1124,"JH1 kinase")]:
+for s,e,nm in [(26,431,"FERM"),(450,529,"SH2"),(589,875,"JH2 pseudokinase"),(897,1176,"JH1 kinase")]:
     ax.axvspan(s,e,color="#999",alpha=.11)
     ax.text((s+e)/2,92,nm,ha="center",fontsize=7.6,color="#333",
             bbox=dict(fc="white",ec="none",alpha=.75,pad=1.5))
