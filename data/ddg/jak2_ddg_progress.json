@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-04 11:18:36",
+ "updated": "2026-11-04 11:33:58",
  "lines": [
-  "JAK2P1: 7,372/21,508 variants (34.3%), 388/1132 positions, mean|delta| 18.993",
+  "JAK2P1: 14,174/21,508 variants (65.9%), 746/1132 positions, mean|delta| 17.771",
   "JAK2P2: nothing yet"
  ],
  "pairs": {
