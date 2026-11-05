@@ -1,7 +1,7 @@
 # JAK1 — the third arrangement (neither open nor closed)
 
 Analysis of the JAK1 structures that ended in neither the open nor the closed arrangement (no template, shallow MSA),
-and comparison with references and experimental cryo-EM structures. Data and script: [third_arrangement/](third_arrangement/).
+and comparison with references and experimental cryo-EM structures. Data and script: in this directory.
 
 ## Summary
 - **It is one well-defined arrangement**, reached by 6 of the 7 structures (5 seeds at MSA 64/256, 2 of 5 at 96/384;

@@ -74,7 +74,7 @@ number for those three is against a prediction or a cross-paralogue JAK1 structu
 |---|---|
 | `jak1_third_structure.html` | the page |
 | `JAK1_third.md` | the original analysis — contacts, interface residues, rotations, caveats |
-| `analyse.py`, `analysis.json`, `exp_compare.json`, `wt_vs_v658f_128.json` | the original scripts and results (copies of `../third_arrangement/`) |
+| `analyse.py`, `analysis.json`, `exp_compare.json`, `wt_vs_v658f_128.json` | the original scripts and results (formerly `../third_arrangement/`, now removed as a duplicate) |
 | `analyse_third.py` → `third_analysis.json` | the geometry behind this page |
 | `build_html.py` | builds the page |
 | `structures/` | all seven structures, including 7T6F and 8EWY from the PDB |
