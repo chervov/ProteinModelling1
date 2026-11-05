@@ -7,16 +7,62 @@ Newest first. One block per paper: title, authors, venue, year, link, and what i
 ## A curated benchmark for cofolding models on kinase conformational states
 
 Sun & Head-Gordon · *npj Drug Discovery* · **2026** ·
-[10.1038/s44386-026-00068-z](https://doi.org/10.1038/s44386-026-00068-z)
+[10.1038/s44386-026-00068-z](https://doi.org/10.1038/s44386-026-00068-z) · PDF read 5 Nov 2026
 
-Benchmarks whether cofolding models of the AlphaFold3 type reproduce the correct **kinase
-conformational state**, not merely a plausible fold.
+**KinConfBench**: 2,225 high-quality human kinase chains from the PDB, testing whether cofolding
+models recover the *experimentally observed conformational state* rather than merely a plausible
+fold. Four open-source models — **Boltz-2, Chai-1, Protenix, RoseTTAFold-All-Atom (RFAA)** —
+with states labelled by the Modi & Dunbrack nomenclature (DFGin / DFGout / DFGinter × Ramachandran
+dihedral labels).
 
-**Why it matters here.** This is the failure mode the project hit directly: AlphaFold gives
-*open* for JAK1 and JAK2 and *closed* for JAK3 and TYK2, and our own runs reached the right
-arrangement only at shallow MSA depth. A benchmark for exactly that question is worth reading
-before any further conformational modelling.
-*(Summarised from CrossRef metadata — the full text was behind a login.)*
+### Which method is best
+
+**The three diffusion-based models beat RFAA; the paper does not crown a winner among them.**
+
+- All four fall in a **~60–80%** band for conformational classification, the diffusion models at
+  the top.
+- **RFAA's absolute accuracy falls short** — the paper's own words, taken as evidence for "the
+  performance advantages of diffusion-based cofolding models". Its best-of-20 sampling rises
+  **34.6% → 60.5%**, so its single highest-confidence pose is often wrong.
+- On conformational **diversity the order inverts**: Chai-1 and RFAA explore more within the
+  correct basin than Boltz-2 and Protenix — though all are "quite limited" in absolute terms.
+
+So: a diffusion model for accuracy, none of them for diversity.
+
+### The three failure modes, which matter more than the ranking
+
+1. **Ligand-pose metrics do not predict conformational correctness.** Good active-site RMSD does
+   not mean the right kinase state. This is the paper's central claim and the reason the benchmark
+   exists.
+2. **Severe mode collapse.** Across 20 inferences roughly two-thirds of systems come out
+   *entirely* right or *entirely* wrong — a binary outcome rather than graded uncertainty.
+   Sampling more does not yield an ensemble.
+3. **"Apo-drift."** All three diffusion models default to the **ligand-free** state for a large
+   fraction of holo complexes — *even when those complexes are in the training set* — and it
+   worsens for structures deposited after the training cutoff. The models are anchored to the
+   training distribution's dominant prior rather than responding to the specific ligand.
+
+Table S4 lists **152 kinase–ligand systems where all four models fail**, offered as a target set.
+
+### Why it matters here
+
+This is the paper behind the KinConfBench reference already in
+[`../open_close/open_close_inf.md`](../open_close/open_close_inf.md), and it independently
+describes two things we hit:
+
+- **Apo-drift is our AlphaFold result in their language.** AFDB gives *open* for JAK1 and JAK2 and
+  *closed* for JAK3 and TYK2 — the dominant prior, not a context-specific answer. Our AFDB
+  FERM–JH1 PAE of 18.5–25.8 Å against a ~31 Å ceiling says the same thing numerically.
+- **Mode collapse matches our MSA-depth finding.** The JAK1 third arrangement appeared only at
+  shallow MSA (64/256 and 96/384) and vanished at 128/512 and deeper: deepening the alignment
+  collapses the prediction onto the default state. See
+  [`../JAK1/third_structure/`](../JAK1/third_structure/).
+
+**Caveat on scope — do not transfer their numbers to our question.** KinConfBench measures the
+**intra-domain DFG / active-site** state; we measure the **inter-domain JH2–JH1** arrangement.
+These are two of the three senses in the terminology note and they are *orthogonal*: 4OLI is
+autoinhibited (closed, our sense) yet classified `DFGin-BLAminus`, the active configuration. Their
+60–80% accuracies are therefore **not** a bound on our problem, and neither is their model ranking.
 
 ---
 
