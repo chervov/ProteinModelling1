@@ -283,6 +283,64 @@ rebuild the backbone, the result is a geometry violation rather than a thermodyn
 genuinely does cost something. Proline is elevated in Rosetta *only*. Treat the aromatic tail as
 signal with an inflated scale, and the proline tail as artefact.
 
+### 8.1b Does *cartesian* Rosetta fix the outlier tail? Tested directly — partly.
+
+The tail in §8.1 comes from the **dual-state** protocol, which repacks an 8 Å shell
+(`mutate_residue(..., pack_radius=8.0)`) and never moves the backbone. `cartesian_ddg` frees
+backbone and side-chain DOFs over a 10 Å shell, so in principle it should relieve exactly the strain
+that produces the tail. I ran both protocols over **the same 600 JAK2 variants** — 30 per target
+residue, all at JH1 positions 855–1118 so the construct is identical — and compared.
+
+| target | n | dual-state % >\|10\| | **cartesian % >\|10\|** | dual median | **cartesian median** | median Δcart_bonded |
+|---|--:|--:|--:|--:|--:|--:|
+| **P** | 30 | 90 | 60 | -253.1 | +13.0 | +3.7 |
+| **I** | 30 | 67 | 20 | -25.7 | +3.3 | +0.4 |
+| **W** | 30 | 50 | 20 | -10.3 | +2.2 | +0.6 |
+| **Y** | 30 | 43 | 17 | -7.2 | +2.6 | +0.3 |
+| **V** | 30 | 40 | 13 | -4.5 | +1.6 | +0.2 |
+| **L** | 30 | 40 | 0 | -5.8 | +0.1 | +0.2 |
+| **F** | 30 | 37 | 3 | -3.0 | +1.0 | +0.2 |
+| **K** | 30 | 33 | 27 | -5.6 | +4.8 | +0.1 |
+| **R** | 30 | 30 | 20 | -4.6 | +4.2 | -0.0 |
+| **H** | 30 | 27 | 7 | -5.6 | +2.7 | -0.0 |
+| **E** | 30 | 20 | 30 | -4.6 | +5.2 | -0.0 |
+| **Q** | 30 | 17 | 13 | -1.9 | +2.3 | -0.1 |
+| **M** | 30 | 17 | 0 | -3.3 | +2.4 | +0.0 |
+| **G** | 30 | 13 | 37 | -4.4 | +6.4 | -0.6 |
+| **D** | 30 | 13 | 43 | -4.3 | +6.5 | -0.2 |
+| **N** | 30 | 7 | 13 | -4.4 | +4.9 | -0.2 |
+| **T** | 30 | 7 | 7 | -1.8 | +2.5 | -0.1 |
+| **C** | 30 | 0 | 3 | -3.3 | +3.6 | -0.1 |
+| **S** | 30 | 0 | 17 | -2.3 | +3.7 | -0.3 |
+| **A** | 30 | 0 | 10 | -2.4 | +2.7 | -0.2 |
+
+**Overall the outlier rate falls from 27.5% to 18.0%, and the answer splits three ways:**
+
+1. **The aromatic and branched-aliphatic tail is largely fixed.** F 37%→3%, L 40%→0%,
+   Y 43%→17%, W 50%→20%, I 67%→20%, V 40%→13%. Medians come back to physical values — W from
+   −10.3 to +2.2 REU, I from −25.7 to +3.3. This was a backbone-strain artefact and Cartesian
+   minimisation removes it.
+2. **Proline is not fixed.** Still the worst residue by a wide margin: **90% → 60%**, median
+   −253.1 → **+13.0 REU**. The sign and scale are now sane but the magnitude is still ~6× what
+   FoldX (+3.41) and ThermoMPNN (+2.03) give. Its median Δcart_bonded is **+3.7**, an order of
+   magnitude above every other residue — so the residual error is still bond geometry. Freeing a
+   10 Å shell is not enough; proline needs genuine backbone rebuilding or fragment insertion,
+   which is exactly what Frenz et al. add for proline and which this reimplementation omits.
+3. **Cartesian introduces a *new*, smaller problem at small and acidic residues.**
+   D 13%→43%, G 13%→37%, E 20%→30%, S 0%→17%, A 0%→10%. Their Δcart_bonded medians are
+   *negative*, so this is not bond strain — it is over-relaxation: with the backbone free over
+   10 Å, replacing a large residue with a small one lets the shell collapse inward and the energy
+   difference inflates.
+
+**Cartesian is nevertheless the better protocol.** Against ThermoMPNN as an independent reference
+on these 600 variants, `cartesian_ddg` reaches **Spearman ρ = +0.702** against the dual-state
+protocol's **+0.529**. The two Rosetta protocols agree with each other only at +0.583 — less than
+cartesian agrees with a completely different method.
+
+**Practical rule:** use `cartesian_ddg` rather than repack-only, exclude X→P entirely, and treat
+X→{D,G,E,S,A} with caution. Cost on this machine: **0.72 s/variant wall on 8 cores** (600
+variants in 7.2 min) on a 276-residue construct, after a one-off relax.
+
 ### 8.2 `cart_bonded` dominates my own cartesian_ddg at packed positions
 
 | variant | ΔΔG (REU) | Δcart_bonded | fraction |
@@ -451,6 +509,10 @@ transposed reading S755R is scored and both are kept.
 | `figs/correlations.png` | Spearman matrix, 20,349 complete rows |
 | `figs/outliers_by_residue.png` | the proline/aromatic tail by target residue |
 | `figs/selected_percentile.png` | where the 24 variants sit in JAK2's own distribution |
+| `figs/cartesian_vs_dualstate.png` | outlier rate, cartesian vs dual-state, same 600 variants |
+| `cart_vs_dualstate_outliers.csv` | the 600-variant comparison, per variant |
+| `cart_outlier_test.py` | regenerates that comparison |
+| `install_and_verify.sh` | rebuild the toolchain and self-check it |
 | `build_survey.py` | regenerates every number and figure above |
 
 Source data, all elsewhere in the repo: [`../jak2_variants_multimethod.csv`](../jak2_variants_multimethod.csv)
