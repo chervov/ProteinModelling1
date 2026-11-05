@@ -161,12 +161,38 @@ multi-domain proteins</b> — which is what the JAKs are. Sources, with DOIs, in
 <code>external_data/ddg_literature.md</code>.</div>
 
 <h2>2. Provenance, local tooling and timings</h2>
+
+<h3>FoldX and ProtVar are not the same thing</h3>
+<p>Worth separating, because everything labelled &ldquo;FoldX&rdquo; in this project is really
+ProtVar's output.</p>
+<div class="scroll"><table><thead><tr><th></th><th><b>FoldX</b></th><th><b>ProtVar</b></th>
+</tr></thead><tbody>
+<tr><td class="rh">what it is</td><td>the ΔΔG <b>method</b> &mdash; an empirical force field</td>
+<td>an <b>EMBL-EBI resource</b> publishing precomputed FoldX output</td></tr>
+<tr><td class="rh">who</td><td>Serrano lab (Schymkowitz 2005); commercial, licence required</td>
+<td>EMBL-EBI</td></tr>
+<tr><td class="rh">scope</td><td>one mutation on one structure, run by you</td>
+<td><b>every possible human missense variant</b>, on <b>AlphaFold2 models</b></td></tr>
+<tr><td class="rh">do we have it</td><td><b style="color:var(--bad)">no</b> &mdash; FoldX is not installed and we have never run it</td>
+<td><b style="color:var(--good)">yes</b> &mdash; the full 1.5 GB file, downloaded</td></tr>
+</tbody></table></div>
+<div class="key"><p><b>Two consequences of using ProtVar rather than running FoldX.</b></p>
+<p><b>Coverage is 89&ndash;95%, not 100%.</b> ProtVar trims AlphaFold's low-confidence regions —
+for JAK2 that is residues 1&ndash;38 and 125 positions in total. A <code>plddt</code> column lets
+you filter further.</p>
+<p><b>It knows nothing about conformation.</b> ProtVar computes on the AlphaFold model of the
+isolated monomer, in whatever state AlphaFold produced &mdash; <i>open</i> for JAK1 and JAK2,
+<i>closed</i> for JAK3 and TYK2. That is precisely why our dual-state PyRosetta runs exist, and
+why ProtVar cannot substitute for them.</p></div>
+
 <h3>What is precomputed and downloadable &mdash; EMBL-EBI and the rest</h3>
 <div class="scroll"><table><thead><tr><th>source</th><th>what</th><th>status here</th></tr></thead>
 <tbody>
-<tr class="stab"><td><b>EMBL-EBI &mdash; ProtVar</b><br><span class="tiny">ftp.ebi.ac.uk/pub/databases/ProtVar/predictions/stability/ (~1.5 GB)</span></td>
+<tr class="stab"><td><b>EMBL-EBI &mdash; ProtVar</b><br><span class="tiny">ftp.ebi.ac.uk/pub/databases/ProtVar/predictions/stability/</span></td>
 <td><b>FoldX ΔΔG on AlphaFold2</b>, whole human proteome</td>
-<td><b style="color:var(--bad)">host unreachable</b> &mdash; <code>ftp.ebi.ac.uk</code> times out from this machine while <code>www.ebi.ac.uk</code> returns 200. We use a committed extract pulled from that file on 2025-02-10</td></tr>
+<td><b style="color:var(--good)">we have the full file</b>: <code>~/protvar/foldx_energy_2025.02.10.csv.gz</code>, <b>1.5 GB</b>, downloaded 28 Oct 2026. Outside the repo, too large to commit. The host has <i>since</i> become unreachable from this machine (<code>ftp.ebi.ac.uk</code> times out, <code>www.ebi.ac.uk</code> returns 200) &mdash; so it cannot be re-fetched, but it does not need to be</td></tr>
+<tr><td>&#8627; JAK extract, committed</td><td>same, 5 proteins</td>
+<td><code>external_data/protvar_foldx_jak_src.csv</code> &mdash; 3.3 MB, <b>89,927 rows</b>: JAK1 20,805 &middot; JAK2 20,349 &middot; TYK2 20,178 &middot; JAK3 20,045 &middot; SRC 8,550</td></tr>
 <tr class="stab"><td><b>EMBL-EBI &mdash; AlphaFold DB</b><br><span class="tiny">alphafold.ebi.ac.uk/files/</span></td>
 <td>models and <b>PAE</b> matrices</td><td><b style="color:var(--good)">works</b> &mdash; all four downloaded live</td></tr>
 <tr><td>HuggingFace</td><td>ESM-1b LLR, all human isoforms (1.34 GB zip)</td><td>works &mdash; one member by HTTP range request</td></tr>
@@ -183,7 +209,8 @@ multi-domain proteins</b> — which is what the JAKs are. Sources, with DOIs, in
 <tr><td>Biopython 1.88</td><td><b style="color:var(--good)">yes</b></td><td>BLOSUM62 matrix</td></tr>
 <tr><td><code>rsalor</code></td><td><b style="color:var(--bad)">no</b></td><td>installing it was blocked by the sandbox</td></tr>
 <tr><td><code>freesasa</code>, <code>biotite</code>, <code>prody</code>, <code>mdtraj</code>, <code>openmm</code>, <code>pdbfixer</code></td><td><b style="color:var(--bad)">no</b></td><td>&mdash;</td></tr>
-<tr><td>ThermoMPNN, FoldX, mCSM, DDMut as executables</td><td><b style="color:var(--bad)">no</b></td><td>all taken precomputed</td></tr>
+<tr><td><b>FoldX</b> itself</td><td><b style="color:var(--bad)">no</b></td><td>never installed or run &mdash; every FoldX number here is ProtVar's precomputed output</td></tr>
+<tr><td>ThermoMPNN, mCSM, DDMut as executables</td><td><b style="color:var(--bad)">no</b></td><td>all taken precomputed</td></tr>
 </tbody></table></div>
 
 <h3>Timings, measured</h3>
@@ -196,9 +223,10 @@ multi-domain proteins</b> — which is what the JAKs are. Sources, with DOIs, in
 <tr><td>AlphaMissense fetch</td><td class="n">28 s</td><td>21.2 M of 71 M rows, early stop</td></tr>
 <tr><td>dbNSFP via myvariant</td><td class="n">48 s</td><td></td></tr>
 <tr><td>PolyPhen-2, per model</td><td class="n">~2 min</td><td>server-side</td></tr>
-<tr><td>FoldX</td><td class="n">&lt; 1 s</td><td>committed extract; streaming from EBI would be minutes</td></tr>
+<tr><td>FoldX lookup</td><td class="n">&lt; 1 s</td><td>from the committed extract. Extracting a <i>new</i> protein from the local 1.5 GB gzip is a one-pass scan, a few minutes</td></tr>
 <tr><td>BLOSUM62</td><td class="n">0.2 s</td><td></td></tr>
 </tbody></table></div>
+<p><b>Any other protein's FoldX ΔΔG can be pulled straight out of the local 1.5 GB gzip</b> without touching EBI &mdash; which is how <code>ptpn2_foldx.csv</code> in that directory was made.</p>
 <p>JAK1 and TYK2 were computed in October on four molab CPU boxes (20 cores each) overnight;
 JAK2 and JAK3 in November locally, in the times above.</p>
 

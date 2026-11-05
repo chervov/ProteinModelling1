@@ -74,7 +74,7 @@ instead of 0.74).
 | method | file | coverage |
 |---|---|--:|
 | **ThermoMPNN** | `../../external_data/thermompnn_jak_src.csv` | **100%** all four |
-| **FoldX** (ProtVar, on AlphaFold2) | `../../external_data/protvar_foldx_jak_src.csv` | 89.5–94.6% |
+| **FoldX via ProtVar** (on AlphaFold2) | `../../external_data/protvar_foldx_jak_src.csv`, extracted from the full 1.5 GB file at `~/protvar/` | 89.5–94.6% |
 | **RSA** | same ThermoMPNN file, `exposure_rasa` | 100% |
 | **RSALOR** (JAK2) | `../rsalor_jak2_family.csv` | per-position |
 | mCSM, DDMut, Rosetta cartesian | `../jak2_variants_multimethod.csv` | the 24-variant panel only |
@@ -91,22 +91,43 @@ carries no stability information against four established methods. Nothing depen
 
 ## 4. Provenance, local tooling and timings
 
-### 4a. What is precomputed and downloadable, and from where
+### 4a. FoldX and ProtVar are not the same thing
 
-| source | what | URL | status here |
+Worth separating, because everything labelled "FoldX" in this project is really ProtVar's output:
+
+| | **FoldX** | **ProtVar** |
+|---|---|---|
+| what it is | the ΔΔG **method** — an empirical force field | an **EMBL-EBI resource** that publishes precomputed FoldX output |
+| who | Serrano lab (Schymkowitz et al. 2005); commercial, licence required | EMBL-EBI |
+| scope | one mutation on one structure, run by you | **every possible human missense variant**, computed on **AlphaFold2 models** |
+| do we have it | **no — FoldX is not installed and we have never run it** | **yes — the full 1.5 GB file, downloaded** |
+
+Two consequences of using ProtVar rather than running FoldX:
+
+- **Coverage is 89–95%, not 100%.** ProtVar trims AlphaFold's low-confidence regions — for JAK2
+  that is residues 1–38 and 125 positions in total. A `plddt` column lets you filter further.
+- **It knows nothing about conformation.** ProtVar computes on the AlphaFold model of the isolated
+  monomer, in whatever state AlphaFold produced — which is *open* for JAK1 and JAK2 and *closed*
+  for JAK3 and TYK2. This is precisely why our dual-state PyRosetta runs exist and why ProtVar
+  cannot substitute for them.
+
+### 4b. What is precomputed and downloadable, and from where
+
+| source | what | where | status here |
 |---|---|---|---|
-| **EMBL-EBI — ProtVar** | **FoldX ΔΔG on AlphaFold2, whole human proteome** | `https://ftp.ebi.ac.uk/pub/databases/ProtVar/predictions/stability/` (~1.5 GB, sorted) | **host unreachable from this machine** — `ftp.ebi.ac.uk` times out while `www.ebi.ac.uk` returns 200. We use a committed extract, `external_data/protvar_foldx_jak_src.csv`, pulled from that same file on 2025-02-10 |
-| **EMBL-EBI — AlphaFold DB** | models + **PAE** matrices | `https://alphafold.ebi.ac.uk/files/AF-<acc>-F1-model_v6.pdb` | **works** — all four downloaded live |
-| HuggingFace | **ESM-1b** LLR, all human isoforms | `ALL_hum_isoforms_ESM1b_LLR.zip`, 1.34 GB | works; one member by HTTP range request |
+| **EMBL-EBI — ProtVar** | **FoldX ΔΔG on AlphaFold2**, whole human proteome | `ftp.ebi.ac.uk/pub/databases/ProtVar/predictions/stability/` | **we have the full file**: `~/protvar/foldx_energy_2025.02.10.csv.gz`, **1.5 GB**, downloaded 28 Oct 2026. Outside the repo — too large to commit. The host has since become **unreachable from this machine** (`ftp.ebi.ac.uk` times out, `www.ebi.ac.uk` returns 200), so it cannot be re-fetched, but it does not need to be |
+| ↳ JAK extract, committed | same, 5 proteins | `external_data/protvar_foldx_jak_src.csv` | 3.3 MB, **89,927 rows**: JAK1 20,805 · JAK2 20,349 · TYK2 20,178 · JAK3 20,045 · SRC 8,550 |
+| **EMBL-EBI — AlphaFold DB** | models + **PAE** matrices | `alphafold.ebi.ac.uk/files/` | **works** — all four downloaded live |
+| HuggingFace | **ESM-1b** LLR, all human isoforms | 1.34 GB zip | works; one member by HTTP range request |
 | Zenodo (DeepMind) | **AlphaMissense**, all possible human missense | 1.21 GB gz | works; streamed with early stop |
 | myvariant.info | **dbNSFP** — CADD, SIFT, ClinPred | REST | works |
 | Liao & Lehner release | **ThermoMPNN** + **RSA** | `external_data/thermompnn_jak_src.csv` | committed |
 | PolyPhen-2 server | HumVar / HumDiv | batch CGI | works |
 
-**EMBL-EBI is the source for two of these** — ProtVar for FoldX and AlphaFold DB for the
-structures and PAE — and only one of the two is currently reachable.
+**Any other protein's FoldX ΔΔG can be pulled straight out of the local 1.5 GB gzip** without
+touching EBI — which is how `ptpn2_foldx.csv` in that directory was made.
 
-### 4b. What we installed and actually ran locally
+### 4c. What we installed and actually ran locally
 
 | package | installed | used for |
 |---|:-:|---|
@@ -114,12 +135,13 @@ structures and PAE — and only one of the two is currently reachable.
 | **Biopython** 1.88 | **yes** | BLOSUM62 matrix |
 | `rsalor` | **no** | — installing it was blocked by the sandbox |
 | `freesasa`, `biotite`, `prody`, `mdtraj`, `openmm`, `pdbfixer` | **no** | — |
-| ThermoMPNN, FoldX, mCSM, DDMut as executables | **no** | all taken precomputed |
+| **FoldX** itself | **no** | never installed or run — all FoldX numbers are ProtVar's precomputed output (§4a) |
+| ThermoMPNN, mCSM, DDMut as executables | **no** | all taken precomputed |
 
 **Only one ΔΔG method was ever run on this machine: PyRosetta.** Everything else in this report
 is downloaded output.
 
-### 4c. Timings, measured
+### 4d. Timings, measured
 
 | step | time | note |
 |---|--:|---|
@@ -130,13 +152,13 @@ is downloaded output.
 | AlphaMissense fetch | 28 s | streamed 21.2 M of 71 M rows, early stop |
 | dbNSFP via myvariant | 48 s | |
 | PolyPhen-2, per model | ~2 min | server-side |
-| FoldX | < 1 s | committed extract; streaming from EBI would be minutes |
+| FoldX lookup | < 1 s | from the committed extract. Extracting a *new* protein from the local 1.5 GB gzip is a one-pass scan, a few minutes |
 | BLOSUM62 | 0.2 s | |
 
 JAK1 and TYK2 were computed in October on 4 molab CPU boxes (20 cores each) overnight; JAK2 and
 JAK3 in November locally, in the times above.
 
-### 4d. Did we reproduce RSA or RSALOR? No — and that is worth stating plainly
+### 4e. Did we reproduce RSA or RSALOR? No — and that is worth stating plainly
 
 **We did not compute either.**
 
@@ -298,7 +320,7 @@ abundance.** That is the surprising one: abundance is close to a direct readout 
 stability, which is what ΔΔG is supposed to compute, and AlphaMissense — which never sees a
 force field — is 60% better at it than PyRosetta.
 
-**RSA alone (0.288) beats both FoldX and Rosetta.** Again — though see §4d: this is a downloaded RSA column, not one we computed.
+**RSA alone (0.288) beats both FoldX and Rosetta.** Again — though see §4e: this is a downloaded RSA column, not one we computed.
 
 A caveat in the methods' favour: these are *single-point* correlations over a whole multi-domain
 protein, the hardest possible setting, and the literature's independent ceiling is r ≈ 0.5–0.6
@@ -314,7 +336,7 @@ on curated single-domain sets. 0.26–0.30 is poor but not anomalous.
 4. **Consider replacing Rosetta with ThermoMPNN** in the feature set: better AUC (0.76–0.79 vs
    0.71–0.75), better agreement with FoldX, no outlier tail, no 1.5 h per protein, 100% coverage.
    Keep Rosetta only for the dual-state question it was computed for.
-5. **Reproduce RSA ourselves and run RSALOR properly.** Today neither is ours (§4d): the RSA column is downloaded and the RSALOR file has no generating script. This is the one place where a headline finding rests on provenance we cannot check.
+5. **Reproduce RSA ourselves and run RSALOR properly.** Today neither is ours (§4e): the RSA column is downloaded and the RSALOR file has no generating script. This is the one place where a headline finding rests on provenance we cannot check.
 
 ## Files
 
