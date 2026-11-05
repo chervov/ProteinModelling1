@@ -176,9 +176,15 @@ Upstream URL if you must re-download (~1.56 GB):
 # do NOT `git clone`: the repo contains a .idea/ directory which this filesystem refuses to
 # create. git aborts the checkout, leaves an empty tree, and still exits 0.
 curl -L https://codeload.github.com/Kuhlman-Lab/ThermoMPNN/tar.gz/refs/heads/main -o t.tar.gz
-tar tzf t.tar.gz | grep -v '/\.idea/' > keep.txt
-tar xzf t.tar.gz -T keep.txt
+tar xzf t.tar.gz --exclude='*/.idea*'          # 9 s; 62 MB tarball -> 156 MB tree
 ```
+
+> **Corrected 6 Nov.** An earlier version of this guide used
+> `tar tzf ... | grep -v '/\.idea/' > keep.txt && tar xzf t.tar.gz -T keep.txt`.
+> **That does not work.** macOS `bsdtar` treats `-T` entries as *prefix patterns*, and the list
+> still contains the top-level `ThermoMPNN-main/` entry, which re-matches everything underneath —
+> including `.idea`. Extraction completes but emits `Can't create 'ThermoMPNN-main/.idea'` and
+> exits non-zero via "Error exit delayed from previous errors". Use `--exclude` as above.
 
 Dependencies are **already in the `ddg` conda env** (torch 2.14.1, fair-esm 2.0.0,
 pytorch-lightning 2.6.6, omegaconf 2.4.0, torchmetrics 1.9.0). If you need them elsewhere, install
@@ -186,10 +192,24 @@ with `manage_packages`, not pip.
 
 ```bash
 export PYTHONPATH=$PYTHONPATH:$PWD/ThermoMPNN-main/analysis     # required, else ImportError
-sed -i '' 's/accel:.*/accel: "cpu"/' ThermoMPNN-main/local.yaml  # no GPU on this host
 python ThermoMPNN-main/analysis/custom_inference.py \
-    --pdb AF-O60674-F1.pdb --chain A --out jak2_thermompnn.csv
+    --pdb JAK1_afdb_P23458.pdb --chain A \
+    --model_path ThermoMPNN-main/models/thermoMPNN_default.pt \
+    --out_dir ./tm_jak1
+# writes ./tm_jak1/ThermoMPNN_inference_<pdb-stem>.csv
+# columns: Model, Dataset, ddG_pred, position, wildtype, mutation, pdb, chain
 ```
+
+> **Corrected 6 Nov.** Two things. (a) `--model_path` is **required** — there is no default, and
+> model weights ship inside the tarball at `models/thermoMPNN_default.pt` plus
+> `vanilla_model_weights/*.pt`, so nothing extra is downloaded. The flag is `--out_dir`, not `--out`.
+> (b) An earlier version told you to `sed -i '' 's/accel:.*/accel: "cpu"/' local.yaml`. That
+> **silently does nothing** — the key is indented (`  accel: "gpu"`) so `^accel:` never matches.
+> It also turns out to be **unnecessary**: the run completed on CPU with `accel` still set to
+> `"gpu"`, because torch falls back when no device is present.
+>
+> Row count is **20 per position, not 19** — the self-substitution is included. JAK1 (1,154 aa)
+> yields 23,080 rows.
 
 **Numbering trap:** `custom_inference.py` reports
 `position = PDB_author_number − min_author_number`. It indexes from the first observed residue
@@ -230,10 +250,19 @@ and +1.129 for H380Y tagged "Stabilizing".
 
 ### 3.3 RSALOR — gone, ~2 min to restore
 
-```bash
-pip install rsalor          # better: manage_packages(environment="python", packages=["rsalor"])
-# mafft is ALREADY installed at /Users/chervov/.claude-science/conda/envs/python/bin/mafft
+```python
+# rsalor is SDIST-ONLY on PyPI (no wheels at all). The shared `python` environment is
+# wheel-only, so manage_packages there FAILS with:
+#     ERROR: Could not find a version that satisfies the requirement rsalor (from versions: none)
+# The fix is a dedicated environment, where building from source is permitted:
+manage_environments(mode="create", name="rsalor", language="python",
+                    python_version="3.11", packages=["pandas","numpy","biopython"])
+manage_packages(environment="rsalor", mode="install", packages=["rsalor"], use_pip=True)
 ```
+Takes **10 s** — it compiles the C++ backend and caches a wheel
+(`rsalor-1.1.11-cp311-cp311-macosx_11_0_arm64.whl`). Verified to land in the **persistent** layer at
+`/Users/chervov/.claude-science/conda/envs/rsalor/lib/python3.11/site-packages/rsalor` (568 KB).
+mafft is already at `/Users/chervov/.claude-science/conda/envs/python/bin/mafft`.
 
 RSALOR needs an MSA and **does not build one**:
 
@@ -361,3 +390,74 @@ variant set `R755S` failed that check — position 755 is **S** in O60674, not R
 | survey with figures | `data/ddg/survey_claudesci/` |
 | dual-state audit + P1/P2 reproducibility | `data/ddg/rosetta_dualstate_qc.md` |
 | ThermoMPNN JAK source table | `external_data/thermompnn_jak_src.csv` |
+
+---
+
+## 8. Rebuild log — 6 November 2026
+
+The guide above was **executed end to end** to verify it. Five things were wrong or had changed;
+all are fixed in place above and listed here with the symptom, so you can recognise them.
+
+### 8.1 Problems hit, and the fix
+
+| # | problem | symptom | fix |
+|---|---|---|---|
+| 1 | **`rsalor` is sdist-only** | `manage_packages(environment="python", packages=["rsalor"])` → `Could not find a version that satisfies the requirement rsalor (from versions: none)`. PyPI has **no wheels** for it, only `.tar.gz`; the shared env is wheel-only. | Create a dedicated env with `manage_environments`, then `manage_packages(environment="rsalor", use_pip=True)`. Builds the C++ backend from source in 10 s. |
+| 2 | **Environments are two layers** | Bare `pip install` inside a shell reports `prefix ./.venv/<env>` and vanishes on workspace cleanup, even for a 1.4 GB install. | conda layer `/Users/chervov/.claude-science/conda/envs/<env>/` is **persistent**; the workspace `.venv/<env>/` overlay (724 KB for three envs) is **ephemeral**. Always install through `manage_packages`. |
+| 3 | **`tar -T keep.txt` does not exclude `.idea`** | `Can't create 'ThermoMPNN-main/.idea'`, then `Error exit delayed from previous errors`. | bsdtar treats `-T` entries as prefix patterns and the top-level dir entry re-matches everything. Use `tar xzf t.tar.gz --exclude='*/.idea*'`. |
+| 4 | **`sed -i '' 's/accel:.*/.../'` is a no-op** | `grep accel local.yaml` still shows `accel: "gpu"` after the sed. | The key is indented, so `^accel:` never matches. It is also **unnecessary** — the run completes on CPU regardless, because torch falls back when no device is present. |
+| 5 | **AlphaFold downloads now return HTTP 403** | `alphafold.ebi.ac.uk/files/AF-*-model_v{4,5,6}.pdb` → 403 for every version; curl writes a 4 KB HTML error page that looks like a PDB until you count `CA` atoms (0). | Worked on 30 Oct, blocked on 6 Nov. **Use the copies already in the repo**: `/Users/chervov/ProteinModelling1/AFDB/{JAK1_afdb_P23458,JAK2_afdb_O60674,JAK3_afdb_P52333,TYK2_afdb_P29597}.pdb`. Verified: 1,154 and 1,132 CA atoms. Otherwise `request_network_access(domain="alphafold.ebi.ac.uk")`. |
+
+**Always check `CA` count after fetching a structure** — a 403 error page saves without complaint:
+
+```bash
+awk '$1=="ATOM" && substr($0,13,4)~/CA/' f.pdb | wc -l     # must be ~the residue count, not 0
+```
+
+### 8.2 Installation timings, measured today
+
+| step | time | note |
+|---|--:|---|
+| RSALOR (sdist → compiled wheel) | **10 s** | into the dedicated env; persistent |
+| ThermoMPNN download + extract | **9 s** | 62 MB tarball → 156 MB tree, weights bundled |
+| PyRosetta | **0 s** | already installed at `/opt/anaconda3`; init from warm cache is instant |
+| structures | **0 s** | taken from the repo, AlphaFold being 403 |
+| *(not redone)* RaSP | ~20 min | 1.5 GB plus four source patches |
+
+Total to a working three-method setup: **under 30 seconds**, because PyRosetta and the ProtVar dump
+both survived. From cold it would be ~45 min, dominated by the PyRosetta wheel.
+
+### 8.3 Computation timings, measured today
+
+Separate from installation. All single-process unless noted.
+
+| run | scale | time | rate |
+|---|--:|--:|---|
+| **ThermoMPNN**, JAK1 full saturation | 1,154 aa → 23,080 rows | **53 s** | **435 variants/s** |
+| **RSALOR**, JAK2 full saturation | 1,132 aa → 22,640 scores | **2 s** | ~11,000 scores/s |
+| **PyRosetta** one Cartesian FastRelax | 276-residue construct | **535 s** | — |
+| **PyRosetta** `cartesian_ddg` per variant | 276-residue construct | **1.5 s** | 0.67 variants/s |
+
+Two observations that matter for planning:
+
+- **The 53 s JAK1 run is 435 variants/s**, above the 336/s median recorded earlier across 23 mixed
+  proteins — large single proteins amortise model loading better than many small ones.
+- **`cartesian_ddg` cost scales strongly with construct size**: 1.5 s/variant on the 276-residue
+  JH1 construct against **8.7 s/variant** on the 588-residue JH2-JH1 construct used in production.
+  Trim to the smallest construct that still pads your variants.
+
+### 8.4 Reproducibility of the results themselves
+
+| quantity | original run | rebuild | agreement |
+|---|--:|--:|---|
+| RSALOR Neff (JAK2 family MSA) | 30.22 | **30.22** | exact |
+| RSALOR scores produced | 22,640 | **22,640** | exact |
+| ThermoMPNN rows, JAK1 | 23,080 | **23,080** | exact |
+| one Cartesian relax, 276 res | 575 s | **535 s** | 7% faster, same machine |
+| I1065T `cartesian_ddg` | +10.13 REU | **+9.72 REU** | 4% — see note |
+
+The I1065T difference is expected, not drift: the rebuild used a **JH1-only construct (849–1124)
+relaxed once**, whereas production used **JH2-JH1 (545–1132) relaxed 20× with the lowest-energy model
+kept**. That two protocol changes move the value by only 0.4 REU is reassuring for the protocol's
+stability — and note the *ranking* is unchanged, with I1065T still far above R1063H (+1.86) and
+V1110E (+0.49).
