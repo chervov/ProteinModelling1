@@ -280,6 +280,51 @@ extreme threshold, by substituted-in residue, JAK2:
 | … | … | … | … |
 | S | 3.0% | 0.1% | 0.0% |
 
+### Raw means and medians by substituted-in residue
+
+JAK2, no sign flip and no clipping. **Rosetta: negative = destabilising. FoldX and ThermoMPNN:
+positive = destabilising.**
+
+| alt | n | Rosetta mean | Rosetta median | FoldX mean | FoldX med | TMPNN mean | TMPNN med |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| **P** | 1,081 | **-198.51** | -215.10 | 3.47 | 3.41 | 1.88 | 2.03 |
+| **W** | 1,118 | **-197.45** | -7.78 | 4.07 | 1.12 | 0.70 | 0.54 |
+| **Y** | 1,083 | **-164.51** | -6.23 | 3.35 | 0.84 | 0.71 | 0.52 |
+| **F** | 1,078 | **-130.33** | -5.73 | 2.32 | 0.47 | 0.64 | 0.53 |
+| R | 1,072 | -58.92 | -4.15 | 2.43 | 1.04 | 1.05 | 0.85 |
+| H | 1,099 | -51.78 | -3.92 | 3.12 | 1.73 | 1.01 | 0.75 |
+| I | 1,056 | -47.48 | -7.57 | 1.30 | 0.61 | 0.59 | 0.46 |
+| L | 1,023 | -46.98 | -3.67 | 0.58 | 0.03 | 0.51 | 0.38 |
+| K | 1,053 | -39.22 | -4.10 | 1.90 | 1.02 | 1.11 | 0.91 |
+| M | 1,102 | -29.87 | -3.33 | 0.37 | 0.02 | 0.59 | 0.48 |
+| V | 1,076 | -25.33 | -5.40 | 1.52 | 1.10 | 0.69 | 0.57 |
+| Q | 1,087 | -24.64 | -2.71 | 1.80 | 1.17 | 1.06 | 0.80 |
+| E | 1,046 | -19.91 | -3.48 | 2.39 | 1.78 | 1.30 | 1.17 |
+| N | 1,066 | -12.47 | -3.00 | 2.01 | 1.43 | 1.24 | 1.03 |
+| D | 1,075 | -11.34 | -4.02 | 2.68 | 2.17 | 1.48 | 1.35 |
+| T | 1,078 | -9.93 | -3.03 | 1.99 | 1.54 | 1.01 | 0.83 |
+| C | 1,105 | -9.68 | -3.56 | 1.69 | 1.34 | 0.45 | 0.29 |
+| G | 1,070 | -4.95 | -4.60 | 2.46 | 1.90 | 1.39 | 1.22 |
+| S | 1,060 | -4.47 | -2.30 | 2.10 | 1.68 | 1.08 | 0.81 |
+| A | 1,080 | -3.75 | -2.16 | 1.63 | 1.23 | 0.90 | 0.70 |
+| **overall** | 21,508 | **-54.97** | **-4.16** | 2.17 | 1.20 | 0.97 | 0.74 |
+
+**The gap between mean and median is the diagnostic.**
+
+- **Proline is the one residue where Rosetta's mean ≈ its median** (−198.5 vs −215.1). Every value
+  is bad, so there is nothing to average away — an offset, not a tail. All three methods rank
+  proline the most destabilising residue (FoldX 3.47, ThermoMPNN 1.88, both their highest), so the
+  *direction* is agreed; Rosetta is ~60× out of scale.
+- **W, Y, F are the opposite**: means of −197 / −165 / −130 against medians of −7.8 / −6.2 / −5.7.
+  The typical aromatic substitution is unremarkable and a minority are catastrophic — a genuine
+  tail, and FoldX shows the same shape (W mean 4.07 against median 1.12).
+- **Rosetta's overall mean is −54.97 against a median of −4.16**, a 13× gap. FoldX is 2.17 against
+  1.20, ThermoMPNN 0.97 against 0.74. Rosetta is the only one of the three whose mean is not a
+  usable summary.
+
+**Practical: use medians for Rosetta, never means.** The four flagged residues are 20% of
+substitutions but drag the overall mean from about −20 to −55.
+
 ### Scale-free: the aromatic tail is shared, proline is not a tail at all
 
 The table above uses one absolute threshold for every method, which favours whichever method has
