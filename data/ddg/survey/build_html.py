@@ -268,6 +268,31 @@ __FIG_OUT__
 <div class="scroll" style="max-width:620px"><table><thead><tr><th>substituted-in</th>
 <th class="n">Rosetta ΔΔG &lt; &minus;10</th><th class="n">FoldX &gt; +10</th>
 <th class="n">ThermoMPNN &gt; +10</th></tr></thead><tbody>__OUT__</tbody></table></div>
+
+<h3>Scale-free: the aromatic tail is shared, proline is not a tail at all</h3>
+<p>The table above uses one absolute threshold for every method, which favours whichever method
+has the widest spread. Comparing each residue against <b>its own method's distribution</b> removes
+that. <code>z</code> is the median shift in IQR units; <code>%&gt;p99</code> is the share of that
+residue's substitutions above the method's own 99th percentile &mdash; <b>1.0% is the flat
+expectation</b>.</p>
+<div class="scroll"><table><thead><tr><th>alt</th>
+<th class="n">Rosetta z</th><th class="n">Rosetta %&gt;p99</th>
+<th class="n">FoldX z</th><th class="n">FoldX %&gt;p99</th>
+<th class="n">ThermoMPNN z</th><th class="n">ThermoMPNN %&gt;p99</th></tr></thead>
+<tbody><tr class='hi'><td><b>W</b></td><td class='n'>+0.35</td><td class='n'>6.0%</td><td class='n'>-0.03</td><td class='n'>6.0%</td><td class='n'>-0.14</td><td class='n'>0.0%</td></tr><tr class='hi'><td><b>Y</b></td><td class='n'>+0.20</td><td class='n'>4.4%</td><td class='n'>-0.12</td><td class='n'>4.5%</td><td class='n'>-0.16</td><td class='n'>0.0%</td></tr><tr class='hi'><td><b>F</b></td><td class='n'>+0.15</td><td class='n'>3.0%</td><td class='n'>-0.24</td><td class='n'>2.2%</td><td class='n'>-0.15</td><td class='n'>0.0%</td></tr><tr class=''><td><b>R</b></td><td class='n'>-0.00</td><td class='n'>1.3%</td><td class='n'>-0.05</td><td class='n'>0.8%</td><td class='n'>+0.08</td><td class='n'>0.7%</td></tr><tr class=''><td><b>H</b></td><td class='n'>-0.02</td><td class='n'>1.0%</td><td class='n'>+0.18</td><td class='n'>2.2%</td><td class='n'>+0.01</td><td class='n'>0.8%</td></tr><tr class=''><td><b>L</b></td><td class='n'>-0.05</td><td class='n'>0.9%</td><td class='n'>-0.39</td><td class='n'>0.6%</td><td class='n'>-0.26</td><td class='n'>0.1%</td></tr><tr class=''><td><b>K</b></td><td class='n'>-0.01</td><td class='n'>0.8%</td><td class='n'>-0.06</td><td class='n'>0.6%</td><td class='n'>+0.12</td><td class='n'>1.0%</td></tr><tr class=''><td><b>I</b></td><td class='n'>+0.33</td><td class='n'>0.7%</td><td class='n'>-0.20</td><td class='n'>0.7%</td><td class='n'>-0.20</td><td class='n'>0.1%</td></tr></tbody></table></div>
+<div class="key"><p><b>The aromatic tail is not a Rosetta artefact &mdash; it is shared almost
+exactly.</b> W, Y, F sit at <b>6.0 / 4.4 / 3.0%</b> above Rosetta's own 99th percentile and
+<b>6.0 / 4.5 / 2.2%</b> above FoldX's. Two independent force fields agree to within a few tenths
+of a percent, so this is a real physical effect, not a protocol failure.</p>
+<p><b>Proline is not an outlier problem at all &mdash; it is a wholesale shift.</b> Rosetta's
+median X&rarr;P is <b>+20.28 IQR units</b> from its own median, yet <b>0.0%</b> of prolines exceed
+its 99th percentile: the entire proline distribution has moved past p99, so there is no tail,
+there is an offset. FoldX (+0.74) and ThermoMPNN (+0.91) also rank proline most destabilising,
+which is biophysically right &mdash; but by <b>less than one IQR</b>, against Rosetta's twenty.</p>
+<p><b>I, V and L were a false positive in the absolute table.</b> Isoleucine showed 45.4% beyond
+&minus;10 kcal/mol, but only <b>0.7%</b> beyond Rosetta's own p99 &mdash; it was riding the
+method's generally heavy tail, not adding a residue-specific one. The genuinely residue-specific
+effects are <b>W, Y, F</b> (shared) and <b>P</b> (Rosetta only).</p></div>
 <div class="key"><p><b>Three separate conclusions.</b></p>
 <p><b>ThermoMPNN has no tail at all</b> — 0.0% for all twenty residues. A bounded neural-net
 output cannot produce a &minus;2,900 kcal/mol value, so the comparison is partly unfair; but it

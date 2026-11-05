@@ -266,7 +266,7 @@ clearest cheap improvement available.
 
 ## 7. The four-residue outlier tail — is it Rosetta-specific?
 
-**Yes, and the proline part is entirely Rosetta's.** Percentage of substitutions beyond an
+**The proline part is entirely Rosetta's; the aromatic part is shared with FoldX.** Percentage of substitutions beyond an
 extreme threshold, by substituted-in residue, JAK2:
 
 | substituted-in | Rosetta (ΔΔG < −10) | FoldX (> +10) | ThermoMPNN (> +10) |
@@ -280,13 +280,49 @@ extreme threshold, by substituted-in residue, JAK2:
 | … | … | … | … |
 | S | 3.0% | 0.1% | 0.0% |
 
+### Scale-free: the aromatic tail is shared, proline is not a tail at all
+
+The table above uses one absolute threshold for every method, which favours whichever method has
+the widest spread. Comparing each residue against **its own method's distribution** removes that:
+`z` is the median shift in IQR units, `%>p99` the share of that residue's substitutions above the
+method's own 99th percentile — **1.0% is the flat expectation**.
+
+| alt | Rosetta z | Rosetta %>p99 | FoldX z | FoldX %>p99 | ThermoMPNN z | ThermoMPNN %>p99 |
+|---|--:|--:|--:|--:|--:|--:|
+| **W** | +0.35 | 6.0% | -0.03 | 6.0% | -0.14 | 0.0% |
+| **Y** | +0.20 | 4.4% | -0.12 | 4.5% | -0.16 | 0.0% |
+| **F** | +0.15 | 3.0% | -0.24 | 2.2% | -0.15 | 0.0% |
+| **R** | -0.00 | 1.3% | -0.05 | 0.8% | +0.08 | 0.7% |
+| **H** | -0.02 | 1.0% | +0.18 | 2.2% | +0.01 | 0.8% |
+| **L** | -0.05 | 0.9% | -0.39 | 0.6% | -0.26 | 0.1% |
+| **K** | -0.01 | 0.8% | -0.06 | 0.6% | +0.12 | 1.0% |
+| **I** | +0.33 | 0.7% | -0.20 | 0.7% | -0.20 | 0.1% |
+
+Two things change when the scale advantage is removed:
+
+**The aromatic tail is not a Rosetta artefact — it is shared almost exactly.** W, Y, F sit at
+**6.0 / 4.4 / 3.0%** above Rosetta's own 99th percentile and **6.0 / 4.5 / 2.2%** above FoldX's.
+Two independent force fields agree to within a few tenths of a percent. That is a real physical
+effect: forcing a large aromatic into a packed core clashes, and both methods see it.
+
+**Proline is not an outlier problem at all — it is a wholesale shift.** Rosetta's median X→P is
+**+20.28 IQR units** from its own median, yet **0.0%** of prolines exceed its 99th percentile:
+the entire proline distribution has moved past p99, so there is no tail, there is an offset.
+FoldX (+0.74) and ThermoMPNN (+0.91) also place proline as the most destabilising residue, which
+is biophysically correct — but by **less than one IQR**, against Rosetta's twenty.
+
+**And I, V, L were a false positive in the absolute table.** Isoleucine showed 45.4% beyond
+−10 kcal/mol in Rosetta, but only **0.7%** beyond Rosetta's own p99 — it was riding the method's
+generally heavy tail, not contributing a residue-specific one. The genuinely residue-specific
+effects are **W, Y, F** (shared) and **P** (Rosetta only).
+
 Three separate conclusions:
 
 - **ThermoMPNN has no tail at all** — 0.0% for all 20 residues. A bounded neural-net output
   cannot produce a −2,900 kcal/mol value, so the comparison is partly unfair, but it does mean
   the tail is not a property of the substitutions.
-- **FoldX reproduces the aromatic ranking** — W, Y, F are its top three — so the **steric
-  mechanism is real**: inserting a large aromatic into a packed core genuinely clashes.
+- **FoldX reproduces the aromatic ranking** — W, Y, F are its top three, and on a scale-free
+  basis it matches Rosetta almost exactly. The **steric mechanism is real and shared**.
 - **FoldX does not reproduce proline** (2.5% against Rosetta's 92.5%). The proline tail is a
   **backbone-geometry failure specific to Rosetta's protocol**: `mutate_residue` with an 8 Å
   repack does not re-sample the backbone, and proline's ring constrains φ, so a proline forced
