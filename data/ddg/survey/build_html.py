@@ -149,7 +149,7 @@ largely a PyRosetta artefact, and the proline part of it entirely so.</p>
 <tr><td>statistical potential</td><td>PoPMuSiC, mCSM, DUET, SDM, DDMut</td><td>fast; graph / environment features</td></tr>
 <tr><td>learned, structure-aware</td><td><b>ThermoMPNN</b>, RaSP, Stability Oracle, SPURS, ThermoNet</td><td>trained on mega-scale data</td></tr>
 <tr><td>sequence / evolution</td><td>GEMME, EVE, TranceptEVE, ESM-2, ProSST, SaProt</td><td>not ΔΔG, but competitive on stability DMS</td></tr>
-<tr><td><b>two-feature baseline</b></td><td><b>RSALOR</b> = log-odds ratio &times; RSA</td><td>see section 5</td></tr>
+<tr><td><b>two-feature baseline</b></td><td><b>RSALOR</b> = log-odds ratio &times; RSA</td><td>see section 6</td></tr>
 </tbody></table></div>
 <div class="key"><b>The field's real ceiling.</b> On genuinely unseen single mutations the best
 methods reach <b>r ≈ 0.5&ndash;0.6</b>, not the 0.7&ndash;0.8 advertised — the gap is
@@ -160,13 +160,69 @@ pathogenic variants do not act by destabilisation. And there is <b>no benchmark 
 multi-domain proteins</b> — which is what the JAKs are. Sources, with DOIs, in
 <code>external_data/ddg_literature.md</code>.</div>
 
-<h2>2. Distributions</h2>
+<h2>2. Provenance, local tooling and timings</h2>
+<h3>What is precomputed and downloadable &mdash; EMBL-EBI and the rest</h3>
+<div class="scroll"><table><thead><tr><th>source</th><th>what</th><th>status here</th></tr></thead>
+<tbody>
+<tr class="stab"><td><b>EMBL-EBI &mdash; ProtVar</b><br><span class="tiny">ftp.ebi.ac.uk/pub/databases/ProtVar/predictions/stability/ (~1.5 GB)</span></td>
+<td><b>FoldX ΔΔG on AlphaFold2</b>, whole human proteome</td>
+<td><b style="color:var(--bad)">host unreachable</b> &mdash; <code>ftp.ebi.ac.uk</code> times out from this machine while <code>www.ebi.ac.uk</code> returns 200. We use a committed extract pulled from that file on 2025-02-10</td></tr>
+<tr class="stab"><td><b>EMBL-EBI &mdash; AlphaFold DB</b><br><span class="tiny">alphafold.ebi.ac.uk/files/</span></td>
+<td>models and <b>PAE</b> matrices</td><td><b style="color:var(--good)">works</b> &mdash; all four downloaded live</td></tr>
+<tr><td>HuggingFace</td><td>ESM-1b LLR, all human isoforms (1.34 GB zip)</td><td>works &mdash; one member by HTTP range request</td></tr>
+<tr><td>Zenodo (DeepMind)</td><td>AlphaMissense, all possible human missense (1.21 GB)</td><td>works &mdash; streamed with early stop</td></tr>
+<tr><td>myvariant.info</td><td>dbNSFP: CADD, SIFT, ClinPred</td><td>works</td></tr>
+<tr><td>Liao &amp; Lehner release</td><td><b>ThermoMPNN</b> and <b>RSA</b></td><td>committed extract</td></tr>
+<tr><td>PolyPhen-2 server</td><td>HumVar / HumDiv</td><td>works</td></tr>
+</tbody></table></div>
+
+<h3>What we installed and actually ran locally</h3>
+<div class="scroll" style="max-width:640px"><table><thead><tr><th>package</th><th>installed</th>
+<th>used for</th></tr></thead><tbody>
+<tr class="stab"><td><b>PyRosetta 4</b> (2026.39, Apple silicon)</td><td><b style="color:var(--good)">yes</b></td><td>all our dual-state ΔΔG &mdash; <b>the only method we computed ourselves</b></td></tr>
+<tr><td>Biopython 1.88</td><td><b style="color:var(--good)">yes</b></td><td>BLOSUM62 matrix</td></tr>
+<tr><td><code>rsalor</code></td><td><b style="color:var(--bad)">no</b></td><td>installing it was blocked by the sandbox</td></tr>
+<tr><td><code>freesasa</code>, <code>biotite</code>, <code>prody</code>, <code>mdtraj</code>, <code>openmm</code>, <code>pdbfixer</code></td><td><b style="color:var(--bad)">no</b></td><td>&mdash;</td></tr>
+<tr><td>ThermoMPNN, FoldX, mCSM, DDMut as executables</td><td><b style="color:var(--bad)">no</b></td><td>all taken precomputed</td></tr>
+</tbody></table></div>
+
+<h3>Timings, measured</h3>
+<div class="scroll" style="max-width:700px"><table><thead><tr><th>step</th><th class="n">time</th>
+<th>note</th></tr></thead><tbody>
+<tr class="stab"><td><b>PyRosetta FastRelax</b>, per state</td><td class="n"><b>~25 min</b></td><td>single-threaded; cached, paid once per structure</td></tr>
+<tr class="stab"><td><b>PyRosetta ΔΔG</b>, whole protein</td><td class="n"><b>~40 min</b></td><td>6 workers, 30,000&ndash;32,500 variants/h</td></tr>
+<tr class="stab"><td><b>&rarr; total per protein</b></td><td class="n"><b>~1.5&ndash;2 h</b></td><td>2 relaxes plus one ΔΔG pass</td></tr>
+<tr><td>ESM-1b fetch</td><td class="n">3 s</td><td>range request into a 1.34 GB remote zip</td></tr>
+<tr><td>AlphaMissense fetch</td><td class="n">28 s</td><td>21.2 M of 71 M rows, early stop</td></tr>
+<tr><td>dbNSFP via myvariant</td><td class="n">48 s</td><td></td></tr>
+<tr><td>PolyPhen-2, per model</td><td class="n">~2 min</td><td>server-side</td></tr>
+<tr><td>FoldX</td><td class="n">&lt; 1 s</td><td>committed extract; streaming from EBI would be minutes</td></tr>
+<tr><td>BLOSUM62</td><td class="n">0.2 s</td><td></td></tr>
+</tbody></table></div>
+<p>JAK1 and TYK2 were computed in October on four molab CPU boxes (20 cores each) overnight;
+JAK2 and JAK3 in November locally, in the times above.</p>
+
+<div class="key"><p><b>Did we reproduce RSA or RSALOR? No &mdash; and that matters for how
+sections 6 and 8 should be read.</b></p>
+<p><b>RSA</b> is the <code>exposure_rasa</code> column of the downloaded ThermoMPNN file. We never
+ran a solvent-accessibility calculation ourselves. Every RSA number in this report rests on
+someone else's computation, on structures we did not choose.</p>
+<p><b>RSALOR</b>: <code>data/ddg/rsalor_jak2_family.csv</code> exists with the right columns
+(<code>RSA</code>, <code>LOR</code>, <code>RSA*LOR</code>, <code>CI</code>, <code>pLDDT</code>),
+but <b>no script in this repository generates it</b> and the package is not installed. It came
+from outside the repo or from a session that left no code. Its provenance is
+<b>unverified</b>, and it covers JAK2 only.</p>
+<p>So the RSA findings below are: <i>a downloaded RSA column behaves this way</i>. They are
+consistent with the published RSALOR result, which is reassuring, but they are <b>not an
+independent reproduction</b> of it.</p></div>
+
+<h2>3. Distributions</h2>
 __FIG_HIST__
 <h3>Summary statistics</h3>
 <div class="scroll"><table><thead><tr><th>method</th><th class="n">cov</th>
 __DHDR__</tr></thead><tbody>__DESC__</tbody></table></div>
 
-<h2>3. How the methods agree</h2>
+<h2>4. How the methods agree</h2>
 __FIG_CORR__
 <div class="tabs" id="ctabs"></div>
 <div class="scroll" id="cbox"></div>
@@ -179,7 +235,7 @@ with the same ThermoMPNN at <b>0.54</b>. The free number does better.</p>
 <p><b><code>ddg_delta</code> is flat against everything</b> (|ρ| ≤ 0.02), as it is against the
 clustering and the DMS.</p></div>
 
-<h2>4. The four-residue outlier tail &mdash; is it Rosetta's?</h2>
+<h2>5. The four-residue outlier tail &mdash; is it Rosetta's?</h2>
 __FIG_OUT__
 <div class="scroll" style="max-width:620px"><table><thead><tr><th>substituted-in</th>
 <th class="n">Rosetta ΔΔG &lt; &minus;10</th><th class="n">FoldX &gt; +10</th>
@@ -198,7 +254,7 @@ into a non-proline backbone registers an enormous clash that relaxation would re
 <p><b>Practical consequence:</b> winsorise or rank-transform the Rosetta ΔΔG before use, and do
 not interpret raw X&rarr;P values at all.</p></div>
 
-<h2>5. RSA, and the two-feature baseline</h2>
+<h2>6. RSA, and the two-feature baseline</h2>
 __FIG_RSA__
 <div class="key"><p><b>Tsishyn, Pucci &amp; Rooman, <i>Bioinformatics</i> 2025 — RSALOR</b>
 (<a href="https://doi.org/10.1093/bioinformatics/btaf322">10.1093/bioinformatics/btaf322</a>).
@@ -211,7 +267,7 @@ models. Our numbers reproduce the shape of that result on the JAKs independently
 <p>We have RSALOR output for JAK2 already (<code>data/ddg/rsalor_jak2_family.csv</code>) but have
 not yet used it as a clustering feature. It is the clearest cheap improvement available.</p>
 
-<h2>6. Separating the clusters</h2>
+<h2>7. Separating the clusters</h2>
 __FIG_CLU__
 <div class="scroll"><table><thead><tr><th>method</th><th class="n">C1 mean</th>
 <th class="n">C2 mean</th><th class="n">C1 median</th><th class="n">C2 median</th>
@@ -221,7 +277,7 @@ against 0.711&ndash;0.791 — and it is the cheapest quantity in the table. Note
 AUCs are partly circular for FoldX and Rosetta, which <i>are</i> clustering features; RSA is not,
 and still wins.</div>
 
-<h2>7. Against experimental data</h2>
+<h2>8. Against experimental data</h2>
 __FIG_DMS__
 <div class="scroll" style="max-width:640px"><table><thead><tr><th>method</th><th class="n">n</th>
 <th class="n">abundance (stability)</th><th class="n">IFN 100 U (function)</th></tr></thead>
@@ -230,12 +286,12 @@ __FIG_DMS__
 measured protein abundance.</b> Abundance is close to a direct readout of folding stability —
 exactly what ΔΔG computes — and AlphaMissense, which never sees a force field, is 60% better at
 it than PyRosetta.</p>
-<p><b>RSA alone (0.288) beats both FoldX and Rosetta.</b> Again.</p>
+<p><b>RSA alone (0.288) beats both FoldX and Rosetta.</b> Again &mdash; though see section 2: this is a downloaded RSA column, not one we computed.</p>
 <p>In the methods' defence: these are single-point correlations over a whole multi-domain protein,
 the hardest possible setting, and the independent literature ceiling is r ≈ 0.5&ndash;0.6 on
 curated single-domain sets. 0.26&ndash;0.30 is poor but not anomalous.</p></div>
 
-<h2>8. Recommendations</h2>
+<h2>9. Recommendations</h2>
 <ol>
 <li><b>Do not use <code>ddg_delta</code>.</b> Inert on four proteins; on JAK2 it also fails to
 reproduce between two model pairs (r = 0.074).</li>
